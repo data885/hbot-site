@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Konfigüratör | HBOT Chamber Tech</title>
+<meta name="description" content="Kendi Apex kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HBOT Chamber Tech" />
+<meta property="og:title" content="Konfigüratör | HBOT Chamber Tech" />
+<meta property="og:description" content="Kendi Apex kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." />
+<meta property="og:image" content="https://hbotchambertech.com/assets/img/banners/hero-1.jpg" />
+<meta property="og:url" content="https://hbotchambertech.com/konfigurator.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Konfigüratör | HBOT Chamber Tech" />
+<meta name="twitter:description" content="Kendi Apex kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." />
+<meta name="twitter:image" content="https://hbotchambertech.com/assets/img/banners/hero-1.jpg" />
+<link rel="icon" type="image/png" href="assets/img/logo-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+<meta name="theme-color" content="#0a0f14" />
+<link rel="stylesheet" href="assets/css/style.css?v=11" />
+</head>
+<body data-page="configurator">
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo-header.png" alt="HBOT Chamber Tech" class="brand-logo" />
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" data-nav="home" data-i18n="common.nav.home">Ana Sayfa</a>
+      <a href="teknoloji.html" data-nav="technology" data-i18n="common.nav.technology">Teknoloji</a>
+      <div class="nav-item--dropdown">
+        <button type="button" class="nav-dropdown-trigger" data-nav="models">
+          <span data-i18n="common.nav.models">Modeller</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-panel" data-models-menu></div>
+      </div>
+      <a href="hbot-nedir.html" data-nav="hbotInfo" data-i18n="common.nav.hbotInfo">HBOT Nedir?</a>
+      <a href="blog.html" data-nav="blog" data-i18n="common.nav.blog">Blog</a>
+      <a href="iletisim.html" data-nav="contact" data-i18n="common.nav.contact">İletişim</a>
+      <div class="lang-switch lang-switch--mobile" role="group" aria-label="Language switch">
+        <button type="button" data-lang="tr">TR</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ar">AR</button>
+        <button type="button" data-lang="ru">RU</button>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button type="button" data-lang="tr">TR</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ar">AR</button>
+        <button type="button" data-lang="ru">RU</button>
+      </div>
+      <a href="konfigurator.html" class="nav-cta" data-nav="configurator" data-i18n="common.nav.configurator">Konfigüratör</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="common.home_label">Ana Sayfa</a>
+        <span aria-hidden="true">/</span>
+        <span class="current" data-i18n="common.nav.configurator">Konfigüratör</span>
+      </div>
+      <span class="eyebrow" data-i18n="configurator.header.eyebrow">KONFİGÜRATÖR</span>
+      <h1 data-i18n="configurator.header.title">Kendi Apex Kabininizi Tasarlayın</h1>
+      <p data-i18n="configurator.header.subtitle">Alt metin.</p>
+      <div class="currency-bar">
+        <span data-i18n="configurator.currency_label">Para Birimi</span>
+        <div class="lang-switch" id="currency-switch" role="group" aria-label="Currency switch"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="configurator-layout">
+        <div class="config-steps">
+
+          <div>
+            <div class="config-step-title" data-i18n="configurator.step1_title">1. Model Seçin</div>
+            <div class="config-model-grid" id="config-model-grid"></div>
+          </div>
+
+          <div>
+            <div class="config-step-title" data-i18n="configurator.style_step_title">2. Kabin Stili</div>
+            <div class="config-step-note" data-i18n="configurator.style_step_note">Not.</div>
+            <div class="config-style-grid" id="config-style-grid"></div>
+          </div>
+
+          <div id="nexus-seat-section" hidden>
+            <div class="config-step-title" data-i18n="configurator.seat_step_title">Koltuk Sayısı</div>
+            <div class="config-step-note" data-i18n="configurator.seat_step_note">Not.</div>
+            <div class="seat-stepper">
+              <button type="button" id="seat-decrease" aria-label="Azalt">−</button>
+              <div class="seat-count-display"><span id="seat-count-value">6</span> <span data-i18n="configurator.seats_label">Koltuk</span></div>
+              <button type="button" id="seat-increase" aria-label="Artır">+</button>
+              <span class="seat-price-note" id="seat-price-note"></span>
+            </div>
+          </div>
+
+          <div>
+            <div class="config-step-title" data-i18n="configurator.color_step_title">3. Renk Seçin</div>
+            <div class="config-step-note" data-i18n="configurator.color_step_note">Not.</div>
+            <div class="config-color-grid" id="config-color-grid"></div>
+          </div>
+
+          <div>
+            <div class="config-step-title" data-i18n="configurator.interior_step_title">4. İç Renk</div>
+            <div class="config-step-note" data-i18n="configurator.interior_step_note">Not.</div>
+            <div class="config-color-grid" id="config-interior-color-grid"></div>
+          </div>
+
+          <div>
+            <div class="config-step-title" data-i18n="configurator.seat_color_step_title">5. Koltuk Rengi</div>
+            <div class="config-step-note" data-i18n="configurator.seat_color_step_note">Not.</div>
+            <div class="config-color-grid" id="config-seat-color-grid"></div>
+          </div>
+
+          <div>
+            <div class="config-step-title" data-i18n="configurator.step2_title">6. Basınç Seviyesi</div>
+            <div class="config-step-note" data-i18n="configurator.pressure_note">Not.</div>
+            <div class="config-pressure-grid" id="config-pressure-grid"></div>
+            <div class="config-pressure-note" id="pressure-auto-note" hidden></div>
+          </div>
+
+          <div>
+            <div class="config-step-title" data-i18n="configurator.step3_title">7. Ek Özellikler</div>
+            <div class="config-addon-grid" id="config-addon-grid"></div>
+          </div>
+
+        </div>
+
+        <div class="config-stage-col">
+          <div class="config-stage" id="config-stage" aria-hidden="true">
+            <div class="stage-spotlight"></div>
+            <div class="stage-tilt" id="stage-tilt">
+              <img class="stage-img is-active" id="stage-img-a" src="assets/img/models/real/apex-lounge-real.webp" alt="" />
+              <img class="stage-img" id="stage-img-b" src="assets/img/models/real/apex-lounge-real.webp" alt="" />
+              <div class="stage-tint" id="stage-tint"></div>
+              <div class="stage-tint stage-tint--seat" id="stage-seat-tint"></div>
+            </div>
+            <div class="stage-floor"></div>
+            <div class="stage-view-toggle" role="group" aria-label="View">
+              <button type="button" class="stage-view-btn is-active" data-view="exterior" data-i18n="configurator.stage.view_exterior">Dış Görünüm</button>
+              <button type="button" class="stage-view-btn" data-view="interior" data-i18n="configurator.stage.view_interior">İç Görünüm</button>
+            </div>
+            <div class="stage-model-name" id="stage-model-name"></div>
+            <div class="stage-spin-hint" id="stage-spin-hint" hidden><span data-i18n="configurator.stage.spin_hint">↔ Döndürmek için sürükle</span></div>
+          </div>
+          <aside class="config-summary" id="config-summary"></aside>
+        </div>
+      </div>
+
+      <div class="quote-form-panel">
+        <h3 data-i18n="configurator.step4_title">8. Teklif İsteyin</h3>
+        <form id="quote-form" action="contact-handler.php" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="q-name" data-i18n="configurator.quote_form.name">Ad Soyad</label>
+              <input type="text" id="q-name" name="name" required />
+            </div>
+            <div class="form-field">
+              <label for="q-email" data-i18n="configurator.quote_form.email">E-posta</label>
+              <input type="email" id="q-email" name="email" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="q-phone" data-i18n="configurator.quote_form.phone">Telefon</label>
+              <input type="tel" id="q-phone" name="phone" />
+            </div>
+            <div class="form-field">
+              <label for="q-company" data-i18n="configurator.quote_form.company">Kurum / Klinik Adı</label>
+              <input type="text" id="q-company" name="company" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="q-message" data-i18n="configurator.quote_form.message">Ek Notlar</label>
+            <textarea id="q-message" name="message"></textarea>
+          </div>
+          <textarea name="config_summary" id="config-summary-text" hidden readonly></textarea>
+          <div class="form-field" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+            <label for="q-website">Website</label>
+            <input type="text" id="q-website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="configurator.quote_form.submit">Teklif Talebini Gönder</button>
+          <p class="form-success" id="quote-form-success" hidden data-i18n="configurator.quote_form.success"></p>
+          <p class="form-error" id="quote-form-error" hidden data-i18n="configurator.quote_form.error"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><img src="assets/img/logo-header.png" alt="HBOT Chamber Tech" class="brand-logo footer-logo" /></a>
+      <p data-i18n="common.footer.about_text">Açıklama.</p>
+      <p class="member-badge" style="margin-top:16px;" data-i18n="common.footer.membership_note">Almita Group iştirakidir.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="common.footer.models_title">Modeller</h4>
+      <ul id="footer-models-menu" data-models-menu></ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="common.footer.contact_title">İletişim</h4>
+      <ul>
+        <li><a href="mailto:info@hbotchambertech.com">info@hbotchambertech.com</a></li>
+        <li><a href="tel:08508881679">0850 888 1679</a></li>
+        <li><a href="https://almitagroup.com" target="_blank" rel="noopener">Almita Group →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; 2014&ndash;<span id="current-year">2026</span> HBOT Chamber Tech. <span data-i18n="common.footer.rights">Tüm hakları saklıdır.</span></span>
+  </div>
+</footer>
+
+<script src="assets/js/translations.js?v=11"></script>
+<script src="assets/js/main.js?v=11"></script>
+</body>
+</html>

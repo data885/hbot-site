@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modeller | HBOT Chamber Tech</title>
+<meta name="description" content="Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad, Apex Quad-Cube ve Apex Nexus — altı farklı hiperbarik oksijen odası modeli." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HBOT Chamber Tech" />
+<meta property="og:title" content="Modeller | HBOT Chamber Tech" />
+<meta property="og:description" content="Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad, Apex Quad-Cube ve Apex Nexus — altı farklı hiperbarik oksijen odası modeli." />
+<meta property="og:image" content="https://hbotchambertech.com/assets/img/banners/hero-1.jpg" />
+<meta property="og:url" content="https://hbotchambertech.com/modeller.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Modeller | HBOT Chamber Tech" />
+<meta name="twitter:description" content="Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad, Apex Quad-Cube ve Apex Nexus — altı farklı hiperbarik oksijen odası modeli." />
+<meta name="twitter:image" content="https://hbotchambertech.com/assets/img/banners/hero-1.jpg" />
+<link rel="icon" type="image/png" href="assets/img/logo-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+<meta name="theme-color" content="#0a0f14" />
+<link rel="stylesheet" href="assets/css/style.css?v=11" />
+</head>
+<body data-page="models-overview">
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo-header.png" alt="HBOT Chamber Tech" class="brand-logo" />
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" data-nav="home" data-i18n="common.nav.home">Ana Sayfa</a>
+      <a href="teknoloji.html" data-nav="technology" data-i18n="common.nav.technology">Teknoloji</a>
+      <div class="nav-item--dropdown">
+        <button type="button" class="nav-dropdown-trigger is-active" data-nav="models">
+          <span data-i18n="common.nav.models">Modeller</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-panel" data-models-menu></div>
+      </div>
+      <a href="hbot-nedir.html" data-nav="hbotInfo" data-i18n="common.nav.hbotInfo">HBOT Nedir?</a>
+      <a href="blog.html" data-nav="blog" data-i18n="common.nav.blog">Blog</a>
+      <a href="iletisim.html" data-nav="contact" data-i18n="common.nav.contact">İletişim</a>
+      <div class="lang-switch lang-switch--mobile" role="group" aria-label="Language switch">
+        <button type="button" data-lang="tr">TR</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ar">AR</button>
+        <button type="button" data-lang="ru">RU</button>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button type="button" data-lang="tr">TR</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ar">AR</button>
+        <button type="button" data-lang="ru">RU</button>
+      </div>
+      <a href="konfigurator.html" class="nav-cta" data-i18n="common.nav.configurator">Konfigüratör</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="common.home_label">Ana Sayfa</a>
+        <span aria-hidden="true">/</span>
+        <span class="current" data-i18n="common.nav.models">Modeller</span>
+      </div>
+      <span class="eyebrow" data-i18n="modelsOverview.header.eyebrow">APEX SERİSİ</span>
+      <h1 data-i18n="modelsOverview.header.title">Modellerimiz</h1>
+      <p data-i18n="modelsOverview.header.subtitle">Alt metin.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p style="max-width:780px;font-size:17px;color:var(--gray-700);margin-bottom:44px;" data-i18n="modelsOverview.intro">Giriş metni.</p>
+      <div class="sector-grid" id="models-grid"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="modelsOverview.compareTable.title">Modelleri Karşılaştırın</h2>
+        <p data-i18n="modelsOverview.compareTable.subtitle">Alt metin.</p>
+      </div>
+      <div class="compare-grid" id="model-compare-grid"></div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="common.included_badge">Standart Dahil</span>
+        <h2 data-i18n="technology.header.title">Apex Teknoloji Ekosistemi</h2>
+      </div>
+      <div class="included-grid" id="included-grid"></div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner-text">
+          <h2 data-i18n="common.cta_banner.title">Size Uygun Apex Modelini Birlikte Bulalım</h2>
+          <p data-i18n="common.cta_banner.subtitle">Alt metin.</p>
+        </div>
+        <a href="konfigurator.html" class="btn btn-primary" data-i18n="common.cta_banner.button">Konfigüratörü Başlat</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><img src="assets/img/logo-header.png" alt="HBOT Chamber Tech" class="brand-logo footer-logo" /></a>
+      <p data-i18n="common.footer.about_text">Açıklama.</p>
+      <p class="member-badge" style="margin-top:16px;" data-i18n="common.footer.membership_note">Almita Group iştirakidir.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="common.footer.models_title">Modeller</h4>
+      <ul id="footer-models-menu" data-models-menu></ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="common.footer.contact_title">İletişim</h4>
+      <ul>
+        <li><a href="mailto:info@hbotchambertech.com">info@hbotchambertech.com</a></li>
+        <li><a href="tel:08508881679">0850 888 1679</a></li>
+        <li><a href="https://almitagroup.com" target="_blank" rel="noopener">Almita Group →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; 2014&ndash;<span id="current-year">2026</span> HBOT Chamber Tech. <span data-i18n="common.footer.rights">Tüm hakları saklıdır.</span></span>
+  </div>
+</footer>
+
+<script src="assets/js/translations.js?v=11"></script>
+<script src="assets/js/main.js?v=11"></script>
+</body>
+</html>
