@@ -276,6 +276,7 @@
         <h3>${item.name}</h3>
         <span class="sector-tagline">${item.role}</span>
         <p>${item.text}</p>
+        ${item.source ? `<a class="celeb-source" href="${item.source}" target="_blank" rel="noopener">${dict.home.celebs.source_label} →</a>` : ""}
       </article>
     `).join("");
   }
@@ -850,12 +851,14 @@
     });
   }
 
-  /* Renk tint güçleri: blend-mode "color" — cihaz gövdesinin rengi değişir, parlaklık/doku korunur.
-     pearl-white/cream = nötr (tint yok). */
-  const EXT_TINT_STRENGTH = { "pearl-white": 0, sampanya: 0.4, bronz: 0.45, grafit: 0.5, antrasit: 0.5, "mat-siyah": 0.55, "gece-laciverti": 0.55, bordo: 0.55, zumrut: 0.55 };
-  const INT_TINT_STRENGTH = { cream: 0, "kum-beji": 0.35, konyak: 0.45, anthracite: 0.5, burgundy: 0.55, navy: 0.55 };
+  /* Renk tint güçleri: blend-mode "multiply" — boyalı yüzey fizigi (albedo x isik):
+     govdedeki beyaz vurgular secilen renkle carpilir ("isikli/yanik" gorunum olmaz),
+     doku ve golgeler korunur, sonuc mat/gercekci olur.
+     pearl-white/cream = notr (tint yok). */
+  const EXT_TINT_STRENGTH = { "pearl-white": 0, sampanya: 0.55, bronz: 0.6, grafit: 0.65, antrasit: 0.65, "mat-siyah": 0.72, "gece-laciverti": 0.7, bordo: 0.68, zumrut: 0.68 };
+  const INT_TINT_STRENGTH = { cream: 0, "kum-beji": 0.5, konyak: 0.6, anthracite: 0.65, burgundy: 0.68, navy: 0.68 };
   /* Koltuk tint'i: sadece kullanıcı koltuk rengini bilinçli değiştirdiyse uygulanır (fotoğraf sadeliği korunur) */
-  const SEAT_TINT_STRENGTH = { konyak: 0.55, siyah: 0.65, lacivert: 0.6, krem: 0.45, bordo: 0.65, gri: 0.5 };
+  const SEAT_TINT_STRENGTH = { konyak: 0.6, siyah: 0.7, lacivert: 0.65, krem: 0.5, bordo: 0.68, gri: 0.55 };
 
   /* v7: tint bölge maskeleri — sahne/arka plan asla renklenmez; sadece maskeli kabin/döşeme/koltuk alanı */
   const STAGE_TINT_MASKS = {
@@ -1355,6 +1358,166 @@
     return `HBOT-${ymd}-${rand}`;
   }
 
+  /* Turkce karakterleri ASCII'ye indirger — jsPDF standart fontlari Turkce'yi bozar */
+  function asciiSafe(str) {
+    return String(str == null ? "" : str)
+      .replace(/ğ/g, "g").replace(/Ğ/g, "G")
+      .replace(/ı/g, "i").replace(/İ/g, "I")
+      .replace(/ş/g, "s").replace(/Ş/g, "S")
+      .replace(/ç/g, "c").replace(/Ç/g, "C")
+      .replace(/ö/g, "o").replace(/Ö/g, "O")
+      .replace(/ü/g, "u").replace(/Ü/g, "U");
+  }
+
+  function loadLogoForPdf() {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => {
+        try {
+          const canvas = document.createElement("canvas");
+          canvas.width = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          canvas.getContext("2d").drawImage(img, 0, 0);
+          resolve({ dataUrl: canvas.toDataURL("image/png"), ratio: img.naturalHeight / img.naturalWidth });
+        } catch (e) { resolve(null); }
+      };
+      img.onerror = () => resolve(null);
+      img.src = "assets/img/logo-full.png";
+    });
+  }
+
+  /* Proforma PDF (jsPDF): gorsel kimlikli, ASCII-safe Ingilizce icerik.
+     Donus: { base64, name, quoteNo } — gonderim webhook'una eklenir. */
+  async function buildProformaPdf(formData) {
+    if (!window.jspdf || !window.jspdf.jsPDF) return null;
+    const cfg = (TRANSLATIONS.en || TRANSLATIONS.tr).configurator;
+    const quoteNo = generateQuoteNo();
+    const doc = new window.jspdf.jsPDF({ unit: "mm", format: "a4" });
+    const NAVY = [27, 42, 74], GOLD = [201, 164, 92], GRAY = [110, 110, 110];
+    const pageW = 210, mL = 16, mR = 194;
+
+    // Logo + baslik
+    const logo = await loadLogoForPdf();
+    if (logo) {
+      const w = 46, h = w * logo.ratio;
+      doc.addImage(logo.dataUrl, "PNG", mL, 10, w, h);
+    }
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(19);
+    doc.setTextColor(...NAVY);
+    doc.text("PROFORMA QUOTE", mR, 18, { align: "right" });
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(...GRAY);
+    const dateStr = new Date().toISOString().slice(0, 10);
+    doc.text(`Quote No: ${quoteNo}`, mR, 25, { align: "right" });
+    doc.text(`Date: ${dateStr}`, mR, 30, { align: "right" });
+    doc.setDrawColor(...GOLD);
+    doc.setLineWidth(1.1);
+    doc.line(mL, 36, mR, 36);
+
+    // Musteri blogu
+    let y = 46;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.setTextColor(...NAVY);
+    doc.text("CUSTOMER", mL, y);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.setTextColor(40, 40, 40);
+    const custRows = [
+      ["Name", formData.get("name")],
+      ["E-mail", formData.get("email")],
+      ["Phone", formData.get("phone") || "-"],
+      ["Company / Clinic", formData.get("company") || "-"],
+    ];
+    custRows.forEach(([k, v]) => {
+      y += 6;
+      doc.setTextColor(...GRAY);
+      doc.text(k, mL, y);
+      doc.setTextColor(40, 40, 40);
+      doc.text(asciiSafe(v), mL + 42, y);
+    });
+
+    // Konfigurasyon tablosu
+    y += 12;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.setTextColor(...NAVY);
+    doc.text("CONFIGURATION", mL, y);
+    doc.setFontSize(10);
+    const modelInfo = cfg.models.find((mm) => mm.id === configState.model);
+    const tier = MODEL_PRICING[configState.model].tiers[configState.tierIndex];
+    const styleInfo = (cfg.styles || []).find((st) => st.id === configState.chamberStyle);
+    const colInfo = (cfg.colors || []).find((c2) => c2.id === configState.color);
+    const intInfo = (cfg.interior_colors || []).find((c2) => c2.id === configState.interiorColor);
+    const seatInfo = (cfg.seat_colors || []).find((c2) => c2.id === configState.seatColor);
+    const addonNames = cfg.addons.filter((a) => configState.addons.has(a.id))
+      .map((a) => `${a.name} (+EUR ${ADDON_PRICING[a.id].toLocaleString("en-US")})`);
+    const confRows = [
+      ["Model", modelInfo ? modelInfo.name : ""],
+      ["Cabin Style", styleInfo ? styleInfo.name : "-"],
+      ["Pressure", tier.ata],
+      ["Exterior Color", colInfo ? colInfo.name : "-"],
+      ["Interior Color", intInfo ? intInfo.name : "-"],
+      ["Seat Color", seatInfo ? seatInfo.name : "-"],
+    ];
+    if (configState.model === "nexus") confRows.splice(2, 0, ["Seats", String(configState.nexusSeats)]);
+    confRows.push(["Add-ons", addonNames.length ? addonNames.join(", ") : "None"]);
+    if (configState.discountPct > 0) confRows.push(["Discount", `%${configState.discountPct} (-EUR ${computeDiscountAmount().toLocaleString("en-US")})`]);
+    if (configState.refCode) confRows.push(["Reference", configState.refCode]);
+    doc.setFont("helvetica", "normal");
+    confRows.forEach(([k, v], i) => {
+      y += 7;
+      if (i % 2 === 0) {
+        doc.setFillColor(245, 246, 249);
+        doc.rect(mL, y - 4.6, mR - mL, 7, "F");
+      }
+      doc.setTextColor(...GRAY);
+      doc.text(asciiSafe(k), mL + 2, y);
+      doc.setTextColor(40, 40, 40);
+      const lines = doc.splitTextToSize(asciiSafe(v), 92);
+      doc.text(lines, mR - 2, y, { align: "right" });
+      if (lines.length > 1) y += (lines.length - 1) * 5;
+    });
+
+    // Fiyat kutusu
+    y += 14;
+    doc.setFillColor(...NAVY);
+    doc.roundedRect(mL, y - 7, mR - mL, 16, 2, 2, "F");
+    doc.setTextColor(255, 255, 255);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.text("TOTAL (EUR)", mL + 5, y + 3);
+    doc.setFontSize(16);
+    doc.setTextColor(...GOLD);
+    doc.text(`EUR ${computeTotal().toLocaleString("en-US")}`, mR - 5, y + 3, { align: "right" });
+
+    // Not + tesekkur + footer
+    y += 20;
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8.5);
+    doc.setTextColor(...GRAY);
+    doc.text(doc.splitTextToSize("This proforma quote is not a binding contract. Final pricing and specifications are confirmed following consultation with our sales team.", mR - mL), mL, y);
+    y += 12;
+    doc.setFontSize(11);
+    doc.setTextColor(...NAVY);
+    doc.text("Thank you for choosing us.", mL, y);
+    doc.setDrawColor(...GOLD);
+    doc.setLineWidth(0.8);
+    doc.line(mL, 282, mR, 282);
+    doc.setFontSize(9);
+    doc.setTextColor(...GRAY);
+    doc.text("www.hbotchambertech.com  ·  info@hbotchambertech.com", pageW / 2, 288, { align: "center" });
+
+    const dataUri = doc.output("datauristring");
+    return {
+      base64: dataUri.slice(dataUri.indexOf("base64,") + 7),
+      name: `proforma-${quoteNo}.pdf`,
+      quoteNo,
+    };
+  }
+
   /* Biçimlendirilmiş teklif penceresi → yazdır/PDF */
   function openQuotePdf(dict) {
     updateQuoteFormHiddenField();
@@ -1650,7 +1813,7 @@
     const errorEl = document.getElementById(errorId);
     const submitBtn = form.querySelector('button[type="submit"]');
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (successEl) successEl.hidden = true;
       if (errorEl) errorEl.hidden = true;
@@ -1662,6 +1825,23 @@
       }
 
       const formData = new FormData(form);
+
+      // Konfigurator: proforma PDF uret + webhook alanlari (lang/thanks/quote_no)
+      if (formId === "quote-form") {
+        updateQuoteFormHiddenField();
+        formData.set("config_summary", (document.getElementById("config-summary-text") || {}).value || "");
+        formData.set("lang", currentLang);
+        formData.set("thanks", (dict.common && dict.common.thanks) || "Thank you for choosing us.");
+        try {
+          const pdf = await buildProformaPdf(formData);
+          if (pdf) {
+            formData.set("pdf_base64", pdf.base64);
+            formData.set("pdf_name", pdf.name);
+            formData.set("quote_no", pdf.quoteNo);
+          }
+        } catch (pdfErr) { /* PDF uretilemese de form gitsin */ }
+      }
+
       pushLeadToCrm({
         source: formId,
         name: formData.get("name") || "",
@@ -1676,17 +1856,14 @@
         ts: new Date().toISOString()
       });
 
-      fetch(form.action, { method: "POST", body: formData, headers: { Accept: "application/json" } })
-        .then((res) => res.json().catch(() => ({ success: res.ok })))
-        .then((data) => {
-          if (data && data.success) {
-            form.reset();
-            if (successEl) {
-              successEl.hidden = false;
-              setTimeout(() => (successEl.hidden = true), 8000);
-            }
-          } else {
-            throw new Error(data && data.error ? data.error : "send_failed");
+      // Apps Script webhook: yanit 302 redirect'li oldugundan okunamaz —
+      // no-cors ile gonder, opaque yaniti basari say; hata sadece network failure'da olur.
+      fetch(form.action, { method: "POST", body: formData, mode: "no-cors" })
+        .then(() => {
+          form.reset();
+          if (successEl) {
+            successEl.hidden = false;
+            setTimeout(() => (successEl.hidden = true), 8000);
           }
         })
         .catch(() => {

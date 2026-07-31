@@ -21,6 +21,7 @@ const TRANSLATIONS = {
       home_label: "Ana Sayfa",
       notfound: { title: "Sayfa Bulunamadı", desc: "Aradığınız sayfa taşınmış veya kaldırılmış olabilir.", button: "Ana Sayfaya Dön" },
       whatsapp_message: "Merhaba, HBOT Chamber Tech hakkında bilgi almak istiyorum.",
+      thanks: "Bizi tercih ettiğiniz için teşekkür ederiz.",
       sticky_cta: "Ücretsiz Teklif Al",
       nav: { home: "Ana Sayfa", technology: "Teknoloji", models: "Modeller", hbotInfo: "HBOT Nedir?", blog: "Blog", configurator: "Konfigüratör", contact: "İletişim" },
       models_menu: {
@@ -95,16 +96,15 @@ const TRANSLATIONS = {
         source_label: "Kaynak",
         disclaimer: "Bu bölümdeki isimler, haber kaynaklarında HBOT kullandığı bildirilen kişilerdir; HBOT Chamber Tech marka elçisi veya müşterisi değildir.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Futbol", text: "Kas sakatlığının tedavisi için evinde kendi hiperbarik cihazıyla HBOT yaptığı haberlerde yer aldı." },
-          { name: "LeBron James", role: "Basketbol (NBA)", text: "Netflix 'Starting 5' belgeselinde 60-90 dakikalık HBOT seansı yaparken görüntülendi." },
-          { name: "Novak Djokovic", role: "Tenis", text: "Zirvede kalmak için HBOT kullandığı spor basınında aktarıldı." },
-          { name: "Serena Williams", role: "Tenis", text: "Diz sakatlığının rehabilitasyonunda HBOT kullandığı bildirildi." },
-          { name: "Justin Bieber", role: "Müzisyen", text: "Hiperbarik kabin içindeki fotoğraflarını kendi Instagram hesabında paylaştı." },
-          { name: "Floyd Mayweather", role: "Boks", text: "40'lı yaşlarında bile zirvede kalmasını HBOT'a bağladığı aktarıldı." },
-          { name: "Tiger Woods", role: "Golf", text: "2010'dan beri HBOT kullandığı ve evinde kabin bulundurduğu bildirildi." },
-          { name: "Michael Phelps", role: "Yüzme", text: "Hiperbarik kabinde uyuduğu haberleştirilen olimpiyat efsanesi." },
-          { name: "Bryan Johnson", role: "Longevity Girişimcisi", text: "60 seanslık yoğun HBOT protokolünü tamamladığını kamuoyuyla paylaştı." },
-          { name: "Kendall Jenner", role: "Model / TV", text: "HBOT kullandığı bilinen isimler arasında gösteriliyor." }
+          { name: "Cristiano Ronaldo", role: "Futbolcu", text: "Kas sakatlığının tedavisi için evinde kendi hiperbarik cihazıyla HBOT yaptığı haberlerde yer aldı.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "LeBron James", role: "Basketbolcu", text: "Netflix 'Starting 5' belgeselinde 60-90 dakikalık HBOT seansı yaparken görüntülendi.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
+          { name: "Novak Djokovic", role: "Tenisçi", text: "Zirvede kalmak için HBOT kullandığı spor basınında aktarıldı.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
+          { name: "Justin Bieber", role: "Şarkıcı", text: "Hiperbarik kabinde uyuduğu ve tedavisinin parçası yaptığı haberleştirildi.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
+          { name: "Tiger Woods", role: "Golfçü", text: "2010'dan beri HBOT kullandığı ve evinde kabin bulundurduğu bildirildi.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
+          { name: "Michael Phelps", role: "Yüzücü", text: "Hiperbarik kabinde uyuduğu haberleştirilen olimpiyat efsanesi.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
+          { name: "Madonna", role: "Şarkıcı", text: "Oksijen bazlı bakım ve terapileri rutininin parçası yaptığı moda basınında yazıldı.", source: "https://www.nytimes.com/2006/04/06/fashion/thursdaystyles/does-the-quickfix-oxygen-facial-really-work.html" },
+          { name: "Kendall Jenner", role: "Model", text: "Wellness odasında hiperbarik kabin bulundurduğu Vogue'da yer aldı.", source: "https://www.vogue.com/article/what-kendall-jenner-keeps-in-her-wellness-room" },
+          { name: "Tom Brady", role: "NFL Oyuncusu", text: "Toparlanma rutininde HBOT kullandığı spor basınında aktarıldı.", source: "https://thesportsrush.com/nfl-news-troy-aikman-and-tom-brady-use-the-same-scientific-practice-for-their-recovery-enhancement/" }
         ]
       },
       indications_teaser: {
@@ -690,6 +690,7 @@ const TRANSLATIONS = {
       home_label: "Home",
       notfound: { title: "Page Not Found", desc: "The page you are looking for may have been moved or removed.", button: "Back to Home" },
       whatsapp_message: "Hello, I'd like to learn more about HBOT Chamber Tech.",
+      thanks: "Thank you for choosing us.",
       sticky_cta: "Get a Free Quote",
       nav: { home: "Home", technology: "Technology", models: "Models", hbotInfo: "What Is HBOT?", blog: "Blog", configurator: "Configurator", contact: "Contact" },
       models_menu: {
@@ -764,16 +765,15 @@ const TRANSLATIONS = {
         source_label: "Source",
         disclaimer: "The individuals listed here have been reported by news sources to use HBOT; they are not brand ambassadors or customers of HBOT Chamber Tech.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Football", text: "Featured in reports for doing HBOT at home with his own hyperbaric device to treat a muscle injury." },
-          { name: "LeBron James", role: "Basketball (NBA)", text: "Filmed doing a 60-90 minute HBOT session in the Netflix series 'Starting 5'." },
-          { name: "Novak Djokovic", role: "Tennis", text: "Covered in sports media as using HBOT to stay at the top of his game." },
-          { name: "Serena Williams", role: "Tennis", text: "Reported to have used HBOT while rehabbing a knee injury." },
-          { name: "Justin Bieber", role: "Musician", text: "Shared photos of himself inside a hyperbaric chamber on his own Instagram." },
-          { name: "Floyd Mayweather", role: "Boxing", text: "Credited HBOT for helping him stay on top of his game well into his 40s." },
-          { name: "Tiger Woods", role: "Golf", text: "Reported to have used HBOT since 2010 and to keep a chamber at home." },
-          { name: "Michael Phelps", role: "Swimming", text: "The Olympic legend reported to sleep in a hyperbaric chamber." },
-          { name: "Bryan Johnson", role: "Longevity Entrepreneur", text: "Publicly shared completing an intensive 60-session HBOT protocol." },
-          { name: "Kendall Jenner", role: "Model / TV", text: "Listed among celebrities known to use hyperbaric oxygen therapy." }
+          { name: "Cristiano Ronaldo", role: "Footballer", text: "Featured in reports for doing HBOT at home with his own hyperbaric device to treat a muscle injury.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "LeBron James", role: "Basketball player", text: "Filmed doing a 60-90 minute HBOT session in the Netflix series 'Starting 5'.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
+          { name: "Novak Djokovic", role: "Tennis player", text: "Covered in sports media as using HBOT to stay at the top of his game.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
+          { name: "Justin Bieber", role: "Singer", text: "Reported to sleep in a hyperbaric chamber as part of his health regimen.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
+          { name: "Tiger Woods", role: "Golfer", text: "Reported to have used HBOT since 2010 and to keep a chamber at home.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
+          { name: "Michael Phelps", role: "Swimmer", text: "The Olympic legend reported to sleep in a hyperbaric chamber.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
+          { name: "Madonna", role: "Singer", text: "Fashion press covered her use of oxygen-based treatments as part of her beauty regimen.", source: "https://www.nytimes.com/2006/04/06/fashion/thursdaystyles/does-the-quickfix-oxygen-facial-really-work.html" },
+          { name: "Kendall Jenner", role: "Model", text: "Featured in Vogue for keeping a hyperbaric chamber in her wellness room.", source: "https://www.vogue.com/article/what-kendall-jenner-keeps-in-her-wellness-room" },
+          { name: "Tom Brady", role: "NFL player", text: "Reported in sports media to use HBOT as part of his recovery routine.", source: "https://thesportsrush.com/nfl-news-troy-aikman-and-tom-brady-use-the-same-scientific-practice-for-their-recovery-enhancement/" }
         ]
       },
       indications_teaser: {
@@ -1359,6 +1359,7 @@ const TRANSLATIONS = {
       home_label: "Главная",
       notfound: { title: "Страница не найдена", desc: "Возможно, страница была перемещена или удалена.", button: "На главную" },
       whatsapp_message: "Здравствуйте, я хотел(а) бы узнать больше о HBOT Chamber Tech.",
+      thanks: "Спасибо, что выбрали нас.",
       sticky_cta: "Получить предложение",
       nav: { home: "Главная", technology: "Технологии", models: "Модели", hbotInfo: "Что такое ГБО?", blog: "Блог", configurator: "Конфигуратор", contact: "Контакты" },
       models_menu: {
@@ -1433,16 +1434,15 @@ const TRANSLATIONS = {
         source_label: "Источник",
         disclaimer: "Перечисленные здесь лица, по сообщениям СМИ, используют ГБО; они не являются амбассадорами или клиентами HBOT Chamber Tech.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Футбол", text: "СМИ сообщали, что он делает ГБО дома на собственном гипербарическом аппарате для лечения мышечной травмы." },
-          { name: "LeBron James", role: "Баскетбол (NBA)", text: "Снят за 60-90-минутным сеансом ГБО в сериале Netflix «Starting 5»." },
-          { name: "Novak Djokovic", role: "Теннис", text: "Спортивные СМИ писали, что он использует ГБО, чтобы оставаться на вершине." },
-          { name: "Serena Williams", role: "Теннис", text: "Сообщалось, что она использовала ГБО при восстановлении после травмы колена." },
-          { name: "Justin Bieber", role: "Музыкант", text: "Делился фотографиями из гипербарической камеры в своём Instagram." },
-          { name: "Floyd Mayweather", role: "Бокс", text: "Приписывает ГБО то, что он оставался на пике формы и после 40 лет." },
-          { name: "Tiger Woods", role: "Гольф", text: "Сообщалось, что он использует ГБО с 2010 года и держит камеру дома." },
-          { name: "Michael Phelps", role: "Плавание", text: "Легенда Олимпиады, о котором писали, что он спит в гипербарической камере." },
-          { name: "Bryan Johnson", role: "Предприниматель в сфере долголетия", text: "Публично рассказал о прохождении интенсивного протокола из 60 сеансов ГБО." },
-          { name: "Kendall Jenner", role: "Модель / ТВ", text: "Входит в список знаменитостей, использующих гипербарическую кислородную терапию." }
+          { name: "Cristiano Ronaldo", role: "Футболист", text: "СМИ сообщали, что он делает ГБО дома на собственном гипербарическом аппарате для лечения мышечной травмы.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "LeBron James", role: "Баскетболист", text: "Снят за 60-90-минутным сеансом ГБО в сериале Netflix «Starting 5».", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
+          { name: "Novak Djokovic", role: "Теннисист", text: "Спортивные СМИ писали, что он использует ГБО, чтобы оставаться на вершине.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
+          { name: "Justin Bieber", role: "Певец", text: "Сообщалось, что он спит в гипербарической камере как часть своего режима здоровья.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
+          { name: "Tiger Woods", role: "Гольфист", text: "Сообщалось, что он использует ГБО с 2010 года и держит камеру дома.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
+          { name: "Michael Phelps", role: "Пловец", text: "Легенда Олимпиады, о котором писали, что он спит в гипербарической камере.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
+          { name: "Madonna", role: "Певица", text: "Модная пресса писала о её использовании кислородных процедур в рамках ухода за собой.", source: "https://www.nytimes.com/2006/04/06/fashion/thursdaystyles/does-the-quickfix-oxygen-facial-really-work.html" },
+          { name: "Kendall Jenner", role: "Модель", text: "Vogue писал о гипербарической камере в её wellness-комнате.", source: "https://www.vogue.com/article/what-kendall-jenner-keeps-in-her-wellness-room" },
+          { name: "Tom Brady", role: "Игрок НФЛ", text: "Спортивные СМИ сообщали, что он использует ГБО в своей программе восстановления.", source: "https://thesportsrush.com/nfl-news-troy-aikman-and-tom-brady-use-the-same-scientific-practice-for-their-recovery-enhancement/" }
         ]
       },
       indications_teaser: {
@@ -2028,6 +2028,7 @@ const TRANSLATIONS = {
       home_label: "الرئيسية",
       notfound: { title: "الصفحة غير موجودة", desc: "ربما تم نقل الصفحة التي تبحث عنها أو إزالتها.", button: "العودة إلى الرئيسية" },
       whatsapp_message: "مرحبًا، أرغب في معرفة المزيد عن HBOT Chamber Tech.",
+      thanks: "شكرا لاختيارك لنا.",
       sticky_cta: "احصل على عرض سعر",
       nav: { home: "الرئيسية", technology: "التقنية", models: "الموديلات", hbotInfo: "ما هو HBOT؟", blog: "المدونة", configurator: "أداة التكوين", contact: "اتصل بنا" },
       models_menu: {
@@ -2102,16 +2103,15 @@ const TRANSLATIONS = {
         source_label: "المصدر",
         disclaimer: "الأسماء المذكورة هنا ورد في مصادر إخبارية أنها تستخدم العلاج بالأكسجين عالي الضغط؛ وليسوا سفراء للعلامة التجارية أو عملاء HBOT Chamber Tech.",
         items: [
-          { name: "Cristiano Ronaldo", role: "كرة القدم", text: "ورد في التقارير أنه يجري جلسات العلاج بالأكسجين عالي الضغط في منزله بجهازه الخاص لعلاج إصابة عضلية." },
-          { name: "LeBron James", role: "كرة السلة (NBA)", text: "ظهر وهو يجري جلسة مدتها 60-90 دقيقة في مسلسل Netflix «Starting 5»." },
-          { name: "Novak Djokovic", role: "التنس", text: "ذكرت وسائل الإعلام الرياضية أنه يستخدم العلاج بالأكسجين عالي الضغط للبقاء في القمة." },
-          { name: "Serena Williams", role: "التنس", text: "أفيد بأنها استخدمت العلاج بالأكسجين عالي الضغط أثناء تأهيل إصابة الركبة." },
-          { name: "Justin Bieber", role: "موسيقي", text: "شارك صوراً لنفسه داخل غرفة الضغط العالي على حسابه الخاص في إنستغرام." },
-          { name: "Floyd Mayweather", role: "الملاكمة", text: "نُقل عنه أن العلاج بالأكسجين عالي الضغط ساعده على البقاء في القمة بعد الأربعين." },
-          { name: "Tiger Woods", role: "الغولف", text: "أفيد بأنه يستخدم العلاج بالأكسجين عالي الضغط منذ عام 2010 ويحتفظ بغرفة في منزله." },
-          { name: "Michael Phelps", role: "السباحة", text: "أسطورة الأولمبياد الذي ورد أنه ينام في غرفة الضغط العالي." },
-          { name: "Bryan Johnson", role: "رائد أعمال في طول العمر", text: "شارك علناً إكماله بروتوكولاً مكثفاً من 60 جلسة علاج بالأكسجين عالي الضغط." },
-          { name: "Kendall Jenner", role: "عارضة أزياء / تلفزيون", text: "مدرجة ضمن المشاهير المعروفين باستخدام العلاج بالأكسجين عالي الضغط." }
+          { name: "Cristiano Ronaldo", role: "لاعب كرة قدم", text: "ورد في التقارير أنه يجري جلسات العلاج بالأكسجين عالي الضغط في منزله بجهازه الخاص لعلاج إصابة عضلية.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "LeBron James", role: "لاعب كرة سلة", text: "ظهر وهو يجري جلسة مدتها 60-90 دقيقة في مسلسل Netflix «Starting 5».", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
+          { name: "Novak Djokovic", role: "لاعب تنس", text: "ذكرت وسائل الإعلام الرياضية أنه يستخدم العلاج بالأكسجين عالي الضغط للبقاء في القمة.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
+          { name: "Justin Bieber", role: "مغنٍّ", text: "أفيد بأنه ينام في غرفة الضغط العالي كجزء من نظامه الصحي.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
+          { name: "Tiger Woods", role: "لاعب غولف", text: "أفيد بأنه يستخدم العلاج بالأكسجين عالي الضغط منذ عام 2010 ويحتفظ بغرفة في منزله.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
+          { name: "Michael Phelps", role: "سباح", text: "أسطورة الأولمبياد الذي ورد أنه ينام في غرفة الضغط العالي.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
+          { name: "Madonna", role: "مغنية", text: "تناولت صحافة الموضة استخدامها للعلاجات القائمة على الأكسجين ضمن روتين جمالها.", source: "https://www.nytimes.com/2006/04/06/fashion/thursdaystyles/does-the-quickfix-oxygen-facial-really-work.html" },
+          { name: "Kendall Jenner", role: "عارضة أزياء", text: "ذكرت Vogue أنها تحتفظ بغرفة ضغط عالٍ في غرفة العافية الخاصة بها.", source: "https://www.vogue.com/article/what-kendall-jenner-keeps-in-her-wellness-room" },
+          { name: "Tom Brady", role: "لاعب NFL", text: "ذكرت وسائل الإعلام الرياضية أنه يستخدم العلاج بالأكسجين عالي الضغط ضمن برنامج تعافيه.", source: "https://thesportsrush.com/nfl-news-troy-aikman-and-tom-brady-use-the-same-scientific-practice-for-their-recovery-enhancement/" }
         ]
       },
       indications_teaser: {
