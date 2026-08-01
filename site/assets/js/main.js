@@ -801,6 +801,7 @@
         const dict = TRANSLATIONS[currentLang];
         renderConfigStyles(dict);
         renderConfigSummary(dict);
+        updateConfigStage(dict);
       });
     });
   }
@@ -824,6 +825,7 @@
         const dict = TRANSLATIONS[currentLang];
         renderConfigColors(dict);
         renderConfigSummary(dict);
+        updateConfigStage(dict);
       });
     });
   }
@@ -847,18 +849,17 @@
         const dict = TRANSLATIONS[currentLang];
         renderConfigInteriorColors(dict);
         renderConfigSummary(dict);
+        updateConfigStage(dict);
       });
     });
   }
 
-  /* Renk tint güçleri: blend-mode "multiply" — boyalı yüzey fizigi (albedo x isik):
-     govdedeki beyaz vurgular secilen renkle carpilir ("isikli/yanik" gorunum olmaz),
-     doku ve golgeler korunur, sonuc mat/gercekci olur.
-     pearl-white/cream = notr (tint yok). */
-  const EXT_TINT_STRENGTH = { "pearl-white": 0, sampanya: 0.55, bronz: 0.6, grafit: 0.65, antrasit: 0.65, "mat-siyah": 0.72, "gece-laciverti": 0.7, bordo: 0.68, zumrut: 0.68 };
-  const INT_TINT_STRENGTH = { cream: 0, "kum-beji": 0.5, konyak: 0.6, anthracite: 0.65, burgundy: 0.68, navy: 0.68 };
+  /* Renk tint güçleri: blend-mode "color" — cihaz gövdesinin rengi değişir, parlaklık/doku korunur.
+     pearl-white/cream = nötr (tint yok). */
+  const EXT_TINT_STRENGTH = { "pearl-white": 0, sampanya: 0.4, bronz: 0.45, grafit: 0.5, antrasit: 0.5, "mat-siyah": 0.55, "gece-laciverti": 0.55, bordo: 0.55, zumrut: 0.55 };
+  const INT_TINT_STRENGTH = { cream: 0, "kum-beji": 0.35, konyak: 0.45, anthracite: 0.5, burgundy: 0.55, navy: 0.55 };
   /* Koltuk tint'i: sadece kullanıcı koltuk rengini bilinçli değiştirdiyse uygulanır (fotoğraf sadeliği korunur) */
-  const SEAT_TINT_STRENGTH = { konyak: 0.6, siyah: 0.7, lacivert: 0.65, krem: 0.5, bordo: 0.68, gri: 0.55 };
+  const SEAT_TINT_STRENGTH = { konyak: 0.55, siyah: 0.65, lacivert: 0.6, krem: 0.45, bordo: 0.65, gri: 0.5 };
 
   /* v7: tint bölge maskeleri — sahne/arka plan asla renklenmez; sadece maskeli kabin/döşeme/koltuk alanı */
   const STAGE_TINT_MASKS = {
@@ -949,6 +950,7 @@
         const dict = TRANSLATIONS[currentLang];
         renderConfigSeatColors(dict);
         renderConfigSummary(dict);
+        updateConfigStage(dict);
       });
     });
   }
@@ -981,6 +983,7 @@
         renderConfigPressure(dict);
         renderNexusSeatSection(dict);
         renderConfigSummary(dict);
+        updateConfigStage(dict);
       });
     });
   }
@@ -1369,30 +1372,101 @@
       .replace(/ü/g, "u").replace(/Ü/g, "U");
   }
 
-  function loadLogoForPdf() {
+  function loadImageForPdf(src, opts) {
+    const o = opts || {};
+    const maxDim = o.maxDim || 0;
+    const format = o.format || "png"; // "png" (seffaflik) veya "jpeg" (kucuk boyut, fotograf)
     return new Promise((resolve) => {
       const img = new Image();
       img.onload = () => {
         try {
+          let w = img.naturalWidth, h = img.naturalHeight;
+          if (maxDim && Math.max(w, h) > maxDim) {
+            const scale = maxDim / Math.max(w, h);
+            w = Math.round(w * scale);
+            h = Math.round(h * scale);
+          }
           const canvas = document.createElement("canvas");
-          canvas.width = img.naturalWidth;
-          canvas.height = img.naturalHeight;
-          canvas.getContext("2d").drawImage(img, 0, 0);
-          resolve({ dataUrl: canvas.toDataURL("image/png"), ratio: img.naturalHeight / img.naturalWidth });
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext("2d");
+          if (format === "jpeg") {
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, w, h);
+          }
+          ctx.drawImage(img, 0, 0, w, h);
+          const dataUrl = format === "jpeg" ? canvas.toDataURL("image/jpeg", 0.78) : canvas.toDataURL("image/png");
+          resolve({ dataUrl, ratio: h / w, format: format.toUpperCase() });
         } catch (e) { resolve(null); }
       };
       img.onerror = () => resolve(null);
-      img.src = "assets/img/logo-full.png";
+      img.src = src;
     });
   }
+  function loadLogoForPdf() {
+    return loadImageForPdf("assets/img/logo-full.png", { format: "png" });
+  }
+  /* Yapılandırılan modelin gercek urun fotografi (dis gorunum) — proformada gosterilir.
+     JPEG + kucultme: PDF/e-posta boyutunu makul tutmak icin (PNG ile 10+ MB'a cikiyordu). */
+  function loadProductPhotoForPdf() {
+    const key = REAL_STAGE[configState.model] || "real/apex-lounge-real";
+    return loadImageForPdf(`assets/img/models/${key}.webp`, { format: "jpeg", maxDim: 900 });
+  }
 
-  /* Proforma PDF (jsPDF): gorsel kimlikli, ASCII-safe Ingilizce icerik.
+  /* Unicode PDF fontu (Turkce + Kiril destekli, subset NotoSans) — jsPDF'e bir kez kaydedilir. */
+  let pdfFontStatus = null; // null=yuklenmedi, promise=yukleniyor, true/false=sonuc
+  async function ensurePdfFont(doc) {
+    if (pdfFontStatus === true) { registerPdfFont(doc); return true; }
+    if (pdfFontStatus === false) return false;
+    if (!pdfFontStatus) {
+      pdfFontStatus = (async () => {
+        try {
+          const [reg, bold] = await Promise.all([
+            fetch("assets/fonts/NotoSans-Regular.ttf?v=2").then((r) => r.arrayBuffer()),
+            fetch("assets/fonts/NotoSans-Bold.ttf?v=2").then((r) => r.arrayBuffer()),
+          ]);
+          pdfFontRegBase64 = arrayBufferToBase64(reg);
+          pdfFontBoldBase64 = arrayBufferToBase64(bold);
+          return true;
+        } catch (e) { return false; }
+      })();
+    }
+    const ok = await pdfFontStatus;
+    pdfFontStatus = ok;
+    if (ok) registerPdfFont(doc);
+    return ok;
+  }
+  let pdfFontRegBase64 = null, pdfFontBoldBase64 = null;
+  function arrayBufferToBase64(buf) {
+    let binary = "";
+    const bytes = new Uint8Array(buf);
+    const chunk = 0x8000;
+    for (let i = 0; i < bytes.length; i += chunk) {
+      binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+    }
+    return btoa(binary);
+  }
+  function registerPdfFont(doc) {
+    doc.addFileToVFS("NotoSans-Regular.ttf", pdfFontRegBase64);
+    doc.addFont("NotoSans-Regular.ttf", "NotoSans", "normal");
+    doc.addFileToVFS("NotoSans-Bold.ttf", pdfFontBoldBase64);
+    doc.addFont("NotoSans-Bold.ttf", "NotoSans", "bold");
+  }
+
+  /* Proforma PDF (jsPDF): gorsel kimlikli, formu doldurulan dilde uretilir.
+     Arapca icin harf sekillendirme (shaping) desteklenmedigi icin Ingilizce icerikle uretilir.
      Donus: { base64, name, quoteNo } — gonderim webhook'una eklenir. */
-  async function buildProformaPdf(formData) {
+  async function buildProformaPdf(formData, dict) {
     if (!window.jspdf || !window.jspdf.jsPDF) return null;
-    const cfg = (TRANSLATIONS.en || TRANSLATIONS.tr).configurator;
+    const pdfDict = (dict && currentLang !== "ar") ? dict : (TRANSLATIONS.en || TRANSLATIONS.tr);
+    const cfg = pdfDict.configurator;
+    const s = cfg.summary;
+    const qf = cfg.quote_form || {};
     const quoteNo = generateQuoteNo();
     const doc = new window.jspdf.jsPDF({ unit: "mm", format: "a4" });
+    const fontOk = await ensurePdfFont(doc);
+    const FONT = fontOk ? "NotoSans" : "helvetica";
+    const T = fontOk ? (v) => String(v == null ? "" : v) : asciiSafe;
     const NAVY = [27, 42, 74], GOLD = [201, 164, 92], GRAY = [110, 110, 110];
     const pageW = 210, mL = 16, mR = 194;
 
@@ -1402,49 +1476,60 @@
       const w = 46, h = w * logo.ratio;
       doc.addImage(logo.dataUrl, "PNG", mL, 10, w, h);
     }
-    doc.setFont("helvetica", "bold");
+    doc.setFont(FONT, "bold");
     doc.setFontSize(19);
     doc.setTextColor(...NAVY);
-    doc.text("PROFORMA QUOTE", mR, 18, { align: "right" });
+    doc.text(T(s.pdf_title || "Proforma Quote").toUpperCase(), mR, 18, { align: "right" });
     doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
+    doc.setFont(FONT, "normal");
     doc.setTextColor(...GRAY);
-    const dateStr = new Date().toISOString().slice(0, 10);
-    doc.text(`Quote No: ${quoteNo}`, mR, 25, { align: "right" });
-    doc.text(`Date: ${dateStr}`, mR, 30, { align: "right" });
+    const dateStr = new Date().toLocaleDateString(currentLang === "ru" ? "ru-RU" : currentLang === "tr" ? "tr-TR" : "en-GB", { year: "numeric", month: "long", day: "numeric" });
+    doc.text(`${T(s.pdf_quote_no || "Quote No")}: ${quoteNo}`, mR, 25, { align: "right" });
+    doc.text(`${T(s.pdf_date || "Date")}: ${T(dateStr)}`, mR, 30, { align: "right" });
     doc.setDrawColor(...GOLD);
     doc.setLineWidth(1.1);
     doc.line(mL, 36, mR, 36);
 
-    // Musteri blogu
+    // Secilen urunun gercek fotografi
     let y = 46;
-    doc.setFont("helvetica", "bold");
+    const productPhoto = await loadProductPhotoForPdf();
+    if (productPhoto) {
+      const maxW = mR - mL, maxH = 62;
+      let pw = maxW, ph = pw * productPhoto.ratio;
+      if (ph > maxH) { ph = maxH; pw = ph / productPhoto.ratio; }
+      const px = mL + (maxW - pw) / 2;
+      doc.addImage(productPhoto.dataUrl, productPhoto.format || "JPEG", px, y, pw, ph);
+      y += ph + 10;
+    }
+
+    // Musteri blogu
+    doc.setFont(FONT, "bold");
     doc.setFontSize(11);
     doc.setTextColor(...NAVY);
-    doc.text("CUSTOMER", mL, y);
-    doc.setFont("helvetica", "normal");
+    doc.text(T(s.pdf_customer_section || "Customer"), mL, y);
+    doc.setFont(FONT, "normal");
     doc.setFontSize(10);
     doc.setTextColor(40, 40, 40);
     const custRows = [
-      ["Name", formData.get("name")],
-      ["E-mail", formData.get("email")],
-      ["Phone", formData.get("phone") || "-"],
-      ["Company / Clinic", formData.get("company") || "-"],
+      [qf.name || "Name", formData.get("name")],
+      [qf.email || "E-mail", formData.get("email")],
+      [qf.phone || "Phone", formData.get("phone") || "-"],
+      [qf.company || "Company / Clinic", formData.get("company") || "-"],
     ];
     custRows.forEach(([k, v]) => {
       y += 6;
       doc.setTextColor(...GRAY);
-      doc.text(k, mL, y);
+      doc.text(T(k), mL, y);
       doc.setTextColor(40, 40, 40);
-      doc.text(asciiSafe(v), mL + 42, y);
+      doc.text(T(v), mL + 42, y);
     });
 
     // Konfigurasyon tablosu
     y += 12;
-    doc.setFont("helvetica", "bold");
+    doc.setFont(FONT, "bold");
     doc.setFontSize(11);
     doc.setTextColor(...NAVY);
-    doc.text("CONFIGURATION", mL, y);
+    doc.text(T(s.pdf_configuration_section || "Configuration"), mL, y);
     doc.setFontSize(10);
     const modelInfo = cfg.models.find((mm) => mm.id === configState.model);
     const tier = MODEL_PRICING[configState.model].tiers[configState.tierIndex];
@@ -1453,20 +1538,20 @@
     const intInfo = (cfg.interior_colors || []).find((c2) => c2.id === configState.interiorColor);
     const seatInfo = (cfg.seat_colors || []).find((c2) => c2.id === configState.seatColor);
     const addonNames = cfg.addons.filter((a) => configState.addons.has(a.id))
-      .map((a) => `${a.name} (+EUR ${ADDON_PRICING[a.id].toLocaleString("en-US")})`);
+      .map((a) => `${a.name} (+${formatPrice(ADDON_PRICING[a.id])})`);
     const confRows = [
-      ["Model", modelInfo ? modelInfo.name : ""],
-      ["Cabin Style", styleInfo ? styleInfo.name : "-"],
-      ["Pressure", tier.ata],
-      ["Exterior Color", colInfo ? colInfo.name : "-"],
-      ["Interior Color", intInfo ? intInfo.name : "-"],
-      ["Seat Color", seatInfo ? seatInfo.name : "-"],
+      [s.model_label || "Model", modelInfo ? modelInfo.name : ""],
+      [s.style_label || "Cabin Style", styleInfo ? styleInfo.name : "-"],
+      [s.pressure_label || "Pressure", tier.ata],
+      [s.color_label || "Exterior Color", colInfo ? colInfo.name : "-"],
+      [s.interior_color_label || "Interior Color", intInfo ? intInfo.name : "-"],
+      [s.seat_color_label || "Seat Color", seatInfo ? seatInfo.name : "-"],
     ];
-    if (configState.model === "nexus") confRows.splice(2, 0, ["Seats", String(configState.nexusSeats)]);
-    confRows.push(["Add-ons", addonNames.length ? addonNames.join(", ") : "None"]);
-    if (configState.discountPct > 0) confRows.push(["Discount", `%${configState.discountPct} (-EUR ${computeDiscountAmount().toLocaleString("en-US")})`]);
-    if (configState.refCode) confRows.push(["Reference", configState.refCode]);
-    doc.setFont("helvetica", "normal");
+    if (configState.model === "nexus") confRows.splice(2, 0, [s.seats_label || "Seats", String(configState.nexusSeats)]);
+    confRows.push([s.addons_label || "Add-ons", addonNames.length ? addonNames.join(", ") : (s.none_selected || "None")]);
+    if (configState.discountPct > 0) confRows.push([s.discount_label || "Discount", `%${configState.discountPct} (-${formatPrice(computeDiscountAmount())})`]);
+    if (configState.refCode) confRows.push(["Ref", configState.refCode]);
+    doc.setFont(FONT, "normal");
     confRows.forEach(([k, v], i) => {
       y += 7;
       if (i % 2 === 0) {
@@ -1474,9 +1559,9 @@
         doc.rect(mL, y - 4.6, mR - mL, 7, "F");
       }
       doc.setTextColor(...GRAY);
-      doc.text(asciiSafe(k), mL + 2, y);
+      doc.text(T(k), mL + 2, y);
       doc.setTextColor(40, 40, 40);
-      const lines = doc.splitTextToSize(asciiSafe(v), 92);
+      const lines = doc.splitTextToSize(T(v), 92);
       doc.text(lines, mR - 2, y, { align: "right" });
       if (lines.length > 1) y += (lines.length - 1) * 5;
     });
@@ -1486,23 +1571,24 @@
     doc.setFillColor(...NAVY);
     doc.roundedRect(mL, y - 7, mR - mL, 16, 2, 2, "F");
     doc.setTextColor(255, 255, 255);
-    doc.setFont("helvetica", "bold");
+    doc.setFont(FONT, "bold");
     doc.setFontSize(11);
-    doc.text("TOTAL (EUR)", mL + 5, y + 3);
+    doc.text(T((s.total_label || "Total") + ` (${currentCurrency})`).toUpperCase(), mL + 5, y + 3);
     doc.setFontSize(16);
     doc.setTextColor(...GOLD);
-    doc.text(`EUR ${computeTotal().toLocaleString("en-US")}`, mR - 5, y + 3, { align: "right" });
+    doc.text(T(formatPrice(computeTotal())), mR - 5, y + 3, { align: "right" });
 
     // Not + tesekkur + footer
     y += 20;
-    doc.setFont("helvetica", "normal");
+    doc.setFont(FONT, "normal");
     doc.setFontSize(8.5);
     doc.setTextColor(...GRAY);
-    doc.text(doc.splitTextToSize("This proforma quote is not a binding contract. Final pricing and specifications are confirmed following consultation with our sales team.", mR - mL), mL, y);
+    const disclaimerTxt = s.disclaimer || "This proforma quote is not a binding contract. Final pricing and specifications are confirmed following consultation with our sales team.";
+    doc.text(doc.splitTextToSize(T(disclaimerTxt), mR - mL), mL, y);
     y += 12;
     doc.setFontSize(11);
     doc.setTextColor(...NAVY);
-    doc.text("Thank you for choosing us.", mL, y);
+    doc.text(T((pdfDict.common && pdfDict.common.thanks) || "Thank you for choosing us."), mL, y);
     doc.setDrawColor(...GOLD);
     doc.setLineWidth(0.8);
     doc.line(mL, 282, mR, 282);
@@ -1826,17 +1912,18 @@
 
       const formData = new FormData(form);
 
-      // Konfigurator: proforma PDF uret + webhook alanlari (lang/thanks/quote_no)
+      // Konfigurator: marka kimlikli proforma PDF uret + gercek urun fotografiyle ek olarak gonder
       if (formId === "quote-form") {
         updateQuoteFormHiddenField();
         formData.set("config_summary", (document.getElementById("config-summary-text") || {}).value || "");
-        formData.set("lang", currentLang);
-        formData.set("thanks", (dict.common && dict.common.thanks) || "Thank you for choosing us.");
         try {
-          const pdf = await buildProformaPdf(formData);
+          const pdf = await buildProformaPdf(formData, dict);
           if (pdf) {
-            formData.set("pdf_base64", pdf.base64);
-            formData.set("pdf_name", pdf.name);
+            const byteChars = atob(pdf.base64);
+            const byteNums = new Array(byteChars.length);
+            for (let i = 0; i < byteChars.length; i++) byteNums[i] = byteChars.charCodeAt(i);
+            const pdfBlob = new Blob([new Uint8Array(byteNums)], { type: "application/pdf" });
+            formData.set("proforma_pdf", pdfBlob, pdf.name);
             formData.set("quote_no", pdf.quoteNo);
           }
         } catch (pdfErr) { /* PDF uretilemese de form gitsin */ }
@@ -1856,14 +1943,17 @@
         ts: new Date().toISOString()
       });
 
-      // Apps Script webhook: yanit 302 redirect'li oldugundan okunamaz —
-      // no-cors ile gonder, opaque yaniti basari say; hata sadece network failure'da olur.
-      fetch(form.action, { method: "POST", body: formData, mode: "no-cors" })
-        .then(() => {
-          form.reset();
-          if (successEl) {
-            successEl.hidden = false;
-            setTimeout(() => (successEl.hidden = true), 8000);
+      fetch(form.action, { method: "POST", body: formData, headers: { Accept: "application/json" } })
+        .then((res) => res.json().catch(() => ({ success: res.ok })))
+        .then((data) => {
+          if (data && data.success) {
+            form.reset();
+            if (successEl) {
+              successEl.hidden = false;
+              setTimeout(() => (successEl.hidden = true), 8000);
+            }
+          } else {
+            throw new Error(data && data.error ? data.error : "send_failed");
           }
         })
         .catch(() => {

@@ -460,7 +460,9 @@ const TRANSLATIONS = {
         email_button: "Teklifi E-postayla Gönder",
         pdf_title: "Yapılandırma Teklifi",
         pdf_quote_no: "Teklif No",
-        pdf_date: "Tarih"
+        pdf_date: "Tarih",
+        pdf_customer_section: "MÜŞTERİ BİLGİLERİ",
+        pdf_configuration_section: "YAPILANDIRMA DETAYLARI"
       },
       stage: {
         view_exterior: "Dış Görünüm",
@@ -1129,7 +1131,9 @@ const TRANSLATIONS = {
         email_button: "Send Quote via Email",
         pdf_title: "Configuration Quote",
         pdf_quote_no: "Quote No",
-        pdf_date: "Date"
+        pdf_date: "Date",
+        pdf_customer_section: "CUSTOMER INFORMATION",
+        pdf_configuration_section: "CONFIGURATION DETAILS"
       },
       stage: {
         view_exterior: "Exterior View",
@@ -1798,7 +1802,9 @@ const TRANSLATIONS = {
         email_button: "Отправить предложение по e-mail",
         pdf_title: "Коммерческое предложение",
         pdf_quote_no: "№ предложения",
-        pdf_date: "Дата"
+        pdf_date: "Дата",
+        pdf_customer_section: "ИНФОРМАЦИЯ О КЛИЕНТЕ",
+        pdf_configuration_section: "ДЕТАЛИ КОНФИГУРАЦИИ"
       },
       stage: {
         view_exterior: "Вид снаружи",
@@ -2467,7 +2473,9 @@ const TRANSLATIONS = {
         email_button: "إرسال العرض بالبريد الإلكتروني",
         pdf_title: "عرض سعر التكوين",
         pdf_quote_no: "رقم العرض",
-        pdf_date: "التاريخ"
+        pdf_date: "التاريخ",
+        pdf_customer_section: "معلومات العميل",
+        pdf_configuration_section: "تفاصيل التكوين"
       },
       stage: {
         view_exterior: "العرض الخارجي",

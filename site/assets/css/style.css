@@ -414,12 +414,12 @@ h1, h2, h3, h4, p { margin: 0; }
 .sector-icon svg { width: 26px; height: 26px; }
 .sector-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 4px; }
 .sector-card .sector-tagline { display: block; font-size: 12.5px; font-weight: 700; color: var(--cyan-500); letter-spacing: 0.03em; margin-bottom: 10px; }
+.sector-card p { color: var(--gray-500); font-size: 15px; }
 .celeb-source {
   margin-top: 14px; display: inline-block; font-size: 13px; font-weight: 600; color: var(--cyan-500);
   text-decoration: none; border-bottom: 1px solid transparent; transition: border-color var(--transition);
 }
 .celeb-source:hover { border-bottom-color: var(--cyan-500); }
-.sector-card p { color: var(--gray-500); font-size: 15px; }
 .sector-link {
   margin-top: 20px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; color: var(--ink-700);
 }
@@ -945,7 +945,7 @@ h1, h2, h3, h4, p { margin: 0; }
    Bölge sınırlaması mask-image PNG'leri ile (JS yükler). */
 .stage-tint {
   position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; border-radius: 12px;
-  mix-blend-mode: multiply; opacity: 0; background: transparent;
+  mix-blend-mode: color; opacity: 0; background: transparent;
   -webkit-mask-size: contain; mask-size: contain;
   -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
   -webkit-mask-position: center; mask-position: center;
