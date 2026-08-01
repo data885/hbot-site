@@ -82,10 +82,10 @@
     nexus: { base: 220000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 17600 }, { ata: "2.5 ATA", price: 33000 }, { ata: "3.0 ATA", price: 55000, nexusOnly: true }, { ata: "6.0 ATA", price: 88000, nexusOnly: true }] }
   };
   /* Basınç kademe katsayıları (model base'ine göre): 1.5→taban, 2.0→+%8, 2.5→+%15, 3.0→+%25, 6.0→+%40 (100'e yuvarlı).
-     3.0 ve 6.0 ATA yalnızca Apex Nexus'ta seçilebilir (nexusOnly). */
+     3.0 ve 6.0 ATA yalnızca Apex Nexus'ta seçilebilir (nexusOnly) — Nexus'ta 1.5–6.0 kademelerin HEPSİ görünür. */
   const ADDON_PRICING = { massage: 2200, leather: 1800, entertainment: 1200, finish: 900, uvc: 1500, "backup-o2": 3000, warranty: 2500, install: 1000, playstation: 1900 };
   const STYLE_PRICING = { solid: 0, glass: 3500, premium: 7500 };
-  const PRESSURE_RANGE = { "solo-lounge": "1.5 – 2.5 ATA", solo: "1.5 – 2.5 ATA", duo: "1.5 – 2.5 ATA", quad: "1.5 – 2.5 ATA", "quad-cube": "1.5 – 2.5 ATA", nexus: "3.0 – 6.0 ATA" };
+  const PRESSURE_RANGE = { "solo-lounge": "1.5 – 2.5 ATA", solo: "1.5 – 2.5 ATA", duo: "1.5 – 2.5 ATA", quad: "1.5 – 2.5 ATA", "quad-cube": "1.5 – 2.5 ATA", nexus: "1.5 – 6.0 ATA" };
 
   /* Apex Nexus: base price includes 6 seats; each additional seat adds SEAT_PRICE (illustrative — update with real figure) */
   const NEXUS_BASE_SEATS = 6;
@@ -488,10 +488,10 @@
   const CRM_ENDPOINT = "https://crmalmita.com/api/leads"; // public lead API yoksa sessiz fallback
   const configState = { model: "solo-lounge", tierIndex: 0, addons: new Set(), nexusSeats: NEXUS_BASE_SEATS, color: "pearl-white", chamberStyle: "solid", interiorColor: "cream", seatColor: "konyak", seatTouched: false, stageView: "exterior", spinIdx: 0, discountPct: 0, refCode: "" };
 
-  /* Showcase stage: model -> görsel, renk -> görsel dosya soneki (filter yok) */
-  /* v4: Tüm temsili/sentetik render'lar kaldırıldı.
-     Dış görünüm = gerçek fotoğraf (REAL_STAGE) veya gerçek referanslı üretilmiş 360° spin seti (SPIN_MODELS).
-     Renk seçimi görseli DEĞİŞTİRMEZ — sahte renklendirme yok; renk adı özet panelinde gösterilir. */
+  /* Showcase stage: model -> gerçek fotoğraf / 360° spin seti.
+     Dış görünüm = gerçek fotoğraf (REAL_STAGE) veya 360° spin seti (SPIN_MODELS).
+     Renk seçimi: maskeli tint katmanı (STAGE_TINT_MASKS + multiply blend) kabin/döşeme/koltuk
+     bölgesine uygulanır — sahne ve arka plan renklenmez; renk adı ayrıca özet panelinde gösterilir. */
   const REAL_STAGE = {
     "solo-lounge": "real/apex-lounge-real",
     solo: "real/apex-lounge-real",       // Solo'nun kendi fotoğrafı yok — aile görseli (Lounge)
@@ -513,7 +513,7 @@
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
   const SPIN_FRAME_COUNT = 24;
-  const SPIN_MODELS = { "quad-cube": true, nexus: true };
+  const SPIN_MODELS = { "quad-cube": true, nexus: true, duo: true };
   let spinDragging = false;
   function spinNormIdx(idx) {
     return ((idx % SPIN_FRAME_COUNT) + SPIN_FRAME_COUNT) % SPIN_FRAME_COUNT;
@@ -599,7 +599,7 @@
       const clipDef = STAGE_TINT_CLIP[maskKey];
       const isInt = !!target.interior;
       tintEl.classList.toggle("stage-tint--interior", isInt);
-      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=11")` : "none";
+      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=12")` : "none";
       tintEl.style.webkitMaskImage = maskUrl;
       tintEl.style.maskImage = maskUrl;
       // clip-path fallback: maske desteklenmese de tint bölge dışına taşmaz
@@ -621,7 +621,7 @@
       const seatInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
       const seatStrength = SEAT_TINT_STRENGTH[configState.seatColor] || 0;
       const applySeat = !!(target.interior && (seatMask || seatClip) && seatInfo && configState.seatTouched);
-      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=11")` : "none";
+      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=12")` : "none";
       seatTintEl.classList.toggle("stage-tint--interior", !!target.interior);
       seatTintEl.style.webkitMaskImage = seatMaskUrl;
       seatTintEl.style.maskImage = seatMaskUrl;
@@ -870,6 +870,7 @@
     "real/apex-nexus": "masks/ext-nexus",
     "spin:quad-cube": "masks/spin-quadcube",
     "spin:nexus": "masks/spin-nexus",
+    "spin:duo": "masks/spin-duo",
     "real/apex-lounge-ic": "masks/int-lounge",
     "real/apex-quad-cube-ic": "masks/int-quadcube",
     "real/apex-nexus-ic": "masks/int-nexus"
@@ -907,6 +908,7 @@
     "real/apex-nexus": { a: 1600 / 1199, fit: "contain", poly: [[0.22,0.28],[0.72,0.24],[0.80,0.30],[0.81,0.78],[0.74,0.87],[0.28,0.86],[0.21,0.72],[0.20,0.45]] },
     "spin:quad-cube": { a: 1536 / 960, fit: "contain", poly: [[0.22,0.07],[0.78,0.07],[0.78,0.92],[0.22,0.92]] },
     "spin:nexus": { a: 1536 / 960, fit: "contain", poly: [[0.86,0.52],[0.8118,0.72],[0.68,0.8664],[0.50,0.92],[0.32,0.8664],[0.1882,0.72],[0.14,0.52],[0.1882,0.32],[0.32,0.1736],[0.50,0.12],[0.68,0.1736],[0.8118,0.32]] },
+    "spin:duo": { a: 1536 / 960, fit: "contain", poly: [[0.86,0.52],[0.8118,0.72],[0.68,0.8664],[0.50,0.92],[0.32,0.8664],[0.1882,0.72],[0.14,0.52],[0.1882,0.32],[0.32,0.1736],[0.50,0.12],[0.68,0.1736],[0.8118,0.32]] },
     "real/apex-lounge-ic": { a: 1600 / 1200, fit: "cover", poly: [[0,0.40],[1,0.40],[1,1],[0,1]] },
     "real/apex-quad-cube-ic": { a: 1600 / 1065, fit: "cover", poly: [[0,0],[1,0],[1,0.62],[0.75,0.62],[0.32,1],[0,1]] },
     "real/apex-nexus-ic": { a: 823 / 1135, fit: "cover", poly: [[0,0.08],[0.64,0.16],[0.64,1],[0,1]] }
@@ -976,7 +978,7 @@
       btn.addEventListener("click", () => {
         configState.model = btn.getAttribute("data-model-id");
         pressureAutoNote = false;
-        ensureTierCompatible(true); // Nexus-only kademe seçiliyse 2.0 ATA'ya düş + bilgi notu
+        ensureTierCompatible(true); // Nexus-only kademe seçiliyse 2.5 ATA'ya düş + bilgi notu
         configState.nexusSeats = NEXUS_BASE_SEATS;
         const dict = TRANSLATIONS[currentLang];
         renderConfigModels(dict);
@@ -1051,24 +1053,18 @@
 
   let pressureAutoNote = false;
   /* Basınç kademesi uyumluluğu:
-     - Nexus dışı modelde nexusOnly kademe (3.0/6.0) seçiliyse -> 2.0 ATA'ya düş
-     - Nexus'da normal kademe (1.5/2.0/2.5) seçiliyse -> 3.0 ATA'ya çek
-     notify=true iken kullanıcıya bilgi notu gösterilir ("down" | "up"). */
+     - Nexus dışı modelde nexusOnly kademe (3.0/6.0) seçiliyse -> 2.5 ATA'ya düş
+     - Nexus'ta tüm kademeler (1.5–6.0) geçerli — düşük kademe seçiliyse DOKUNMA
+     notify=true iken kullanıcıya bilgi notu gösterilir ("down"). */
   function ensureTierCompatible(notify) {
     const tiers = MODEL_PRICING[configState.model].tiers;
     const cur = tiers[configState.tierIndex];
     if (!cur) { configState.tierIndex = 0; return false; }
     const isNexus = configState.model === "nexus";
     if (!isNexus && cur.nexusOnly) {
-      const idx20 = tiers.findIndex((t) => t.ata === "2.0 ATA");
-      configState.tierIndex = idx20 >= 0 ? idx20 : 0;
+      const idx25 = tiers.findIndex((t) => t.ata === "2.5 ATA");
+      configState.tierIndex = idx25 >= 0 ? idx25 : 0;
       pressureAutoNote = notify ? "down" : false;
-      return true;
-    }
-    if (isNexus && !cur.nexusOnly) {
-      const idx30 = tiers.findIndex((t) => t.ata === "3.0 ATA");
-      configState.tierIndex = idx30 >= 0 ? idx30 : 0;
-      pressureAutoNote = notify ? "up" : false;
       return true;
     }
     return false;
@@ -1079,8 +1075,8 @@
     if (!c) return;
     const isNexus = configState.model === "nexus";
     const tiers = MODEL_PRICING[configState.model].tiers;
-    /* Kartlar modele göre filtrelenir: Nexus -> sadece 3.0/6.0; diğerleri -> sadece 1.5/2.0/2.5 */
-    const visible = tiers.map((t, i) => ({ t, i })).filter(({ t }) => (isNexus ? !!t.nexusOnly : !t.nexusOnly));
+    /* Kartlar modele göre filtrelenir: Nexus -> TÜM kademeler (1.5/2.0/2.5/3.0/6.0); diğerleri -> sadece 1.5/2.0/2.5 */
+    const visible = tiers.map((t, i) => ({ t, i })).filter(({ t }) => (isNexus ? true : !t.nexusOnly));
     c.innerHTML = visible.map(({ t, i }) => {
       const selected = configState.tierIndex === i ? " is-selected" : "";
       const priceLabel = t.price === 0 ? dict.common.included_badge : "+" + formatPrice(t.price);
@@ -1106,7 +1102,7 @@
     if (note) {
       note.hidden = !pressureAutoNote;
       if (pressureAutoNote) {
-        note.textContent = (pressureAutoNote === "up" ? dict.configurator.pressure_auto_note_up : dict.configurator.pressure_auto_note) || "";
+        note.textContent = dict.configurator.pressure_auto_note || "";
       }
     }
   }
@@ -1687,7 +1683,7 @@
         const maxTiers = MODEL_PRICING[configState.model].tiers.length;
         if (!isNaN(idx) && idx >= 0 && idx < maxTiers) configState.tierIndex = idx;
       }
-      ensureTierCompatible(false); // paylaşım linki Nexus-only kademe içeriyorsa sessizce 2.0 ATA'ya düş
+      ensureTierCompatible(false); // paylaşım linki Nexus-only kademe içeriyorsa sessizce 2.5 ATA'ya düş
 
       if (configState.model === "nexus") {
         const preSeats = params.get("seats");
@@ -1905,6 +1901,12 @@
       if (errorEl) errorEl.hidden = true;
 
       const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.tr;
+      const resetBtn = () => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = getByPath(dict, submitKey) || "Send";
+        }
+      };
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = getByPath(dict, sendingKey) || "...";
@@ -1912,7 +1914,35 @@
 
       const formData = new FormData(form);
 
-      // Konfigurator: marka kimlikli proforma PDF uret + gercek urun fotografiyle ek olarak gonder
+      // Honeypot: bot doldurduysa gönderme — sessizce başarılı gibi davran
+      if (String(formData.get("website") || "").trim()) {
+        form.reset();
+        if (successEl) {
+          successEl.hidden = false;
+          setTimeout(() => (successEl.hidden = true), 8000);
+        }
+        resetBtn();
+        return;
+      }
+
+      // Zorunlu alan doğrulaması (form novalidate — JS tarafında kontrol)
+      let invalid = false;
+      form.querySelectorAll("[required]").forEach((inp) => {
+        const v = String(inp.value || "").trim();
+        const bad = !v || (inp.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+        inp.classList.toggle("is-invalid", bad);
+        if (bad) invalid = true;
+      });
+      if (invalid) {
+        if (errorEl) {
+          errorEl.hidden = false;
+          setTimeout(() => (errorEl.hidden = true), 8000);
+        }
+        resetBtn();
+        return;
+      }
+
+      // Konfigurator: marka kimlikli proforma PDF uret + gercek urun fotografiyle ek olarak gonder; webhook alanlari (lang/thanks/quote_no)
       if (formId === "quote-form") {
         updateQuoteFormHiddenField();
         formData.set("config_summary", (document.getElementById("config-summary-text") || {}).value || "");

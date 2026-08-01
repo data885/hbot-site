@@ -52,6 +52,12 @@ const TRANSLATIONS = {
       included_badge: "Standart Dahil",
       configure_this: "Bu Modeli Yapılandır"
     },
+    modelPage: {
+      overview_title: "Genel Bakış",
+      specs_title: "Teknik Özellikler",
+      included_title: "Apex Teknoloji Ekosistemi",
+      other_models: "Diğer Modellerimiz"
+    },
     home: {
       hero: {
         eyebrow: "APEX SERİSİ",
@@ -321,7 +327,7 @@ const TRANSLATIONS = {
       overview_text: "Sağlık kurumları için hastane sınıfı, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun tedavi merkezlerinin ihtiyacını karşılar.",
       specs: [
         { label: "Kapasite", value: "6+ kişi (oturma)" },
-        { label: "Basınç Aralığı", value: "3.0 – 6.0 ATA" },
+        { label: "Basınç Aralığı", value: "1.5 – 6.0 ATA" },
         { label: "Oksijen Saflığı", value: "%93–95" },
         { label: "Güvenlik", value: "Acil durum valf sistemi" },
         { label: "Yapı", value: "Hastane sınıfı" },
@@ -425,9 +431,8 @@ const TRANSLATIONS = {
         { id: "playstation", name: "PlayStation 5 Oyun Konsolu", desc: "Uzun tedavi seanslarında eğlence için kabin içi ekran ve ses sistemine entegre PlayStation 5 konsolu." }
       ],
       pressure_note: "Basınç aralığı seçilen modele göre değişir.",
-      pressure_titan_only: "Sadece Nexus",
-      pressure_auto_note: "3.0 ve 6.0 ATA yalnızca Apex Nexus modelinde sunulur — basınç seviyesi 2.0 ATA'ya ayarlandı.",
-      pressure_auto_note_up: "Apex Nexus yalnızca 3.0 ve 6.0 ATA sunar — basınç seviyesi 3.0 ATA'ya ayarlandı.",
+      pressure_nexus_only: "Sadece Nexus",
+      pressure_auto_note: "3.0 ve 6.0 ATA yalnızca Apex Nexus modelinde sunulur — basınç seviyesi 2.5 ATA'ya ayarlandı.",
       seat_step_title: "Koltuk Sayısı",
       seat_step_note: "Apex Nexus modelinde, ihtiyacınıza göre koltuk sayısını 6'dan başlayarak artırabilirsiniz.",
       seats_label: "Koltuk",
@@ -723,6 +728,12 @@ const TRANSLATIONS = {
       included_badge: "Standard Included",
       configure_this: "Configure This Model"
     },
+    modelPage: {
+      overview_title: "Overview",
+      specs_title: "Technical Specifications",
+      included_title: "Apex Technology Ecosystem",
+      other_models: "Our Other Models"
+    },
     home: {
       hero: {
         eyebrow: "APEX SERIES",
@@ -992,7 +1003,7 @@ const TRANSLATIONS = {
       overview_text: "A hospital-grade, large-capacity chamber for medical institutions. Its modular design and advanced monitoring systems meet the needs of the busiest treatment centers.",
       specs: [
         { label: "Capacity", value: "6+ people (sitting)" },
-        { label: "Pressure Range", value: "3.0 – 6.0 ATA" },
+        { label: "Pressure Range", value: "1.5 – 6.0 ATA" },
         { label: "Oxygen Purity", value: "93–95%" },
         { label: "Safety", value: "Emergency valve system" },
         { label: "Build", value: "Hospital-grade" },
@@ -1096,9 +1107,8 @@ const TRANSLATIONS = {
         { id: "playstation", name: "PlayStation 5 Gaming Console", desc: "A PlayStation 5 console integrated with the in-chamber screen and sound system for entertainment during longer sessions." }
       ],
       pressure_note: "The pressure range depends on the model you select.",
-      pressure_titan_only: "Nexus only",
-      pressure_auto_note: "3.0 and 6.0 ATA are available on the Apex Nexus only — pressure level has been reset to 2.0 ATA.",
-      pressure_auto_note_up: "Apex Nexus offers 3.0 and 6.0 ATA only — pressure level has been set to 3.0 ATA.",
+      pressure_nexus_only: "Nexus only",
+      pressure_auto_note: "3.0 and 6.0 ATA are available on the Apex Nexus only — pressure level has been reset to 2.5 ATA.",
       seat_step_title: "Seat Count",
       seat_step_note: "For the Apex Nexus, you can increase the seat count starting from 6 to match your needs.",
       seats_label: "Seats",
@@ -1394,6 +1404,12 @@ const TRANSLATIONS = {
       included_badge: "Входит в стандарт",
       configure_this: "Настроить эту модель"
     },
+    modelPage: {
+      overview_title: "Обзор",
+      specs_title: "Технические характеристики",
+      included_title: "Технологическая экосистема Apex",
+      other_models: "Другие модели"
+    },
     home: {
       hero: {
         eyebrow: "СЕРИЯ APEX",
@@ -1663,7 +1679,7 @@ const TRANSLATIONS = {
       overview_text: "Камера госпитального класса большой вместимости для медицинских учреждений. Модульная конструкция и продвинутые системы мониторинга отвечают потребностям самых загруженных лечебных центров.",
       specs: [
         { label: "Вместимость", value: "6+ человек (сидя)" },
-        { label: "Диапазон давления", value: "3.0 – 6.0 ATA" },
+        { label: "Диапазон давления", value: "1.5 – 6.0 ATA" },
         { label: "Чистота кислорода", value: "93–95%" },
         { label: "Безопасность", value: "Система аварийных клапанов" },
         { label: "Конструкция", value: "Госпитальный класс" },
@@ -1767,9 +1783,8 @@ const TRANSLATIONS = {
         { id: "playstation", name: "Игровая консоль PlayStation 5", desc: "Консоль PlayStation 5, интегрированная с экраном и звуковой системой камеры, для развлечения во время длительных сеансов." }
       ],
       pressure_note: "Диапазон давления зависит от выбранной модели.",
-      pressure_titan_only: "Только Nexus",
-      pressure_auto_note: "Уровни 3.0 и 6.0 ATA доступны только для Apex Nexus — давление изменено на 2.0 ATA.",
-      pressure_auto_note_up: "Apex Nexus доступен только с уровнями 3.0 и 6.0 ATA — давление изменено на 3.0 ATA.",
+      pressure_nexus_only: "Только Nexus",
+      pressure_auto_note: "Уровни 3.0 и 6.0 ATA доступны только для Apex Nexus — давление изменено на 2.5 ATA.",
       seat_step_title: "Количество мест",
       seat_step_note: "Для модели Apex Nexus вы можете увеличивать количество мест начиная с 6, в соответствии с вашими потребностями.",
       seats_label: "мест",
@@ -2065,6 +2080,12 @@ const TRANSLATIONS = {
       included_badge: "مشمول ضمن المعيار",
       configure_this: "قم بتكوين هذا الموديل"
     },
+    modelPage: {
+      overview_title: "نظرة عامة",
+      specs_title: "المواصفات الفنية",
+      included_title: "منظومة Apex التقنية",
+      other_models: "موديلاتنا الأخرى"
+    },
     home: {
       hero: {
         eyebrow: "سلسلة APEX",
@@ -2334,7 +2355,7 @@ const TRANSLATIONS = {
       overview_text: "غرفة بمستوى المستشفيات وسعة كبيرة للمؤسسات الطبية. يلبي تصميمها المعياري وأنظمة المراقبة المتقدمة احتياجات أكثر مراكز العلاج ازدحاماً.",
       specs: [
         { label: "السعة", value: "6+ أشخاص (جلوس)" },
-        { label: "نطاق الضغط", value: "3.0 – 6.0 ATA" },
+        { label: "نطاق الضغط", value: "1.5 – 6.0 ATA" },
         { label: "نقاء الأكسجين", value: "93–95%" },
         { label: "السلامة", value: "نظام صمامات الطوارئ" },
         { label: "البنية", value: "بمستوى المستشفيات" },
@@ -2438,9 +2459,8 @@ const TRANSLATIONS = {
         { id: "playstation", name: "جهاز ألعاب PlayStation 5", desc: "جهاز PlayStation 5 متكامل مع شاشة الكابينة ونظام الصوت للترفيه خلال الجلسات الطويلة." }
       ],
       pressure_note: "يعتمد نطاق الضغط على الموديل المختار.",
-      pressure_titan_only: "Nexus فقط",
-      pressure_auto_note: "مستويا 3.0 و6.0 ATA متاحان فقط في طراز Apex Nexus — تمت إعادة مستوى الضغط إلى 2.0 ATA.",
-      pressure_auto_note_up: "يتوفر Apex Nexus بمستويي 3.0 و6.0 ATA فقط — تم ضبط مستوى الضغط على 3.0 ATA.",
+      pressure_nexus_only: "Nexus فقط",
+      pressure_auto_note: "مستويا 3.0 و6.0 ATA متاحان فقط في طراز Apex Nexus — تمت إعادة مستوى الضغط إلى 2.5 ATA.",
       seat_step_title: "عدد المقاعد",
       seat_step_note: "بالنسبة لموديل Apex Nexus، يمكنك زيادة عدد المقاعد ابتداءً من 6 حسب احتياجك.",
       seats_label: "مقعد",

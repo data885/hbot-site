@@ -248,6 +248,12 @@ h1, h2, h3, h4, p { margin: 0; }
 .page-header .eyebrow { color: var(--cyan-400); position: relative; }
 .page-header h1 { position: relative; font-size: clamp(32px, 4.5vw, 48px); font-weight: 800; letter-spacing: -0.02em; white-space: pre-line; }
 .page-header p { position: relative; margin-top: 16px; font-size: 17px; color: rgba(255, 255, 255, 0.72); max-width: 640px; }
+/* Model sayfası hero fotoğrafı: model adının altında gerçek ürün görseli */
+.model-hero-photo {
+  position: relative; width: 100%; max-width: 720px; aspect-ratio: 16 / 9; object-fit: cover;
+  margin-top: 28px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+}
+@media (max-width: 760px) { .model-hero-photo { aspect-ratio: 4 / 3; } }
 
 /* ---------- Cards: value / tech pillar / model ---------- */
 .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -590,7 +596,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .config-pressure-card.is-selected { border-color: var(--cyan-500); box-shadow: 0 0 0 3px rgba(0, 128, 208,0.15); }
 .config-pressure-card .pressure-value { font-size: 20px; font-weight: 800; color: var(--ink-900); }
 .config-pressure-card .pressure-price { margin-top: 6px; font-size: 13px; color: var(--cyan-500); font-weight: 700; }
-/* 3.0 / 6.0 ATA: Titan dışı modellerde devre dışı */
+/* 3.0 / 6.0 ATA: Nexus dışı modellerde devre dışı */
 .config-pressure-card.is-disabled { opacity: 0.45; cursor: not-allowed; background: var(--gray-100); }
 .config-pressure-card.is-disabled:hover { border-color: var(--gray-100); }
 .config-pressure-card .pressure-lock { margin-top: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.03em; color: #9aa0a8; }
@@ -776,7 +782,7 @@ h1, h2, h3, h4, p { margin: 0; }
   font-size: 13px; font-weight: 700; color: rgba(255, 255, 255, 0.6); letter-spacing: 0.03em;
 }
 
-/* Titan seat stepper */
+/* Nexus seat stepper */
 .seat-stepper { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .seat-stepper button {
   width: 44px; height: 44px; border-radius: 999px; border: 2px solid var(--gray-300); background: var(--white);
@@ -802,6 +808,9 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
   outline: none; border-color: var(--cyan-500); box-shadow: 0 0 0 3px rgba(0, 128, 208,0.18);
+}
+.form-field input.is-invalid, .form-field textarea.is-invalid {
+  border-color: #a3231f; box-shadow: 0 0 0 3px rgba(163, 35, 31, 0.15);
 }
 .form-field textarea { resize: vertical; min-height: 100px; }
 .form-success {
