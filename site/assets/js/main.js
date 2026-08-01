@@ -525,6 +525,14 @@
     return !!SPIN_MODELS[configState.model];
   }
   let stageActiveImg = "a";
+  /* Sahne tek doğruluk kaynağı: aktif katmanın GÖSTERMESİ GEREKEN görsel anahtarı.
+     Flip kararı asla img.src'den çıkarımlanmaz — spin momentum'u (setFrame, rAF) src'yi
+     sürekli yeniden yazar; src karşılaştırmalı eski heuristic sahte flip'ler üretip
+     iki katmanı üst üste bindiriyor / opacity'yi ters gösteriyordu. */
+  let stageCurrentKey = "real/apex-lounge-real";
+  /* Spin momentum'unu dışarıdan durdurma kancası — initSpin içinde atanır.
+     Görsel hedefi değişirken (model/görünüm geçişi) yarım frame yazılmasını önler. */
+  let stopSpinMomentum = () => {};
 
   function currentStageTarget() {
     if (configState.stageView === "interior") {
@@ -558,17 +566,23 @@
       img.classList.toggle("stage-img--photo", !!target.photo);
     };
 
-    if (!active.src.endsWith(`${target.key}.webp`)) {
-      // Görsel değişti: pasif karta yenisini yükle, cross-fade
+    if (target.key !== stageCurrentKey) {
+      // Görsel değişti: önce spin momentum'unu durdur (yeni katmana yarım frame yazmasın),
+      // pasif karta yenisini yükle, cross-fade
+      stopSpinMomentum();
       passive.src = src;
       passive.style.filter = target.filter;
       applyMode(passive);
       passive.classList.add("is-active");
       active.classList.remove("is-active");
       stageActiveImg = stageActiveImg === "a" ? "b" : "a";
+      stageCurrentKey = target.key;
     } else {
       active.style.filter = target.filter;
       applyMode(active);
+      // Güvenlik: sınıf invariant'ını her çağrıda zorla (tam bir katman aktif olsun)
+      active.classList.add("is-active");
+      passive.classList.remove("is-active");
     }
 
     const nameEl = document.getElementById("stage-model-name");
@@ -599,7 +613,7 @@
       const clipDef = STAGE_TINT_CLIP[maskKey];
       const isInt = !!target.interior;
       tintEl.classList.toggle("stage-tint--interior", isInt);
-      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=12")` : "none";
+      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=13")` : "none";
       tintEl.style.webkitMaskImage = maskUrl;
       tintEl.style.maskImage = maskUrl;
       // clip-path fallback: maske desteklenmese de tint bölge dışına taşmaz
@@ -621,7 +635,7 @@
       const seatInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
       const seatStrength = SEAT_TINT_STRENGTH[configState.seatColor] || 0;
       const applySeat = !!(target.interior && (seatMask || seatClip) && seatInfo && configState.seatTouched);
-      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=12")` : "none";
+      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=13")` : "none";
       seatTintEl.classList.toggle("stage-tint--interior", !!target.interior);
       seatTintEl.style.webkitMaskImage = seatMaskUrl;
       seatTintEl.style.maskImage = seatMaskUrl;
@@ -668,12 +682,26 @@
     if (!stage) return;
     let acc = 0, lastX = 0, lastT = 0, vel = 0, momentumId = null;
 
+    /* Momentum durdurma kancası: updateConfigStage görsel hedefi değiştirirken çağırır.
+       Bu olmadan rAF tick'leri model/görünüm değişiminden SONRA da aktif katmana
+       frame yazmaya devam ediyor (iç mekân fotoğrafının üstüne spin frame'i,
+       hatta var olmayan spin/<model>/frame-XX 404'ü basıyordu). */
+    stopSpinMomentum = () => {
+      if (momentumId) { cancelAnimationFrame(momentumId); momentumId = null; }
+    };
+
     const setFrame = (idx) => {
+      // Korumalar: spin seti olmayan modelde veya iç görünümde ASLA frame yazma
+      if (!spinAvailableFor() || configState.stageView !== "exterior") return;
       configState.spinIdx = spinNormIdx(idx);
-      const active = document.querySelector("#config-stage .stage-img.is-active");
+      // Aktif katmanı DOM sorgusuyla tahmin etme — tek doğruluk kaynağı stageActiveImg
+      const active = stageActiveImg === "a"
+        ? document.getElementById("stage-img-a")
+        : document.getElementById("stage-img-b");
       if (!active) return;
       const key = spinFrameKey(configState.spinIdx);
       if (!active.src.endsWith(`${key}.webp`)) active.src = `assets/img/models/${key}.webp`;
+      stageCurrentKey = key; // yazan burası — flip heuristic'i ile çakışma olmaz
       active.classList.add("stage-img--photo");
       active.classList.remove("stage-img--interior");
     };
