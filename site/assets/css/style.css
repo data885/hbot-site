@@ -949,25 +949,8 @@ h1, h2, h3, h4, p { margin: 0; }
 .model-card-img { width: 100%; height: 96px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; display: block; }
 .sector-card-img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 14px; display: block; }
 
-/* v5: sahne renk tint katmanı — kabin gövdesine renk yansıtır (blend: color)
-   v7: tint artık .stage-tilt İÇİNDE — sahne/arka plan asla renklenmez.
-   v8: katman, sahne görselinin maskelenmiş KOPYASI (background-image) + CSS filter.
-   Orijinal gölge/parlama korunur; blend-mode yok. Bölge sınırlaması mask-image ile (JS yükler). */
-.stage-tint {
-  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; border-radius: 12px;
-  opacity: 0;
-  background-repeat: no-repeat; background-position: center; background-size: contain;
-  -webkit-mask-size: contain; mask-size: contain;
-  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-  -webkit-mask-position: center; mask-position: center;
-  transition: opacity .3s ease;
-}
-.stage-tint--interior {
-  border-radius: 10px;
-  background-size: cover;
-  -webkit-mask-size: cover; mask-size: cover;
-}
-.stage-tint--seat { z-index: 4; }
+/* v10: tint katmanı SÖKÜLDÜ — renk artık canvas recolor ile doğrudan sahne
+   görselinin kendisine işlenir (assets/js/recolor.js); overlay/div yok. */
 
 /* v6: indirim kontrolü + referans rozeti */
 .config-discount-select, .config-discount-custom {

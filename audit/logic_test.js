@@ -30,13 +30,18 @@ global.cancelAnimationFrame = () => {};
 const tSrc = fs.readFileSync(path.join(siteDir, "assets/js/translations.js"), "utf8");
 global.TRANSLATIONS = new Function(tSrc + "; return TRANSLATIONS;")();
 
+// v10 recolor motoru (saf fonksiyonlar — DOM'suz test edilir)
+const rSrc = fs.readFileSync(path.join(siteDir, "assets/js/recolor.js"), "utf8");
+new Function(rSrc)();
+const RC = globalThis.HBOTRecolor || global.window.HBOTRecolor;
+
 let src = fs.readFileSync(path.join(siteDir, "assets/js/main.js"), "utf8");
 // expose internals: turn trailing "})();" into a return
 src = src.replace(/\}\)\(\);\s*$/, `
   return { configState, MODEL_PRICING, ensureTierCompatible, spinNormIdx, spinFrameKey, spinAvailableFor,
-           currentStageTarget, computeSubtotal, computeTotal, tiltClipPoly, SPIN_MODELS, SPIN_FRAME_COUNT,
-           STAGE_TINT_MASKS, STAGE_TINT_CLIP, STAGE_SEAT_MASKS, EXT_COLOR_FILTER, INT_COLOR_FILTER,
-           SEAT_COLOR_FILTER, REAL_STAGE, REAL_INTERIOR, MODEL_CARD_IMG, NEXUS_BASE_SEATS, NEXUS_MAX_SEATS,
+           currentStageTarget, computeSubtotal, computeTotal, SPIN_MODELS, SPIN_FRAME_COUNT,
+           STAGE_TINT_MASKS, STAGE_SEAT_MASKS, EXT_PAINT_MODE, INT_PAINT_MODE, SEAT_PAINT_MODE,
+           REAL_STAGE, REAL_INTERIOR, MODEL_CARD_IMG, NEXUS_BASE_SEATS, NEXUS_MAX_SEATS,
            NEXUS_SEAT_PRICE, ADDON_PRICING, STYLE_PRICING, REF_CODES };
 })();`);
 
@@ -105,17 +110,19 @@ M.configState.stageView = "interior";
 check("iç görünümde target = lounge iç foto", M.currentStageTarget().key === "real/apex-lounge-ic", M.currentStageTarget().key);
 M.configState.stageView = "exterior";
 
-console.log("\n== 4. Tint maske kapsama + renk filtresi reçeteleri (v8) ==");
+console.log("\n== 4. Boya maske kapsama + boya modu tabloları (v10) ==");
 const trDict = TRANSLATIONS.tr.configurator;
 const extColorIds = trDict.colors.map((c) => c.id);
 const intColorIds = trDict.interior_colors.map((c) => c.id);
 const seatColorIds = trDict.seat_colors.map((c) => c.id);
-const validRecipe = (v) => v === null || (typeof v === "string" && v.length > 0);
-check("her dış renk için filtre reçetesi tanımlı (null veya string)", extColorIds.every((id) => id in M.EXT_COLOR_FILTER && validRecipe(M.EXT_COLOR_FILTER[id])), extColorIds.filter((id) => !(id in M.EXT_COLOR_FILTER)).join(","));
-check("her iç renk için filtre reçetesi tanımlı (null veya string)", intColorIds.every((id) => id in M.INT_COLOR_FILTER && validRecipe(M.INT_COLOR_FILTER[id])), intColorIds.filter((id) => !(id in M.INT_COLOR_FILTER)).join(","));
-check("her koltuk rengi için filtre reçetesi tanımlı (null veya string)", seatColorIds.every((id) => id in M.SEAT_COLOR_FILTER && validRecipe(M.SEAT_COLOR_FILTER[id])), seatColorIds.filter((id) => !(id in M.SEAT_COLOR_FILTER)).join(","));
-check("varsayılan dış renk (pearl-white) nötr = null", M.EXT_COLOR_FILTER["pearl-white"] === null, String(M.EXT_COLOR_FILTER["pearl-white"]));
-check("varsayılan iç renk (cream) nötr = null", M.INT_COLOR_FILTER.cream === null, String(M.INT_COLOR_FILTER.cream));
+const validMode = (v) => v === null || v === "paint" || v === "metal";
+check("her dış renk için boya modu tanımlı", extColorIds.every((id) => id in M.EXT_PAINT_MODE && validMode(M.EXT_PAINT_MODE[id])), extColorIds.filter((id) => !(id in M.EXT_PAINT_MODE)).join(","));
+check("her iç renk için boya modu tanımlı", intColorIds.every((id) => id in M.INT_PAINT_MODE && validMode(M.INT_PAINT_MODE[id])), intColorIds.filter((id) => !(id in M.INT_PAINT_MODE)).join(","));
+check("her koltuk rengi için boya modu tanımlı", seatColorIds.every((id) => id in M.SEAT_PAINT_MODE && validMode(M.SEAT_PAINT_MODE[id])), seatColorIds.filter((id) => !(id in M.SEAT_PAINT_MODE)).join(","));
+check("varsayılan dış renk (pearl-white) nötr = null (ham kare)", M.EXT_PAINT_MODE["pearl-white"] === null);
+check("varsayılan iç renk (cream) nötr = null (ham kare)", M.INT_PAINT_MODE.cream === null);
+check("metalik renkler metal modda", ["mat-siyah", "antrasit", "grafit"].every((id) => M.EXT_PAINT_MODE[id] === "metal"));
+check("her palet renginin hex'i HSL'e çevrilebiliyor", [...trDict.colors, ...trDict.interior_colors, ...trDict.seat_colors].every((c) => RC.hexToHsl(c.hex) !== null));
 
 models.forEach((m) => {
   M.configState.model = m;
@@ -123,20 +130,42 @@ models.forEach((m) => {
   const ext = M.currentStageTarget().key;
   const extMaskKey = ext.indexOf("spin/") === 0 ? "spin:" + m : ext;
   check(`${m} dış: maske var (${extMaskKey})`, !!M.STAGE_TINT_MASKS[extMaskKey]);
-  check(`${m} dış: clip fallback var`, !!M.STAGE_TINT_CLIP[extMaskKey]);
   // interior target
   M.configState.stageView = "interior";
   const int = M.currentStageTarget().key;
   check(`${m} iç: maske var (${int})`, !!M.STAGE_TINT_MASKS[int]);
-  check(`${m} iç: clip fallback var`, !!M.STAGE_TINT_CLIP[int]);
   check(`${m} iç: koltuk maskesi var`, !!M.STAGE_SEAT_MASKS[int]);
   M.configState.stageView = "exterior";
 });
 
-console.log("\n== 5. tiltClipPoly çıktısı ==");
-const clip = M.tiltClipPoly([[0, 0], [1, 0], [1, 1], [0, 1]], 1600 / 1199, "contain");
-check("clip polygon üretildi", /^polygon\(/.test(clip), clip);
-check("clip yüzdeleri 0-100 arası", clip.match(/[\d.]+(?=%)/g).every((n) => +n >= 0 && +n <= 100), clip);
+console.log("\n== 5. Recolor motoru (HBOTRecolor) ==");
+const bordoHsl = RC.hexToHsl("#6B2737");
+check("hexToHsl bordo hue ~349°", Math.abs(bordoHsl[0] - 349) < 4, String(bordoHsl[0].toFixed(1)));
+check("LED koruması: amber parlak piksel korunur", RC.isProtectedPixel(42, 0.8, 0.7) === true);
+check("LED koruması: orta ton amber korunmaz (l=0.3 < 0.5 eşiği)", RC.isProtectedPixel(42, 0.8, 0.3) === false);
+check("cam koruması: çok koyu piksel korunur", RC.isProtectedPixel(220, 0.1, 0.05) === true);
+check("normal gövde pikseli korunmaz", RC.isProtectedPixel(30, 0.1, 0.6) === false);
+// paint modu: nötr gri piksel + bordo -> hue bordo, L hedefe ölçeklenir (0.7 * 0.286/0.65 ≈ 0.31)
+const bordoPaint = { h: bordoHsl[0], s: bordoHsl[1], l: bordoHsl[2], metal: false };
+const painted = RC.recolorPixel(0.7, 0.7, 0.7, 1, bordoPaint);
+const paintedHsl = RC.rgbToHsl(painted[0], painted[1], painted[2]);
+check("paint: lightness hedefe ölçeklenir (~0.31)", Math.abs(paintedHsl[2] - 0.31) < 0.03, String(paintedHsl[2].toFixed(3)));
+check("paint: hue hedefe döner (~349°)", Math.abs(paintedHsl[0] - bordoHsl[0]) < 5 || Math.abs(paintedHsl[0] - bordoHsl[0] - 360) < 5, String(paintedHsl[0].toFixed(1)));
+// metal modu: açık piksel + mat siyah -> koyu + düşük sat
+const blackHsl = RC.hexToHsl("#16181A");
+const metalOut = RC.recolorPixel(0.8, 0.8, 0.8, 1, { h: blackHsl[0], s: blackHsl[1], l: blackHsl[2], metal: true });
+const metalHsl = RC.rgbToHsl(metalOut[0], metalOut[1], metalOut[2]);
+check("metal: mat siyah koyulaştırır (l<0.25)", metalHsl[2] < 0.25, String(metalHsl[2].toFixed(3)));
+check("metal: düşük saturation (s<0.1)", metalHsl[1] < 0.1, String(metalHsl[1].toFixed(3)));
+// feather: alfa 0.5 -> orijinal ile boya arası (bordo koyu: 0.7 -> 0.452 yönünde)
+const feather = RC.recolorPixel(0.7, 0.7, 0.7, 0.5, bordoPaint);
+check("feather: alfa 0.5 ara değer üretir", feather[0] < 0.7 && feather[0] > painted[0], `${feather[0].toFixed(3)} arası [${painted[0].toFixed(3)}, 0.7]`);
+// korunan piksel recolorPixel'da da değişmez
+const led = RC.recolorPixel(0.95, 0.75, 0.4, 1, bordoPaint); // amber LED tonu
+check("LED pikseli recolor'da değişmez", led[0] === 0.95 && led[1] === 0.75 && led[2] === 0.4, led.join(","));
+// alfa 0 -> değişim yok
+const noOp = RC.recolorPixel(0.5, 0.6, 0.7, 0, bordoPaint);
+check("alfa 0 = işlem yok", noOp[0] === 0.5 && noOp[1] === 0.6 && noOp[2] === 0.7);
 
 console.log("\n== 6. Nexus koltuk fiyatı ==");
 M.configState.model = "nexus"; M.configState.tierIndex = 0; M.configState.nexusSeats = M.NEXUS_BASE_SEATS;
