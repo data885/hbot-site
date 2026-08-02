@@ -961,7 +961,7 @@
   async function startRecolorJob(ck, imgKey, spec) {
     try {
       const base = await loadRecolorImg(`assets/img/models/${imgKey}.webp`);
-      const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`assets/img/models/${p.mask}.png?v=18`)));
+      const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`assets/img/models/${p.mask}.png?v=20`)));
       const w = base.naturalWidth, h = base.naturalHeight;
       if (!w || !h) throw new Error("empty frame");
       const c = document.createElement("canvas");
@@ -979,18 +979,21 @@
       });
       window.HBOTRecolor.recolorImageData(imgData.data, passes);
       ctx.putImageData(imgData, 0, 0);
-      c.toBlob((blob) => {
-        if (!blob) { recolorCache.delete(ck); return; }
-        recolorCache.set(ck, URL.createObjectURL(blob));
+      // v10.1: blob: yerine data: URL — sitenin CSP'si (img-src 'self' data: https:)
+      // blob: görselleri engelliyordu; data: izinli olduğu için ek izin gerekmez.
+      try {
+        const dataUrl = c.toDataURL("image/webp", 0.92);
+        if (!dataUrl || dataUrl.length < 100) { recolorCache.delete(ck); return; }
+        recolorCache.set(ck, dataUrl);
         if (recolorCache.size > RECOLOR_CACHE_MAX) {
           const k0 = recolorCache.keys().next().value;
-          const v0 = recolorCache.get(k0);
           recolorCache.delete(k0);
-          if (v0 && v0 !== "pending") URL.revokeObjectURL(v0);
         }
         // İşlenmiş kare hazır — sahne hâlâ aynı spec'teyse cross-fade ile devreye girer
         updateConfigStage(TRANSLATIONS[currentLang]);
-      }, "image/webp", 0.92);
+      } catch (e2) {
+        recolorCache.delete(ck);
+      }
     } catch (e) {
       recolorCache.delete(ck);
     }
