@@ -733,6 +733,21 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 /* v3 gerçek renk render'ları: alpha'lı cutout — normal blend */
 .stage-img--photo { mix-blend-mode: normal; }
+/* v11: renk tint katmanı — maskeli bölgeye yarı saydam blend-mode: color uygulanır,
+   orijinal ışık/doku her zaman görünür kalır (bkz. main.js updateConfigStage). */
+.stage-tint {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; border-radius: 12px;
+  mix-blend-mode: color; opacity: 0; background: transparent;
+  -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-position: center; mask-position: center;
+  transition: opacity .45s ease, background-color .45s ease;
+}
+.stage-tint--interior {
+  border-radius: 10px;
+  -webkit-mask-size: cover; mask-size: cover;
+}
+.stage-tint--seat { z-index: 4; }
 /* 360° sürükle-döndür */
 #config-stage { touch-action: pan-y; user-select: none; }
 #config-stage .stage-img { -webkit-user-drag: none; user-select: none; }

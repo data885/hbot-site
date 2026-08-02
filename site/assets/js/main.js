@@ -531,6 +531,7 @@
      sürekli yeniden yazar; src karşılaştırmalı eski heuristic sahte flip'ler üretip
      iki katmanı üst üste bindiriyor / opacity'yi ters gösteriyordu. */
   let stageCurrentKey = "real/apex-lounge-real";
+  let stageCurrentSrc = "";
   /* Spin momentum'unu dışarıdan durdurma kancası — initSpin içinde atanır.
      Görsel hedefi değişirken (model/görünüm geçişi) yarım frame yazılmasını önler. */
   let stopSpinMomentum = () => {};
@@ -557,8 +558,7 @@
     if (!imgA || !imgB) return;
 
     const target = currentStageTarget();
-    // v10: boya aktifse işlenmiş kare (canvas recolor) — yoksa ham kare
-    const src = resolveStageSrc(target);
+    const src = `assets/img/models/${target.key}.webp`;
 
     const active = stageActiveImg === "a" ? imgA : imgB;
     const passive = stageActiveImg === "a" ? imgB : imgA;
@@ -608,8 +608,38 @@
     const hint = document.getElementById("stage-spin-hint");
     if (hint) hint.hidden = !canSpin;
 
-    // Boya aktifse ve spin modeli gösteriliyorsa kalan kareleri boşta önceden işle
-    prewalkRecolor(target);
+    // Renk tint katmanı: yarı saydam CSS blend-mode, maskeli bölgeye uygulanır.
+    const tintEl = document.getElementById("stage-tint");
+    if (tintEl && dict && dict.configurator) {
+      const maskKey = target.key.indexOf("spin/") === 0 ? `spin:${configState.model}` : target.key;
+      const maskPath = STAGE_TINT_MASKS[maskKey];
+      const isInt = !!target.interior;
+      tintEl.classList.toggle("stage-tint--interior", isInt);
+      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=20")` : "none";
+      tintEl.style.webkitMaskImage = maskUrl;
+      tintEl.style.maskImage = maskUrl;
+      const list = isInt ? (dict.configurator.interior_colors || []) : (dict.configurator.colors || []);
+      const selId = isInt ? configState.interiorColor : configState.color;
+      const strength = isInt ? (INT_TINT_STRENGTH[selId] || 0) : (EXT_TINT_STRENGTH[selId] || 0);
+      const colInfo = list.find((col) => col.id === selId);
+      tintEl.style.backgroundColor = colInfo ? colInfo.hex : "transparent";
+      tintEl.style.opacity = String(maskPath && colInfo ? strength : 0);
+    }
+
+    // Koltuk tint katmanı: sadece iç görünümde + kullanıcı koltuk rengini değiştirdiyse
+    const seatTintEl = document.getElementById("stage-seat-tint");
+    if (seatTintEl && dict && dict.configurator) {
+      const seatMask = target.interior ? STAGE_SEAT_MASKS[target.key] : null;
+      const seatInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
+      const seatStrength = SEAT_TINT_STRENGTH[configState.seatColor] || 0;
+      const applySeat = !!(target.interior && seatMask && seatInfo && configState.seatTouched);
+      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=20")` : "none";
+      seatTintEl.classList.toggle("stage-tint--interior", !!target.interior);
+      seatTintEl.style.webkitMaskImage = seatMaskUrl;
+      seatTintEl.style.maskImage = seatMaskUrl;
+      seatTintEl.style.backgroundColor = seatInfo ? seatInfo.hex : "transparent";
+      seatTintEl.style.opacity = String(applySeat ? seatStrength : 0);
+    }
   }
 
   function initStageViewToggle() {
@@ -852,31 +882,16 @@
     });
   }
 
-  /* v10: canvas tabanlı gerçek yeniden boyama (luminance-preserving recolor).
-     CSS filter (sepia/hue-rotate) yaklaşımı terk edildi — piksel piksel HSL
-     dönüşümüyle hedef renk uygulanır, orijinal lightness korunur; amber LED'ler
-     ve cam/koyu bölgeler korunur (bkz. assets/js/recolor.js — HBOTRecolor).
-     Hedef HSL palet swatch hex'inden alınır; bu tablolar sadece boya MODU seçer:
-     "paint" = hue+sat uygula, lightness koru | "metal" = düşük sat + lightness ölçekle
-     null = varsayılan renk (İnci Beyazı/Krem), ham kare gösterilir, işlem yapılmaz. */
-  const EXT_PAINT_MODE = {
-    "pearl-white": null,
-    "sampanya": "paint", "bronz": "paint",
-    "grafit": "metal", "antrasit": "metal", "mat-siyah": "metal",
-    "gece-laciverti": "paint", "bordo": "paint", "zumrut": "paint"
-  };
-  const INT_PAINT_MODE = {
-    "cream": null,
-    "kum-beji": "paint", "konyak": "paint", "anthracite": "metal",
-    "burgundy": "paint", "navy": "paint"
-  };
-  /* Koltuk: sadece iç görünümde + kullanıcı koltuk rengini bilinçli değiştirdiyse uygulanır */
-  const SEAT_PAINT_MODE = {
-    "konyak": "paint", "siyah": "metal", "lacivert": "paint",
-    "krem": "paint", "bordo": "paint", "gri": "metal"
-  };
+  /* v11: canvas piksel-recolor motoru geri alındı — maskeler kabin geometrisini
+     tam takip etmiyor (cam/panel de boyanıyordu), sonuç sert/hatalı çıkıyordu.
+     Yarı saydam CSS blend-mode tint katmanına dönüldü: aynı maskeyi kullanır
+     ama düşük opaklıkta uygulandığından maske kusurları gözü rahatsız etmez,
+     orijinal fotoğrafın ışık/doku detayı her zaman görünür kalır. */
+  const EXT_TINT_STRENGTH = { "pearl-white": 0, sampanya: 0.4, bronz: 0.45, grafit: 0.5, antrasit: 0.5, "mat-siyah": 0.55, "gece-laciverti": 0.55, bordo: 0.55, zumrut: 0.55 };
+  const INT_TINT_STRENGTH = { cream: 0, "kum-beji": 0.35, konyak: 0.45, anthracite: 0.5, burgundy: 0.55, navy: 0.55 };
+  const SEAT_TINT_STRENGTH = { konyak: 0.5, siyah: 0.6, lacivert: 0.55, krem: 0.4, bordo: 0.6, gri: 0.5 };
 
-  /* v7: gövde/bölge maskeleri — recolor sadece maskeli kabin/döşeme/koltuk alanına uygulanır */
+  /* v7: gövde/bölge maskeleri — tint sadece maskeli kabin/döşeme/koltuk alanına uygulanır */
   const STAGE_TINT_MASKS = {
     "real/apex-lounge-real": "masks/ext-lounge",
     "real/apex-duo-real": "masks/ext-duo",
@@ -895,139 +910,6 @@
     "real/apex-quad-cube-ic": "masks/seat-quadcube",
     "real/apex-nexus-ic": "masks/seat-nexus"
   };
-
-  /* v10: recolor motor tutkalı — işlenmiş kare cache'i + async üretim.
-     İşlenmiş kareler blob: URL olarak cache'lenir; sahne img'inin src'si doğrudan
-     işlenmiş kareyi gösterir (ayrı overlay katmanı YOK — v8/v9 tint sistemi söküldü). */
-  const recolorCache = new Map(); // ck -> blobUrl | "pending"
-  const RECOLOR_CACHE_MAX = 40;
-  let recolorOK = null;
-  /* Atanan son src (blob: veya raw) — img.src okunduğunda tarayıcı mutlak URL'ye
-     çevirdiği için karşılaştırma bu değişkenle yapılır. */
-  let stageCurrentSrc = "";
-
-  function recolorSupported() {
-    if (recolorOK !== null) return recolorOK;
-    try {
-      const c = document.createElement("canvas");
-      recolorOK = !!(window.HBOTRecolor && c && c.getContext && c.getContext("2d"));
-    } catch (e) { recolorOK = false; }
-    return recolorOK;
-  }
-
-  function paintSpecFor(modeMap, colorId, colorsList) {
-    const mode = modeMap[colorId];
-    if (!mode || !colorsList) return null;
-    const col = colorsList.find((c) => c.id === colorId);
-    if (!col) return null;
-    const hsl = window.HBOTRecolor.hexToHsl(col.hex);
-    if (!hsl) return null;
-    return { h: hsl[0], s: hsl[1], l: hsl[2], metal: mode === "metal" };
-  }
-
-  /* Aktif sahne hedefi için boya spec'i: null = ham görsel (işlem yok) */
-  function stagePaintSpec(target) {
-    if (!recolorSupported()) return null;
-    const dict = TRANSLATIONS[currentLang];
-    if (!dict || !dict.configurator) return null;
-    const maskKey = target.key.indexOf("spin/") === 0 ? `spin:${configState.model}` : target.key;
-    const bodyMask = STAGE_TINT_MASKS[maskKey];
-    const passes = [];
-    if (!target.interior) {
-      const p = paintSpecFor(EXT_PAINT_MODE, configState.color, dict.configurator.colors);
-      if (p && bodyMask) passes.push({ mask: bodyMask, paint: p, id: configState.color });
-    } else {
-      const p = paintSpecFor(INT_PAINT_MODE, configState.interiorColor, dict.configurator.interior_colors);
-      if (p && bodyMask) passes.push({ mask: bodyMask, paint: p, id: configState.interiorColor });
-      if (configState.seatTouched) {
-        const seatMask = STAGE_SEAT_MASKS[target.key];
-        const sp = paintSpecFor(SEAT_PAINT_MODE, configState.seatColor, dict.configurator.seat_colors);
-        if (sp && seatMask) passes.push({ mask: seatMask, paint: sp, id: "seat-" + configState.seatColor });
-      }
-    }
-    if (!passes.length) return null;
-    return { passes, tag: passes.map((p) => p.id).join("+") };
-  }
-
-  function loadRecolorImg(src) {
-    return new Promise((res, rej) => {
-      const im = new Image();
-      im.onload = () => res(im);
-      im.onerror = () => rej(new Error("img load: " + src));
-      im.src = src;
-    });
-  }
-
-  async function startRecolorJob(ck, imgKey, spec) {
-    try {
-      const base = await loadRecolorImg(`assets/img/models/${imgKey}.webp`);
-      const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`assets/img/models/${p.mask}.png?v=20`)));
-      const w = base.naturalWidth, h = base.naturalHeight;
-      if (!w || !h) throw new Error("empty frame");
-      const c = document.createElement("canvas");
-      c.width = w; c.height = h;
-      const ctx = c.getContext("2d", { willReadFrequently: true });
-      ctx.drawImage(base, 0, 0);
-      const imgData = ctx.getImageData(0, 0, w, h);
-      const mc = document.createElement("canvas");
-      mc.width = w; mc.height = h;
-      const mctx = mc.getContext("2d", { willReadFrequently: true });
-      const passes = spec.passes.map((p, i) => {
-        mctx.clearRect(0, 0, w, h);
-        mctx.drawImage(masks[i], 0, 0, w, h);
-        return { data: mctx.getImageData(0, 0, w, h).data, paint: p.paint };
-      });
-      window.HBOTRecolor.recolorImageData(imgData.data, passes);
-      ctx.putImageData(imgData, 0, 0);
-      // v10.1: blob: yerine data: URL — sitenin CSP'si (img-src 'self' data: https:)
-      // blob: görselleri engelliyordu; data: izinli olduğu için ek izin gerekmez.
-      try {
-        const dataUrl = c.toDataURL("image/webp", 0.92);
-        if (!dataUrl || dataUrl.length < 100) { recolorCache.delete(ck); return; }
-        recolorCache.set(ck, dataUrl);
-        if (recolorCache.size > RECOLOR_CACHE_MAX) {
-          const k0 = recolorCache.keys().next().value;
-          recolorCache.delete(k0);
-        }
-        // İşlenmiş kare hazır — sahne hâlâ aynı spec'teyse cross-fade ile devreye girer
-        updateConfigStage(TRANSLATIONS[currentLang]);
-      } catch (e2) {
-        recolorCache.delete(ck);
-      }
-    } catch (e) {
-      recolorCache.delete(ck);
-    }
-  }
-
-  /* Sahne src çözümü: boya aktifse işlenmiş kare (cache hit) döner; miss'te ham
-     kare gösterilir ve üretim arka planda başlar (bitince updateConfigStage tetiklenir). */
-  function resolveStageSrc(target) {
-    const raw = `assets/img/models/${target.key}.webp`;
-    const spec = stagePaintSpec(target);
-    if (!spec) return raw;
-    const ck = `${target.key}|${spec.tag}`;
-    const hit = recolorCache.get(ck);
-    if (hit && hit !== "pending") return hit;
-    if (!hit) {
-      recolorCache.set(ck, "pending");
-      startRecolorJob(ck, target.key, spec);
-    }
-    return raw;
-  }
-
-  /* Spin modelinde dış görünümde boya aktifse kalan 23 kareyi boşta önceden işle */
-  function prewalkRecolor(target) {
-    const spec = stagePaintSpec(target);
-    if (!spec || target.interior || !spinAvailableFor()) return;
-    for (let i = 0; i < SPIN_FRAME_COUNT; i++) {
-      const key = spinFrameKey(i);
-      const ck = `${key}|${spec.tag}`;
-      if (!recolorCache.has(ck)) {
-        recolorCache.set(ck, "pending");
-        setTimeout(() => startRecolorJob(ck, key, spec), 160 * i);
-      }
-    }
-  }
 
   /* Kart görselleri: model -> gerçek fotoğraf (Solo/Quad kendi fotosu yok — aile görseli) */
   const MODEL_CARD_IMG = {
