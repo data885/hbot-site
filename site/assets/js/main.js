@@ -82,10 +82,10 @@
     nexus: { base: 220000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 17600 }, { ata: "2.5 ATA", price: 33000 }, { ata: "3.0 ATA", price: 55000, nexusOnly: true }, { ata: "6.0 ATA", price: 88000, nexusOnly: true }] }
   };
   /* Basınç kademe katsayıları (model base'ine göre): 1.5→taban, 2.0→+%8, 2.5→+%15, 3.0→+%25, 6.0→+%40 (100'e yuvarlı).
-     3.0 ve 6.0 ATA yalnızca Apex Nexus'ta seçilebilir (nexusOnly) — Nexus'ta 1.5–6.0 kademelerin HEPSİ görünür. */
+     Apex Nexus medical kabindir: YALNIZCA 3.0 ve 6.0 ATA sunulur (nexusOnly). Diğer modellerde 1.5/2.0/2.5 ATA aktiftir. */
   const ADDON_PRICING = { massage: 2200, leather: 1800, entertainment: 1200, finish: 900, uvc: 1500, "backup-o2": 3000, warranty: 2500, install: 1000, playstation: 1900 };
   const STYLE_PRICING = { solid: 0, glass: 3500, premium: 7500 };
-  const PRESSURE_RANGE = { "solo-lounge": "1.5 – 2.5 ATA", solo: "1.5 – 2.5 ATA", duo: "1.5 – 2.5 ATA", quad: "1.5 – 2.5 ATA", "quad-cube": "1.5 – 2.5 ATA", nexus: "1.5 – 6.0 ATA" };
+  const PRESSURE_RANGE = { "solo-lounge": "1.5 – 2.5 ATA", solo: "1.5 – 2.5 ATA", duo: "1.5 – 2.5 ATA", quad: "1.5 – 2.5 ATA", "quad-cube": "1.5 – 2.5 ATA", nexus: "3.0 – 6.0 ATA" };
 
   /* Apex Nexus: base price includes 6 seats; each additional seat adds SEAT_PRICE (illustrative — update with real figure) */
   const NEXUS_BASE_SEATS = 6;
@@ -604,44 +604,45 @@
     const hint = document.getElementById("stage-spin-hint");
     if (hint) hint.hidden = !canSpin;
 
-    // Renk tint katmanı: maskeli bölgeye uygulanır — sahne/arka plan asla renklenmez.
-    // Dış görünümde dış renk + dış maske, iç görünümde iç renk + döşeme maskesi.
+    // Renk katmanı (v8 — klasik araba konfigüratörü tekniği):
+    // Sahne görselinin BİR KOPYASI (background-image) maskeyle sadece gövde/döşeme/koltuk
+    // alanına bindirilir ve kopyaya CSS filter (hue-rotate/saturate/brightness) verilir.
+    // Orijinal renderın gölge/parlama detayı korunur — "renkli ışık hüzmesi" değil gerçek boya hissi.
+    // Reçetesiz renk (varsayılan pearl-white/cream) = katman gizli, filter: none.
     const tintEl = document.getElementById("stage-tint");
-    if (tintEl && dict && dict.configurator) {
+    if (tintEl) {
       const maskKey = target.key.indexOf("spin/") === 0 ? `spin:${configState.model}` : target.key;
       const maskPath = STAGE_TINT_MASKS[maskKey];
       const clipDef = STAGE_TINT_CLIP[maskKey];
       const isInt = !!target.interior;
+      const filter = isInt ? INT_COLOR_FILTER[configState.interiorColor] : EXT_COLOR_FILTER[configState.color];
+      const show = !!filter && !!(maskPath || clipDef);
       tintEl.classList.toggle("stage-tint--interior", isInt);
-      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=13")` : "none";
+      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=14")` : "none";
       tintEl.style.webkitMaskImage = maskUrl;
       tintEl.style.maskImage = maskUrl;
-      // clip-path fallback: maske desteklenmese de tint bölge dışına taşmaz
+      // clip-path fallback: maske desteklenmese de renkli kopya bölge dışına taşmaz
       tintEl.style.clipPath = clipDef ? tiltClipPoly(clipDef.poly, clipDef.a, clipDef.fit) : "none";
-
-      const list = isInt ? (dict.configurator.interior_colors || []) : (dict.configurator.colors || []);
-      const selId = isInt ? configState.interiorColor : configState.color;
-      const strength = isInt ? (INT_TINT_STRENGTH[selId] || 0) : (EXT_TINT_STRENGTH[selId] || 0);
-      const colInfo = list.find((col) => col.id === selId);
-      tintEl.style.backgroundColor = colInfo ? colInfo.hex : "transparent";
-      tintEl.style.opacity = String((maskPath || clipDef) && colInfo ? strength : 0);
+      tintEl.style.backgroundImage = show ? `url("assets/img/models/${target.key}.webp")` : "none";
+      tintEl.style.filter = show ? filter : "none";
+      tintEl.style.opacity = show ? "1" : "0";
     }
 
-    // Koltuk tint katmanı: sadece iç görünümde + kullanıcı koltuk rengini değiştirdiyse
+    // Koltuk renk katmanı: sadece iç görünümde + kullanıcı koltuk rengini bilinçli değiştirdiyse
     const seatTintEl = document.getElementById("stage-seat-tint");
-    if (seatTintEl && dict && dict.configurator) {
+    if (seatTintEl) {
       const seatMask = target.interior ? STAGE_SEAT_MASKS[target.key] : null;
       const seatClip = target.interior ? STAGE_SEAT_CLIP[target.key] : null;
-      const seatInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
-      const seatStrength = SEAT_TINT_STRENGTH[configState.seatColor] || 0;
-      const applySeat = !!(target.interior && (seatMask || seatClip) && seatInfo && configState.seatTouched);
-      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=13")` : "none";
+      const seatFilter = SEAT_COLOR_FILTER[configState.seatColor] || null;
+      const applySeat = !!(target.interior && (seatMask || seatClip) && seatFilter && configState.seatTouched);
+      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=14")` : "none";
       seatTintEl.classList.toggle("stage-tint--interior", !!target.interior);
       seatTintEl.style.webkitMaskImage = seatMaskUrl;
       seatTintEl.style.maskImage = seatMaskUrl;
       seatTintEl.style.clipPath = seatClip ? tiltClipPoly(seatClip.poly, seatClip.a, seatClip.fit) : "none";
-      seatTintEl.style.backgroundColor = seatInfo ? seatInfo.hex : "transparent";
-      seatTintEl.style.opacity = String(applySeat ? seatStrength : 0);
+      seatTintEl.style.backgroundImage = applySeat ? `url("assets/img/models/${target.key}.webp")` : "none";
+      seatTintEl.style.filter = applySeat ? seatFilter : "none";
+      seatTintEl.style.opacity = applySeat ? "1" : "0";
     }
   }
 
@@ -704,6 +705,11 @@
       stageCurrentKey = key; // yazan burası — flip heuristic'i ile çakışma olmaz
       active.classList.add("stage-img--photo");
       active.classList.remove("stage-img--interior");
+      // Renk kopyası da frame'i izlesin — sürüklerken tint sabit frame'de kalmasın
+      const tintEl = document.getElementById("stage-tint");
+      if (tintEl && tintEl.style.opacity === "1") {
+        tintEl.style.backgroundImage = `url("assets/img/models/${key}.webp")`;
+      }
     };
     const stepBy = (px) => {
       acc += px;
@@ -882,12 +888,42 @@
     });
   }
 
-  /* Renk tint güçleri: blend-mode "color" — cihaz gövdesinin rengi değişir, parlaklık/doku korunur.
-     pearl-white/cream = nötr (tint yok). */
-  const EXT_TINT_STRENGTH = { "pearl-white": 0, sampanya: 0.4, bronz: 0.45, grafit: 0.5, antrasit: 0.5, "mat-siyah": 0.55, "gece-laciverti": 0.55, bordo: 0.55, zumrut: 0.55 };
-  const INT_TINT_STRENGTH = { cream: 0, "kum-beji": 0.35, konyak: 0.45, anthracite: 0.5, burgundy: 0.55, navy: 0.55 };
-  /* Koltuk tint'i: sadece kullanıcı koltuk rengini bilinçli değiştirdiyse uygulanır (fotoğraf sadeliği korunur) */
-  const SEAT_TINT_STRENGTH = { konyak: 0.55, siyah: 0.65, lacivert: 0.6, krem: 0.45, bordo: 0.65, gri: 0.5 };
+  /* v8: renk filtresi reçeteleri — tint katmanı sahne görselinin maskelenmiş
+     bir kopyası; CSS filter ile yeniden renklendirilir, orijinal ışık/gölge korunur.
+     null = varsayılan (pearl-white/cream) renk, katman gizlenir.
+     Baz render neredeyse nötr beyaz/inci — saf hue-rotate doygun renk ÜRETEMEZ
+     (nötr pikselin hue'su yoktur). Bu yüzden doygun renkler önce sepia(1) ile
+     kahverengi baz hue kazanır, sonra hue-rotate ile hedef renge döndürülür
+     (klasik CSS colorize tekniği). Değerler headless Chrome önizlemesiyle
+     görsel olarak doğrulandı (audit/tint_preview*.png). */
+  const EXT_COLOR_FILTER = {
+    "pearl-white": null,
+    "sampanya": "sepia(0.35) saturate(1.5) brightness(1.06)",
+    "bronz": "brightness(0.92) sepia(0.9) saturate(2.2) hue-rotate(-8deg)",
+    "grafit": "saturate(0.25) brightness(0.78)",
+    "antrasit": "saturate(0.15) brightness(0.58)",
+    "mat-siyah": "saturate(0.06) brightness(0.38)",
+    "gece-laciverti": "brightness(0.62) sepia(1) hue-rotate(190deg) saturate(3.5)",
+    "bordo": "brightness(0.52) sepia(1) hue-rotate(-55deg) saturate(3.2)",
+    "zumrut": "brightness(0.52) sepia(1) hue-rotate(105deg) saturate(2.6)"
+  };
+  const INT_COLOR_FILTER = {
+    "cream": null,
+    "kum-beji": "sepia(0.45) saturate(1.4) brightness(1.05)",
+    "konyak": "sepia(0.85) saturate(2) brightness(0.95) hue-rotate(-8deg)",
+    "anthracite": "saturate(0.15) brightness(0.58)",
+    "burgundy": "brightness(0.52) sepia(1) hue-rotate(-55deg) saturate(3.2)",
+    "navy": "brightness(0.62) sepia(1) hue-rotate(190deg) saturate(3.5)"
+  };
+  /* Koltuk filtresi: sadece iç görünümde + kullanıcı koltuk rengini bilinçli değiştirdiyse uygulanır */
+  const SEAT_COLOR_FILTER = {
+    "konyak": "sepia(0.85) saturate(2) brightness(0.95) hue-rotate(-8deg)",
+    "siyah": "saturate(0.06) brightness(0.38)",
+    "lacivert": "brightness(0.62) sepia(1) hue-rotate(190deg) saturate(3.5)",
+    "krem": "sepia(0.35) saturate(1.3) brightness(1.08)",
+    "bordo": "brightness(0.52) sepia(1) hue-rotate(-55deg) saturate(3.2)",
+    "gri": "saturate(0.2) brightness(0.78)"
+  };
 
   /* v7: tint bölge maskeleri — sahne/arka plan asla renklenmez; sadece maskeli kabin/döşeme/koltuk alanı */
   const STAGE_TINT_MASKS = {
@@ -1081,9 +1117,9 @@
 
   let pressureAutoNote = false;
   /* Basınç kademesi uyumluluğu:
-     - Nexus dışı modelde nexusOnly kademe (3.0/6.0) seçiliyse -> 2.5 ATA'ya düş
-     - Nexus'ta tüm kademeler (1.5–6.0) geçerli — düşük kademe seçiliyse DOKUNMA
-     notify=true iken kullanıcıya bilgi notu gösterilir ("down"). */
+     - Nexus dışı modelde nexusOnly kademe (3.0/6.0) seçiliyse -> 2.5 ATA'ya düş ("down")
+     - Nexus'ta düşük kademe (1.5/2.0/2.5) seçiliyse -> 3.0 ATA'ya çıkar ("up")
+     notify=true iken kullanıcıya bilgi notu gösterilir. */
   function ensureTierCompatible(notify) {
     const tiers = MODEL_PRICING[configState.model].tiers;
     const cur = tiers[configState.tierIndex];
@@ -1095,6 +1131,12 @@
       pressureAutoNote = notify ? "down" : false;
       return true;
     }
+    if (isNexus && !cur.nexusOnly) {
+      const idx30 = tiers.findIndex((t) => t.ata === "3.0 ATA");
+      configState.tierIndex = idx30 >= 0 ? idx30 : 0;
+      pressureAutoNote = notify ? "up" : false;
+      return true;
+    }
     return false;
   }
 
@@ -1103,8 +1145,8 @@
     if (!c) return;
     const isNexus = configState.model === "nexus";
     const tiers = MODEL_PRICING[configState.model].tiers;
-    /* Kartlar modele göre filtrelenir: Nexus -> TÜM kademeler (1.5/2.0/2.5/3.0/6.0); diğerleri -> sadece 1.5/2.0/2.5 */
-    const visible = tiers.map((t, i) => ({ t, i })).filter(({ t }) => (isNexus ? true : !t.nexusOnly));
+    /* Kartlar modele göre filtrelenir: Nexus -> SADECE 3.0/6.0 ATA (medical); diğerleri -> sadece 1.5/2.0/2.5 ATA */
+    const visible = tiers.map((t, i) => ({ t, i })).filter(({ t }) => (isNexus ? t.nexusOnly : !t.nexusOnly));
     c.innerHTML = visible.map(({ t, i }) => {
       const selected = configState.tierIndex === i ? " is-selected" : "";
       const priceLabel = t.price === 0 ? dict.common.included_badge : "+" + formatPrice(t.price);
@@ -1129,7 +1171,9 @@
     const note = document.getElementById("pressure-auto-note");
     if (note) {
       note.hidden = !pressureAutoNote;
-      if (pressureAutoNote) {
+      if (pressureAutoNote === "up") {
+        note.textContent = dict.configurator.pressure_auto_note_up || "";
+      } else if (pressureAutoNote) {
         note.textContent = dict.configurator.pressure_auto_note || "";
       }
     }

@@ -950,18 +950,20 @@ h1, h2, h3, h4, p { margin: 0; }
 
 /* v5: sahne renk tint katmanı — kabin gövdesine renk yansıtır (blend: color)
    v7: tint artık .stage-tilt İÇİNDE — sahne/arka plan asla renklenmez.
-   Dış görünümde img ile aynı kutu (max-w/h + JS aspect-ratio), iç görünümde tilt'i kaplar.
-   Bölge sınırlaması mask-image PNG'leri ile (JS yükler). */
+   v8: katman, sahne görselinin maskelenmiş KOPYASI (background-image) + CSS filter.
+   Orijinal gölge/parlama korunur; blend-mode yok. Bölge sınırlaması mask-image ile (JS yükler). */
 .stage-tint {
   position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; border-radius: 12px;
-  mix-blend-mode: color; opacity: 0; background: transparent;
+  opacity: 0;
+  background-repeat: no-repeat; background-position: center; background-size: contain;
   -webkit-mask-size: contain; mask-size: contain;
   -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
   -webkit-mask-position: center; mask-position: center;
-  transition: opacity .45s ease, background-color .45s ease;
+  transition: opacity .3s ease;
 }
 .stage-tint--interior {
   border-radius: 10px;
+  background-size: cover;
   -webkit-mask-size: cover; mask-size: cover;
 }
 .stage-tint--seat { z-index: 4; }

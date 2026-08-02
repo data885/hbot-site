@@ -35,8 +35,8 @@ let src = fs.readFileSync(path.join(siteDir, "assets/js/main.js"), "utf8");
 src = src.replace(/\}\)\(\);\s*$/, `
   return { configState, MODEL_PRICING, ensureTierCompatible, spinNormIdx, spinFrameKey, spinAvailableFor,
            currentStageTarget, computeSubtotal, computeTotal, tiltClipPoly, SPIN_MODELS, SPIN_FRAME_COUNT,
-           STAGE_TINT_MASKS, STAGE_TINT_CLIP, STAGE_SEAT_MASKS, EXT_TINT_STRENGTH, INT_TINT_STRENGTH,
-           SEAT_TINT_STRENGTH, REAL_STAGE, REAL_INTERIOR, MODEL_CARD_IMG, NEXUS_BASE_SEATS, NEXUS_MAX_SEATS,
+           STAGE_TINT_MASKS, STAGE_TINT_CLIP, STAGE_SEAT_MASKS, EXT_COLOR_FILTER, INT_COLOR_FILTER,
+           SEAT_COLOR_FILTER, REAL_STAGE, REAL_INTERIOR, MODEL_CARD_IMG, NEXUS_BASE_SEATS, NEXUS_MAX_SEATS,
            NEXUS_SEAT_PRICE, ADDON_PRICING, STYLE_PRICING, REF_CODES };
 })();`);
 
@@ -61,11 +61,11 @@ models.forEach((m) => {
 // pressure visibility filter (renderConfigPressure logic replicated)
 function visibleTiers(model) {
   const isNexus = model === "nexus";
-  return M.MODEL_PRICING[model].tiers.filter((t) => (isNexus ? true : !t.nexusOnly)).map((t) => t.ata);
+  return M.MODEL_PRICING[model].tiers.filter((t) => (isNexus ? !!t.nexusOnly : !t.nexusOnly)).map((t) => t.ata);
 }
 models.forEach((m) => {
   const vis = visibleTiers(m);
-  if (m === "nexus") check(`nexus: görünür kademeler = [${vis}]`, vis.join(",") === "1.5 ATA,2.0 ATA,2.5 ATA,3.0 ATA,6.0 ATA");
+  if (m === "nexus") check(`nexus: görünür kademeler = [${vis}]`, vis.join(",") === "3.0 ATA,6.0 ATA", vis.join(","));
   else check(`${m}: 3.0/6.0 gizli, görünür = [${vis}]`, vis.join(",") === "1.5 ATA,2.0 ATA,2.5 ATA", vis.join(","));
 });
 
@@ -76,9 +76,9 @@ check("duo'da 3.0 seçiliyken -> 2.5 ATA'ya düşer", M.MODEL_PRICING.duo.tiers[
 M.configState.model = "quad"; M.configState.tierIndex = 4; // 6.0 ATA seçiliyken quad'a geçiş
 M.ensureTierCompatible(false);
 check("quad'da 6.0 seçiliyken -> 2.5 ATA'ya düşer", M.MODEL_PRICING.quad.tiers[M.configState.tierIndex].ata === "2.5 ATA", M.MODEL_PRICING.quad.tiers[M.configState.tierIndex].ata);
-M.configState.model = "nexus"; M.configState.tierIndex = 0; // 1.5 seçiliyken nexus'a geçiş — dokunulmamalı
+M.configState.model = "nexus"; M.configState.tierIndex = 0; // 1.5 seçiliyken nexus'a geçiş — 3.0'a çekilmeli
 M.ensureTierCompatible(false);
-check("nexus'ta 1.5 seçiliyken -> seçim korunur (1.5 ATA)", M.MODEL_PRICING.nexus.tiers[M.configState.tierIndex].ata === "1.5 ATA", M.MODEL_PRICING.nexus.tiers[M.configState.tierIndex].ata);
+check("nexus'ta 1.5 seçiliyken -> 3.0 ATA'ya çeker", M.MODEL_PRICING.nexus.tiers[M.configState.tierIndex].ata === "3.0 ATA", M.MODEL_PRICING.nexus.tiers[M.configState.tierIndex].ata);
 M.configState.tierIndex = 4;
 M.ensureTierCompatible(false);
 check("nexus'ta 6.0 seçilebilir", M.MODEL_PRICING.nexus.tiers[M.configState.tierIndex].ata === "6.0 ATA");
@@ -105,14 +105,17 @@ M.configState.stageView = "interior";
 check("iç görünümde target = lounge iç foto", M.currentStageTarget().key === "real/apex-lounge-ic", M.currentStageTarget().key);
 M.configState.stageView = "exterior";
 
-console.log("\n== 4. Tint maske kapsama (her model + her görünüm) ==");
+console.log("\n== 4. Tint maske kapsama + renk filtresi reçeteleri (v8) ==");
 const trDict = TRANSLATIONS.tr.configurator;
 const extColorIds = trDict.colors.map((c) => c.id);
 const intColorIds = trDict.interior_colors.map((c) => c.id);
 const seatColorIds = trDict.seat_colors.map((c) => c.id);
-check("her dış renk için strength tanımlı", extColorIds.every((id) => id in M.EXT_TINT_STRENGTH), extColorIds.filter((id) => !(id in M.EXT_TINT_STRENGTH)).join(","));
-check("her iç renk için strength tanımlı", intColorIds.every((id) => id in M.INT_TINT_STRENGTH), intColorIds.filter((id) => !(id in M.INT_TINT_STRENGTH)).join(","));
-check("her koltuk rengi için strength tanımlı", seatColorIds.every((id) => id in M.SEAT_TINT_STRENGTH), seatColorIds.filter((id) => !(id in M.SEAT_TINT_STRENGTH)).join(","));
+const validRecipe = (v) => v === null || (typeof v === "string" && v.length > 0);
+check("her dış renk için filtre reçetesi tanımlı (null veya string)", extColorIds.every((id) => id in M.EXT_COLOR_FILTER && validRecipe(M.EXT_COLOR_FILTER[id])), extColorIds.filter((id) => !(id in M.EXT_COLOR_FILTER)).join(","));
+check("her iç renk için filtre reçetesi tanımlı (null veya string)", intColorIds.every((id) => id in M.INT_COLOR_FILTER && validRecipe(M.INT_COLOR_FILTER[id])), intColorIds.filter((id) => !(id in M.INT_COLOR_FILTER)).join(","));
+check("her koltuk rengi için filtre reçetesi tanımlı (null veya string)", seatColorIds.every((id) => id in M.SEAT_COLOR_FILTER && validRecipe(M.SEAT_COLOR_FILTER[id])), seatColorIds.filter((id) => !(id in M.SEAT_COLOR_FILTER)).join(","));
+check("varsayılan dış renk (pearl-white) nötr = null", M.EXT_COLOR_FILTER["pearl-white"] === null, String(M.EXT_COLOR_FILTER["pearl-white"]));
+check("varsayılan iç renk (cream) nötr = null", M.INT_COLOR_FILTER.cream === null, String(M.INT_COLOR_FILTER.cream));
 
 models.forEach((m) => {
   M.configState.model = m;

@@ -113,7 +113,8 @@ global.TRANSLATIONS = new Function(tSrc + "; return TRANSLATIONS;")();
 let src = fs.readFileSync(path.join(siteDir, "assets/js/main.js"), "utf8");
 src = src.replace(/\}\)\(\);\s*$/, `
   return { configState, currentStageTarget, updateConfigStage, renderConfigSummary, initSpin,
-           REAL_STAGE, REAL_INTERIOR, SPIN_MODELS, SPIN_FRAME_COUNT };
+           REAL_STAGE, REAL_INTERIOR, SPIN_MODELS, SPIN_FRAME_COUNT,
+           EXT_COLOR_FILTER, INT_COLOR_FILTER, SEAT_COLOR_FILTER };
 })();`);
 const M = new Function("return " + src)();
 M.initSpin(); // registers pointer handlers on stage
@@ -182,6 +183,31 @@ function changeColor(c) {
   invariant("color=" + c);
 }
 
+/* v8 tint katmanı assert'leri: renk kopyası + CSS filter tekniği */
+function tintCheck(tag) {
+  const problems = [];
+  const target = M.currentStageTarget();
+  const isInt = !!target.interior;
+  const recipe = isInt ? M.INT_COLOR_FILTER[M.configState.interiorColor] : M.EXT_COLOR_FILTER[M.configState.color];
+  if (recipe) {
+    if (tint.style.opacity !== "1") problems.push(`T1: tint görünür olmalı (opacity=${tint.style.opacity})`);
+    if (tint.style.filter !== recipe) problems.push(`T2: filter '${tint.style.filter}' != reçete '${recipe}'`);
+    if (!tint.style.backgroundImage || !tint.style.backgroundImage.includes(target.key)) {
+      problems.push(`T3: tint bg '${tint.style.backgroundImage}' hedefi içermiyor '${target.key}'`);
+    }
+  } else {
+    if (tint.style.opacity !== "0") problems.push(`T4: nötr renkte tint gizli olmalı (opacity=${tint.style.opacity})`);
+    if (tint.style.filter !== "none") problems.push(`T5: nötr renkte filter none olmalı ('${tint.style.filter}')`);
+  }
+  if (problems.length) {
+    failures++;
+    console.log(`  ✘ [tint:${tag}]`);
+    problems.forEach((p) => console.log("      " + p));
+  } else {
+    console.log(`  ✔ [tint:${tag}] opacity=${tint.style.opacity} filter=${tint.style.filter}`);
+  }
+}
+
 console.log("== Akış 1: ilk yükleme (varsayılan solo-lounge) ==");
 M.renderConfigSummary(dict); flushRaf(); invariant("init");
 
@@ -194,7 +220,24 @@ drag(-220);
 
 console.log("\n== Akış 4: spin sonrası renk/opsiyon değişimi ==");
 changeColor("bordo");
+tintCheck("bordo reçetesi (nexus dış görünüm)");
 changeColor("mat-siyah");
+tintCheck("mat-siyah reçetesi");
+
+console.log("\n== Akış 4b: tint açıkken sürükleme — kopya frame'i izlemeli ==");
+const preDragFrame = M.currentStageTarget().key;
+drag(120);
+const postDragFrame = M.currentStageTarget().key;
+if (tint.style.backgroundImage && tint.style.backgroundImage.includes(postDragFrame)) {
+  console.log(`  ✔ [tint:drag-frame] kopya yeni frame'e geçti (${postDragFrame})`);
+} else if (postDragFrame === preDragFrame) {
+  console.log(`  · [tint:drag-frame] frame değişmedi (${preDragFrame}), kontrol atlandı`);
+} else {
+  failures++;
+  console.log(`  ✘ [tint:drag-frame] tint bg '${tint.style.backgroundImage}' != '${postDragFrame}'`);
+}
+changeColor("pearl-white");
+tintCheck("pearl-white nötr — katman gizli");
 
 console.log("\n== Akış 5: iç/dış görünüm geçişleri ==");
 setView("interior");
