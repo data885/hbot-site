@@ -2015,21 +2015,15 @@
         return;
       }
 
-      // Konfigurator: marka kimlikli proforma PDF uret + gercek urun fotografiyle ek olarak gonder; webhook alanlari (lang/thanks/quote_no)
+      // Konfigurator: webhook alanlari (quote_no).
+      // NOT: PDF eki gecici olarak KAPALI — Formspree'nin mevcut plani dosya eki
+      // kabul etmiyor ("File Uploads Not Permitted"), eklenirse tum gonderim
+      // reddediliyordu. Musteri PDF'i "Yazdır / PDF Olarak Kaydet" ile kendi
+      // indirebilir; lead verisi (config_summary) yine de gidiyor.
       if (formId === "quote-form") {
         updateQuoteFormHiddenField();
         formData.set("config_summary", (document.getElementById("config-summary-text") || {}).value || "");
-        try {
-          const pdf = await buildProformaPdf(formData, dict);
-          if (pdf) {
-            const byteChars = atob(pdf.base64);
-            const byteNums = new Array(byteChars.length);
-            for (let i = 0; i < byteChars.length; i++) byteNums[i] = byteChars.charCodeAt(i);
-            const pdfBlob = new Blob([new Uint8Array(byteNums)], { type: "application/pdf" });
-            formData.set("proforma_pdf", pdfBlob, pdf.name);
-            formData.set("quote_no", pdf.quoteNo);
-          }
-        } catch (pdfErr) { /* PDF uretilemese de form gitsin */ }
+        formData.set("quote_no", generateQuoteNo());
       }
 
       pushLeadToCrm({
