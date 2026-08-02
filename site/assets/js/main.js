@@ -2049,7 +2049,7 @@
       fetch(form.action, { method: "POST", body: formData, headers: { Accept: "application/json" } })
         .then((res) => res.json().catch(() => ({ success: res.ok })))
         .then((data) => {
-          if (data && data.success) {
+          if (data && (data.ok || data.success)) {
             form.reset();
             if (successEl) {
               successEl.hidden = false;
