@@ -2057,15 +2057,23 @@
         return;
       }
 
-      // Konfigurator: webhook alanlari (quote_no).
-      // NOT: PDF eki gecici olarak KAPALI — Formspree'nin mevcut plani dosya eki
-      // kabul etmiyor ("File Uploads Not Permitted"), eklenirse tum gonderim
-      // reddediliyordu. Musteri PDF'i "Yazdır / PDF Olarak Kaydet" ile kendi
-      // indirebilir; lead verisi (config_summary) yine de gidiyor.
+      // Konfigurator: marka kimlikli proforma PDF uret + gercek urun fotografiyle
+      // birlikte base64 olarak gonder (Google Apps Script backend'i cozup e-posta
+      // ekine cevirir). Formspree dosya eki kabul etmedigi icin bu form artik
+      // ayri bir Apps Script Web App endpoint'ine gidiyor (bkz. form action).
       if (formId === "quote-form") {
         updateQuoteFormHiddenField();
         formData.set("config_summary", (document.getElementById("config-summary-text") || {}).value || "");
-        formData.set("quote_no", generateQuoteNo());
+        formData.set("lang", currentLang);
+        formData.set("thanks", (dict.common && dict.common.thanks) || "Thank you for choosing us.");
+        try {
+          const pdf = await buildProformaPdf(formData, dict);
+          if (pdf) {
+            formData.set("pdf_base64", pdf.base64);
+            formData.set("pdf_name", pdf.name);
+            formData.set("quote_no", pdf.quoteNo);
+          }
+        } catch (pdfErr) { /* PDF uretilemese de form gitsin */ }
       }
 
       pushLeadToCrm({
@@ -2081,6 +2089,34 @@
         page: window.location.href,
         ts: new Date().toISOString()
       });
+
+      // Apps Script web app'i CORS yaniti dondurmuyor (opaque); no-cors ile
+      // gonderiyoruz ve agdan atmadigi surece basarili sayiyoruz. Formspree
+      // ise normal CORS + JSON yaniti destekliyor, onu okuyup dogruluyoruz.
+      const isAppsScript = form.action.indexOf("script.google.com") !== -1;
+      if (isAppsScript) {
+        fetch(form.action, { method: "POST", body: formData, mode: "no-cors" })
+          .then(() => {
+            form.reset();
+            if (successEl) {
+              successEl.hidden = false;
+              setTimeout(() => (successEl.hidden = true), 8000);
+            }
+          })
+          .catch(() => {
+            if (errorEl) {
+              errorEl.hidden = false;
+              setTimeout(() => (errorEl.hidden = true), 8000);
+            }
+          })
+          .finally(() => {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = getByPath(dict, submitKey) || "Send";
+            }
+          });
+        return;
+      }
 
       fetch(form.action, { method: "POST", body: formData, headers: { Accept: "application/json" } })
         .then((res) => res.json().catch(() => ({ success: res.ok })))
