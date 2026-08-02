@@ -496,6 +496,19 @@ const TRANSLATIONS = {
       posts: [
         {
           date: "2026",
+          tag: "Kurucu Notu",
+          icon: "care",
+          title: "Neden Kendim de Hiperbarik Oksijen Kullanıyorum",
+          paragraphs: [
+            "Almita Group çatısı altında altı farklı sektörü bir arada yürütüyoruz; yoğun bir tempo ve sürekli seyahat kaçınılmaz oluyor. HBOT Chamber Tech'i kurarken üretmeye başlamadan önce kendi kabinlerimizi düzenli olarak kullanmayı tercih ettim — bir ürünü, arkasında durmadan önce bizzat denemek gerektiğine inanıyorum.",
+            "Seanslar sonrasında kendimi daha dinç ve odaklanmış hissettiğimi söyleyebilirim; bu tamamen kişisel bir gözlem ve herkes için aynı sonucu vaat etmiyorum. Hiperbarik oksijen tedavisi bir tıbbi tedavi yerine geçmez; kullanım kararlarınızı mutlaka bir sağlık profesyoneliyle değerlendirin."
+          ],
+          source_name: "Almita Group – Kurucu Notu",
+          source_url: "https://almitagroup.com",
+          author: "Mürsel Alkan"
+        },
+        {
+          date: "2026",
           tag: "Longevity",
           icon: "antiaging",
           title: "HBOT ve Longevity: 2026'da Uzun Yaşam Trendi",
@@ -1171,6 +1184,19 @@ const TRANSLATIONS = {
       min_read: "min read",
       disclaimer: "These posts are summaries compiled from publicly available scientific publications and news sources; they do not constitute medical advice. Always consult a healthcare professional for treatment decisions.",
       posts: [
+        {
+          date: "2026",
+          tag: "Founder's Note",
+          icon: "care",
+          title: "Why I Use Hyperbaric Oxygen Myself",
+          paragraphs: [
+            "Under the Almita Group umbrella we run six different sectors side by side, and a demanding schedule with constant travel comes with the territory. Before we started manufacturing HBOT Chamber Tech chambers, I chose to use our own units regularly — I believe you should try a product yourself before standing behind it.",
+            "I can say that after sessions I generally feel more energized and focused; this is a personal observation, not a promise of the same result for everyone. Hyperbaric oxygen therapy is not a substitute for medical treatment; always discuss your own use with a healthcare professional."
+          ],
+          source_name: "Almita Group — Founder's Note",
+          source_url: "https://almitagroup.com",
+          author: "Mürsel Alkan"
+        },
         {
           date: "2026",
           tag: "Longevity",
@@ -1850,6 +1876,19 @@ const TRANSLATIONS = {
       posts: [
         {
           date: "2026",
+          tag: "Слово основателя",
+          icon: "care",
+          title: "Почему я сам использую гипербарический кислород",
+          paragraphs: [
+            "В составе Almita Group мы одновременно развиваем шесть направлений, и плотный график с постоянными поездками — неизбежная часть этого пути. Ещё до того как мы начали производить камеры HBOT Chamber Tech, я решил регулярно пользоваться нашими собственными камерами — считаю, что прежде чем отстаивать продукт, стоит опробовать его на себе.",
+            "После сеансов я, как правило, чувствую себя бодрее и собраннее; это личное наблюдение, а не обещание такого же результата для всех. Гипербарическая оксигенация не заменяет медицинское лечение — решения об использовании всегда обсуждайте со специалистом-медиком."
+          ],
+          source_name: "Almita Group — слово основателя",
+          source_url: "https://almitagroup.com",
+          author: "Мюрсель Алкан"
+        },
+        {
+          date: "2026",
           tag: "Долголетие",
           icon: "antiaging",
           title: "ГБО и долголетие: тренд здорового старения 2026 года",
@@ -2525,6 +2564,19 @@ const TRANSLATIONS = {
       min_read: "دقائق قراءة",
       disclaimer: "هذه المقالات عبارة عن ملخصات مُجمَّعة من منشورات علمية ومصادر إخبارية متاحة للعموم؛ ولا تُعد بمثابة استشارة طبية. يُرجى دائماً استشارة أخصائي رعاية صحية لاتخاذ قرارات العلاج.",
       posts: [
+        {
+          date: "2026",
+          tag: "كلمة المؤسس",
+          icon: "care",
+          title: "لماذا أستخدم الأكسجين عالي الضغط بنفسي",
+          paragraphs: [
+            "تحت مظلة Almita Group ندير ستة قطاعات مختلفة في آن واحد، وجدول زمني مكثف مع سفر مستمر أمر لا مفر منه. قبل أن نبدأ في تصنيع كبائن HBOT Chamber Tech، اخترت استخدام كبائننا بانتظام — أؤمن بأنه يجب تجربة المنتج بنفسك قبل أن تقف وراءه.",
+            "يمكنني القول إنني أشعر عادة بمزيد من النشاط والتركيز بعد الجلسات؛ هذه ملاحظة شخصية وليست وعدًا بنفس النتيجة للجميع. العلاج بالأكسجين عالي الضغط ليس بديلاً عن العلاج الطبي؛ استشر دائمًا أخصائي رعاية صحية بشأن استخدامك الخاص."
+          ],
+          source_name: "Almita Group — كلمة المؤسس",
+          source_url: "https://almitagroup.com",
+          author: "مورسيل ألكان"
+        },
         {
           date: "2026",
           tag: "طول العمر",

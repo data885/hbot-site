@@ -437,6 +437,7 @@
             ${readtime}
           </div>
           <h2>${post.title}</h2>
+          ${post.author ? `<p class="blog-post-author">${post.author}</p>` : ""}
           ${post.paragraphs.map((p) => `<p>${p}</p>`).join("")}
           <div class="blog-post-source">
             <span>${dict.blog.source_label}</span>
