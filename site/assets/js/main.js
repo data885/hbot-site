@@ -889,41 +889,43 @@
     });
   }
 
-  /* v8: renk filtresi reçeteleri — tint katmanı sahne görselinin maskelenmiş
+  /* v9: renk filtresi reçeteleri — tint katmanı sahne görselinin maskelenmiş
      bir kopyası; CSS filter ile yeniden renklendirilir, orijinal ışık/gölge korunur.
      null = varsayılan (pearl-white/cream) renk, katman gizlenir.
-     Baz render neredeyse nötr beyaz/inci — saf hue-rotate doygun renk ÜRETEMEZ
-     (nötr pikselin hue'su yoktur). Bu yüzden doygun renkler önce sepia(1) ile
-     kahverengi baz hue kazanır, sonra hue-rotate ile hedef renge döndürülür
-     (klasik CSS colorize tekniği). Değerler headless Chrome önizlemesiyle
-     görsel olarak doğrulandı (audit/tint_preview*.png). */
+     Baz render sıcak bej/şampanya + pişmiş ALTIN/AMBER LED ışıklı — bu yüzden her
+     reçete grayscale(0.8) ile başlar: amber LED etkisi ve doygun sıcak ton kırılır,
+     nötr gri gövde elde edilir; sonra sepia(1)+hue-rotate ile hedef boya rengi
+     verilir (grayscale'siz sepia+hue-rotate pembemsi/"ışıklı" sonuç veriyordu).
+     Koyu gri/siyah tonlarda sepia gerekmez: grayscale+brightness+contrast yeterli.
+     Bordo reçetesi canlıda görsel olarak onaylandı; diğerleri headless Chrome
+     önizlemesiyle kalibre edildi (audit/tint_v9_*.png). */
   const EXT_COLOR_FILTER = {
     "pearl-white": null,
-    "sampanya": "sepia(0.35) saturate(1.5) brightness(1.06)",
-    "bronz": "brightness(0.92) sepia(0.9) saturate(2.2) hue-rotate(-8deg)",
-    "grafit": "saturate(0.25) brightness(0.78)",
-    "antrasit": "saturate(0.15) brightness(0.58)",
-    "mat-siyah": "saturate(0.06) brightness(0.38)",
-    "gece-laciverti": "brightness(0.62) sepia(1) hue-rotate(190deg) saturate(3.5)",
-    "bordo": "brightness(0.52) sepia(1) hue-rotate(-55deg) saturate(3.2)",
-    "zumrut": "brightness(0.52) sepia(1) hue-rotate(105deg) saturate(2.6)"
+    "sampanya": "grayscale(0.4) sepia(0.7) saturate(2) brightness(1)",
+    "bronz": "grayscale(0.8) sepia(1) hue-rotate(-22deg) saturate(2.4) brightness(0.5)",
+    "grafit": "grayscale(0.8) brightness(0.7)",
+    "antrasit": "grayscale(0.8) brightness(0.5) contrast(1.05)",
+    "mat-siyah": "grayscale(0.8) brightness(0.32) contrast(1.1)",
+    "gece-laciverti": "grayscale(0.8) sepia(1) hue-rotate(190deg) saturate(3) brightness(0.5)",
+    "bordo": "grayscale(0.8) sepia(1) hue-rotate(-50deg) saturate(3.2) brightness(0.45)",
+    "zumrut": "grayscale(0.8) sepia(1) hue-rotate(100deg) saturate(2.6) brightness(0.5)"
   };
   const INT_COLOR_FILTER = {
     "cream": null,
-    "kum-beji": "sepia(0.45) saturate(1.4) brightness(1.05)",
-    "konyak": "sepia(0.85) saturate(2) brightness(0.95) hue-rotate(-8deg)",
-    "anthracite": "saturate(0.15) brightness(0.58)",
-    "burgundy": "brightness(0.52) sepia(1) hue-rotate(-55deg) saturate(3.2)",
-    "navy": "brightness(0.62) sepia(1) hue-rotate(190deg) saturate(3.5)"
+    "kum-beji": "grayscale(0.5) sepia(0.6) saturate(1.6) brightness(0.95)",
+    "konyak": "grayscale(0.6) sepia(1) hue-rotate(-15deg) saturate(2) brightness(0.7)",
+    "anthracite": "grayscale(0.8) brightness(0.5) contrast(1.05)",
+    "burgundy": "grayscale(0.8) sepia(1) hue-rotate(-50deg) saturate(3.2) brightness(0.45)",
+    "navy": "grayscale(0.8) sepia(1) hue-rotate(190deg) saturate(3) brightness(0.5)"
   };
   /* Koltuk filtresi: sadece iç görünümde + kullanıcı koltuk rengini bilinçli değiştirdiyse uygulanır */
   const SEAT_COLOR_FILTER = {
-    "konyak": "sepia(0.85) saturate(2) brightness(0.95) hue-rotate(-8deg)",
-    "siyah": "saturate(0.06) brightness(0.38)",
-    "lacivert": "brightness(0.62) sepia(1) hue-rotate(190deg) saturate(3.5)",
-    "krem": "sepia(0.35) saturate(1.3) brightness(1.08)",
-    "bordo": "brightness(0.52) sepia(1) hue-rotate(-55deg) saturate(3.2)",
-    "gri": "saturate(0.2) brightness(0.78)"
+    "konyak": "grayscale(0.6) sepia(1) hue-rotate(-15deg) saturate(2) brightness(0.7)",
+    "siyah": "grayscale(0.8) brightness(0.32) contrast(1.1)",
+    "lacivert": "grayscale(0.8) sepia(1) hue-rotate(190deg) saturate(3) brightness(0.5)",
+    "krem": "grayscale(0.4) sepia(0.4) saturate(1.3) brightness(1.05)",
+    "bordo": "grayscale(0.8) sepia(1) hue-rotate(-50deg) saturate(3.2) brightness(0.45)",
+    "gri": "grayscale(0.8) brightness(0.7)"
   };
 
   /* v7: tint bölge maskeleri — sahne/arka plan asla renklenmez; sadece maskeli kabin/döşeme/koltuk alanı */
