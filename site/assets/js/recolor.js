@@ -1,12 +1,20 @@
-/* HBOT Recolor Engine (v10) — canvas tabanlı, luminance-preserving gerçek yeniden boyama.
-   CSS filter (sepia/hue-rotate) yaklaşımının yerine: her piksel HSL'e çevrilir,
-   hedef rengin hue+saturation'ı uygulanır, ORİJİNAL lightness korunur → gövde
-   gerçek boya gibi görünür, gölge/parlama doğal kalır.
-   Koruma kuralları:
-   - Pişmiş amber/altın LED şeritleri (hue 25-60°, yüksek sat, parlak) DEĞİŞMEZ.
-   - Çok koyu pikseller (cam açıklıkları, derin gölgeler) değişmez.
-   - Maske alfası feather olarak uygulanır (sert kenar yok).
-   Bu dosya hem tarayıcıda (window.HBOTRecolor) hem Node testlerinde çalışır. */
+/* HBOT Recolor Engine (v11) — model-profili tabanlı "akıllı boya".
+   v10'daki maske+tek kural yaklaşımının yerine: her görsel/model için piksel
+   piksel "boyanma ağırlığı" (0..1) hesaplanır. Ağırlık, pikselin parlaklık (L) ve
+   doygunluk (S) değerlerinden türetilir — böylece:
+   - Gövde (açık, düşük-orta doygun) TAM boyanır,
+   - Koltuk/iç mekân (koyu veya çok doygun) korunur,
+   - Amber LED'ler (doygun) ve cam/ekran (koyu veya soğuk tonlu) korunur,
+   - Arka plan (koyu, renksiz) korunur.
+   Boya: hedef hue+sat uygulanır; lightness hedef L'ye %55 ölçeklenir (koyu renkler
+   açık gövdede pembeye dönmez), en parlak yansımalar kısmen korunur (metalik his).
+   Profiller:
+   - "plain"     : Nexus medikal (beyaz gövde) — düşük sat pikseller boyanır.
+   - "ledlit-duo": Duo premium (krem gövde + amber LED + açık kapı) — L-eşikli,
+                   koltuk korumalı, soğuk ton (cam/ekran) korumalı.
+   - "ledlit-qc" : Quad-Cube (beyaz gövde + mor/amber LED) — L-eşikli, cool kapalı.
+   - "masked"    : Real fotoğraflar (Lounge ailesi, QC-2) — offline maske ile sınırlı.
+   Eski maske-tabanlı API (interior/seat boyama) korunur. */
 (function (g) {
   "use strict";
 
@@ -47,27 +55,52 @@
     return [clamp01(f(h + 1 / 3)), clamp01(f(h)), clamp01(f(h - 1 / 3))];
   }
 
-  /* Korunan piksel: değişime uğramaz, orijinali kalır.
-     - Amber/altın LED: hue 25-60°, sat > 0.35, lightness > 0.5 (kabinin pişmiş LED şeritleri)
-     - Çok koyu: cam açıklıklar ve derin gölgeler (l < 0.10) */
-  function isProtectedPixel(h, s, l) {
-    if (l < 0.10) return true;
-    if (h >= 25 && h <= 60 && s > 0.35 && l > 0.5) return true;
-    return false;
+  function smoothstep(x, a, b) {
+    const t = clamp01((x - a) / (b - a));
+    return t * t * (3 - 2 * t);
   }
 
-  /* Tek piksel boya dönüşümü (koruma ve feather bu fonksiyonda YOK — recolorPixel'da).
-     paint: { h, s, l, metal }
-     - paint modu: hedef h+s uygulanır; lightness, hedef rengin L'sine ÖLÇEKLENİR
-       (k = targetL / 0.65 — aksi halde bordo gibi koyu renkler açık gövdede
-       pembeye döner). En parlak highlight'lar kısmen korunur (metalik parlaklık).
-     - metal modu (mat siyah/antrasit/grafit/siyah/gri): düşük saturation + aynı
-       L ölçekleme (daha agresif, 0.62 tabanlı). */
-  function applyPaint(r, g2, b, paint) {
+  /* ---- Model profilleri ----
+     lLo/lHi   : boyanmaya başlama/tam boyanma L eşiği
+     satLo/satHi : bu S bandında boyama %85 azalır (LED/doygun iç mekân koruması)
+     cool      : soğuk ton (cam/ekran) katsayısı (1 = kapalı)
+     seat      : [satMin, lMax] — koltuk koruması (çarpan 0.10) */
+  const PROFILES = {
+    "plain":      { lLo: 0.25, lHi: 0.35, satLo: 0.20, satHi: 0.32, cool: 1.0, seat: null },
+    "ledlit-duo": { lLo: 0.30, lHi: 0.42, satLo: 0.45, satHi: 0.75, cool: 0.25, seat: [0.34, 0.55] },
+    "ledlit-qc":  { lLo: 0.38, lHi: 0.46, satLo: 0.50, satHi: 0.80, cool: 1.0, seat: null },
+    "masked":     { lLo: 0.25, lHi: 0.33, satLo: 0.45, satHi: 0.75, cool: 0.25, seat: null }
+  };
+
+  /* px: Uint8ClampedArray RGBA. profile: string. maskData: opsiyonel Uint8ClampedArray
+     (maske RGBA — alfa kanalı ağırlıkla çarpılır, "masked" profili).
+     Dönüş: Float32Array (piksel başına 0..1 boyanma ağırlığı). */
+  function computeWeight(px, profile, maskData) {
+    const p = PROFILES[profile] || PROFILES.plain;
+    const n = px.length / 4;
+    const w = new Float32Array(n);
+    for (let i = 0; i < n; i++) {
+      const j = i * 4;
+      const hsl = rgbToHsl(px[j] / 255, px[j + 1] / 255, px[j + 2] / 255);
+      const h = hsl[0], s = hsl[1], l = hsl[2];
+      let wi = smoothstep(l, p.lLo, p.lHi) * (1 - 0.85 * smoothstep(s, p.satLo, p.satHi));
+      if (wi > 0) {
+        if (p.cool < 1 && h >= 170 && h <= 280 && s > 0.10) wi *= p.cool;
+        if (p.seat && s > p.seat[0] && l < p.seat[1]) wi *= 0.10;
+        if (maskData) wi *= maskData[j + 3] / 255;
+      }
+      w[i] = wi;
+    }
+    return w;
+  }
+
+  /* Boya dönüşümü: hedef h+s; lightness hedef L'ye %55 ölçekli; highlight korumalı.
+     paint: { h, s, l, metal } — metal: mat metalik renkler (düşük sat). */
+  function paintPixel(r, g2, b, paint) {
     const hsl = rgbToHsl(r, g2, b);
     const l0 = hsl[2];
+    const hi = clamp01((l0 - 0.78) / 0.22);
     let h, s, l;
-    const hi = clamp01((l0 - 0.80) / 0.20); // highlight koruma faktörü
     if (paint.metal) {
       const k = paint.l / 0.62;
       l = clamp01(l0 * (k + (1 - k) * hi));
@@ -76,27 +109,44 @@
     } else {
       h = paint.h;
       const k = paint.l / 0.65;
-      l = clamp01(l0 * (k + (1 - k) * hi));
-      const hl = clamp01((l0 - 0.85) / 0.15);
-      s = clamp01(paint.s) * (1 - 0.55 * hl);
+      const wp = 0.55;
+      l = clamp01(l0 * (1 - wp) + clamp01(l0 * k) * wp * (1 - 0.35 * hi));
+      s = clamp01(paint.s) * (1 - 0.45 * hi);
     }
     return hslToRgb(h, s, l);
   }
 
-  /* Tam piksel işlemi: koruma kontrolü + boya + alfa feather.
-     r,g,b: 0..1 — alpha: 0..1 maske kapsama. Dönüş: [r,g,b] 0..1. */
+  /* Ağırlıklı boyama: px yerinde değiştirilir. weight: Float32Array (computeWeight). */
+  function applyWeightedPaint(px, weight, paint) {
+    const n = px.length / 4;
+    for (let i = 0; i < n; i++) {
+      const wi = weight[i];
+      if (wi <= 0.01) continue;
+      const j = i * 4;
+      const r = px[j] / 255, g2 = px[j + 1] / 255, b = px[j + 2] / 255;
+      const out = paintPixel(r, g2, b, paint);
+      px[j] = Math.round((r + (out[0] - r) * wi) * 255);
+      px[j + 1] = Math.round((g2 + (out[1] - g2) * wi) * 255);
+      px[j + 2] = Math.round((b + (out[2] - b) * wi) * 255);
+    }
+  }
+
+  /* ---- v10 uyumluluk: maske-tabanlı boyama (interior + koltuk renkleri) ---- */
+  function isProtectedPixel(h, s, l) {
+    if (l < 0.10) return true;
+    if (h >= 25 && h <= 60 && s > 0.35 && l > 0.5) return true;
+    return false;
+  }
+
   function recolorPixel(r, g2, b, alpha, paint) {
     if (alpha <= 0) return [r, g2, b];
     const hsl = rgbToHsl(r, g2, b);
     if (isProtectedPixel(hsl[0], hsl[1], hsl[2])) return [r, g2, b];
-    const out = applyPaint(r, g2, b, paint);
+    const out = paintPixel(r, g2, b, paint);
     const a = clamp01(alpha);
     return [r + (out[0] - r) * a, g2 + (out[1] - g2) * a, b + (out[2] - b) * a];
   }
 
-  /* ImageData piksel dizisini yerinde işler.
-     px: Uint8ClampedArray (RGBA). passes: [{ data: Uint8ClampedArray (maske RGBA,
-     alfa kanalı kapsama), paint }] — sırayla uygulanır (örn. önce gövde, sonra koltuk). */
   function recolorImageData(px, passes) {
     const n = px.length;
     for (let i = 0; i < n; i += 4) {
@@ -116,6 +166,7 @@
 
   g.HBOTRecolor = {
     hexToHsl, rgbToHsl, hslToRgb,
-    isProtectedPixel, applyPaint, recolorPixel, recolorImageData
+    computeWeight, applyWeightedPaint, paintPixel,
+    isProtectedPixel, recolorPixel, recolorImageData
   };
 })(typeof window !== "undefined" ? window : globalThis);

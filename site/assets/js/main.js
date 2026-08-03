@@ -562,7 +562,8 @@
     if (!imgA || !imgB) return;
 
     const target = currentStageTarget();
-    const src = `assets/img/models/${target.key}.webp`;
+    // v11: boya aktifse akıllı-profil ile işlenmiş kare (canvas recolor) — yoksa ham kare
+    const src = resolveStageSrc(target);
 
     const active = stageActiveImg === "a" ? imgA : imgB;
     const passive = stageActiveImg === "a" ? imgB : imgA;
@@ -612,38 +613,8 @@
     const hint = document.getElementById("stage-spin-hint");
     if (hint) hint.hidden = !canSpin;
 
-    // Renk tint katmanı: yarı saydam CSS blend-mode, maskeli bölgeye uygulanır.
-    const tintEl = document.getElementById("stage-tint");
-    if (tintEl && dict && dict.configurator) {
-      const maskKey = target.key.indexOf("spin/") === 0 ? `spin:${configState.model}` : target.key;
-      const maskPath = STAGE_TINT_MASKS[maskKey];
-      const isInt = !!target.interior;
-      tintEl.classList.toggle("stage-tint--interior", isInt);
-      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=22")` : "none";
-      tintEl.style.webkitMaskImage = maskUrl;
-      tintEl.style.maskImage = maskUrl;
-      const list = isInt ? (dict.configurator.interior_colors || []) : (dict.configurator.colors || []);
-      const selId = isInt ? configState.interiorColor : configState.color;
-      const strength = isInt ? (INT_TINT_STRENGTH[selId] || 0) : (EXT_TINT_STRENGTH[selId] || 0);
-      const colInfo = list.find((col) => col.id === selId);
-      tintEl.style.backgroundColor = colInfo ? colInfo.hex : "transparent";
-      tintEl.style.opacity = String(maskPath && colInfo ? strength : 0);
-    }
-
-    // Koltuk tint katmanı: sadece iç görünümde + kullanıcı koltuk rengini değiştirdiyse
-    const seatTintEl = document.getElementById("stage-seat-tint");
-    if (seatTintEl && dict && dict.configurator) {
-      const seatMask = target.interior ? STAGE_SEAT_MASKS[target.key] : null;
-      const seatInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
-      const seatStrength = SEAT_TINT_STRENGTH[configState.seatColor] || 0;
-      const applySeat = !!(target.interior && seatMask && seatInfo && configState.seatTouched);
-      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=22")` : "none";
-      seatTintEl.classList.toggle("stage-tint--interior", !!target.interior);
-      seatTintEl.style.webkitMaskImage = seatMaskUrl;
-      seatTintEl.style.maskImage = seatMaskUrl;
-      seatTintEl.style.backgroundColor = seatInfo ? seatInfo.hex : "transparent";
-      seatTintEl.style.opacity = String(applySeat ? seatStrength : 0);
-    }
+    // Boya aktifse ve spin modeli gösteriliyorsa kalan kareleri boşta önceden işle
+    prewalkRecolor(target);
   }
 
   function initStageViewToggle() {
@@ -886,25 +857,40 @@
     });
   }
 
-  /* v11: canvas piksel-recolor motoru geri alındı — maskeler kabin geometrisini
-     tam takip etmiyor (cam/panel de boyanıyordu), sonuç sert/hatalı çıkıyordu.
-     Yarı saydam CSS blend-mode tint katmanına dönüldü: aynı maskeyi kullanır
-     ama düşük opaklıkta uygulandığından maske kusurları gözü rahatsız etmez,
-     orijinal fotoğrafın ışık/doku detayı her zaman görünür kalır. */
-  const EXT_TINT_STRENGTH = { "pearl-white": 0, sampanya: 0.4, bronz: 0.45, grafit: 0.5, antrasit: 0.5, "mat-siyah": 0.55, "gece-laciverti": 0.55, bordo: 0.55, zumrut: 0.55 };
-  const INT_TINT_STRENGTH = { cream: 0, "kum-beji": 0.35, konyak: 0.45, anthracite: 0.5, burgundy: 0.55, navy: 0.55 };
-  const SEAT_TINT_STRENGTH = { konyak: 0.5, siyah: 0.6, lacivert: 0.55, krem: 0.4, bordo: 0.6, gri: 0.5 };
+  /* v11: model-profili tabanlı akıllı boya (canvas recolor, assets/js/recolor.js).
+     CSS tint katmanı terk edildi — "ışık hüzmesi" görünümüne yol açıyordu.
+     Yeni motor piksel piksel "boyanma ağırlığı" hesaplar: gövde tam boyanır,
+     koltuk/LED/cam/arka plan korunur. Boya MODU tabloları:
+     "paint" = hue+sat uygula | "metal" = düşük sat + lightness ölçekle
+     null = varsayılan renk, ham kare gösterilir. */
+  const EXT_PAINT_MODE = {
+    "pearl-white": null,
+    "sampanya": "paint", "bronz": "paint",
+    "grafit": "metal", "antrasit": "metal", "mat-siyah": "metal",
+    "gece-laciverti": "paint", "bordo": "paint", "zumrut": "paint"
+  };
+  const INT_PAINT_MODE = {
+    "cream": null,
+    "kum-beji": "paint", "konyak": "paint", "anthracite": "metal",
+    "burgundy": "paint", "navy": "paint"
+  };
+  const SEAT_PAINT_MODE = {
+    "konyak": "paint", "siyah": "metal", "lacivert": "paint",
+    "krem": "paint", "bordo": "paint", "gri": "metal"
+  };
 
-  /* v7: gövde/bölge maskeleri — tint sadece maskeli kabin/döşeme/koltuk alanına uygulanır */
+  /* v11: dış görünüm boyama — model başına akıllı profil (spin setleri maskesiz,
+     real fotoğraflar offline düzeltilmiş maske ile). Profil yoksa o görsel boyanmaz. */
+  const STAGE_EXT_PROFILE = {
+    "spin:duo": { profile: "ledlit-duo" },
+    "spin:quad-cube": { profile: "ledlit-qc" },
+    "spin:nexus": { profile: "plain" },
+    "real/apex-lounge-real": { profile: "masked", mask: "masks/ext-lounge" },
+    "real/apex-quad-cube-2": { profile: "masked", mask: "masks/ext-quadcube2" }
+  };
+
+  /* Interior + koltuk renklendirmesi (maske-tabanlı v10 yolu) */
   const STAGE_TINT_MASKS = {
-    "real/apex-lounge-real": "masks/ext-lounge",
-    "real/apex-duo-real": "masks/ext-duo",
-    "real/apex-quad-cube": "masks/ext-quadcube",
-    "real/apex-quad-cube-2": "masks/ext-quadcube2",
-    "real/apex-nexus": "masks/ext-nexus",
-    "spin:quad-cube": "masks/spin-quadcube",
-    "spin:nexus": "masks/spin-nexus",
-    "spin:duo": "masks/spin-duo",
     "real/apex-lounge-ic": "masks/int-lounge",
     "real/apex-quad-cube-ic": "masks/int-quadcube",
     "real/apex-nexus-ic": "masks/int-nexus"
@@ -914,6 +900,153 @@
     "real/apex-quad-cube-ic": "masks/seat-quadcube",
     "real/apex-nexus-ic": "masks/seat-nexus"
   };
+
+  /* v11: recolor motor tutkalı — işlenmiş kare cache'i + async üretim.
+     İşlenmiş kareler data: URL olarak cache'lenir (CSP blob: engeller, data: izinli). */
+  const recolorCache = new Map(); // ck -> dataUrl | "pending"
+  const RECOLOR_CACHE_MAX = 40;
+  let recolorOK = null;
+
+  function recolorSupported() {
+    if (recolorOK !== null) return recolorOK;
+    try {
+      const c = document.createElement("canvas");
+      recolorOK = !!(window.HBOTRecolor && c && c.getContext && c.getContext("2d"));
+    } catch (e) { recolorOK = false; }
+    return recolorOK;
+  }
+
+  function paintSpecFor(modeMap, colorId, colorsList) {
+    const mode = modeMap[colorId];
+    if (!mode || !colorsList) return null;
+    const col = colorsList.find((c) => c.id === colorId);
+    if (!col) return null;
+    const hsl = window.HBOTRecolor.hexToHsl(col.hex);
+    if (!hsl) return null;
+    return { h: hsl[0], s: hsl[1], l: hsl[2], metal: mode === "metal" };
+  }
+
+  /* Aktif sahne hedefi için boya spec'i: null = ham görsel (işlem yok).
+     Dış görünüm: v11 akıllı profil ({ext, profile, mask, paint}).
+     İç görünüm: v10 maske yolu ({passes}). */
+  function stagePaintSpec(target) {
+    if (!recolorSupported()) return null;
+    const dict = TRANSLATIONS[currentLang];
+    if (!dict || !dict.configurator) return null;
+    const maskKey = target.key.indexOf("spin/") === 0 ? `spin:${configState.model}` : target.key;
+    if (!target.interior) {
+      const p = paintSpecFor(EXT_PAINT_MODE, configState.color, dict.configurator.colors);
+      if (!p) return null;
+      const prof = STAGE_EXT_PROFILE[maskKey];
+      if (!prof) return null;
+      return { ext: true, profile: prof.profile, mask: prof.mask || null, paint: p, tag: `v11-${prof.profile}-${configState.color}` };
+    }
+    const bodyMask = STAGE_TINT_MASKS[maskKey];
+    const passes = [];
+    const p = paintSpecFor(INT_PAINT_MODE, configState.interiorColor, dict.configurator.interior_colors);
+    if (p && bodyMask) passes.push({ mask: bodyMask, paint: p, id: configState.interiorColor });
+    if (configState.seatTouched) {
+      const seatMask = STAGE_SEAT_MASKS[target.key];
+      const sp = paintSpecFor(SEAT_PAINT_MODE, configState.seatColor, dict.configurator.seat_colors);
+      if (sp && seatMask) passes.push({ mask: seatMask, paint: sp, id: "seat-" + configState.seatColor });
+    }
+    if (!passes.length) return null;
+    return { passes, tag: passes.map((x) => x.id).join("+") };
+  }
+
+  function loadRecolorImg(src) {
+    return new Promise((res, rej) => {
+      const im = new Image();
+      im.onload = () => res(im);
+      im.onerror = () => rej(new Error("img load: " + src));
+      im.src = src;
+    });
+  }
+
+  async function startRecolorJob(ck, imgKey, spec) {
+    try {
+      const base = await loadRecolorImg(`assets/img/models/${imgKey}.webp`);
+      const w = base.naturalWidth, h = base.naturalHeight;
+      if (!w || !h) throw new Error("empty frame");
+      const c = document.createElement("canvas");
+      c.width = w; c.height = h;
+      const ctx = c.getContext("2d", { willReadFrequently: true });
+      ctx.drawImage(base, 0, 0);
+      const imgData = ctx.getImageData(0, 0, w, h);
+      if (spec.ext) {
+        // v11: akıllı profil — ağırlık haritası + ağırlıklı boya
+        let maskData = null;
+        if (spec.mask) {
+          const mi = await loadRecolorImg(`assets/img/models/${spec.mask}.png?v=21`);
+          const mc = document.createElement("canvas");
+          mc.width = w; mc.height = h;
+          const mctx = mc.getContext("2d", { willReadFrequently: true });
+          mctx.drawImage(mi, 0, 0, w, h);
+          maskData = mctx.getImageData(0, 0, w, h).data;
+        }
+        const weight = window.HBOTRecolor.computeWeight(imgData.data, spec.profile, maskData);
+        window.HBOTRecolor.applyWeightedPaint(imgData.data, weight, spec.paint);
+      } else {
+        // v10 yolu: maske-tabanlı passes (interior + koltuk)
+        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`assets/img/models/${p.mask}.png?v=21`)));
+        const mc = document.createElement("canvas");
+        mc.width = w; mc.height = h;
+        const mctx = mc.getContext("2d", { willReadFrequently: true });
+        const passes = spec.passes.map((p, i) => {
+          mctx.clearRect(0, 0, w, h);
+          mctx.drawImage(masks[i], 0, 0, w, h);
+          return { data: mctx.getImageData(0, 0, w, h).data, paint: p.paint };
+        });
+        window.HBOTRecolor.recolorImageData(imgData.data, passes);
+      }
+      ctx.putImageData(imgData, 0, 0);
+      try {
+        const dataUrl = c.toDataURL("image/webp", 0.92);
+        if (!dataUrl || dataUrl.length < 100) { recolorCache.delete(ck); return; }
+        recolorCache.set(ck, dataUrl);
+        if (recolorCache.size > RECOLOR_CACHE_MAX) {
+          const k0 = recolorCache.keys().next().value;
+          recolorCache.delete(k0);
+        }
+        // İşlenmiş kare hazır — sahne hâlâ aynı spec'teyse cross-fade ile devreye girer
+        updateConfigStage(TRANSLATIONS[currentLang]);
+      } catch (e2) {
+        recolorCache.delete(ck);
+      }
+    } catch (e) {
+      recolorCache.delete(ck);
+    }
+  }
+
+  /* Sahne src çözümü: boya aktifse işlenmiş kare (cache hit) döner; miss'te ham
+     kare gösterilir ve üretim arka planda başlar (bitince updateConfigStage tetiklenir). */
+  function resolveStageSrc(target) {
+    const raw = `assets/img/models/${target.key}.webp`;
+    const spec = stagePaintSpec(target);
+    if (!spec) return raw;
+    const ck = `${target.key}|${spec.tag}`;
+    const hit = recolorCache.get(ck);
+    if (hit && hit !== "pending") return hit;
+    if (!hit) {
+      recolorCache.set(ck, "pending");
+      startRecolorJob(ck, target.key, spec);
+    }
+    return raw;
+  }
+
+  /* Spin modelinde dış görünümde boya aktifse kalan 23 kareyi boşta önceden işle */
+  function prewalkRecolor(target) {
+    const spec = stagePaintSpec(target);
+    if (!spec || target.interior || !spinAvailableFor()) return;
+    for (let i = 0; i < SPIN_FRAME_COUNT; i++) {
+      const key = spinFrameKey(i);
+      const ck = `${key}|${spec.tag}`;
+      if (!recolorCache.has(ck)) {
+        recolorCache.set(ck, "pending");
+        setTimeout(() => startRecolorJob(ck, key, spec), 160 * i);
+      }
+    }
+  }
 
   /* Kart görselleri: model -> gerçek fotoğraf (Solo/Quad kendi fotosu yok — aile görseli) */
   const MODEL_CARD_IMG = {
