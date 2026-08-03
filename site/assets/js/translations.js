@@ -367,8 +367,8 @@ const TRANSLATIONS = {
     },
     configurator: {
       header: { eyebrow: "KONFİGÜRATÖR", title: "Kendi Apex Kabininizi Tasarlayın", subtitle: "Modeli, basınç seviyesini ve ek özellikleri seçin — anında fiyat tahmini alın." },
-      step1_title: "1. Model Seçin",
-      style_step_title: "2. Kabin Stili",
+      step1_title: "2. Model Seçin",
+      style_step_title: "1. Kabin Stili",
       style_step_note: "Kabin tasarımınızı seçin; cam yüzey oranı ve iç donanım seviyesine göre fiyat değişir.",
       color_step_title: "3. Renk Seçin",
       color_step_note: "Standart renk paletimizden ücretsiz seçim yapın.",
@@ -1057,8 +1057,8 @@ const TRANSLATIONS = {
     },
     configurator: {
       header: { eyebrow: "CONFIGURATOR", title: "Design Your Own Apex Chamber", subtitle: "Choose the model, pressure level and add-ons — get an instant price estimate." },
-      step1_title: "1. Choose a Model",
-      style_step_title: "2. Chamber Style",
+      step1_title: "2. Choose a Model",
+      style_step_title: "1. Chamber Style",
       style_step_note: "Choose your chamber's design; pricing varies with glass surface area and interior finish level.",
       color_step_title: "3. Choose a Color",
       color_step_note: "Free selection from our standard color palette.",
@@ -1747,8 +1747,8 @@ const TRANSLATIONS = {
     },
     configurator: {
       header: { eyebrow: "КОНФИГУРАТОР", title: "Создайте свою камеру Apex", subtitle: "Выберите модель, уровень давления и опции — получите мгновенную оценку стоимости." },
-      step1_title: "1. Выберите модель",
-      style_step_title: "2. Стиль камеры",
+      step1_title: "2. Выберите модель",
+      style_step_title: "1. Стиль камеры",
       style_step_note: "Выберите дизайн камеры; цена зависит от площади остекления и уровня отделки интерьера.",
       color_step_title: "3. Выберите цвет",
       color_step_note: "Бесплатный выбор из нашей стандартной цветовой палитры.",
@@ -2437,8 +2437,8 @@ const TRANSLATIONS = {
     },
     configurator: {
       header: { eyebrow: "أداة التكوين", title: "صمّم غرفة Apex الخاصة بك", subtitle: "اختر الموديل ومستوى الضغط والإضافات — واحصل على تقدير فوري للسعر." },
-      step1_title: "1. اختر الموديل",
-      style_step_title: "2. نمط الكابينة",
+      step1_title: "2. اختر الموديل",
+      style_step_title: "1. نمط الكابينة",
       style_step_note: "اختر تصميم الكابينة؛ يختلف السعر حسب مساحة الزجاج ومستوى التشطيب الداخلي.",
       color_step_title: "3. اختر اللون",
       color_step_note: "اختيار مجاني من لوحة الألوان القياسية لدينا.",
