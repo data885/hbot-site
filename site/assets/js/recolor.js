@@ -94,7 +94,8 @@
     return w;
   }
 
-  /* Boya dönüşümü: hedef h+s; lightness hedef L'ye %55 ölçekli; highlight korumalı.
+  /* Boya dönüşümü: hedef h+s; lightness hedef L etrafında sıkıştırılmış varyasyon
+     (açık kabinlarda pembeye kaçmayı önler); highlight korumalı.
      paint: { h, s, l, metal } — metal: mat metalik renkler (düşük sat). */
   function paintPixel(r, g2, b, paint) {
     const hsl = rgbToHsl(r, g2, b);
@@ -102,16 +103,13 @@
     const hi = clamp01((l0 - 0.78) / 0.22);
     let h, s, l;
     if (paint.metal) {
-      const k = paint.l / 0.62;
-      l = clamp01(l0 * (k + (1 - k) * hi));
+      l = clamp01(paint.l + (l0 - 0.55) * 0.35 + 0.05 * hi);
       s = 0.05;
       h = paint.h;
     } else {
       h = paint.h;
-      const k = paint.l / 0.65;
-      const wp = 0.55;
-      l = clamp01(l0 * (1 - wp) + clamp01(l0 * k) * wp * (1 - 0.35 * hi));
-      s = clamp01(paint.s) * (1 - 0.45 * hi);
+      l = clamp01(paint.l + (l0 - 0.55) * 0.30 + 0.05 * hi);
+      s = clamp01(paint.s) * (1 - 0.40 * hi);
     }
     return hslToRgb(h, s, l);
   }
