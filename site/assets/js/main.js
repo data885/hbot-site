@@ -503,10 +503,14 @@
   };
   /* İç mekân: modelin kendi gerçek iç fotoğrafı; olmayan modeller aile iç mekânına düşer
      (solo/duo -> Lounge iç, quad -> Quad-Cube iç). */
+  /* solo-lounge tek yatay (yatan) model — kendi iç fotoğrafı doğru.
+     Diğer tüm modeller OTURMA pozisyonunda; kendi iç fotoğrafı olmayanlar
+     (solo, duo, quad) yatan lounge yerine oturma pozisyonundaki quad-cube
+     iç görselini paylaşır — pozisyon en azından doğru gösterilir. */
   const REAL_INTERIOR = {
     "solo-lounge": "real/apex-lounge-ic",
-    solo: "real/apex-lounge-ic",
-    duo: "real/apex-lounge-ic",
+    solo: "real/apex-quad-cube-ic",
+    duo: "real/apex-quad-cube-ic",
     quad: "real/apex-quad-cube-ic",
     "quad-cube": "real/apex-quad-cube-ic",
     nexus: "real/apex-nexus-ic"
@@ -615,7 +619,7 @@
       const maskPath = STAGE_TINT_MASKS[maskKey];
       const isInt = !!target.interior;
       tintEl.classList.toggle("stage-tint--interior", isInt);
-      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=20")` : "none";
+      const maskUrl = maskPath ? `url("assets/img/models/${maskPath}.png?v=22")` : "none";
       tintEl.style.webkitMaskImage = maskUrl;
       tintEl.style.maskImage = maskUrl;
       const list = isInt ? (dict.configurator.interior_colors || []) : (dict.configurator.colors || []);
@@ -633,7 +637,7 @@
       const seatInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
       const seatStrength = SEAT_TINT_STRENGTH[configState.seatColor] || 0;
       const applySeat = !!(target.interior && seatMask && seatInfo && configState.seatTouched);
-      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=20")` : "none";
+      const seatMaskUrl = seatMask ? `url("assets/img/models/${seatMask}.png?v=22")` : "none";
       seatTintEl.classList.toggle("stage-tint--interior", !!target.interior);
       seatTintEl.style.webkitMaskImage = seatMaskUrl;
       seatTintEl.style.maskImage = seatMaskUrl;
