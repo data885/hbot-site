@@ -845,6 +845,11 @@ h1, h2, h3, h4, p { margin: 0; }
   .config-stage-col { display: contents; }
   .config-stage { order: -1; aspect-ratio: 4 / 3; position: sticky; top: 76px; z-index: 30; }
 }
+/* v14: telefon genişliğinde sabit (sticky) kabin görseli ekranın yarısını kalıcı kaplıyordu —
+   normal akışa alındı, sayfayla birlikte kayar */
+@media (max-width: 640px) {
+  .config-stage { position: static; top: auto; z-index: auto; aspect-ratio: 4 / 3.2; }
+}
 @media (prefers-reduced-motion: reduce) {
   .stage-img { transition: none; }
   .config-stage.stage-pulse { animation: none; }
@@ -923,6 +928,9 @@ h1, h2, h3, h4, p { margin: 0; }
 .footer-col ul { display: grid; gap: 12px; }
 .footer-col a { font-size: 14.5px; transition: color var(--transition); }
 .footer-col a:hover { color: var(--cyan-400); }
+.footer-col .dropdown-link { color: rgba(255, 255, 255, 0.7) !important; padding: 4px 0; }
+.footer-col .dropdown-link:hover { background: none; color: var(--cyan-400) !important; }
+.footer-col .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: rgba(255, 255, 255, 0.8); }
 .footer-bottom {
   margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13.5px;
@@ -1049,7 +1057,16 @@ h1, h2, h3, h4, p { margin: 0; }
   box-shadow: 0 8px 24px rgba(0,0,0,.35); transition: transform .2s ease, box-shadow .2s ease;
 }
 .sticky-quote-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.45); }
-@media (max-width: 640px) { .sticky-quote-cta { bottom: 78px; inset-inline-end: 14px; padding: 10px 16px; font-size: 13px; } }
+/* v14: mobilde metin genişliği içeriği kapatıyordu — WhatsApp butonuyla aynı boyutta ikon rozetine küçültüldü */
+@media (max-width: 640px) {
+  .sticky-quote-cta {
+    bottom: 80px; inset-inline-end: 16px; width: 50px; height: 50px; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 999px; font-size: 0; background: #c9a45c;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a0f14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.59 13.41 11 3.83A2 2 0 0 0 9.59 3.24L4 3a1 1 0 0 0-1 1l.24 5.59a2 2 0 0 0 .59 1.41l9.58 9.58a2 2 0 0 0 2.83 0l4.35-4.35a2 2 0 0 0 0-2.83Z'/%3E%3Ccircle cx='7.5' cy='7.5' r='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: center; background-size: 22px 22px;
+  }
+}
 
 /* v6: scroll reveal */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
