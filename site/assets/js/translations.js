@@ -223,6 +223,18 @@ const TRANSLATIONS = {
           { icon: "screen", title: "Sabit Monte İmmersif Ekran Deneyimi", desc: "Seans sırasında rahatlatıcı görsel içerik sunan, kabine sabit monte edilmiş geniş ekran deneyimi." }
         ],
         disclaimer: "Bu özellikler geliştirme aşamasındadır ve gelecekteki modellerde sunulması planlanmaktadır; mevcut Apex modellerinde standart değildir. Kabin basıncı ve oksijen seviyesi her zaman yetkili bir operatör tarafından kontrol edilir."
+      },
+      certifications: {
+        eyebrow: "SERTİFİKALAR",
+        title: "Standartlara Uygunluk",
+        subtitle: "Apex Serisi, medikal kabin tasarımı, yangın güvenliği ve basınçlı ekipman alanındaki uluslararası standartlara göre geliştirilir.",
+        items: [
+          { code: "EN 14931", name: "Medikal Kabin Dizayn Standardı" },
+          { code: "EN 16081", name: "Medikal Kabin Yangın Sistemi" },
+          { code: "NFPA 99", name: "Amerikan Yangın Sistemi Standardı" },
+          { code: "ISO 9001", name: "Kalite Yönetim Standardı" },
+          { code: "EN 13445 + PED 2014/68/EU", name: "Basınçlı Ekipman Direktifi" }
+        ]
       }
     },
     modelsOverview: {
@@ -252,7 +264,9 @@ const TRANSLATIONS = {
       { icon: "os", title: "ApexOS™ Güncelleme", desc: "Cihazınız her ay yeni özellikler kazanır. OTA güncellemeleriyle protokoller güncel kalır." },
       { icon: "ai", title: "ApexAI™ Optimizasyon", desc: "Hasta verilerini analiz eden yapay zeka, seansları dinamik olarak ayarlar." },
       { icon: "sync", title: "ApexSync™ Entegrasyon", desc: "Hastane bilgi sistemleriyle tek tık entegrasyon. Otomatik raporlama." },
-      { icon: "guard", title: "ApexGuard™ Güvenlik", desc: "Arıza olmadan önce haber veren tahmine dayalı bakım teknolojisi." }
+      { icon: "guard", title: "ApexGuard™ Güvenlik", desc: "Arıza olmadan önce haber veren tahmine dayalı bakım teknolojisi." },
+      { icon: "battery", title: "Standart Dahili Güç Kaynağı", desc: "Tüm modeller, elektrik kesintisine karşı dahili yedek güç kaynağıyla standart olarak gelir." },
+      { icon: "pulseOx", title: "Oksijen Satürasyon Ölçer", desc: "Seans boyunca kandaki oksijen satürasyonunu izleyen ölçüm cihazı her kabinde standarttır." }
     ],
     modelSoloLounge: {
       breadcrumb: "Apex Solo Lounge", eyebrow: "APEX SOLO LOUNGE", title: "Apex Solo Lounge",
@@ -472,7 +486,7 @@ const TRANSLATIONS = {
         none_selected: "Seçilmedi",
         base_price_label: "Baz Fiyat",
         total_label: "Tahmini Toplam",
-        disclaimer: "Fiyatlar yaklaşık ve bilgilendirme amaçlıdır. Kesin teklif için formu doldurun.",
+        disclaimer: "Fiyatlar yaklaşık ve bilgilendirme amaçlıdır, FOB fiyatıdır ve yalnızca 15 gün geçerlidir. Kesin teklif için formu doldurun.",
         cta: "Bu Yapılandırmayla Teklif İste",
         print_button: "Yazdır / PDF Olarak Kaydet",
         share_button: "Yapılandırma Linkini Kopyala",
@@ -693,15 +707,144 @@ const TRANSLATIONS = {
       faq: {
         eyebrow: "SIKÇA SORULAN SORULAR",
         title: "Merak Edilenler",
-        subtitle: "Sipariş, ödeme ve kurulum süreciyle ilgili en sık sorulan sorular.",
-        items: [
-          { q: "Ödeme koşulları nasıldır?", a: "Standart koşulumuzda siparişlerde %50 peşinat alınır, kalan %50 bakiye ise ürün teslimata hazır hale geldiğinde tahsil edilir." },
-          { q: "Başka ödeme seçenekleri sunuyor musunuz?", a: "Evet. Standart %50 peşinat / %50 teslimat koşulunun yanı sıra: kurumsal kredi kartı ile taksitli ödeme (yurt içi ve yurt dışı siparişler için de geçerlidir), belirli bir peşinat ile finansal kiralama (leasing), ve büyük siparişler için 3 aşamalı ödeme planı (sipariş onayı / üretim tamamlanma / teslimat) seçeneklerini sunuyoruz. Size en uygun seçeneği belirlemek için lütfen bizimle iletişime geçin." },
-          { q: "Sipariş sonrası ürün ne zaman hazır olur?", a: "Siparişinizin onaylanmasından itibaren ürününüz en az 6 hafta içinde teslimata hazır hale gelir. Bu süreye nakliye/lojistik süresi dahil değildir; lojistik süresi konumunuza göre ayrıca hesaplanır." },
-          { q: "Kurulum ve nakliye ücrete dahil mi?", a: "Hayır. Kurulum ve lojistik maliyetleri konum, bina erişimi ve mesafeye göre değişir. Bu nedenle size özel bir kurulum ve lojistik teklifi hazırlıyoruz — lütfen iletişim formu üzerinden bizimle iletişime geçin." },
-          { q: "Fiyata neler dahildir?", a: "Tüm Apex modelleri; ApexConnect™, ApexOS™, ApexAI™, ApexSync™ ve ApexGuard™ teknoloji platformlarını standart olarak içerir. Ek özellikler ve kabin stili seçimleri konfigüratörde ayrı olarak fiyatlandırılır." },
-          { q: "Teklif nasıl alabilirim?", a: "Konfigüratör sayfamızdan modelinizi, kabin stilinizi, renginizi ve ek özelliklerinizi seçerek anında fiyat tahmini alabilir, ardından teklif formunu doldurarak bizden dönüş isteyebilirsiniz." },
-          { q: "Kabin rengini ve stilini özelleştirebilir miyim?", a: "Evet. 12 farklı renk seçeneği arasından ücretsiz seçim yapabilir; Standart Kapalı, Panoramik Camlı veya Premium kabin stillerinden birini tercih edebilirsiniz." }
+        subtitle: "Hiperbarik sistemler, Apex modelleri, kurulum ve sipariş süreciyle ilgili en sık sorulan sorular.",
+        sections: [
+          {
+            title: "Hiperbarik Sistemler Hakkında",
+            items: [
+              { q: "Hiperbarik oda nedir?", a: "Hiperbarik oda, kullanıcıya normal atmosfer basıncının üzerinde, kontrollü ve basınçlandırılmış bir ortam sağlayan sistemdir. Apex hiperbarik sistemlerinde oda kontrollü şekilde basınçlandırılır; oksijen ise seçilen modele ve sistem konfigürasyonuna göre kullanıcıya özel maske veya uygun solunum ekipmanı aracılığıyla sağlanabilir." },
+              { q: "Hiperbarik sistem nasıl çalışır?", a: "Kullanıcı odaya girdikten sonra kapı güvenli şekilde kapatılır ve sistem kontrollü olarak basınçlandırılır. Hedef çalışma basıncına ulaşıldığında seans protokolü uygulanır. Seans sonunda basınç kademeli olarak düşürülür ve iç ortam normal atmosfer basıncına ulaştığında kapı açılır.\n\nBasınç seviyesi, oksijen akışı ve seans süresi; cihazın özelliklerine, kullanım amacına ve uygulanacak protokole göre belirlenir." },
+              { q: "Hiperbarik oda ile oksijen konsantratörü aynı cihaz mıdır?", a: "Hayır. Hiperbarik oda kontrollü bir basınç ortamı oluşturur. Oksijen konsantratörü ise ortam havasından yüksek konsantrasyonda oksijen üretir. Projenin ihtiyaçlarına göre bu iki sistem birlikte kullanılabilir." },
+              { q: "Hiperbarik sistemler yalnızca hastanelerde mi kullanılabilir?", a: "Hiperbarik sistemlerin kullanılabileceği alanlar; cihazın sınıflandırmasına, kullanım amacına ve ilgili ülkedeki mevzuata göre değişebilir.\n\nApex sistemleri, seçilen model ve konfigürasyona bağlı olarak aşağıdaki alanlara yönelik projelendirilebilir:", list: ["Hastaneler ve sağlık kuruluşları", "Klinikler", "Spor ve performans merkezleri", "Wellness ve longevity merkezleri", "Oteller ve özel sağlık konseptleri", "Rehabilitasyon merkezleri", "Araştırma ve eğitim kuruluşları", "Bireysel Konut"], aAfter: "Tıbbi hizmet sunulacak tesislerde ilgili sağlık mevzuatı, ruhsatlandırma koşulları ve yetkili sağlık profesyoneli gereklilikleri ayrıca değerlendirilmelidir." }
+            ]
+          },
+          {
+            title: "Apex Modelleri",
+            items: [
+              { q: "Hangi Apex modelleri bulunmaktadır?", a: "Apex ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nApex Solo — Tek kullanıcı kapasiteli hiperbarik sistemdir. Daha kompakt alanlar ve bireysel kullanım düzeni için tasarlanmıştır.\n\nApex Duo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nApex Quad-Cube — Klinik, hastane ve profesyonel işletmeler için geliştirilen çok kullanıcılı, küp formunda geniş hacimli hiperbarik sistemdir. Kapasitesi seçilen yerleşim düzenine ve proje konfigürasyonuna göre belirlenir." },
+              { q: "Apex Solo kimler için uygundur?", a: "Apex Solo, tek kullanıcılı çalışma düzeni isteyen işletmeler için geliştirilmiştir. Kompakt yapısı sayesinde klinikler, spor merkezleri, wellness merkezleri, oteller ve özel kullanım alanları için değerlendirilebilir.\n\nKesin kullanım koşulları, ürünün sınıflandırmasına ve kurulum yapılacak ülkenin mevzuatına göre belirlenir." },
+              { q: "Apex Duo kaç kişiliktir?", a: "Apex Duo, aynı seansta iki kullanıcının bulunabileceği şekilde tasarlanmıştır. Koltuk yapısı, iç donanım ve oturma düzeni sipariş edilen konfigürasyona göre değişebilir." },
+              { q: "Çok kişilik Apex modeli kaç kullanıcı kapasitelidir?", a: "Çok kişilik modelin standart kapasitesi 6 kişiliktir, opsiyonel kapasitesi ise 12 kişiye kadar (2'şer koltuk artışlarla) planlanmaktadır.\n\nKesin kapasite aşağıdaki unsurlara göre belirlenir:", list: ["Kabin ölçüsü", "Koltuk yerleşimi", "Kullanıcıların hareket alanı", "Oksijen sistemi kapasitesi", "İşletme protokolü", "Yerel güvenlik ve ruhsatlandırma şartları"], aAfter: "Her opsiyon, güvenlik değerlendirmesi ve teknik uygunluk sonrasında projeye eklenir." },
+              { q: "Cihazların ölçüleri nelerdir?", a: "Her Apex modeli farklı dış ölçülere ve iç kullanım hacmine sahiptir. Teknik ürün sayfalarında aşağıdaki bilgiler ayrı ayrı gösterilir:", list: ["Dış ölçüler", "İç kullanım ölçüleri", "Kapı açıklığı", "Toplam ağırlık", "Kullanıcı kapasitesi", "Minimum kurulum alanı", "Teknik servis erişim mesafesi"], aAfter: "Özel ölçü talepleri, mühendislik değerlendirmesinin ardından projelendirilebilir." }
+            ]
+          },
+          {
+            title: "Basınç ve Oksijen Sistemi",
+            items: [
+              { q: "Apex sistemleri hangi basınçta çalışır?", a: "Çalışma basıncı modele ve ürün konfigürasyonuna göre değişebilir.\n\nTeknik dokümanlarda ölçümün mutlak basınç mı yoksa gösterge basıncı mı olduğu açıkça belirtilir." },
+              { q: "Bar ve ATA arasındaki fark nedir?", a: "Bar bir basınç ölçü birimidir. ATA ise atmosfer mutlak basıncını ifade eder. Bu iki değer aynı şekilde yorumlanmamalıdır.\n\nBu nedenle Apex teknik dokümanlarında aşağıdaki bilgiler ayrı ayrı gösterilir:", list: ["Ortam atmosfer basıncı", "Gösterge basıncı", "Mutlak basınç", "ATA karşılığı", "Maksimum izin verilen çalışma basıncı"] },
+              { q: "Oksijen nereden sağlanır?", a: "Kurulum projesine göre uygun kapasiteli bir oksijen konsantratörü kullanılabilir. Gerekli oksijen saflığı, debisi, basıncı ve yedekleme ihtiyacı teknik ekip tarafından hesaplanır." },
+              { q: "Oksijen konsantratörü cihaz fiyatına dahil midir?", a: "Evet." },
+              { q: "Bir oksijen konsantratörü birden fazla kullanıcı için yeterli midir?", a: "Bu durum konsantratörün kapasitesine, ihtiyaç duyulan oksijen debisine ve kullanıcı sayısına bağlıdır. Gerekli toplam oksijen debisi her proje için ayrı hesaplanır." }
+            ]
+          },
+          {
+            title: "Seans ve Kullanım Süreci",
+            items: [
+              { q: "Bir seans ne kadar sürer?", a: "Seans süresi uygulanacak protokole göre değişir. Bir seans genel olarak üç aşamadan oluşur: kontrollü basınçlandırma, hedef basınçta uygulama ve kontrollü basınç düşürme.\n\nToplam süre; hedef basınca, kullanıcı durumuna ve uygulama protokolüne göre belirlenir. Tıbbi amaçlı uygulamalarda seans süresi yetkili sağlık profesyoneli tarafından belirlenmelidir." },
+              { q: "Basınçlandırma ne kadar sürer?", a: "Basınçlandırma süresi seçilen hedef basınca, cihaz modeline ve kullanıcı konforuna göre değişebilir. Apex sistemlerinde basınç değişimi kontrollü şekilde gerçekleştirilir." },
+              { q: "Seans sırasında kulaklarda basınç hissedilir mi?", a: "Basınç değişimi sırasında uçak yolculuğuna benzer şekilde kulaklarda dolgunluk veya basınç hissi oluşabilir. Kullanıcılara seans öncesinde basınç eşitleme yöntemleri anlatılmalıdır." },
+              { q: "Kullanıcı seans sırasında dışarıyla iletişim kurabilir mi?", a: "Evet." },
+              { q: "Kullanıcı seans sırasında dışarıyı görebilir mi?", a: "Apex modellerinde kullanıcı konforunu artırmak amacıyla geniş görüş alanı sağlayan pencere ve şeffaf yüzey seçenekleri bulunabilir. Pencere ölçüleri ve yerleşimi modele göre değişir." },
+              { q: "Seans sırasında telefon kullanılabilir mi?", a: "Hiperbarik oda içerisine yalnızca üretici tarafından değerlendirilmiş ve açıkça izin verilmiş ekipmanlar alınmalıdır. Cep telefonu, tablet, akıllı saat, kulaklık, taşınabilir batarya ve benzeri elektronik cihazlar üretici onayı olmadan kabin içine alınmamalıdır.\n\nCihaza entegre edilen ekran, ses veya eğlence sistemleri yalnızca teknik ve güvenlik değerlendirmesi tamamlandıktan sonra kullanılabilir." },
+              { q: "Kullanıcı istediği zaman dışarı çıkabilir mi?", a: "Basınçlı durumdaki kabinin kapısı doğrudan açılamaz. Kullanıcının dışarı çıkabilmesi için öncelikle iç ve dış basıncın güvenli şekilde eşitlenmesi gerekir.\n\nNormal durumda kontrollü basınç düşürme işlemi uygulanır. Acil durumlarda cihazın belirlenmiş acil basınç düşürme prosedürü takip edilir." }
+            ]
+          },
+          {
+            title: "Güvenlik",
+            items: [
+              { q: "Apex hiperbarik sistemleri güvenli midir?", a: "Evet. Hiperbarik sistemlerde güvenlik; doğru mühendislik, uygun kurulum, düzenli bakım, eğitimli personel ve kullanım prosedürlerine uyulmasıyla sağlanır.\n\nCihaz yalnızca kullanım kılavuzuna uygun şekilde çalıştırılmalı ve güvenlik sistemleri devre dışı bırakılmamalıdır." },
+              { q: "Cihazlarda hangi güvenlik sistemleri bulunur?", a: "Modele ve sipariş edilen konfigürasyona göre Apex sistemlerinde aşağıdaki güvenlik özellikleri bulunabilir:", list: ["Basınç sensörleri", "Mekanik emniyet valfi", "Otomatik basınç kontrolü", "Manuel basınç kontrolü", "Acil durdurma butonu", "Acil basınç düşürme sistemi", "Oksijen seviyesi takibi", "Oksijen satürasyon ölçer (standart)", "Sıcaklık takibi", "Görsel ve sesli alarm sistemi", "İç-dış iletişim sistemi", "Kapı güvenlik sistemi", "Elektrik kesintisi prosedürü", "Hata ve seans kayıt sistemi", "Standart dahili yedek güç kaynağı"], aAfter: "Her modelde bulunan standart ve opsiyonel güvenlik sistemleri teknik teklif dokümanında ayrı ayrı gösterilir." },
+              { q: "Elektrik kesilirse ne olur?", a: "Tüm Apex modelleri, elektrik kesintisine karşı standart olarak dahili bir yedek güç kaynağıyla birlikte gelir. Elektrik kesintisi durumunda uygulanacak prosedür cihaz modeline göre değişebilir.\n\nSistem konfigürasyonuna göre aşağıdaki özellikler de sunulabilir:", list: ["Kesintisiz güç kaynağı", "Manuel basınç kontrolü", "Kontrollü basınç tahliyesi", "Acil durum aydınlatması", "Operatör uyarı sistemi"] },
+              { q: "Acil durumda kapı hemen açılabilir mi?", a: "Basınçlı odalarda kapının açılabilmesi için iç ve dış basıncın eşitlenmesi gerekir. Bu nedenle kapı, oda basınç altındayken normal yöntemle açılamaz.\n\nAcil durumda sistemin kontrollü veya hızlandırılmış basınç düşürme prosedürü uygulanır. Kullanıcı güvenliği açısından emniyet valfleri ve basınç sınırları aşılmamalıdır." },
+              { q: "Hiperbarik sistemlerde yangın riski var mıdır?", a: "Yüksek oksijen konsantrasyonlarının bulunduğu ortamlarda yanma riski artabilir. Bu nedenle oksijen yönetimi, elektrik tesisatı, statik elektrik kontrolü, kıyafet seçimi ve kabin içine alınan malzemeler özel kurallara tabidir.\n\nSigara, çakmak, kibrit, yanıcı ürünler ve üretici tarafından onaylanmamış elektronik cihazlar kesinlikle kabin içine alınmamalıdır." },
+              { q: "Kabin içine hangi eşyalar alınamaz?", a: "Üretici onayı olmadan aşağıdaki eşyalar kabin içine alınmamalıdır:", list: ["Sigara ve elektronik sigara", "Çakmak ve kibrit", "Yanıcı veya parlayıcı maddeler", "Alkol bazlı ürünler", "Yağ ve petrol bazlı kozmetik ürünleri", "Aerosol ürünleri", "Cep telefonu", "Tablet ve dizüstü bilgisayar", "Akıllı saat", "Kulaklık", "Taşınabilir batarya", "Isıtıcı ekipmanlar", "Onaylanmamış elektrikli cihazlar", "Basınç değişiminden etkilenebilecek kapalı ambalajlar"] },
+              { q: "Kabin içinde hangi kıyafetler kullanılmalıdır?", a: "İşletmenin güvenlik prosedürüne ve cihazın kullanım kılavuzuna uygun kıyafetler tercih edilmelidir. Statik elektrik veya yanıcılık riski oluşturabilecek kıyafet ve aksesuarlar kullanılmamalıdır." }
+            ]
+          },
+          {
+            title: "Kullanıcı Uygunluğu",
+            items: [
+              { q: "Herkes hiperbarik sistemi kullanabilir mi?", a: "Hayır. Hiperbarik ortam her kullanıcı için uygun olmayabilir. Kullanım öncesinde kişinin sağlık durumu, mevcut hastalıkları, kullandığı ilaçlar ve implantları değerlendirilmelidir.\n\nTıbbi amaçlı uygulamalarda uygunluk kararı yetkili sağlık profesyoneli tarafından verilmelidir." },
+              { q: "Kullanım öncesinde doktor değerlendirmesi gerekir mi?", a: "Tıbbi amaçlı hiperbarik uygulamalarda kullanıcı, yetkili bir sağlık profesyoneli tarafından değerlendirilmelidir.\n\nWellness veya performans amaçlı sunulan uygulamalarda da kullanıcıdan sağlık beyanı alınması ve risk oluşturabilecek durumların önceden kontrol edilmesi önerilir." },
+              { q: "Hangi sağlık durumları önceden bildirilmelidir?", a: "Kullanıcılar aşağıdaki durumları seans öncesinde işletme personeline ve sağlık profesyoneline bildirmelidir:", list: ["Kulak veya sinüs problemi", "Soğuk algınlığı veya ateş", "Akciğer rahatsızlığı", "Geçirilmiş ameliyat", "Kalp veya dolaşım problemi", "Nöbet öyküsü", "Klostrofobi", "Hamilelik", "Kullanılan ilaçlar", "Kalp pili veya implant", "Yakın zamanda gerçekleştirilen dalış", "Daha önce basınca bağlı yaşanan rahatsızlıklar"], aAfter: "Bu liste tıbbi değerlendirme yerine geçmez." },
+              { q: "Hamileler hiperbarik sistemi kullanabilir mi?", a: "Hamilelik döneminde kullanım kararı yalnızca yetkili bir hekim tarafından verilmelidir. Genel bilgilere dayanarak kullanım kararı alınmamalıdır." },
+              { q: "Çocuklar hiperbarik sistemi kullanabilir mi?", a: "Çocukların kullanımı; yaş, sağlık durumu, kullanım amacı, cihaz özellikleri ve refakat koşullarına göre değerlendirilmelidir. Tıbbi amaçlı uygulamalarda hekim onayı ve uygun sağlık personeli gözetimi gereklidir." },
+              { q: "Kalp pili veya implantı olan kişiler kullanabilir mi?", a: "İmplantın basınçlı ve oksijen kullanılan ortama uygunluğu doğrulanmalıdır. İmplant üreticisinin teknik bilgileri ve yetkili sağlık profesyonelinin değerlendirmesi olmadan kullanım kararı verilmemelidir." },
+              { q: "Soğuk algınlığı veya kulak ağrısı varken kullanılabilir mi?", a: "Soğuk algınlığı, burun tıkanıklığı, sinüs problemi veya kulak ağrısı basınç eşitlemeyi zorlaştırabilir. Bu tür durumlar seans öncesinde mutlaka bildirilmelidir.\n\nKullanımın ertelenip ertelenmeyeceğine yetkili sağlık profesyoneli veya sorumlu personel karar vermelidir." }
+            ]
+          },
+          {
+            title: "Tıbbi Kullanım ve Sağlık Beyanları",
+            items: [
+              { q: "Hiperbarik sistem hangi hastalıkların tedavisinde kullanılır?", a: "Hiperbarik oksijen uygulamasının kabul edilen tıbbi kullanım alanları ülkeye, düzenleyici kuruma, cihaz sınıfına ve klinik protokole göre değişebilir.\n\nTıbbi amaçlı uygulamalar yalnızca uygun şekilde sınıflandırılmış cihazlarla, yetkili sağlık kuruluşlarında, eğitimli sağlık personeli gözetiminde, hekim değerlendirmesi ve uygun protokol doğrultusunda gerçekleştirilmelidir.\n\nWeb sitemizde bulunan bilgiler herhangi bir hastalığın teşhis veya tedavisi için kişisel tavsiye niteliğinde değildir." },
+              { q: "Apex cihazları herhangi bir hastalığı tedavi eder mi?", a: "Bir cihazın kullanım amacı ve yapılabilecek sağlık beyanları, ürünün resmi sınıflandırmasına ve sahip olduğu belgelere bağlıdır.\n\nApex sistemleri hakkında yalnızca teknik belgelerde ve uygunluk değerlendirmesinde belirtilen kullanım amacı kapsamında beyanda bulunulur. Herhangi bir hastalık için garanti edilmiş sonuç sunulmaz." },
+              { q: "Düşük basınçlı sistemlerle klinik HBOT aynı şey midir?", a: "Hayır. Her basınçlı oksijen uygulaması aynı teknik veya klinik sınıfta değildir. Aşağıdaki unsurlar uygulamanın niteliğini değiştirebilir:", list: ["Çalışma basıncı", "Solunan oksijen konsantrasyonu", "Oksijenin verilme yöntemi", "Seans süresi", "Cihazın sertifikasyonu", "Kullanım amacı", "Uygulama ortamı", "Sağlık personeli gözetimi"], aAfter: "Bir sistemin \"medikal hiperbarik oksijen tedavisi cihazı\" olarak tanımlanabilmesi, ilgili pazardaki mevzuata ve ürünün belgelendirilmiş kullanım amacına bağlıdır." },
+              { q: "Sonuçlar garanti ediliyor mu?", a: "Kullanıcıların vereceği yanıt kişiden kişiye değişebilir. Sağlık, iyileşme, performans veya benzeri sonuçlar garanti edilemez.\n\nKullanım kararı yalnızca genel tanıtım bilgilerine veya kullanıcı yorumlarına dayanılarak verilmemelidir." }
+            ]
+          },
+          {
+            title: "Kurulum",
+            items: [
+              { q: "Kurulum için ne kadar alan gerekir?", a: "Gerekli alan seçilen Apex modeline göre değişir. Kurulum alanı belirlenirken yalnızca cihaz ölçüsü değil, aşağıdaki unsurlar da dikkate alınmalıdır:", list: ["Operatör çalışma alanı", "Kapının tam açılma mesafesi", "Teknik servis erişimi", "Kompresör ve yardımcı sistem alanı", "Oksijen sistemi alanı", "Havalandırma", "Elektrik panosu", "Acil çıkış güzergâhı", "Yangın güvenliği ekipmanları"], aAfter: "Minimum kurulum ölçüleri teknik keşif sonrasında belirlenir." },
+              { q: "Cihaz mevcut bir binaya kurulabilir mi?", a: "Çoğu proje mevcut yapılara uygulanabilir; ancak kurulum öncesinde teknik inceleme yapılmalıdır. Aşağıdaki koşullar kontrol edilir:", list: ["Zemin taşıma kapasitesi", "Kapı ve koridor geçişleri", "Asansör kapasitesi", "Tavan yüksekliği", "Elektrik altyapısı", "Havalandırma", "Oksijen ve basınçlı hava altyapısı", "Yangın güvenliği", "Teknik servis erişimi"] },
+              { q: "Kurulum öncesinde keşif yapıyor musunuz?", a: "Evet. Projenin konumuna ve kapsamına göre uzaktan teknik değerlendirme veya yerinde keşif yapılabilir. İlk değerlendirme için müşteriden aşağıdaki bilgiler talep edilebilir:", list: ["Kurulum alanı ölçüleri", "Fotoğraf ve videolar", "Mimari plan", "Elektrik altyapısı", "Havalandırma bilgileri", "Giriş ve taşıma güzergâhı", "Hedef kullanıcı kapasitesi", "İstenen model ve opsiyonlar"] },
+              { q: "Zemin güçlendirmesi gerekir mi?", a: "Bu durum cihazın ağırlığına, yardımcı ekipmanlara ve binanın taşıma kapasitesine bağlıdır. Gerekli olduğunda yetkili inşaat veya yapı mühendisi tarafından statik değerlendirme yapılmalıdır." },
+              { q: "Cihaz taşınabilir mi?", a: "Bazı Apex modelleri modüler yapıda üretilebilir. Ancak sökme, taşıma ve yeniden kurulum işlemleri yalnızca yetkili teknik ekip tarafından gerçekleştirilmelidir.\n\nTaşınma sonrasında sistem yeniden kontrol edilmeli ve gerekli testler tamamlanmadan kullanılmamalıdır." },
+              { q: "Kurulum ne kadar sürer?", a: "Kurulum süresi aşağıdaki unsurlara göre değişir: model, cihazın ölçüsü, kurulum yeri, binanın altyapısı, yardımcı sistemler, kişiselleştirme seçenekleri, test ve eğitim süreci.\n\nTahmini kurulum takvimi proje teklifinde belirtilir." }
+            ]
+          },
+          {
+            title: "Eğitim ve İşletme",
+            items: [
+              { q: "Personel eğitimi veriyor musunuz?", a: "Evet. Kurulum sonrasında yetkili personele cihazın güvenli ve doğru kullanımına yönelik eğitim verilir. Eğitim kapsamı modele göre şunları içerebilir:", list: ["Sistemin açılması ve kapatılması", "Basınçlandırma ve basınç düşürme", "Kullanıcı hazırlığı", "Basınç eşitleme bilgilendirmesi", "Oksijen sisteminin kullanımı", "Kabine alınması yasak ürünler", "Günlük güvenlik kontrolleri", "Alarm ve hata durumları", "Acil durum prosedürleri", "Temizlik ve hijyen", "Bakım kayıtlarının tutulması"] },
+              { q: "Cihazı kullanmak için kaç personel gerekir?", a: "Gerekli personel sayısı model, kullanıcı kapasitesi, işletmenin niteliği ve yerel mevzuata göre değişir.\n\nÇok kişilik ve tıbbi amaçlı sistemlerde ek sağlık ve güvenlik personeli gerekebilir. Personel planlaması proje aşamasında belirlenir." },
+              { q: "Kullanım kayıtları tutulabilir mi?", a: "Seçilen kontrol sistemi ve yazılım özelliklerine göre aşağıdaki kayıtlar tutulabilir:", list: ["Seans tarihi ve saati", "Seans süresi", "Basınç değerleri", "Basınç değişim grafiği", "Alarm kayıtları", "Operatör bilgileri", "Bakım geçmişi", "Sistem çalışma süresi"], aAfter: "Kişisel sağlık verilerinin tutulması halinde ilgili veri koruma mevzuatına uyulmalıdır." },
+              { q: "İşletme ruhsatı gerekir mi?", a: "Ruhsat ve izin gereklilikleri; ülkeye, şehre, tesis türüne, cihaz sınıfına ve kullanım amacına göre değişir. Tıbbi hizmet verilecek işletmelerde aşağıdaki düzenlemeler ayrıca değerlendirilmelidir:", list: ["Sağlık kuruluşu ruhsatı", "Tıbbi cihaz mevzuatı", "Basınçlı ekipman mevzuatı", "Yangın güvenliği", "İş sağlığı ve güvenliği", "Oksijen depolama kuralları", "Personel yeterliliği", "Elektrik ve yapı uygunluğu"], aAfter: "İşletme sahibi, faaliyete başlamadan önce yerel yetkili kurumlardan gerekli izinleri almalıdır." }
+            ]
+          },
+          {
+            title: "Temizlik ve Hijyen",
+            items: [
+              { q: "Hiperbarik oda nasıl temizlenir?", a: "Kabin, koltuklar, temas yüzeyleri ve kullanıcı ekipmanları yalnızca üretici tarafından onaylanan temizlik ürünleriyle temizlenmelidir. Yanıcı, yağ bazlı, yüksek alkol içeren veya cihaz malzemelerine zarar verebilecek ürünler kullanılmamalıdır." },
+              { q: "Her kullanıcıdan sonra temizlik yapılmalı mıdır?", a: "Kullanıcıyla temas eden yüzeyler ve ekipmanlar, işletmenin hijyen protokolüne göre her seans sonrasında temizlenmelidir. Maske, başlık ve solunum ekipmanları üretici talimatlarına göre temizlenmeli, dezenfekte edilmeli veya değiştirilmelidir." },
+              { q: "Oksijen maskeleri kişiye özel midir?", a: "Proje ve işletme tercihine göre kişiye özel, tek kullanımlık veya dezenfekte edilebilir maske seçenekleri kullanılabilir. Maskelerin temizliği ve değiştirilme periyotları üretici talimatlarına uygun olmalıdır." },
+              { q: "Filtreler ne sıklıkla değiştirilir?", a: "Filtre değişim süresi filtre tipine, çalışma saatine, ortam koşullarına ve kullanım yoğunluğuna göre değişir. Filtre bakım ve değişim periyotları cihazın bakım planında belirtilir." }
+            ]
+          },
+          {
+            title: "Bakım, Garanti ve Teknik Servis",
+            items: [
+              { q: "Cihazın bakımı ne sıklıkla yapılır?", a: "Periyodik bakım 6 ayda bir yapılır. Bunun dışında bakım programı genel olarak üç seviyeden oluşur: günlük kullanıcı kontrolleri, 6 aylık periyodik bakım, ve yıllık veya üretici tarafından belirlenen kapsamlı teknik kontrol.\n\nKesin bakım aralıkları cihazın kullanım kılavuzunda belirtilir." },
+              { q: "Periyodik bakımda hangi parçalar kontrol edilir?", a: "Bakım sırasında modele göre aşağıdaki bileşenler kontrol edilebilir:", list: ["Basınç sistemi", "Emniyet valfleri", "Kapı ve kilitleme sistemi", "Contalar", "Basınç sensörleri", "Oksijen sistemi", "Hava kompresörü", "Filtreler", "Elektrik sistemi", "Kontrol paneli", "Alarm sistemleri", "İç-dış iletişim sistemi", "Havalandırma", "Yazılım ve kayıt sistemi"] },
+              { q: "Günlük kontrol yapılması gerekir mi?", a: "Evet. Her çalışma günü öncesinde kullanacak kişi veya operatör tarafından temel güvenlik kontrolü yapılmalıdır. Kontrol sonuçlarının tarih ve operatör bilgisiyle kayıt altına alınması önerilir." },
+              { q: "Garanti süresi ne kadardır?", a: "Apex hiperbarik sistemleri için standart garanti süresi uluslararası mevzuata göre 1 yıldır. Konfigüratör üzerinden +1 yıl ek garanti seçeneği ile toplam 2 yıla çıkarılabilir.\n\nGaranti kapsamı; ana kabin, mekanik parçalar, elektronik bileşenler, kompresör, oksijen sistemi ve sarf malzemelerde farklılık gösterebilir. Ayrıntılı şartlar satış sözleşmesinde belirtilir." },
+              { q: "Hangi parçalar garanti kapsamı dışındadır?", a: "Normal kullanım sonucu aşınan sarf parçaları, filtreler, maskeler, contalar ve kullanım hatasından kaynaklanan hasarlar garanti kapsamı dışında olabilir. Kesin kapsam garanti belgesinde açıklanır." },
+              { q: "Yedek parça desteği sağlıyor musunuz?", a: "Evet. Apex sistemleri için orijinal yedek parça ve teknik servis desteği sağlanır." },
+              { q: "Uzaktan teknik destek sunuyor musunuz?", a: "Evet. Sorunun niteliğine göre telefon, görüntülü görüşme veya uygun modellerde uzaktan bağlantı yoluyla teknik destek sağlanabilir. Uzaktan çözülemeyen durumlarda yerinde servis planlanır." },
+              { q: "Arıza durumunda cihaz kullanılabilir mi?", a: "Hayır. Basınç sistemi, oksijen hattı, kapı sistemi, sensörler, alarm sistemi veya diğer güvenlik bileşenlerinde arıza görülmesi halinde cihaz kullanılmamalıdır. Yetkili teknik servis gerekli kontrol ve onayı vermeden sistem yeniden çalıştırılmamalıdır." }
+            ]
+          },
+          {
+            title: "Sipariş, Fiyat ve Teslimat",
+            items: [
+              { q: "Apex hiperbarik sistemlerinin fiyatı nedir?", a: "Fiyatlar aşağıdaki unsurlara göre değişir:", list: ["Model", "Kullanıcı kapasitesi", "Kabin ölçüsü", "Çalışma basıncı", "Oksijen sistemi", "Kompresör sistemi", "İç donanım", "Dijital özellikler", "Kişiselleştirme", "Nakliye", "Kurulum ülkesi", "Eğitim ve servis paketi"], aAfter: "Bu nedenle her proje için ihtiyaç analizi sonrasında özel teklif hazırlanır. Konfigüratörden alacağınız fiyat teklifleri yalnızca 15 gün geçerlidir ve FOB fiyatıdır." },
+              { q: "Teklif almak için hangi bilgiler gereklidir?", a: "Teklif hazırlayabilmemiz için aşağıdaki bilgileri paylaşmanız yeterlidir:", list: ["Adınız Soyadınız veya şirketiniz", "Ülke ve şehir", "Kullanım amacı", "İlgilendiğiniz Apex modeli", "Kullanıcı kapasitesi", "Kurulum alanının ölçüleri", "İstenen özellikler", "Planlanan açılış veya teslim tarihi", "İletişim bilgileriniz"], aAfter: "Teknik ekibimiz bilgileri değerlendirdikten sonra sizinle iletişime geçer." },
+              { q: "Üretim süresi ne kadardır?", a: "Üretim süresi modele, sipariş yoğunluğuna ve kişiselleştirme taleplerine göre değişir. Modele göre farklılık gösterip 10 haftadan başlar.\n\nKesin teslim takvimi sipariş onayı sırasında bildirilir." },
+              { q: "Uluslararası teslimat yapıyor musunuz?", a: "Evet. Uygun lojistik ve teknik koşulların sağlanabildiği ülkelere uluslararası teslimat yapılabilir. Teklif kapsamında aşağıdaki hizmetler ayrı ayrı planlanabilir:", list: ["Uluslararası taşıma", "Nakliye sigortası", "Gümrük dokümantasyonu", "Yerinde kurulum", "Devreye alma", "Personel eğitimi", "Satış sonrası teknik destek"], aAfter: "İthalat izinleri ve yerel ruhsatlandırma koşulları alıcı ülkeye göre değişebilir." },
+              { q: "Nakliye ve kurulum fiyata dahil midir?", a: "Nakliye ve kurulum bedelleri kurulum konumuna göre değiştiği için teklif içerisinde ayrı kalemler halinde gösterilir. Böylece müşteri; cihaz, nakliye, kurulum, eğitim ve opsiyonel donanım maliyetlerini açık biçimde görebilir." },
+              { q: "Ödeme koşulları nelerdir?", a: "Standart koşulumuzda siparişlerde %50 peşinat alınır, kalan %50 bakiye ise ürün teslimata hazır hale geldiğinde tahsil edilir. Kesin ödeme koşulları satış sözleşmesinde belirtilir." },
+              { q: "Finansman veya leasing imkânı bulunuyor mu?", a: "Finansman ve leasing seçenekleri satış yapılan ülkeye ve iş birliği yapılan finans kuruluşlarına göre değişebilir. Mevcut seçenekler teklif aşamasında paylaşılır." }
+            ]
+          },
+          {
+            title: "Sertifikalar ve Uygunluk",
+            items: [
+              { q: "Apex sistemleri hangi standartlara uygundur?", a: "Apex Serisi; EN 14931 (Medikal Kabin Dizayn Standardı), EN 16081 (Medikal Kabin Yangın Sistemi), NFPA 99 (Amerikan Yangın Sistemi Standardı), ISO 9001 (Kalite Standardı) ve EN 13445 + PED 2014/68/EU (Basınçlı Ekipman Direktifi) standartlarına uygun olarak geliştirilir.\n\nHer model için geçerli standartlar, testler ve uygunluk belgeleri ürünün teknik dokümanında belirtilir. Yalnızca tamamlanmış ve doğrulanabilir belgeler geçerli ürün belgesi olarak sunulur." },
+              { q: "Cihazlarda CE işareti bulunuyor mu?", a: "CE durumu, ürün modeline ve ilgili mevzuat kapsamına göre açıklanır. CE işareti tek başına ürünün bütün kullanım amaçları için medikal cihaz olduğu anlamına gelmez. Uygunluk beyanında ilgili mevzuat, ürün sınıfı, kullanım amacı ve üretici bilgileri açıkça belirtilmelidir." },
+              { q: "Sertifikaları inceleyebilir miyim?", a: "Uygunluk belgeleri, test raporları ve teknik dokümanlar; ürün modeli, hedef ülke ve ticari süreç dikkate alınarak talep üzerine paylaşılabilir." }
+            ]
+          }
         ]
       }
     }
@@ -931,6 +1074,18 @@ const TRANSLATIONS = {
           { icon: "screen", title: "Fixed-Mounted Immersive Display Experience", desc: "A large, chamber-mounted display offering calming visual content during sessions." }
         ],
         disclaimer: "These features are under development and planned for future models; they are not standard on current Apex models. Chamber pressure and oxygen levels are always controlled by a qualified operator."
+      },
+      certifications: {
+        eyebrow: "CERTIFICATIONS",
+        title: "Standards Compliance",
+        subtitle: "The Apex Series is developed in line with international standards for medical chamber design, fire safety, and pressure equipment.",
+        items: [
+          { code: "EN 14931", name: "Medical Chamber Design Standard" },
+          { code: "EN 16081", name: "Medical Chamber Fire System" },
+          { code: "NFPA 99", name: "US Fire System Standard" },
+          { code: "ISO 9001", name: "Quality Management Standard" },
+          { code: "EN 13445 + PED 2014/68/EU", name: "Pressure Equipment Directive" }
+        ]
       }
     },
     modelsOverview: {
@@ -960,7 +1115,9 @@ const TRANSLATIONS = {
       { icon: "os", title: "ApexOS™ Updates", desc: "Your device gains new features every month. OTA updates keep protocols current." },
       { icon: "ai", title: "ApexAI™ Optimization", desc: "AI that analyzes patient data adjusts sessions dynamically." },
       { icon: "sync", title: "ApexSync™ Integration", desc: "One-click integration with hospital information systems. Automatic reporting." },
-      { icon: "guard", title: "ApexGuard™ Security", desc: "Predictive maintenance technology that warns you before a failure occurs." }
+      { icon: "guard", title: "ApexGuard™ Security", desc: "Predictive maintenance technology that warns you before a failure occurs." },
+      { icon: "battery", title: "Standard Built-In Backup Power", desc: "Every model comes standard with a built-in backup power supply to protect against power outages." },
+      { icon: "pulseOx", title: "Oxygen Saturation Meter", desc: "A blood-oxygen saturation monitor is standard in every chamber, tracking levels throughout the session." }
     ],
     modelSoloLounge: {
       breadcrumb: "Apex Solo Lounge", eyebrow: "APEX SOLO LOUNGE", title: "Apex Solo Lounge",
@@ -1180,7 +1337,7 @@ const TRANSLATIONS = {
         none_selected: "None selected",
         base_price_label: "Base Price",
         total_label: "Estimated Total",
-        disclaimer: "Prices are approximate and for informational purposes. Please fill out the form for an exact quote.",
+        disclaimer: "Prices are approximate and for informational purposes, are FOB, and are valid for 15 days only. Please fill out the form for an exact quote.",
         cta: "Request a Quote With This Configuration",
         print_button: "Print / Save as PDF",
         share_button: "Copy Configuration Link",
@@ -1401,15 +1558,144 @@ const TRANSLATIONS = {
       faq: {
         eyebrow: "FREQUENTLY ASKED QUESTIONS",
         title: "Common Questions",
-        subtitle: "The questions we're asked most often about ordering, payment and installation.",
-        items: [
-          { q: "What are the payment terms?", a: "Our standard terms require a 50% deposit, with the remaining 50% due when the unit is ready for delivery." },
-          { q: "Do you offer other payment options?", a: "Yes. Besides the standard 50% deposit / 50% on delivery terms, we also offer: installment payment via corporate credit card (available for international orders too), financial leasing with a set down payment, and a 3-stage payment plan for larger orders (order confirmation / production complete / delivery). Please contact us to work out the best option for you." },
-          { q: "How soon after ordering is the unit ready?", a: "From order confirmation, your unit is ready for delivery in a minimum of 6 weeks. This does not include shipping/logistics time, which is calculated separately based on your location." },
-          { q: "Are installation and shipping included in the price?", a: "No. Installation and logistics costs vary by location, site access and distance. We prepare a custom installation and logistics quote for you — please reach out through the contact form." },
-          { q: "What's included in the price?", a: "Every Apex model includes the ApexConnect™, ApexOS™, ApexAI™, ApexSync™ and ApexGuard™ technology platform as standard. Add-ons and chamber style choices are priced separately in the configurator." },
-          { q: "How do I get a quote?", a: "Use our configurator to select your model, chamber style, color and add-ons for an instant price estimate, then submit the quote form to hear back from us." },
-          { q: "Can I customize the chamber color and style?", a: "Yes. Choose freely from 12 color options, and pick from Standard Enclosed, Panoramic Glass, or Premium chamber styles." }
+        subtitle: "The most frequently asked questions about hyperbaric systems, Apex models, installation and ordering.",
+        sections: [
+          {
+            title: "About Hyperbaric Systems",
+            items: [
+              { q: "What is a hyperbaric chamber?", a: "A hyperbaric chamber is a system that provides the user with a controlled, pressurized environment above normal atmospheric pressure. In Apex hyperbaric systems, the chamber is pressurized in a controlled manner; oxygen can be supplied to the user through a dedicated mask or suitable breathing equipment, depending on the selected model and system configuration." },
+              { q: "How does a hyperbaric system work?", a: "After the user enters the chamber, the door is safely closed and the system is pressurized in a controlled manner. Once the target working pressure is reached, the session protocol is applied. At the end of the session, pressure is gradually reduced, and the door is opened once the interior reaches normal atmospheric pressure.\n\nThe pressure level, oxygen flow and session duration are determined according to the device's specifications, the intended use and the protocol to be applied." },
+              { q: "Are a hyperbaric chamber and an oxygen concentrator the same device?", a: "No. A hyperbaric chamber creates a controlled pressure environment. An oxygen concentrator produces high-concentration oxygen from ambient air. Depending on the project's requirements, these two systems can be used together." },
+              { q: "Can hyperbaric systems only be used in hospitals?", a: "The settings in which hyperbaric systems can be used vary depending on the device's classification, intended use and the relevant regulations in the country of installation.\n\nDepending on the selected model and configuration, Apex systems can be engineered for the following settings:", list: ["Hospitals and healthcare institutions", "Clinics", "Sports and performance centers", "Wellness and longevity centers", "Hotels and dedicated health concepts", "Rehabilitation centers", "Research and educational institutions", "Private residences"], aAfter: "For facilities providing medical services, the relevant health regulations, licensing conditions and requirements for a qualified healthcare professional must be separately assessed." }
+            ]
+          },
+          {
+            title: "Apex Models",
+            items: [
+              { q: "Which Apex models are available?", a: "The Apex product family is developed for different user capacities and use cases.\n\nApex Solo — A single-user hyperbaric system. Designed for more compact spaces and individual use.\n\nApex Duo — A system with a spacious interior that can accommodate two users in the same session.\n\nApex Quad-Cube — A multi-user, cube-shaped, large-volume hyperbaric system developed for clinics, hospitals and professional operators. Its capacity is determined by the selected seating layout and project configuration." },
+              { q: "Who is Apex Solo suitable for?", a: "Apex Solo is developed for operators seeking a single-user setup. Thanks to its compact structure, it can be considered for clinics, sports centers, wellness centers, hotels and private-use settings.\n\nThe exact conditions of use are determined by the product's classification and the regulations of the country of installation." },
+              { q: "How many people can Apex Duo accommodate?", a: "Apex Duo is designed to accommodate two users in the same session. The seating structure, interior fittings and seating layout may vary according to the ordered configuration." },
+              { q: "What is the user capacity of the multi-person Apex model?", a: "The standard capacity of the multi-person model is 6 people, with an optional capacity of up to 12 people (in increments of 2 seats).\n\nThe exact capacity is determined by the following factors:", list: ["Chamber dimensions", "Seating layout", "Users' range of movement", "Oxygen system capacity", "Operating protocol", "Local safety and licensing requirements"], aAfter: "Each option is added to the project following a safety assessment and technical suitability review." },
+              { q: "What are the dimensions of the devices?", a: "Each Apex model has different exterior dimensions and interior usable volume. The following information is shown separately on the technical product pages:", list: ["Exterior dimensions", "Interior usable dimensions", "Door opening", "Total weight", "User capacity", "Minimum installation area", "Technical service access clearance"], aAfter: "Custom dimension requests can be engineered following an engineering assessment." }
+            ]
+          },
+          {
+            title: "Pressure and Oxygen System",
+            items: [
+              { q: "What pressure do Apex systems operate at?", a: "The operating pressure may vary depending on the model and product configuration.\n\nTechnical documents clearly state whether the measurement refers to absolute pressure or gauge pressure." },
+              { q: "What is the difference between bar and ATA?", a: "Bar is a unit of pressure measurement. ATA refers to atmospheres absolute. These two values should not be interpreted the same way.\n\nFor this reason, the following information is shown separately in Apex technical documents:", list: ["Ambient atmospheric pressure", "Gauge pressure", "Absolute pressure", "ATA equivalent", "Maximum allowed operating pressure"] },
+              { q: "Where does the oxygen come from?", a: "An appropriately sized oxygen concentrator can be used depending on the installation project. The required oxygen purity, flow rate, pressure and backup needs are calculated by the technical team." },
+              { q: "Is the oxygen concentrator included in the device price?", a: "Yes." },
+              { q: "Is one oxygen concentrator sufficient for multiple users?", a: "This depends on the concentrator's capacity, the required oxygen flow rate and the number of users. The total required oxygen flow rate is calculated separately for each project." }
+            ]
+          },
+          {
+            title: "Session and Usage Process",
+            items: [
+              { q: "How long does a session take?", a: "Session duration varies according to the protocol applied. A session generally consists of three phases: controlled pressurization, application at target pressure, and controlled depressurization.\n\nTotal duration is determined by the target pressure, the user's condition and the application protocol. For medically intended applications, session duration must be determined by a qualified healthcare professional." },
+              { q: "How long does pressurization take?", a: "Pressurization time may vary depending on the selected target pressure, the device model and user comfort. In Apex systems, pressure changes are carried out in a controlled manner." },
+              { q: "Is pressure felt in the ears during a session?", a: "During pressure changes, a feeling of fullness or pressure in the ears may occur, similar to air travel. Users should be informed of pressure-equalization techniques before the session." },
+              { q: "Can the user communicate with the outside during a session?", a: "Yes." },
+              { q: "Can the user see outside during a session?", a: "Apex models can include large viewing areas and transparent surface options to increase user comfort. Window dimensions and placement vary by model." },
+              { q: "Can a phone be used during a session?", a: "Only equipment that has been assessed and explicitly approved by the manufacturer should be brought into the hyperbaric chamber. Mobile phones, tablets, smartwatches, headphones, portable batteries and similar electronic devices must not be brought into the chamber without manufacturer approval.\n\nScreen, audio or entertainment systems integrated into the device may only be used once the technical and safety assessment has been completed." },
+              { q: "Can the user exit at any time?", a: "The door of a chamber under pressure cannot be opened directly. For the user to exit, the internal and external pressure must first be safely equalized.\n\nUnder normal conditions, a controlled depressurization procedure is applied. In emergencies, the device's designated emergency depressurization procedure is followed." }
+            ]
+          },
+          {
+            title: "Safety",
+            items: [
+              { q: "Are Apex hyperbaric systems safe?", a: "Yes. Safety in hyperbaric systems is ensured through proper engineering, correct installation, regular maintenance, trained personnel and adherence to usage procedures.\n\nThe device must only be operated in accordance with the user manual, and safety systems must never be disabled." },
+              { q: "What safety systems are included in the devices?", a: "Depending on the model and ordered configuration, Apex systems may include the following safety features:", list: ["Pressure sensors", "Mechanical safety relief valve", "Automatic pressure control", "Manual pressure control", "Emergency stop button", "Emergency depressurization system", "Oxygen level monitoring", "Oxygen saturation monitor (standard)", "Temperature monitoring", "Visual and audible alarm system", "Internal-external communication system", "Door safety system", "Power outage procedure", "Fault and session logging system", "Standard built-in backup power source"], aAfter: "The standard and optional safety systems included in each model are listed separately in the technical proposal document." },
+              { q: "What happens if there is a power outage?", a: "All Apex models come with a standard built-in backup power source to protect against power outages. The procedure to be applied in the event of a power outage may vary by device model.\n\nThe following features can also be offered depending on the system configuration:", list: ["Uninterruptible power supply", "Manual pressure control", "Controlled pressure release", "Emergency lighting", "Operator alert system"] },
+              { q: "Can the door be opened immediately in an emergency?", a: "In pressurized chambers, the internal and external pressure must be equalized before the door can be opened. For this reason, the door cannot be opened through normal means while the chamber is under pressure.\n\nIn an emergency, the system's controlled or accelerated depressurization procedure is applied. Safety relief valves and pressure limits must not be exceeded for user safety." },
+              { q: "Is there a fire risk in hyperbaric systems?", a: "In environments with high oxygen concentrations, the risk of combustion can increase. For this reason, oxygen management, electrical wiring, static electricity control, clothing choice and the materials brought into the chamber are subject to special rules.\n\nCigarettes, lighters, matches, flammable products and electronic devices not approved by the manufacturer must never be brought into the chamber." },
+              { q: "What items are not allowed inside the chamber?", a: "The following items must not be brought into the chamber without manufacturer approval:", list: ["Cigarettes and e-cigarettes", "Lighters and matches", "Flammable or combustible substances", "Alcohol-based products", "Oil and petroleum-based cosmetic products", "Aerosol products", "Mobile phones", "Tablets and laptops", "Smartwatches", "Headphones", "Portable batteries", "Heating equipment", "Unapproved electrical devices", "Sealed packaging that may be affected by pressure changes"] },
+              { q: "What clothing should be worn inside the chamber?", a: "Clothing appropriate to the operator's safety procedure and the device's user manual should be preferred. Clothing and accessories that may pose a static electricity or flammability risk must not be used." }
+            ]
+          },
+          {
+            title: "User Suitability",
+            items: [
+              { q: "Can everyone use a hyperbaric system?", a: "No. A hyperbaric environment may not be suitable for every user. Prior to use, the individual's health condition, existing illnesses, medications and implants must be assessed.\n\nFor medically intended applications, the suitability decision must be made by a qualified healthcare professional." },
+              { q: "Is a medical evaluation required before use?", a: "For medically intended hyperbaric applications, the user must be evaluated by a qualified healthcare professional.\n\nFor wellness or performance-oriented applications, it is also recommended that a health declaration be obtained from the user and that any potentially risky conditions be checked in advance." },
+              { q: "Which health conditions should be disclosed in advance?", a: "Users should disclose the following conditions to operator staff and the healthcare professional before the session:", list: ["Ear or sinus problems", "Cold or fever", "Lung conditions", "Previous surgery", "Heart or circulatory conditions", "History of seizures", "Claustrophobia", "Pregnancy", "Medications being used", "Pacemaker or implants", "Recent diving activity", "Previous pressure-related discomfort"], aAfter: "This list does not replace a medical evaluation." },
+              { q: "Can pregnant individuals use a hyperbaric system?", a: "The decision to use during pregnancy must be made solely by a qualified physician. Usage decisions should not be based on general information." },
+              { q: "Can children use a hyperbaric system?", a: "The use by children should be assessed based on age, health condition, purpose of use, device characteristics and accompaniment conditions. For medically intended applications, physician approval and supervision by appropriate healthcare personnel are required." },
+              { q: "Can individuals with a pacemaker or implant use the system?", a: "The suitability of the implant for a pressurized, oxygen-enriched environment must be confirmed. A usage decision must not be made without the implant manufacturer's technical information and the assessment of a qualified healthcare professional." },
+              { q: "Can the system be used with a cold or ear pain?", a: "A cold, nasal congestion, sinus problems or ear pain can make pressure equalization difficult. Such conditions must always be disclosed before the session.\n\nThe decision on whether to postpone use should be made by a qualified healthcare professional or responsible staff member." }
+            ]
+          },
+          {
+            title: "Medical Use and Health Claims",
+            items: [
+              { q: "What conditions is a hyperbaric system used to treat?", a: "The accepted medical uses of hyperbaric oxygen application may vary depending on the country, regulatory body, device classification and clinical protocol.\n\nMedically intended applications should only be carried out using appropriately classified devices, at authorized healthcare facilities, under the supervision of trained healthcare personnel, with physician assessment and an appropriate protocol.\n\nThe information on our website does not constitute personal advice for the diagnosis or treatment of any illness." },
+              { q: "Do Apex devices treat any illness?", a: "A device's intended use and the health claims that can be made about it depend on the product's official classification and the documentation it holds.\n\nStatements about Apex systems are made only within the intended use specified in the technical documents and conformity assessment. No guaranteed outcome is offered for any illness." },
+              { q: "Are low-pressure systems the same as clinical HBOT?", a: "No. Not every pressurized oxygen application belongs to the same technical or clinical class. The following factors can change the nature of the application:", list: ["Operating pressure", "Concentration of oxygen inhaled", "Method of oxygen delivery", "Session duration", "Device certification", "Intended use", "Application setting", "Supervision by healthcare personnel"], aAfter: "Whether a system can be defined as a \"medical hyperbaric oxygen therapy device\" depends on the regulations of the relevant market and the product's documented intended use." },
+              { q: "Are results guaranteed?", a: "The response of users can vary from person to person. Health, recovery, performance or similar outcomes cannot be guaranteed.\n\nUsage decisions should not be based solely on general promotional information or user testimonials." }
+            ]
+          },
+          {
+            title: "Installation",
+            items: [
+              { q: "How much space is required for installation?", a: "The required space varies according to the selected Apex model. When determining the installation area, the following factors should be considered in addition to the device dimensions:", list: ["Operator working area", "Full door-opening clearance", "Technical service access", "Compressor and auxiliary equipment area", "Oxygen system area", "Ventilation", "Electrical panel", "Emergency exit route", "Fire safety equipment"], aAfter: "Minimum installation dimensions are determined following a technical survey." },
+              { q: "Can the device be installed in an existing building?", a: "Most projects can be applied to existing structures; however, a technical inspection must be conducted before installation. The following conditions are checked:", list: ["Floor load-bearing capacity", "Door and corridor clearances", "Elevator capacity", "Ceiling height", "Electrical infrastructure", "Ventilation", "Oxygen and compressed air infrastructure", "Fire safety", "Technical service access"] },
+              { q: "Do you conduct a site survey before installation?", a: "Yes. Depending on the project's location and scope, a remote technical assessment or an on-site survey can be conducted. The following information may be requested from the customer for the initial assessment:", list: ["Installation area dimensions", "Photos and videos", "Architectural plan", "Electrical infrastructure", "Ventilation information", "Access and transport route", "Target user capacity", "Desired model and options"] },
+              { q: "Is floor reinforcement required?", a: "This depends on the device's weight, auxiliary equipment and the building's load-bearing capacity. When required, a static assessment must be carried out by a qualified construction or structural engineer." },
+              { q: "Can the device be relocated?", a: "Some Apex models can be manufactured in a modular structure. However, disassembly, transport and re-installation must only be carried out by an authorized technical team.\n\nAfter relocation, the system must be re-inspected and must not be used until the required tests have been completed." },
+              { q: "How long does installation take?", a: "Installation time varies according to the following factors: model, device dimensions, installation location, the building's infrastructure, auxiliary systems, customization options, and the testing and training process.\n\nThe estimated installation schedule is stated in the project proposal." }
+            ]
+          },
+          {
+            title: "Training and Operation",
+            items: [
+              { q: "Do you provide staff training?", a: "Yes. Following installation, authorized personnel are trained on the safe and correct use of the device. Depending on the model, the training scope may include:", list: ["Starting and shutting down the system", "Pressurization and depressurization", "User preparation", "Pressure-equalization briefing", "Use of the oxygen system", "Items prohibited inside the chamber", "Daily safety checks", "Alarm and fault conditions", "Emergency procedures", "Cleaning and hygiene", "Maintenance record-keeping"] },
+              { q: "How many personnel are required to operate the device?", a: "The number of required personnel varies according to the model, user capacity, the nature of the operation and local regulations.\n\nMulti-user and medically intended systems may require additional health and safety personnel. Staffing is determined during the project phase." },
+              { q: "Can usage records be kept?", a: "Depending on the selected control system and software features, the following records can be kept:", list: ["Session date and time", "Session duration", "Pressure values", "Pressure change graph", "Alarm records", "Operator information", "Maintenance history", "System operating hours"], aAfter: "If personal health data is recorded, the relevant data protection regulations must be complied with." },
+              { q: "Is an operating license required?", a: "Licensing and permit requirements vary by country, city, facility type, device classification and intended use. For facilities providing medical services, the following regulations must be separately assessed:", list: ["Healthcare facility license", "Medical device regulations", "Pressure equipment regulations", "Fire safety", "Occupational health and safety", "Oxygen storage rules", "Personnel qualifications", "Electrical and building compliance"], aAfter: "The operator must obtain the necessary permits from the relevant local authorities before commencing operations." }
+            ]
+          },
+          {
+            title: "Cleaning and Hygiene",
+            items: [
+              { q: "How is the hyperbaric chamber cleaned?", a: "The chamber, seats, contact surfaces and user equipment must only be cleaned using cleaning products approved by the manufacturer. Flammable, oil-based, high-alcohol-content products or products that may damage the device's materials must not be used." },
+              { q: "Should cleaning be done after every user?", a: "Surfaces and equipment that come into contact with the user should be cleaned after every session, in accordance with the operator's hygiene protocol. Masks, headgear and breathing equipment should be cleaned, disinfected or replaced according to manufacturer instructions." },
+              { q: "Are oxygen masks personal to each user?", a: "Depending on the project and operator preference, personal, single-use or disinfectable mask options can be used. Mask cleaning and replacement intervals should comply with manufacturer instructions." },
+              { q: "How often are filters replaced?", a: "The filter replacement interval varies depending on filter type, operating hours, environmental conditions and usage intensity. Filter maintenance and replacement intervals are specified in the device's maintenance plan." }
+            ]
+          },
+          {
+            title: "Maintenance, Warranty and Technical Service",
+            items: [
+              { q: "How often is the device serviced?", a: "Periodic maintenance is carried out every 6 months. Beyond this, the maintenance program generally consists of three levels: daily user checks, 6-month periodic maintenance, and an annual or manufacturer-defined comprehensive technical inspection.\n\nExact maintenance intervals are specified in the device's user manual." },
+              { q: "Which parts are checked during periodic maintenance?", a: "Depending on the model, the following components may be checked during maintenance:", list: ["Pressure system", "Safety relief valves", "Door and locking system", "Seals", "Pressure sensors", "Oxygen system", "Air compressor", "Filters", "Electrical system", "Control panel", "Alarm systems", "Internal-external communication system", "Ventilation", "Software and logging system"] },
+              { q: "Is a daily check required?", a: "Yes. Before each operating day, a basic safety check must be carried out by the user or operator. It is recommended that check results be logged along with the date and operator information." },
+              { q: "How long is the warranty period?", a: "The standard warranty period for Apex hyperbaric systems is 1 year, in line with international regulations. Through the configurator, an optional +1 year extended warranty can bring the total to 2 years.\n\nWarranty coverage may vary for the main chamber, mechanical parts, electronic components, compressor, oxygen system and consumables. Detailed terms are specified in the sales agreement." },
+              { q: "Which parts are not covered by the warranty?", a: "Consumable parts, filters, masks and seals that wear out through normal use, as well as damage resulting from misuse, may not be covered by the warranty. The exact coverage is described in the warranty document." },
+              { q: "Do you provide spare parts support?", a: "Yes. Original spare parts and technical service support are provided for Apex systems." },
+              { q: "Do you offer remote technical support?", a: "Yes. Depending on the nature of the issue, technical support can be provided by phone, video call or, for suitable models, remote connection. If the issue cannot be resolved remotely, an on-site service visit is scheduled." },
+              { q: "Can the device be used in case of a malfunction?", a: "No. If a malfunction is detected in the pressure system, oxygen line, door system, sensors, alarm system or other safety components, the device must not be used. The system must not be restarted until authorized technical service has performed the necessary inspection and approval." }
+            ]
+          },
+          {
+            title: "Ordering, Pricing and Delivery",
+            items: [
+              { q: "What is the price of Apex hyperbaric systems?", a: "Prices vary according to the following factors:", list: ["Model", "User capacity", "Chamber dimensions", "Operating pressure", "Oxygen system", "Compressor system", "Interior fittings", "Digital features", "Customization", "Shipping", "Country of installation", "Training and service package"], aAfter: "For this reason, a custom quote is prepared for each project following a needs analysis. Price quotes obtained from the configurator are valid for 15 days only and are quoted as FOB prices." },
+              { q: "What information is required to receive a quote?", a: "Sharing the following information is sufficient for us to prepare a quote:", list: ["Your name or company name", "Country and city", "Intended use", "Apex model you are interested in", "User capacity", "Installation area dimensions", "Desired features", "Planned opening or delivery date", "Your contact information"], aAfter: "Our technical team will review the information and get in touch with you." },
+              { q: "How long is the production time?", a: "Production time varies depending on the model, order volume and customization requests. Depending on the model, it starts from 10 weeks.\n\nThe exact delivery schedule is communicated upon order confirmation." },
+              { q: "Do you deliver internationally?", a: "Yes. International delivery can be made to countries where suitable logistics and technical conditions can be provided. The following services can be planned separately as part of the quote:", list: ["International shipping", "Freight insurance", "Customs documentation", "On-site installation", "Commissioning", "Staff training", "After-sales technical support"], aAfter: "Import permits and local licensing requirements may vary by destination country." },
+              { q: "Are shipping and installation included in the price?", a: "Shipping and installation costs vary depending on the installation location, so they are shown as separate line items within the quote. This allows the customer to clearly see the costs of the device, shipping, installation, training and optional equipment." },
+              { q: "What are the payment terms?", a: "Under our standard terms, a 50% deposit is collected at the time of order, with the remaining 50% balance due once the product is ready for delivery. Exact payment terms are specified in the sales agreement." },
+              { q: "Is financing or leasing available?", a: "Financing and leasing options may vary depending on the country of sale and the partner financial institutions. Available options are shared during the quote stage." }
+            ]
+          },
+          {
+            title: "Certifications and Compliance",
+            items: [
+              { q: "Which standards do Apex systems comply with?", a: "The Apex Series is developed in accordance with EN 14931 (Medical Chamber Design Standard), EN 16081 (Medical Chamber Fire Protection System), NFPA 99 (US Fire Protection System Standard), ISO 9001 (Quality Standard), and EN 13445 + PED 2014/68/EU (Pressure Equipment Directive).\n\nThe applicable standards, tests and conformity documents for each model are specified in the product's technical documentation. Only completed and verifiable documents are provided as valid product certification." },
+              { q: "Do the devices carry the CE mark?", a: "CE status is explained according to the product model and the applicable regulatory scope. The CE mark alone does not mean that a product is a medical device for all uses. The declaration of conformity must clearly state the applicable regulation, product class, intended use and manufacturer information." },
+              { q: "Can I review the certificates?", a: "Conformity documents, test reports and technical documentation can be shared upon request, taking into account the product model, target country and commercial process." }
+            ]
+          }
         ]
       }
     }
@@ -1639,6 +1925,18 @@ const TRANSLATIONS = {
           { icon: "screen", title: "Стационарный immersive-дисплей", desc: "Большой экран, встроенный в камеру, с расслабляющим визуальным контентом во время сеанса." }
         ],
         disclaimer: "Эти функции находятся в разработке и планируются для будущих моделей; они не входят в стандартную комплектацию текущих моделей Apex. Давление и уровень кислорода в камере всегда контролируются квалифицированным оператором."
+      },
+      certifications: {
+        eyebrow: "СЕРТИФИКАТЫ",
+        title: "Соответствие стандартам",
+        subtitle: "Серия Apex разрабатывается в соответствии с международными стандартами в области конструкции медицинских камер, пожарной безопасности и оборудования под давлением.",
+        items: [
+          { code: "EN 14931", name: "Стандарт конструкции медицинских камер" },
+          { code: "EN 16081", name: "Система пожаротушения медицинских камер" },
+          { code: "NFPA 99", name: "Американский стандарт противопожарных систем" },
+          { code: "ISO 9001", name: "Стандарт управления качеством" },
+          { code: "EN 13445 + PED 2014/68/EU", name: "Директива по оборудованию под давлением" }
+        ]
       }
     },
     modelsOverview: {
@@ -1668,7 +1966,9 @@ const TRANSLATIONS = {
       { icon: "os", title: "Обновления ApexOS™", desc: "Ваше устройство ежемесячно получает новые функции. OTA-обновления поддерживают протоколы актуальными." },
       { icon: "ai", title: "Оптимизация ApexAI™", desc: "ИИ, анализирующий данные пациента, динамически настраивает сеансы." },
       { icon: "sync", title: "Интеграция ApexSync™", desc: "Интеграция с больничными информационными системами в один клик. Автоматическая отчётность." },
-      { icon: "guard", title: "Безопасность ApexGuard™", desc: "Технология прогнозного обслуживания, предупреждающая до возникновения неисправности." }
+      { icon: "guard", title: "Безопасность ApexGuard™", desc: "Технология прогнозного обслуживания, предупреждающая до возникновения неисправности." },
+      { icon: "battery", title: "Встроенный резервный источник питания", desc: "Каждая модель оснащена встроенным резервным источником питания на случай отключения электричества — это стандарт." },
+      { icon: "pulseOx", title: "Датчик сатурации кислорода", desc: "Монитор насыщения крови кислородом является стандартным оснащением каждой камеры и отслеживает показатели на протяжении сеанса." }
     ],
     modelSoloLounge: {
       breadcrumb: "Apex Solo Lounge", eyebrow: "APEX SOLO LOUNGE", title: "Apex Solo Lounge",
@@ -1888,7 +2188,7 @@ const TRANSLATIONS = {
         none_selected: "Не выбрано",
         base_price_label: "Базовая цена",
         total_label: "Ориентировочная сумма",
-        disclaimer: "Цены являются ориентировочными и приведены в информационных целях. Для точного расчёта заполните форму.",
+        disclaimer: "Цены являются ориентировочными, указаны на условиях FOB и действительны только 15 дней. Для точного расчёта заполните форму.",
         cta: "Запросить предложение по этой конфигурации",
         print_button: "Печать / Сохранить как PDF",
         share_button: "Скопировать ссылку на конфигурацию",
@@ -2108,16 +2408,145 @@ const TRANSLATIONS = {
       map_note: "Тузла, Стамбул",
       faq: {
         eyebrow: "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ",
-        title: "Частые вопросы",
-        subtitle: "Вопросы, которые нам чаще всего задают о заказе, оплате и установке.",
-        items: [
-          { q: "Каковы условия оплаты?", a: "По нашим стандартным условиям при заказе вносится предоплата 50%, оставшиеся 50% оплачиваются, когда камера готова к отгрузке." },
-          { q: "Предлагаете ли вы другие варианты оплаты?", a: "Да. Помимо стандартных условий 50% предоплаты / 50% при доставке, мы также предлагаем: рассрочку по корпоративной кредитной карте (действует и для международных заказов), финансовый лизинг с фиксированным первоначальным взносом, а также трёхэтапный план оплаты для крупных заказов (подтверждение заказа / завершение производства / доставка). Свяжитесь с нами, чтобы подобрать оптимальный для вас вариант." },
-          { q: "Через сколько времени после заказа камера будет готова?", a: "С момента подтверждения заказа камера будет готова к отгрузке минимум через 6 недель. В этот срок не входит время доставки/логистики, которое рассчитывается отдельно в зависимости от вашего местоположения." },
-          { q: "Включены ли установка и доставка в стоимость?", a: "Нет. Стоимость установки и логистики зависит от местоположения, доступа к зданию и расстояния. Мы готовим для вас индивидуальное предложение по установке и логистике — пожалуйста, свяжитесь с нами через форму обратной связи." },
-          { q: "Что входит в стоимость?", a: "Каждая модель Apex включает в стандартной комплектации технологическую платформу ApexConnect™, ApexOS™, ApexAI™, ApexSync™ и ApexGuard™. Дополнительные опции и стиль камеры оплачиваются отдельно в конфигураторе." },
-          { q: "Как получить коммерческое предложение?", a: "Используйте наш конфигуратор, чтобы выбрать модель, стиль камеры, цвет и опции и мгновенно получить оценку стоимости, затем отправьте форму запроса, и мы свяжемся с вами." },
-          { q: "Могу ли я выбрать цвет и стиль камеры?", a: "Да. Вы можете бесплатно выбрать из 12 вариантов цвета, а также один из стилей камеры: стандартный закрытый, панорамный со стеклом или премиум." }
+        title: "Часто задаваемые вопросы",
+        subtitle: "Наиболее часто задаваемые вопросы о гипербарических системах, моделях Apex, установке и заказе.",
+        sections: [
+          {
+            title: "О гипербарических системах",
+            items: [
+              { q: "Что такое гипербарическая камера?", a: "Гипербарическая камера — это система, обеспечивающая пользователю контролируемую среду с давлением выше нормального атмосферного. В гипербарических системах Apex камера контролируемо наддувается давлением; кислород может подаваться пользователю через специальную маску или подходящее дыхательное оборудование в зависимости от выбранной модели и конфигурации системы." },
+              { q: "Как работает гипербарическая система?", a: "После того как пользователь входит в камеру, дверь надёжно закрывается, и система контролируемо наддувается давлением. По достижении целевого рабочего давления применяется протокол сеанса. По окончании сеанса давление постепенно снижается, и дверь открывается после того, как внутренняя среда достигает нормального атмосферного давления.\n\nУровень давления, поток кислорода и продолжительность сеанса определяются в зависимости от характеристик устройства, цели использования и применяемого протокола." },
+              { q: "Гипербарическая камера и кислородный концентратор — это одно и то же устройство?", a: "Нет. Гипербарическая камера создаёт контролируемую среду с повышенным давлением. Кислородный концентратор производит кислород высокой концентрации из окружающего воздуха. В зависимости от потребностей проекта эти две системы могут использоваться совместно." },
+              { q: "Можно ли использовать гипербарические системы только в больницах?", a: "Условия, в которых могут использоваться гипербарические системы, зависят от классификации устройства, цели использования и соответствующего законодательства страны установки.\n\nВ зависимости от выбранной модели и конфигурации системы Apex могут проектироваться для следующих объектов:", list: ["Больницы и медицинские учреждения", "Клиники", "Спортивные и оздоровительные центры", "Wellness- и longevity-центры", "Отели и специальные оздоровительные концепции", "Реабилитационные центры", "Исследовательские и образовательные учреждения", "Частные резиденции"], aAfter: "Для объектов, оказывающих медицинские услуги, соответствующее законодательство в области здравоохранения, условия лицензирования и требования к квалифицированному медицинскому персоналу должны оцениваться отдельно." }
+            ]
+          },
+          {
+            title: "Модели Apex",
+            items: [
+              { q: "Какие модели Apex доступны?", a: "Линейка продуктов Apex разрабатывается для разных пользовательских ёмкостей и сфер применения.\n\nApex Solo — гипербарическая система для одного пользователя. Разработана для более компактных помещений и индивидуального использования.\n\nApex Duo — система с просторным внутренним пространством, рассчитанная на двух пользователей в одном сеансе.\n\nApex Quad-Cube — многопользовательская гипербарическая система кубической формы большого объёма, разработанная для клиник, больниц и профессиональных операторов. Её вместимость определяется выбранной компоновкой сидений и конфигурацией проекта." },
+              { q: "Кому подходит Apex Solo?", a: "Apex Solo разработана для операторов, которым требуется однопользовательская конфигурация. Благодаря компактной конструкции она может рассматриваться для клиник, спортивных центров, wellness-центров, отелей и частного использования.\n\nТочные условия использования определяются классификацией продукта и законодательством страны установки." },
+              { q: "На сколько человек рассчитана Apex Duo?", a: "Apex Duo рассчитана на двух пользователей в одном сеансе. Конструкция сидений, внутреннее оснащение и компоновка мест могут различаться в зависимости от заказанной конфигурации." },
+              { q: "Какова вместимость многопользовательской модели Apex?", a: "Стандартная вместимость многопользовательской модели составляет 6 человек, опциональная вместимость — до 12 человек (с шагом по 2 места).\n\nТочная вместимость определяется следующими факторами:", list: ["Размеры камеры", "Компоновка сидений", "Диапазон движения пользователей", "Мощность кислородной системы", "Протокол эксплуатации", "Местные требования безопасности и лицензирования"], aAfter: "Каждая опция добавляется в проект после оценки безопасности и технической пригодности." },
+              { q: "Каковы размеры устройств?", a: "Каждая модель Apex имеет свои внешние размеры и полезный внутренний объём. На технических страницах продуктов отдельно указывается следующая информация:", list: ["Внешние размеры", "Полезные внутренние размеры", "Проём двери", "Общий вес", "Вместимость пользователей", "Минимальная площадь для установки", "Расстояние доступа для технического обслуживания"], aAfter: "Запросы на нестандартные размеры могут быть спроектированы после инженерной оценки." }
+            ]
+          },
+          {
+            title: "Давление и кислородная система",
+            items: [
+              { q: "При каком давлении работают системы Apex?", a: "Рабочее давление может варьироваться в зависимости от модели и конфигурации продукта.\n\nВ технической документации чётко указывается, идёт ли речь об абсолютном давлении или избыточном давлении по манометру." },
+              { q: "В чём разница между бар и ATA?", a: "Бар — это единица измерения давления. ATA обозначает абсолютное давление в атмосферах. Эти два значения не следует интерпретировать одинаково.\n\nПоэтому в технической документации Apex отдельно указывается следующая информация:", list: ["Атмосферное давление окружающей среды", "Избыточное давление по манометру", "Абсолютное давление", "Эквивалент в ATA", "Максимально допустимое рабочее давление"] },
+              { q: "Откуда поступает кислород?", a: "В зависимости от проекта установки может использоваться концентратор кислорода соответствующей мощности. Необходимая чистота кислорода, расход, давление и потребность в резервировании рассчитываются техническим отделом." },
+              { q: "Включён ли кислородный концентратор в цену устройства?", a: "Да." },
+              { q: "Достаточно ли одного концентратора кислорода для нескольких пользователей?", a: "Это зависит от мощности концентратора, необходимого расхода кислорода и количества пользователей. Общий необходимый расход кислорода рассчитывается отдельно для каждого проекта." }
+            ]
+          },
+          {
+            title: "Сеанс и процесс использования",
+            items: [
+              { q: "Сколько длится сеанс?", a: "Продолжительность сеанса варьируется в зависимости от применяемого протокола. Сеанс обычно состоит из трёх этапов: контролируемое повышение давления, применение при целевом давлении и контролируемое снижение давления.\n\nОбщая продолжительность определяется целевым давлением, состоянием пользователя и протоколом применения. Для применений медицинского назначения продолжительность сеанса должна определяться квалифицированным медицинским специалистом." },
+              { q: "Сколько времени занимает повышение давления?", a: "Время повышения давления может варьироваться в зависимости от выбранного целевого давления, модели устройства и комфорта пользователя. В системах Apex изменение давления осуществляется контролируемым образом." },
+              { q: "Ощущается ли давление в ушах во время сеанса?", a: "Во время изменения давления в ушах может возникать ощущение заложенности или давления, похожее на ощущения во время авиаперелёта. Пользователи должны быть проинформированы о методах выравнивания давления перед сеансом." },
+              { q: "Может ли пользователь общаться с внешним миром во время сеанса?", a: "Да." },
+              { q: "Может ли пользователь видеть происходящее снаружи во время сеанса?", a: "Модели Apex могут включать большие смотровые зоны и прозрачные поверхности для повышения комфорта пользователя. Размеры и расположение окон зависят от модели." },
+              { q: "Можно ли пользоваться телефоном во время сеанса?", a: "В гипербарическую камеру следует брать только оборудование, оценённое и явно одобренное производителем. Мобильные телефоны, планшеты, смарт-часы, наушники, портативные аккумуляторы и подобные электронные устройства не должны заноситься в камеру без одобрения производителя.\n\nВстроенные в устройство экран, звуковые или развлекательные системы могут использоваться только после завершения технической оценки и оценки безопасности." },
+              { q: "Может ли пользователь выйти в любой момент?", a: "Дверь камеры под давлением не может быть открыта напрямую. Чтобы пользователь мог выйти, сначала необходимо безопасно выровнять внутреннее и внешнее давление.\n\nВ обычных условиях применяется контролируемая процедура снижения давления. В экстренных случаях следует установленной процедуре экстренного снижения давления устройства." }
+            ]
+          },
+          {
+            title: "Безопасность",
+            items: [
+              { q: "Безопасны ли гипербарические системы Apex?", a: "Да. Безопасность гипербарических систем обеспечивается за счёт правильного инжиниринга, надлежащей установки, регулярного технического обслуживания, обученного персонала и соблюдения процедур эксплуатации.\n\nУстройство должно эксплуатироваться только в соответствии с руководством пользователя, а системы безопасности никогда не должны отключаться." },
+              { q: "Какие системы безопасности предусмотрены в устройствах?", a: "В зависимости от модели и заказанной конфигурации системы Apex могут включать следующие функции безопасности:", list: ["Датчики давления", "Механический предохранительный клапан", "Автоматическое управление давлением", "Ручное управление давлением", "Кнопка аварийной остановки", "Система аварийного сброса давления", "Мониторинг уровня кислорода", "Пульсоксиметр (стандартно)", "Мониторинг температуры", "Визуальная и звуковая сигнализация", "Система внутренней и внешней связи", "Система безопасности двери", "Процедура на случай отключения электроэнергии", "Система регистрации неисправностей и сеансов", "Стандартный встроенный резервный источник питания"], aAfter: "Стандартные и опциональные системы безопасности каждой модели отдельно указываются в техническом коммерческом предложении." },
+              { q: "Что произойдёт при отключении электроэнергии?", a: "Все модели Apex поставляются со стандартным встроенным резервным источником питания на случай отключения электроэнергии. Процедура, применяемая при отключении электроэнергии, может различаться в зависимости от модели устройства.\n\nВ зависимости от конфигурации системы также могут быть предложены следующие функции:", list: ["Источник бесперебойного питания", "Ручное управление давлением", "Контролируемый сброс давления", "Аварийное освещение", "Система оповещения оператора"] },
+              { q: "Можно ли открыть дверь немедленно в экстренной ситуации?", a: "В камерах под давлением для открытия двери необходимо выровнять внутреннее и внешнее давление. По этой причине дверь не может быть открыта обычным способом, пока камера находится под давлением.\n\nВ экстренной ситуации применяется контролируемая или ускоренная процедура снижения давления системы. Для безопасности пользователя предохранительные клапаны и пределы давления не должны превышаться." },
+              { q: "Существует ли риск пожара в гипербарических системах?", a: "В средах с высокой концентрацией кислорода риск возгорания может возрастать. По этой причине управление кислородом, электропроводка, контроль статического электричества, выбор одежды и материалы, вносимые в камеру, подчиняются особым правилам.\n\nСигареты, зажигалки, спички, легковоспламеняющиеся изделия и электронные устройства, не одобренные производителем, категорически запрещено вносить в камеру." },
+              { q: "Какие предметы запрещено вносить в камеру?", a: "Следующие предметы не должны вноситься в камеру без одобрения производителя:", list: ["Сигареты и электронные сигареты", "Зажигалки и спички", "Легковоспламеняющиеся или горючие вещества", "Продукты на основе спирта", "Косметические средства на масляной и нефтяной основе", "Аэрозольные продукты", "Мобильные телефоны", "Планшеты и ноутбуки", "Смарт-часы", "Наушники", "Портативные аккумуляторы", "Нагревательное оборудование", "Неодобренные электрические устройства", "Герметичная упаковка, которая может пострадать от изменения давления"] },
+              { q: "Какую одежду следует носить внутри камеры?", a: "Следует предпочитать одежду, соответствующую протоколу безопасности оператора и руководству пользователя устройства. Одежда и аксессуары, которые могут представлять риск статического электричества или воспламенения, использоваться не должны." }
+            ]
+          },
+          {
+            title: "Пригодность пользователя",
+            items: [
+              { q: "Может ли гипербарической системой пользоваться каждый?", a: "Нет. Гипербарическая среда может подходить не каждому пользователю. Перед использованием необходимо оценить состояние здоровья человека, имеющиеся заболевания, принимаемые лекарства и импланты.\n\nДля применений медицинского назначения решение о пригодности должно приниматься квалифицированным медицинским специалистом." },
+              { q: "Требуется ли медицинская оценка перед использованием?", a: "Для гипербарических применений медицинского назначения пользователь должен быть оценён квалифицированным медицинским специалистом.\n\nДля применений, ориентированных на wellness или производительность, также рекомендуется получить от пользователя декларацию о состоянии здоровья и заранее проверить потенциально рискованные состояния." },
+              { q: "О каких состояниях здоровья следует сообщать заранее?", a: "Пользователи должны сообщить персоналу оператора и медицинскому специалисту о следующих состояниях перед сеансом:", list: ["Проблемы с ушами или пазухами", "Простуда или лихорадка", "Заболевания лёгких", "Перенесённая операция", "Заболевания сердца или системы кровообращения", "Судороги в анамнезе", "Клаустрофобия", "Беременность", "Принимаемые лекарства", "Кардиостимулятор или импланты", "Недавние погружения", "Ранее перенесённый дискомфорт, связанный с давлением"], aAfter: "Этот список не заменяет медицинскую оценку." },
+              { q: "Могут ли беременные пользоваться гипербарической системой?", a: "Решение об использовании во время беременности должно приниматься исключительно квалифицированным врачом. Решения об использовании не должны основываться на общей информации." },
+              { q: "Могут ли дети пользоваться гипербарической системой?", a: "Использование детьми должно оцениваться с учётом возраста, состояния здоровья, цели использования, характеристик устройства и условий сопровождения. Для применений медицинского назначения требуются одобрение врача и наблюдение соответствующего медицинского персонала." },
+              { q: "Могут ли пользоваться системой люди с кардиостимулятором или имплантом?", a: "Необходимо подтвердить пригодность импланта для среды с повышенным давлением и обогащённой кислородом. Решение об использовании не должно приниматься без технической информации производителя импланта и оценки квалифицированного медицинского специалиста." },
+              { q: "Можно ли пользоваться системой при простуде или боли в ухе?", a: "Простуда, заложенность носа, проблемы с пазухами или боль в ухе могут затруднить выравнивание давления. О таких состояниях всегда следует сообщать перед сеансом.\n\nРешение о том, следует ли отложить использование, должно приниматься квалифицированным медицинским специалистом или ответственным сотрудником." }
+            ]
+          },
+          {
+            title: "Медицинское применение и заявления о здоровье",
+            items: [
+              { q: "При каких заболеваниях применяется гипербарическая система?", a: "Признанные медицинские показания для гипербарической оксигенации могут различаться в зависимости от страны, регулирующего органа, классификации устройства и клинического протокола.\n\nПрименения медицинского назначения должны осуществляться только с использованием соответствующим образом классифицированных устройств, в уполномоченных медицинских учреждениях, под наблюдением обученного медицинского персонала, с оценкой врача и по соответствующему протоколу.\n\nИнформация на нашем сайте не является персональной рекомендацией для диагностики или лечения какого-либо заболевания." },
+              { q: "Лечат ли устройства Apex какие-либо заболевания?", a: "Назначение устройства и заявления о здоровье, которые могут быть сделаны в его отношении, зависят от официальной классификации продукта и имеющейся у него документации.\n\nЗаявления о системах Apex делаются только в рамках назначения, указанного в технической документации и оценке соответствия. Гарантированный результат при каком-либо заболевании не предлагается." },
+              { q: "Являются ли низкобарические системы тем же самым, что и клиническая ГБО?", a: "Нет. Не каждое применение кислорода под давлением относится к одному и тому же техническому или клиническому классу. Следующие факторы могут изменять характер применения:", list: ["Рабочее давление", "Концентрация вдыхаемого кислорода", "Способ подачи кислорода", "Продолжительность сеанса", "Сертификация устройства", "Назначение использования", "Условия применения", "Наблюдение медицинского персонала"], aAfter: "Возможность определения системы как «медицинского устройства для гипербарической оксигенотерапии» зависит от законодательства соответствующего рынка и документированного назначения продукта." },
+              { q: "Гарантируются ли результаты?", a: "Реакция пользователей может различаться от человека к человеку. Здоровье, восстановление, производительность или подобные результаты не могут быть гарантированы.\n\nРешения об использовании не должны основываться исключительно на общей рекламной информации или отзывах пользователей." }
+            ]
+          },
+          {
+            title: "Установка",
+            items: [
+              { q: "Сколько места требуется для установки?", a: "Необходимая площадь варьируется в зависимости от выбранной модели Apex. При определении зоны установки, помимо размеров устройства, следует учитывать следующие факторы:", list: ["Рабочая зона оператора", "Полный проём для открытия двери", "Доступ для технического обслуживания", "Зона для компрессора и вспомогательного оборудования", "Зона кислородной системы", "Вентиляция", "Электрощит", "Маршрут аварийного выхода", "Противопожарное оборудование"], aAfter: "Минимальные размеры установки определяются после технического обследования." },
+              { q: "Можно ли установить устройство в существующем здании?", a: "Большинство проектов может быть реализовано в существующих зданиях; однако перед установкой необходимо провести техническое обследование. Проверяются следующие условия:", list: ["Несущая способность пола", "Проёмы дверей и коридоров", "Грузоподъёмность лифта", "Высота потолков", "Электрическая инфраструктура", "Вентиляция", "Инфраструктура кислорода и сжатого воздуха", "Пожарная безопасность", "Доступ для технического обслуживания"] },
+              { q: "Проводите ли вы обследование перед установкой?", a: "Да. В зависимости от местоположения и масштаба проекта может проводиться дистанционная техническая оценка или выездное обследование. Для первичной оценки у клиента может быть запрошена следующая информация:", list: ["Размеры зоны установки", "Фотографии и видео", "Архитектурный план", "Электрическая инфраструктура", "Информация о вентиляции", "Маршрут доступа и транспортировки", "Целевая вместимость пользователей", "Желаемая модель и опции"] },
+              { q: "Требуется ли усиление пола?", a: "Это зависит от веса устройства, вспомогательного оборудования и несущей способности здания. При необходимости статическая оценка должна проводиться квалифицированным инженером-строителем." },
+              { q: "Можно ли переместить устройство?", a: "Некоторые модели Apex могут изготавливаться в модульном исполнении. Однако демонтаж, транспортировка и повторная установка должны выполняться только уполномоченной технической командой.\n\nПосле перемещения система должна быть повторно проверена и не должна использоваться до завершения необходимых испытаний." },
+              { q: "Сколько времени занимает установка?", a: "Время установки варьируется в зависимости от следующих факторов: модель, размеры устройства, место установки, инфраструктура здания, вспомогательные системы, опции кастомизации, а также процесс тестирования и обучения.\n\nОриентировочный график установки указывается в проектном предложении." }
+            ]
+          },
+          {
+            title: "Обучение и эксплуатация",
+            items: [
+              { q: "Проводите ли вы обучение персонала?", a: "Да. После установки уполномоченный персонал проходит обучение безопасной и правильной эксплуатации устройства. В зависимости от модели программа обучения может включать:", list: ["Запуск и остановку системы", "Повышение и снижение давления", "Подготовку пользователя", "Инструктаж по выравниванию давления", "Использование кислородной системы", "Предметы, запрещённые в камере", "Ежедневные проверки безопасности", "Ситуации тревоги и неисправностей", "Процедуры на случай экстренной ситуации", "Уборку и гигиену", "Ведение записей технического обслуживания"] },
+              { q: "Сколько сотрудников требуется для эксплуатации устройства?", a: "Необходимое количество персонала варьируется в зависимости от модели, вместимости пользователей, характера деятельности и местного законодательства.\n\nМногопользовательские и предназначенные для медицинского применения системы могут потребовать дополнительного медицинского и охранного персонала. Штатное расписание определяется на этапе проекта." },
+              { q: "Можно ли вести учёт использования?", a: "В зависимости от выбранной системы управления и функций программного обеспечения могут вестись следующие записи:", list: ["Дата и время сеанса", "Продолжительность сеанса", "Значения давления", "График изменения давления", "Записи тревог", "Информация об операторе", "История технического обслуживания", "Наработка системы"], aAfter: "При регистрации персональных медицинских данных необходимо соблюдать соответствующее законодательство о защите данных." },
+              { q: "Требуется ли лицензия на эксплуатацию?", a: "Требования к лицензированию и разрешениям различаются в зависимости от страны, города, типа объекта, классификации устройства и назначения использования. Для объектов, оказывающих медицинские услуги, дополнительно должны оцениваться следующие нормативы:", list: ["Лицензия медицинского учреждения", "Нормативы в отношении медицинских изделий", "Нормативы в отношении оборудования, работающего под давлением", "Пожарная безопасность", "Охрана труда и техника безопасности", "Правила хранения кислорода", "Квалификация персонала", "Соответствие электрических систем и здания"], aAfter: "Оператор должен получить необходимые разрешения от соответствующих местных органов власти перед началом эксплуатации." }
+            ]
+          },
+          {
+            title: "Уборка и гигиена",
+            items: [
+              { q: "Как чистится гипербарическая камера?", a: "Камера, сиденья, контактные поверхности и оборудование пользователя должны очищаться только средствами, одобренными производителем. Легковоспламеняющиеся, масляные, с высоким содержанием спирта или средства, способные повредить материалы устройства, использоваться не должны." },
+              { q: "Нужно ли проводить уборку после каждого пользователя?", a: "Поверхности и оборудование, контактирующие с пользователем, должны очищаться после каждого сеанса в соответствии с протоколом гигиены оператора. Маски, оголовья и дыхательное оборудование должны очищаться, дезинфицироваться или заменяться согласно инструкциям производителя." },
+              { q: "Являются ли кислородные маски индивидуальными для каждого пользователя?", a: "В зависимости от проекта и предпочтений оператора могут использоваться индивидуальные, одноразовые или подлежащие дезинфекции варианты масок. Очистка масок и периодичность их замены должны соответствовать инструкциям производителя." },
+              { q: "Как часто заменяются фильтры?", a: "Периодичность замены фильтров зависит от типа фильтра, наработки, условий окружающей среды и интенсивности использования. Периодичность обслуживания и замены фильтров указывается в плане технического обслуживания устройства." }
+            ]
+          },
+          {
+            title: "Техническое обслуживание, гарантия и сервис",
+            items: [
+              { q: "Как часто проводится техническое обслуживание устройства?", a: "Периодическое техническое обслуживание проводится раз в 6 месяцев. Помимо этого, программа обслуживания в целом состоит из трёх уровней: ежедневные проверки пользователем, полугодовое периодическое обслуживание и ежегодная или определённая производителем комплексная техническая проверка.\n\nТочные интервалы технического обслуживания указаны в руководстве пользователя устройства." },
+              { q: "Какие компоненты проверяются при периодическом обслуживании?", a: "В зависимости от модели при обслуживании могут проверяться следующие компоненты:", list: ["Система давления", "Предохранительные клапаны", "Дверь и система запирания", "Уплотнения", "Датчики давления", "Кислородная система", "Воздушный компрессор", "Фильтры", "Электрическая система", "Панель управления", "Системы сигнализации", "Система внутренней и внешней связи", "Вентиляция", "Программное обеспечение и система регистрации"] },
+              { q: "Требуется ли ежедневная проверка?", a: "Да. Перед каждым рабочим днём пользователь или оператор должен проводить базовую проверку безопасности. Рекомендуется фиксировать результаты проверки с указанием даты и данных оператора." },
+              { q: "Какой срок гарантии?", a: "Стандартный срок гарантии на гипербарические системы Apex составляет 1 год в соответствии с международным законодательством. Через конфигуратор можно выбрать опцию продления гарантии на +1 год, доведя общий срок до 2 лет.\n\nГарантийное покрытие может различаться для основной камеры, механических деталей, электронных компонентов, компрессора, кислородной системы и расходных материалов. Подробные условия указываются в договоре купли-продажи." },
+              { q: "Какие детали не покрываются гарантией?", a: "Расходные детали, изнашивающиеся при нормальной эксплуатации, фильтры, маски, уплотнения, а также повреждения, возникшие в результате неправильной эксплуатации, могут не покрываться гарантией. Точный объём покрытия описан в гарантийном документе." },
+              { q: "Предоставляете ли вы поддержку запасными частями?", a: "Да. Для систем Apex предоставляются оригинальные запасные части и техническая сервисная поддержка." },
+              { q: "Предлагаете ли вы удалённую техническую поддержку?", a: "Да. В зависимости от характера проблемы техническая поддержка может предоставляться по телефону, видеосвязи или, для подходящих моделей, посредством удалённого подключения. Если проблему невозможно решить удалённо, планируется выездное обслуживание." },
+              { q: "Можно ли использовать устройство в случае неисправности?", a: "Нет. При обнаружении неисправности в системе давления, кислородной магистрали, системе двери, датчиках, системе сигнализации или других компонентах безопасности устройство использовать нельзя. Систему нельзя перезапускать до тех пор, пока уполномоченная техническая служба не проведёт необходимую проверку и не даст разрешение." }
+            ]
+          },
+          {
+            title: "Заказ, цена и доставка",
+            items: [
+              { q: "Какова цена гипербарических систем Apex?", a: "Цены варьируются в зависимости от следующих факторов:", list: ["Модель", "Вместимость пользователей", "Размеры камеры", "Рабочее давление", "Кислородная система", "Компрессорная система", "Внутреннее оснащение", "Цифровые функции", "Кастомизация", "Транспортировка", "Страна установки", "Пакет обучения и обслуживания"], aAfter: "По этой причине для каждого проекта после анализа потребностей готовится индивидуальное предложение. Ценовые предложения, полученные через конфигуратор, действительны только 15 дней и указываются по цене FOB." },
+              { q: "Какая информация требуется для получения коммерческого предложения?", a: "Для подготовки коммерческого предложения достаточно предоставить следующую информацию:", list: ["Ваше имя или название компании", "Страна и город", "Цель использования", "Интересующая вас модель Apex", "Вместимость пользователей", "Размеры зоны установки", "Желаемые характеристики", "Планируемая дата открытия или поставки", "Ваши контактные данные"], aAfter: "После оценки информации с вами свяжется наша техническая команда." },
+              { q: "Каков срок производства?", a: "Срок производства варьируется в зависимости от модели, загруженности производства и запросов на кастомизацию. В зависимости от модели он начинается от 10 недель.\n\nТочный график поставки сообщается при подтверждении заказа." },
+              { q: "Осуществляете ли вы международную доставку?", a: "Да. Международная доставка может осуществляться в страны, где могут быть обеспечены подходящие логистические и технические условия. В рамках коммерческого предложения отдельно могут планироваться следующие услуги:", list: ["Международная транспортировка", "Страхование груза", "Таможенная документация", "Установка на месте", "Ввод в эксплуатацию", "Обучение персонала", "Послепродажная техническая поддержка"], aAfter: "Разрешения на импорт и требования местного лицензирования могут различаться в зависимости от страны-получателя." },
+              { q: "Включены ли транспортировка и установка в цену?", a: "Стоимость транспортировки и установки зависит от места установки, поэтому в коммерческом предложении они указываются отдельными позициями. Это позволяет клиенту наглядно видеть затраты на устройство, транспортировку, установку, обучение и опциональное оборудование." },
+              { q: "Каковы условия оплаты?", a: "По нашим стандартным условиям при заказе взимается предоплата в размере 50%, оставшиеся 50% оплачиваются, когда продукт готов к поставке. Точные условия оплаты указываются в договоре купли-продажи." },
+              { q: "Доступны ли финансирование или лизинг?", a: "Варианты финансирования и лизинга могут различаться в зависимости от страны продажи и партнёрских финансовых учреждений. Доступные варианты сообщаются на этапе коммерческого предложения." }
+            ]
+          },
+          {
+            title: "Сертификаты и соответствие",
+            items: [
+              { q: "Каким стандартам соответствуют системы Apex?", a: "Серия Apex разрабатывается в соответствии со стандартами EN 14931 (стандарт проектирования медицинских камер), EN 16081 (система пожарной безопасности медицинских камер), NFPA 99 (американский стандарт систем пожаротушения), ISO 9001 (стандарт качества) и EN 13445 + PED 2014/68/EU (директива по оборудованию, работающему под давлением).\n\nПрименимые стандарты, испытания и документы о соответствии для каждой модели указываются в технической документации продукта. В качестве действительного сертификата продукта предоставляются только завершённые и поддающиеся проверке документы." },
+              { q: "Имеют ли устройства маркировку CE?", a: "Статус CE разъясняется в зависимости от модели продукта и применимой нормативной сферы. Наличие маркировки CE само по себе не означает, что продукт является медицинским изделием для всех видов применения. В декларации соответствия должны быть чётко указаны применимое законодательство, класс продукта, назначение использования и информация о производителе." },
+              { q: "Могу ли я ознакомиться с сертификатами?", a: "Документы о соответствии, протоколы испытаний и техническая документация могут предоставляться по запросу с учётом модели продукта, страны назначения и коммерческого процесса." }
+            ]
+          }
         ]
       }
     }
@@ -2347,6 +2776,18 @@ const TRANSLATIONS = {
           { icon: "screen", title: "تجربة شاشة غامرة مثبّتة", desc: "شاشة كبيرة مثبّتة على الكابينة تعرض محتوى بصريًا مريحًا أثناء الجلسة." }
         ],
         disclaimer: "هذه الميزات قيد التطوير ومخطط لتقديمها في موديلات مستقبلية؛ وهي غير معيارية في موديلات Apex الحالية. يتم دائمًا التحكم بضغط الكابينة ومستوى الأكسجين من قبل مشغّل مؤهّل."
+      },
+      certifications: {
+        eyebrow: "الشهادات",
+        title: "الامتثال للمعايير",
+        subtitle: "يتم تطوير سلسلة Apex وفقاً للمعايير الدولية في تصميم الكبائن الطبية والسلامة من الحرائق ومعدات الضغط.",
+        items: [
+          { code: "EN 14931", name: "معيار تصميم الكبائن الطبية" },
+          { code: "EN 16081", name: "نظام إطفاء حرائق الكبائن الطبية" },
+          { code: "NFPA 99", name: "المعيار الأمريكي لأنظمة الحريق" },
+          { code: "ISO 9001", name: "معيار إدارة الجودة" },
+          { code: "EN 13445 + PED 2014/68/EU", name: "توجيه معدات الضغط" }
+        ]
       }
     },
     modelsOverview: {
@@ -2376,7 +2817,9 @@ const TRANSLATIONS = {
       { icon: "os", title: "تحديثات ApexOS™", desc: "يكتسب جهازك ميزات جديدة كل شهر. تحديثات OTA تبقي البروتوكولات محدّثة." },
       { icon: "ai", title: "تحسين ApexAI™", desc: "الذكاء الاصطناعي الذي يحلل بيانات المريض يضبط الجلسات ديناميكياً." },
       { icon: "sync", title: "تكامل ApexSync™", desc: "تكامل بنقرة واحدة مع أنظمة معلومات المستشفيات. تقارير تلقائية." },
-      { icon: "guard", title: "أمان ApexGuard™", desc: "تقنية صيانة تنبؤية تحذر قبل حدوث العطل." }
+      { icon: "guard", title: "أمان ApexGuard™", desc: "تقنية صيانة تنبؤية تحذر قبل حدوث العطل." },
+      { icon: "battery", title: "مصدر طاقة احتياطي مدمج قياسي", desc: "تأتي جميع الموديلات بمصدر طاقة احتياطي مدمج قياسي للحماية من انقطاع الكهرباء." },
+      { icon: "pulseOx", title: "جهاز قياس تشبع الأكسجين", desc: "جهاز مراقبة تشبع الأكسجين في الدم قياسي في كل كابينة، ويتتبع المستويات طوال الجلسة." }
     ],
     modelSoloLounge: {
       breadcrumb: "Apex Solo Lounge", eyebrow: "APEX SOLO LOUNGE", title: "Apex Solo Lounge",
@@ -2596,7 +3039,7 @@ const TRANSLATIONS = {
         none_selected: "لم يتم الاختيار",
         base_price_label: "السعر الأساسي",
         total_label: "الإجمالي التقديري",
-        disclaimer: "الأسعار تقريبية ولأغراض إعلامية. يرجى ملء النموذج للحصول على عرض سعر دقيق.",
+        disclaimer: "الأسعار تقريبية ولأغراض إعلامية، وهي أسعار FOB وصالحة لمدة 15 يوماً فقط. يرجى ملء النموذج للحصول على عرض سعر دقيق.",
         cta: "اطلب عرض سعر بهذا التكوين",
         print_button: "طباعة / حفظ كملف PDF",
         share_button: "نسخ رابط التكوين",
@@ -2817,15 +3260,144 @@ const TRANSLATIONS = {
       faq: {
         eyebrow: "الأسئلة الشائعة",
         title: "الأسئلة الأكثر شيوعًا",
-        subtitle: "الأسئلة التي يطرحها عملاؤنا غالبًا حول الطلب والدفع والتركيب.",
-        items: [
-          { q: "ما هي شروط الدفع؟", a: "وفق شروطنا القياسية، يتم دفع 50% كدفعة أولى عند تأكيد الطلب، ويُستحق الـ 50% المتبقية عندما تصبح الوحدة جاهزة للتسليم." },
-          { q: "هل تقدمون خيارات دفع أخرى؟", a: "نعم. بالإضافة إلى شرط 50% دفعة أولى / 50% عند التسليم، نقدم أيضًا: الدفع بالتقسيط عبر بطاقة ائتمان الشركات (متاح أيضًا للطلبات الدولية)، والتأجير التمويلي (leasing) بدفعة أولى محددة، وخطة دفع على 3 مراحل للطلبات الكبيرة (تأكيد الطلب / اكتمال الإنتاج / التسليم). يرجى التواصل معنا لتحديد الخيار الأنسب لكم." },
-          { q: "متى تصبح الوحدة جاهزة بعد الطلب؟", a: "اعتبارًا من تأكيد الطلب، تصبح وحدتكم جاهزة للتسليم خلال 6 أسابيع كحد أدنى. لا يشمل هذا الوقت مدة الشحن/اللوجستيات، والتي تُحسب بشكل منفصل حسب موقعكم." },
-          { q: "هل التركيب والشحن مشمولان في السعر؟", a: "لا. تختلف تكاليف التركيب واللوجستيات حسب الموقع وإمكانية الوصول إلى المبنى والمسافة. نقوم بإعداد عرض سعر خاص بالتركيب واللوجستيات لكم — يرجى التواصل معنا عبر نموذج الاتصال." },
-          { q: "ماذا يشمل السعر؟", a: "تشمل كل موديلات Apex بشكل معياري منصة التقنية ApexConnect™ و ApexOS™ و ApexAI™ و ApexSync™ و ApexGuard™. يتم تسعير الإضافات واختيارات نمط الكابينة بشكل منفصل في أداة التكوين." },
-          { q: "كيف يمكنني الحصول على عرض سعر؟", a: "استخدم أداة التكوين لاختيار الموديل ونمط الكابينة واللون والإضافات للحصول على تقدير فوري للسعر، ثم أرسل نموذج طلب العرض لنتواصل معك." },
-          { q: "هل يمكنني تخصيص لون ونمط الكابينة؟", a: "نعم. يمكنك الاختيار مجانًا من بين 12 خيار لون، بالإضافة إلى اختيار نمط الكابينة: القياسي المغلق، أو الزجاجي البانورامي، أو المميز." }
+        subtitle: "الأسئلة الأكثر شيوعًا حول الأنظمة الانضغاطية، موديلات Apex، التركيب وعملية الطلب.",
+        sections: [
+          {
+            title: "حول الأنظمة الانضغاطية",
+            items: [
+              { q: "ما هي الغرفة الانضغاطية؟", a: "الغرفة الانضغاطية هي نظام يوفر للمستخدم بيئة مضغوطة يتم التحكم بها فوق الضغط الجوي الطبيعي. في أنظمة Apex الانضغاطية، يتم ضغط الغرفة بشكل متحكَّم به؛ ويمكن توفير الأكسجين للمستخدم عبر قناع مخصص أو معدات تنفس مناسبة، وذلك حسب الموديل المختار وتهيئة النظام." },
+              { q: "كيف يعمل النظام الانضغاطي؟", a: "بعد دخول المستخدم إلى الغرفة، يتم إغلاق الباب بأمان ويبدأ النظام بالضغط بشكل متحكَّم به. عند الوصول إلى ضغط التشغيل المستهدف، يُطبَّق بروتوكول الجلسة. في نهاية الجلسة، يُخفَّض الضغط تدريجيًا، ويُفتح الباب عند وصول البيئة الداخلية إلى الضغط الجوي الطبيعي.\n\nيتم تحديد مستوى الضغط وتدفق الأكسجين ومدة الجلسة وفقًا لمواصفات الجهاز والغرض من الاستخدام والبروتوكول المُطبَّق." },
+              { q: "هل الغرفة الانضغاطية ومركّز الأكسجين هما نفس الجهاز؟", a: "لا. تخلق الغرفة الانضغاطية بيئة ضغط متحكَّمًا بها. أما مركّز الأكسجين فينتج أكسجينًا عالي التركيز من هواء المحيط. حسب متطلبات المشروع، يمكن استخدام هذين النظامين معًا." },
+              { q: "هل يمكن استخدام الأنظمة الانضغاطية في المستشفيات فقط؟", a: "تختلف البيئات التي يمكن فيها استخدام الأنظمة الانضغاطية حسب تصنيف الجهاز والغرض من استخدامه واللوائح ذات الصلة في بلد التركيب.\n\nاعتمادًا على الموديل والتهيئة المختارَين، يمكن تصميم أنظمة Apex للبيئات التالية:", list: ["المستشفيات والمؤسسات الصحية", "العيادات", "مراكز الرياضة والأداء", "مراكز العافية وطول العمر", "الفنادق والمفاهيم الصحية الخاصة", "مراكز إعادة التأهيل", "مؤسسات البحث والتعليم", "المساكن الخاصة"], aAfter: "بالنسبة للمنشآت التي تقدّم خدمات طبية، يجب تقييم اللوائح الصحية ذات الصلة وشروط الترخيص ومتطلبات الكادر الصحي المؤهل بشكل منفصل." }
+            ]
+          },
+          {
+            title: "موديلات Apex",
+            items: [
+              { q: "ما هي موديلات Apex المتوفرة؟", a: "تُطوَّر عائلة منتجات Apex لسعات مستخدمين مختلفة ومجالات استخدام متنوعة.\n\nApex Solo — نظام انضغاطي لمستخدم واحد. مصمم للمساحات الأكثر إحكامًا والاستخدام الفردي.\n\nApex Duo — نظام ذو حجم داخلي واسع يستوعب مستخدمَين في نفس الجلسة.\n\nApex Quad-Cube — نظام انضغاطي متعدد المستخدمين، بتصميم مكعّب وحجم كبير، طُوِّر للعيادات والمستشفيات والمشغّلين المحترفين. تُحدَّد سعته وفقًا لتخطيط المقاعد المختار وتهيئة المشروع." },
+              { q: "لمن تناسب Apex Solo؟", a: "طُوِّرت Apex Solo للمشغّلين الذين يرغبون في نظام تشغيل لمستخدم واحد. بفضل بنيتها المدمجة، يمكن اعتبارها مناسبة للعيادات ومراكز الرياضة ومراكز العافية والفنادق وأماكن الاستخدام الخاص.\n\nتُحدَّد شروط الاستخدام الدقيقة حسب تصنيف المنتج ولوائح بلد التركيب." },
+              { q: "كم عدد الأشخاص الذين تستوعبهم Apex Duo؟", a: "صُمِّمت Apex Duo لاستيعاب مستخدمَين في نفس الجلسة. قد يختلف هيكل المقاعد والتجهيزات الداخلية وترتيب الجلوس حسب التهيئة المطلوبة." },
+              { q: "ما هي السعة الاستيعابية لموديل Apex متعدد الأشخاص؟", a: "السعة القياسية للموديل متعدد الأشخاص هي 6 أشخاص، مع إمكانية اختيارية للوصول إلى 12 شخصًا (بزيادات مقعدَين في كل مرة).\n\nتُحدَّد السعة الدقيقة وفقًا للعوامل التالية:", list: ["أبعاد الغرفة", "تخطيط المقاعد", "نطاق حركة المستخدمين", "سعة نظام الأكسجين", "بروتوكول التشغيل", "متطلبات السلامة والترخيص المحلية"], aAfter: "تُضاف كل خيار إلى المشروع بعد تقييم السلامة والملاءمة الفنية." },
+              { q: "ما هي أبعاد الأجهزة؟", a: "لكل موديل من Apex أبعاد خارجية مختلفة وحجم استخدام داخلي مختلف. تُعرض المعلومات التالية بشكل منفصل في صفحات المنتج الفنية:", list: ["الأبعاد الخارجية", "الأبعاد الداخلية القابلة للاستخدام", "فتحة الباب", "الوزن الإجمالي", "سعة المستخدمين", "الحد الأدنى لمساحة التركيب", "مسافة الوصول للخدمة الفنية"], aAfter: "يمكن تصميم طلبات الأبعاد المخصصة بعد إجراء تقييم هندسي." }
+            ]
+          },
+          {
+            title: "الضغط ونظام الأكسجين",
+            items: [
+              { q: "ما هو الضغط الذي تعمل به أنظمة Apex؟", a: "قد يختلف ضغط التشغيل حسب الموديل وتهيئة المنتج.\n\nتوضح المستندات الفنية بشكل صريح ما إذا كان القياس يشير إلى الضغط المطلق أم ضغط المقياس." },
+              { q: "ما الفرق بين البار وATA؟", a: "البار هو وحدة قياس للضغط. أما ATA فيشير إلى الضغط الجوي المطلق. لا ينبغي تفسير هاتين القيمتين بنفس الطريقة.\n\nلهذا السبب، تُعرض المعلومات التالية بشكل منفصل في مستندات Apex الفنية:", list: ["الضغط الجوي المحيط", "ضغط المقياس", "الضغط المطلق", "ما يعادله بوحدة ATA", "الحد الأقصى لضغط التشغيل المسموح به"] },
+              { q: "من أين يأتي الأكسجين؟", a: "يمكن استخدام مركّز أكسجين بسعة مناسبة حسب مشروع التركيب. تُحسب نقاوة الأكسجين المطلوبة ومعدل التدفق والضغط واحتياجات النسخ الاحتياطي من قِبل الفريق الفني." },
+              { q: "هل مركّز الأكسجين مشمول في سعر الجهاز؟", a: "نعم." },
+              { q: "هل يكفي مركّز أكسجين واحد لعدة مستخدمين؟", a: "يعتمد ذلك على سعة المركّز ومعدل تدفق الأكسجين المطلوب وعدد المستخدمين. يُحسب إجمالي معدل تدفق الأكسجين المطلوب بشكل منفصل لكل مشروع." }
+            ]
+          },
+          {
+            title: "الجلسة وعملية الاستخدام",
+            items: [
+              { q: "كم تستغرق الجلسة؟", a: "تختلف مدة الجلسة حسب البروتوكول المطبَّق. تتكون الجلسة عمومًا من ثلاث مراحل: الضغط المتحكَّم به، التطبيق عند الضغط المستهدف، وتخفيف الضغط المتحكَّم به.\n\nتُحدَّد المدة الإجمالية حسب الضغط المستهدف وحالة المستخدم وبروتوكول التطبيق. في التطبيقات ذات الغرض الطبي، يجب أن يحدد مدة الجلسة أخصائي رعاية صحية مؤهل." },
+              { q: "كم يستغرق الضغط؟", a: "قد تختلف مدة الضغط حسب الضغط المستهدف المختار وموديل الجهاز وراحة المستخدم. في أنظمة Apex، يتم تغيير الضغط بطريقة متحكَّم بها." },
+              { q: "هل يُشعَر بالضغط في الأذنين أثناء الجلسة؟", a: "أثناء تغيّر الضغط، قد يحدث شعور بالامتلاء أو الضغط في الأذنين، مشابه لما يحدث أثناء السفر الجوي. يجب إبلاغ المستخدمين بطرق موازنة الضغط قبل الجلسة." },
+              { q: "هل يمكن للمستخدم التواصل مع الخارج أثناء الجلسة؟", a: "نعم." },
+              { q: "هل يمكن للمستخدم رؤية الخارج أثناء الجلسة؟", a: "يمكن أن تتضمن موديلات Apex مناطق رؤية واسعة وخيارات أسطح شفافة لزيادة راحة المستخدم. تختلف أبعاد النوافذ ومواضعها حسب الموديل." },
+              { q: "هل يمكن استخدام الهاتف أثناء الجلسة؟", a: "يجب ألا تُدخَل إلى الغرفة الانضغاطية سوى المعدات التي تم تقييمها والموافقة عليها صراحةً من قبل الشركة المصنّعة. يجب عدم إدخال الهواتف المحمولة والأجهزة اللوحية والساعات الذكية وسماعات الرأس والبطاريات المحمولة والأجهزة الإلكترونية المماثلة إلى الغرفة دون موافقة الشركة المصنّعة.\n\nلا يمكن استخدام أنظمة الشاشة أو الصوت أو الترفيه المدمجة في الجهاز إلا بعد اكتمال التقييم الفني وتقييم السلامة." },
+              { q: "هل يمكن للمستخدم الخروج في أي وقت؟", a: "لا يمكن فتح باب الغرفة تحت الضغط مباشرة. لكي يخرج المستخدم، يجب أولًا موازنة الضغط الداخلي والخارجي بأمان.\n\nفي الظروف العادية، يُطبَّق إجراء تخفيف الضغط المتحكَّم به. في حالات الطوارئ، يُتَّبَع إجراء تخفيف الضغط الطارئ المحدد للجهاز." }
+            ]
+          },
+          {
+            title: "السلامة",
+            items: [
+              { q: "هل أنظمة Apex الانضغاطية آمنة؟", a: "نعم. تُضمَن السلامة في الأنظمة الانضغاطية من خلال الهندسة الصحيحة، والتركيب المناسب، والصيانة المنتظمة، والكادر المدرَّب، والالتزام بإجراءات الاستخدام.\n\nيجب تشغيل الجهاز فقط وفقًا لدليل المستخدم، ويجب عدم تعطيل أنظمة السلامة أبدًا." },
+              { q: "ما هي أنظمة السلامة الموجودة في الأجهزة؟", a: "حسب الموديل والتهيئة المطلوبة، قد تتضمن أنظمة Apex ميزات السلامة التالية:", list: ["مستشعرات الضغط", "صمام أمان ميكانيكي", "التحكم الآلي بالضغط", "التحكم اليدوي بالضغط", "زر التوقف الطارئ", "نظام تخفيف الضغط الطارئ", "مراقبة مستوى الأكسجين", "مقياس تشبع الأكسجين (قياسي)", "مراقبة درجة الحرارة", "نظام إنذار مرئي وصوتي", "نظام اتصال داخلي وخارجي", "نظام أمان الباب", "إجراء انقطاع الكهرباء", "نظام تسجيل الأعطال والجلسات", "مصدر طاقة احتياطي داخلي قياسي"], aAfter: "تُعرض أنظمة السلامة القياسية والاختيارية الموجودة في كل موديل بشكل منفصل في مستند العرض الفني." },
+              { q: "ماذا يحدث إذا انقطعت الكهرباء؟", a: "تأتي جميع موديلات Apex مزوَّدة بمصدر طاقة احتياطي داخلي قياسي للحماية من انقطاع الكهرباء. قد يختلف الإجراء المُطبَّق عند انقطاع الكهرباء حسب موديل الجهاز.\n\nحسب تهيئة النظام، يمكن أيضًا توفير الميزات التالية:", list: ["مصدر طاقة غير منقطع", "التحكم اليدوي بالضغط", "تخفيف ضغط متحكَّم به", "إضاءة الطوارئ", "نظام تنبيه المشغّل"] },
+              { q: "هل يمكن فتح الباب فورًا في حالة الطوارئ؟", a: "في الغرف المضغوطة، يجب موازنة الضغط الداخلي والخارجي قبل فتح الباب. لهذا السبب، لا يمكن فتح الباب بالطريقة العادية أثناء وجود الغرفة تحت الضغط.\n\nفي حالة الطوارئ، يُطبَّق إجراء تخفيف الضغط المتحكَّم به أو المُسرَّع الخاص بالنظام. يجب عدم تجاوز صمامات الأمان وحدود الضغط لضمان سلامة المستخدم." },
+              { q: "هل هناك خطر حريق في الأنظمة الانضغاطية؟", a: "في البيئات ذات التركيزات العالية من الأكسجين، قد يزداد خطر الاشتعال. لهذا السبب، تخضع إدارة الأكسجين والتمديدات الكهربائية والتحكم بالكهرباء الساكنة واختيار الملابس والمواد المُدخَلة إلى الغرفة لقواعد خاصة.\n\nيجب عدم إدخال السجائر والولاعات وأعواد الثقاب والمنتجات القابلة للاشتعال والأجهزة الإلكترونية غير المعتمدة من الشركة المصنّعة إلى الغرفة إطلاقًا." },
+              { q: "ما هي الأغراض التي يُمنع إدخالها إلى الغرفة؟", a: "يجب عدم إدخال الأغراض التالية إلى الغرفة دون موافقة الشركة المصنّعة:", list: ["السجائر والسجائر الإلكترونية", "الولاعات وأعواد الثقاب", "المواد القابلة للاشتعال أو الاحتراق", "المنتجات المعتمدة على الكحول", "منتجات التجميل المعتمدة على الزيوت والنفط", "منتجات الإيروسول", "الهواتف المحمولة", "الأجهزة اللوحية وأجهزة الكمبيوتر المحمولة", "الساعات الذكية", "سماعات الرأس", "البطاريات المحمولة", "معدات التدفئة", "الأجهزة الكهربائية غير المعتمدة", "العبوات المُحكَمة الإغلاق التي قد تتأثر بتغيّر الضغط"] },
+              { q: "ما هي الملابس التي يجب ارتداؤها داخل الغرفة؟", a: "يجب تفضيل الملابس المناسبة لإجراء السلامة الخاص بالمشغّل ودليل استخدام الجهاز. يجب عدم استخدام الملابس والإكسسوارات التي قد تشكّل خطر الكهرباء الساكنة أو الاشتعال." }
+            ]
+          },
+          {
+            title: "ملاءمة المستخدم",
+            items: [
+              { q: "هل يمكن لأي شخص استخدام نظام انضغاطي؟", a: "لا. قد لا تكون البيئة الانضغاطية مناسبة لكل مستخدم. قبل الاستخدام، يجب تقييم الحالة الصحية للشخص وأمراضه الحالية والأدوية التي يتناولها والغرسات التي يحملها.\n\nفي التطبيقات ذات الغرض الطبي، يجب أن يتخذ قرار الملاءمة أخصائي رعاية صحية مؤهل." },
+              { q: "هل يلزم تقييم طبي قبل الاستخدام؟", a: "في التطبيقات الانضغاطية ذات الغرض الطبي، يجب أن يقيّم المستخدمَ أخصائي رعاية صحية مؤهل.\n\nفي التطبيقات الموجهة نحو العافية أو الأداء، يُنصح أيضًا بالحصول على إقرار صحي من المستخدم والتحقق مسبقًا من الحالات التي قد تشكّل خطورة." },
+              { q: "ما هي الحالات الصحية التي يجب الإبلاغ عنها مسبقًا؟", a: "يجب على المستخدمين إبلاغ طاقم المشغّل والأخصائي الصحي بالحالات التالية قبل الجلسة:", list: ["مشاكل الأذن أو الجيوب الأنفية", "نزلة برد أو حمى", "أمراض الرئة", "عملية جراحية سابقة", "مشاكل القلب أو الدورة الدموية", "تاريخ من النوبات", "رهاب الأماكن المغلقة", "الحمل", "الأدوية المستخدَمة", "منظم ضربات القلب أو الغرسات", "الغوص مؤخرًا", "انزعاج سابق مرتبط بالضغط"], aAfter: "لا تُغني هذه القائمة عن التقييم الطبي." },
+              { q: "هل يمكن للحوامل استخدام نظام انضغاطي؟", a: "يجب أن يتخذ قرار الاستخدام أثناء الحمل طبيب مؤهل فقط. لا ينبغي اتخاذ قرارات الاستخدام بناءً على معلومات عامة." },
+              { q: "هل يمكن للأطفال استخدام نظام انضغاطي؟", a: "يجب تقييم استخدام الأطفال بناءً على العمر والحالة الصحية والغرض من الاستخدام وخصائص الجهاز وشروط المرافقة. في التطبيقات ذات الغرض الطبي، تلزم موافقة الطبيب وإشراف كادر صحي مناسب." },
+              { q: "هل يمكن للأشخاص الذين لديهم منظم ضربات قلب أو غرسة استخدام النظام؟", a: "يجب التأكد من ملاءمة الغرسة لبيئة مضغوطة وغنية بالأكسجين. يجب عدم اتخاذ قرار الاستخدام دون المعلومات الفنية من الشركة المصنّعة للغرسة وتقييم أخصائي رعاية صحية مؤهل." },
+              { q: "هل يمكن استخدام النظام مع نزلة برد أو ألم في الأذن؟", a: "يمكن أن تجعل نزلة البرد أو احتقان الأنف أو مشاكل الجيوب الأنفية أو ألم الأذن موازنة الضغط أمرًا صعبًا. يجب دائمًا الإبلاغ عن هذه الحالات قبل الجلسة.\n\nيجب أن يتخذ قرار تأجيل الاستخدام من عدمه أخصائي رعاية صحية مؤهل أو الموظف المسؤول." }
+            ]
+          },
+          {
+            title: "الاستخدام الطبي والادعاءات الصحية",
+            items: [
+              { q: "ما هي الأمراض التي يُستخدم لها النظام الانضغاطي؟", a: "قد تختلف الاستخدامات الطبية المقبولة للأكسجين الانضغاطي حسب البلد والجهة التنظيمية وتصنيف الجهاز والبروتوكول السريري.\n\nيجب أن تُجرى التطبيقات ذات الغرض الطبي فقط باستخدام أجهزة مصنَّفة بشكل مناسب، وفي مؤسسات صحية مرخَّصة، تحت إشراف كادر صحي مدرَّب، مع تقييم طبيب وبروتوكول مناسب.\n\nالمعلومات الموجودة على موقعنا الإلكتروني لا تشكّل نصيحة شخصية لتشخيص أو علاج أي مرض." },
+              { q: "هل تعالج أجهزة Apex أي مرض؟", a: "يعتمد الغرض من استخدام الجهاز والادعاءات الصحية التي يمكن الإدلاء بها بشأنه على التصنيف الرسمي للمنتج والوثائق التي يحملها.\n\nتُقدَّم البيانات بشأن أنظمة Apex فقط ضمن نطاق الغرض من الاستخدام المحدد في المستندات الفنية وتقييم المطابقة. لا تُقدَّم نتيجة مضمونة لأي مرض." },
+              { q: "هل الأنظمة منخفضة الضغط هي نفسها العلاج السريري بالأكسجين الانضغاطي (HBOT)؟", a: "لا. ليست كل تطبيقات الأكسجين المضغوط من نفس الفئة الفنية أو السريرية. يمكن للعوامل التالية أن تغيّر طبيعة التطبيق:", list: ["ضغط التشغيل", "تركيز الأكسجين المستنشَق", "طريقة توصيل الأكسجين", "مدة الجلسة", "شهادة الجهاز", "الغرض من الاستخدام", "بيئة التطبيق", "إشراف الكادر الصحي"], aAfter: "تعتمد إمكانية تعريف نظام ما بأنه \"جهاز علاج طبي بالأكسجين الانضغاطي\" على لوائح السوق المعنية والغرض الموثّق لاستخدام المنتج." },
+              { q: "هل النتائج مضمونة؟", a: "قد تختلف استجابة المستخدمين من شخص لآخر. لا يمكن ضمان نتائج صحية أو تعافٍ أو أداء أو ما شابه.\n\nيجب عدم اتخاذ قرارات الاستخدام بناءً فقط على المعلومات الترويجية العامة أو آراء المستخدمين." }
+            ]
+          },
+          {
+            title: "التركيب",
+            items: [
+              { q: "كم مساحة تلزم للتركيب؟", a: "تختلف المساحة المطلوبة حسب موديل Apex المختار. عند تحديد منطقة التركيب، يجب مراعاة العوامل التالية بالإضافة إلى أبعاد الجهاز:", list: ["منطقة عمل المشغّل", "مسافة الفتح الكامل للباب", "الوصول للخدمة الفنية", "منطقة الضاغط والمعدات المساعدة", "منطقة نظام الأكسجين", "التهوية", "لوحة الكهرباء", "مسار الخروج الطارئ", "معدات السلامة من الحرائق"], aAfter: "تُحدَّد أبعاد التركيب الدنيا بعد المسح الفني." },
+              { q: "هل يمكن تركيب الجهاز في مبنى قائم؟", a: "يمكن تطبيق معظم المشاريع على المباني القائمة؛ لكن يجب إجراء فحص فني قبل التركيب. تُفحص الشروط التالية:", list: ["قدرة تحمّل الأرضية", "فتحات الأبواب والممرات", "سعة المصعد", "ارتفاع السقف", "البنية التحتية الكهربائية", "التهوية", "البنية التحتية للأكسجين والهواء المضغوط", "السلامة من الحرائق", "الوصول للخدمة الفنية"] },
+              { q: "هل تجرون مسحًا ميدانيًا قبل التركيب؟", a: "نعم. حسب موقع المشروع ونطاقه، يمكن إجراء تقييم فني عن بُعد أو مسح ميداني. للتقييم الأولي، قد يُطلَب من العميل تقديم المعلومات التالية:", list: ["أبعاد منطقة التركيب", "صور ومقاطع فيديو", "المخطط المعماري", "البنية التحتية الكهربائية", "معلومات التهوية", "مسار الدخول والنقل", "سعة المستخدمين المستهدفة", "الموديل والخيارات المرغوبة"] },
+              { q: "هل يلزم تدعيم الأرضية؟", a: "يعتمد ذلك على وزن الجهاز والمعدات المساعدة وقدرة تحمّل المبنى. عند الحاجة، يجب إجراء تقييم إنشائي من قِبل مهندس إنشائي أو معماري مؤهل." },
+              { q: "هل يمكن نقل الجهاز؟", a: "يمكن تصنيع بعض موديلات Apex بهيكل معياري (modular). لكن يجب أن يقوم فريق فني مخوَّل فقط بأعمال الفك والنقل وإعادة التركيب.\n\nبعد النقل، يجب إعادة فحص النظام وعدم استخدامه حتى اكتمال الاختبارات اللازمة." },
+              { q: "كم يستغرق التركيب؟", a: "تختلف مدة التركيب حسب العوامل التالية: الموديل، أبعاد الجهاز، موقع التركيب، البنية التحتية للمبنى، الأنظمة المساعدة، خيارات التخصيص، وعملية الاختبار والتدريب.\n\nيُذكَر الجدول الزمني التقديري للتركيب في عرض المشروع." }
+            ]
+          },
+          {
+            title: "التدريب والتشغيل",
+            items: [
+              { q: "هل تقدّمون تدريبًا للكادر؟", a: "نعم. بعد التركيب، يتلقى الكادر المخوَّل تدريبًا على الاستخدام الآمن والصحيح للجهاز. حسب الموديل، قد يشمل نطاق التدريب:", list: ["تشغيل النظام وإيقافه", "الضغط وتخفيف الضغط", "تحضير المستخدم", "إرشادات موازنة الضغط", "استخدام نظام الأكسجين", "الأغراض الممنوعة داخل الغرفة", "الفحوصات اليومية للسلامة", "حالات الإنذار والأعطال", "إجراءات الطوارئ", "التنظيف والنظافة", "توثيق سجلات الصيانة"] },
+              { q: "كم عدد الكوادر اللازمة لتشغيل الجهاز؟", a: "يختلف عدد الكوادر المطلوب حسب الموديل وسعة المستخدمين وطبيعة التشغيل واللوائح المحلية.\n\nقد تتطلب الأنظمة متعددة المستخدمين وذات الغرض الطبي كوادر صحية وأمنية إضافية. يُحدَّد تخطيط الكوادر في مرحلة المشروع." },
+              { q: "هل يمكن الاحتفاظ بسجلات الاستخدام؟", a: "حسب نظام التحكم والميزات البرمجية المختارة، يمكن الاحتفاظ بالسجلات التالية:", list: ["تاريخ ووقت الجلسة", "مدة الجلسة", "قيم الضغط", "الرسم البياني لتغيّر الضغط", "سجلات الإنذار", "معلومات المشغّل", "سجل الصيانة", "ساعات تشغيل النظام"], aAfter: "في حال تسجيل بيانات صحية شخصية، يجب الالتزام بلوائح حماية البيانات ذات الصلة." },
+              { q: "هل يلزم ترخيص تشغيل؟", a: "تختلف متطلبات الترخيص والتصاريح حسب البلد والمدينة ونوع المنشأة وتصنيف الجهاز والغرض من الاستخدام. بالنسبة للمنشآت التي تقدّم خدمات طبية، يجب تقييم اللوائح التالية بشكل إضافي:", list: ["ترخيص المنشأة الصحية", "لوائح الأجهزة الطبية", "لوائح معدات الضغط", "السلامة من الحرائق", "الصحة والسلامة المهنية", "قواعد تخزين الأكسجين", "مؤهلات الكادر", "مطابقة الكهرباء والمبنى"], aAfter: "يجب على المشغّل الحصول على التصاريح اللازمة من الجهات المحلية المختصة قبل بدء التشغيل." }
+            ]
+          },
+          {
+            title: "التنظيف والنظافة",
+            items: [
+              { q: "كيف تُنظَّف الغرفة الانضغاطية؟", a: "يجب تنظيف الغرفة والمقاعد وأسطح التلامس ومعدات المستخدم فقط بمنتجات التنظيف المعتمدة من الشركة المصنّعة. يجب عدم استخدام منتجات قابلة للاشتعال أو معتمدة على الزيت أو ذات نسبة كحول عالية أو قد تُلحق الضرر بمواد الجهاز." },
+              { q: "هل يجب التنظيف بعد كل مستخدم؟", a: "يجب تنظيف الأسطح والمعدات التي تلامس المستخدم بعد كل جلسة وفقًا لبروتوكول النظافة الخاص بالمشغّل. يجب تنظيف الأقنعة وأغطية الرأس ومعدات التنفس أو تعقيمها أو استبدالها وفقًا لتعليمات الشركة المصنّعة." },
+              { q: "هل أقنعة الأكسجين مخصصة لكل مستخدم؟", a: "حسب المشروع وتفضيل المشغّل، يمكن استخدام خيارات أقنعة شخصية أو ذات استخدام واحد أو قابلة للتعقيم. يجب أن تتوافق دورية تنظيف الأقنعة واستبدالها مع تعليمات الشركة المصنّعة." },
+              { q: "كم مرة تُستبدَل الفلاتر؟", a: "تختلف مدة استبدال الفلاتر حسب نوع الفلتر وساعات التشغيل والظروف البيئية وكثافة الاستخدام. تُحدَّد دورية صيانة الفلاتر واستبدالها في خطة صيانة الجهاز." }
+            ]
+          },
+          {
+            title: "الصيانة والضمان والخدمة الفنية",
+            items: [
+              { q: "كم مرة تُجرى صيانة الجهاز؟", a: "تُجرى الصيانة الدورية كل 6 أشهر. بخلاف ذلك، يتكون برنامج الصيانة عمومًا من ثلاثة مستويات: الفحوصات اليومية من قبل المستخدم، الصيانة الدورية كل 6 أشهر، والفحص الفني الشامل السنوي أو المحدَّد من قِبل الشركة المصنّعة.\n\nتُحدَّد فترات الصيانة الدقيقة في دليل استخدام الجهاز." },
+              { q: "ما هي الأجزاء التي تُفحص أثناء الصيانة الدورية؟", a: "حسب الموديل، قد تُفحص المكوّنات التالية أثناء الصيانة:", list: ["نظام الضغط", "صمامات الأمان", "الباب ونظام القفل", "الحشيات", "مستشعرات الضغط", "نظام الأكسجين", "ضاغط الهواء", "الفلاتر", "النظام الكهربائي", "لوحة التحكم", "أنظمة الإنذار", "نظام الاتصال الداخلي والخارجي", "التهوية", "البرمجيات ونظام التسجيل"] },
+              { q: "هل يلزم إجراء فحص يومي؟", a: "نعم. قبل كل يوم تشغيل، يجب على المستخدم أو المشغّل إجراء فحص سلامة أساسي. يُنصح بتسجيل نتائج الفحص مع التاريخ ومعلومات المشغّل." },
+              { q: "ما هي مدة الضمان؟", a: "مدة الضمان القياسية لأنظمة Apex الانضغاطية هي سنة واحدة وفقًا للوائح الدولية. من خلال أداة التكوين، يمكن إضافة سنة ضمان إضافية (+1 سنة) ليصبح الإجمالي سنتين.\n\nقد يختلف نطاق الضمان بالنسبة للغرفة الرئيسية والأجزاء الميكانيكية والمكوّنات الإلكترونية والضاغط ونظام الأكسجين والمواد الاستهلاكية. تُحدَّد الشروط التفصيلية في عقد البيع." },
+              { q: "ما هي الأجزاء غير المشمولة بالضمان؟", a: "قد لا تكون الأجزاء الاستهلاكية التي تتآكل نتيجة الاستخدام الطبيعي، والفلاتر، والأقنعة، والحشيات، والأضرار الناتجة عن سوء الاستخدام مشمولة بالضمان. يُوضَّح النطاق الدقيق في مستند الضمان." },
+              { q: "هل تقدّمون دعم قطع الغيار؟", a: "نعم. تُقدَّم قطع الغيار الأصلية والدعم الفني الخدمي لأنظمة Apex." },
+              { q: "هل تقدّمون دعمًا فنيًا عن بُعد؟", a: "نعم. حسب طبيعة المشكلة، يمكن تقديم الدعم الفني عبر الهاتف أو مكالمة الفيديو أو، في الموديلات المناسبة، عبر الاتصال عن بُعد. في حال تعذّر الحل عن بُعد، تُجدوَل زيارة خدمة ميدانية." },
+              { q: "هل يمكن استخدام الجهاز في حال حدوث عطل؟", a: "لا. في حال ملاحظة عطل في نظام الضغط أو خط الأكسجين أو نظام الباب أو المستشعرات أو نظام الإنذار أو أي من مكوّنات السلامة الأخرى، يجب عدم استخدام الجهاز. يجب عدم إعادة تشغيل النظام قبل أن تجري الخدمة الفنية المخوَّلة الفحص والموافقة اللازمَين." }
+            ]
+          },
+          {
+            title: "الطلب والسعر والتسليم",
+            items: [
+              { q: "ما هو سعر أنظمة Apex الانضغاطية؟", a: "تختلف الأسعار حسب العوامل التالية:", list: ["الموديل", "سعة المستخدمين", "أبعاد الغرفة", "ضغط التشغيل", "نظام الأكسجين", "نظام الضاغط", "التجهيزات الداخلية", "الميزات الرقمية", "التخصيص", "الشحن", "بلد التركيب", "حزمة التدريب والخدمة"], aAfter: "لهذا السبب، يُعَد عرض سعر خاص لكل مشروع بعد تحليل الاحتياجات. عروض الأسعار المستلمة من أداة التكوين صالحة لمدة 15 يومًا فقط وهي أسعار FOB." },
+              { q: "ما هي المعلومات المطلوبة للحصول على عرض سعر؟", a: "تكفي مشاركة المعلومات التالية لإعداد عرض السعر:", list: ["اسمك أو اسم شركتك", "البلد والمدينة", "الغرض من الاستخدام", "موديل Apex الذي يهمّك", "سعة المستخدمين", "أبعاد منطقة التركيب", "الميزات المرغوبة", "تاريخ الافتتاح أو التسليم المخطَّط له", "معلومات التواصل الخاصة بك"], aAfter: "سيتواصل معك فريقنا الفني بعد تقييم المعلومات." },
+              { q: "ما هي مدة الإنتاج؟", a: "تختلف مدة الإنتاج حسب الموديل وحجم الطلبات وطلبات التخصيص. تبدأ حسب الموديل من 10 أسابيع.\n\nيُبلَّغ الجدول الزمني الدقيق للتسليم عند تأكيد الطلب." },
+              { q: "هل تقومون بالتسليم الدولي؟", a: "نعم. يمكن إجراء التسليم الدولي إلى البلدان التي يمكن فيها توفير الظروف اللوجستية والفنية المناسبة. يمكن التخطيط للخدمات التالية بشكل منفصل ضمن عرض السعر:", list: ["الشحن الدولي", "تأمين الشحن", "الوثائق الجمركية", "التركيب الميداني", "التشغيل التجريبي", "تدريب الكادر", "الدعم الفني بعد البيع"], aAfter: "قد تختلف تصاريح الاستيراد ومتطلبات الترخيص المحلية حسب بلد الوجهة." },
+              { q: "هل الشحن والتركيب مشمولان في السعر؟", a: "تختلف تكاليف الشحن والتركيب حسب موقع التركيب، لذا تُعرض كبنود منفصلة ضمن عرض السعر. يتيح ذلك للعميل رؤية تكاليف الجهاز والشحن والتركيب والتدريب والمعدات الاختيارية بوضوح." },
+              { q: "ما هي شروط الدفع؟", a: "وفق شروطنا القياسية، يتم تحصيل دفعة أولى بنسبة 50% عند الطلب، بينما تُستحق نسبة الـ 50% المتبقية عند جهوزية المنتج للتسليم. تُحدَّد شروط الدفع الدقيقة في عقد البيع." },
+              { q: "هل يتوفر تمويل أو تأجير تمويلي؟", a: "قد تختلف خيارات التمويل والتأجير التمويلي حسب بلد البيع والمؤسسات المالية الشريكة. تُشارَك الخيارات المتاحة في مرحلة عرض السعر." }
+            ]
+          },
+          {
+            title: "الشهادات والمطابقة",
+            items: [
+              { q: "لأي المعايير تمتثل أنظمة Apex؟", a: "تُطوَّر سلسلة Apex وفقًا لمعيار EN 14931 (معيار تصميم الغرف الطبية)، ومعيار EN 16081 (نظام الحماية من الحرائق للغرف الطبية)، ومعيار NFPA 99 (المعيار الأمريكي لأنظمة إطفاء الحرائق)، ومعيار ISO 9001 (معيار الجودة)، ومعيار EN 13445 + PED 2014/68/EU (توجيه معدات الضغط).\n\nتُحدَّد المعايير والاختبارات ووثائق المطابقة السارية لكل موديل في المستندات الفنية للمنتج. تُقدَّم فقط الوثائق المكتملة والقابلة للتحقق كشهادات منتج صالحة." },
+              { q: "هل تحمل الأجهزة علامة CE؟", a: "تُوضَّح حالة علامة CE حسب موديل المنتج والنطاق التنظيمي المعني. لا تعني علامة CE وحدها أن المنتج جهاز طبي لجميع أغراض الاستخدام. يجب أن يوضّح إعلان المطابقة بشكل صريح اللوائح المعنية وفئة المنتج والغرض من الاستخدام ومعلومات الشركة المصنّعة." },
+              { q: "هل يمكنني الاطلاع على الشهادات؟", a: "يمكن مشاركة وثائق المطابقة وتقارير الاختبار والمستندات الفنية عند الطلب، مع مراعاة موديل المنتج والبلد المستهدف والعملية التجارية." }
+            ]
+          }
         ]
       }
     }

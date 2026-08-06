@@ -35,6 +35,8 @@
     uvc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>',
     backupO2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2.5 3.5 6 7.5 6 12a6 6 0 0 1-12 0c0-4.5 3.5-8.5 6-12Z"/><path d="M9 22h6"/></svg>',
     warranty: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.4-1.5 8-5.5 8-11V5l-8-3-8 3v6c0 5.5 3.6 9.5 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>',
+    battery: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 10v4"/><path d="m8 9 -2 4h3l-2 4"/></svg>',
+    pulseOx: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>',
     install: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
     playstation: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="4"/><circle cx="15" cy="11" r="1"/><circle cx="15" cy="15" r="1"/><circle cx="17" cy="13" r="1"/><circle cx="13" cy="13" r="1"/><path d="M6 11v4M4 13h4"/></svg>',
     wound: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 12 5l3 3-2 2 2 2-2 2 2 2-3 3-7.5-7.5Z"/></svg>',
@@ -59,7 +61,7 @@
 
   const MODEL_ICON = { "solo-lounge": "lying", solo: "oneSeat", duo: "twoSeat", "quad-cube": "fourSeat", nexus: "nexus" };
   const ADDON_ICON = { massage: "massage", leather: "leather", entertainment: "entertainment", finish: "finish", uvc: "uvc", "backup-o2": "backupO2", warranty: "warranty", install: "install" };
-  const PILLAR_ICON = { connect: "connect", os: "os", ai: "ai", sync: "sync", guard: "guard" };
+  const PILLAR_ICON = { connect: "connect", os: "os", ai: "ai", sync: "sync", guard: "guard", battery: "battery", pulseOx: "pulseOx" };
 
   /* Apex Duo Plus konfigüratöre özel kurumsal varyanttır — kendi tanıtım
      sayfası/nav girişi yok, bu yüzden site geneli MODEL_ORDER'a dahil değil. */
@@ -358,6 +360,17 @@
     `).join("");
   }
 
+  function renderCertifications(dict) {
+    const c = document.getElementById("cert-grid");
+    if (!c || !dict.technology || !dict.technology.certifications) return;
+    c.innerHTML = dict.technology.certifications.items.map((item) => `
+      <div class="cert-card">
+        <div class="cert-code">${item.code}</div>
+        <p>${item.name}</p>
+      </div>
+    `).join("");
+  }
+
   function renderModelCompareTable(dict) {
     const c = document.getElementById("model-compare-grid");
     if (!c || !dict.modelsOverview || !dict.modelsOverview.compareTable) return;
@@ -461,18 +474,36 @@
     }).join("");
   }
 
+  /* FAQ: dict.contact.faq.sections varsa gruplu (başlıklı) gösterilir;
+     yoksa geriye dönük uyumluluk için düz dict.contact.faq.items listelenir. */
   function renderFaq(dict) {
     const c = document.getElementById("faq-list");
     if (!c || !dict.contact || !dict.contact.faq) return;
-    c.innerHTML = dict.contact.faq.items.map((item, i) => `
+    const faqAnswerHtml = (item) => {
+      const paras = item.a.split("\n\n").map((p) => `<p>${p.replace(/\n/g, "<br>")}</p>`).join("");
+      const list = item.list ? `<ul>${item.list.map((li) => `<li>${li}</li>`).join("")}</ul>` : "";
+      const after = item.aAfter ? `<p>${item.aAfter}</p>` : "";
+      return paras + list + after;
+    };
+    const faqItemHtml = (item, key) => `
       <div class="faq-item">
-        <button type="button" class="faq-question" data-faq-index="${i}">
+        <button type="button" class="faq-question" data-faq-index="${key}">
           <span>${item.q}</span>
           ${ICONS.chevronDown}
         </button>
-        <div class="faq-answer"><p>${item.a}</p></div>
+        <div class="faq-answer">${faqAnswerHtml(item)}</div>
       </div>
-    `).join("");
+    `;
+    if (dict.contact.faq.sections) {
+      c.innerHTML = dict.contact.faq.sections.map((section, si) => `
+        <div class="faq-section">
+          <h3 class="faq-section-title">${section.title}</h3>
+          ${section.items.map((item, ii) => faqItemHtml(item, `${si}-${ii}`)).join("")}
+        </div>
+      `).join("");
+    } else {
+      c.innerHTML = dict.contact.faq.items.map((item, i) => faqItemHtml(item, i)).join("");
+    }
 
     c.querySelectorAll(".faq-question").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -2050,6 +2081,7 @@
       renderExtraBadges(dict);
       renderComparisonTable(dict);
       renderRoadmap(dict);
+      renderCertifications(dict);
     } else if (page === "models-overview") {
       renderModelsGrid(dict, "models-grid");
       renderModelCompareTable(dict);

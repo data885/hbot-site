@@ -496,6 +496,17 @@ h1, h2, h3, h4, p { margin: 0; }
 .roadmap-card h4 { font-size: 15.5px; font-weight: 800; margin-bottom: 8px; }
 .roadmap-card p { font-size: 13.5px; color: var(--gray-500); line-height: 1.6; }
 
+.cert-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.cert-card {
+  background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-md);
+  padding: 20px 16px; text-align: center;
+}
+.cert-code { font-size: 14px; font-weight: 800; color: var(--ink-900); margin-bottom: 6px; letter-spacing: -0.01em; }
+.cert-card p { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
+@media (max-width: 860px) {
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ---------- FAQ accordion ---------- */
 .faq-list { display: grid; gap: 12px; }
 .faq-item { border: 1px solid var(--gray-100); border-radius: var(--radius-md); overflow: hidden; }
@@ -508,8 +519,19 @@ h1, h2, h3, h4, p { margin: 0; }
 .faq-item.is-open .faq-question svg { transform: rotate(180deg); color: var(--cyan-500); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height var(--transition); background: var(--gray-050); }
 .faq-answer p { padding: 0 22px; font-size: 14.5px; color: var(--gray-700); line-height: 1.7; }
-.faq-item.is-open .faq-answer { max-height: 300px; }
+.faq-answer ul { margin: 10px 22px 0; padding-inline-start: 18px; font-size: 14.5px; color: var(--gray-700); line-height: 1.7; }
+.faq-item.is-open .faq-answer { max-height: 2400px; }
 .faq-item.is-open .faq-answer p { padding: 18px 22px 22px; }
+.faq-item.is-open .faq-answer p:has(+ ul) { padding-bottom: 0; }
+.faq-item.is-open .faq-answer ul:last-child { padding-bottom: 22px; }
+.faq-section { margin-bottom: 36px; }
+.faq-section:last-child { margin-bottom: 0; }
+.faq-section-title {
+  font-size: 13px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cyan-500);
+  margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-100);
+}
+.faq-section .faq-item { margin-bottom: 10px; }
+.faq-section .faq-item:last-child { margin-bottom: 0; }
 
 /* ---------- Blog ---------- */
 .blog-post-list { display: grid; gap: 28px; }
