@@ -57,12 +57,14 @@
     whatsapp: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.96 9.96 0 0 0 4.79 1.22h.01c5.52 0 10-4.48 10-10s-4.48-9.84-10.01-9.84Zm0 18.16h-.01a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.28 8.28 0 0 1-1.27-4.4c0-4.59 3.74-8.32 8.33-8.32 2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 0 1 2.44 5.89c0 4.59-3.75 8.26-8.34 8.26Zm4.56-6.2c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.78.98-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23a7.5 7.5 0 0 1-1.38-1.72c-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29Z"/></svg>'
   };
 
-  const MODEL_ICON = { "solo-lounge": "lying", solo: "oneSeat", duo: "twoSeat", quad: "fourSeat", "quad-cube": "fourSeat", nexus: "nexus" };
+  const MODEL_ICON = { "solo-lounge": "lying", solo: "oneSeat", duo: "twoSeat", "quad-cube": "fourSeat", nexus: "nexus" };
   const ADDON_ICON = { massage: "massage", leather: "leather", entertainment: "entertainment", finish: "finish", uvc: "uvc", "backup-o2": "backupO2", warranty: "warranty", install: "install" };
   const PILLAR_ICON = { connect: "connect", os: "os", ai: "ai", sync: "sync", guard: "guard" };
 
-  const MODEL_ORDER = ["solo-lounge", "solo", "duo", "quad", "quad-cube", "nexus"];
-  const MODEL_KEY_MAP = { "solo-lounge": "soloLounge", solo: "solo", duo: "duo", quad: "quad", "quad-cube": "quadCube", nexus: "nexus" };
+  /* Apex Duo Plus konfigüratöre özel kurumsal varyanttır — kendi tanıtım
+     sayfası/nav girişi yok, bu yüzden site geneli MODEL_ORDER'a dahil değil. */
+  const MODEL_ORDER = ["solo-lounge", "solo", "duo", "quad-cube", "nexus"];
+  const MODEL_KEY_MAP = { "solo-lounge": "soloLounge", solo: "solo", duo: "duo", "quad-cube": "quadCube", nexus: "nexus" };
   const MODEL_PAGES = {
     "solo-lounge": "model-apex-solo-lounge.html",
     solo: "model-apex-solo.html",
@@ -73,24 +75,34 @@
   };
 
   /* ---------------- Pricing data (EUR bazlı — illustrative, update with real figures) ---------------- */
+  /* v13 fiyat revizyonu: Ev tipi modellerde basınç sadece 1.5/2.0 ATA (ücretsiz);
+     kurumsal modellerde 2.5/3.0/6.0 ATA (ücretsiz) — basınç kademelerine artık fiyat
+     eklenmiyor. Apex Quad kaldırıldı (Quad-Cube tek 4 kişilik model). */
   const MODEL_PRICING = {
-    "solo-lounge": { base: 68000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 5400 }, { ata: "2.5 ATA", price: 10200 }, { ata: "3.0 ATA", price: 17000, nexusOnly: true }, { ata: "6.0 ATA", price: 27200, nexusOnly: true }] },
-    solo: { base: 55000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 4400 }, { ata: "2.5 ATA", price: 8300 }, { ata: "3.0 ATA", price: 13800, nexusOnly: true }, { ata: "6.0 ATA", price: 22000, nexusOnly: true }] },
-    duo: { base: 95000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 7600 }, { ata: "2.5 ATA", price: 14300 }, { ata: "3.0 ATA", price: 23800, nexusOnly: true }, { ata: "6.0 ATA", price: 38000, nexusOnly: true }] },
-    quad: { base: 145000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 11600 }, { ata: "2.5 ATA", price: 21800 }, { ata: "3.0 ATA", price: 36300, nexusOnly: true }, { ata: "6.0 ATA", price: 58000, nexusOnly: true }] },
-    "quad-cube": { base: 165000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 13200 }, { ata: "2.5 ATA", price: 24800 }, { ata: "3.0 ATA", price: 41300, nexusOnly: true }, { ata: "6.0 ATA", price: 66000, nexusOnly: true }] },
-    nexus: { base: 220000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 17600 }, { ata: "2.5 ATA", price: 33000 }, { ata: "3.0 ATA", price: 55000, nexusOnly: true }, { ata: "6.0 ATA", price: 88000, nexusOnly: true }] }
+    "solo-lounge": { base: 30000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
+    solo: { base: 70000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
+    duo: { base: 120000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
+    "duo-plus": { base: 120000, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
+    "quad-cube": { base: 225000, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
+    nexus: { base: 260000, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] }
   };
-  /* Basınç kademe katsayıları (model base'ine göre): 1.5→taban, 2.0→+%8, 2.5→+%15, 3.0→+%25, 6.0→+%40 (100'e yuvarlı).
-     Apex Nexus medical kabindir: YALNIZCA 3.0 ve 6.0 ATA sunulur (nexusOnly). Diğer modellerde 1.5/2.0/2.5 ATA aktiftir. */
-  const ADDON_PRICING = { massage: 2200, leather: 1800, entertainment: 1200, finish: 900, uvc: 1500, "backup-o2": 3000, warranty: 2500, install: 1000, playstation: 1900 };
+  const ADDON_PRICING = { massage: 2900, leather: 2100, entertainment: 1650, finish: 900, warranty: 2500, playstation: 1900 };
   const STYLE_PRICING = { solid: 0, glass: 3500, premium: 7500 };
-  const PRESSURE_RANGE = { "solo-lounge": "1.5 – 2.5 ATA", solo: "1.5 – 2.5 ATA", duo: "1.5 – 2.5 ATA", quad: "1.5 – 2.5 ATA", "quad-cube": "1.5 – 2.5 ATA", nexus: "3.0 – 6.0 ATA" };
+  /* Panoramik cam seri yalnızca Apex Solo ve Apex Duo'da sunulur. */
+  const GLASS_STYLE_MODELS = ["solo", "duo"];
+  function styleAllowedFor(modelId, styleId) {
+    return styleId !== "glass" || GLASS_STYLE_MODELS.includes(modelId);
+  }
+  const PRESSURE_RANGE = { "solo-lounge": "1.5 – 2.0 ATA", solo: "1.5 – 2.0 ATA", duo: "1.5 – 2.0 ATA", "duo-plus": "2.5 – 6.0 ATA", "quad-cube": "2.5 – 6.0 ATA", nexus: "2.5 – 6.0 ATA" };
 
-  /* Apex Nexus: base price includes 6 seats; each additional seat adds SEAT_PRICE (illustrative — update with real figure) */
-  const NEXUS_BASE_SEATS = 6;
-  const NEXUS_MAX_SEATS = 16;
-  const NEXUS_SEAT_PRICE = 12000;
+  /* Kademeli koltuk fiyatlaması: Nexus ve Duo Plus için taban fiyat koltuk sayısına göre
+     değişir (eklenen her koltuk için ayrı ücret yerine sabit fiyat kademeleri). */
+  const SEAT_TIERS = {
+    nexus: [{ seats: 6, price: 260000 }, { seats: 8, price: 280000 }, { seats: 10, price: 300000 }, { seats: 12, price: 330000 }],
+    "duo-plus": [{ seats: 2, price: 120000 }, { seats: 4, price: 170000 }]
+  };
+  const NEXUS_BASE_SEATS = SEAT_TIERS.nexus[0].seats;
+  const NEXUS_MAX_SEATS = SEAT_TIERS.nexus[SEAT_TIERS.nexus.length - 1].seats;
 
   /* ---------------- Currency (live exchange rates, EUR base) ---------------- */
   const CURRENCIES = ["EUR", "USD", "GBP", "AED", "RUB"];
@@ -356,7 +368,7 @@
       const parts = (m ? m.tagline : "").split(" · ");
       const capacity = parts[0] || "";
       const position = parts[1] || "";
-      const priceLabel = key === "nexus" ? formatPrice(MODEL_PRICING[key].base) + "+" : formatPrice(MODEL_PRICING[key].base);
+      const priceLabel = SEAT_TIERS[key] ? formatPrice(MODEL_PRICING[key].base) + "+" : formatPrice(MODEL_PRICING[key].base);
       return `
         <div class="compare-card">
           <div class="compare-card-icon">${ICONS[MODEL_ICON[key]]}</div>
@@ -492,7 +504,7 @@
      Nexus'ta mevcut olduğu için kurumsal kategori tek modelle sınırlı. */
   const USAGE_MODELS = {
     home: ["solo-lounge", "solo", "duo"],
-    institutional: ["quad", "quad-cube", "nexus"]
+    institutional: ["duo-plus", "quad-cube", "nexus"]
   };
 
   /* Showcase stage: model -> gerçek fotoğraf / 360° spin seti.
@@ -503,21 +515,21 @@
     "solo-lounge": "real/apex-lounge-real",
     solo: "real/apex-lounge-real",       // Solo'nun kendi fotoğrafı yok — aile görseli (Lounge)
     duo: "real/apex-duo-real",
-    quad: "real/apex-quad-cube-2",       // Quad'in kendi fotoğrafı yok — aile görseli (Quad-Cube yan açı)
+    "duo-plus": "real/apex-duo-real",    // Duo Plus'ın kendi fotoğrafı yok — Duo görseli paylaşılır
     "quad-cube": "real/apex-quad-cube",
     nexus: "real/apex-nexus"
   };
   /* İç mekân: modelin kendi gerçek iç fotoğrafı; olmayan modeller aile iç mekânına düşer
-     (solo/duo -> Lounge iç, quad -> Quad-Cube iç). */
+     (solo/duo/duo-plus -> Quad-Cube iç, oturma pozisyonu daha doğru). */
   /* solo-lounge tek yatay (yatan) model — kendi iç fotoğrafı doğru.
      Diğer tüm modeller OTURMA pozisyonunda; kendi iç fotoğrafı olmayanlar
-     (solo, duo, quad) yatan lounge yerine oturma pozisyonundaki quad-cube
-     iç görselini paylaşır — pozisyon en azından doğru gösterilir. */
+     yatan lounge yerine oturma pozisyonundaki quad-cube iç görselini
+     paylaşır — pozisyon en azından doğru gösterilir. */
   const REAL_INTERIOR = {
     "solo-lounge": "real/apex-lounge-ic",
     solo: "real/apex-quad-cube-ic",
     duo: "real/apex-quad-cube-ic",
-    quad: "real/apex-quad-cube-ic",
+    "duo-plus": "real/apex-quad-cube-ic",
     "quad-cube": "real/apex-quad-cube-ic",
     nexus: "real/apex-nexus-ic"
   };
@@ -811,13 +823,15 @@
         const allowedIds = USAGE_MODELS[usageId] || USAGE_MODELS.home;
         if (!allowedIds.includes(configState.model)) {
           configState.model = allowedIds[0];
-          pressureAutoNote = false;
-          ensureTierCompatible(true);
-          configState.nexusSeats = NEXUS_BASE_SEATS;
+          configState.tierIndex = 0;
+          const seatTiers0 = SEAT_TIERS[configState.model];
+          configState.nexusSeats = seatTiers0 ? seatTiers0[0].seats : NEXUS_BASE_SEATS;
         }
+        if (!styleAllowedFor(configState.model, configState.chamberStyle)) configState.chamberStyle = "solid";
         const dict2 = TRANSLATIONS[currentLang];
         renderUsageType(dict2);
         renderConfigModels(dict2);
+        renderConfigStyles(dict2);
         renderConfigPressure(dict2);
         renderNexusSeatSection(dict2);
         renderConfigSummary(dict2);
@@ -849,14 +863,17 @@
         if (!item) return;
         configState.usageType = item.usage;
         configState.model = item.modelId;
-        pressureAutoNote = false;
-        ensureTierCompatible(true);
-        configState.nexusSeats = NEXUS_BASE_SEATS;
+        configState.tierIndex = 0;
+        if (!styleAllowedFor(configState.model, configState.chamberStyle)) configState.chamberStyle = "solid";
+        const seatTiers1 = SEAT_TIERS[configState.model];
+        configState.nexusSeats = seatTiers1 ? seatTiers1[0].seats : NEXUS_BASE_SEATS;
         const dict2 = TRANSLATIONS[currentLang];
         renderUsageType(dict2);
         renderConfigModels(dict2);
+        renderConfigStyles(dict2);
         renderConfigPressure(dict2);
         renderNexusSeatSection(dict2);
+        renderConfigAddons(dict2);
         renderConfigSummary(dict2);
         updateConfigStage(dict2);
         closeGuideModal();
@@ -886,9 +903,12 @@
   }
 
   function renderConfigStyles(dict) {
+    const styleSection = document.getElementById("style-step-section");
+    if (styleSection) styleSection.hidden = configState.model === "solo-lounge";
     const c = document.getElementById("config-style-grid");
     if (!c || !dict.configurator.styles) return;
-    c.innerHTML = dict.configurator.styles.map((st) => {
+    const visibleStyles = dict.configurator.styles.filter((st) => styleAllowedFor(configState.model, st.id));
+    c.innerHTML = visibleStyles.map((st) => {
       const selected = configState.chamberStyle === st.id ? " is-selected" : "";
       const featured = st.id === "premium" ? " is-featured" : "";
       const price = STYLE_PRICING[st.id] || 0;
@@ -1161,7 +1181,7 @@
     "solo-lounge": "real/apex-lounge-real",
     solo: "real/apex-lounge-real",
     duo: "real/apex-duo-real",
-    quad: "real/apex-quad-cube-2",
+    "duo-plus": "real/apex-duo-real",
     "quad-cube": "real/apex-quad-cube",
     nexus: "real/apex-nexus"
   };
@@ -1201,7 +1221,7 @@
     const visibleModels = dict.configurator.models.filter((m) => allowedIds.includes(m.id));
     c.innerHTML = visibleModels.map((m) => {
       const selected = configState.model === m.id ? " is-selected" : "";
-      const priceLabel = m.id === "nexus" ? formatPrice(MODEL_PRICING[m.id].base) + "+" : formatPrice(MODEL_PRICING[m.id].base);
+      const priceLabel = SEAT_TIERS[m.id] ? formatPrice(MODEL_PRICING[m.id].base) + "+" : formatPrice(MODEL_PRICING[m.id].base);
       return `
         <button type="button" class="config-model-card${selected}" data-model-id="${m.id}">
           <span class="config-check">${ICONS.check}</span>
@@ -1216,59 +1236,67 @@
     c.querySelectorAll(".config-model-card").forEach((btn) => {
       btn.addEventListener("click", () => {
         configState.model = btn.getAttribute("data-model-id");
-        pressureAutoNote = false;
-        ensureTierCompatible(true); // Nexus-only kademe seçiliyse 2.5 ATA'ya düş + bilgi notu
-        configState.nexusSeats = NEXUS_BASE_SEATS;
+        configState.tierIndex = 0;
+        const seatTiers = SEAT_TIERS[configState.model];
+        configState.nexusSeats = seatTiers ? seatTiers[0].seats : NEXUS_BASE_SEATS;
+        if (!styleAllowedFor(configState.model, configState.chamberStyle)) configState.chamberStyle = "solid";
         const dict = TRANSLATIONS[currentLang];
         renderConfigModels(dict);
+        renderConfigStyles(dict);
         renderConfigPressure(dict);
         renderNexusSeatSection(dict);
+        renderConfigAddons(dict);
         renderConfigSummary(dict);
         updateConfigStage(dict);
       });
     });
   }
 
+  /* Nexus ve Duo Plus için ortak kademeli koltuk seçici (SEAT_TIERS). */
   function renderNexusSeatSection(dict) {
     const section = document.getElementById("nexus-seat-section");
     if (!section) return;
-    const isNexus = configState.model === "nexus";
-    section.hidden = !isNexus;
-    if (!isNexus) return;
+    const tiers = SEAT_TIERS[configState.model];
+    section.hidden = !tiers;
+    if (!tiers) return;
 
     const valueEl = document.getElementById("seat-count-value");
     if (valueEl) valueEl.textContent = configState.nexusSeats;
 
-    const extra = configState.nexusSeats - NEXUS_BASE_SEATS;
+    const idx = tiers.findIndex((t) => t.seats === configState.nexusSeats);
+    const safeIdx = idx >= 0 ? idx : 0;
     const note = document.getElementById("seat-price-note");
     if (note) {
-      note.textContent = extra > 0
-        ? "+" + formatPrice(extra * NEXUS_SEAT_PRICE) + " (" + extra + " × " + formatPrice(NEXUS_SEAT_PRICE) + ")"
+      note.textContent = safeIdx > 0
+        ? "+" + formatPrice(tiers[safeIdx].price - tiers[0].price)
         : dict.common.included_badge;
     }
 
     const decBtn = document.getElementById("seat-decrease");
     const incBtn = document.getElementById("seat-increase");
-    if (decBtn) decBtn.disabled = configState.nexusSeats <= NEXUS_BASE_SEATS;
-    if (incBtn) incBtn.disabled = configState.nexusSeats >= NEXUS_MAX_SEATS;
+    if (decBtn) decBtn.disabled = safeIdx <= 0;
+    if (incBtn) incBtn.disabled = safeIdx >= tiers.length - 1;
   }
 
   function initSeatStepper() {
     const decBtn = document.getElementById("seat-decrease");
     const incBtn = document.getElementById("seat-increase");
     if (!decBtn || !incBtn) return;
-    decBtn.addEventListener("click", () => {
-      if (configState.nexusSeats > NEXUS_BASE_SEATS) configState.nexusSeats--;
+    const step = (dir) => {
+      const tiers = SEAT_TIERS[configState.model];
+      if (!tiers) return;
+      const idx = tiers.findIndex((t) => t.seats === configState.nexusSeats);
+      const safeIdx = idx >= 0 ? idx : 0;
+      const nextIdx = safeIdx + dir;
+      if (nextIdx < 0 || nextIdx >= tiers.length) return;
+      configState.nexusSeats = tiers[nextIdx].seats;
       const dict = TRANSLATIONS[currentLang];
       renderNexusSeatSection(dict);
+      renderConfigAddons(dict); // Duo Plus: 2 koltuğu geçince masajlı koltuk seçeneği kalkar
       renderConfigSummary(dict);
-    });
-    incBtn.addEventListener("click", () => {
-      if (configState.nexusSeats < NEXUS_MAX_SEATS) configState.nexusSeats++;
-      const dict = TRANSLATIONS[currentLang];
-      renderNexusSeatSection(dict);
-      renderConfigSummary(dict);
-    });
+    };
+    decBtn.addEventListener("click", () => step(-1));
+    incBtn.addEventListener("click", () => step(1));
   }
 
   function initCurrencySwitch() {
@@ -1295,33 +1323,21 @@
      - Nexus dışı modelde nexusOnly kademe (3.0/6.0) seçiliyse -> 2.5 ATA'ya düş ("down")
      - Nexus'ta düşük kademe (1.5/2.0/2.5) seçiliyse -> 3.0 ATA'ya çıkar ("up")
      notify=true iken kullanıcıya bilgi notu gösterilir. */
-  function ensureTierCompatible(notify) {
+  /* Basınç kademeleri artık modele göre tam listeleniyor (bkz. MODEL_PRICING);
+     tek görevi tierIndex'in geçerli aralıkta kalmasını sağlamak. */
+  function ensureTierCompatible() {
     const tiers = MODEL_PRICING[configState.model].tiers;
-    const cur = tiers[configState.tierIndex];
-    if (!cur) { configState.tierIndex = 0; return false; }
-    const isNexus = configState.model === "nexus";
-    if (!isNexus && cur.nexusOnly) {
-      const idx25 = tiers.findIndex((t) => t.ata === "2.5 ATA");
-      configState.tierIndex = idx25 >= 0 ? idx25 : 0;
-      pressureAutoNote = notify ? "down" : false;
-      return true;
-    }
-    if (isNexus && !cur.nexusOnly) {
-      const idx30 = tiers.findIndex((t) => t.ata === "3.0 ATA");
-      configState.tierIndex = idx30 >= 0 ? idx30 : 0;
-      pressureAutoNote = notify ? "up" : false;
-      return true;
-    }
+    if (!tiers[configState.tierIndex]) configState.tierIndex = 0;
     return false;
   }
 
   function renderConfigPressure(dict) {
+    const pressureSection = document.getElementById("pressure-step-section");
+    if (pressureSection) pressureSection.hidden = configState.model === "solo-lounge";
     const c = document.getElementById("config-pressure-grid");
     if (!c) return;
-    const isNexus = configState.model === "nexus";
     const tiers = MODEL_PRICING[configState.model].tiers;
-    /* Kartlar modele göre filtrelenir: Nexus -> SADECE 3.0/6.0 ATA (medical); diğerleri -> sadece 1.5/2.0/2.5 ATA */
-    const visible = tiers.map((t, i) => ({ t, i })).filter(({ t }) => (isNexus ? t.nexusOnly : !t.nexusOnly));
+    const visible = tiers.map((t, i) => ({ t, i }));
     c.innerHTML = visible.map(({ t, i }) => {
       const selected = configState.tierIndex === i ? " is-selected" : "";
       const priceLabel = t.price === 0 ? dict.common.included_badge : "+" + formatPrice(t.price);
@@ -1354,10 +1370,24 @@
     }
   }
 
+  /* Solo Lounge: sadece garanti eklentisi sunulur (sade konfigürasyon).
+     Duo Plus: 2 koltuğu geçince masajlı koltuk seçeneği kalkar (kaldırıldıysa da otomatik temizlenir). */
+  function visibleAddonsFor(dict) {
+    let list = dict.configurator.addons;
+    if (configState.model === "solo-lounge") {
+      list = list.filter((a) => a.id === "warranty");
+    }
+    if (configState.model === "duo-plus" && configState.nexusSeats > 2) {
+      list = list.filter((a) => a.id !== "massage");
+      if (configState.addons.has("massage")) configState.addons.delete("massage");
+    }
+    return list;
+  }
+
   function renderConfigAddons(dict) {
     const c = document.getElementById("config-addon-grid");
     if (!c) return;
-    c.innerHTML = dict.configurator.addons.map((a) => {
+    c.innerHTML = visibleAddonsFor(dict).map((a) => {
       const selected = configState.addons.has(a.id) ? " is-selected" : "";
       return `
         <button type="button" class="config-addon-card${selected}" data-addon-id="${a.id}">
@@ -1394,7 +1424,7 @@
     params.set("interior", configState.interiorColor);
     params.set("seat", configState.seatColor);
     params.set("tier", String(configState.tierIndex));
-    if (configState.model === "nexus") params.set("seats", String(configState.nexusSeats));
+    if (SEAT_TIERS[configState.model]) params.set("seats", String(configState.nexusSeats));
     if (configState.addons.size) params.set("addons", Array.from(configState.addons).join(","));
     if (configState.discountPct) params.set("discount", String(configState.discountPct));
     if (configState.refCode) params.set("ref", configState.refCode);
@@ -1403,10 +1433,9 @@
 
   function computeSubtotal() {
     const model = MODEL_PRICING[configState.model];
-    let total = model.base + model.tiers[configState.tierIndex].price;
-    if (configState.model === "nexus") {
-      total += (configState.nexusSeats - NEXUS_BASE_SEATS) * NEXUS_SEAT_PRICE;
-    }
+    const seatTiers = SEAT_TIERS[configState.model];
+    const seatTier = seatTiers && seatTiers.find((t) => t.seats === configState.nexusSeats);
+    let total = (seatTier ? seatTier.price : model.base) + model.tiers[configState.tierIndex].price;
     configState.addons.forEach((id) => (total += ADDON_PRICING[id] || 0));
     total += STYLE_PRICING[configState.chamberStyle] || 0;
     return total;
@@ -1432,8 +1461,11 @@
       ? addonNames.map((a) => `<div>${a.name} <span style="opacity:.6">(+${formatPrice(ADDON_PRICING[a.id])})</span></div>`).join("")
       : s.none_selected;
 
-    const seatsRow = configState.model === "nexus"
-      ? `<div class="config-summary-row"><span class="label">${s.seats_label}</span><span class="value">${configState.nexusSeats}${configState.nexusSeats > NEXUS_BASE_SEATS ? " (+" + formatPrice((configState.nexusSeats - NEXUS_BASE_SEATS) * NEXUS_SEAT_PRICE) + ")" : ""}</span></div>`
+    const seatTiersForRow = SEAT_TIERS[configState.model];
+    const seatTierForRow = seatTiersForRow && seatTiersForRow.find((t) => t.seats === configState.nexusSeats);
+    const seatExtra = seatTierForRow && seatTiersForRow[0] ? seatTierForRow.price - seatTiersForRow[0].price : 0;
+    const seatsRow = seatTiersForRow
+      ? `<div class="config-summary-row"><span class="label">${s.seats_label}</span><span class="value">${configState.nexusSeats}${seatExtra > 0 ? " (+" + formatPrice(seatExtra) + ")" : ""}</span></div>`
       : "";
     const colorInfo = (dict.configurator.colors || []).find((col) => col.id === configState.color);
     const colorRow = colorInfo
@@ -1582,7 +1614,7 @@
     const seatColorInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
     const styleInfo = (dict.configurator.styles || []).find((st) => st.id === configState.chamberStyle);
     const lines = [`${s.model_label}: ${modelInfo ? modelInfo.name : ""}`];
-    if (configState.model === "nexus") lines.push(`${s.seats_label}: ${configState.nexusSeats}`);
+    if (SEAT_TIERS[configState.model]) lines.push(`${s.seats_label}: ${configState.nexusSeats}`);
     if (styleInfo) lines.push(`${s.style_label}: ${styleInfo.name}`);
     if (colorInfo) lines.push(`${s.color_label}: ${colorInfo.name}`);
     if (interiorInfo) lines.push(`${s.interior_color_label}: ${interiorInfo.name}`);
@@ -1790,7 +1822,7 @@
       [s.interior_color_label || "Interior Color", intInfo ? intInfo.name : "-"],
       [s.seat_color_label || "Seat Color", seatInfo ? seatInfo.name : "-"],
     ];
-    if (configState.model === "nexus") confRows.splice(2, 0, [s.seats_label || "Seats", String(configState.nexusSeats)]);
+    if (SEAT_TIERS[configState.model]) confRows.splice(2, 0, [s.seats_label || "Seats", String(configState.nexusSeats)]);
     confRows.push([s.addons_label || "Add-ons", addonNames.length ? addonNames.join(", ") : (s.none_selected || "None")]);
     if (configState.discountPct > 0) confRows.push([s.discount_label || "Discount", `%${configState.discountPct} (-${formatPrice(computeDiscountAmount())})`]);
     if (configState.refCode) confRows.push(["Ref", configState.refCode]);
@@ -1933,13 +1965,13 @@
         const maxTiers = MODEL_PRICING[configState.model].tiers.length;
         if (!isNaN(idx) && idx >= 0 && idx < maxTiers) configState.tierIndex = idx;
       }
-      ensureTierCompatible(false); // paylaşım linki Nexus-only kademe içeriyorsa sessizce 2.5 ATA'ya düş
+      ensureTierCompatible(); // paylaşım linki geçersiz kademe içeriyorsa sessizce 0'a düş
 
-      if (configState.model === "nexus") {
+      if (SEAT_TIERS[configState.model]) {
         const preSeats = params.get("seats");
         if (preSeats !== null) {
           const seats = parseInt(preSeats, 10);
-          if (!isNaN(seats) && seats >= NEXUS_BASE_SEATS && seats <= NEXUS_MAX_SEATS) configState.nexusSeats = seats;
+          if (SEAT_TIERS[configState.model].some((t) => t.seats === seats)) configState.nexusSeats = seats;
         }
       }
 

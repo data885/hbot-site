@@ -4,7 +4,7 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | Apex Serisi Hiperbarik Oksijen Odaları", desc: "IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları. Apex Serisi ile zirvede nefes alın." },
       technology: { title: "Teknoloji | HBOT Chamber Tech", desc: "ApexConnect, ApexOS, ApexAI, ApexSync ve ApexGuard — Apex Serisi'nin bağlı, akıllı teknoloji platformu." },
-      models: { title: "Modeller | HBOT Chamber Tech", desc: "Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad, Apex Quad-Cube ve Apex Nexus — altı farklı hiperbarik oksijen odası modeli." },
+      models: { title: "Modeller | HBOT Chamber Tech", desc: "Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad-Cube ve Apex Nexus — beş farklı hiperbarik oksijen odası modeli." },
       soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "Yatay pozisyonda tedavi için tasarlanmış tek kişilik hiperbarik oksijen odası." },
       solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "Bireysel kullanım için kompakt, tam donanımlı hiperbarik oksijen odası." },
       duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "İki kişilik paylaşımlı hiperbarik oksijen tedavisi kabini." },
@@ -82,7 +82,7 @@ const TRANSLATIONS = {
       models_teaser: {
         eyebrow: "APEX SERİSİ",
         title: "Modellerimiz",
-        subtitle: "Tek kişilik bireysel kullanımdan hastane ölçekli çoklu kabinlere kadar, ihtiyacınıza uygun altı farklı tasarım.",
+        subtitle: "Tek kişilik bireysel kullanımdan hastane ölçekli çoklu kabinlere kadar, ihtiyacınıza uygun beş farklı tasarım.",
         cta_all: "Tüm Modelleri İncele"
       },
       why: {
@@ -226,7 +226,7 @@ const TRANSLATIONS = {
       }
     },
     modelsOverview: {
-      header: { eyebrow: "APEX SERİSİ", title: "Modellerimiz", subtitle: "Tek kişilik bireysel kullanımdan hastane ölçekli çoklu kabinlere kadar altı farklı tasarım." },
+      header: { eyebrow: "APEX SERİSİ", title: "Modellerimiz", subtitle: "Tek kişilik bireysel kullanımdan hastane ölçekli çoklu kabinlere kadar beş farklı tasarım." },
       intro: "Her Apex modeli; ApexConnect™, ApexOS™, ApexAI™, ApexSync™ ve ApexGuard™ teknolojilerini standart olarak içerir. Aralarındaki fark; kapasite, pozisyon ve basınç aralığıdır.",
       compareTable: {
         title: "Modelleri Karşılaştırın",
@@ -370,7 +370,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. Kullanım Alanı",
       usage_step_note: "Yüksek basınçlı modeller yalnızca kurumsal kullanım için sunulur.",
       usage: {
-        home: { title: "Ev Tipi", desc: "Bireysel ve eş/partner kullanımı için düşük basınçlı modeller (1.5–2.5 ATA)." },
+        home: { title: "Ev Tipi", desc: "Bireysel ve eş/partner kullanımı için düşük basınçlı modeller (1.5–2.0 ATA)." },
         institutional: { title: "Kurumsal", desc: "Klinik, wellness merkezi ve hastaneler için çok kişilik, yüksek kapasiteli modeller." }
       },
       guide: {
@@ -383,7 +383,7 @@ const TRANSLATIONS = {
           { scenario: "Evde, tek başıma, yatarak tedavi almak istiyorum", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
           { scenario: "Evde, tek başıma, oturarak kullanmak istiyorum", model: "Apex Solo", modelId: "solo", usage: "home" },
           { scenario: "Eşim/partnerimle birlikte, evde kullanacağız", model: "Apex Duo", modelId: "duo", usage: "home" },
-          { scenario: "Klinik veya wellness merkezi, orta ölçekli grup", model: "Apex Quad", modelId: "quad", usage: "institutional" },
+          { scenario: "Klinik veya wellness merkezi, 2-4 kişilik kurumsal kullanım", model: "Apex Duo Plus", modelId: "duo-plus", usage: "institutional" },
           { scenario: "Kurumsal kullanım, geniş iç hacimli kabin istiyorum", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
           { scenario: "Hastane veya klinikte, çok hastalı, yüksek basınçlı tedavi", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
         ]
@@ -404,7 +404,7 @@ const TRANSLATIONS = {
         { id: "solo-lounge", name: "Apex Solo Lounge", tagline: "1 Kişi · Yatay Pozisyon" },
         { id: "solo", name: "Apex Solo", tagline: "1 Kişi · Oturma Pozisyonu" },
         { id: "duo", name: "Apex Duo", tagline: "2 Kişi · Oturma Pozisyonu" },
-        { id: "quad", name: "Apex Quad", tagline: "4 Kişi · Oturma Pozisyonu" },
+        { id: "duo-plus", name: "Apex Duo Plus", tagline: "2-4 Kişi · Kurumsal" },
         { id: "quad-cube", name: "Apex Quad-Cube", tagline: "4 Kişi · Geniş Kabin" },
         { id: "nexus", name: "Apex Nexus", tagline: "6+ Kişi · Oturma Pozisyonu" }
       ],
@@ -442,14 +442,11 @@ const TRANSLATIONS = {
       ],
       addons: [
         { id: "massage", name: "Masajlı Koltuk", desc: "Seans sırasında rahatlatıcı masaj fonksiyonlu koltuk sistemi." },
-        { id: "leather", name: "Premium Deri Döşeme", desc: "El işçiliği premium deri iç döşeme yükseltmesi." },
+        { id: "leather", name: "Birinci Sınıf İç Döşeme", desc: "El işçiliği birinci sınıf iç döşeme yükseltmesi." },
         { id: "entertainment", name: "Eğlence & Multimedya Sistemi", desc: "Dahili ekran, ses sistemi ve içerik kütüphanesi." },
         { id: "finish", name: "Özel Renk & Kaplama", desc: "Kurumsal kimliğinize özel dış kaplama rengi seçimi." },
-        { id: "uvc", name: "Gelişmiş UV-C Dezenfeksiyon Ünitesi", desc: "Seanslar arası hızlı ve otomatik UV-C dezenfeksiyonu." },
-        { id: "backup-o2", name: "Yedek Oksijen Konsantratörü", desc: "Kesintisiz tedavi için ikinci bir oksijen kaynağı." },
-        { id: "warranty", name: "Genişletilmiş Garanti (3 Yıl)", desc: "Standart garantiye ek 2 yıl daha kapsamlı koruma." },
-        { id: "install", name: "Öncelikli Kurulum & Eğitim Paketi", desc: "Hızlandırılmış kurulum ve kapsamlı personel eğitimi." },
-        { id: "playstation", name: "PlayStation 5 Oyun Konsolu", desc: "Uzun tedavi seanslarında eğlence için kabin içi ekran ve ses sistemine entegre PlayStation 5 konsolu." }
+        { id: "warranty", name: "Genişletilmiş Garanti (+1 Yıl)", desc: "Standart 1 yıllık garantiye ek 1 yıl daha kapsamlı koruma." },
+        { id: "playstation", name: "Xbox Series X Oyun Konsolu", desc: "Uzun tedavi seanslarında eğlence için kabin içi ekran ve ses sistemine entegre Xbox Series X konsolu." }
       ],
       pressure_note: "Basınç aralığı seçilen modele göre değişir.",
       pressure_nexus_only: "Sadece Nexus",
@@ -715,7 +712,7 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | Apex Series Hyperbaric Oxygen Chambers", desc: "IoT-connected, AI-powered hyperbaric oxygen chambers. Breathe at the summit with the Apex Series." },
       technology: { title: "Technology | HBOT Chamber Tech", desc: "ApexConnect, ApexOS, ApexAI, ApexSync and ApexGuard — the connected, intelligent technology platform of the Apex Series." },
-      models: { title: "Models | HBOT Chamber Tech", desc: "Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad, Apex Quad-Cube and Apex Nexus — six hyperbaric oxygen chamber models." },
+      models: { title: "Models | HBOT Chamber Tech", desc: "Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad-Cube and Apex Nexus — five hyperbaric oxygen chamber models." },
       soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "A single-person hyperbaric oxygen chamber designed for treatment in a lying position." },
       solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "A compact, fully equipped hyperbaric oxygen chamber for individual use." },
       duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "A two-person shared hyperbaric oxygen therapy chamber." },
@@ -793,7 +790,7 @@ const TRANSLATIONS = {
       models_teaser: {
         eyebrow: "APEX SERIES",
         title: "Our Models",
-        subtitle: "From individual single-person use to hospital-scale multi-seat chambers — six designs to fit your needs.",
+        subtitle: "From individual single-person use to hospital-scale multi-seat chambers — five designs to fit your needs.",
         cta_all: "Explore All Models"
       },
       why: {
@@ -937,7 +934,7 @@ const TRANSLATIONS = {
       }
     },
     modelsOverview: {
-      header: { eyebrow: "APEX SERIES", title: "Our Models", subtitle: "From individual single-person use to hospital-scale multi-seat chambers — six designs." },
+      header: { eyebrow: "APEX SERIES", title: "Our Models", subtitle: "From individual single-person use to hospital-scale multi-seat chambers — five designs." },
       intro: "Every Apex model includes ApexConnect™, ApexOS™, ApexAI™, ApexSync™ and ApexGuard™ as standard. What differs between them is capacity, position and pressure range.",
       compareTable: {
         title: "Compare Models",
@@ -1081,7 +1078,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. Intended Use",
       usage_step_note: "High-pressure models are only offered for institutional use.",
       usage: {
-        home: { title: "Home Use", desc: "Low-pressure models for individual and couple use (1.5–2.5 ATA)." },
+        home: { title: "Home Use", desc: "Low-pressure models for individual and couple use (1.5–2.0 ATA)." },
         institutional: { title: "Institutional", desc: "Multi-seat, high-capacity models for clinics, wellness centers and hospitals." }
       },
       guide: {
@@ -1094,7 +1091,7 @@ const TRANSLATIONS = {
           { scenario: "At home, alone, I want lying-position treatment", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
           { scenario: "At home, alone, I want to sit during sessions", model: "Apex Solo", modelId: "solo", usage: "home" },
           { scenario: "My partner and I will use it together, at home", model: "Apex Duo", modelId: "duo", usage: "home" },
-          { scenario: "Clinic or wellness center, medium-sized group", model: "Apex Quad", modelId: "quad", usage: "institutional" },
+          { scenario: "Clinic or wellness center, 2-4 person institutional use", model: "Apex Duo Plus", modelId: "duo-plus", usage: "institutional" },
           { scenario: "Institutional use, want a spacious interior chamber", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
           { scenario: "In a hospital or clinic, multiple patients, high pressure", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
         ]
@@ -1115,7 +1112,7 @@ const TRANSLATIONS = {
         { id: "solo-lounge", name: "Apex Solo Lounge", tagline: "1 Person · Lying Position" },
         { id: "solo", name: "Apex Solo", tagline: "1 Person · Sitting Position" },
         { id: "duo", name: "Apex Duo", tagline: "2 People · Sitting Position" },
-        { id: "quad", name: "Apex Quad", tagline: "4 People · Sitting Position" },
+        { id: "duo-plus", name: "Apex Duo Plus", tagline: "2-4 People · Institutional" },
         { id: "quad-cube", name: "Apex Quad-Cube", tagline: "4 People · Spacious Cabin" },
         { id: "nexus", name: "Apex Nexus", tagline: "6+ People · Sitting Position" }
       ],
@@ -1153,14 +1150,11 @@ const TRANSLATIONS = {
       ],
       addons: [
         { id: "massage", name: "Massage Seat", desc: "A soothing massage-function seat system during sessions." },
-        { id: "leather", name: "Premium Leather Upholstery", desc: "A hand-crafted premium leather interior upgrade." },
+        { id: "leather", name: "First-Class Interior Upholstery", desc: "A hand-crafted first-class interior upgrade." },
         { id: "entertainment", name: "Entertainment & Multimedia System", desc: "Built-in screen, sound system and content library." },
         { id: "finish", name: "Custom Color & Finish", desc: "A custom exterior finish color to match your brand identity." },
-        { id: "uvc", name: "Advanced UV-C Disinfection Unit", desc: "Fast, automatic UV-C disinfection between sessions." },
-        { id: "backup-o2", name: "Backup Oxygen Concentrator", desc: "A secondary oxygen source for uninterrupted treatment." },
-        { id: "warranty", name: "Extended Warranty (3 Years)", desc: "2 additional years of comprehensive coverage beyond the standard warranty." },
-        { id: "install", name: "Priority Installation & Training Package", desc: "Expedited installation and comprehensive staff training." },
-        { id: "playstation", name: "PlayStation 5 Gaming Console", desc: "A PlayStation 5 console integrated with the in-chamber screen and sound system for entertainment during longer sessions." }
+        { id: "warranty", name: "Extended Warranty (+1 Year)", desc: "1 additional year of comprehensive coverage beyond the standard 1-year warranty." },
+        { id: "playstation", name: "Xbox Series X Gaming Console", desc: "An Xbox Series X console integrated with the in-chamber screen and sound system for entertainment during longer sessions." }
       ],
       pressure_note: "The pressure range depends on the model you select.",
       pressure_nexus_only: "Nexus only",
@@ -1426,7 +1420,7 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | Гипербарические кислородные камеры серии Apex", desc: "Гипербарические кислородные камеры с IoT-подключением и поддержкой ИИ. Дышите на вершине с серией Apex." },
       technology: { title: "Технологии | HBOT Chamber Tech", desc: "ApexConnect, ApexOS, ApexAI, ApexSync и ApexGuard — подключённая интеллектуальная технологическая платформа серии Apex." },
-      models: { title: "Модели | HBOT Chamber Tech", desc: "Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad, Apex Quad-Cube и Apex Nexus — шесть моделей гипербарических кислородных камер." },
+      models: { title: "Модели | HBOT Chamber Tech", desc: "Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad-Cube и Apex Nexus — пять моделей гипербарических кислородных камер." },
       soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "Одноместная гипербарическая кислородная камера для лечения в положении лёжа." },
       solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "Компактная, полностью укомплектованная камера для индивидуального использования." },
       duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "Двухместная камера для совместной гипербарической оксигенотерапии." },
@@ -1504,7 +1498,7 @@ const TRANSLATIONS = {
       models_teaser: {
         eyebrow: "СЕРИЯ APEX",
         title: "Наши модели",
-        subtitle: "От индивидуального использования одним человеком до многоместных камер госпитального масштаба — шесть моделей под ваши задачи.",
+        subtitle: "От индивидуального использования одним человеком до многоместных камер госпитального масштаба — пять моделей под ваши задачи.",
         cta_all: "Изучить все модели"
       },
       why: {
@@ -1648,7 +1642,7 @@ const TRANSLATIONS = {
       }
     },
     modelsOverview: {
-      header: { eyebrow: "СЕРИЯ APEX", title: "Наши модели", subtitle: "От индивидуального использования до многоместных камер госпитального масштаба — шесть моделей." },
+      header: { eyebrow: "СЕРИЯ APEX", title: "Наши модели", subtitle: "От индивидуального использования до многоместных камер госпитального масштаба — пять моделей." },
       intro: "Каждая модель Apex включает в стандартной комплектации ApexConnect™, ApexOS™, ApexAI™, ApexSync™ и ApexGuard™. Различия между ними — во вместимости, положении и диапазоне давления.",
       compareTable: {
         title: "Сравните модели",
@@ -1792,7 +1786,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. Сфера применения",
       usage_step_note: "Камеры высокого давления предлагаются только для учрежденческого использования.",
       usage: {
-        home: { title: "Домашнее использование", desc: "Модели низкого давления для индивидуального использования и для пар (1,5–2,5 ATA)." },
+        home: { title: "Домашнее использование", desc: "Модели низкого давления для индивидуального использования и для пар (1,5–2,0 ATA)." },
         institutional: { title: "Учрежденческое", desc: "Многоместные модели повышенной вместимости для клиник, велнес-центров и больниц." }
       },
       guide: {
@@ -1805,7 +1799,7 @@ const TRANSLATIONS = {
           { scenario: "Дома, один, хочу лежачее положение при сеансах", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
           { scenario: "Дома, один, хочу сидеть во время сеансов", model: "Apex Solo", modelId: "solo", usage: "home" },
           { scenario: "Будем использовать вместе с партнёром, дома", model: "Apex Duo", modelId: "duo", usage: "home" },
-          { scenario: "Клиника или велнес-центр, группа среднего размера", model: "Apex Quad", modelId: "quad", usage: "institutional" },
+          { scenario: "Клиника или велнес-центр, для учреждений на 2-4 человека", model: "Apex Duo Plus", modelId: "duo-plus", usage: "institutional" },
           { scenario: "Учрежденческое использование, нужна просторная камера", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
           { scenario: "В больнице или клинике, несколько пациентов, высокое давление", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
         ]
@@ -1826,7 +1820,7 @@ const TRANSLATIONS = {
         { id: "solo-lounge", name: "Apex Solo Lounge", tagline: "1 человек · Положение лёжа" },
         { id: "solo", name: "Apex Solo", tagline: "1 человек · Положение сидя" },
         { id: "duo", name: "Apex Duo", tagline: "2 человека · Положение сидя" },
-        { id: "quad", name: "Apex Quad", tagline: "4 человека · Положение сидя" },
+        { id: "duo-plus", name: "Apex Duo Plus", tagline: "2-4 человека · Для учреждений" },
         { id: "quad-cube", name: "Apex Quad-Cube", tagline: "4 человека · Просторная кабина" },
         { id: "nexus", name: "Apex Nexus", tagline: "6+ человек · Положение сидя" }
       ],
@@ -1864,14 +1858,11 @@ const TRANSLATIONS = {
       ],
       addons: [
         { id: "massage", name: "Массажное кресло", desc: "Успокаивающая массажная функция кресла во время сеансов." },
-        { id: "leather", name: "Премиальная кожаная обивка", desc: "Улучшение интерьера премиальной кожей ручной работы." },
+        { id: "leather", name: "Отделка интерьера первого класса", desc: "Улучшение интерьера отделкой первого класса ручной работы." },
         { id: "entertainment", name: "Развлекательная мультимедийная система", desc: "Встроенный экран, звуковая система и библиотека контента." },
         { id: "finish", name: "Индивидуальный цвет и отделка", desc: "Индивидуальный цвет внешней отделки под ваш фирменный стиль." },
-        { id: "uvc", name: "Продвинутый блок UV-C дезинфекции", desc: "Быстрая автоматическая UV-C дезинфекция между сеансами." },
-        { id: "backup-o2", name: "Резервный кислородный концентратор", desc: "Дополнительный источник кислорода для непрерывного лечения." },
-        { id: "warranty", name: "Расширенная гарантия (3 года)", desc: "Дополнительные 2 года комплексной защиты сверх стандартной гарантии." },
-        { id: "install", name: "Пакет приоритетной установки и обучения", desc: "Ускоренная установка и комплексное обучение персонала." },
-        { id: "playstation", name: "Игровая консоль PlayStation 5", desc: "Консоль PlayStation 5, интегрированная с экраном и звуковой системой камеры, для развлечения во время длительных сеансов." }
+        { id: "warranty", name: "Расширенная гарантия (+1 год)", desc: "Дополнительный 1 год комплексной защиты сверх стандартной 1-летней гарантии." },
+        { id: "playstation", name: "Игровая консоль Xbox Series X", desc: "Консоль Xbox Series X, интегрированная с экраном и звуковой системой камеры, для развлечения во время длительных сеансов." }
       ],
       pressure_note: "Диапазон давления зависит от выбранной модели.",
       pressure_nexus_only: "Только Nexus",
@@ -2137,7 +2128,7 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | غرف الأكسجين عالي الضغط من سلسلة Apex", desc: "غرف أكسجين عالي الضغط متصلة بإنترنت الأشياء ومدعومة بالذكاء الاصطناعي. تنفّس في القمة مع سلسلة Apex." },
       technology: { title: "التقنية | HBOT Chamber Tech", desc: "ApexConnect و ApexOS و ApexAI و ApexSync و ApexGuard — منصة التقنية الذكية والمتصلة لسلسلة Apex." },
-      models: { title: "الموديلات | HBOT Chamber Tech", desc: "Apex Solo Lounge و Apex Solo و Apex Duo و Apex Quad و Apex Quad-Cube و Apex Nexus — ستة موديلات لغرف الأكسجين عالي الضغط." },
+      models: { title: "الموديلات | HBOT Chamber Tech", desc: "Apex Solo Lounge و Apex Solo و Apex Duo و Apex Quad-Cube و Apex Nexus — خمسة موديلات لغرف الأكسجين عالي الضغط." },
       soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لشخص واحد مصممة للعلاج في وضعية الاستلقاء." },
       solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "غرفة مدمجة وكاملة التجهيز للاستخدام الفردي." },
       duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "غرفة علاج مشترك بالأكسجين عالي الضغط لشخصين." },
@@ -2215,7 +2206,7 @@ const TRANSLATIONS = {
       models_teaser: {
         eyebrow: "سلسلة APEX",
         title: "موديلاتنا",
-        subtitle: "من الاستخدام الفردي لشخص واحد إلى الغرف متعددة المقاعد بحجم المستشفيات — ستة تصاميم تناسب احتياجاتك.",
+        subtitle: "من الاستخدام الفردي لشخص واحد إلى الغرف متعددة المقاعد بحجم المستشفيات — خمسة تصاميم تناسب احتياجاتك.",
         cta_all: "استكشف جميع الموديلات"
       },
       why: {
@@ -2359,7 +2350,7 @@ const TRANSLATIONS = {
       }
     },
     modelsOverview: {
-      header: { eyebrow: "سلسلة APEX", title: "موديلاتنا", subtitle: "من الاستخدام الفردي إلى الغرف متعددة المقاعد بحجم المستشفيات — ستة تصاميم." },
+      header: { eyebrow: "سلسلة APEX", title: "موديلاتنا", subtitle: "من الاستخدام الفردي إلى الغرف متعددة المقاعد بحجم المستشفيات — خمسة تصاميم." },
       intro: "تشمل كل موديلات Apex بشكل معياري: ApexConnect™ و ApexOS™ و ApexAI™ و ApexSync™ و ApexGuard™. يكمن الاختلاف بينها في السعة والوضعية ونطاق الضغط.",
       compareTable: {
         title: "قارن الموديلات",
@@ -2503,7 +2494,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. مجال الاستخدام",
       usage_step_note: "الموديلات عالية الضغط تُقدَّم فقط للاستخدام المؤسسي.",
       usage: {
-        home: { title: "استخدام منزلي", desc: "موديلات منخفضة الضغط للاستخدام الفردي وللأزواج (1.5–2.5 ATA)." },
+        home: { title: "استخدام منزلي", desc: "موديلات منخفضة الضغط للاستخدام الفردي وللأزواج (1.5–2.0 ATA)." },
         institutional: { title: "مؤسسي", desc: "موديلات متعددة المقاعد وعالية السعة للعيادات ومراكز العافية والمستشفيات." }
       },
       guide: {
@@ -2516,7 +2507,7 @@ const TRANSLATIONS = {
           { scenario: "في المنزل، بمفردي، أريد العلاج في وضعية الاستلقاء", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
           { scenario: "في المنزل، بمفردي، أريد الجلوس أثناء الجلسات", model: "Apex Solo", modelId: "solo", usage: "home" },
           { scenario: "سأستخدمها مع شريكي، في المنزل", model: "Apex Duo", modelId: "duo", usage: "home" },
-          { scenario: "عيادة أو مركز عافية، مجموعة متوسطة الحجم", model: "Apex Quad", modelId: "quad", usage: "institutional" },
+          { scenario: "عيادة أو مركز عافية، استخدام مؤسسي لـ 2-4 أشخاص", model: "Apex Duo Plus", modelId: "duo-plus", usage: "institutional" },
           { scenario: "استخدام مؤسسي، أريد كابينة بمساحة داخلية واسعة", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
           { scenario: "في مستشفى أو عيادة، مرضى متعددون، ضغط عالٍ", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
         ]
@@ -2537,7 +2528,7 @@ const TRANSLATIONS = {
         { id: "solo-lounge", name: "Apex Solo Lounge", tagline: "شخص واحد · وضعية الاستلقاء" },
         { id: "solo", name: "Apex Solo", tagline: "شخص واحد · وضعية الجلوس" },
         { id: "duo", name: "Apex Duo", tagline: "شخصان · وضعية الجلوس" },
-        { id: "quad", name: "Apex Quad", tagline: "4 أشخاص · وضعية الجلوس" },
+        { id: "duo-plus", name: "Apex Duo Plus", tagline: "2-4 أشخاص · للمؤسسات" },
         { id: "quad-cube", name: "Apex Quad-Cube", tagline: "4 أشخاص · مقصورة واسعة" },
         { id: "nexus", name: "Apex Nexus", tagline: "6+ أشخاص · وضعية الجلوس" }
       ],
@@ -2575,14 +2566,11 @@ const TRANSLATIONS = {
       ],
       addons: [
         { id: "massage", name: "مقعد بالمساج", desc: "نظام مقعد بوظيفة تدليك مريحة أثناء الجلسات." },
-        { id: "leather", name: "تنجيد جلدي فاخر", desc: "ترقية داخلية بجلد فاخر مصنوع يدوياً." },
+        { id: "leather", name: "تنجيد داخلي درجة أولى", desc: "ترقية داخلية بتنجيد درجة أولى مصنوع يدوياً." },
         { id: "entertainment", name: "نظام ترفيه ووسائط متعددة", desc: "شاشة مدمجة ونظام صوت ومكتبة محتوى." },
         { id: "finish", name: "لون وتشطيب مخصص", desc: "لون تشطيب خارجي مخصص يتناسب مع هويتك المؤسسية." },
-        { id: "uvc", name: "وحدة تعقيم UV-C متقدمة", desc: "تعقيم UV-C سريع وتلقائي بين الجلسات." },
-        { id: "backup-o2", name: "مركّز أكسجين احتياطي", desc: "مصدر أكسجين ثانٍ لعلاج بلا انقطاع." },
-        { id: "warranty", name: "ضمان ممتد (3 سنوات)", desc: "سنتان إضافيتان من التغطية الشاملة بعد الضمان القياسي." },
-        { id: "install", name: "باقة تركيب وتدريب ذات أولوية", desc: "تركيب سريع وتدريب شامل للموظفين." },
-        { id: "playstation", name: "جهاز ألعاب PlayStation 5", desc: "جهاز PlayStation 5 متكامل مع شاشة الكابينة ونظام الصوت للترفيه خلال الجلسات الطويلة." }
+        { id: "warranty", name: "ضمان ممتد (+سنة واحدة)", desc: "سنة إضافية واحدة من التغطية الشاملة بعد الضمان القياسي لمدة سنة." },
+        { id: "playstation", name: "جهاز ألعاب Xbox Series X", desc: "جهاز Xbox Series X متكامل مع شاشة الكابينة ونظام الصوت للترفيه خلال الجلسات الطويلة." }
       ],
       pressure_note: "يعتمد نطاق الضغط على الموديل المختار.",
       pressure_nexus_only: "Nexus فقط",
