@@ -8,7 +8,6 @@ const TRANSLATIONS = {
       soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "Yatay pozisyonda tedavi için tasarlanmış tek kişilik hiperbarik oksijen odası." },
       solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "Bireysel kullanım için kompakt, tam donanımlı hiperbarik oksijen odası." },
       duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "İki kişilik paylaşımlı hiperbarik oksijen tedavisi kabini." },
-      quad: { title: "Apex Quad | HBOT Chamber Tech", desc: "Klinikler için dört kişilik hiperbarik oksijen odası." },
       quadCube: { title: "Apex Quad-Cube | HBOT Chamber Tech", desc: "Dört kişilik, geniş iç hacimli küp tasarım hiperbarik oksijen odası." },
       nexus: { title: "Apex Nexus | HBOT Chamber Tech", desc: "Hastane sınıfı, altı ve üzeri kişilik büyük kapasiteli hiperbarik oksijen odası." },
       hbotInfo: { title: "HBOT Nedir? | HBOT Chamber Tech", desc: "Hiperbarik oksijen tedavisi (HBOT) nedir, ne için kullanılır ve hangi durumlarda uygulanır." },
@@ -28,7 +27,6 @@ const TRANSLATIONS = {
         soloLounge: "Apex Solo Lounge",
         solo: "Apex Solo",
         duo: "Apex Duo",
-        quad: "Apex Quad",
         quadCube: "Apex Quad-Cube",
         nexus: "Apex Nexus",
         all_link: "Tüm Modeller"
@@ -45,6 +43,11 @@ const TRANSLATIONS = {
         title: "Size Uygun Apex Modelini Birlikte Bulalım",
         subtitle: "Modeli, basınç seviyesini ve ek özellikleri seçin — anında fiyat tahmini alın.",
         button: "Konfigüratörü Başlat"
+      },
+      faq_teaser: {
+        title: "Aklınıza takılan bir soru mu var?",
+        subtitle: "Sıkça sorulan soruların tamamını inceleyin.",
+        cta: "Sıkça Sorulan Sorular"
       },
       view_all: "Tümünü Gör",
       learn_more: "Detaylı Bilgi",
@@ -255,7 +258,6 @@ const TRANSLATIONS = {
       soloLounge: { title: "Apex Solo Lounge", tagline: "1 Kişi · Yatay Pozisyon", desc: "Yatay pozisyonda tedavi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiş, tam donanımlı kabin." },
       solo: { title: "Apex Solo", tagline: "1 Kişi · Oturma Pozisyonu", desc: "Bireysel hiperbarik oksijen tedavisi için tasarlanmış kompakt, şık ve tam donanımlı kabin." },
       duo: { title: "Apex Duo", tagline: "2 Kişi · Oturma Pozisyonu", desc: "Çift koltuklu, panoramik camlı kabin — eşler, partnerler veya hasta-refakatçi kullanımı için." },
-      quad: { title: "Apex Quad", tagline: "4 Kişi · Oturma Pozisyonu", desc: "Klinikler ve ticari wellness merkezleri için entegre kontrol panelli, orta ölçekli çok koltuklu kabin." },
       quadCube: { title: "Apex Quad-Cube", tagline: "4 Kişi · Geniş Kabin", desc: "Geniş iç hacimli küp tasarımıyla dört kişilik premium kabin — kapitone deri iç mekân ve LED aydınlatma." },
       nexus: { title: "Apex Nexus", tagline: "6+ Kişi · Oturma Pozisyonu", desc: "Sağlık kurumları için hastane sınıfı, büyük kapasiteli, modüler genişlemeye hazır kabin." }
     },
@@ -307,19 +309,6 @@ const TRANSLATIONS = {
         { label: "Güvenlik", value: "Acil durum valf sistemi" },
         { label: "Kontrol", value: "Çift kontrol sistemi" },
         { label: "Pencere", value: "Panoramik" }
-      ]
-    },
-    modelQuad: {
-      breadcrumb: "Apex Quad", eyebrow: "APEX QUAD", title: "Apex Quad",
-      tagline: "Klinikler ve wellness merkezleri için orta ölçekli çözüm.",
-      overview_text: "Entegre kontrol panelli, orta ölçekli çok koltuklu kabin. Klinikler ve ticari wellness merkezleri için inşa edilmiştir.",
-      specs: [
-        { label: "Kapasite", value: "4 kişi (oturma)" },
-        { label: "Basınç Aralığı", value: "2.5 – 6.0 ATA" },
-        { label: "Oksijen Saflığı", value: "%93–95" },
-        { label: "Güvenlik", value: "Acil durum valf sistemi" },
-        { label: "İzleme", value: "Çoklu kullanıcı izleme" },
-        { label: "Kontrol", value: "Harici kontrol paneli" }
       ]
     },
     modelQuadCube: {
@@ -721,10 +710,10 @@ const TRANSLATIONS = {
           {
             title: "Apex Modelleri",
             items: [
-              { q: "Hangi Apex modelleri bulunmaktadır?", a: "Apex ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nApex Solo — Tek kullanıcı kapasiteli hiperbarik sistemdir. Daha kompakt alanlar ve bireysel kullanım düzeni için tasarlanmıştır.\n\nApex Duo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nApex Quad-Cube — Klinik, hastane ve profesyonel işletmeler için geliştirilen çok kullanıcılı, küp formunda geniş hacimli hiperbarik sistemdir. Kapasitesi seçilen yerleşim düzenine ve proje konfigürasyonuna göre belirlenir." },
-              { q: "Apex Solo kimler için uygundur?", a: "Apex Solo, tek kullanıcılı çalışma düzeni isteyen işletmeler için geliştirilmiştir. Kompakt yapısı sayesinde klinikler, spor merkezleri, wellness merkezleri, oteller ve özel kullanım alanları için değerlendirilebilir.\n\nKesin kullanım koşulları, ürünün sınıflandırmasına ve kurulum yapılacak ülkenin mevzuatına göre belirlenir." },
+              { q: "Hangi Apex modelleri bulunmaktadır?", a: "Apex ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nApex Solo Lounge — Yatay pozisyonda tedavi ihtiyacı olan kullanıcılar için geliştirilmiş, tek kullanıcılı sistemdir.\n\nApex Solo — Oturur pozisyonda, tek kullanıcı kapasiteli, kompakt hiperbarik sistemdir. Hem bireysel/ev hem de işletme kullanımı için tasarlanmıştır.\n\nApex Duo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nApex Quad-Cube — Klinik, hastane ve profesyonel işletmeler için geliştirilen, 4 kullanıcı kapasiteli, küp formunda geniş hacimli hiperbarik sistemdir.\n\nApex Nexus — Hastane sınıfı, 6 kullanıcıdan başlayıp 12 kullanıcıya kadar genişleyebilen, büyük kapasiteli kurumsal sistemdir." },
+              { q: "Apex Solo kimler için uygundur?", a: "Apex Solo, hem bireysel/ev kullanımı hem de tek kullanıcılı çalışma düzeni isteyen işletmeler için geliştirilmiştir. Kompakt yapısı sayesinde evler, klinikler, spor merkezleri, wellness merkezleri ve oteller için değerlendirilebilir.\n\nKesin kullanım koşulları, ürünün sınıflandırmasına ve kurulum yapılacak ülkenin mevzuatına göre belirlenir." },
               { q: "Apex Duo kaç kişiliktir?", a: "Apex Duo, aynı seansta iki kullanıcının bulunabileceği şekilde tasarlanmıştır. Koltuk yapısı, iç donanım ve oturma düzeni sipariş edilen konfigürasyona göre değişebilir." },
-              { q: "Çok kişilik Apex modeli kaç kullanıcı kapasitelidir?", a: "Çok kişilik modelin standart kapasitesi 6 kişiliktir, opsiyonel kapasitesi ise 12 kişiye kadar (2'şer koltuk artışlarla) planlanmaktadır.\n\nKesin kapasite aşağıdaki unsurlara göre belirlenir:", list: ["Kabin ölçüsü", "Koltuk yerleşimi", "Kullanıcıların hareket alanı", "Oksijen sistemi kapasitesi", "İşletme protokolü", "Yerel güvenlik ve ruhsatlandırma şartları"], aAfter: "Her opsiyon, güvenlik değerlendirmesi ve teknik uygunluk sonrasında projeye eklenir." },
+              { q: "Çok kişilik Apex modeli kaç kullanıcı kapasitelidir?", a: "Çok kullanıcılı Apex modelleri 4 kişilik Apex Quad-Cube ile başlar. Hastane sınıfı Apex Nexus modelinde ise standart kapasite 6 kişidir ve opsiyonel olarak 12 kişiye kadar (2'şer koltuk artışlarla) genişletilebilir.\n\nKesin kapasite aşağıdaki unsurlara göre belirlenir:", list: ["Kabin ölçüsü", "Koltuk yerleşimi", "Kullanıcıların hareket alanı", "Oksijen sistemi kapasitesi", "İşletme protokolü", "Yerel güvenlik ve ruhsatlandırma şartları"], aAfter: "Her opsiyon, güvenlik değerlendirmesi ve teknik uygunluk sonrasında projeye eklenir." },
               { q: "Cihazların ölçüleri nelerdir?", a: "Her Apex modeli farklı dış ölçülere ve iç kullanım hacmine sahiptir. Teknik ürün sayfalarında aşağıdaki bilgiler ayrı ayrı gösterilir:", list: ["Dış ölçüler", "İç kullanım ölçüleri", "Kapı açıklığı", "Toplam ağırlık", "Kullanıcı kapasitesi", "Minimum kurulum alanı", "Teknik servis erişim mesafesi"], aAfter: "Özel ölçü talepleri, mühendislik değerlendirmesinin ardından projelendirilebilir." }
             ]
           },
@@ -828,7 +817,7 @@ const TRANSLATIONS = {
           {
             title: "Sipariş, Fiyat ve Teslimat",
             items: [
-              { q: "Apex hiperbarik sistemlerinin fiyatı nedir?", a: "Fiyatlar aşağıdaki unsurlara göre değişir:", list: ["Model", "Kullanıcı kapasitesi", "Kabin ölçüsü", "Çalışma basıncı", "Oksijen sistemi", "Kompresör sistemi", "İç donanım", "Dijital özellikler", "Kişiselleştirme", "Nakliye", "Kurulum ülkesi", "Eğitim ve servis paketi"], aAfter: "Bu nedenle her proje için ihtiyaç analizi sonrasında özel teklif hazırlanır. Konfigüratörden alacağınız fiyat teklifleri yalnızca 15 gün geçerlidir ve FOB fiyatıdır." },
+              { q: "Apex hiperbarik sistemlerinin fiyatı nedir?", a: "Cihaz fiyatı aşağıdaki unsurlara göre değişir (nakliye ve kurulum bu fiyata dahil değildir, ayrı kalemler olarak teklif edilir):", list: ["Model", "Kullanıcı kapasitesi", "Kabin ölçüsü", "Çalışma basıncı", "Oksijen sistemi", "Kompresör sistemi", "İç donanım", "Dijital özellikler", "Kişiselleştirme", "Eğitim ve servis paketi"], aAfter: "Bu nedenle her proje için ihtiyaç analizi sonrasında özel teklif hazırlanır. Konfigüratörden alacağınız fiyat teklifleri yalnızca 15 gün geçerlidir ve FOB fiyatıdır." },
               { q: "Teklif almak için hangi bilgiler gereklidir?", a: "Teklif hazırlayabilmemiz için aşağıdaki bilgileri paylaşmanız yeterlidir:", list: ["Adınız Soyadınız veya şirketiniz", "Ülke ve şehir", "Kullanım amacı", "İlgilendiğiniz Apex modeli", "Kullanıcı kapasitesi", "Kurulum alanının ölçüleri", "İstenen özellikler", "Planlanan açılış veya teslim tarihi", "İletişim bilgileriniz"], aAfter: "Teknik ekibimiz bilgileri değerlendirdikten sonra sizinle iletişime geçer." },
               { q: "Üretim süresi ne kadardır?", a: "Üretim süresi modele, sipariş yoğunluğuna ve kişiselleştirme taleplerine göre değişir. Modele göre farklılık gösterip 10 haftadan başlar.\n\nKesin teslim takvimi sipariş onayı sırasında bildirilir." },
               { q: "Uluslararası teslimat yapıyor musunuz?", a: "Evet. Uygun lojistik ve teknik koşulların sağlanabildiği ülkelere uluslararası teslimat yapılabilir. Teklif kapsamında aşağıdaki hizmetler ayrı ayrı planlanabilir:", list: ["Uluslararası taşıma", "Nakliye sigortası", "Gümrük dokümantasyonu", "Yerinde kurulum", "Devreye alma", "Personel eğitimi", "Satış sonrası teknik destek"], aAfter: "İthalat izinleri ve yerel ruhsatlandırma koşulları alıcı ülkeye göre değişebilir." },
@@ -840,7 +829,6 @@ const TRANSLATIONS = {
           {
             title: "Sertifikalar ve Uygunluk",
             items: [
-              { q: "Apex sistemleri hangi standartlara uygundur?", a: "Apex Serisi; EN 14931 (Medikal Kabin Dizayn Standardı), EN 16081 (Medikal Kabin Yangın Sistemi), NFPA 99 (Amerikan Yangın Sistemi Standardı), ISO 9001 (Kalite Standardı) ve EN 13445 + PED 2014/68/EU (Basınçlı Ekipman Direktifi) standartlarına uygun olarak geliştirilir.\n\nHer model için geçerli standartlar, testler ve uygunluk belgeleri ürünün teknik dokümanında belirtilir. Yalnızca tamamlanmış ve doğrulanabilir belgeler geçerli ürün belgesi olarak sunulur." },
               { q: "Cihazlarda CE işareti bulunuyor mu?", a: "CE durumu, ürün modeline ve ilgili mevzuat kapsamına göre açıklanır. CE işareti tek başına ürünün bütün kullanım amaçları için medikal cihaz olduğu anlamına gelmez. Uygunluk beyanında ilgili mevzuat, ürün sınıfı, kullanım amacı ve üretici bilgileri açıkça belirtilmelidir." },
               { q: "Sertifikaları inceleyebilir miyim?", a: "Uygunluk belgeleri, test raporları ve teknik dokümanlar; ürün modeli, hedef ülke ve ticari süreç dikkate alınarak talep üzerine paylaşılabilir." }
             ]
@@ -859,7 +847,6 @@ const TRANSLATIONS = {
       soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "A single-person hyperbaric oxygen chamber designed for treatment in a lying position." },
       solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "A compact, fully equipped hyperbaric oxygen chamber for individual use." },
       duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "A two-person shared hyperbaric oxygen therapy chamber." },
-      quad: { title: "Apex Quad | HBOT Chamber Tech", desc: "A four-person hyperbaric oxygen chamber for clinics." },
       quadCube: { title: "Apex Quad-Cube | HBOT Chamber Tech", desc: "A four-person, spacious cube-design hyperbaric oxygen chamber." },
       nexus: { title: "Apex Nexus | HBOT Chamber Tech", desc: "A hospital-grade, large-capacity hyperbaric oxygen chamber for six or more people." },
       hbotInfo: { title: "What Is HBOT? | HBOT Chamber Tech", desc: "What is hyperbaric oxygen therapy (HBOT), what is it used for, and in which conditions is it applied." },
@@ -879,7 +866,6 @@ const TRANSLATIONS = {
         soloLounge: "Apex Solo Lounge",
         solo: "Apex Solo",
         duo: "Apex Duo",
-        quad: "Apex Quad",
         quadCube: "Apex Quad-Cube",
         nexus: "Apex Nexus",
         all_link: "All Models"
@@ -896,6 +882,11 @@ const TRANSLATIONS = {
         title: "Let's Find Your Ideal Apex Model Together",
         subtitle: "Choose the model, pressure level and add-ons — get an instant price estimate.",
         button: "Start the Configurator"
+      },
+      faq_teaser: {
+        title: "Have a question in mind?",
+        subtitle: "Browse the full list of frequently asked questions.",
+        cta: "Frequently Asked Questions"
       },
       view_all: "View All",
       learn_more: "Learn More",
@@ -1106,7 +1097,6 @@ const TRANSLATIONS = {
       soloLounge: { title: "Apex Solo Lounge", tagline: "1 Person · Lying Position", desc: "A fully equipped chamber developed specifically for users who need treatment in a lying position." },
       solo: { title: "Apex Solo", tagline: "1 Person · Sitting Position", desc: "A compact, elegant, fully equipped chamber designed for individual hyperbaric oxygen therapy." },
       duo: { title: "Apex Duo", tagline: "2 People · Sitting Position", desc: "A dual-seat, panoramic-window chamber — for couples, partners, or patient-companion use." },
-      quad: { title: "Apex Quad", tagline: "4 People · Sitting Position", desc: "A mid-scale, multi-seat chamber with an integrated control panel, built for clinics and commercial wellness centers." },
       quadCube: { title: "Apex Quad-Cube", tagline: "4 People · Spacious Cabin", desc: "A four-person premium cabin with a spacious cube-design interior — quilted leather upholstery and LED ambient lighting." },
       nexus: { title: "Apex Nexus", tagline: "6+ People · Sitting Position", desc: "A hospital-grade, large-capacity chamber with modular expansion, built for medical institutions." }
     },
@@ -1158,19 +1148,6 @@ const TRANSLATIONS = {
         { label: "Safety", value: "Emergency valve system" },
         { label: "Control", value: "Dual control system" },
         { label: "Window", value: "Panoramic" }
-      ]
-    },
-    modelQuad: {
-      breadcrumb: "Apex Quad", eyebrow: "APEX QUAD", title: "Apex Quad",
-      tagline: "A mid-scale solution for clinics and wellness centers.",
-      overview_text: "A mid-scale, multi-seat chamber with an integrated control panel. Built for clinics and commercial wellness facilities.",
-      specs: [
-        { label: "Capacity", value: "4 people (sitting)" },
-        { label: "Pressure Range", value: "2.5 – 6.0 ATA" },
-        { label: "Oxygen Purity", value: "93–95%" },
-        { label: "Safety", value: "Emergency valve system" },
-        { label: "Monitoring", value: "Multi-user monitoring" },
-        { label: "Control", value: "External control panel" }
       ]
     },
     modelQuadCube: {
@@ -1572,10 +1549,10 @@ const TRANSLATIONS = {
           {
             title: "Apex Models",
             items: [
-              { q: "Which Apex models are available?", a: "The Apex product family is developed for different user capacities and use cases.\n\nApex Solo — A single-user hyperbaric system. Designed for more compact spaces and individual use.\n\nApex Duo — A system with a spacious interior that can accommodate two users in the same session.\n\nApex Quad-Cube — A multi-user, cube-shaped, large-volume hyperbaric system developed for clinics, hospitals and professional operators. Its capacity is determined by the selected seating layout and project configuration." },
-              { q: "Who is Apex Solo suitable for?", a: "Apex Solo is developed for operators seeking a single-user setup. Thanks to its compact structure, it can be considered for clinics, sports centers, wellness centers, hotels and private-use settings.\n\nThe exact conditions of use are determined by the product's classification and the regulations of the country of installation." },
+              { q: "Which Apex models are available?", a: "The Apex product family is developed for different user capacities and use cases.\n\nApex Solo Lounge — A single-user system developed for users who need treatment in a lying position.\n\nApex Solo — A compact, single-user hyperbaric system used in a sitting position. Designed for both individual/home use and business use.\n\nApex Duo — A system with a spacious interior that can accommodate two users in the same session.\n\nApex Quad-Cube — A 4-user, cube-shaped, large-volume hyperbaric system developed for clinics, hospitals and professional operators.\n\nApex Nexus — A hospital-grade, large-capacity institutional system starting at 6 users and expandable up to 12." },
+              { q: "Who is Apex Solo suitable for?", a: "Apex Solo is developed for both individual/home use and operators seeking a single-user setup. Thanks to its compact structure, it can be considered for homes, clinics, sports centers, wellness centers and hotels.\n\nThe exact conditions of use are determined by the product's classification and the regulations of the country of installation." },
               { q: "How many people can Apex Duo accommodate?", a: "Apex Duo is designed to accommodate two users in the same session. The seating structure, interior fittings and seating layout may vary according to the ordered configuration." },
-              { q: "What is the user capacity of the multi-person Apex model?", a: "The standard capacity of the multi-person model is 6 people, with an optional capacity of up to 12 people (in increments of 2 seats).\n\nThe exact capacity is determined by the following factors:", list: ["Chamber dimensions", "Seating layout", "Users' range of movement", "Oxygen system capacity", "Operating protocol", "Local safety and licensing requirements"], aAfter: "Each option is added to the project following a safety assessment and technical suitability review." },
+              { q: "What is the user capacity of the multi-person Apex model?", a: "Multi-user Apex models start with the 4-person Apex Quad-Cube. For the hospital-grade Apex Nexus, the standard capacity is 6 people, with an optional capacity of up to 12 people (in increments of 2 seats).\n\nThe exact capacity is determined by the following factors:", list: ["Chamber dimensions", "Seating layout", "Users' range of movement", "Oxygen system capacity", "Operating protocol", "Local safety and licensing requirements"], aAfter: "Each option is added to the project following a safety assessment and technical suitability review." },
               { q: "What are the dimensions of the devices?", a: "Each Apex model has different exterior dimensions and interior usable volume. The following information is shown separately on the technical product pages:", list: ["Exterior dimensions", "Interior usable dimensions", "Door opening", "Total weight", "User capacity", "Minimum installation area", "Technical service access clearance"], aAfter: "Custom dimension requests can be engineered following an engineering assessment." }
             ]
           },
@@ -1679,7 +1656,7 @@ const TRANSLATIONS = {
           {
             title: "Ordering, Pricing and Delivery",
             items: [
-              { q: "What is the price of Apex hyperbaric systems?", a: "Prices vary according to the following factors:", list: ["Model", "User capacity", "Chamber dimensions", "Operating pressure", "Oxygen system", "Compressor system", "Interior fittings", "Digital features", "Customization", "Shipping", "Country of installation", "Training and service package"], aAfter: "For this reason, a custom quote is prepared for each project following a needs analysis. Price quotes obtained from the configurator are valid for 15 days only and are quoted as FOB prices." },
+              { q: "What is the price of Apex hyperbaric systems?", a: "The device price varies according to the following factors (shipping and installation are not included in this price and are quoted as separate line items):", list: ["Model", "User capacity", "Chamber dimensions", "Operating pressure", "Oxygen system", "Compressor system", "Interior fittings", "Digital features", "Customization", "Training and service package"], aAfter: "For this reason, a custom quote is prepared for each project following a needs analysis. Price quotes obtained from the configurator are valid for 15 days only and are quoted as FOB prices." },
               { q: "What information is required to receive a quote?", a: "Sharing the following information is sufficient for us to prepare a quote:", list: ["Your name or company name", "Country and city", "Intended use", "Apex model you are interested in", "User capacity", "Installation area dimensions", "Desired features", "Planned opening or delivery date", "Your contact information"], aAfter: "Our technical team will review the information and get in touch with you." },
               { q: "How long is the production time?", a: "Production time varies depending on the model, order volume and customization requests. Depending on the model, it starts from 10 weeks.\n\nThe exact delivery schedule is communicated upon order confirmation." },
               { q: "Do you deliver internationally?", a: "Yes. International delivery can be made to countries where suitable logistics and technical conditions can be provided. The following services can be planned separately as part of the quote:", list: ["International shipping", "Freight insurance", "Customs documentation", "On-site installation", "Commissioning", "Staff training", "After-sales technical support"], aAfter: "Import permits and local licensing requirements may vary by destination country." },
@@ -1691,7 +1668,6 @@ const TRANSLATIONS = {
           {
             title: "Certifications and Compliance",
             items: [
-              { q: "Which standards do Apex systems comply with?", a: "The Apex Series is developed in accordance with EN 14931 (Medical Chamber Design Standard), EN 16081 (Medical Chamber Fire Protection System), NFPA 99 (US Fire Protection System Standard), ISO 9001 (Quality Standard), and EN 13445 + PED 2014/68/EU (Pressure Equipment Directive).\n\nThe applicable standards, tests and conformity documents for each model are specified in the product's technical documentation. Only completed and verifiable documents are provided as valid product certification." },
               { q: "Do the devices carry the CE mark?", a: "CE status is explained according to the product model and the applicable regulatory scope. The CE mark alone does not mean that a product is a medical device for all uses. The declaration of conformity must clearly state the applicable regulation, product class, intended use and manufacturer information." },
               { q: "Can I review the certificates?", a: "Conformity documents, test reports and technical documentation can be shared upon request, taking into account the product model, target country and commercial process." }
             ]
@@ -1710,7 +1686,6 @@ const TRANSLATIONS = {
       soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "Одноместная гипербарическая кислородная камера для лечения в положении лёжа." },
       solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "Компактная, полностью укомплектованная камера для индивидуального использования." },
       duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "Двухместная камера для совместной гипербарической оксигенотерапии." },
-      quad: { title: "Apex Quad | HBOT Chamber Tech", desc: "Четырёхместная гипербарическая камера для клиник." },
       quadCube: { title: "Apex Quad-Cube | HBOT Chamber Tech", desc: "Четырёхместная гипербарическая кислородная камера с просторным кубическим дизайном." },
       nexus: { title: "Apex Nexus | HBOT Chamber Tech", desc: "Гипербарическая камера госпитального класса большой вместимости на 6 и более человек." },
       hbotInfo: { title: "Что такое ГБО? | HBOT Chamber Tech", desc: "Что такое гипербарическая оксигенотерапия (ГБО), для чего она применяется и при каких состояниях." },
@@ -1730,7 +1705,6 @@ const TRANSLATIONS = {
         soloLounge: "Apex Solo Lounge",
         solo: "Apex Solo",
         duo: "Apex Duo",
-        quad: "Apex Quad",
         quadCube: "Apex Quad-Cube",
         nexus: "Apex Nexus",
         all_link: "Все модели"
@@ -1747,6 +1721,11 @@ const TRANSLATIONS = {
         title: "Давайте вместе подберём вашу модель Apex",
         subtitle: "Выберите модель, уровень давления и опции — получите мгновенную оценку стоимости.",
         button: "Запустить конфигуратор"
+      },
+      faq_teaser: {
+        title: "Остались вопросы?",
+        subtitle: "Ознакомьтесь с полным списком часто задаваемых вопросов.",
+        cta: "Часто задаваемые вопросы"
       },
       view_all: "Смотреть все",
       learn_more: "Подробнее",
@@ -1957,7 +1936,6 @@ const TRANSLATIONS = {
       soloLounge: { title: "Apex Solo Lounge", tagline: "1 человек · Положение лёжа", desc: "Полностью укомплектованная камера, разработанная специально для пользователей, нуждающихся в лечении в положении лёжа." },
       solo: { title: "Apex Solo", tagline: "1 человек · Положение сидя", desc: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарической оксигенотерапии." },
       duo: { title: "Apex Duo", tagline: "2 человека · Положение сидя", desc: "Двухместная камера с панорамным окном — для пар, партнёров или пациента с сопровождающим." },
-      quad: { title: "Apex Quad", tagline: "4 человека · Положение сидя", desc: "Многоместная камера среднего масштаба с интегрированной панелью управления для клиник и коммерческих wellness-центров." },
       quadCube: { title: "Apex Quad-Cube", tagline: "4 человека · Просторная кабина", desc: "Четырёхместная премиум-кабина с просторным кубическим интерьером — стёганая кожа и LED-подсветка." },
       nexus: { title: "Apex Nexus", tagline: "6+ человек · Положение сидя", desc: "Камера госпитального класса большой вместимости с модульным расширением для медицинских учреждений." }
     },
@@ -2009,19 +1987,6 @@ const TRANSLATIONS = {
         { label: "Безопасность", value: "Система аварийных клапанов" },
         { label: "Управление", value: "Двойная система управления" },
         { label: "Окно", value: "Панорамное" }
-      ]
-    },
-    modelQuad: {
-      breadcrumb: "Apex Quad", eyebrow: "APEX QUAD", title: "Apex Quad",
-      tagline: "Решение среднего масштаба для клиник и wellness-центров.",
-      overview_text: "Многоместная камера среднего масштаба с интегрированной панелью управления. Создана для клиник и коммерческих wellness-центров.",
-      specs: [
-        { label: "Вместимость", value: "4 человека (сидя)" },
-        { label: "Диапазон давления", value: "2.5 – 6.0 ATA" },
-        { label: "Чистота кислорода", value: "93–95%" },
-        { label: "Безопасность", value: "Система аварийных клапанов" },
-        { label: "Мониторинг", value: "Мониторинг нескольких пользователей" },
-        { label: "Управление", value: "Внешняя панель управления" }
       ]
     },
     modelQuadCube: {
@@ -2423,10 +2388,10 @@ const TRANSLATIONS = {
           {
             title: "Модели Apex",
             items: [
-              { q: "Какие модели Apex доступны?", a: "Линейка продуктов Apex разрабатывается для разных пользовательских ёмкостей и сфер применения.\n\nApex Solo — гипербарическая система для одного пользователя. Разработана для более компактных помещений и индивидуального использования.\n\nApex Duo — система с просторным внутренним пространством, рассчитанная на двух пользователей в одном сеансе.\n\nApex Quad-Cube — многопользовательская гипербарическая система кубической формы большого объёма, разработанная для клиник, больниц и профессиональных операторов. Её вместимость определяется выбранной компоновкой сидений и конфигурацией проекта." },
-              { q: "Кому подходит Apex Solo?", a: "Apex Solo разработана для операторов, которым требуется однопользовательская конфигурация. Благодаря компактной конструкции она может рассматриваться для клиник, спортивных центров, wellness-центров, отелей и частного использования.\n\nТочные условия использования определяются классификацией продукта и законодательством страны установки." },
+              { q: "Какие модели Apex доступны?", a: "Линейка продуктов Apex разрабатывается для разных пользовательских ёмкостей и сфер применения.\n\nApex Solo Lounge — система для одного пользователя, разработанная для тех, кому необходимо лечение в положении лёжа.\n\nApex Solo — компактная гипербарическая система для одного пользователя в положении сидя. Разработана как для индивидуального/домашнего использования, так и для бизнеса.\n\nApex Duo — система с просторным внутренним пространством, рассчитанная на двух пользователей в одном сеансе.\n\nApex Quad-Cube — гипербарическая система кубической формы большого объёма на 4 пользователей, разработанная для клиник, больниц и профессиональных операторов.\n\nApex Nexus — крупногабаритная система корпоративного уровня, аналогичная больничному оборудованию, вместимостью от 6 до 12 пользователей." },
+              { q: "Кому подходит Apex Solo?", a: "Apex Solo разработана как для индивидуального/домашнего использования, так и для операторов, которым требуется однопользовательская конфигурация. Благодаря компактной конструкции она может рассматриваться для дома, клиник, спортивных центров, wellness-центров и отелей.\n\nТочные условия использования определяются классификацией продукта и законодательством страны установки." },
               { q: "На сколько человек рассчитана Apex Duo?", a: "Apex Duo рассчитана на двух пользователей в одном сеансе. Конструкция сидений, внутреннее оснащение и компоновка мест могут различаться в зависимости от заказанной конфигурации." },
-              { q: "Какова вместимость многопользовательской модели Apex?", a: "Стандартная вместимость многопользовательской модели составляет 6 человек, опциональная вместимость — до 12 человек (с шагом по 2 места).\n\nТочная вместимость определяется следующими факторами:", list: ["Размеры камеры", "Компоновка сидений", "Диапазон движения пользователей", "Мощность кислородной системы", "Протокол эксплуатации", "Местные требования безопасности и лицензирования"], aAfter: "Каждая опция добавляется в проект после оценки безопасности и технической пригодности." },
+              { q: "Какова вместимость многопользовательской модели Apex?", a: "Многопользовательские модели Apex начинаются с 4-местной Apex Quad-Cube. Для больничной модели Apex Nexus стандартная вместимость составляет 6 человек, с возможностью расширения до 12 человек (с шагом по 2 места).\n\nТочная вместимость определяется следующими факторами:", list: ["Размеры камеры", "Компоновка сидений", "Диапазон движения пользователей", "Мощность кислородной системы", "Протокол эксплуатации", "Местные требования безопасности и лицензирования"], aAfter: "Каждая опция добавляется в проект после оценки безопасности и технической пригодности." },
               { q: "Каковы размеры устройств?", a: "Каждая модель Apex имеет свои внешние размеры и полезный внутренний объём. На технических страницах продуктов отдельно указывается следующая информация:", list: ["Внешние размеры", "Полезные внутренние размеры", "Проём двери", "Общий вес", "Вместимость пользователей", "Минимальная площадь для установки", "Расстояние доступа для технического обслуживания"], aAfter: "Запросы на нестандартные размеры могут быть спроектированы после инженерной оценки." }
             ]
           },
@@ -2530,7 +2495,7 @@ const TRANSLATIONS = {
           {
             title: "Заказ, цена и доставка",
             items: [
-              { q: "Какова цена гипербарических систем Apex?", a: "Цены варьируются в зависимости от следующих факторов:", list: ["Модель", "Вместимость пользователей", "Размеры камеры", "Рабочее давление", "Кислородная система", "Компрессорная система", "Внутреннее оснащение", "Цифровые функции", "Кастомизация", "Транспортировка", "Страна установки", "Пакет обучения и обслуживания"], aAfter: "По этой причине для каждого проекта после анализа потребностей готовится индивидуальное предложение. Ценовые предложения, полученные через конфигуратор, действительны только 15 дней и указываются по цене FOB." },
+              { q: "Какова цена гипербарических систем Apex?", a: "Цена устройства варьируется в зависимости от следующих факторов (транспортировка и установка не включены в эту цену и указываются отдельными позициями):", list: ["Модель", "Вместимость пользователей", "Размеры камеры", "Рабочее давление", "Кислородная система", "Компрессорная система", "Внутреннее оснащение", "Цифровые функции", "Кастомизация", "Пакет обучения и обслуживания"], aAfter: "По этой причине для каждого проекта после анализа потребностей готовится индивидуальное предложение. Ценовые предложения, полученные через конфигуратор, действительны только 15 дней и указываются по цене FOB." },
               { q: "Какая информация требуется для получения коммерческого предложения?", a: "Для подготовки коммерческого предложения достаточно предоставить следующую информацию:", list: ["Ваше имя или название компании", "Страна и город", "Цель использования", "Интересующая вас модель Apex", "Вместимость пользователей", "Размеры зоны установки", "Желаемые характеристики", "Планируемая дата открытия или поставки", "Ваши контактные данные"], aAfter: "После оценки информации с вами свяжется наша техническая команда." },
               { q: "Каков срок производства?", a: "Срок производства варьируется в зависимости от модели, загруженности производства и запросов на кастомизацию. В зависимости от модели он начинается от 10 недель.\n\nТочный график поставки сообщается при подтверждении заказа." },
               { q: "Осуществляете ли вы международную доставку?", a: "Да. Международная доставка может осуществляться в страны, где могут быть обеспечены подходящие логистические и технические условия. В рамках коммерческого предложения отдельно могут планироваться следующие услуги:", list: ["Международная транспортировка", "Страхование груза", "Таможенная документация", "Установка на месте", "Ввод в эксплуатацию", "Обучение персонала", "Послепродажная техническая поддержка"], aAfter: "Разрешения на импорт и требования местного лицензирования могут различаться в зависимости от страны-получателя." },
@@ -2542,7 +2507,6 @@ const TRANSLATIONS = {
           {
             title: "Сертификаты и соответствие",
             items: [
-              { q: "Каким стандартам соответствуют системы Apex?", a: "Серия Apex разрабатывается в соответствии со стандартами EN 14931 (стандарт проектирования медицинских камер), EN 16081 (система пожарной безопасности медицинских камер), NFPA 99 (американский стандарт систем пожаротушения), ISO 9001 (стандарт качества) и EN 13445 + PED 2014/68/EU (директива по оборудованию, работающему под давлением).\n\nПрименимые стандарты, испытания и документы о соответствии для каждой модели указываются в технической документации продукта. В качестве действительного сертификата продукта предоставляются только завершённые и поддающиеся проверке документы." },
               { q: "Имеют ли устройства маркировку CE?", a: "Статус CE разъясняется в зависимости от модели продукта и применимой нормативной сферы. Наличие маркировки CE само по себе не означает, что продукт является медицинским изделием для всех видов применения. В декларации соответствия должны быть чётко указаны применимое законодательство, класс продукта, назначение использования и информация о производителе." },
               { q: "Могу ли я ознакомиться с сертификатами?", a: "Документы о соответствии, протоколы испытаний и техническая документация могут предоставляться по запросу с учётом модели продукта, страны назначения и коммерческого процесса." }
             ]
@@ -2561,7 +2525,6 @@ const TRANSLATIONS = {
       soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لشخص واحد مصممة للعلاج في وضعية الاستلقاء." },
       solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "غرفة مدمجة وكاملة التجهيز للاستخدام الفردي." },
       duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "غرفة علاج مشترك بالأكسجين عالي الضغط لشخصين." },
-      quad: { title: "Apex Quad | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لأربعة أشخاص للعيادات." },
       quadCube: { title: "Apex Quad-Cube | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لأربعة أشخاص بتصميم مكعّب واسع الداخل." },
       nexus: { title: "Apex Nexus | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط بمستوى المستشفيات وسعة كبيرة لستة أشخاص أو أكثر." },
       hbotInfo: { title: "ما هو العلاج بالأكسجين عالي الضغط؟ | HBOT Chamber Tech", desc: "ما هو العلاج بالأكسجين عالي الضغط (HBOT)، ولماذا يُستخدم، وفي أي الحالات يُطبّق." },
@@ -2581,7 +2544,6 @@ const TRANSLATIONS = {
         soloLounge: "Apex Solo Lounge",
         solo: "Apex Solo",
         duo: "Apex Duo",
-        quad: "Apex Quad",
         quadCube: "Apex Quad-Cube",
         nexus: "Apex Nexus",
         all_link: "جميع الموديلات"
@@ -2598,6 +2560,11 @@ const TRANSLATIONS = {
         title: "لنجد معاً موديل Apex المثالي لك",
         subtitle: "اختر الموديل ومستوى الضغط والإضافات — واحصل على تقدير فوري للسعر.",
         button: "ابدأ أداة التكوين"
+      },
+      faq_teaser: {
+        title: "هل لديك سؤال؟",
+        subtitle: "اطّلع على القائمة الكاملة للأسئلة الشائعة.",
+        cta: "الأسئلة الشائعة"
       },
       view_all: "عرض الكل",
       learn_more: "المزيد من التفاصيل",
@@ -2808,7 +2775,6 @@ const TRANSLATIONS = {
       soloLounge: { title: "Apex Solo Lounge", tagline: "شخص واحد · وضعية الاستلقاء", desc: "غرفة كاملة التجهيز طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء." },
       solo: { title: "Apex Solo", tagline: "شخص واحد · وضعية الجلوس", desc: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للعلاج الفردي بالأكسجين عالي الضغط." },
       duo: { title: "Apex Duo", tagline: "شخصان · وضعية الجلوس", desc: "غرفة بمقعدين ونافذة بانورامية — للأزواج أو الشركاء أو استخدام المريض مع مرافق." },
-      quad: { title: "Apex Quad", tagline: "4 أشخاص · وضعية الجلوس", desc: "غرفة متوسطة الحجم متعددة المقاعد بلوحة تحكم متكاملة، مصممة للعيادات ومراكز العافية التجارية." },
       quadCube: { title: "Apex Quad-Cube", tagline: "4 أشخاص · مقصورة واسعة", desc: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب — جلد مبطّن وإضاءة LED محيطية." },
       nexus: { title: "Apex Nexus", tagline: "6+ أشخاص · وضعية الجلوس", desc: "غرفة بمستوى المستشفيات وسعة كبيرة قابلة للتوسع المعياري، مصممة للمؤسسات الطبية." }
     },
@@ -2860,19 +2826,6 @@ const TRANSLATIONS = {
         { label: "السلامة", value: "نظام صمامات الطوارئ" },
         { label: "التحكم", value: "نظام تحكم مزدوج" },
         { label: "النافذة", value: "بانورامية" }
-      ]
-    },
-    modelQuad: {
-      breadcrumb: "Apex Quad", eyebrow: "APEX QUAD", title: "Apex Quad",
-      tagline: "حل متوسط الحجم للعيادات ومراكز العافية.",
-      overview_text: "غرفة متوسطة الحجم متعددة المقاعد بلوحة تحكم متكاملة. بُنيت للعيادات ومراكز العافية التجارية.",
-      specs: [
-        { label: "السعة", value: "4 أشخاص (جلوس)" },
-        { label: "نطاق الضغط", value: "2.5 – 6.0 ATA" },
-        { label: "نقاء الأكسجين", value: "93–95%" },
-        { label: "السلامة", value: "نظام صمامات الطوارئ" },
-        { label: "المراقبة", value: "مراقبة متعددة المستخدمين" },
-        { label: "التحكم", value: "لوحة تحكم خارجية" }
       ]
     },
     modelQuadCube: {
@@ -3274,10 +3227,10 @@ const TRANSLATIONS = {
           {
             title: "موديلات Apex",
             items: [
-              { q: "ما هي موديلات Apex المتوفرة؟", a: "تُطوَّر عائلة منتجات Apex لسعات مستخدمين مختلفة ومجالات استخدام متنوعة.\n\nApex Solo — نظام انضغاطي لمستخدم واحد. مصمم للمساحات الأكثر إحكامًا والاستخدام الفردي.\n\nApex Duo — نظام ذو حجم داخلي واسع يستوعب مستخدمَين في نفس الجلسة.\n\nApex Quad-Cube — نظام انضغاطي متعدد المستخدمين، بتصميم مكعّب وحجم كبير، طُوِّر للعيادات والمستشفيات والمشغّلين المحترفين. تُحدَّد سعته وفقًا لتخطيط المقاعد المختار وتهيئة المشروع." },
-              { q: "لمن تناسب Apex Solo؟", a: "طُوِّرت Apex Solo للمشغّلين الذين يرغبون في نظام تشغيل لمستخدم واحد. بفضل بنيتها المدمجة، يمكن اعتبارها مناسبة للعيادات ومراكز الرياضة ومراكز العافية والفنادق وأماكن الاستخدام الخاص.\n\nتُحدَّد شروط الاستخدام الدقيقة حسب تصنيف المنتج ولوائح بلد التركيب." },
+              { q: "ما هي موديلات Apex المتوفرة؟", a: "تُطوَّر عائلة منتجات Apex لسعات مستخدمين مختلفة ومجالات استخدام متنوعة.\n\nApex Solo Lounge — نظام لمستخدم واحد، صُمِّم لمن يحتاج إلى العلاج في وضعية الاستلقاء.\n\nApex Solo — نظام انضغاطي مدمج لمستخدم واحد في وضعية الجلوس. صُمِّم للاستخدام الفردي/المنزلي وللاستخدام التجاري على حدٍّ سواء.\n\nApex Duo — نظام ذو حجم داخلي واسع يستوعب مستخدمَين في نفس الجلسة.\n\nApex Quad-Cube — نظام انضغاطي بتصميم مكعّب وحجم كبير لأربعة مستخدمين، طُوِّر للعيادات والمستشفيات والمشغّلين المحترفين.\n\nApex Nexus — نظام مؤسسي كبير بمستوى المستشفيات، يبدأ من 6 مستخدمين ويمكن توسيعه حتى 12 مستخدمًا." },
+              { q: "لمن تناسب Apex Solo؟", a: "طُوِّرت Apex Solo للاستخدام الفردي/المنزلي وللمشغّلين الذين يرغبون في نظام تشغيل لمستخدم واحد على حدٍّ سواء. بفضل بنيتها المدمجة، يمكن اعتبارها مناسبة للمنازل والعيادات ومراكز الرياضة ومراكز العافية والفنادق.\n\nتُحدَّد شروط الاستخدام الدقيقة حسب تصنيف المنتج ولوائح بلد التركيب." },
               { q: "كم عدد الأشخاص الذين تستوعبهم Apex Duo؟", a: "صُمِّمت Apex Duo لاستيعاب مستخدمَين في نفس الجلسة. قد يختلف هيكل المقاعد والتجهيزات الداخلية وترتيب الجلوس حسب التهيئة المطلوبة." },
-              { q: "ما هي السعة الاستيعابية لموديل Apex متعدد الأشخاص؟", a: "السعة القياسية للموديل متعدد الأشخاص هي 6 أشخاص، مع إمكانية اختيارية للوصول إلى 12 شخصًا (بزيادات مقعدَين في كل مرة).\n\nتُحدَّد السعة الدقيقة وفقًا للعوامل التالية:", list: ["أبعاد الغرفة", "تخطيط المقاعد", "نطاق حركة المستخدمين", "سعة نظام الأكسجين", "بروتوكول التشغيل", "متطلبات السلامة والترخيص المحلية"], aAfter: "تُضاف كل خيار إلى المشروع بعد تقييم السلامة والملاءمة الفنية." },
+              { q: "ما هي السعة الاستيعابية لموديل Apex متعدد الأشخاص؟", a: "تبدأ موديلات Apex متعددة المستخدمين بموديل Apex Quad-Cube الذي يستوعب 4 أشخاص. أما موديل Apex Nexus بمستوى المستشفيات، فسعته القياسية 6 أشخاص، مع إمكانية اختيارية للوصول إلى 12 شخصًا (بزيادات مقعدَين في كل مرة).\n\nتُحدَّد السعة الدقيقة وفقًا للعوامل التالية:", list: ["أبعاد الغرفة", "تخطيط المقاعد", "نطاق حركة المستخدمين", "سعة نظام الأكسجين", "بروتوكول التشغيل", "متطلبات السلامة والترخيص المحلية"], aAfter: "تُضاف كل خيار إلى المشروع بعد تقييم السلامة والملاءمة الفنية." },
               { q: "ما هي أبعاد الأجهزة؟", a: "لكل موديل من Apex أبعاد خارجية مختلفة وحجم استخدام داخلي مختلف. تُعرض المعلومات التالية بشكل منفصل في صفحات المنتج الفنية:", list: ["الأبعاد الخارجية", "الأبعاد الداخلية القابلة للاستخدام", "فتحة الباب", "الوزن الإجمالي", "سعة المستخدمين", "الحد الأدنى لمساحة التركيب", "مسافة الوصول للخدمة الفنية"], aAfter: "يمكن تصميم طلبات الأبعاد المخصصة بعد إجراء تقييم هندسي." }
             ]
           },
@@ -3381,7 +3334,7 @@ const TRANSLATIONS = {
           {
             title: "الطلب والسعر والتسليم",
             items: [
-              { q: "ما هو سعر أنظمة Apex الانضغاطية؟", a: "تختلف الأسعار حسب العوامل التالية:", list: ["الموديل", "سعة المستخدمين", "أبعاد الغرفة", "ضغط التشغيل", "نظام الأكسجين", "نظام الضاغط", "التجهيزات الداخلية", "الميزات الرقمية", "التخصيص", "الشحن", "بلد التركيب", "حزمة التدريب والخدمة"], aAfter: "لهذا السبب، يُعَد عرض سعر خاص لكل مشروع بعد تحليل الاحتياجات. عروض الأسعار المستلمة من أداة التكوين صالحة لمدة 15 يومًا فقط وهي أسعار FOB." },
+              { q: "ما هو سعر أنظمة Apex الانضغاطية؟", a: "يختلف سعر الجهاز حسب العوامل التالية (الشحن والتركيب غير مشمولين في هذا السعر ويُعرَضان كبنود منفصلة):", list: ["الموديل", "سعة المستخدمين", "أبعاد الغرفة", "ضغط التشغيل", "نظام الأكسجين", "نظام الضاغط", "التجهيزات الداخلية", "الميزات الرقمية", "التخصيص", "حزمة التدريب والخدمة"], aAfter: "لهذا السبب، يُعَد عرض سعر خاص لكل مشروع بعد تحليل الاحتياجات. عروض الأسعار المستلمة من أداة التكوين صالحة لمدة 15 يومًا فقط وهي أسعار FOB." },
               { q: "ما هي المعلومات المطلوبة للحصول على عرض سعر؟", a: "تكفي مشاركة المعلومات التالية لإعداد عرض السعر:", list: ["اسمك أو اسم شركتك", "البلد والمدينة", "الغرض من الاستخدام", "موديل Apex الذي يهمّك", "سعة المستخدمين", "أبعاد منطقة التركيب", "الميزات المرغوبة", "تاريخ الافتتاح أو التسليم المخطَّط له", "معلومات التواصل الخاصة بك"], aAfter: "سيتواصل معك فريقنا الفني بعد تقييم المعلومات." },
               { q: "ما هي مدة الإنتاج؟", a: "تختلف مدة الإنتاج حسب الموديل وحجم الطلبات وطلبات التخصيص. تبدأ حسب الموديل من 10 أسابيع.\n\nيُبلَّغ الجدول الزمني الدقيق للتسليم عند تأكيد الطلب." },
               { q: "هل تقومون بالتسليم الدولي؟", a: "نعم. يمكن إجراء التسليم الدولي إلى البلدان التي يمكن فيها توفير الظروف اللوجستية والفنية المناسبة. يمكن التخطيط للخدمات التالية بشكل منفصل ضمن عرض السعر:", list: ["الشحن الدولي", "تأمين الشحن", "الوثائق الجمركية", "التركيب الميداني", "التشغيل التجريبي", "تدريب الكادر", "الدعم الفني بعد البيع"], aAfter: "قد تختلف تصاريح الاستيراد ومتطلبات الترخيص المحلية حسب بلد الوجهة." },
@@ -3393,7 +3346,6 @@ const TRANSLATIONS = {
           {
             title: "الشهادات والمطابقة",
             items: [
-              { q: "لأي المعايير تمتثل أنظمة Apex؟", a: "تُطوَّر سلسلة Apex وفقًا لمعيار EN 14931 (معيار تصميم الغرف الطبية)، ومعيار EN 16081 (نظام الحماية من الحرائق للغرف الطبية)، ومعيار NFPA 99 (المعيار الأمريكي لأنظمة إطفاء الحرائق)، ومعيار ISO 9001 (معيار الجودة)، ومعيار EN 13445 + PED 2014/68/EU (توجيه معدات الضغط).\n\nتُحدَّد المعايير والاختبارات ووثائق المطابقة السارية لكل موديل في المستندات الفنية للمنتج. تُقدَّم فقط الوثائق المكتملة والقابلة للتحقق كشهادات منتج صالحة." },
               { q: "هل تحمل الأجهزة علامة CE؟", a: "تُوضَّح حالة علامة CE حسب موديل المنتج والنطاق التنظيمي المعني. لا تعني علامة CE وحدها أن المنتج جهاز طبي لجميع أغراض الاستخدام. يجب أن يوضّح إعلان المطابقة بشكل صريح اللوائح المعنية وفئة المنتج والغرض من الاستخدام ومعلومات الشركة المصنّعة." },
               { q: "هل يمكنني الاطلاع على الشهادات؟", a: "يمكن مشاركة وثائق المطابقة وتقارير الاختبار والمستندات الفنية عند الطلب، مع مراعاة موديل المنتج والبلد المستهدف والعملية التجارية." }
             ]

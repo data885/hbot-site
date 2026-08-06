@@ -1728,8 +1728,8 @@
       pdfFontStatus = (async () => {
         try {
           const [reg, bold] = await Promise.all([
-            fetch("assets/fonts/NotoSans-Regular.ttf?v=2").then((r) => r.arrayBuffer()),
-            fetch("assets/fonts/NotoSans-Bold.ttf?v=2").then((r) => r.arrayBuffer()),
+            fetch("assets/fonts/NotoSans-Regular.ttf?v=3").then((r) => r.arrayBuffer()),
+            fetch("assets/fonts/NotoSans-Bold.ttf?v=3").then((r) => r.arrayBuffer()),
           ]);
           pdfFontRegBase64 = arrayBufferToBase64(reg);
           pdfFontBoldBase64 = arrayBufferToBase64(bold);
@@ -2148,12 +2148,11 @@
   function initDropdown() {
     const item = document.querySelector(".nav-item--dropdown");
     if (!item) return;
-    const trigger = item.querySelector(".nav-dropdown-trigger");
-    trigger.addEventListener("click", (e) => {
-      if (window.innerWidth <= 760) {
-        e.preventDefault();
-        item.classList.toggle("is-open");
-      }
+    const toggle = item.querySelector(".nav-dropdown-toggle");
+    if (!toggle) return;
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      item.classList.toggle("is-open");
     });
   }
 
@@ -2275,7 +2274,7 @@
             formData.set("pdf_name", pdf.name);
             formData.set("quote_no", pdf.quoteNo);
           }
-        } catch (pdfErr) { /* PDF uretilemese de form gitsin */ }
+        } catch (pdfErr) { console.error("Proforma PDF üretilemedi, form yine de gönderilecek:", pdfErr); }
       }
 
       pushLeadToCrm({

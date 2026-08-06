@@ -121,9 +121,17 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 .site-nav > a:hover, .nav-dropdown-trigger:hover,
 .site-nav > a.is-active, .nav-dropdown-trigger.is-active { color: var(--cyan-400); }
-.nav-dropdown-trigger svg { width: 14px; height: 14px; transition: transform var(--transition); }
+.nav-dropdown-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: none; border: none; padding: 4px; margin-inline-start: -2px; cursor: pointer;
+  color: rgba(255, 255, 255, 0.85); transition: color var(--transition);
+}
+.nav-dropdown-toggle:hover { color: var(--cyan-400); }
+.nav-dropdown-toggle svg { width: 14px; height: 14px; transition: transform var(--transition); }
+.nav-item--dropdown:hover .nav-dropdown-toggle svg,
+.nav-item--dropdown.is-open .nav-dropdown-toggle svg { transform: rotate(180deg); }
 
-.nav-item--dropdown { position: relative; }
+.nav-item--dropdown { position: relative; display: flex; align-items: center; }
 .nav-dropdown-panel {
   position: absolute; top: calc(100% + 20px); inset-inline-start: -20px; width: 320px;
   background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); padding: 10px;
@@ -578,6 +586,16 @@ h1, h2, h3, h4, p { margin: 0; }
 .cta-banner p { margin-top: 10px; color: rgba(255, 255, 255, 0.72); font-size: 15.5px; }
 .cta-banner .btn { position: relative; flex-shrink: 0; }
 
+/* v15: sayfa altı hafif SSS yönlendirme şeridi — tam SSS yalnızca iletişim sayfasında */
+.faq-teaser {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 26px 32px; background: var(--gray-050); border-radius: var(--radius-lg); flex-wrap: wrap;
+}
+.faq-teaser h3 { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+.faq-teaser p { color: var(--gray-600); font-size: 14px; }
+.faq-teaser .btn { flex-shrink: 0; }
+@media (max-width: 640px) { .faq-teaser { flex-direction: column; align-items: flex-start; padding: 22px; } }
+
 /* ---------- Configurator ---------- */
 .configurator-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
 .config-steps { display: grid; gap: 56px; }
@@ -962,7 +980,8 @@ h1, h2, h3, h4, p { margin: 0; }
   .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
   .site-nav > a { padding: 14px 24px; width: 100%; }
   .nav-item--dropdown { width: 100%; }
-  .nav-dropdown-trigger { padding: 14px 24px; width: 100%; justify-content: space-between; }
+  .nav-dropdown-trigger { padding: 14px 24px; flex: 1; }
+  .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
   .nav-toggle { display: flex; }
   .header-actions { gap: 8px; }
   .header-actions > .lang-switch { display: none; }
