@@ -185,7 +185,7 @@ const TRANSLATIONS = {
           features: [
             "Tahmine dayalı bakım: kompresör motorunun titreşim deseni değiştiğinde sistem uyarı verir",
             "Dijital güvenlik günlüğü: her basınç değişimi şifreli olarak bulutta loglanır",
-            "Otomatik dezenfeksiyon logu: UV-C veya ozon dezenfeksiyonu yapıldığında otomatik kayıt tutulur"
+            "Sarf malzemesi ve filtre ömrü takibi: kullanım süresine göre değişim zamanı geldiğinde otomatik uyarı verir"
           ]
         }
       },
@@ -274,7 +274,7 @@ const TRANSLATIONS = {
       overview_text: "Yatay pozisyonda tedavi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiştir. Medikal ortopedik yatağı ve havacılık sınıfı alüminyum gövdesiyle, uzun seanslarda maksimum konfor sağlar.",
       specs: [
         { label: "Kapasite", value: "1 kişi (yatay pozisyon)" },
-        { label: "Basınç Aralığı", value: "1.5 – 2.5 ATA" },
+        { label: "Basınç Aralığı", value: "1.5 – 2.0 ATA" },
         { label: "Yatak", value: "Medikal ortopedik, 200×80 cm" },
         { label: "Malzeme", value: "Havacılık sınıfı alüminyum" },
         { label: "Güvenlik", value: "Çift emniyet valfi" },
@@ -288,7 +288,7 @@ const TRANSLATIONS = {
       overview_text: "Bireysel hiperbarik oksijen tedavisi için tasarlanmış kompakt, şık ve tam donanımlı kabin. Dokunmatik ekran kontrolüyle ev veya klinik kullanımı için idealdir.",
       specs: [
         { label: "Kapasite", value: "1 kişi (oturma)" },
-        { label: "Basınç Aralığı", value: "1.5 – 2.5 ATA" },
+        { label: "Basınç Aralığı", value: "1.5 – 2.0 ATA" },
         { label: "Kontrol", value: "Dokunmatik ekran" },
         { label: "Malzeme", value: "Havacılık sınıfı alüminyum" },
         { label: "Güvenlik", value: "Çift emniyet valfi" },
@@ -302,7 +302,7 @@ const TRANSLATIONS = {
       overview_text: "Çift koltuklu hiperbarik kabin, paylaşımlı tedavi seansları sunar. Eşler, partnerler veya hasta-refakatçi kullanımı için tasarlanmıştır.",
       specs: [
         { label: "Kapasite", value: "2 kişi (oturma)" },
-        { label: "Basınç Aralığı", value: "1.5 – 2.5 ATA" },
+        { label: "Basınç Aralığı", value: "1.5 – 2.0 ATA" },
         { label: "Oksijen Saflığı", value: "%93–95" },
         { label: "Güvenlik", value: "Acil durum valf sistemi" },
         { label: "Kontrol", value: "Çift kontrol sistemi" },
@@ -315,7 +315,7 @@ const TRANSLATIONS = {
       overview_text: "Entegre kontrol panelli, orta ölçekli çok koltuklu kabin. Klinikler ve ticari wellness merkezleri için inşa edilmiştir.",
       specs: [
         { label: "Kapasite", value: "4 kişi (oturma)" },
-        { label: "Basınç Aralığı", value: "1.5 – 2.5 ATA" },
+        { label: "Basınç Aralığı", value: "2.5 – 6.0 ATA" },
         { label: "Oksijen Saflığı", value: "%93–95" },
         { label: "Güvenlik", value: "Acil durum valf sistemi" },
         { label: "İzleme", value: "Çoklu kullanıcı izleme" },
@@ -328,7 +328,7 @@ const TRANSLATIONS = {
       overview_text: "Küp formundaki geniş iç hacmiyle dört kişilik premium kabin. Kapitone deri iç mekânı, LED ambiyans aydınlatması ve bağımsız kontrol ünitesiyle klinik ve wellness merkezlerine konforlu çok kişilik tedavi sunar.",
       specs: [
         { label: "Kapasite", value: "4 kişi (oturma)" },
-        { label: "Basınç Aralığı", value: "1.5 – 2.5 ATA" },
+        { label: "Basınç Aralığı", value: "2.5 – 6.0 ATA" },
         { label: "Oksijen Saflığı", value: "%93–95" },
         { label: "İç Mekân", value: "Kapitone deri, LED ambiyans" },
         { label: "Güvenlik", value: "Acil durum valf sistemi" },
@@ -341,7 +341,7 @@ const TRANSLATIONS = {
       overview_text: "Sağlık kurumları için hastane sınıfı, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun tedavi merkezlerinin ihtiyacını karşılar.",
       specs: [
         { label: "Kapasite", value: "6+ kişi (oturma)" },
-        { label: "Basınç Aralığı", value: "3.0 – 6.0 ATA" },
+        { label: "Basınç Aralığı", value: "2.5 – 6.0 ATA" },
         { label: "Oksijen Saflığı", value: "%93–95" },
         { label: "Güvenlik", value: "Acil durum valf sistemi" },
         { label: "Yapı", value: "Hastane sınıfı" },
@@ -467,7 +467,7 @@ const TRANSLATIONS = {
       pressure_auto_note: "3.0 ve 6.0 ATA yalnızca Apex Nexus modelinde sunulur — basınç seviyesi 2.5 ATA'ya ayarlandı.",
       pressure_auto_note_up: "Apex Nexus medical kabindir ve yalnızca yüksek basınç sunar — basınç seviyesi 3.0 ATA'ya ayarlandı.",
       seat_step_title: "Koltuk Sayısı",
-      seat_step_note: "Apex Nexus modelinde, ihtiyacınıza göre koltuk sayısını 6'dan başlayarak artırabilirsiniz.",
+      seat_step_note: "İhtiyacınıza göre koltuk sayısını artırıp azaltabilirsiniz.",
       seats_label: "Koltuk",
       currency_label: "Para Birimi",
       summary: {
@@ -1036,7 +1036,7 @@ const TRANSLATIONS = {
           features: [
             "Predictive maintenance: the system warns you when the compressor motor's vibration pattern changes",
             "Digital security log: every pressure change is logged to the cloud in encrypted form",
-            "Automatic disinfection log: UV-C or ozone disinfection is recorded automatically when performed"
+            "Consumable and filter life tracking: automatically alerts you when replacement is due based on usage hours"
           ]
         }
       },
@@ -1125,7 +1125,7 @@ const TRANSLATIONS = {
       overview_text: "Developed specifically for users who need treatment in a lying position. Its medical orthopedic bed and aviation-grade aluminum body provide maximum comfort during long sessions.",
       specs: [
         { label: "Capacity", value: "1 person (lying position)" },
-        { label: "Pressure Range", value: "1.5 – 2.5 ATA" },
+        { label: "Pressure Range", value: "1.5 – 2.0 ATA" },
         { label: "Bed", value: "Medical orthopedic, 200×80 cm" },
         { label: "Material", value: "Aviation-grade aluminum" },
         { label: "Safety", value: "Dual safety valve" },
@@ -1139,7 +1139,7 @@ const TRANSLATIONS = {
       overview_text: "A compact, elegant, fully equipped chamber designed for individual hyperbaric oxygen therapy. With touchscreen control, it's ideal for home or clinic use.",
       specs: [
         { label: "Capacity", value: "1 person (sitting)" },
-        { label: "Pressure Range", value: "1.5 – 2.5 ATA" },
+        { label: "Pressure Range", value: "1.5 – 2.0 ATA" },
         { label: "Control", value: "Touchscreen" },
         { label: "Material", value: "Aviation-grade aluminum" },
         { label: "Safety", value: "Dual safety valve" },
@@ -1153,7 +1153,7 @@ const TRANSLATIONS = {
       overview_text: "A dual-seat hyperbaric chamber offering shared therapy sessions. Designed for couples, partners, or patient-companion use.",
       specs: [
         { label: "Capacity", value: "2 people (sitting)" },
-        { label: "Pressure Range", value: "1.5 – 2.5 ATA" },
+        { label: "Pressure Range", value: "1.5 – 2.0 ATA" },
         { label: "Oxygen Purity", value: "93–95%" },
         { label: "Safety", value: "Emergency valve system" },
         { label: "Control", value: "Dual control system" },
@@ -1166,7 +1166,7 @@ const TRANSLATIONS = {
       overview_text: "A mid-scale, multi-seat chamber with an integrated control panel. Built for clinics and commercial wellness facilities.",
       specs: [
         { label: "Capacity", value: "4 people (sitting)" },
-        { label: "Pressure Range", value: "1.5 – 2.5 ATA" },
+        { label: "Pressure Range", value: "2.5 – 6.0 ATA" },
         { label: "Oxygen Purity", value: "93–95%" },
         { label: "Safety", value: "Emergency valve system" },
         { label: "Monitoring", value: "Multi-user monitoring" },
@@ -1179,7 +1179,7 @@ const TRANSLATIONS = {
       overview_text: "A four-person premium cabin with a spacious cube-form interior. With quilted leather upholstery, LED ambient lighting, and an independent control unit, it delivers comfortable multi-person therapy for clinics and wellness centers.",
       specs: [
         { label: "Capacity", value: "4 people (sitting)" },
-        { label: "Pressure Range", value: "1.5 – 2.5 ATA" },
+        { label: "Pressure Range", value: "2.5 – 6.0 ATA" },
         { label: "Oxygen Purity", value: "93–95%" },
         { label: "Interior", value: "Quilted leather, LED ambient" },
         { label: "Safety", value: "Emergency valve system" },
@@ -1192,7 +1192,7 @@ const TRANSLATIONS = {
       overview_text: "A hospital-grade, large-capacity chamber for medical institutions. Its modular design and advanced monitoring systems meet the needs of the busiest treatment centers.",
       specs: [
         { label: "Capacity", value: "6+ people (sitting)" },
-        { label: "Pressure Range", value: "3.0 – 6.0 ATA" },
+        { label: "Pressure Range", value: "2.5 – 6.0 ATA" },
         { label: "Oxygen Purity", value: "93–95%" },
         { label: "Safety", value: "Emergency valve system" },
         { label: "Build", value: "Hospital-grade" },
@@ -1318,7 +1318,7 @@ const TRANSLATIONS = {
       pressure_auto_note: "3.0 and 6.0 ATA are available on the Apex Nexus only — pressure level has been reset to 2.5 ATA.",
       pressure_auto_note_up: "The Apex Nexus is a medical chamber offering high pressure only — pressure level has been set to 3.0 ATA.",
       seat_step_title: "Seat Count",
-      seat_step_note: "For the Apex Nexus, you can increase the seat count starting from 6 to match your needs.",
+      seat_step_note: "You can increase or decrease the seat count to match your needs.",
       seats_label: "Seats",
       currency_label: "Currency",
       summary: {
@@ -1887,7 +1887,7 @@ const TRANSLATIONS = {
           features: [
             "Прогнозное обслуживание: система предупреждает при изменении характера вибрации мотора компрессора",
             "Цифровой журнал безопасности: каждое изменение давления шифруется и записывается в облако",
-            "Автоматический журнал дезинфекции: автоматическая запись при проведении UV-C или озоновой дезинфекции"
+            "Отслеживание ресурса расходных материалов и фильтров: автоматическое уведомление о необходимости замены на основе наработки"
           ]
         }
       },
@@ -1976,7 +1976,7 @@ const TRANSLATIONS = {
       overview_text: "Разработана специально для пользователей, нуждающихся в лечении в положении лёжа. Медицинское ортопедическое ложе и корпус из авиационного алюминия обеспечивают максимальный комфорт во время длительных сеансов.",
       specs: [
         { label: "Вместимость", value: "1 человек (положение лёжа)" },
-        { label: "Диапазон давления", value: "1.5 – 2.5 ATA" },
+        { label: "Диапазон давления", value: "1.5 – 2.0 ATA" },
         { label: "Ложе", value: "Медицинское ортопедическое, 200×80 см" },
         { label: "Материал", value: "Авиационный алюминий" },
         { label: "Безопасность", value: "Двойной предохранительный клапан" },
@@ -1990,7 +1990,7 @@ const TRANSLATIONS = {
       overview_text: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарической оксигенотерапии. С сенсорным управлением идеально подходит для домашнего или клинического использования.",
       specs: [
         { label: "Вместимость", value: "1 человек (сидя)" },
-        { label: "Диапазон давления", value: "1.5 – 2.5 ATA" },
+        { label: "Диапазон давления", value: "1.5 – 2.0 ATA" },
         { label: "Управление", value: "Сенсорный экран" },
         { label: "Материал", value: "Авиационный алюминий" },
         { label: "Безопасность", value: "Двойной предохранительный клапан" },
@@ -2004,7 +2004,7 @@ const TRANSLATIONS = {
       overview_text: "Двухместная гипербарическая камера для совместных сеансов терапии. Разработана для пар, партнёров или пациента с сопровождающим.",
       specs: [
         { label: "Вместимость", value: "2 человека (сидя)" },
-        { label: "Диапазон давления", value: "1.5 – 2.5 ATA" },
+        { label: "Диапазон давления", value: "1.5 – 2.0 ATA" },
         { label: "Чистота кислорода", value: "93–95%" },
         { label: "Безопасность", value: "Система аварийных клапанов" },
         { label: "Управление", value: "Двойная система управления" },
@@ -2017,7 +2017,7 @@ const TRANSLATIONS = {
       overview_text: "Многоместная камера среднего масштаба с интегрированной панелью управления. Создана для клиник и коммерческих wellness-центров.",
       specs: [
         { label: "Вместимость", value: "4 человека (сидя)" },
-        { label: "Диапазон давления", value: "1.5 – 2.5 ATA" },
+        { label: "Диапазон давления", value: "2.5 – 6.0 ATA" },
         { label: "Чистота кислорода", value: "93–95%" },
         { label: "Безопасность", value: "Система аварийных клапанов" },
         { label: "Мониторинг", value: "Мониторинг нескольких пользователей" },
@@ -2030,7 +2030,7 @@ const TRANSLATIONS = {
       overview_text: "Четырёхместная премиум-кабина с просторным кубическим интерьером. Стёганая кожаная обивка, LED-подсветка и независимый блок управления обеспечивают комфортную многоместную терапию для клиник и wellness-центров.",
       specs: [
         { label: "Вместимость", value: "4 человека (сидя)" },
-        { label: "Диапазон давления", value: "1.5 – 2.5 ATA" },
+        { label: "Диапазон давления", value: "2.5 – 6.0 ATA" },
         { label: "Чистота кислорода", value: "93–95%" },
         { label: "Интерьер", value: "Стёганая кожа, LED-подсветка" },
         { label: "Безопасность", value: "Система аварийных клапанов" },
@@ -2043,7 +2043,7 @@ const TRANSLATIONS = {
       overview_text: "Камера госпитального класса большой вместимости для медицинских учреждений. Модульная конструкция и продвинутые системы мониторинга отвечают потребностям самых загруженных лечебных центров.",
       specs: [
         { label: "Вместимость", value: "6+ человек (сидя)" },
-        { label: "Диапазон давления", value: "3.0 – 6.0 ATA" },
+        { label: "Диапазон давления", value: "2.5 – 6.0 ATA" },
         { label: "Чистота кислорода", value: "93–95%" },
         { label: "Безопасность", value: "Система аварийных клапанов" },
         { label: "Конструкция", value: "Госпитальный класс" },
@@ -2169,7 +2169,7 @@ const TRANSLATIONS = {
       pressure_auto_note: "Уровни 3.0 и 6.0 ATA доступны только для Apex Nexus — давление изменено на 2.5 ATA.",
       pressure_auto_note_up: "Apex Nexus — медицинская барокамера только с высоким давлением — давление изменено на 3.0 ATA.",
       seat_step_title: "Количество мест",
-      seat_step_note: "Для модели Apex Nexus вы можете увеличивать количество мест начиная с 6, в соответствии с вашими потребностями.",
+      seat_step_note: "Вы можете увеличивать или уменьшать количество мест в соответствии с вашими потребностями.",
       seats_label: "мест",
       currency_label: "Валюта",
       summary: {
@@ -2738,7 +2738,7 @@ const TRANSLATIONS = {
           features: [
             "صيانة تنبؤية: يُصدر النظام تحذيراً عند تغيّر نمط اهتزاز محرك الضاغط",
             "سجل أمان رقمي: يُسجَّل كل تغيّر في الضغط بشكل مشفّر في السحابة",
-            "سجل تعقيم تلقائي: تسجيل تلقائي عند إجراء التعقيم بالأشعة فوق البنفسجية أو الأوزون"
+            "تتبع عمر المواد الاستهلاكية والفلاتر: تنبيه تلقائي عند حلول موعد الاستبدال بناءً على ساعات الاستخدام"
           ]
         }
       },
@@ -2827,7 +2827,7 @@ const TRANSLATIONS = {
       overview_text: "طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء. يوفر سريرها الطبي التقويمي وهيكلها من الألومنيوم بمعايير الطيران أقصى درجات الراحة خلال الجلسات الطويلة.",
       specs: [
         { label: "السعة", value: "شخص واحد (وضعية الاستلقاء)" },
-        { label: "نطاق الضغط", value: "1.5 – 2.5 ATA" },
+        { label: "نطاق الضغط", value: "1.5 – 2.0 ATA" },
         { label: "السرير", value: "طبي تقويمي، 200×80 سم" },
         { label: "المادة", value: "ألومنيوم بمعايير الطيران" },
         { label: "السلامة", value: "صمام أمان مزدوج" },
@@ -2841,7 +2841,7 @@ const TRANSLATIONS = {
       overview_text: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للعلاج الفردي بالأكسجين عالي الضغط. بفضل التحكم بشاشة اللمس، فهي مثالية للاستخدام المنزلي أو في العيادة.",
       specs: [
         { label: "السعة", value: "شخص واحد (جلوس)" },
-        { label: "نطاق الضغط", value: "1.5 – 2.5 ATA" },
+        { label: "نطاق الضغط", value: "1.5 – 2.0 ATA" },
         { label: "التحكم", value: "شاشة لمس" },
         { label: "المادة", value: "ألومنيوم بمعايير الطيران" },
         { label: "السلامة", value: "صمام أمان مزدوج" },
@@ -2855,7 +2855,7 @@ const TRANSLATIONS = {
       overview_text: "غرفة أكسجين عالي الضغط بمقعدين توفر جلسات علاج مشتركة. مصممة للأزواج أو الشركاء أو استخدام المريض مع مرافق.",
       specs: [
         { label: "السعة", value: "شخصان (جلوس)" },
-        { label: "نطاق الضغط", value: "1.5 – 2.5 ATA" },
+        { label: "نطاق الضغط", value: "1.5 – 2.0 ATA" },
         { label: "نقاء الأكسجين", value: "93–95%" },
         { label: "السلامة", value: "نظام صمامات الطوارئ" },
         { label: "التحكم", value: "نظام تحكم مزدوج" },
@@ -2868,7 +2868,7 @@ const TRANSLATIONS = {
       overview_text: "غرفة متوسطة الحجم متعددة المقاعد بلوحة تحكم متكاملة. بُنيت للعيادات ومراكز العافية التجارية.",
       specs: [
         { label: "السعة", value: "4 أشخاص (جلوس)" },
-        { label: "نطاق الضغط", value: "1.5 – 2.5 ATA" },
+        { label: "نطاق الضغط", value: "2.5 – 6.0 ATA" },
         { label: "نقاء الأكسجين", value: "93–95%" },
         { label: "السلامة", value: "نظام صمامات الطوارئ" },
         { label: "المراقبة", value: "مراقبة متعددة المستخدمين" },
@@ -2881,7 +2881,7 @@ const TRANSLATIONS = {
       overview_text: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب. مع تنجيد جلدي مبطّن وإضاءة LED محيطية ووحدة تحكم مستقلة، تقدّم علاجاً مريحاً متعدد الأشخاص للعيادات ومراكز العافية.",
       specs: [
         { label: "السعة", value: "4 أشخاص (جلوس)" },
-        { label: "نطاق الضغط", value: "1.5 – 2.5 ATA" },
+        { label: "نطاق الضغط", value: "2.5 – 6.0 ATA" },
         { label: "نقاء الأكسجين", value: "93–95%" },
         { label: "التصميم الداخلي", value: "جلد مبطّن، إضاءة LED محيطية" },
         { label: "السلامة", value: "نظام صمامات الطوارئ" },
@@ -2894,7 +2894,7 @@ const TRANSLATIONS = {
       overview_text: "غرفة بمستوى المستشفيات وسعة كبيرة للمؤسسات الطبية. يلبي تصميمها المعياري وأنظمة المراقبة المتقدمة احتياجات أكثر مراكز العلاج ازدحاماً.",
       specs: [
         { label: "السعة", value: "6+ أشخاص (جلوس)" },
-        { label: "نطاق الضغط", value: "3.0 – 6.0 ATA" },
+        { label: "نطاق الضغط", value: "2.5 – 6.0 ATA" },
         { label: "نقاء الأكسجين", value: "93–95%" },
         { label: "السلامة", value: "نظام صمامات الطوارئ" },
         { label: "البنية", value: "بمستوى المستشفيات" },
@@ -3020,7 +3020,7 @@ const TRANSLATIONS = {
       pressure_auto_note: "مستويا 3.0 و6.0 ATA متاحان فقط في طراز Apex Nexus — تمت إعادة مستوى الضغط إلى 2.5 ATA.",
       pressure_auto_note_up: "طراز Apex Nexus هو غرفة طبية بضغط عالٍ فقط — تم ضبط مستوى الضغط إلى 3.0 ATA.",
       seat_step_title: "عدد المقاعد",
-      seat_step_note: "بالنسبة لموديل Apex Nexus، يمكنك زيادة عدد المقاعد ابتداءً من 6 حسب احتياجك.",
+      seat_step_note: "يمكنك زيادة عدد المقاعد أو إنقاصه حسب احتياجك.",
       seats_label: "مقعد",
       currency_label: "العملة",
       summary: {
