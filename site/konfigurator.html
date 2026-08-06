@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
 <meta name="theme-color" content="#0a0f14" />
-<link rel="stylesheet" href="assets/css/style.css?v=25" />
+<link rel="stylesheet" href="assets/css/style.css?v=27" />
 </head>
 <body data-page="configurator">
 
@@ -85,14 +85,22 @@
       <div class="configurator-layout">
         <div class="config-steps">
 
+          <button type="button" class="config-guide-btn" id="config-guide-open" data-i18n="configurator.guide.button">Hangi Kabini Seçmeliyim?</button>
+
           <div>
-            <div class="config-step-title" data-i18n="configurator.style_step_title">1. Kabin Stili</div>
+            <div class="config-step-title" data-i18n="configurator.usage_step_title">1. Kullanım Alanı</div>
+            <div class="config-step-note" data-i18n="configurator.usage_step_note">Not.</div>
+            <div class="config-usage-grid" id="config-usage-grid"></div>
+          </div>
+
+          <div>
+            <div class="config-step-title" data-i18n="configurator.style_step_title">2. Kabin Stili</div>
             <div class="config-step-note" data-i18n="configurator.style_step_note">Not.</div>
             <div class="config-style-grid" id="config-style-grid"></div>
           </div>
 
           <div>
-            <div class="config-step-title" data-i18n="configurator.step1_title">2. Model Seçin</div>
+            <div class="config-step-title" data-i18n="configurator.step1_title">3. Model Seçin</div>
             <div class="config-model-grid" id="config-model-grid"></div>
           </div>
 
@@ -108,32 +116,32 @@
           </div>
 
           <div>
-            <div class="config-step-title" data-i18n="configurator.color_step_title">3. Renk Seçin</div>
+            <div class="config-step-title" data-i18n="configurator.color_step_title">4. Renk Seçin</div>
             <div class="config-step-note" data-i18n="configurator.color_step_note">Not.</div>
             <div class="config-color-grid" id="config-color-grid"></div>
           </div>
 
           <div>
-            <div class="config-step-title" data-i18n="configurator.interior_step_title">4. İç Renk</div>
+            <div class="config-step-title" data-i18n="configurator.interior_step_title">5. İç Renk</div>
             <div class="config-step-note" data-i18n="configurator.interior_step_note">Not.</div>
             <div class="config-color-grid" id="config-interior-color-grid"></div>
           </div>
 
           <div>
-            <div class="config-step-title" data-i18n="configurator.seat_color_step_title">5. Koltuk Rengi</div>
+            <div class="config-step-title" data-i18n="configurator.seat_color_step_title">6. Koltuk Rengi</div>
             <div class="config-step-note" data-i18n="configurator.seat_color_step_note">Not.</div>
             <div class="config-color-grid" id="config-seat-color-grid"></div>
           </div>
 
           <div>
-            <div class="config-step-title" data-i18n="configurator.step2_title">6. Basınç Seviyesi</div>
+            <div class="config-step-title" data-i18n="configurator.step2_title">7. Basınç Seviyesi</div>
             <div class="config-step-note" data-i18n="configurator.pressure_note">Not.</div>
             <div class="config-pressure-grid" id="config-pressure-grid"></div>
             <div class="config-pressure-note" id="pressure-auto-note" hidden></div>
           </div>
 
           <div>
-            <div class="config-step-title" data-i18n="configurator.step3_title">7. Ek Özellikler</div>
+            <div class="config-step-title" data-i18n="configurator.step3_title">8. Ek Özellikler</div>
             <div class="config-addon-grid" id="config-addon-grid"></div>
           </div>
 
@@ -161,7 +169,7 @@
       </div>
 
       <div class="quote-form-panel">
-        <h3 data-i18n="configurator.step4_title">8. Teklif İsteyin</h3>
+        <h3 data-i18n="configurator.step4_title">9. Teklif İsteyin</h3>
         <form id="quote-form" action="https://script.google.com/macros/s/AKfycbzKAGNUi3YYMMUx2hlWTsFtTwJGo_B-NLve480yCWyblbCsmJRQ95qGiHMsz1HsMnVWtw/exec" method="POST" novalidate>
           <div class="form-row">
             <div class="form-field">
@@ -201,6 +209,16 @@
   </section>
 </main>
 
+<div class="guide-modal" id="guide-modal" hidden>
+  <div class="guide-modal-backdrop" id="guide-modal-backdrop"></div>
+  <div class="guide-modal-panel" role="dialog" aria-modal="true" aria-labelledby="guide-modal-title">
+    <button type="button" class="guide-modal-close" id="guide-modal-close" aria-label="Close">&times;</button>
+    <h3 id="guide-modal-title" data-i18n="configurator.guide.title">Size Uygun Kabini Bulalım</h3>
+    <p class="guide-modal-intro" data-i18n="configurator.guide.intro">Alt metin.</p>
+    <div class="guide-modal-list" id="guide-modal-list"></div>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
@@ -226,9 +244,9 @@
   </div>
 </footer>
 
-<script src="assets/js/translations.js?v=25"></script>
+<script src="assets/js/translations.js?v=27"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/js/recolor.js?v=25"></script>
-<script src="assets/js/main.js?v=26"></script>
+<script src="assets/js/main.js?v=27"></script>
 </body>
 </html>

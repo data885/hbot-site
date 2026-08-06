@@ -487,7 +487,13 @@
   const REF_CODES = ["HBOT-REF-2026", "APEX-REF-2026", "ALMITA-2026"];
   const REF_DISCOUNT_PCT = 5;
   const CRM_ENDPOINT = "https://crmalmita.com/api/leads"; // public lead API yoksa sessiz fallback
-  const configState = { model: "solo-lounge", tierIndex: 0, addons: new Set(), nexusSeats: NEXUS_BASE_SEATS, color: "pearl-white", chamberStyle: "solid", interiorColor: "cream", seatColor: "konyak", seatTouched: false, stageView: "exterior", spinIdx: 0, discountPct: 0, refCode: "" };
+  const configState = { usageType: "home", model: "solo-lounge", tierIndex: 0, addons: new Set(), nexusSeats: NEXUS_BASE_SEATS, color: "pearl-white", chamberStyle: "solid", interiorColor: "cream", seatColor: "konyak", seatTouched: false, stageView: "exterior", spinIdx: 0, discountPct: 0, refCode: "" };
+  /* Kullanım alanı -> izinli model id'leri. Yüksek basınç (3.0/6.0 ATA) yalnızca
+     Nexus'ta mevcut olduğu için kurumsal kategori tek modelle sınırlı. */
+  const USAGE_MODELS = {
+    home: ["solo-lounge", "solo", "duo", "quad", "quad-cube"],
+    institutional: ["nexus"]
+  };
 
   /* Showcase stage: model -> gerçek fotoğraf / 360° spin seti.
      Dış görünüm = gerçek fotoğraf (REAL_STAGE) veya 360° spin seti (SPIN_MODELS).
@@ -776,6 +782,108 @@
     stage.addEventListener("touchend", () => { lastTouch = null; targetX = 0; targetY = 0; kick(); });
   }
 
+
+  /* Kullanım alanı seçimi: model listesini (Model Seçin adımı) filtreler.
+     Kurumsal = yalnızca yüksek basınçlı (3.0/6.0 ATA) Nexus; Ev Tipi = diğer 5 model. */
+  function renderUsageType(dict) {
+    const c = document.getElementById("config-usage-grid");
+    if (!c || !dict.configurator.usage) return;
+    const opts = [
+      { id: "home", info: dict.configurator.usage.home },
+      { id: "institutional", info: dict.configurator.usage.institutional }
+    ];
+    c.innerHTML = opts.map((o) => {
+      const selected = configState.usageType === o.id ? " is-selected" : "";
+      return `
+        <button type="button" class="config-style-card${selected}" data-usage-id="${o.id}">
+          <span class="config-check">${ICONS.check}</span>
+          <h4>${o.info.title}</h4>
+          <p>${o.info.desc}</p>
+        </button>
+      `;
+    }).join("");
+
+    c.querySelectorAll(".config-style-card").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const usageId = btn.getAttribute("data-usage-id");
+        if (usageId === configState.usageType) return;
+        configState.usageType = usageId;
+        const allowedIds = USAGE_MODELS[usageId] || USAGE_MODELS.home;
+        if (!allowedIds.includes(configState.model)) {
+          configState.model = allowedIds[0];
+          pressureAutoNote = false;
+          ensureTierCompatible(true);
+          configState.nexusSeats = NEXUS_BASE_SEATS;
+        }
+        const dict2 = TRANSLATIONS[currentLang];
+        renderUsageType(dict2);
+        renderConfigModels(dict2);
+        renderConfigPressure(dict2);
+        renderNexusSeatSection(dict2);
+        renderConfigSummary(dict2);
+        updateConfigStage(dict2);
+      });
+    });
+  }
+
+  /* "Hangi Kabini Seçmeliyim?" rehber modalı: senaryo listesi -> tek tıkla
+     doğru kullanım alanı + modeli ayarlayıp konfigüratörü günceller. */
+  function renderGuideModal(dict) {
+    const list = document.getElementById("guide-modal-list");
+    if (!list || !dict.configurator.guide) return;
+    const items = dict.configurator.guide.items || [];
+    list.innerHTML = items.map((it, i) => `
+      <div class="guide-modal-item">
+        <div class="guide-modal-item-text">
+          <div class="guide-modal-item-scenario">${it.scenario}</div>
+          <div class="guide-modal-item-model">${it.model}</div>
+        </div>
+        <button type="button" class="guide-modal-item-btn" data-guide-index="${i}">${dict.configurator.guide.select_button}</button>
+      </div>
+    `).join("");
+
+    list.querySelectorAll(".guide-modal-item-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = parseInt(btn.getAttribute("data-guide-index"), 10);
+        const item = items[idx];
+        if (!item) return;
+        configState.usageType = item.usage;
+        configState.model = item.modelId;
+        pressureAutoNote = false;
+        ensureTierCompatible(true);
+        configState.nexusSeats = NEXUS_BASE_SEATS;
+        const dict2 = TRANSLATIONS[currentLang];
+        renderUsageType(dict2);
+        renderConfigModels(dict2);
+        renderConfigPressure(dict2);
+        renderNexusSeatSection(dict2);
+        renderConfigSummary(dict2);
+        updateConfigStage(dict2);
+        closeGuideModal();
+        document.getElementById("config-usage-grid").scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+  }
+
+  function openGuideModal() {
+    const modal = document.getElementById("guide-modal");
+    if (modal) modal.hidden = false;
+  }
+  function closeGuideModal() {
+    const modal = document.getElementById("guide-modal");
+    if (modal) modal.hidden = true;
+  }
+  function initGuideModal() {
+    const openBtn = document.getElementById("config-guide-open");
+    const closeBtn = document.getElementById("guide-modal-close");
+    const backdrop = document.getElementById("guide-modal-backdrop");
+    if (openBtn) openBtn.addEventListener("click", openGuideModal);
+    if (closeBtn) closeBtn.addEventListener("click", closeGuideModal);
+    if (backdrop) backdrop.addEventListener("click", closeGuideModal);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeGuideModal();
+    });
+  }
 
   function renderConfigStyles(dict) {
     const c = document.getElementById("config-style-grid");
@@ -1089,7 +1197,9 @@
   function renderConfigModels(dict) {
     const c = document.getElementById("config-model-grid");
     if (!c) return;
-    c.innerHTML = dict.configurator.models.map((m) => {
+    const allowedIds = USAGE_MODELS[configState.usageType] || USAGE_MODELS.home;
+    const visibleModels = dict.configurator.models.filter((m) => allowedIds.includes(m.id));
+    c.innerHTML = visibleModels.map((m) => {
       const selected = configState.model === m.id ? " is-selected" : "";
       const priceLabel = m.id === "nexus" ? formatPrice(MODEL_PRICING[m.id].base) + "+" : formatPrice(MODEL_PRICING[m.id].base);
       return `
@@ -1800,7 +1910,10 @@
     if (!configuratorPreselected) {
       const params = new URLSearchParams(window.location.search);
       const preModel = params.get("model");
-      if (preModel && MODEL_PRICING[preModel]) configState.model = preModel;
+      if (preModel && MODEL_PRICING[preModel]) {
+        configState.model = preModel;
+        configState.usageType = USAGE_MODELS.institutional.includes(preModel) ? "institutional" : "home";
+      }
 
       const preStyle = params.get("style");
       if (preStyle && STYLE_PRICING[preStyle] !== undefined) configState.chamberStyle = preStyle;
@@ -1855,6 +1968,8 @@
 
       configuratorPreselected = true;
     }
+    renderUsageType(dict);
+    renderGuideModal(dict);
     renderConfigModels(dict);
     renderConfigStyles(dict);
     renderConfigColors(dict);
@@ -1870,6 +1985,7 @@
       initCurrencySwitch();
       initConfigStageTilt();
       initStageViewToggle();
+      initGuideModal();
       initSpin();
       fetchExchangeRates(() => {
         const freshDict = TRANSLATIONS[currentLang];
