@@ -370,8 +370,8 @@ const TRANSLATIONS = {
       usage_step_title: "1. Kullanım Alanı",
       usage_step_note: "Yüksek basınçlı modeller yalnızca kurumsal kullanım için sunulur.",
       usage: {
-        home: { title: "Ev Tipi", desc: "Bireysel ve aile kullanımı için düşük basınçlı modeller (1.5–2.5 ATA)." },
-        institutional: { title: "Kurumsal", desc: "Klinik ve hastane kullanımı için yüksek basınçlı, çok kişilik model (3.0–6.0 ATA)." }
+        home: { title: "Ev Tipi", desc: "Bireysel ve eş/partner kullanımı için düşük basınçlı modeller (1.5–2.5 ATA)." },
+        institutional: { title: "Kurumsal", desc: "Klinik, wellness merkezi ve hastaneler için çok kişilik, yüksek kapasiteli modeller." }
       },
       guide: {
         button: "Hangi Kabini Seçmeliyim?",
@@ -382,9 +382,10 @@ const TRANSLATIONS = {
         items: [
           { scenario: "Evde, tek başıma, yatarak tedavi almak istiyorum", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
           { scenario: "Evde, tek başıma, oturarak kullanmak istiyorum", model: "Apex Solo", modelId: "solo", usage: "home" },
-          { scenario: "Eşim/partnerimle birlikte kullanacağız", model: "Apex Duo", modelId: "duo", usage: "home" },
-          { scenario: "Aile veya küçük bir grup için, evde", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "home" },
-          { scenario: "Klinik veya hastanede, çok hastalı, yüksek basınçlı tedavi", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
+          { scenario: "Eşim/partnerimle birlikte, evde kullanacağız", model: "Apex Duo", modelId: "duo", usage: "home" },
+          { scenario: "Klinik veya wellness merkezi, orta ölçekli grup", model: "Apex Quad", modelId: "quad", usage: "institutional" },
+          { scenario: "Kurumsal kullanım, geniş iç hacimli kabin istiyorum", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "Hastane veya klinikte, çok hastalı, yüksek basınçlı tedavi", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
         ]
       },
       step1_title: "3. Model Seçin",
@@ -1080,8 +1081,8 @@ const TRANSLATIONS = {
       usage_step_title: "1. Intended Use",
       usage_step_note: "High-pressure models are only offered for institutional use.",
       usage: {
-        home: { title: "Home Use", desc: "Low-pressure models for individual and family use (1.5–2.5 ATA)." },
-        institutional: { title: "Institutional", desc: "High-pressure, multi-seat model for clinical and hospital use (3.0–6.0 ATA)." }
+        home: { title: "Home Use", desc: "Low-pressure models for individual and couple use (1.5–2.5 ATA)." },
+        institutional: { title: "Institutional", desc: "Multi-seat, high-capacity models for clinics, wellness centers and hospitals." }
       },
       guide: {
         button: "Which Chamber Should I Choose?",
@@ -1092,9 +1093,10 @@ const TRANSLATIONS = {
         items: [
           { scenario: "At home, alone, I want lying-position treatment", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
           { scenario: "At home, alone, I want to sit during sessions", model: "Apex Solo", modelId: "solo", usage: "home" },
-          { scenario: "My partner and I will use it together", model: "Apex Duo", modelId: "duo", usage: "home" },
-          { scenario: "For a family or small group, at home", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "home" },
-          { scenario: "In a clinic or hospital, multiple patients, high pressure", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
+          { scenario: "My partner and I will use it together, at home", model: "Apex Duo", modelId: "duo", usage: "home" },
+          { scenario: "Clinic or wellness center, medium-sized group", model: "Apex Quad", modelId: "quad", usage: "institutional" },
+          { scenario: "Institutional use, want a spacious interior chamber", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "In a hospital or clinic, multiple patients, high pressure", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
         ]
       },
       step1_title: "3. Choose a Model",
@@ -1790,8 +1792,8 @@ const TRANSLATIONS = {
       usage_step_title: "1. Сфера применения",
       usage_step_note: "Камеры высокого давления предлагаются только для учрежденческого использования.",
       usage: {
-        home: { title: "Домашнее использование", desc: "Модели низкого давления для индивидуального и семейного использования (1,5–2,5 ATA)." },
-        institutional: { title: "Учрежденческое", desc: "Многоместная модель высокого давления для клиник и больниц (3,0–6,0 ATA)." }
+        home: { title: "Домашнее использование", desc: "Модели низкого давления для индивидуального использования и для пар (1,5–2,5 ATA)." },
+        institutional: { title: "Учрежденческое", desc: "Многоместные модели повышенной вместимости для клиник, велнес-центров и больниц." }
       },
       guide: {
         button: "Какую камеру мне выбрать?",
@@ -1802,9 +1804,10 @@ const TRANSLATIONS = {
         items: [
           { scenario: "Дома, один, хочу лежачее положение при сеансах", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
           { scenario: "Дома, один, хочу сидеть во время сеансов", model: "Apex Solo", modelId: "solo", usage: "home" },
-          { scenario: "Будем использовать вместе с партнёром", model: "Apex Duo", modelId: "duo", usage: "home" },
-          { scenario: "Для семьи или небольшой группы, дома", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "home" },
-          { scenario: "В клинике или больнице, несколько пациентов, высокое давление", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
+          { scenario: "Будем использовать вместе с партнёром, дома", model: "Apex Duo", modelId: "duo", usage: "home" },
+          { scenario: "Клиника или велнес-центр, группа среднего размера", model: "Apex Quad", modelId: "quad", usage: "institutional" },
+          { scenario: "Учрежденческое использование, нужна просторная камера", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "В больнице или клинике, несколько пациентов, высокое давление", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
         ]
       },
       step1_title: "3. Выберите модель",
@@ -2500,8 +2503,8 @@ const TRANSLATIONS = {
       usage_step_title: "1. مجال الاستخدام",
       usage_step_note: "الموديلات عالية الضغط تُقدَّم فقط للاستخدام المؤسسي.",
       usage: {
-        home: { title: "استخدام منزلي", desc: "موديلات منخفضة الضغط للاستخدام الفردي والعائلي (1.5–2.5 ATA)." },
-        institutional: { title: "مؤسسي", desc: "موديل متعدد المقاعد عالي الضغط للاستخدام السريري والمستشفيات (3.0–6.0 ATA)." }
+        home: { title: "استخدام منزلي", desc: "موديلات منخفضة الضغط للاستخدام الفردي وللأزواج (1.5–2.5 ATA)." },
+        institutional: { title: "مؤسسي", desc: "موديلات متعددة المقاعد وعالية السعة للعيادات ومراكز العافية والمستشفيات." }
       },
       guide: {
         button: "أي كابينة يجب أن أختار؟",
@@ -2512,9 +2515,10 @@ const TRANSLATIONS = {
         items: [
           { scenario: "في المنزل، بمفردي، أريد العلاج في وضعية الاستلقاء", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
           { scenario: "في المنزل، بمفردي، أريد الجلوس أثناء الجلسات", model: "Apex Solo", modelId: "solo", usage: "home" },
-          { scenario: "سأستخدمها مع شريكي", model: "Apex Duo", modelId: "duo", usage: "home" },
-          { scenario: "لعائلة أو مجموعة صغيرة، في المنزل", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "home" },
-          { scenario: "في عيادة أو مستشفى، مرضى متعددون، ضغط عالٍ", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
+          { scenario: "سأستخدمها مع شريكي، في المنزل", model: "Apex Duo", modelId: "duo", usage: "home" },
+          { scenario: "عيادة أو مركز عافية، مجموعة متوسطة الحجم", model: "Apex Quad", modelId: "quad", usage: "institutional" },
+          { scenario: "استخدام مؤسسي، أريد كابينة بمساحة داخلية واسعة", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "في مستشفى أو عيادة، مرضى متعددون، ضغط عالٍ", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
         ]
       },
       step1_title: "3. اختر الموديل",

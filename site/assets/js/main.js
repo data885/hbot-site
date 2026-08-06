@@ -491,8 +491,8 @@
   /* Kullanım alanı -> izinli model id'leri. Yüksek basınç (3.0/6.0 ATA) yalnızca
      Nexus'ta mevcut olduğu için kurumsal kategori tek modelle sınırlı. */
   const USAGE_MODELS = {
-    home: ["solo-lounge", "solo", "duo", "quad", "quad-cube"],
-    institutional: ["nexus"]
+    home: ["solo-lounge", "solo", "duo"],
+    institutional: ["quad", "quad-cube", "nexus"]
   };
 
   /* Showcase stage: model -> gerçek fotoğraf / 360° spin seti.
