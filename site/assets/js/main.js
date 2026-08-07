@@ -2,7 +2,8 @@
   "use strict";
 
   const LANG_KEY = "hbot_lang";
-  const SUPPORTED = ["tr", "en", "ar", "ru"];
+  const SUPPORTED = ["en", "tr", "ar", "ru", "es", "pt", "de"];
+  const PDF_DATE_LOCALE = { tr: "tr-TR", en: "en-GB", ru: "ru-RU", ar: "ar", es: "es-ES", pt: "pt-PT", de: "de-DE" };
 
   /* TODO: replace with the real WhatsApp Business number (country code, digits only, e.g. "905XXXXXXXXX") before launch.
      Bos birakilirsa WhatsApp butonu numara gelene kadar e-posta taslagina yonlendirir. */
@@ -173,8 +174,12 @@
   function detectLang() {
     const saved = localStorage.getItem(LANG_KEY);
     if (saved && SUPPORTED.includes(saved)) return saved;
-    const browser = (navigator.language || "tr").slice(0, 2).toLowerCase();
-    return SUPPORTED.includes(browser) ? browser : "tr";
+    const browserLangs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+    for (let i = 0; i < browserLangs.length; i++) {
+      const code = String(browserLangs[i]).slice(0, 2).toLowerCase();
+      if (SUPPORTED.includes(code)) return code;
+    }
+    return "en";
   }
 
   /* ---------------- Static text i18n ---------------- */
@@ -1789,7 +1794,7 @@
     doc.setFontSize(10);
     doc.setFont(FONT, "normal");
     doc.setTextColor(...GRAY);
-    const dateStr = new Date().toLocaleDateString(currentLang === "ru" ? "ru-RU" : currentLang === "tr" ? "tr-TR" : "en-GB", { year: "numeric", month: "long", day: "numeric" });
+    const dateStr = new Date().toLocaleDateString(PDF_DATE_LOCALE[currentLang] || "en-GB", { year: "numeric", month: "long", day: "numeric" });
     doc.text(`${T(s.pdf_quote_no || "Quote No")}: ${quoteNo}`, mR, 25, { align: "right" });
     doc.text(`${T(s.pdf_date || "Date")}: ${T(dateStr)}`, mR, 30, { align: "right" });
     doc.setDrawColor(...GOLD);
@@ -1916,7 +1921,8 @@
     const s = dict.configurator.summary;
     const summaryText = (document.getElementById("config-summary-text") || {}).value || "";
     const quoteNo = generateQuoteNo();
-    const dateStr = new Date().toLocaleDateString(dict === TRANSLATIONS.ar ? "ar" : dict === TRANSLATIONS.ru ? "ru-RU" : dict === TRANSLATIONS.en ? "en-GB" : "tr-TR", { year: "numeric", month: "long", day: "numeric" });
+    const dictLangKey = Object.keys(TRANSLATIONS).find((k) => TRANSLATIONS[k] === dict);
+    const dateStr = new Date().toLocaleDateString(PDF_DATE_LOCALE[dictLangKey] || "en-GB", { year: "numeric", month: "long", day: "numeric" });
     const rows = summaryText.split("\n").filter(Boolean).map((line) => {
       const idx = line.indexOf(":");
       const label = idx >= 0 ? line.slice(0, idx) : line;
@@ -2104,10 +2110,10 @@
   }
 
   /* ---------------- Language application ---------------- */
-  let currentLang = "tr";
+  let currentLang = "en";
 
   function applyLang(lang) {
-    if (!SUPPORTED.includes(lang)) lang = "tr";
+    if (!SUPPORTED.includes(lang)) lang = "en";
     const dict = TRANSLATIONS[lang];
     if (!dict) return;
     currentLang = lang;
@@ -2348,7 +2354,7 @@
   }
 
   function initYear() {
-    document.querySelectorAll("#current-year").forEach((elm) => (elm.textContent = new Date().getFullYear()));
+    document.querySelectorAll("#current-year").forEach((elm) => (elm.textContent = 2020));
   }
 
   /* ---------------- Hero banner slider ---------------- */

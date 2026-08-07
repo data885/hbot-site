@@ -70,6 +70,10 @@ const TRANSLATIONS = {
         cta_secondary: "Konfigüratörü Başlat",
         trust_line: "İleri Mühendislik · Medikal Sınıf Güvenlik Standartları"
       },
+      heritage: {
+        title: "20 Yıllık Mühendislik Deneyimi",
+        subtitle: "2006'dan Beri Mühendislik Mükemmelliği"
+      },
       stats: [
         { value: "5", label: "Apex Modeli" },
         { value: "94%", label: "Oksijen Saflığı" },
@@ -516,7 +520,7 @@ const TRANSLATIONS = {
       disclaimer: "Bu yazılar, halka açık bilimsel yayın ve haber kaynaklarından derlenen özet bilgilerdir; tıbbi tavsiye niteliği taşımaz. Tedavi kararları için mutlaka bir sağlık profesyoneline danışın.",
       posts: [
         {
-          date: "2026",
+          date: "2024",
           tag: "Kurucu Notu",
           icon: "care",
           title: "Neden Kendim de Hiperbarik Oksijen Kullanıyorum",
@@ -529,10 +533,10 @@ const TRANSLATIONS = {
           author: "Mürsel Alkan"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Longevity",
           icon: "antiaging",
-          title: "HBOT ve Longevity: 2026'da Uzun Yaşam Trendi",
+          title: "HBOT ve Longevity: Yükselen Uzun Yaşam Trendi",
           paragraphs: [
             "Bryan Johnson gibi teknoloji girişimcilerinin kişisel 'genç kalma' protokolleriyle ana akım gündeme taşınan longevity (uzun ve sağlıklı yaşam) akımı, hiperbarik oksijen tedavisine olan ilgiyi de artırdı. Bu ilginin bilimsel dayanaklarından biri, 2020 yılında Aging dergisinde yayımlanan ve 64 yaş üzeri 35 sağlıklı yetişkinin 60 seanslık bir HBOT programına katıldığı klinik çalışma oldu.",
             "Araştırmada, bağışıklık hücrelerinin telomer uzunluklarında %20'nin üzerinde — B hücrelerinde %37'ye varan — artış, yaşlanmış (senescent) bağışıklık hücrelerinin oranında ise %37'ye varan azalma gözlemlendi. Çalışmanın kontrol grubunun olmaması ve örneklem büyüklüğünün sınırlı olması nedeniyle sonuçlar 'umut verici ama ön bulgu' olarak değerlendiriliyor; araştırmacılar optimal protokollerin belirlenmesi için daha kapsamlı çalışmalara ihtiyaç olduğunu vurguluyor."
@@ -541,7 +545,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "Spor",
           icon: "healthSync",
           title: "Elit Sporcular Neden Hiperbarik Oksijen Kullanıyor?",
@@ -553,7 +557,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Rehber",
           icon: "oneSeat",
           title: "Ev Tipi Hiperbarik Kabin Seçim Rehberi",
@@ -565,7 +569,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
-          date: "2026",
+          date: "2025",
           tag: "Araştırma",
           icon: "wound",
           title: "Kronik Yaralarda Hiperbarik Oksijenin Rolü Güçleniyor",
@@ -577,7 +581,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "Spor Sağlığı",
           icon: "burn",
           title: "Sporcular Neden Hiperbarik Odaya Yöneliyor?",
@@ -589,7 +593,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Klinik Kanıt",
           icon: "wound",
           title: "Diyabetik Ayak Ülserlerinde Meta-Analiz: Ampütasyon Riski Azalıyor",
@@ -601,7 +605,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Klinik Kanıt",
           icon: "ear",
           title: "Ani İşitme Kaybında Hiperbarik Oksijen: Erken Müdahale Önemli",
@@ -613,19 +617,19 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Teknoloji",
           icon: "connect",
           title: "Sağlıkta Bağlantılı Cihazlar Çağı: Uzaktan İzleme Hızla Büyüyor",
           paragraphs: [
-            "2026 itibarıyla küresel sağlıkta IoT pazarının 86 milyar doları aştığı tahmin ediliyor. Hastane merkezli bakımdan eve dayalı bakıma geçiş hız kazanırken, ABD'de 350'den fazla hastane artık IoT destekli 'evde hastane' programları yürütüyor.",
+            "Günümüzde küresel sağlıkta IoT pazarının 86 milyar doları aştığı tahmin ediliyor. Hastane merkezli bakımdan eve dayalı bakıma geçiş hız kazanırken, ABD'de 350'den fazla hastane artık IoT destekli 'evde hastane' programları yürütüyor.",
             "Araştırmalar, IoT tabanlı uzaktan hasta izleme sistemlerinin hastane geri yatış oranlarını %50'ye varan oranda azaltabildiğini gösteriyor. HBOT Chamber Tech'in ApexConnect™ platformu da tam olarak bu küresel eğilimin bir parçası: kabinleri buluta bağlayarak gerçek zamanlı izleme ve öngörücü bakım imkânı sunuyor."
           ],
           source_name: "IoT Business News",
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "Klinik",
           icon: "guard",
           title: "Çok Kişilik Kabinlerde Basınç Yönetimi: Klinik İşletim Protokolleri",
@@ -637,7 +641,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Spor",
           icon: "healthSync",
           title: "Spor Kulüplerinde Sezon Hazırlığı: Hiperbarik Destek Programları",
@@ -649,7 +653,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
-          date: "2026",
+          date: "2025",
           tag: "Wellness",
           icon: "premium",
           title: "Lüks Otellerde Yeni Trend: Hiperbarik Wellness Suitleri",
@@ -661,7 +665,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Güvenlik",
           icon: "care",
           title: "3.0 ATA ve Üzeri Basınç: Tıbbi Sınıf Hiperbarik Güvenlik Standartları",
@@ -908,6 +912,10 @@ const TRANSLATIONS = {
         cta_primary: "Explore Models",
         cta_secondary: "Start the Configurator",
         trust_line: "Advanced Engineering · Medical-Grade Safety Standards"
+      },
+      heritage: {
+        title: "20 Years of Engineering Experience",
+        subtitle: "Engineering Excellence Since 2006"
       },
       stats: [
         { value: "5", label: "Apex Models" },
@@ -1355,7 +1363,7 @@ const TRANSLATIONS = {
       disclaimer: "These posts are summaries compiled from publicly available scientific publications and news sources; they do not constitute medical advice. Always consult a healthcare professional for treatment decisions.",
       posts: [
         {
-          date: "2026",
+          date: "2024",
           tag: "Founder's Note",
           icon: "care",
           title: "Why I Use Hyperbaric Oxygen Myself",
@@ -1368,10 +1376,10 @@ const TRANSLATIONS = {
           author: "Mürsel Alkan"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Longevity",
           icon: "antiaging",
-          title: "HBOT and Longevity: The Healthy-Aging Trend of 2026",
+          title: "HBOT and Longevity: The Rising Healthy-Aging Trend",
           paragraphs: [
             "The longevity movement — brought into the mainstream by tech entrepreneurs like Bryan Johnson and their personal 'age-reversal' protocols — has also boosted interest in hyperbaric oxygen therapy. One of its scientific anchors is a clinical study published in the journal Aging in 2020, in which 35 healthy adults aged 64 and over completed a 60-session HBOT program.",
             "The study reported telomere lengthening of more than 20% in immune cells — up to 37% in B cells — along with a reduction of up to 37% in senescent immune cells. Because the trial had no control group and a limited sample size, the results are considered 'promising but preliminary'; the researchers stress that larger studies are needed to define optimal protocols."
@@ -1380,7 +1388,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "Sports",
           icon: "healthSync",
           title: "Why Do Elite Athletes Use Hyperbaric Oxygen?",
@@ -1392,7 +1400,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Guide",
           icon: "oneSeat",
           title: "Home Hyperbaric Chamber Buying Guide",
@@ -1404,7 +1412,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
-          date: "2026",
+          date: "2025",
           tag: "Research",
           icon: "wound",
           title: "Hyperbaric Oxygen's Role in Chronic Wounds Keeps Growing",
@@ -1416,7 +1424,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "Sports Health",
           icon: "burn",
           title: "Why Athletes Are Turning to Hyperbaric Chambers",
@@ -1428,7 +1436,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Clinical Evidence",
           icon: "wound",
           title: "Meta-Analysis on Diabetic Foot Ulcers: Lower Amputation Risk",
@@ -1440,7 +1448,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Clinical Evidence",
           icon: "ear",
           title: "Hyperbaric Oxygen for Sudden Hearing Loss: Early Intervention Matters",
@@ -1452,19 +1460,19 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Technology",
           icon: "connect",
           title: "The Age of Connected Healthcare Devices: Remote Monitoring Grows Fast",
           paragraphs: [
-            "By 2026, the global healthcare IoT market is estimated to have surpassed $86 billion. As the shift from hospital-centered care to home-based care accelerates, more than 350 hospitals in the US now run IoT-enabled 'hospital-at-home' programs.",
+            "Today, the global healthcare IoT market is estimated to have surpassed $86 billion. As the shift from hospital-centered care to home-based care accelerates, more than 350 hospitals in the US now run IoT-enabled 'hospital-at-home' programs.",
             "Research shows IoT-based remote patient monitoring systems can reduce hospital readmission rates by up to 50%. HBOT Chamber Tech's ApexConnect™ platform is exactly part of this global trend: connecting chambers to the cloud for real-time monitoring and predictive maintenance."
           ],
           source_name: "IoT Business News",
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "Clinical",
           icon: "guard",
           title: "Pressure Management in Multiplace Chambers: Clinical Operating Protocols",
@@ -1476,7 +1484,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Sports",
           icon: "healthSync",
           title: "Pre-Season Preparation in Sports Clubs: Hyperbaric Support Programs",
@@ -1488,7 +1496,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
-          date: "2026",
+          date: "2025",
           tag: "Wellness",
           icon: "premium",
           title: "A New Trend in Luxury Hotels: Hyperbaric Wellness Suites",
@@ -1500,7 +1508,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Safety",
           icon: "care",
           title: "3.0 ATA and Above: Medical-Grade Hyperbaric Safety Standards",
@@ -1747,6 +1755,10 @@ const TRANSLATIONS = {
         cta_primary: "Изучить модели",
         cta_secondary: "Запустить конфигуратор",
         trust_line: "Передовая инженерия · Стандарты безопасности медицинского класса"
+      },
+      heritage: {
+        title: "20 лет инженерного опыта",
+        subtitle: "Инженерное совершенство с 2006 года"
       },
       stats: [
         { value: "5", label: "Моделей Apex" },
@@ -2194,7 +2206,7 @@ const TRANSLATIONS = {
       disclaimer: "Эти материалы представляют собой краткие сведения, составленные на основе общедоступных научных публикаций и новостных источников; они не являются медицинской рекомендацией. Для принятия решений о лечении обязательно проконсультируйтесь со специалистом-медиком.",
       posts: [
         {
-          date: "2026",
+          date: "2024",
           tag: "Слово основателя",
           icon: "care",
           title: "Почему я сам использую гипербарический кислород",
@@ -2207,10 +2219,10 @@ const TRANSLATIONS = {
           author: "Мюрсель Алкан"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Долголетие",
           icon: "antiaging",
-          title: "ГБО и долголетие: тренд здорового старения 2026 года",
+          title: "ГБО и долголетие: растущий тренд здорового старения",
           paragraphs: [
             "Движение за долголетие, популяризированное технологическими предпринимателями вроде Брайана Джонсона и их личными протоколами «омоложения», повысило интерес и к гипербарической оксигенотерапии. Одним из научных ориентиров стало клиническое исследование 2020 года в журнале Aging, в котором 35 здоровых взрослых старше 64 лет прошли программу из 60 сеансов ГБО.",
             "В исследовании зафиксировано удлинение теломер иммунных клеток более чем на 20% — до 37% в B-клетках — и снижение доли стареющих (сенесцентных) иммунных клеток до 37%. Поскольку в исследовании не было контрольной группы, а выборка была ограниченной, результаты оцениваются как «многообещающие, но предварительные»; авторы подчёркивают необходимость более масштабных работ для определения оптимальных протоколов."
@@ -2219,7 +2231,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "Спорт",
           icon: "healthSync",
           title: "Почему элитные спортсмены используют гипербарический кислород?",
@@ -2231,7 +2243,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Гид",
           icon: "oneSeat",
           title: "Как выбрать домашнюю гипербарическую камеру: гид",
@@ -2243,7 +2255,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
-          date: "2026",
+          date: "2025",
           tag: "Исследование",
           icon: "wound",
           title: "Роль гипербарического кислорода в лечении хронических ран продолжает расти",
@@ -2255,7 +2267,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "Спортивное здоровье",
           icon: "burn",
           title: "Почему спортсмены всё чаще выбирают гипербарическую камеру",
@@ -2267,7 +2279,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Клинические данные",
           icon: "wound",
           title: "Метаанализ по диабетическим язвам стопы: снижение риска ампутации",
@@ -2279,7 +2291,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Клинические данные",
           icon: "ear",
           title: "Гипербарический кислород при внезапной потере слуха: важность раннего вмешательства",
@@ -2291,19 +2303,19 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Технологии",
           icon: "connect",
           title: "Эпоха подключённых медицинских устройств: удалённый мониторинг быстро растёт",
           paragraphs: [
-            "По оценкам, к 2026 году глобальный рынок IoT в здравоохранении превысил 86 миллиардов долларов. По мере ускорения перехода от стационарной помощи к помощи на дому более 350 больниц в США уже реализуют программы «больница на дому» на базе IoT.",
+            "По оценкам, глобальный рынок IoT в здравоохранении уже превысил 86 миллиардов долларов. По мере ускорения перехода от стационарной помощи к помощи на дому более 350 больниц в США уже реализуют программы «больница на дому» на базе IoT.",
             "Исследования показывают, что системы удалённого мониторинга пациентов на базе IoT способны снижать частоту повторных госпитализаций на величину до 50%. Платформа ApexConnect™ от HBOT Chamber Tech — часть именно этой глобальной тенденции: она подключает камеры к облаку для мониторинга в реальном времени и прогнозного обслуживания."
           ],
           source_name: "IoT Business News",
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "Клиника",
           icon: "guard",
           title: "Управление давлением в многоместных камерах: клинические протоколы эксплуатации",
@@ -2315,7 +2327,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Спорт",
           icon: "healthSync",
           title: "Предсезонная подготовка в спортивных клубах: программы гипербарической поддержки",
@@ -2327,7 +2339,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
-          date: "2026",
+          date: "2025",
           tag: "Wellness",
           icon: "premium",
           title: "Новый тренд в отелях класса люкс: гипербарические wellness-люксы",
@@ -2339,7 +2351,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "Безопасность",
           icon: "care",
           title: "3.0 ATA и выше: стандарты безопасности гипербарических систем медицинского класса",
@@ -2586,6 +2598,10 @@ const TRANSLATIONS = {
         cta_primary: "استكشف الموديلات",
         cta_secondary: "ابدأ أداة التكوين",
         trust_line: "هندسة متقدمة · معايير سلامة بمستوى طبي"
+      },
+      heritage: {
+        title: "20 عامًا من الخبرة الهندسية",
+        subtitle: "التميز الهندسي منذ عام 2006"
       },
       stats: [
         { value: "5", label: "موديلات Apex" },
@@ -3033,7 +3049,7 @@ const TRANSLATIONS = {
       disclaimer: "هذه المقالات عبارة عن ملخصات مُجمَّعة من منشورات علمية ومصادر إخبارية متاحة للعموم؛ ولا تُعد بمثابة استشارة طبية. يُرجى دائماً استشارة أخصائي رعاية صحية لاتخاذ قرارات العلاج.",
       posts: [
         {
-          date: "2026",
+          date: "2024",
           tag: "كلمة المؤسس",
           icon: "care",
           title: "لماذا أستخدم الأكسجين عالي الضغط بنفسي",
@@ -3046,10 +3062,10 @@ const TRANSLATIONS = {
           author: "مورسيل ألكان"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "طول العمر",
           icon: "antiaging",
-          title: "العلاج بالأكسجين عالي الضغط وطول العمر: اتجاه الشيخوخة الصحية في 2026",
+          title: "العلاج بالأكسجين عالي الضغط وطول العمر: اتجاه الشيخوخة الصحية المتنامي",
           paragraphs: [
             "عزّزت حركة طول العمر — التي انتشرت على يد روّاد التكنولوجيا مثل براين جونسون وبروتوكولاتهم الشخصية لـ«عكس الشيخوخة» — الاهتمامَ بالعلاج بالأكسجين عالي الضغط أيضاً. ومن المراكز العلمية لهذا الاهتمام دراسة سريرية نُشرت عام 2020 في مجلة Aging شارك فيها 35 بالغاً سليماً فوق سن 64 عاماً في برنامج من 60 جلسة.",
             "أظهرت الدراسة زيادة في طول التيلوميرات في الخلايا المناعية بأكثر من 20% — تصل إلى 37% في الخلايا البائية — مع انخفاض يصل إلى 37% في نسبة الخلايا المناعية الهرمة. وبما أن الدراسة افتقرت إلى مجموعة ضابطة وكان حجم العينة محدوداً، تُعد النتائج «واعدة لكنها أولية»؛ ويؤكد الباحثون الحاجة إلى دراسات أوسع لتحديد البروتوكولات المثلى."
@@ -3058,7 +3074,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "رياضة",
           icon: "healthSync",
           title: "لماذا يستخدم كبار الرياضيين الأكسجين عالي الضغط؟",
@@ -3070,7 +3086,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "دليل",
           icon: "oneSeat",
           title: "دليل اختيار غرفة الضغط العالي المنزلية",
@@ -3082,7 +3098,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
-          date: "2026",
+          date: "2025",
           tag: "بحث",
           icon: "wound",
           title: "دور الأكسجين عالي الضغط في علاج الجروح المزمنة يتعزز",
@@ -3094,7 +3110,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "صحة رياضية",
           icon: "burn",
           title: "لماذا يتجه الرياضيون إلى الغرف عالية الضغط؟",
@@ -3106,7 +3122,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "دليل سريري",
           icon: "wound",
           title: "تحليل تلوي لقرح القدم السكرية: انخفاض خطر البتر",
@@ -3118,7 +3134,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "دليل سريري",
           icon: "ear",
           title: "الأكسجين عالي الضغط لفقدان السمع المفاجئ: أهمية التدخل المبكر",
@@ -3130,19 +3146,19 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "تقنية",
           icon: "connect",
           title: "عصر الأجهزة الطبية المتصلة: المراقبة عن بُعد تنمو بسرعة",
           paragraphs: [
-            "بحلول عام 2026، يُقدَّر أن سوق إنترنت الأشياء في الرعاية الصحية عالمياً قد تجاوز 86 مليار دولار. ومع تسارع التحول من الرعاية المرتكزة على المستشفى إلى الرعاية المنزلية، تُشغّل أكثر من 350 مستشفى في الولايات المتحدة الآن برامج «مستشفى في المنزل» المدعومة بإنترنت الأشياء.",
+            "في الوقت الحالي، يُقدَّر أن سوق إنترنت الأشياء في الرعاية الصحية عالمياً قد تجاوز 86 مليار دولار. ومع تسارع التحول من الرعاية المرتكزة على المستشفى إلى الرعاية المنزلية، تُشغّل أكثر من 350 مستشفى في الولايات المتحدة الآن برامج «مستشفى في المنزل» المدعومة بإنترنت الأشياء.",
             "تُظهر الأبحاث أن أنظمة المراقبة عن بُعد للمرضى القائمة على إنترنت الأشياء يمكن أن تقلل معدلات إعادة دخول المستشفى بنسبة تصل إلى 50%. ومنصة ApexConnect™ من HBOT Chamber Tech هي جزء تماماً من هذا التوجه العالمي: إذ تربط الغرف بالسحابة لتوفير مراقبة فورية وصيانة استباقية."
           ],
           source_name: "IoT Business News",
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
-          date: "2026",
+          date: "2023",
           tag: "سريري",
           icon: "guard",
           title: "إدارة الضغط في الغرف متعددة الأشخاص: بروتوكولات التشغيل السريرية",
@@ -3154,7 +3170,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "رياضة",
           icon: "healthSync",
           title: "التحضير للموسم في الأندية الرياضية: برامج الدعم بالضغط العالي",
@@ -3166,7 +3182,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
-          date: "2026",
+          date: "2025",
           tag: "العافية",
           icon: "premium",
           title: "اتجاه جديد في الفنادق الفاخرة: أجنحة العافية بالضغط العالي",
@@ -3178,7 +3194,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
-          date: "2026",
+          date: "2024",
           tag: "السلامة",
           icon: "care",
           title: "3.0 ATA فما فوق: معايير سلامة غرف الضغط العالي بالمستوى الطبي",
@@ -3348,6 +3364,2532 @@ const TRANSLATIONS = {
             items: [
               { q: "هل تحمل الأجهزة علامة CE؟", a: "تُوضَّح حالة علامة CE حسب موديل المنتج والنطاق التنظيمي المعني. لا تعني علامة CE وحدها أن المنتج جهاز طبي لجميع أغراض الاستخدام. يجب أن يوضّح إعلان المطابقة بشكل صريح اللوائح المعنية وفئة المنتج والغرض من الاستخدام ومعلومات الشركة المصنّعة." },
               { q: "هل يمكنني الاطلاع على الشهادات؟", a: "يمكن مشاركة وثائق المطابقة وتقارير الاختبار والمستندات الفنية عند الطلب، مع مراعاة موديل المنتج والبلد المستهدف والعملية التجارية." }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  es: {
+    dir: "ltr",
+    meta: {
+      home: { title: "HBOT Chamber Tech | Cámaras Hiperbáricas de Oxígeno Apex Series", desc: "Cámaras hiperbáricas de oxígeno conectadas por IoT e impulsadas por IA. Respira en la cumbre con la Apex Series." },
+      technology: { title: "Tecnología | HBOT Chamber Tech", desc: "ApexConnect, ApexOS, ApexAI, ApexSync y ApexGuard — la plataforma tecnológica conectada e inteligente de la Apex Series." },
+      models: { title: "Modelos | HBOT Chamber Tech", desc: "Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad-Cube y Apex Nexus — cinco modelos de cámaras hiperbáricas de oxígeno." },
+      soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno individual diseñada para tratamiento en posición tumbada." },
+      solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno compacta y totalmente equipada para uso individual." },
+      duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "Una cámara de oxigenoterapia hiperbárica compartida para dos personas." },
+      quadCube: { title: "Apex Quad-Cube | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno espaciosa para cuatro personas, de diseño cúbico." },
+      nexus: { title: "Apex Nexus | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno de nivel hospitalario y gran capacidad para seis o más personas." },
+      hbotInfo: { title: "¿Qué es la HBOT? | HBOT Chamber Tech", desc: "Qué es la oxigenoterapia hiperbárica (HBOT), para qué se utiliza y en qué afecciones se aplica." },
+      blog: { title: "Blog | HBOT Chamber Tech", desc: "Investigaciones, noticias y novedades recientes sobre la oxigenoterapia hiperbárica." },
+      configurator: { title: "Configurador | HBOT Chamber Tech", desc: "Configura tu propia cámara Apex: elige un modelo, nivel de presión y complementos para obtener una estimación de precio instantánea." },
+      contact: { title: "Contacto | HBOT Chamber Tech", desc: "Ponte en contacto con HBOT Chamber Tech: dirección, teléfono, correo electrónico y formulario de contacto." }
+    },
+    common: {
+      brand: "HBOT Chamber Tech",
+      home_label: "Inicio",
+      notfound: { title: "Página No Encontrada", desc: "Es posible que la página que buscas haya sido movida o eliminada.", button: "Volver al Inicio" },
+      whatsapp_message: "Hola, me gustaría saber más sobre HBOT Chamber Tech.",
+      thanks: "Gracias por elegirnos.",
+      sticky_cta: "Solicitar Presupuesto Gratuito",
+      nav: { home: "Inicio", technology: "Tecnología", models: "Modelos", hbotInfo: "¿Qué es la HBOT?", blog: "Blog", configurator: "Configurador", contact: "Contacto" },
+      models_menu: {
+        soloLounge: "Apex Solo Lounge",
+        solo: "Apex Solo",
+        duo: "Apex Duo",
+        quadCube: "Apex Quad-Cube",
+        nexus: "Apex Nexus",
+        all_link: "Todos los Modelos"
+      },
+      footer: {
+        about_text: "HBOT Chamber Tech es un fabricante líder de cámaras hiperbáricas de oxígeno conectadas por IoT e impulsadas por IA.",
+        models_title: "Modelos",
+        company_title: "Empresa",
+        contact_title: "Contacto",
+        rights: "Todos los derechos reservados.",
+        membership_note: "es miembro de Almita Group."
+      },
+      cta_banner: {
+        title: "Encontremos Juntos Tu Modelo Apex Ideal",
+        subtitle: "Elige el modelo, el nivel de presión y los complementos — obtén una estimación de precio instantánea.",
+        button: "Iniciar el Configurador"
+      },
+      faq_teaser: {
+        title: "¿Tienes alguna pregunta?",
+        subtitle: "Consulta la lista completa de preguntas frecuentes.",
+        cta: "Preguntas Frecuentes"
+      },
+      view_all: "Ver Todo",
+      learn_more: "Saber Más",
+      back_to_models: "Volver a Todos los Modelos",
+      included_badge: "Incluido de Serie",
+      configure_this: "Configurar Este Modelo"
+    },
+    modelPage: {
+      overview_title: "Descripción General",
+      specs_title: "Especificaciones Técnicas",
+      included_title: "Ecosistema Tecnológico Apex",
+      other_models: "Nuestros Otros Modelos"
+    },
+    home: {
+      hero: {
+        eyebrow: "APEX SERIES",
+        title: "Respira en\nla Cumbre",
+        subtitle: "HBOT Chamber Tech es un fabricante líder de Cámaras Hiperbáricas de Oxígeno, dedicado a ofrecer soluciones premium y de vanguardia para la salud y el bienestar. Con un enfoque en la innovación, la seguridad y la excelencia de diseño, fabricamos cámaras que cumplen los más altos estándares médicos y comerciales.",
+        cta_primary: "Explorar Modelos",
+        cta_secondary: "Iniciar el Configurador",
+        trust_line: "Ingeniería Avanzada · Estándares de Seguridad de Nivel Médico"
+      },
+      heritage: {
+        title: "20 Años de Experiencia en Ingeniería",
+        subtitle: "Excelencia en Ingeniería Desde 2006"
+      },
+      stats: [
+        { value: "5", label: "Modelos Apex" },
+        { value: "94%", label: "Pureza de Oxígeno" },
+        { value: "<55dB", label: "Nivel de Ruido ApexSilent™" },
+        { value: "24/7", label: "Monitorización Remota" }
+      ],
+      tech_teaser: {
+        eyebrow: "PLATAFORMA TECNOLÓGICA",
+        title: "Un Ecosistema Inteligente Dentro de la Cámara",
+        text: "La Apex Series cuenta con el primer y único módulo IoT estándar del sector, construido sobre ApexConnect™, ApexOS™, ApexAI™, ApexSync™ y ApexGuard™.",
+        cta: "Explorar la Tecnología"
+      },
+      models_teaser: {
+        eyebrow: "APEX SERIES",
+        title: "Nuestros Modelos",
+        subtitle: "Desde el uso individual hasta cámaras multipuesto de escala hospitalaria — cinco diseños para adaptarse a tus necesidades.",
+        cta_all: "Explorar Todos los Modelos"
+      },
+      why: {
+        eyebrow: "POR QUÉ HBOT CHAMBER TECH",
+        title: "La Única Cámara Conectada del Mercado",
+        items: [
+          { title: "El Primer Núcleo IoT del Sector", desc: "Con ApexConnect™, cada cámara está conectada a la nube 24/7 y puede monitorizarse de forma remota." },
+          { title: "Tratamiento Impulsado por IA", desc: "ApexAI™ optimiza dinámicamente la presión y el flujo de oxígeno según los datos del paciente." },
+          { title: "Integración con Sistemas Hospitalarios", desc: "ApexSync™ cumple con HL7 FHIR y DICOM, conectándose directamente a los sistemas de información hospitalaria." },
+          { title: "Avisa Antes de que Ocurra un Fallo", desc: "ApexGuard™ te alerta mediante mantenimiento predictivo, sin esperar a una llamada de servicio." }
+        ]
+      },
+      celebs: {
+        eyebrow: "¿QUIÉN LA USA?",
+        title: "Los Mejores del Mundo Eligen el Oxígeno Hiperbárico",
+        subtitle: "Nombres mencionados en la prensa por usar HBOT para la recuperación, el rendimiento y la longevidad — y nosotros fabricamos esas cámaras.",
+        source_label: "Fuente",
+        disclaimer: "Las personas mencionadas aquí han sido señaladas por medios de comunicación como usuarias de HBOT; no son embajadores de marca ni clientes de HBOT Chamber Tech.",
+        items: [
+          { name: "Cristiano Ronaldo", role: "Futbolista", text: "Mencionado en reportajes por realizar sesiones de HBOT en casa con su propio dispositivo hiperbárico para tratar una lesión muscular.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "LeBron James", role: "Jugador de baloncesto", text: "Grabado realizando una sesión de HBOT de 60-90 minutos en la serie de Netflix 'Starting 5'.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
+          { name: "Novak Djokovic", role: "Tenista", text: "Mencionado en medios deportivos por usar HBOT para mantenerse en la cima de su juego.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
+          { name: "Justin Bieber", role: "Cantante", text: "Se ha informado que duerme en una cámara hiperbárica como parte de su régimen de salud.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
+          { name: "Tiger Woods", role: "Golfista", text: "Se ha informado que usa HBOT desde 2010 y que tiene una cámara en casa.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
+          { name: "Michael Phelps", role: "Nadador", text: "Se ha informado que la leyenda olímpica duerme en una cámara hiperbárica.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
+          { name: "Madonna", role: "Cantante", text: "La prensa de moda ha cubierto su uso de tratamientos a base de oxígeno como parte de su régimen de belleza.", source: "https://www.nytimes.com/2006/04/06/fashion/thursdaystyles/does-the-quickfix-oxygen-facial-really-work.html" },
+          { name: "Kendall Jenner", role: "Modelo", text: "Aparecida en Vogue por tener una cámara hiperbárica en su sala de bienestar.", source: "https://www.vogue.com/article/what-kendall-jenner-keeps-in-her-wellness-room" },
+          { name: "Tom Brady", role: "Jugador de la NFL", text: "Se ha informado en medios deportivos que usa HBOT como parte de su rutina de recuperación.", source: "https://thesportsrush.com/nfl-news-troy-aikman-and-tom-brady-use-the-same-scientific-practice-for-their-recovery-enhancement/" }
+        ]
+      },
+      indications_teaser: {
+        eyebrow: "CASOS DE USO",
+        title: "¿Cuándo se Utiliza la HBOT?",
+        text: "Se utiliza como tratamiento de apoyo en una amplia variedad de afecciones — desde la cicatrización de heridas hasta la pérdida súbita de audición, pasando por la enfermedad por descompresión y la intoxicación por monóxido de carbono.",
+        cta: "Ver Todos los Casos de Uso"
+      },
+      styles_teaser: {
+        eyebrow: "OPCIONES DE DISEÑO",
+        title: "Elige el Estilo de Tu Cámara",
+        subtitle: "Cada modelo Apex está disponible en distintas opciones de diseño para adaptarse a tu espacio y preferencias.",
+        items: [
+          { icon: "glass", title: "Serie de Cristal Panorámico", desc: "Un diseño de cristal amplio para quienes buscan una sensación de apertura y conexión visual con el exterior." },
+          { icon: "solid", title: "Diseño Cerrado Estándar", desc: "Un diseño de carrocería cerrada y limpia, preferido por su privacidad y sencillez clínica." },
+          { icon: "premium", title: "Serie Premium", desc: "Tapicería interior de máxima calidad, iluminación avanzada y detalles a medida para el diseño más exclusivo.", badge: "Premium" }
+        ],
+        note: "Puedes indicarnos tu preferencia de tipo de cristal y estilo de cámara en tu solicitud de presupuesto."
+      }
+    },
+    technology: {
+      header: { eyebrow: "PLATAFORMA TECNOLÓGICA", title: "El Ecosistema Tecnológico Apex", subtitle: "No es solo un panel de control — es un sistema conectado e inteligente en constante evolución." },
+      intro: "Cada modelo Apex incluye de serie ApexConnect™, ApexOS™, ApexAI™, ApexSync™ y ApexGuard™. Juntas, estas cinco plataformas transforman la cámara de un simple dispositivo de tratamiento en un sistema inteligente, conectado y predictivo.",
+      pillars: {
+        connect: {
+          title: "ApexConnect™",
+          subtitle: "Conectividad Continua, Seguridad Ininterrumpida",
+          desc: "El primer y único módulo IoT estándar del sector. Cada modelo Apex permanece conectado a la nube de HBOT Chamber Tech a través de una conexión a internet continua.",
+          features: [
+            "Monitorización remota en tiempo real: tu técnico observa en vivo los datos de presión, nivel de oxígeno, temperatura y humedad",
+            "Gestión de múltiples dispositivos: administra varias cámaras desde un único panel de control",
+            "Notificación automática de fallos: se abre automáticamente un ticket de servicio cuando una válvula de presión se desvía",
+            "Alertas instantáneas: notificaciones por SMS y correo electrónico para parámetros críticos"
+          ]
+        },
+        os: {
+          title: "ApexOS™",
+          subtitle: "Un Cerebro Inteligente Dentro de la Cámara",
+          desc: "Un sistema operativo basado en Android, controlado por pantalla táctil, en constante evolución.",
+          features: [
+            "Actualizaciones de software continuas (OTA): nuevos protocolos y actualizaciones de seguridad se descargan automáticamente",
+            "Más de 50 protocolos de tratamiento listos para usar: quemaduras, pie diabético, recuperación deportiva, antienvejecimiento, rehabilitación post-COVID",
+            "Compatibilidad multiidioma: se añaden nuevos idiomas con cada actualización de software",
+            "Perfiles de usuario: un perfil independiente para cada paciente, con sus sesiones anteriores cargadas automáticamente"
+          ]
+        },
+        ai: {
+          title: "ApexAI™",
+          subtitle: "Optimización del Tratamiento Impulsada por IA",
+          desc: "Los sensores dentro de la cámara y los datos del paciente se analizan con algoritmos de aprendizaje automático.",
+          features: [
+            "Ajuste dinámico de presión: si aparecen señales de incomodidad, la presión se ajusta en microincrementos para preservar el confort",
+            "Optimización de la eficiencia del oxígeno: el flujo de oxígeno se adapta al ritmo respiratorio, reduciendo el desperdicio en un 30%",
+            "Motor de recomendación de sesiones: se prepara un informe para la aprobación del médico una vez completado un protocolo",
+            "Detección de claustrofobia: un movimiento excesivo activa automáticamente el sistema de iluminación y comunicación"
+          ]
+        },
+        sync: {
+          title: "ApexSync™",
+          subtitle: "Integración con un Solo Clic con los Sistemas de Información Hospitalaria",
+          desc: "Compatible con HL7 FHIR y DICOM. Los datos se registran automáticamente en el historial del paciente al finalizar la sesión.",
+          features: [
+            "Conexión directa con Epic, Cerner, Medistat, Logo y sistemas HIS locales",
+            "Informes automáticos: al final de cada sesión, un informe llega a la pantalla del médico",
+            "Integración de facturación: el volumen de oxígeno y la duración de la sesión se envían automáticamente al módulo de contabilidad"
+          ]
+        },
+        guard: {
+          title: "ApexGuard™",
+          subtitle: "Seguridad y Mantenimiento Predictivos",
+          desc: "No se limita a avisar cuando algo falla — lo predice antes de que ocurra.",
+          features: [
+            "Mantenimiento predictivo: el sistema avisa cuando cambia el patrón de vibración del motor del compresor",
+            "Registro de seguridad digital: cada cambio de presión se registra en la nube de forma cifrada",
+            "Seguimiento de la vida útil de consumibles y filtros: alerta automáticamente cuándo toca reemplazarlos según las horas de uso"
+          ]
+        }
+      },
+      extra: {
+        silent: { title: "ApexSilent™", desc: "Ruido de funcionamiento por debajo de 55 decibelios." },
+        care: { title: "ApexCare™", desc: "Diagnóstico y resolución remotos sin esperar a una llamada de servicio." }
+      },
+      comparison: {
+        title: "¿Por Qué HBOT Chamber Tech?",
+        subtitle: "Compara la Apex Series con otras cámaras del mercado.",
+        col_feature: "Característica",
+        col_competitor: "Competidores del Mercado",
+        col_apex: "HBOT Chamber Tech Apex Series",
+        rows: [
+          { feature: "Conectividad a Internet", competitor: "Ninguna u opcional", apex: "ApexConnect™ — De serie, 24/7" },
+          { feature: "Actualizaciones de Software OTA", competitor: "Ninguna, firmware fijo", apex: "ApexOS™ — Actualización continua" },
+          { feature: "Monitorización Remota", competitor: "Limitada o inexistente", apex: "ApexConnect™ — Panel en vivo" },
+          { feature: "Soporte de IA", competitor: "Ninguno", apex: "ApexAI™ — Protocolo dinámico" },
+          { feature: "Integración EMR/HIS", competitor: "Manual o inexistente", apex: "ApexSync™ — HL7/DICOM automático" },
+          { feature: "Mantenimiento Predictivo", competitor: "Ninguno, mantenimiento reactivo", apex: "ApexGuard™ — Aviso previo al fallo" },
+          { feature: "Informes Automáticos", competitor: "Ninguno", apex: "ApexSync™ — Informe al final de la sesión" },
+          { feature: "Diagnóstico Remoto", competitor: "Ninguno, requiere llamada de servicio", apex: "ApexCare™ — Resolución remota" },
+          { feature: "Nivel de Ruido", competitor: "60–70 dB", apex: "ApexSilent™ — <55 dB" },
+          { feature: "Registro de Seguridad Digital", competitor: "Ninguno", apex: "ApexGuard™ — Registro cifrado en la nube" }
+        ]
+      },
+      roadmap: {
+        eyebrow: "HOJA DE RUTA",
+        title: "¿Qué Viene Después?",
+        subtitle: "Funciones en desarrollo dentro de la plataforma ApexConnect™ que aún no son estándar en los modelos Apex actuales.",
+        badge: "En Desarrollo",
+        items: [
+          { icon: "mobileApp", title: "App Móvil de Monitorización ApexConnect", desc: "Una app de monitorización que permite al personal clínico seguir la presión, el nivel de oxígeno y el estado del sistema de la cámara desde el teléfono." },
+          { icon: "healthSync", title: "Sincronización con Apps de Salud", desc: "Sincronización de la duración y el historial de sesiones con Apple Health, Huawei Health y Google Fit." },
+          { icon: "screen", title: "Experiencia de Pantalla Inmersiva Fija", desc: "Una gran pantalla integrada en la cámara que ofrece contenido visual relajante durante las sesiones." }
+        ],
+        disclaimer: "Estas funciones están en desarrollo y previstas para futuros modelos; no son estándar en los modelos Apex actuales. La presión y los niveles de oxígeno de la cámara siempre son controlados por un operador cualificado."
+      },
+      certifications: {
+        eyebrow: "CERTIFICACIONES",
+        title: "Cumplimiento Normativo",
+        subtitle: "La Apex Series se desarrolla conforme a normas internacionales de diseño de cámaras médicas, seguridad contra incendios y equipos a presión.",
+        items: [
+          { code: "EN 14931", name: "Norma de Diseño de Cámaras Médicas" },
+          { code: "EN 16081", name: "Sistema Contra Incendios de Cámaras Médicas" },
+          { code: "NFPA 99", name: "Norma Estadounidense de Sistemas Contra Incendios" },
+          { code: "ISO 9001", name: "Norma de Gestión de Calidad" },
+          { code: "EN 13445 + PED 2014/68/EU", name: "Directiva de Equipos a Presión" }
+        ]
+      }
+    },
+    modelsOverview: {
+      header: { eyebrow: "APEX SERIES", title: "Nuestros Modelos", subtitle: "Desde el uso individual hasta cámaras multipuesto de escala hospitalaria — cinco diseños." },
+      intro: "Cada modelo Apex incluye de serie ApexConnect™, ApexOS™, ApexAI™, ApexSync™ y ApexGuard™. Lo que varía entre ellos es la capacidad, la posición y el rango de presión.",
+      compareTable: {
+        title: "Comparar Modelos",
+        subtitle: "Decide rápidamente qué modelo Apex es el adecuado para ti.",
+        col_capacity: "Capacidad",
+        col_position: "Posición",
+        col_pressure: "Rango de Presión",
+        col_price: "Precio Desde",
+        col_noise: "Nivel de Ruido",
+        action_label: "Configurar"
+      }
+    },
+    modelShort: {
+      soloLounge: { title: "Apex Solo Lounge", tagline: "1 Persona · Posición Tumbada", desc: "Una cámara totalmente equipada, desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada." },
+      solo: { title: "Apex Solo", tagline: "1 Persona · Posición Sentada", desc: "Una cámara compacta, elegante y totalmente equipada, diseñada para la oxigenoterapia hiperbárica individual." },
+      duo: { title: "Apex Duo", tagline: "2 Personas · Posición Sentada", desc: "Una cámara de doble asiento con ventana panorámica — para parejas, acompañantes o uso paciente-acompañante." },
+      quadCube: { title: "Apex Quad-Cube", tagline: "4 Personas · Cabina Espaciosa", desc: "Una cabina premium para cuatro personas con un interior espacioso de diseño cúbico — tapicería de cuero acolchado e iluminación ambiental LED." },
+      nexus: { title: "Apex Nexus", tagline: "6+ Personas · Posición Sentada", desc: "Una cámara de nivel hospitalario y gran capacidad, con expansión modular, diseñada para instituciones médicas." }
+    },
+    includedItems: [
+      { icon: "connect", title: "ApexConnect™ Incluido", desc: "Conectividad a internet de serie. Monitorización remota, alertas instantáneas y copia de seguridad en la nube." },
+      { icon: "os", title: "Actualizaciones ApexOS™", desc: "Tu dispositivo gana nuevas funciones cada mes. Las actualizaciones OTA mantienen los protocolos al día." },
+      { icon: "ai", title: "Optimización ApexAI™", desc: "Una IA que analiza los datos del paciente ajusta las sesiones de forma dinámica." },
+      { icon: "sync", title: "Integración ApexSync™", desc: "Integración con un solo clic con los sistemas de información hospitalaria. Informes automáticos." },
+      { icon: "guard", title: "Seguridad ApexGuard™", desc: "Tecnología de mantenimiento predictivo que avisa antes de que ocurra un fallo." },
+      { icon: "battery", title: "Alimentación de Respaldo Integrada de Serie", desc: "Cada modelo incluye de serie una fuente de alimentación de respaldo integrada para protegerse frente a cortes de energía." },
+      { icon: "pulseOx", title: "Medidor de Saturación de Oxígeno", desc: "Un monitor de saturación de oxígeno en sangre viene de serie en cada cámara, controlando los niveles durante toda la sesión." }
+    ],
+    modelSoloLounge: {
+      breadcrumb: "Apex Solo Lounge", eyebrow: "APEX SOLO LOUNGE", title: "Apex Solo Lounge",
+      tagline: "Excelencia en Posición Tumbada. Recuéstate, relájate, sana.",
+      overview_text: "Desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada. Su camilla ortopédica médica y su carrocería de aluminio de grado aeronáutico ofrecen el máximo confort durante sesiones prolongadas.",
+      specs: [
+        { label: "Capacidad", value: "1 persona (posición tumbada)" },
+        { label: "Rango de Presión", value: "1.5 – 2.0 ATA" },
+        { label: "Camilla", value: "Ortopédica médica, 200×80 cm" },
+        { label: "Material", value: "Aluminio de grado aeronáutico" },
+        { label: "Seguridad", value: "Válvula de seguridad dual" },
+        { label: "Dimensiones Exteriores", value: "240×110×120 cm" },
+        { label: "Nivel de Ruido", value: "<55 dB (ApexSilent™)" }
+      ]
+    },
+    modelSolo: {
+      breadcrumb: "Apex Solo", eyebrow: "APEX SOLO", title: "Apex Solo",
+      tagline: "La Cumbre de Tu Salud Personal. Solo tú y el oxígeno.",
+      overview_text: "Una cámara compacta, elegante y totalmente equipada, diseñada para la oxigenoterapia hiperbárica individual. Con control por pantalla táctil, es ideal para uso doméstico o clínico.",
+      specs: [
+        { label: "Capacidad", value: "1 persona (sentada)" },
+        { label: "Rango de Presión", value: "1.5 – 2.0 ATA" },
+        { label: "Control", value: "Pantalla táctil" },
+        { label: "Material", value: "Aluminio de grado aeronáutico" },
+        { label: "Seguridad", value: "Válvula de seguridad dual" },
+        { label: "Dimensiones Exteriores", value: "120×110×180 cm" },
+        { label: "Nivel de Ruido", value: "<55 dB (ApexSilent™)" }
+      ]
+    },
+    modelDuo: {
+      breadcrumb: "Apex Duo", eyebrow: "APEX DUO", title: "Apex Duo",
+      tagline: "Sana en Compañía. Una experiencia de tratamiento compartida para dos personas.",
+      overview_text: "Una cámara hiperbárica de doble asiento que ofrece sesiones de terapia compartidas. Diseñada para parejas, acompañantes o uso paciente-acompañante.",
+      specs: [
+        { label: "Capacidad", value: "2 personas (sentadas)" },
+        { label: "Rango de Presión", value: "1.5 – 2.0 ATA" },
+        { label: "Pureza de Oxígeno", value: "93–95%" },
+        { label: "Seguridad", value: "Sistema de válvula de emergencia" },
+        { label: "Control", value: "Sistema de control dual" },
+        { label: "Ventana", value: "Panorámica" }
+      ]
+    },
+    modelQuadCube: {
+      breadcrumb: "Apex Quad-Cube", eyebrow: "APEX QUAD-CUBE", title: "Apex Quad-Cube",
+      tagline: "Una experiencia premium para cuatro personas en un diseño cúbico espacioso.",
+      overview_text: "Una cabina premium para cuatro personas con un interior espacioso de forma cúbica. Con tapicería de cuero acolchado, iluminación ambiental LED y una unidad de control independiente, ofrece una terapia multiusuario cómoda para clínicas y centros de bienestar.",
+      specs: [
+        { label: "Capacidad", value: "4 personas (sentadas)" },
+        { label: "Rango de Presión", value: "2.5 – 6.0 ATA" },
+        { label: "Pureza de Oxígeno", value: "93–95%" },
+        { label: "Interior", value: "Cuero acolchado, ambiente LED" },
+        { label: "Seguridad", value: "Sistema de válvula de emergencia" },
+        { label: "Control", value: "Unidad de control independiente" }
+      ]
+    },
+    modelNexus: {
+      breadcrumb: "Apex Nexus", eyebrow: "APEX NEXUS", title: "Apex Nexus",
+      tagline: "Una solución de nivel hospitalario y gran capacidad.",
+      overview_text: "Una cámara de nivel hospitalario y gran capacidad para instituciones médicas. Su diseño modular y sus sistemas de monitorización avanzados cubren las necesidades de los centros de tratamiento con mayor actividad.",
+      specs: [
+        { label: "Capacidad", value: "6+ personas (sentadas)" },
+        { label: "Rango de Presión", value: "2.5 – 6.0 ATA" },
+        { label: "Pureza de Oxígeno", value: "93–95%" },
+        { label: "Seguridad", value: "Sistema de válvula de emergencia" },
+        { label: "Construcción", value: "Nivel hospitalario" },
+        { label: "Expansión", value: "Preparada para expansión modular" }
+      ]
+    },
+    hbotInfo: {
+      header: { eyebrow: "CENTRO DE INFORMACIÓN", title: "¿Qué es la HBOT?", subtitle: "Lo que necesitas saber sobre la oxigenoterapia hiperbárica." },
+      whatIsHboc: { title: "¿Qué es una Cámara Hiperbárica de Oxígeno (HBOC)?", text: "Las Cámaras Hiperbáricas de Oxígeno son cabinas presurizadas especialmente diseñadas que permiten a las personas respirar oxígeno puro a una presión atmosférica superior a la normal. Estas cámaras se utilizan para la Oxigenoterapia Hiperbárica (HBOT), un tratamiento médicamente reconocido que acelera la curación y favorece el bienestar general." },
+      whyNeeded: { title: "¿Para qué se Necesita una HBOC?", text: "Las cámaras HBOC ofrecen un entorno controlado y presurizado en el que los pacientes respiran oxígeno puro al 94%, lo que permite una recuperación más rápida y una mejor regeneración celular. Estas cámaras dan servicio a centros médicos, centros de bienestar, clínicas deportivas y usuarios particulares en todo el mundo." },
+      whatIsHbot: {
+        title: "¿Qué es la Oxigenoterapia Hiperbárica (HBOT)?",
+        text1: "La HBOT es un tratamiento médico en el que los pacientes respiran oxígeno puro dentro de una cámara presurizada a niveles superiores a la presión atmosférica normal. Este proceso acelera la cicatrización de heridas, reduce la inflamación y favorece la regeneración de tejidos.",
+        text2: "Los pacientes respiran dentro de estas cámaras, lo que ayuda a los pulmones a captar y absorber oxígeno de forma más eficiente. La HBOT también se utiliza en el tratamiento de pacientes con pérdida súbita de audición y visión, infecciones óseas y úlceras del pie diabético. Según el tipo de tratamiento, los pacientes pueden estar sentados o tumbados durante el procedimiento."
+      },
+      indications: {
+        title: "¿En Qué Situaciones se Puede Utilizar la HBOT?",
+        subtitle: "La oxigenoterapia hiperbárica se utiliza como tratamiento de apoyo en una amplia variedad de afecciones médicas.",
+        items: [
+          { icon: "antiaging", label: "Rejuvenecimiento de la Piel (Antienvejecimiento)" },
+          { icon: "jetlag", label: "Recuperación del Jet Lag (Fatiga por Viaje)" },
+          { icon: "wound", label: "Cicatrización de Heridas (Diabéticas y No Diabéticas)" },
+          { icon: "eye", label: "Pérdida Súbita de Visión" },
+          { icon: "decompression", label: "Enfermedad por Descompresión" },
+          { icon: "embolism", label: "Embolia Aérea o Gaseosa" },
+          { icon: "poisoning", label: "Intoxicación por Monóxido de Carbono y Combustibles" },
+          { icon: "ear", label: "Pérdida Súbita de Audición" },
+          { icon: "bone", label: "Osteonecrosis" },
+          { icon: "burn", label: "Quemaduras Térmicas" },
+          { icon: "gangrene", label: "Gangrena Gaseosa" },
+          { icon: "blood", label: "Pérdida Excesiva de Sangre" },
+          { icon: "brain", label: "Encefalopatía Anóxica" },
+          { icon: "smoke", label: "Intoxicación Aguda por Humo" }
+        ]
+      },
+      disclaimer: "Esta información tiene fines meramente orientativos y no constituye asesoramiento médico. Las decisiones de tratamiento siempre deben ser evaluadas por un profesional sanitario."
+    },
+    configurator: {
+      header: { eyebrow: "CONFIGURADOR", title: "Diseña Tu Propia Cámara Apex", subtitle: "Elige el modelo, el nivel de presión y los complementos — obtén una estimación de precio instantánea." },
+      usage_step_title: "1. Uso Previsto",
+      usage_step_note: "Los modelos de alta presión solo se ofrecen para uso institucional.",
+      usage: {
+        home: { title: "Uso Doméstico", desc: "Modelos de baja presión para uso individual y en pareja (1.5–2.0 ATA)." },
+        institutional: { title: "Institucional", desc: "Modelos multipuesto de alta capacidad para clínicas, centros de bienestar y hospitales." }
+      },
+      guide: {
+        button: "¿Qué Cámara Debería Elegir?",
+        title: "Encontremos la Cámara Adecuada para Ti",
+        intro: "Elige la fila más cercana a tu situación y configuraremos automáticamente el modelo y el tipo de uso adecuados para ti.",
+        select_button: "Elegir Esta",
+        close: "Cerrar",
+        items: [
+          { scenario: "En casa, solo/a, quiero tratamiento en posición tumbada", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "En casa, solo/a, quiero estar sentado/a durante las sesiones", model: "Apex Solo", modelId: "solo", usage: "home" },
+          { scenario: "Mi pareja y yo lo usaremos juntos, en casa", model: "Apex Duo", modelId: "duo", usage: "home" },
+          { scenario: "Clínica o centro de bienestar, uso institucional para 2-4 personas", model: "Apex Duo Plus", modelId: "duo-plus", usage: "institutional" },
+          { scenario: "Uso institucional, quiero un interior de cámara espacioso", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "En un hospital o clínica, varios pacientes, alta presión", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
+        ]
+      },
+      step1_title: "3. Elige un Modelo",
+      style_step_title: "2. Estilo de la Cámara",
+      style_step_note: "Elige el diseño de tu cámara; el precio varía según la superficie de cristal y el nivel de acabado interior.",
+      color_step_title: "4. Elige un Color",
+      color_step_note: "Selección libre entre nuestra paleta de colores estándar.",
+      interior_step_title: "5. Color Interior",
+      interior_step_note: "Los colores interiores estándar están incluidos en el precio.",
+      seat_color_step_title: "6. Color del Asiento",
+      seat_color_step_note: "El color de la tapicería del asiento está incluido en el precio; tu elección se añade al resumen y al formulario de presupuesto.",
+      step2_title: "7. Nivel de Presión",
+      step3_title: "8. Complementos",
+      step4_title: "9. Solicitar un Presupuesto",
+      models: [
+        { id: "solo-lounge", name: "Apex Solo Lounge", tagline: "1 Persona · Posición Tumbada" },
+        { id: "solo", name: "Apex Solo", tagline: "1 Persona · Posición Sentada" },
+        { id: "duo", name: "Apex Duo", tagline: "2 Personas · Posición Sentada" },
+        { id: "duo-plus", name: "Apex Duo Plus", tagline: "2-4 Personas · Institucional" },
+        { id: "quad-cube", name: "Apex Quad-Cube", tagline: "4 Personas · Cabina Espaciosa" },
+        { id: "nexus", name: "Apex Nexus", tagline: "6+ Personas · Posición Sentada" }
+      ],
+      colors: [
+        { id: "pearl-white", name: "Blanco Perla", hex: "#F2F1EC" },
+        { id: "mat-siyah", name: "Negro Mate", hex: "#16181A" },
+        { id: "antrasit", name: "Antracita", hex: "#3A3D42" },
+        { id: "gece-laciverti", name: "Azul Medianoche", hex: "#1B2A4A" },
+        { id: "bordo", name: "Burdeos", hex: "#6B2737" },
+        { id: "sampanya", name: "Dorado Champán", hex: "#C9A876" },
+        { id: "grafit", name: "Gris Grafito", hex: "#3A3F44" },
+        { id: "bronz", name: "Bronce", hex: "#A5754A" },
+        { id: "zumrut", name: "Verde Esmeralda", hex: "#1F6F54" }
+      ],
+      interior_colors: [
+        { id: "cream", name: "Crema", hex: "#E8DCC8" },
+        { id: "anthracite", name: "Antracita", hex: "#3A3D42" },
+        { id: "burgundy", name: "Burdeos", hex: "#6B2737" },
+        { id: "navy", name: "Azul Marino", hex: "#1B2A4A" },
+        { id: "konyak", name: "Coñac", hex: "#8A5A2B" },
+        { id: "kum-beji", name: "Beige Arena", hex: "#D9C7A7" }
+      ],
+      seat_colors: [
+        { id: "konyak", name: "Coñac", hex: "#8A5A2B" },
+        { id: "siyah", name: "Negro", hex: "#16181A" },
+        { id: "lacivert", name: "Azul Marino", hex: "#1B2A4A" },
+        { id: "krem", name: "Crema", hex: "#E8DCC8" },
+        { id: "bordo", name: "Burdeos", hex: "#6B2737" },
+        { id: "gri", name: "Gris", hex: "#6B6F75" }
+      ],
+      styles: [
+        { id: "solid", icon: "solid", name: "Diseño Cerrado Estándar", desc: "Un diseño de carrocería cerrada y limpia, preferido por su privacidad y sencillez clínica." },
+        { id: "glass", icon: "glass", name: "Serie de Cristal Panorámico", desc: "Diseño con amplia superficie acristalada para una sensación de apertura y conexión visual con el exterior." },
+        { id: "premium", icon: "premium", name: "Serie Premium", desc: "Acabado interior de máxima calidad, iluminación avanzada y detalles personalizados en nuestro diseño insignia.", badge: "Premium" }
+      ],
+      addons: [
+        { id: "massage", name: "Asiento con Masaje", desc: "Un sistema de asiento con función de masaje relajante durante las sesiones." },
+        { id: "leather", name: "Tapicería Interior de Primera Clase", desc: "Una mejora de tapicería interior de primera clase hecha a mano." },
+        { id: "entertainment", name: "Sistema de Entretenimiento y Multimedia", desc: "Pantalla integrada, sistema de sonido y biblioteca de contenidos." },
+        { id: "finish", name: "Color y Acabado Personalizados", desc: "Un color de acabado exterior personalizado para adaptarse a la identidad de tu marca." },
+        { id: "warranty", name: "Garantía Ampliada (+1 Año)", desc: "1 año adicional de cobertura integral más allá de la garantía estándar de 1 año." },
+        { id: "playstation", name: "Consola de Videojuegos Xbox Series X", desc: "Una consola Xbox Series X integrada con la pantalla y el sistema de sonido de la cámara para entretenimiento durante sesiones más largas." }
+      ],
+      pressure_note: "El rango de presión depende del modelo que selecciones.",
+      pressure_nexus_only: "Solo Nexus",
+      pressure_auto_note: "3.0 y 6.0 ATA solo están disponibles en el Apex Nexus — el nivel de presión se ha restablecido a 2.5 ATA.",
+      pressure_auto_note_up: "El Apex Nexus es una cámara médica que solo ofrece alta presión — el nivel de presión se ha ajustado a 3.0 ATA.",
+      seat_step_title: "Número de Asientos",
+      seat_step_note: "Puedes aumentar o disminuir el número de asientos según tus necesidades.",
+      seats_label: "Asientos",
+      currency_label: "Moneda",
+      summary: {
+        title: "Resumen de la Configuración",
+        model_label: "Modelo",
+        seats_label: "Número de Asientos",
+        style_label: "Estilo de la Cámara",
+        color_label: "Color",
+        interior_color_label: "Color Interior",
+        seat_color_label: "Color del Asiento",
+        seat_type_label: "Tipo de Asiento",
+        seat_standard: "Estándar",
+        seat_massage: "Masaje",
+        pressure_label: "Nivel de Presión",
+        addons_label: "Complementos",
+        none_selected: "Ninguno seleccionado",
+        base_price_label: "Precio Base",
+        total_label: "Total Estimado",
+        disclaimer: "Los precios son aproximados y de carácter informativo, se entienden en condiciones FOB y son válidos únicamente durante 15 días. Completa el formulario para obtener un presupuesto exacto.",
+        cta: "Solicitar un Presupuesto con Esta Configuración",
+        print_button: "Imprimir / Guardar como PDF",
+        share_button: "Copiar Enlace de la Configuración",
+        share_copied: "¡Enlace copiado!",
+        discount_label: "Descuento",
+        ref_badge: "Descuento por referido aplicado",
+        refer_button: "Recomendar a un Amigo",
+        refer_copied: "¡Enlace de referido copiado!",
+        email_button: "Enviar Presupuesto por Correo Electrónico",
+        pdf_title: "Presupuesto de Configuración",
+        pdf_quote_no: "N.º de Presupuesto",
+        pdf_date: "Fecha",
+        pdf_customer_section: "INFORMACIÓN DEL CLIENTE",
+        pdf_configuration_section: "DETALLES DE LA CONFIGURACIÓN"
+      },
+      stage: {
+        view_exterior: "Vista Exterior",
+        view_interior: "Vista Interior",
+        spin_hint: "↔ Arrastra para girar 360°"
+      },
+      quote_form: {
+        title: "Solicitar un Presupuesto",
+        name: "Nombre Completo",
+        email: "Correo Electrónico",
+        phone: "Teléfono",
+        company: "Nombre del Centro / Clínica (opcional)",
+        message: "Notas Adicionales",
+        submit: "Enviar Solicitud de Presupuesto",
+        sending: "Enviando...",
+        success: "¡Gracias! Hemos recibido tu configuración y tu solicitud — te responderemos en breve.",
+        error: "Algo salió mal. Inténtalo de nuevo o llámanos directamente."
+      }
+    },
+    blog: {
+      header: { eyebrow: "BLOG", title: "Investigación y Noticias", subtitle: "Novedades científicas y noticias recientes sobre la oxigenoterapia hiperbárica." },
+      source_label: "Fuente:",
+      min_read: "min de lectura",
+      disclaimer: "Estas publicaciones son resúmenes elaborados a partir de publicaciones científicas y fuentes de noticias de acceso público; no constituyen asesoramiento médico. Consulta siempre a un profesional sanitario para decisiones de tratamiento.",
+      posts: [
+        {
+          date: "2024",
+          tag: "Nota del Fundador",
+          icon: "care",
+          title: "Por Qué Uso Yo Mismo el Oxígeno Hiperbárico",
+          paragraphs: [
+            "Bajo el paraguas de Almita Group gestionamos seis sectores diferentes al mismo tiempo, y una agenda exigente con viajes constantes viene con el territorio. Antes de empezar a fabricar las cámaras de HBOT Chamber Tech, decidí usar regularmente nuestras propias unidades — creo que hay que probar un producto uno mismo antes de respaldarlo.",
+            "Puedo decir que, tras las sesiones, en general me siento con más energía y concentración; se trata de una observación personal, no de una promesa de que el resultado sea el mismo para todos. La oxigenoterapia hiperbárica no sustituye al tratamiento médico; consulta siempre tu propio uso con un profesional sanitario."
+          ],
+          source_name: "Almita Group — Nota del Fundador",
+          source_url: "https://almitagroup.com",
+          author: "Mürsel Alkan"
+        },
+        {
+          date: "2024",
+          tag: "Longevidad",
+          icon: "antiaging",
+          title: "HBOT y Longevidad: La Creciente Tendencia del Envejecimiento Saludable",
+          paragraphs: [
+            "El movimiento de la longevidad — llevado al gran público por emprendedores tecnológicos como Bryan Johnson y sus protocolos personales de 'reversión de la edad' — también ha impulsado el interés por la oxigenoterapia hiperbárica. Uno de sus anclajes científicos es un estudio clínico publicado en la revista Aging en 2020, en el que 35 adultos sanos de 64 años o más completaron un programa de HBOT de 60 sesiones.",
+            "El estudio reportó un alargamiento de los telómeros de más del 20% en células inmunitarias — hasta un 37% en células B — junto con una reducción de hasta el 37% en células inmunitarias senescentes. Dado que el ensayo no contó con grupo de control y tuvo un tamaño de muestra limitado, los resultados se consideran 'prometedores pero preliminares'; los investigadores subrayan que se necesitan estudios más amplios para definir los protocolos óptimos."
+          ],
+          source_name: "PMC – HBOT Increases Telomere Length and Decreases Immunosenescence (Aging, 2020)",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
+        },
+        {
+          date: "2023",
+          tag: "Deporte",
+          icon: "healthSync",
+          title: "¿Por Qué los Atletas de Élite Usan Oxígeno Hiperbárico?",
+          paragraphs: [
+            "Atletas de fama mundial como Cristiano Ronaldo, LeBron James, Novak Djokovic y Floyd Mayweather han aparecido en reportajes de prensa por usar cámaras hiperbáricas como parte de sus rutinas de recuperación. Detrás de este interés hay hallazgos de medicina deportiva que sugieren que la HBOT puede reducir el edema y la inflamación, favorecer la reparación de tejidos y ayudar a los atletas a volver antes al entrenamiento.",
+            "Entre los estudios citados en las revisiones se encuentra una observación de los Juegos Olímpicos de Invierno de Nagano, donde 7 atletas se recuperaron más rápido con sesiones breves a 1.3 ATA; un informe clínico temprano sobre una reducción del 55% en los días de baja por lesión entre futbolistas profesionales; y un estudio universitario que sugiere un retorno aproximadamente un 30% más rápido tras esguinces de tobillo. Los autores señalan que la evidencia se basa en gran medida en muestras pequeñas y que se necesitan ensayos controlados aleatorizados para llegar a conclusiones firmes."
+          ],
+          source_name: "PMC – The Role of Hyperbaric Oxygen Therapy in Sports Medicine (review)",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
+        },
+        {
+          date: "2024",
+          tag: "Guía",
+          icon: "oneSeat",
+          title: "Guía de Compra de Cámaras Hiperbáricas para el Hogar",
+          paragraphs: [
+            "La primera pregunta al elegir una cámara hiperbárica para uso doméstico o privado es la capacidad: las cámaras monoplaza ofrecen un tamaño compacto, mientras que las multiplaza permiten tratar a la vez a familiares o a grupos pequeños y facilitan las sesiones asistidas por un acompañante. La UHMS, la autoridad internacional en medicina hiperbárica, exige que las cámaras presurizadas sean equipos homologados e inspeccionados periódicamente, y que los operadores reciban formación especializada.",
+            "El nivel de presión es el segundo tema clave: los protocolos clínicos suelen aplicarse en el rango de 2.0–2.4 ATA, mientras que 1.3–2.0 ATA es habitual en sistemas domésticos — revisa siempre con un profesional sanitario el nivel adecuado a tus objetivos. El tercer tema es la seguridad y el confort: las normas de seguridad contra incendios en entornos con oxígeno, la descompresión de emergencia, el nivel de ruido, la iluminación interior y los sistemas de comunicación condicionan directamente la experiencia diaria; confirma por escrito las condiciones de mantenimiento y garantía antes de comprar."
+          ],
+          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Therapy",
+          source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
+        },
+        {
+          date: "2025",
+          tag: "Investigación",
+          icon: "wound",
+          title: "El Papel del Oxígeno Hiperbárico en Heridas Crónicas Sigue Creciendo",
+          paragraphs: [
+            "Revisiones recientes en cirugía y cuidado de heridas crónicas muestran que la oxigenoterapia hiperbárica (HBOT) favorece el proceso de curación al aumentar la oxigenación de los tejidos. En heridas de pie diabético, úlceras venosas de la pierna, quemaduras y daño tisular por radiación, se ha informado que la HBOT mejora las tasas de cierre de heridas y reduce el riesgo de infección.",
+            "Un estudio publicado en 2025 encontró que la HBOT combinada con terapia de heridas por presión negativa (NPWT) aumentó significativamente la velocidad de curación en comparación con la NPWT sola. En cirugía reconstructiva, se ha informado que la HBOT favorece la supervivencia de tejidos e injertos y promueve la formación de nuevos vasos sanguíneos."
+          ],
+          source_name: "PMC – Hyperbaric Oxygen Therapy in Surgical Wound Healing and Tissue Salvage",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
+        },
+        {
+          date: "2023",
+          tag: "Salud Deportiva",
+          icon: "burn",
+          title: "Por Qué los Atletas Recurren a las Cámaras Hiperbáricas",
+          paragraphs: [
+            "Muchos atletas de élite del tenis, la natación, el baloncesto y el golf están eligiendo la oxigenoterapia hiperbárica como parte de su rutina de recuperación. La investigación en medicina deportiva muestra que la HBOT puede acelerar la curación, reducir la inflamación y ayudar a los atletas a volver antes al entrenamiento.",
+            "Algunos estudios reportaron niveles más bajos de dolor muscular y fatiga en atletas que recibieron HBOT, con tiempos de recuperación reducidos hasta en un 30% aproximadamente. Aunque el campo todavía necesita ensayos clínicos controlados de mayor tamaño, los resultados son prometedores para la salud de los atletas."
+          ],
+          source_name: "Turkish Journal of Sports Medicine",
+          source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
+        },
+        {
+          date: "2024",
+          tag: "Evidencia Clínica",
+          icon: "wound",
+          title: "Metaanálisis sobre Úlceras del Pie Diabético: Menor Riesgo de Amputación",
+          paragraphs: [
+            "Un metaanálisis de 14 estudios con 768 participantes encontró que la oxigenoterapia hiperbárica ofrecía un beneficio estadísticamente significativo en la curación completa de las úlceras del pie diabético y en la reducción del riesgo de amputación mayor.",
+            "Una revisión sistemática reciente publicada en 2024 llegó a conclusiones similares: la mayoría de los estudios revisados observaron tasas más bajas de amputación mayor, tasas más altas de cicatrización de heridas y una reducción del tamaño y la profundidad de las úlceras con la HBOT."
+          ],
+          source_name: "PMC – Efficacy of HBOT for Diabetic Foot Ulcer",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
+        },
+        {
+          date: "2024",
+          tag: "Evidencia Clínica",
+          icon: "ear",
+          title: "Oxígeno Hiperbárico para la Pérdida Súbita de Audición: la Intervención Temprana Importa",
+          paragraphs: [
+            "En pacientes con pérdida auditiva neurosensorial súbita, la oxigenoterapia hiperbárica busca mejorar la microcirculación y reducir la inflamación al aumentar la presión de oxígeno en el oído interno. Los estudios muestran que los pacientes que inician el tratamiento de forma temprana, especialmente en combinación con corticoterapia, tienden a obtener resultados más favorables.",
+            "Aunque los resultados de la investigación no ofrecen un consenso completo sobre la eficacia, algunos estudios observaron mejoría auditiva en más de la mitad de los pacientes. Los expertos subrayan la necesidad de más ensayos clínicos para establecer protocolos estandarizados de presión y duración."
+          ],
+          source_name: "JAMA Otolaryngology–Head & Neck Surgery",
+          source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
+        },
+        {
+          date: "2024",
+          tag: "Tecnología",
+          icon: "connect",
+          title: "La Era de los Dispositivos Sanitarios Conectados: la Monitorización Remota Crece Rápido",
+          paragraphs: [
+            "Hoy en día, se estima que el mercado global de IoT sanitario ha superado los 86.000 millones de dólares. A medida que se acelera el cambio de la atención centrada en el hospital hacia la atención domiciliaria, más de 350 hospitales en EE. UU. ya gestionan programas de 'hospitalización a domicilio' habilitados por IoT.",
+            "La investigación muestra que los sistemas de monitorización remota de pacientes basados en IoT pueden reducir las tasas de reingreso hospitalario hasta en un 50%. La plataforma ApexConnect™ de HBOT Chamber Tech forma parte precisamente de esta tendencia global: conectar las cámaras a la nube para la monitorización en tiempo real y el mantenimiento predictivo."
+          ],
+          source_name: "IoT Business News",
+          source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
+        },
+        {
+          date: "2023",
+          tag: "Clínico",
+          icon: "guard",
+          title: "Gestión de la Presión en Cámaras Multiplaza: Protocolos Operativos Clínicos",
+          paragraphs: [
+            "Las cámaras hiperbáricas multiplaza son la opción estándar en hospitales y clínicas porque tratan a varios pacientes a la vez y permiten que el personal médico acompañe a los pacientes en el interior. Las directrices operativas publicadas por la UHMS, la autoridad internacional en medicina hiperbárica, recomiendan ajustar las velocidades de compresión y descompresión al confort del paciente y al riesgo de barotrauma en el oído, realizar cada sesión bajo la supervisión de un operador certificado y practicar con regularidad los escenarios de evacuación de emergencia.",
+            "En la práctica clínica, el protocolo de presión se determina según la indicación de tratamiento: los protocolos habituales se aplican en el rango de 2.0–2.4 ATA, mientras que ciertas indicaciones especiales pueden requerir presiones más altas. Los expertos subrayan que el nivel de presión adecuado siempre debe ser evaluado por un médico especializado en medicina hiperbárica, y que se espera que el equipo de la cámara esté certificado para cubrir con seguridad el rango de presión objetivo."
+          ],
+          source_name: "UHMS – Undersea & Hyperbaric Medical Society",
+          source_url: "https://www.uhms.org"
+        },
+        {
+          date: "2024",
+          tag: "Deporte",
+          icon: "healthSync",
+          title: "Preparación de Pretemporada en Clubes Deportivos: Programas de Apoyo Hiperbárico",
+          paragraphs: [
+            "Los equipos de rendimiento y médicos de clubes deportivos profesionales recurren cada vez más a las aplicaciones de oxígeno hiperbárico para apoyar la recuperación durante periodos de partidos y entrenamientos muy cargados. Las revisiones en la literatura de medicina deportiva reportan que la HBOT puede ayudar a reducir el edema y la inflamación tras lesiones de tejidos blandos, y tiene el potencial de acortar el tiempo de retorno al entrenamiento de un atleta.",
+            "En un entorno de club, la planificación encabeza la lista de prioridades: las sesiones deben integrarse en el calendario de entrenamientos y partidos, evaluarse junto con el control de carga específico de cada jugador, y llevarse a cabo bajo la supervisión del médico del club. Los investigadores también señalan que gran parte de la evidencia actual se basa en estudios con muestras pequeñas y que se necesitan ensayos controlados más amplios para establecer protocolos estándar."
+          ],
+          source_name: "Frontiers in Physiology – Sport and Exercise",
+          source_url: "https://www.frontiersin.org/journals/physiology"
+        },
+        {
+          date: "2025",
+          tag: "Bienestar",
+          icon: "premium",
+          title: "Una Nueva Tendencia en Hoteles de Lujo: Suites de Bienestar Hiperbárico",
+          paragraphs: [
+            "Los informes del sector sobre la economía global del bienestar muestran que el turismo de bienestar es uno de sus segmentos de más rápido crecimiento. Reflejando esta tendencia, los hoteles y resorts de lujo van más allá de las ofertas de spa y fitness, añadiendo a la experiencia del huésped tecnologías de recuperación avanzadas como cámaras hiperbáricas de oxígeno, crioterapia y terapia de luz roja.",
+            "Los observadores del sector señalan que las unidades hiperbáricas destacan especialmente en paquetes premium centrados en la 'longevidad' y el 'rendimiento'. Para los operadores hoteleros, los temas críticos son el cumplimiento de los estándares de seguridad, la contratación de personal formado y la correcta estructuración del cribado de salud previo al uso; las aplicaciones dirigidas a los huéspedes deben ofrecerse como apoyo al bienestar general, no como tratamiento médico."
+          ],
+          source_name: "Global Wellness Institute",
+          source_url: "https://globalwellnessinstitute.org"
+        },
+        {
+          date: "2024",
+          tag: "Seguridad",
+          icon: "care",
+          title: "3.0 ATA y Superior: Estándares de Seguridad Hiperbárica de Nivel Médico",
+          paragraphs: [
+            "Los niveles de presión de 3.0 ATA y superiores son un ámbito que la medicina hiperbárica aplica únicamente en entornos clínicos estrictamente regulados. Las cámaras que operan a estos niveles deben fabricarse conforme a la normativa de recipientes a presión, cumplir las disposiciones hiperbáricas de normas internacionales como la NFPA 99 en materia de seguridad contra incendios, y someterse a inspecciones periódicas regulares. Gestionar el riesgo de incendio en una atmósfera enriquecida con oxígeno es el tema de diseño más crítico para esta clase de sistemas.",
+            "Los otros eslabones de la cadena de seguridad son los factores humanos: un operador hiperbárico certificado, la evaluación del paciente antes de la sesión, un plan de evacuación de emergencia y la supervisión médica. Los organismos profesionales recomiendan que los tratamientos de la clase de alta presión se realicen únicamente en instituciones con esta infraestructura, y aconsejan a las organizaciones compradoras solicitar por escrito al fabricante los certificados de presión, los informes de prueba y los programas de formación."
+          ],
+          source_name: "NFPA – National Fire Protection Association",
+          source_url: "https://www.nfpa.org"
+        }
+      ]
+    },
+    contact: {
+      header: { eyebrow: "CONTACTO", title: "Ponte en Contacto", subtitle: "Completa el formulario para tus preguntas y solicitudes de presupuesto." },
+      address_label: "Dirección",
+      address_value: "Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29, Tuzla / Estambul, Türkiye",
+      phone_label: "Teléfono",
+      phone_value: "0850 888 1679",
+      email_label: "Correo Electrónico",
+      email_value: "info@hbotchambertech.com",
+      hours_label: "Horario de Atención",
+      hours_value: "Lunes – Viernes, 09:00 – 18:00",
+      form_title: "Enviar un Mensaje",
+      form_name: "Nombre Completo",
+      form_email: "Correo Electrónico",
+      form_message: "Tu Mensaje",
+      form_submit: "Enviar",
+      form_sending: "Enviando...",
+      form_success: "¡Gracias! Hemos recibido tu mensaje — te responderemos en breve.",
+      form_error: "Algo salió mal. Inténtalo de nuevo o llámanos directamente.",
+      map_note: "Tuzla, Estambul",
+      faq: {
+        eyebrow: "PREGUNTAS FRECUENTES",
+        title: "Preguntas Habituales",
+        subtitle: "Las preguntas más frecuentes sobre sistemas hiperbáricos, modelos Apex, instalación y pedidos.",
+        sections: [
+          {
+            title: "Sobre los Sistemas Hiperbáricos",
+            items: [
+              { q: "¿Qué es una cámara hiperbárica?", a: "Una cámara hiperbárica es un sistema que ofrece al usuario un entorno controlado y presurizado por encima de la presión atmosférica normal. En los sistemas hiperbáricos Apex, la cámara se presuriza de forma controlada; el oxígeno puede suministrarse al usuario mediante una mascarilla dedicada o un equipo de respiración adecuado, según el modelo seleccionado y la configuración del sistema." },
+              { q: "¿Cómo funciona un sistema hiperbárico?", a: "Una vez que el usuario entra en la cámara, la puerta se cierra de forma segura y el sistema se presuriza de manera controlada. Al alcanzar la presión de trabajo objetivo, se aplica el protocolo de la sesión. Al finalizar la sesión, la presión se reduce de forma gradual y la puerta se abre una vez que el interior alcanza la presión atmosférica normal.\n\nEl nivel de presión, el flujo de oxígeno y la duración de la sesión se determinan según las especificaciones del dispositivo, el uso previsto y el protocolo que se vaya a aplicar." },
+              { q: "¿Son lo mismo una cámara hiperbárica y un concentrador de oxígeno?", a: "No. Una cámara hiperbárica crea un entorno de presión controlada. Un concentrador de oxígeno produce oxígeno de alta concentración a partir del aire ambiente. Según los requisitos del proyecto, estos dos sistemas pueden utilizarse conjuntamente." },
+              { q: "¿Los sistemas hiperbáricos solo pueden usarse en hospitales?", a: "Los entornos en los que pueden usarse los sistemas hiperbáricos varían según la clasificación del dispositivo, el uso previsto y la normativa vigente en el país de instalación.\n\nSegún el modelo y la configuración seleccionados, los sistemas Apex pueden diseñarse para los siguientes entornos:", list: ["Hospitales y centros sanitarios", "Clínicas", "Centros deportivos y de rendimiento", "Centros de bienestar y longevidad", "Hoteles y conceptos de salud dedicados", "Centros de rehabilitación", "Instituciones de investigación y educación", "Residencias privadas"], aAfter: "Para los centros que prestan servicios médicos, la normativa sanitaria pertinente, las condiciones de licencia y los requisitos de contar con un profesional sanitario cualificado deben evaluarse por separado." }
+            ]
+          },
+          {
+            title: "Modelos Apex",
+            items: [
+              { q: "¿Qué modelos Apex están disponibles?", a: "La familia de productos Apex se desarrolla para diferentes capacidades de usuarios y casos de uso.\n\nApex Solo Lounge — Un sistema para un solo usuario desarrollado para quienes necesitan tratamiento en posición tumbada.\n\nApex Solo — Un sistema hiperbárico compacto para un solo usuario, utilizado en posición sentada. Diseñado tanto para uso individual/doméstico como para uso profesional.\n\nApex Duo — Un sistema con un interior espacioso que puede acoger a dos usuarios en la misma sesión.\n\nApex Quad-Cube — Un sistema hiperbárico de gran volumen y forma cúbica para 4 usuarios, desarrollado para clínicas, hospitales y operadores profesionales.\n\nApex Nexus — Un sistema institucional de nivel hospitalario y gran capacidad, desde 6 usuarios y ampliable hasta 12." },
+              { q: "¿Para quién es adecuado el Apex Solo?", a: "El Apex Solo está desarrollado tanto para uso individual/doméstico como para operadores que buscan una configuración de un solo usuario. Gracias a su estructura compacta, puede considerarse para hogares, clínicas, centros deportivos, centros de bienestar y hoteles.\n\nLas condiciones exactas de uso vienen determinadas por la clasificación del producto y la normativa del país de instalación." },
+              { q: "¿A cuántas personas puede acoger el Apex Duo?", a: "El Apex Duo está diseñado para acoger a dos usuarios en la misma sesión. La estructura de los asientos, el equipamiento interior y la disposición de los asientos pueden variar según la configuración solicitada." },
+              { q: "¿Cuál es la capacidad de usuarios del modelo Apex multipersona?", a: "Los modelos Apex multiusuario comienzan con el Apex Quad-Cube de 4 personas. Para el Apex Nexus de nivel hospitalario, la capacidad estándar es de 6 personas, con una capacidad opcional de hasta 12 personas (en incrementos de 2 asientos).\n\nLa capacidad exacta viene determinada por los siguientes factores:", list: ["Dimensiones de la cámara", "Disposición de los asientos", "Margen de movimiento de los usuarios", "Capacidad del sistema de oxígeno", "Protocolo operativo", "Requisitos locales de seguridad y licencias"], aAfter: "Cada opción se incorpora al proyecto tras una evaluación de seguridad y un análisis de idoneidad técnica." },
+              { q: "¿Cuáles son las dimensiones de los dispositivos?", a: "Cada modelo Apex tiene diferentes dimensiones exteriores y un volumen interior útil distinto. La siguiente información se muestra por separado en las páginas técnicas de cada producto:", list: ["Dimensiones exteriores", "Dimensiones interiores útiles", "Apertura de la puerta", "Peso total", "Capacidad de usuarios", "Superficie mínima de instalación", "Espacio de acceso para el servicio técnico"], aAfter: "Las solicitudes de dimensiones personalizadas pueden diseñarse tras una evaluación de ingeniería." }
+            ]
+          },
+          {
+            title: "Sistema de Presión y Oxígeno",
+            items: [
+              { q: "¿A qué presión funcionan los sistemas Apex?", a: "La presión de funcionamiento puede variar según el modelo y la configuración del producto.\n\nLos documentos técnicos indican claramente si la medición se refiere a la presión absoluta o a la presión manométrica." },
+              { q: "¿Cuál es la diferencia entre bar y ATA?", a: "El bar es una unidad de medida de presión. ATA se refiere a atmósferas absolutas. Estos dos valores no deben interpretarse de la misma manera.\n\nPor este motivo, la siguiente información se muestra por separado en los documentos técnicos de Apex:", list: ["Presión atmosférica ambiente", "Presión manométrica", "Presión absoluta", "Equivalencia en ATA", "Presión máxima de funcionamiento permitida"] },
+              { q: "¿De dónde proviene el oxígeno?", a: "Puede utilizarse un concentrador de oxígeno de tamaño adecuado según el proyecto de instalación. La pureza del oxígeno requerida, el caudal, la presión y las necesidades de respaldo son calculados por el equipo técnico." },
+              { q: "¿El concentrador de oxígeno está incluido en el precio del dispositivo?", a: "Sí." },
+              { q: "¿Es suficiente un solo concentrador de oxígeno para varios usuarios?", a: "Esto depende de la capacidad del concentrador, del caudal de oxígeno requerido y del número de usuarios. El caudal total de oxígeno requerido se calcula por separado para cada proyecto." }
+            ]
+          },
+          {
+            title: "Sesión y Proceso de Uso",
+            items: [
+              { q: "¿Cuánto dura una sesión?", a: "La duración de la sesión varía según el protocolo aplicado. Una sesión suele constar de tres fases: presurización controlada, aplicación a la presión objetivo y despresurización controlada.\n\nLa duración total viene determinada por la presión objetivo, el estado del usuario y el protocolo de aplicación. Para las aplicaciones de finalidad médica, la duración de la sesión debe ser determinada por un profesional sanitario cualificado." },
+              { q: "¿Cuánto tiempo tarda la presurización?", a: "El tiempo de presurización puede variar según la presión objetivo seleccionada, el modelo del dispositivo y el confort del usuario. En los sistemas Apex, los cambios de presión se realizan de forma controlada." },
+              { q: "¿Se nota presión en los oídos durante una sesión?", a: "Durante los cambios de presión, puede producirse una sensación de plenitud o presión en los oídos, similar a la de un viaje en avión. Los usuarios deben ser informados de las técnicas de ecualización de presión antes de la sesión." },
+              { q: "¿Puede el usuario comunicarse con el exterior durante una sesión?", a: "Sí." },
+              { q: "¿Puede el usuario ver el exterior durante una sesión?", a: "Los modelos Apex pueden incluir amplias zonas de visión y opciones de superficies transparentes para aumentar el confort del usuario. Las dimensiones y la ubicación de las ventanas varían según el modelo." },
+              { q: "¿Se puede usar un teléfono durante una sesión?", a: "Solo debe introducirse en la cámara hiperbárica el equipo que haya sido evaluado y aprobado explícitamente por el fabricante. Los teléfonos móviles, tabletas, relojes inteligentes, auriculares, baterías portátiles y dispositivos electrónicos similares no deben introducirse en la cámara sin la aprobación del fabricante.\n\nLos sistemas de pantalla, audio o entretenimiento integrados en el dispositivo solo pueden utilizarse una vez completada la evaluación técnica y de seguridad." },
+              { q: "¿Puede el usuario salir en cualquier momento?", a: "La puerta de una cámara presurizada no puede abrirse directamente. Para que el usuario salga, primero deben equilibrarse de forma segura la presión interior y exterior.\n\nEn condiciones normales, se aplica un procedimiento de despresurización controlada. En situaciones de emergencia, se sigue el procedimiento de despresurización de emergencia designado del dispositivo." }
+            ]
+          },
+          {
+            title: "Seguridad",
+            items: [
+              { q: "¿Son seguros los sistemas hiperbáricos Apex?", a: "Sí. La seguridad en los sistemas hiperbáricos se garantiza mediante una ingeniería adecuada, una instalación correcta, un mantenimiento regular, personal formado y el cumplimiento de los procedimientos de uso.\n\nEl dispositivo solo debe utilizarse conforme al manual del usuario, y los sistemas de seguridad nunca deben desactivarse." },
+              { q: "¿Qué sistemas de seguridad incluyen los dispositivos?", a: "Según el modelo y la configuración solicitada, los sistemas Apex pueden incluir las siguientes funciones de seguridad:", list: ["Sensores de presión", "Válvula mecánica de alivio de seguridad", "Control automático de presión", "Control manual de presión", "Botón de parada de emergencia", "Sistema de despresurización de emergencia", "Monitorización del nivel de oxígeno", "Monitor de saturación de oxígeno (de serie)", "Monitorización de temperatura", "Sistema de alarma visual y sonora", "Sistema de comunicación interior-exterior", "Sistema de seguridad de la puerta", "Procedimiento ante corte de energía", "Sistema de registro de fallos y sesiones", "Fuente de alimentación de respaldo integrada de serie"], aAfter: "Los sistemas de seguridad estándar y opcionales incluidos en cada modelo se detallan por separado en el documento de propuesta técnica." },
+              { q: "¿Qué ocurre si hay un corte de energía?", a: "Todos los modelos Apex incluyen de serie una fuente de alimentación de respaldo integrada para protegerse frente a cortes de energía. El procedimiento a aplicar en caso de corte de energía puede variar según el modelo del dispositivo.\n\nSegún la configuración del sistema, también pueden ofrecerse las siguientes características:", list: ["Sistema de alimentación ininterrumpida", "Control manual de presión", "Liberación de presión controlada", "Iluminación de emergencia", "Sistema de alerta al operador"] },
+              { q: "¿Se puede abrir la puerta de inmediato en caso de emergencia?", a: "En las cámaras presurizadas, la presión interior y exterior debe equilibrarse antes de poder abrir la puerta. Por este motivo, la puerta no puede abrirse por medios normales mientras la cámara está bajo presión.\n\nEn una emergencia, se aplica el procedimiento de despresurización controlada o acelerada del sistema. Las válvulas de alivio de seguridad y los límites de presión no deben superarse por la seguridad del usuario." },
+              { q: "¿Existe riesgo de incendio en los sistemas hiperbáricos?", a: "En entornos con altas concentraciones de oxígeno, el riesgo de combustión puede aumentar. Por este motivo, la gestión del oxígeno, el cableado eléctrico, el control de la electricidad estática, la elección de la ropa y los materiales introducidos en la cámara están sujetos a normas especiales.\n\nNunca deben introducirse en la cámara cigarrillos, mecheros, cerillas, productos inflamables ni dispositivos electrónicos no aprobados por el fabricante." },
+              { q: "¿Qué objetos no están permitidos dentro de la cámara?", a: "Los siguientes objetos no deben introducirse en la cámara sin la aprobación del fabricante:", list: ["Cigarrillos y cigarrillos electrónicos", "Mecheros y cerillas", "Sustancias inflamables o combustibles", "Productos a base de alcohol", "Productos cosméticos con base de aceite o petróleo", "Productos en aerosol", "Teléfonos móviles", "Tabletas y portátiles", "Relojes inteligentes", "Auriculares", "Baterías portátiles", "Equipos de calefacción", "Dispositivos eléctricos no aprobados", "Envases sellados que puedan verse afectados por los cambios de presión"] },
+              { q: "¿Qué ropa debe llevarse dentro de la cámara?", a: "Debe preferirse ropa adecuada al procedimiento de seguridad del operador y al manual del usuario del dispositivo. No deben usarse prendas ni accesorios que puedan suponer un riesgo de electricidad estática o inflamabilidad." }
+            ]
+          },
+          {
+            title: "Idoneidad del Usuario",
+            items: [
+              { q: "¿Puede cualquier persona usar un sistema hiperbárico?", a: "No. Un entorno hiperbárico puede no ser adecuado para todos los usuarios. Antes del uso, debe evaluarse el estado de salud de la persona, sus enfermedades existentes, la medicación que toma y los implantes que porta.\n\nPara las aplicaciones de finalidad médica, la decisión sobre la idoneidad debe tomarla un profesional sanitario cualificado." },
+              { q: "¿Se requiere una evaluación médica antes del uso?", a: "Para las aplicaciones hiperbáricas de finalidad médica, el usuario debe ser evaluado por un profesional sanitario cualificado.\n\nPara las aplicaciones orientadas al bienestar o al rendimiento, también se recomienda obtener una declaración de salud del usuario y comprobar de antemano cualquier condición potencialmente de riesgo." },
+              { q: "¿Qué afecciones de salud deben comunicarse de antemano?", a: "Los usuarios deben comunicar las siguientes afecciones al personal del operador y al profesional sanitario antes de la sesión:", list: ["Problemas de oído o senos paranasales", "Resfriado o fiebre", "Afecciones pulmonares", "Cirugía previa", "Afecciones cardíacas o circulatorias", "Antecedentes de convulsiones", "Claustrofobia", "Embarazo", "Medicación que se esté tomando", "Marcapasos o implantes", "Actividad reciente de buceo", "Molestias previas relacionadas con la presión"], aAfter: "Esta lista no sustituye a una evaluación médica." },
+              { q: "¿Pueden las personas embarazadas usar un sistema hiperbárico?", a: "La decisión de uso durante el embarazo debe tomarla exclusivamente un médico cualificado. Las decisiones de uso no deben basarse en información general." },
+              { q: "¿Pueden los niños usar un sistema hiperbárico?", a: "El uso por parte de niños debe evaluarse en función de la edad, el estado de salud, la finalidad del uso, las características del dispositivo y las condiciones de acompañamiento. Para las aplicaciones de finalidad médica, se requiere la aprobación de un médico y la supervisión del personal sanitario adecuado." },
+              { q: "¿Pueden usar el sistema personas con marcapasos o implantes?", a: "Debe confirmarse la idoneidad del implante para un entorno presurizado y enriquecido con oxígeno. No debe tomarse una decisión de uso sin la información técnica del fabricante del implante y la evaluación de un profesional sanitario cualificado." },
+              { q: "¿Se puede usar el sistema con resfriado o dolor de oídos?", a: "Un resfriado, la congestión nasal, los problemas de senos paranasales o el dolor de oídos pueden dificultar la ecualización de la presión. Estas condiciones siempre deben comunicarse antes de la sesión.\n\nLa decisión de posponer el uso debe tomarla un profesional sanitario cualificado o un responsable del personal." }
+            ]
+          },
+          {
+            title: "Uso Médico y Declaraciones de Salud",
+            items: [
+              { q: "¿Para qué afecciones se utiliza un sistema hiperbárico?", a: "Los usos médicos aceptados de la aplicación de oxígeno hiperbárico pueden variar según el país, el organismo regulador, la clasificación del dispositivo y el protocolo clínico.\n\nLas aplicaciones de finalidad médica solo deben realizarse con dispositivos clasificados adecuadamente, en centros sanitarios autorizados, bajo la supervisión de personal sanitario formado, con evaluación médica y un protocolo apropiado.\n\nLa información de nuestro sitio web no constituye un consejo personalizado para el diagnóstico o el tratamiento de ninguna enfermedad." },
+              { q: "¿Los dispositivos Apex curan alguna enfermedad?", a: "El uso previsto de un dispositivo y las declaraciones de salud que pueden hacerse sobre él dependen de la clasificación oficial del producto y de la documentación que posea.\n\nLas afirmaciones sobre los sistemas Apex se realizan únicamente dentro del uso previsto especificado en los documentos técnicos y en la evaluación de conformidad. No se ofrece ningún resultado garantizado para ninguna enfermedad." },
+              { q: "¿Son los sistemas de baja presión lo mismo que la HBOT clínica?", a: "No. No toda aplicación de oxígeno presurizado pertenece a la misma clase técnica o clínica. Los siguientes factores pueden cambiar la naturaleza de la aplicación:", list: ["Presión de funcionamiento", "Concentración de oxígeno inhalado", "Método de suministro de oxígeno", "Duración de la sesión", "Certificación del dispositivo", "Uso previsto", "Entorno de aplicación", "Supervisión por parte de personal sanitario"], aAfter: "Que un sistema pueda definirse como \"dispositivo médico de oxigenoterapia hiperbárica\" depende de la normativa del mercado correspondiente y del uso previsto documentado del producto." },
+              { q: "¿Se garantizan los resultados?", a: "La respuesta de los usuarios puede variar de una persona a otra. No pueden garantizarse resultados de salud, recuperación, rendimiento o similares.\n\nLas decisiones de uso no deben basarse únicamente en información promocional general o en testimonios de usuarios." }
+            ]
+          },
+          {
+            title: "Instalación",
+            items: [
+              { q: "¿Cuánto espacio se requiere para la instalación?", a: "El espacio requerido varía según el modelo Apex seleccionado. Al determinar la superficie de instalación, deben tenerse en cuenta los siguientes factores además de las dimensiones del dispositivo:", list: ["Área de trabajo del operador", "Espacio libre total para la apertura de la puerta", "Acceso para el servicio técnico", "Área para el compresor y el equipo auxiliar", "Área del sistema de oxígeno", "Ventilación", "Cuadro eléctrico", "Ruta de salida de emergencia", "Equipo de seguridad contra incendios"], aAfter: "Las dimensiones mínimas de instalación se determinan tras un estudio técnico." },
+              { q: "¿Se puede instalar el dispositivo en un edificio existente?", a: "La mayoría de los proyectos pueden aplicarse a estructuras existentes; no obstante, debe realizarse una inspección técnica antes de la instalación. Se comprueban las siguientes condiciones:", list: ["Capacidad de carga del suelo", "Espacios libres de puertas y pasillos", "Capacidad del ascensor", "Altura del techo", "Infraestructura eléctrica", "Ventilación", "Infraestructura de oxígeno y aire comprimido", "Seguridad contra incendios", "Acceso para el servicio técnico"] },
+              { q: "¿Realizan un estudio del emplazamiento antes de la instalación?", a: "Sí. Según la ubicación y el alcance del proyecto, puede realizarse una evaluación técnica remota o un estudio in situ. Para la evaluación inicial, se puede solicitar al cliente la siguiente información:", list: ["Dimensiones del área de instalación", "Fotos y vídeos", "Plano arquitectónico", "Infraestructura eléctrica", "Información sobre la ventilación", "Ruta de acceso y transporte", "Capacidad de usuarios objetivo", "Modelo y opciones deseados"] },
+              { q: "¿Se requiere refuerzo del suelo?", a: "Esto depende del peso del dispositivo, del equipo auxiliar y de la capacidad de carga del edificio. Cuando sea necesario, un ingeniero de construcción o estructural cualificado debe realizar una evaluación estática." },
+              { q: "¿Se puede reubicar el dispositivo?", a: "Algunos modelos Apex pueden fabricarse con una estructura modular. No obstante, el desmontaje, el transporte y la reinstalación solo deben ser realizados por un equipo técnico autorizado.\n\nTras la reubicación, el sistema debe volver a inspeccionarse y no debe utilizarse hasta que se hayan completado las pruebas necesarias." },
+              { q: "¿Cuánto tiempo lleva la instalación?", a: "El tiempo de instalación varía según los siguientes factores: modelo, dimensiones del dispositivo, ubicación de la instalación, infraestructura del edificio, sistemas auxiliares, opciones de personalización, y el proceso de pruebas y formación.\n\nEl calendario de instalación estimado se indica en la propuesta del proyecto." }
+            ]
+          },
+          {
+            title: "Formación y Operación",
+            items: [
+              { q: "¿Ofrecen formación al personal?", a: "Sí. Tras la instalación, el personal autorizado recibe formación sobre el uso seguro y correcto del dispositivo. Según el modelo, el alcance de la formación puede incluir:", list: ["Encendido y apagado del sistema", "Presurización y despresurización", "Preparación del usuario", "Instrucciones sobre la ecualización de presión", "Uso del sistema de oxígeno", "Objetos prohibidos dentro de la cámara", "Comprobaciones de seguridad diarias", "Condiciones de alarma y fallo", "Procedimientos de emergencia", "Limpieza e higiene", "Registro del mantenimiento"] },
+              { q: "¿Cuánto personal se necesita para operar el dispositivo?", a: "El número de personal requerido varía según el modelo, la capacidad de usuarios, la naturaleza de la operación y la normativa local.\n\nLos sistemas multiusuario y de finalidad médica pueden requerir personal adicional de salud y seguridad. La dotación de personal se determina durante la fase del proyecto." },
+              { q: "¿Se pueden mantener registros de uso?", a: "Según el sistema de control seleccionado y las funciones del software, se pueden mantener los siguientes registros:", list: ["Fecha y hora de la sesión", "Duración de la sesión", "Valores de presión", "Gráfico de cambio de presión", "Registros de alarma", "Información del operador", "Historial de mantenimiento", "Horas de funcionamiento del sistema"], aAfter: "Si se registran datos de salud personales, debe cumplirse la normativa de protección de datos correspondiente." },
+              { q: "¿Se requiere una licencia de operación?", a: "Los requisitos de licencia y permisos varían según el país, la ciudad, el tipo de instalación, la clasificación del dispositivo y el uso previsto. Para los centros que prestan servicios médicos, deben evaluarse por separado las siguientes normativas:", list: ["Licencia de centro sanitario", "Normativa de dispositivos médicos", "Normativa de equipos a presión", "Seguridad contra incendios", "Salud y seguridad en el trabajo", "Normas de almacenamiento de oxígeno", "Cualificaciones del personal", "Cumplimiento eléctrico y de edificación"], aAfter: "El operador debe obtener los permisos necesarios de las autoridades locales correspondientes antes de iniciar la operación." }
+            ]
+          },
+          {
+            title: "Limpieza e Higiene",
+            items: [
+              { q: "¿Cómo se limpia la cámara hiperbárica?", a: "La cámara, los asientos, las superficies de contacto y el equipo del usuario solo deben limpiarse con productos de limpieza aprobados por el fabricante. No deben usarse productos inflamables, a base de aceite, con alto contenido de alcohol, ni productos que puedan dañar los materiales del dispositivo." },
+              { q: "¿Debe limpiarse después de cada usuario?", a: "Las superficies y equipos que entran en contacto con el usuario deben limpiarse después de cada sesión, conforme al protocolo de higiene del operador. Las mascarillas, el equipo para la cabeza y el equipo de respiración deben limpiarse, desinfectarse o sustituirse según las instrucciones del fabricante." },
+              { q: "¿Las mascarillas de oxígeno son personales para cada usuario?", a: "Según el proyecto y la preferencia del operador, pueden usarse opciones de mascarilla personal, de un solo uso o desinfectable. La limpieza y los intervalos de sustitución de la mascarilla deben cumplir las instrucciones del fabricante." },
+              { q: "¿Con qué frecuencia se sustituyen los filtros?", a: "El intervalo de sustitución de los filtros varía según el tipo de filtro, las horas de funcionamiento, las condiciones ambientales y la intensidad de uso. Los intervalos de mantenimiento y sustitución de filtros se especifican en el plan de mantenimiento del dispositivo." }
+            ]
+          },
+          {
+            title: "Mantenimiento, Garantía y Servicio Técnico",
+            items: [
+              { q: "¿Con qué frecuencia se realiza el mantenimiento del dispositivo?", a: "El mantenimiento periódico se realiza cada 6 meses. Además, el programa de mantenimiento generalmente consta de tres niveles: comprobaciones diarias por parte del usuario, mantenimiento periódico cada 6 meses, e inspección técnica integral anual o definida por el fabricante.\n\nLos intervalos exactos de mantenimiento se especifican en el manual del usuario del dispositivo." },
+              { q: "¿Qué piezas se revisan durante el mantenimiento periódico?", a: "Según el modelo, durante el mantenimiento pueden revisarse los siguientes componentes:", list: ["Sistema de presión", "Válvulas de alivio de seguridad", "Sistema de puerta y cierre", "Juntas", "Sensores de presión", "Sistema de oxígeno", "Compresor de aire", "Filtros", "Sistema eléctrico", "Panel de control", "Sistemas de alarma", "Sistema de comunicación interior-exterior", "Ventilación", "Software y sistema de registro"] },
+              { q: "¿Se requiere una comprobación diaria?", a: "Sí. Antes de cada jornada operativa, el usuario u operador debe realizar una comprobación básica de seguridad. Se recomienda registrar los resultados de la comprobación junto con la fecha y la información del operador." },
+              { q: "¿Cuánto dura el periodo de garantía?", a: "El periodo de garantía estándar de los sistemas hiperbáricos Apex es de 1 año, conforme a la normativa internacional. A través del configurador, una garantía ampliada opcional de +1 año puede llevar el total a 2 años.\n\nLa cobertura de la garantía puede variar para la cámara principal, las piezas mecánicas, los componentes electrónicos, el compresor, el sistema de oxígeno y los consumibles. Las condiciones detalladas se especifican en el contrato de venta." },
+              { q: "¿Qué piezas no están cubiertas por la garantía?", a: "Las piezas consumibles, los filtros, las mascarillas y las juntas que se desgastan con el uso normal, así como los daños derivados de un uso indebido, pueden no estar cubiertos por la garantía. La cobertura exacta se describe en el documento de garantía." },
+              { q: "¿Ofrecen soporte de piezas de repuesto?", a: "Sí. Se proporcionan piezas de repuesto originales y soporte de servicio técnico para los sistemas Apex." },
+              { q: "¿Ofrecen soporte técnico remoto?", a: "Sí. Según la naturaleza del problema, el soporte técnico puede prestarse por teléfono, videollamada o, en modelos compatibles, mediante conexión remota. Si el problema no puede resolverse de forma remota, se programa una visita de servicio in situ." },
+              { q: "¿Se puede usar el dispositivo en caso de avería?", a: "No. Si se detecta una avería en el sistema de presión, la línea de oxígeno, el sistema de la puerta, los sensores, el sistema de alarma u otros componentes de seguridad, el dispositivo no debe utilizarse. El sistema no debe reiniciarse hasta que el servicio técnico autorizado haya realizado la inspección y aprobación necesarias." }
+            ]
+          },
+          {
+            title: "Pedidos, Precios y Entrega",
+            items: [
+              { q: "¿Cuál es el precio de los sistemas hiperbáricos Apex?", a: "El precio del dispositivo varía según los siguientes factores (el envío y la instalación no están incluidos en este precio y se cotizan como partidas independientes):", list: ["Modelo", "Capacidad de usuarios", "Dimensiones de la cámara", "Presión de funcionamiento", "Sistema de oxígeno", "Sistema de compresor", "Acabados interiores", "Funciones digitales", "Personalización", "Paquete de formación y servicio"], aAfter: "Por este motivo, se prepara un presupuesto personalizado para cada proyecto tras un análisis de necesidades. Los presupuestos obtenidos a través del configurador son válidos únicamente durante 15 días y se cotizan en condiciones FOB." },
+              { q: "¿Qué información se necesita para recibir un presupuesto?", a: "Con compartir la siguiente información es suficiente para que podamos preparar un presupuesto:", list: ["Tu nombre o el nombre de tu empresa", "País y ciudad", "Uso previsto", "Modelo Apex de tu interés", "Capacidad de usuarios", "Dimensiones del área de instalación", "Funciones deseadas", "Fecha prevista de apertura o entrega", "Tus datos de contacto"], aAfter: "Nuestro equipo técnico revisará la información y se pondrá en contacto contigo." },
+              { q: "¿Cuánto es el plazo de producción?", a: "El plazo de producción varía según el modelo, el volumen del pedido y las solicitudes de personalización. Según el modelo, comienza a partir de 10 semanas.\n\nEl calendario de entrega exacto se comunica al confirmar el pedido." },
+              { q: "¿Realizan entregas internacionales?", a: "Sí. La entrega internacional puede realizarse a países en los que se puedan garantizar condiciones logísticas y técnicas adecuadas. Los siguientes servicios pueden planificarse por separado como parte del presupuesto:", list: ["Envío internacional", "Seguro de transporte", "Documentación aduanera", "Instalación in situ", "Puesta en marcha", "Formación del personal", "Soporte técnico postventa"], aAfter: "Los permisos de importación y los requisitos de licencia local pueden variar según el país de destino." },
+              { q: "¿El envío y la instalación están incluidos en el precio?", a: "Los costes de envío e instalación varían según la ubicación de la instalación, por lo que se muestran como partidas independientes dentro del presupuesto. Esto permite al cliente ver claramente los costes del dispositivo, el envío, la instalación, la formación y el equipamiento opcional." },
+              { q: "¿Cuáles son las condiciones de pago?", a: "Según nuestras condiciones estándar, se cobra un depósito del 50% en el momento del pedido, con el 50% restante a pagar una vez que el producto esté listo para su entrega. Las condiciones de pago exactas se especifican en el contrato de venta." },
+              { q: "¿Se ofrece financiación o leasing?", a: "Las opciones de financiación y leasing pueden variar según el país de venta y las entidades financieras asociadas. Las opciones disponibles se comparten durante la fase de presupuesto." }
+            ]
+          },
+          {
+            title: "Certificaciones y Cumplimiento Normativo",
+            items: [
+              { q: "¿Los dispositivos llevan el marcado CE?", a: "El estado del marcado CE se explica según el modelo del producto y el ámbito regulatorio aplicable. El marcado CE por sí solo no significa que un producto sea un dispositivo médico para todos los usos. La declaración de conformidad debe indicar claramente la normativa aplicable, la clase de producto, el uso previsto y la información del fabricante." },
+              { q: "¿Puedo consultar los certificados?", a: "Los documentos de conformidad, los informes de prueba y la documentación técnica pueden compartirse a petición, teniendo en cuenta el modelo del producto, el país de destino y el proceso comercial." }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  pt: {
+    dir: "ltr",
+    meta: {
+      home: { title: "HBOT Chamber Tech | Câmaras de Oxigênio Hiperbárico Série Apex", desc: "Câmaras de oxigênio hiperbárico conectadas por IoT e com tecnologia de IA. Respire no topo com a Série Apex." },
+      technology: { title: "Tecnologia | HBOT Chamber Tech", desc: "ApexConnect, ApexOS, ApexAI, ApexSync e ApexGuard — a plataforma tecnológica conectada e inteligente da Série Apex." },
+      models: { title: "Modelos | HBOT Chamber Tech", desc: "Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad-Cube e Apex Nexus — cinco modelos de câmaras de oxigênio hiperbárico." },
+      soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico individual projetada para tratamento na posição deitada." },
+      solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico compacta e totalmente equipada para uso individual." },
+      duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "Uma câmara de oxigenoterapia hiperbárica compartilhada para duas pessoas." },
+      quadCube: { title: "Apex Quad-Cube | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico espaçosa em design cubo para quatro pessoas." },
+      nexus: { title: "Apex Nexus | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico de grande capacidade e nível hospitalar para seis ou mais pessoas." },
+      hbotInfo: { title: "O Que É a OHB? | HBOT Chamber Tech", desc: "O que é a oxigenoterapia hiperbárica (OHB), para que serve e em quais condições é aplicada." },
+      blog: { title: "Blog | HBOT Chamber Tech", desc: "Pesquisas, notícias e novidades recentes sobre a oxigenoterapia hiperbárica." },
+      configurator: { title: "Configurador | HBOT Chamber Tech", desc: "Configure sua própria câmara Apex: escolha um modelo, nível de pressão e opcionais para obter uma estimativa de preço instantânea." },
+      contact: { title: "Contato | HBOT Chamber Tech", desc: "Entre em contato com a HBOT Chamber Tech: endereço, telefone, e-mail e formulário de contato." }
+    },
+    common: {
+      brand: "HBOT Chamber Tech",
+      home_label: "Início",
+      notfound: { title: "Página Não Encontrada", desc: "A página que você procura pode ter sido movida ou removida.", button: "Voltar ao Início" },
+      whatsapp_message: "Olá, gostaria de saber mais sobre a HBOT Chamber Tech.",
+      thanks: "Obrigado por nos escolher.",
+      sticky_cta: "Solicitar Orçamento Gratuito",
+      nav: { home: "Início", technology: "Tecnologia", models: "Modelos", hbotInfo: "O Que É a OHB?", blog: "Blog", configurator: "Configurador", contact: "Contato" },
+      models_menu: {
+        soloLounge: "Apex Solo Lounge",
+        solo: "Apex Solo",
+        duo: "Apex Duo",
+        quadCube: "Apex Quad-Cube",
+        nexus: "Apex Nexus",
+        all_link: "Todos os Modelos"
+      },
+      footer: {
+        about_text: "A HBOT Chamber Tech é uma fabricante líder de câmaras de oxigênio hiperbárico conectadas por IoT e com tecnologia de IA.",
+        models_title: "Modelos",
+        company_title: "Empresa",
+        contact_title: "Contato",
+        rights: "Todos os direitos reservados.",
+        membership_note: "é membro do Almita Group."
+      },
+      cta_banner: {
+        title: "Vamos Encontrar Juntos o Seu Modelo Apex Ideal",
+        subtitle: "Escolha o modelo, o nível de pressão e os opcionais — obtenha uma estimativa de preço instantânea.",
+        button: "Iniciar o Configurador"
+      },
+      faq_teaser: {
+        title: "Tem alguma dúvida?",
+        subtitle: "Consulte a lista completa de perguntas frequentes.",
+        cta: "Perguntas Frequentes"
+      },
+      view_all: "Ver Todos",
+      learn_more: "Saiba Mais",
+      back_to_models: "Voltar a Todos os Modelos",
+      included_badge: "Incluído de Série",
+      configure_this: "Configurar Este Modelo"
+    },
+    modelPage: {
+      overview_title: "Visão Geral",
+      specs_title: "Especificações Técnicas",
+      included_title: "Ecossistema Tecnológico Apex",
+      other_models: "Nossos Outros Modelos"
+    },
+    home: {
+      hero: {
+        eyebrow: "SÉRIE APEX",
+        title: "Respire\nno Topo",
+        subtitle: "A HBOT Chamber Tech é uma fabricante líder de Câmaras de Oxigênio Hiperbárico, dedicada a oferecer soluções premium e de ponta para saúde e bem-estar. Com foco em inovação, segurança e excelência de design, produzimos câmaras que atendem aos mais altos padrões médicos e comerciais.",
+        cta_primary: "Explorar Modelos",
+        cta_secondary: "Iniciar o Configurador",
+        trust_line: "Engenharia Avançada · Padrões de Segurança de Nível Médico"
+      },
+      heritage: {
+        title: "20 Anos de Experiência em Engenharia",
+        subtitle: "Excelência em Engenharia Desde 2006"
+      },
+      stats: [
+        { value: "5", label: "Modelos Apex" },
+        { value: "94%", label: "Pureza de Oxigênio" },
+        { value: "<55dB", label: "Nível de Ruído ApexSilent™" },
+        { value: "24/7", label: "Monitoramento Remoto" }
+      ],
+      tech_teaser: {
+        eyebrow: "PLATAFORMA TECNOLÓGICA",
+        title: "Um Ecossistema Inteligente Dentro da Câmara",
+        text: "A Série Apex conta com o primeiro e único módulo central de IoT padrão do setor, construído sobre ApexConnect™, ApexOS™, ApexAI™, ApexSync™ e ApexGuard™.",
+        cta: "Conheça a Tecnologia"
+      },
+      models_teaser: {
+        eyebrow: "SÉRIE APEX",
+        title: "Nossos Modelos",
+        subtitle: "Do uso individual para uma pessoa a câmaras multiassento em escala hospitalar — cinco designs para atender às suas necessidades.",
+        cta_all: "Explorar Todos os Modelos"
+      },
+      why: {
+        eyebrow: "POR QUE A HBOT CHAMBER TECH",
+        title: "A Única Câmara Conectada do Mercado",
+        items: [
+          { title: "O Primeiro Núcleo IoT do Setor", desc: "Com o ApexConnect™, toda câmara fica conectada à nuvem 24 horas por dia, 7 dias por semana, e pode ser monitorada remotamente." },
+          { title: "Tratamento Potencializado por IA", desc: "O ApexAI™ otimiza dinamicamente a pressão e o fluxo de oxigênio com base nos dados do paciente." },
+          { title: "Integração com Sistemas Hospitalares", desc: "O ApexSync™ é compatível com HL7 FHIR e DICOM, conectando-se diretamente aos sistemas de informação hospitalar." },
+          { title: "Avisa Antes que a Falha Aconteça", desc: "O ApexGuard™ alerta você por meio de manutenção preditiva, sem esperar por uma chamada de serviço." }
+        ]
+      },
+      celebs: {
+        eyebrow: "QUEM USA?",
+        title: "Os Melhores do Mundo Escolhem o Oxigênio Hiperbárico",
+        subtitle: "Nomes citados pela imprensa como usuários de OHB para recuperação, desempenho e longevidade — e nós construímos essas câmaras.",
+        source_label: "Fonte",
+        disclaimer: "As pessoas listadas aqui foram citadas por fontes jornalísticas como usuárias de OHB; elas não são embaixadoras de marca nem clientes da HBOT Chamber Tech.",
+        items: [
+          { name: "Cristiano Ronaldo", role: "Jogador de futebol", text: "Citado em reportagens por fazer sessões de OHB em casa com seu próprio equipamento hiperbárico para tratar uma lesão muscular.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "LeBron James", role: "Jogador de basquete", text: "Filmado fazendo uma sessão de OHB de 60 a 90 minutos na série da Netflix 'Starting 5'.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
+          { name: "Novak Djokovic", role: "Tenista", text: "Citado pela mídia esportiva por usar OHB para se manter no auge do seu jogo.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
+          { name: "Justin Bieber", role: "Cantor", text: "Relatado dormir em uma câmara hiperbárica como parte de sua rotina de saúde.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
+          { name: "Tiger Woods", role: "Golfista", text: "Relatado usar OHB desde 2010 e manter uma câmara em casa.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
+          { name: "Michael Phelps", role: "Nadador", text: "A lenda olímpica é relatada dormir em uma câmara hiperbárica.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
+          { name: "Madonna", role: "Cantora", text: "A imprensa de moda cobriu seu uso de tratamentos à base de oxigênio como parte de sua rotina de beleza.", source: "https://www.nytimes.com/2006/04/06/fashion/thursdaystyles/does-the-quickfix-oxygen-facial-really-work.html" },
+          { name: "Kendall Jenner", role: "Modelo", text: "Destaque na Vogue por manter uma câmara hiperbárica em seu espaço de bem-estar.", source: "https://www.vogue.com/article/what-kendall-jenner-keeps-in-her-wellness-room" },
+          { name: "Tom Brady", role: "Jogador da NFL", text: "Relatado pela mídia esportiva usar OHB como parte de sua rotina de recuperação.", source: "https://thesportsrush.com/nfl-news-troy-aikman-and-tom-brady-use-the-same-scientific-practice-for-their-recovery-enhancement/" }
+        ]
+      },
+      indications_teaser: {
+        eyebrow: "CASOS DE USO",
+        title: "Quando a OHB É Utilizada?",
+        text: "Utilizada como tratamento de suporte em uma ampla variedade de condições — da cicatrização de feridas à perda súbita de audição, do mal de descompressão à intoxicação por monóxido de carbono.",
+        cta: "Ver Todos os Casos de Uso"
+      },
+      styles_teaser: {
+        eyebrow: "OPÇÕES DE DESIGN",
+        title: "Escolha o Estilo da Sua Câmara",
+        subtitle: "Cada modelo Apex está disponível em diferentes opções de design para se adequar ao seu espaço e preferência.",
+        items: [
+          { icon: "glass", title: "Série Painel de Vidro Panorâmico", desc: "Um design com ampla superfície de vidro para usuários que desejam uma sensação de amplitude e conexão visual com o exterior." },
+          { icon: "solid", title: "Design Padrão Fechado", desc: "Um design de corpo fechado e discreto, preferido pela privacidade e simplicidade clínica." },
+          { icon: "premium", title: "Série Premium", desc: "Estofamento interno de altíssimo padrão, iluminação avançada e detalhes exclusivos para o design mais sofisticado.", badge: "Premium" }
+        ],
+        note: "Você pode nos informar sua preferência de tipo de vidro e estilo de câmara na sua solicitação de orçamento."
+      }
+    },
+    technology: {
+      header: { eyebrow: "PLATAFORMA TECNOLÓGICA", title: "O Ecossistema Tecnológico Apex", subtitle: "Não é apenas um painel de controle — é um sistema conectado, inteligente e em constante evolução." },
+      intro: "Cada modelo Apex inclui de série o ApexConnect™, ApexOS™, ApexAI™, ApexSync™ e ApexGuard™. Juntas, essas cinco plataformas transformam a câmara de um simples dispositivo de tratamento em um sistema inteligente, conectado e preditivo.",
+      pillars: {
+        connect: {
+          title: "ApexConnect™",
+          subtitle: "Conectividade Contínua, Segurança Ininterrupta",
+          desc: "O primeiro e único módulo central de IoT padrão do setor. Todo modelo Apex permanece conectado à Nuvem HBOT Chamber Tech por meio de uma conexão de internet contínua.",
+          features: [
+            "Monitoramento remoto em tempo real: seu técnico acompanha ao vivo os dados de pressão, nível de oxigênio, temperatura e umidade",
+            "Gestão de múltiplos dispositivos: gerencie várias câmaras a partir de um único painel",
+            "Notificação automática de falhas: um chamado de serviço é aberto automaticamente quando uma válvula de pressão apresenta desvio",
+            "Alertas instantâneos: notificações por SMS e e-mail para parâmetros críticos"
+          ]
+        },
+        os: {
+          title: "ApexOS™",
+          subtitle: "Um Cérebro Inteligente Dentro da Câmara",
+          desc: "Um sistema operacional baseado em Android, com controle por tela touchscreen, que está em constante evolução.",
+          features: [
+            "Atualizações contínuas de software (OTA): novos protocolos e atualizações de segurança são baixados automaticamente",
+            "Mais de 50 protocolos de tratamento prontos: queimaduras, pé diabético, recuperação atlética, antienvelhecimento, reabilitação pós-COVID",
+            "Suporte a múltiplos idiomas: novos idiomas são adicionados a cada atualização de software",
+            "Perfis de usuário: um perfil individual para cada paciente, com sessões anteriores carregadas automaticamente"
+          ]
+        },
+        ai: {
+          title: "ApexAI™",
+          subtitle: "Otimização de Tratamento Potencializada por IA",
+          desc: "Sensores dentro da câmara e dados do paciente são analisados por algoritmos de aprendizado de máquina.",
+          features: [
+            "Ajuste dinâmico de pressão: ao surgirem sinais de desconforto, a pressão é ajustada em micropassos para preservar o conforto",
+            "Otimização da eficiência de oxigênio: o fluxo de oxigênio se ajusta ao ritmo respiratório, reduzindo o desperdício em 30%",
+            "Motor de recomendação de sessões: um relatório é preparado para aprovação médica assim que um protocolo é concluído",
+            "Detecção de claustrofobia: movimentos excessivos acionam automaticamente o sistema de iluminação e comunicação"
+          ]
+        },
+        sync: {
+          title: "ApexSync™",
+          subtitle: "Integração com Sistemas de Informação Hospitalar em Um Clique",
+          desc: "Compatível com HL7 FHIR e DICOM. Os dados são registrados automaticamente no prontuário do paciente assim que a sessão termina.",
+          features: [
+            "Conexão direta com Epic, Cerner, Medistat, Logo e sistemas HIS locais",
+            "Geração automática de relatórios: um relatório chega à tela do médico ao final de cada sessão",
+            "Integração com faturamento: volume de oxigênio e duração da sessão são enviados automaticamente ao módulo contábil"
+          ]
+        },
+        guard: {
+          title: "ApexGuard™",
+          subtitle: "Segurança e Manutenção Preditivas",
+          desc: "Não apenas avisa quando algo falha — prevê antes que aconteça.",
+          features: [
+            "Manutenção preditiva: o sistema avisa quando o padrão de vibração do motor do compressor muda",
+            "Registro digital de segurança: cada alteração de pressão é registrada na nuvem em formato criptografado",
+            "Monitoramento da vida útil de consumíveis e filtros: alerta automaticamente quando a substituição é necessária com base nas horas de uso"
+          ]
+        }
+      },
+      extra: {
+        silent: { title: "ApexSilent™", desc: "Ruído operacional abaixo de 55 decibéis." },
+        care: { title: "ApexCare™", desc: "Diagnóstico e resolução remotos sem esperar por uma chamada de serviço." }
+      },
+      comparison: {
+        title: "Por Que HBOT Chamber Tech?",
+        subtitle: "Compare a Série Apex com outras câmaras do mercado.",
+        col_feature: "Recurso",
+        col_competitor: "Concorrentes de Mercado",
+        col_apex: "HBOT Chamber Tech Série Apex",
+        rows: [
+          { feature: "Conectividade à Internet", competitor: "Nenhuma ou opcional", apex: "ApexConnect™ — De série, 24/7" },
+          { feature: "Atualizações de Software OTA", competitor: "Nenhuma, firmware fixo", apex: "ApexOS™ — Atualização contínua" },
+          { feature: "Monitoramento Remoto", competitor: "Limitado ou inexistente", apex: "ApexConnect™ — Painel ao vivo" },
+          { feature: "Suporte de IA", competitor: "Nenhum", apex: "ApexAI™ — Protocolo dinâmico" },
+          { feature: "Integração EMR/HIS", competitor: "Manual ou inexistente", apex: "ApexSync™ — HL7/DICOM automático" },
+          { feature: "Manutenção Preditiva", competitor: "Nenhuma, manutenção reativa", apex: "ApexGuard™ — Alerta antes da falha" },
+          { feature: "Relatórios Automáticos", competitor: "Nenhum", apex: "ApexSync™ — Relatório ao final da sessão" },
+          { feature: "Diagnóstico Remoto", competitor: "Nenhum, exige chamada de serviço", apex: "ApexCare™ — Resolução remota" },
+          { feature: "Nível de Ruído", competitor: "60–70 dB", apex: "ApexSilent™ — <55 dB" },
+          { feature: "Registro Digital de Segurança", competitor: "Nenhum", apex: "ApexGuard™ — Registro criptografado na nuvem" }
+        ]
+      },
+      roadmap: {
+        eyebrow: "ROTEIRO",
+        title: "O Que Vem a Seguir?",
+        subtitle: "Recursos em desenvolvimento na plataforma ApexConnect™ que ainda não são de série nos modelos Apex atuais.",
+        badge: "Em Desenvolvimento",
+        items: [
+          { icon: "mobileApp", title: "App Móvel de Monitoramento ApexConnect", desc: "Um aplicativo de monitoramento que permite à equipe clínica acompanhar a pressão, o nível de oxigênio e o status do sistema da câmara pelo celular." },
+          { icon: "healthSync", title: "Sincronização com Apps de Saúde", desc: "Sincronização da duração e do histórico das sessões com Apple Health, Huawei Health e Google Fit." },
+          { icon: "screen", title: "Experiência de Tela Imersiva Fixa", desc: "Uma tela grande, integrada à câmara, que oferece conteúdo visual relaxante durante as sessões." }
+        ],
+        disclaimer: "Esses recursos estão em desenvolvimento e previstos para modelos futuros; não são de série nos modelos Apex atuais. A pressão e os níveis de oxigênio da câmara são sempre controlados por um operador qualificado."
+      },
+      certifications: {
+        eyebrow: "CERTIFICAÇÕES",
+        title: "Conformidade com Normas",
+        subtitle: "A Série Apex é desenvolvida em conformidade com normas internacionais de projeto de câmaras médicas, segurança contra incêndio e equipamentos de pressão.",
+        items: [
+          { code: "EN 14931", name: "Norma de Projeto de Câmara Médica" },
+          { code: "EN 16081", name: "Sistema de Combate a Incêndio para Câmaras Médicas" },
+          { code: "NFPA 99", name: "Norma Americana de Sistema Contra Incêndio" },
+          { code: "ISO 9001", name: "Norma de Gestão da Qualidade" },
+          { code: "EN 13445 + PED 2014/68/EU", name: "Diretiva de Equipamentos de Pressão" }
+        ]
+      }
+    },
+    modelsOverview: {
+      header: { eyebrow: "SÉRIE APEX", title: "Nossos Modelos", subtitle: "Do uso individual para uma pessoa a câmaras multiassento em escala hospitalar — cinco designs." },
+      intro: "Cada modelo Apex inclui de série o ApexConnect™, ApexOS™, ApexAI™, ApexSync™ e ApexGuard™. O que muda entre eles é a capacidade, a posição e a faixa de pressão.",
+      compareTable: {
+        title: "Comparar Modelos",
+        subtitle: "Decida rapidamente qual modelo Apex é ideal para você.",
+        col_capacity: "Capacidade",
+        col_position: "Posição",
+        col_pressure: "Faixa de Pressão",
+        col_price: "Preço Inicial",
+        col_noise: "Nível de Ruído",
+        action_label: "Configurar"
+      }
+    },
+    modelShort: {
+      soloLounge: { title: "Apex Solo Lounge", tagline: "1 Pessoa · Posição Deitada", desc: "Uma câmara totalmente equipada, desenvolvida especificamente para usuários que precisam de tratamento na posição deitada." },
+      solo: { title: "Apex Solo", tagline: "1 Pessoa · Posição Sentada", desc: "Uma câmara compacta, elegante e totalmente equipada, projetada para oxigenoterapia hiperbárica individual." },
+      duo: { title: "Apex Duo", tagline: "2 Pessoas · Posição Sentada", desc: "Uma câmara com dois assentos e janela panorâmica — para casais, parceiros ou uso paciente-acompanhante." },
+      quadCube: { title: "Apex Quad-Cube", tagline: "4 Pessoas · Cabine Espaçosa", desc: "Uma cabine premium para quatro pessoas com interior espaçoso em design cubo — estofamento em couro acolchoado e iluminação ambiente em LED." },
+      nexus: { title: "Apex Nexus", tagline: "6+ Pessoas · Posição Sentada", desc: "Uma câmara de grande capacidade e nível hospitalar, com expansão modular, construída para instituições médicas." }
+    },
+    includedItems: [
+      { icon: "connect", title: "ApexConnect™ Incluído", desc: "Conectividade à internet de série. Monitoramento remoto, alertas instantâneos e backup na nuvem." },
+      { icon: "os", title: "Atualizações ApexOS™", desc: "Seu equipamento ganha novos recursos todo mês. As atualizações OTA mantêm os protocolos sempre atualizados." },
+      { icon: "ai", title: "Otimização ApexAI™", desc: "Uma IA que analisa os dados do paciente ajusta as sessões dinamicamente." },
+      { icon: "sync", title: "Integração ApexSync™", desc: "Integração em um clique com sistemas de informação hospitalar. Geração automática de relatórios." },
+      { icon: "guard", title: "Segurança ApexGuard™", desc: "Tecnologia de manutenção preditiva que avisa antes que ocorra uma falha." },
+      { icon: "battery", title: "Energia de Backup Integrada de Série", desc: "Todo modelo vem de série com uma fonte de energia de backup integrada para proteção contra quedas de energia." },
+      { icon: "pulseOx", title: "Medidor de Saturação de Oxigênio", desc: "Um monitor de saturação de oxigênio no sangue é de série em toda câmara, acompanhando os níveis durante toda a sessão." }
+    ],
+    modelSoloLounge: {
+      breadcrumb: "Apex Solo Lounge", eyebrow: "APEX SOLO LOUNGE", title: "Apex Solo Lounge",
+      tagline: "Excelência na Posição Deitada. Deite-se, relaxe, cure-se.",
+      overview_text: "Desenvolvida especificamente para usuários que precisam de tratamento na posição deitada. Sua maca ortopédica médica e estrutura em alumínio de nível aeronáutico proporcionam o máximo conforto durante sessões longas.",
+      specs: [
+        { label: "Capacidade", value: "1 pessoa (posição deitada)" },
+        { label: "Faixa de Pressão", value: "1.5 – 2.0 ATA" },
+        { label: "Maca", value: "Ortopédica médica, 200×80 cm" },
+        { label: "Material", value: "Alumínio de nível aeronáutico" },
+        { label: "Segurança", value: "Válvula de segurança dupla" },
+        { label: "Dimensões Externas", value: "240×110×120 cm" },
+        { label: "Nível de Ruído", value: "<55 dB (ApexSilent™)" }
+      ]
+    },
+    modelSolo: {
+      breadcrumb: "Apex Solo", eyebrow: "APEX SOLO", title: "Apex Solo",
+      tagline: "O Ápice da Sua Saúde Pessoal. Só você e o oxigênio.",
+      overview_text: "Uma câmara compacta, elegante e totalmente equipada, projetada para oxigenoterapia hiperbárica individual. Com controle por tela touchscreen, é ideal para uso doméstico ou clínico.",
+      specs: [
+        { label: "Capacidade", value: "1 pessoa (sentado)" },
+        { label: "Faixa de Pressão", value: "1.5 – 2.0 ATA" },
+        { label: "Controle", value: "Touchscreen" },
+        { label: "Material", value: "Alumínio de nível aeronáutico" },
+        { label: "Segurança", value: "Válvula de segurança dupla" },
+        { label: "Dimensões Externas", value: "120×110×180 cm" },
+        { label: "Nível de Ruído", value: "<55 dB (ApexSilent™)" }
+      ]
+    },
+    modelDuo: {
+      breadcrumb: "Apex Duo", eyebrow: "APEX DUO", title: "Apex Duo",
+      tagline: "Cure-se em Dupla. Uma experiência de tratamento compartilhada para duas pessoas.",
+      overview_text: "Uma câmara hiperbárica com dois assentos que oferece sessões de terapia compartilhadas. Projetada para casais, parceiros ou uso paciente-acompanhante.",
+      specs: [
+        { label: "Capacidade", value: "2 pessoas (sentado)" },
+        { label: "Faixa de Pressão", value: "1.5 – 2.0 ATA" },
+        { label: "Pureza de Oxigênio", value: "93–95%" },
+        { label: "Segurança", value: "Sistema de válvula de emergência" },
+        { label: "Controle", value: "Sistema de controle duplo" },
+        { label: "Janela", value: "Panorâmica" }
+      ]
+    },
+    modelQuadCube: {
+      breadcrumb: "Apex Quad-Cube", eyebrow: "APEX QUAD-CUBE", title: "Apex Quad-Cube",
+      tagline: "Uma experiência premium para quatro pessoas em design cubo espaçoso.",
+      overview_text: "Uma cabine premium para quatro pessoas com interior espaçoso em formato cubo. Com estofamento em couro acolchoado, iluminação ambiente em LED e unidade de controle independente, proporciona terapia multipessoal confortável para clínicas e centros de bem-estar.",
+      specs: [
+        { label: "Capacidade", value: "4 pessoas (sentado)" },
+        { label: "Faixa de Pressão", value: "2.5 – 6.0 ATA" },
+        { label: "Pureza de Oxigênio", value: "93–95%" },
+        { label: "Interior", value: "Couro acolchoado, ambiente em LED" },
+        { label: "Segurança", value: "Sistema de válvula de emergência" },
+        { label: "Controle", value: "Unidade de controle independente" }
+      ]
+    },
+    modelNexus: {
+      breadcrumb: "Apex Nexus", eyebrow: "APEX NEXUS", title: "Apex Nexus",
+      tagline: "Uma solução de nível hospitalar e grande capacidade.",
+      overview_text: "Uma câmara de nível hospitalar e grande capacidade para instituições médicas. Seu design modular e sistemas avançados de monitoramento atendem às necessidades dos centros de tratamento mais movimentados.",
+      specs: [
+        { label: "Capacidade", value: "6+ pessoas (sentado)" },
+        { label: "Faixa de Pressão", value: "2.5 – 6.0 ATA" },
+        { label: "Pureza de Oxigênio", value: "93–95%" },
+        { label: "Segurança", value: "Sistema de válvula de emergência" },
+        { label: "Construção", value: "Nível hospitalar" },
+        { label: "Expansão", value: "Pronta para expansão modular" }
+      ]
+    },
+    hbotInfo: {
+      header: { eyebrow: "CENTRAL DE INFORMAÇÕES", title: "O Que É a OHB?", subtitle: "O que você precisa saber sobre a oxigenoterapia hiperbárica." },
+      whatIsHboc: { title: "O Que É Uma Câmara de Oxigênio Hiperbárico (COH)?", text: "As Câmaras de Oxigênio Hiperbárico são cabines pressurizadas, especialmente projetadas, que permitem que as pessoas respirem oxigênio puro sob pressão atmosférica mais alta que a normal. Essas câmaras são usadas para a Oxigenoterapia Hiperbárica (OHB), um tratamento medicamente reconhecido que acelera a cicatrização e promove o bem-estar geral." },
+      whyNeeded: { title: "Para Que Serve uma COH?", text: "As câmaras COH oferecem um ambiente controlado e pressurizado onde os pacientes respiram oxigênio 94% puro, permitindo uma recuperação mais rápida e uma regeneração celular aprimorada. Essas câmaras atendem instituições médicas, centros de bem-estar, clínicas esportivas e usuários particulares em todo o mundo." },
+      whatIsHbot: {
+        title: "O Que É a Oxigenoterapia Hiperbárica (OHB)?",
+        text1: "A OHB é um tratamento médico no qual os pacientes respiram oxigênio puro dentro de uma câmara pressurizada, em níveis mais altos que a pressão atmosférica normal. Esse processo acelera a cicatrização de feridas, reduz a inflamação e promove a regeneração dos tecidos.",
+        text2: "Os pacientes respiram dentro dessas câmaras, o que ajuda os pulmões a captar e absorver oxigênio com mais eficiência. A OHB também é usada no tratamento de pacientes com perda súbita de audição e visão, infecções ósseas e úlceras de pé diabético. Dependendo do tipo de tratamento, os pacientes podem se sentar ou deitar durante o procedimento."
+      },
+      indications: {
+        title: "Em Quais Situações a OHB Pode Ser Usada?",
+        subtitle: "A oxigenoterapia hiperbárica é utilizada como tratamento de suporte em uma ampla variedade de condições médicas.",
+        items: [
+          { icon: "antiaging", label: "Rejuvenescimento da Pele (Antienvelhecimento)" },
+          { icon: "jetlag", label: "Recuperação do Jet Lag (Fadiga de Viagem)" },
+          { icon: "wound", label: "Cicatrização de Feridas (Diabéticas e Não Diabéticas)" },
+          { icon: "eye", label: "Perda Súbita de Visão" },
+          { icon: "decompression", label: "Mal de Descompressão" },
+          { icon: "embolism", label: "Embolia Gasosa ou por Ar" },
+          { icon: "poisoning", label: "Intoxicação por Monóxido de Carbono e Combustíveis" },
+          { icon: "ear", label: "Perda Súbita de Audição" },
+          { icon: "bone", label: "Osteonecrose" },
+          { icon: "burn", label: "Queimaduras Térmicas" },
+          { icon: "gangrene", label: "Gangrena Gasosa" },
+          { icon: "blood", label: "Perda Excessiva de Sangue" },
+          { icon: "brain", label: "Encefalopatia Anóxica" },
+          { icon: "smoke", label: "Intoxicação Aguda por Fumaça" }
+        ]
+      },
+      disclaimer: "Esta informação tem caráter meramente orientativo e não constitui aconselhamento médico. As decisões de tratamento devem sempre ser avaliadas por um profissional de saúde."
+    },
+    configurator: {
+      header: { eyebrow: "CONFIGURADOR", title: "Monte Sua Própria Câmara Apex", subtitle: "Escolha o modelo, o nível de pressão e os opcionais — obtenha uma estimativa de preço instantânea." },
+      usage_step_title: "1. Uso Pretendido",
+      usage_step_note: "Os modelos de alta pressão são oferecidos apenas para uso institucional.",
+      usage: {
+        home: { title: "Uso Doméstico", desc: "Modelos de baixa pressão para uso individual ou em casal (1.5–2.0 ATA)." },
+        institutional: { title: "Institucional", desc: "Modelos multiassento de alta capacidade para clínicas, centros de bem-estar e hospitais." }
+      },
+      guide: {
+        button: "Qual Câmara Devo Escolher?",
+        title: "Vamos Encontrar a Câmara Certa para Você",
+        intro: "Escolha a linha mais próxima da sua situação e definiremos automaticamente o modelo e o tipo de uso ideais para você.",
+        select_button: "Escolher Esta",
+        close: "Fechar",
+        items: [
+          { scenario: "Em casa, sozinho, quero tratamento na posição deitada", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Em casa, sozinho, quero ficar sentado durante as sessões", model: "Apex Solo", modelId: "solo", usage: "home" },
+          { scenario: "Eu e meu(minha) parceiro(a) vamos usar juntos, em casa", model: "Apex Duo", modelId: "duo", usage: "home" },
+          { scenario: "Clínica ou centro de bem-estar, uso institucional para 2 a 4 pessoas", model: "Apex Duo Plus", modelId: "duo-plus", usage: "institutional" },
+          { scenario: "Uso institucional, quero uma câmara com interior espaçoso", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "Em hospital ou clínica, múltiplos pacientes, alta pressão", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
+        ]
+      },
+      step1_title: "3. Escolha um Modelo",
+      style_step_title: "2. Estilo da Câmara",
+      style_step_note: "Escolha o design da sua câmara; o preço varia conforme a área de superfície de vidro e o nível de acabamento interno.",
+      color_step_title: "4. Escolha uma Cor",
+      color_step_note: "Seleção livre em nossa paleta de cores padrão.",
+      interior_step_title: "5. Cor Interna",
+      interior_step_note: "As cores internas padrão estão incluídas no preço.",
+      seat_color_step_title: "6. Cor do Assento",
+      seat_color_step_note: "A cor do estofamento do assento está incluída no preço; sua escolha é adicionada ao resumo e ao formulário de orçamento.",
+      step2_title: "7. Nível de Pressão",
+      step3_title: "8. Opcionais",
+      step4_title: "9. Solicitar Orçamento",
+      models: [
+        { id: "solo-lounge", name: "Apex Solo Lounge", tagline: "1 Pessoa · Posição Deitada" },
+        { id: "solo", name: "Apex Solo", tagline: "1 Pessoa · Posição Sentada" },
+        { id: "duo", name: "Apex Duo", tagline: "2 Pessoas · Posição Sentada" },
+        { id: "duo-plus", name: "Apex Duo Plus", tagline: "2-4 Pessoas · Institucional" },
+        { id: "quad-cube", name: "Apex Quad-Cube", tagline: "4 Pessoas · Cabine Espaçosa" },
+        { id: "nexus", name: "Apex Nexus", tagline: "6+ Pessoas · Posição Sentada" }
+      ],
+      colors: [
+        { id: "pearl-white", name: "Branco Pérola", hex: "#F2F1EC" },
+        { id: "mat-siyah", name: "Preto Fosco", hex: "#16181A" },
+        { id: "antrasit", name: "Antracite", hex: "#3A3D42" },
+        { id: "gece-laciverti", name: "Azul-Marinho Meia-Noite", hex: "#1B2A4A" },
+        { id: "bordo", name: "Bordô", hex: "#6B2737" },
+        { id: "sampanya", name: "Dourado Champanhe", hex: "#C9A876" },
+        { id: "grafit", name: "Cinza Grafite", hex: "#3A3F44" },
+        { id: "bronz", name: "Bronze", hex: "#A5754A" },
+        { id: "zumrut", name: "Verde Esmeralda", hex: "#1F6F54" }
+      ],
+      interior_colors: [
+        { id: "cream", name: "Creme", hex: "#E8DCC8" },
+        { id: "anthracite", name: "Antracite", hex: "#3A3D42" },
+        { id: "burgundy", name: "Bordô", hex: "#6B2737" },
+        { id: "navy", name: "Azul-Marinho", hex: "#1B2A4A" },
+        { id: "konyak", name: "Conhaque", hex: "#8A5A2B" },
+        { id: "kum-beji", name: "Bege Areia", hex: "#D9C7A7" }
+      ],
+      seat_colors: [
+        { id: "konyak", name: "Conhaque", hex: "#8A5A2B" },
+        { id: "siyah", name: "Preto", hex: "#16181A" },
+        { id: "lacivert", name: "Azul-Marinho", hex: "#1B2A4A" },
+        { id: "krem", name: "Creme", hex: "#E8DCC8" },
+        { id: "bordo", name: "Bordô", hex: "#6B2737" },
+        { id: "gri", name: "Cinza", hex: "#6B6F75" }
+      ],
+      styles: [
+        { id: "solid", icon: "solid", name: "Design Padrão Fechado", desc: "Um design de corpo fechado e discreto, preferido pela privacidade e simplicidade clínica." },
+        { id: "glass", icon: "glass", name: "Série Painel de Vidro Panorâmico", desc: "Design com ampla superfície de vidro para uma sensação de amplitude e conexão visual com o exterior." },
+        { id: "premium", icon: "premium", name: "Série Premium", desc: "Acabamento interno de altíssimo padrão, iluminação avançada e detalhes personalizados em nosso design principal.", badge: "Premium" }
+      ],
+      addons: [
+        { id: "massage", name: "Assento com Massagem", desc: "Um sistema de assento com função de massagem relaxante durante as sessões." },
+        { id: "leather", name: "Estofamento Interno First-Class", desc: "Um upgrade de interior first-class feito à mão." },
+        { id: "entertainment", name: "Sistema de Entretenimento e Multimídia", desc: "Tela integrada, sistema de som e biblioteca de conteúdo." },
+        { id: "finish", name: "Cor e Acabamento Personalizados", desc: "Uma cor de acabamento externo personalizada para combinar com a identidade da sua marca." },
+        { id: "warranty", name: "Garantia Estendida (+1 Ano)", desc: "1 ano adicional de cobertura completa além da garantia padrão de 1 ano." },
+        { id: "playstation", name: "Console de Videogame Xbox Series X", desc: "Um console Xbox Series X integrado à tela e ao sistema de som da câmara para entretenimento durante sessões mais longas." }
+      ],
+      pressure_note: "A faixa de pressão depende do modelo selecionado.",
+      pressure_nexus_only: "Somente Nexus",
+      pressure_auto_note: "3.0 e 6.0 ATA estão disponíveis apenas no Apex Nexus — o nível de pressão foi redefinido para 2.5 ATA.",
+      pressure_auto_note_up: "O Apex Nexus é uma câmara médica que oferece apenas alta pressão — o nível de pressão foi definido para 3.0 ATA.",
+      seat_step_title: "Número de Assentos",
+      seat_step_note: "Você pode aumentar ou diminuir o número de assentos conforme sua necessidade.",
+      seats_label: "Assentos",
+      currency_label: "Moeda",
+      summary: {
+        title: "Resumo da Configuração",
+        model_label: "Modelo",
+        seats_label: "Número de Assentos",
+        style_label: "Estilo da Câmara",
+        color_label: "Cor",
+        interior_color_label: "Cor Interna",
+        seat_color_label: "Cor do Assento",
+        seat_type_label: "Tipo de Assento",
+        seat_standard: "Padrão",
+        seat_massage: "Massagem",
+        pressure_label: "Nível de Pressão",
+        addons_label: "Opcionais",
+        none_selected: "Nenhum selecionado",
+        base_price_label: "Preço Base",
+        total_label: "Total Estimado",
+        disclaimer: "Os preços são aproximados e têm caráter meramente informativo, são FOB e válidos por apenas 15 dias. Preencha o formulário para obter um orçamento exato.",
+        cta: "Solicitar Orçamento com Esta Configuração",
+        print_button: "Imprimir / Salvar como PDF",
+        share_button: "Copiar Link da Configuração",
+        share_copied: "Link copiado!",
+        discount_label: "Desconto",
+        ref_badge: "Desconto de indicação aplicado",
+        refer_button: "Indicar um Amigo",
+        refer_copied: "Link de indicação copiado!",
+        email_button: "Enviar Orçamento por E-mail",
+        pdf_title: "Orçamento da Configuração",
+        pdf_quote_no: "Nº do Orçamento",
+        pdf_date: "Data",
+        pdf_customer_section: "INFORMAÇÕES DO CLIENTE",
+        pdf_configuration_section: "DETALHES DA CONFIGURAÇÃO"
+      },
+      stage: {
+        view_exterior: "Vista Externa",
+        view_interior: "Vista Interna",
+        spin_hint: "↔ Arraste para girar 360°"
+      },
+      quote_form: {
+        title: "Solicitar Orçamento",
+        name: "Nome Completo",
+        email: "E-mail",
+        phone: "Telefone",
+        company: "Nome da Instituição / Clínica (opcional)",
+        message: "Observações Adicionais",
+        submit: "Enviar Solicitação de Orçamento",
+        sending: "Enviando...",
+        success: "Obrigado! Sua configuração e solicitação foram recebidas — entraremos em contato em breve.",
+        error: "Ocorreu um erro. Tente novamente ou ligue diretamente para nós."
+      }
+    },
+    blog: {
+      header: { eyebrow: "BLOG", title: "Pesquisas e Notícias", subtitle: "Desenvolvimentos científicos e notícias recentes sobre a oxigenoterapia hiperbárica." },
+      source_label: "Fonte:",
+      min_read: "min de leitura",
+      disclaimer: "Estas publicações são resumos elaborados a partir de publicações científicas e fontes jornalísticas disponíveis publicamente; não constituem aconselhamento médico. Consulte sempre um profissional de saúde para decisões de tratamento.",
+      posts: [
+        {
+          date: "2024",
+          tag: "Nota do Fundador",
+          icon: "care",
+          title: "Por Que Eu Mesmo Uso Oxigênio Hiperbárico",
+          paragraphs: [
+            "Sob o guarda-chuva do Almita Group, conduzimos seis setores diferentes lado a lado, e uma agenda exigente com viagens constantes faz parte da rotina. Antes de começarmos a fabricar as câmaras da HBOT Chamber Tech, optei por usar regularmente nossas próprias unidades — acredito que você deve experimentar um produto antes de defendê-lo.",
+            "Posso dizer que, após as sessões, costumo me sentir mais energizado e concentrado; isso é uma observação pessoal, não uma promessa do mesmo resultado para todos. A oxigenoterapia hiperbárica não substitui o tratamento médico; converse sempre sobre o seu uso com um profissional de saúde."
+          ],
+          source_name: "Almita Group — Nota do Fundador",
+          source_url: "https://almitagroup.com",
+          author: "Mürsel Alkan"
+        },
+        {
+          date: "2024",
+          tag: "Longevidade",
+          icon: "antiaging",
+          title: "OHB e Longevidade: A Ascensão da Tendência de Envelhecimento Saudável",
+          paragraphs: [
+            "O movimento da longevidade — popularizado por empreendedores de tecnologia como Bryan Johnson e seus protocolos pessoais de 'reversão da idade' — também impulsionou o interesse pela oxigenoterapia hiperbárica. Uma de suas âncoras científicas é um estudo clínico publicado na revista Aging em 2020, no qual 35 adultos saudáveis com 64 anos ou mais completaram um programa de OHB com 60 sessões.",
+            "O estudo relatou um alongamento dos telômeros superior a 20% nas células imunológicas — chegando a 37% nas células B — junto com uma redução de até 37% nas células imunológicas senescentes. Como o ensaio não teve grupo de controle e teve uma amostra limitada, os resultados são considerados 'promissores, porém preliminares'; os pesquisadores destacam que estudos maiores são necessários para definir os protocolos ideais."
+          ],
+          source_name: "PMC – A OHB Aumenta o Comprimento dos Telômeros e Reduz a Imunossenescência (Aging, 2020)",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
+        },
+        {
+          date: "2023",
+          tag: "Esportes",
+          icon: "healthSync",
+          title: "Por Que Atletas de Elite Usam Oxigênio Hiperbárico?",
+          paragraphs: [
+            "Atletas mundialmente famosos como Cristiano Ronaldo, LeBron James, Novak Djokovic e Floyd Mayweather foram destacados pela imprensa por usar câmaras hiperbáricas como parte de suas rotinas de recuperação. Por trás desse interesse estão descobertas da medicina esportiva que sugerem que a OHB pode reduzir edemas e inflamações, apoiar a reparação de tecidos e ajudar os atletas a retornar aos treinos mais cedo.",
+            "Estudos citados em revisões incluem uma observação nos Jogos Olímpicos de Inverno de Nagano, em que 7 atletas se recuperaram mais rapidamente com sessões curtas a 1.3 ATA, um relatório clínico inicial de uma redução de 55% nos dias perdidos por lesão entre jogadores de futebol profissional, e um estudo universitário sugerindo um retorno cerca de 30% mais rápido após entorses de tornozelo. Os autores observam que as evidências se baseiam majoritariamente em amostras pequenas e que ensaios clínicos randomizados e controlados são necessários para conclusões definitivas."
+          ],
+          source_name: "PMC – O Papel da Terapia de Oxigênio Hiperbárico na Medicina Esportiva (revisão)",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
+        },
+        {
+          date: "2024",
+          tag: "Guia",
+          icon: "oneSeat",
+          title: "Guia de Compra de Câmara Hiperbárica Doméstica",
+          paragraphs: [
+            "A primeira questão ao escolher uma câmara hiperbárica para uso doméstico ou particular é a capacidade: as câmaras monoplace oferecem uma pegada compacta, enquanto as câmaras multiplace permitem que familiares ou pequenos grupos sejam tratados ao mesmo tempo e facilitam sessões com acompanhante. A UHMS, autoridade internacional em medicina hiperbárica, exige que as câmaras pressurizadas sejam equipamentos aprovados e inspecionados regularmente, e que os operadores recebam treinamento especializado.",
+            "O nível de pressão é o segundo tema-chave: os protocolos clínicos costumam ser aplicados na faixa de 2.0–2.4 ATA, enquanto 1.3–2.0 ATA é comum em sistemas domésticos — sempre revise o nível adequado aos seus objetivos com um profissional de saúde. O terceiro tema é segurança e conforto: as normas de segurança contra incêndio em ambientes com oxigênio, a descompressão de emergência, o nível de ruído, a iluminação interna e os sistemas de comunicação moldam diretamente a experiência diária; confirme por escrito os termos de manutenção e garantia antes de comprar."
+          ],
+          source_name: "StatPearls (NCBI) – Terapia de Oxigênio Hiperbárico",
+          source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
+        },
+        {
+          date: "2025",
+          tag: "Pesquisa",
+          icon: "wound",
+          title: "O Papel do Oxigênio Hiperbárico em Feridas Crônicas Continua Crescendo",
+          paragraphs: [
+            "Revisões recentes na área de cuidados cirúrgicos e de feridas crônicas mostram que a oxigenoterapia hiperbárica (OHB) apoia o processo de cicatrização ao aumentar a oxigenação dos tecidos. Em feridas de pé diabético, úlceras venosas de perna, queimaduras e danos teciduais induzidos por radiação, a OHB tem sido relatada como capaz de melhorar as taxas de fechamento de feridas e reduzir o risco de infecção.",
+            "Um estudo publicado em 2025 constatou que a OHB combinada com a terapia de feridas por pressão negativa (TFPN) aumentou significativamente a velocidade de cicatrização em comparação com a TFPN isolada. Em cirurgia reconstrutiva, a OHB é relatada como um apoio à sobrevivência de tecidos e enxertos, além de promover a formação de novos vasos sanguíneos."
+          ],
+          source_name: "PMC – Terapia de Oxigênio Hiperbárico na Cicatrização de Feridas Cirúrgicas e Preservação de Tecidos",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
+        },
+        {
+          date: "2023",
+          tag: "Saúde Esportiva",
+          icon: "burn",
+          title: "Por Que os Atletas Estão Recorrendo às Câmaras Hiperbáricas",
+          paragraphs: [
+            "Muitos atletas de elite do tênis, natação, basquete e golfe estão escolhendo a oxigenoterapia hiperbárica como parte de sua rotina de recuperação. Pesquisas em medicina esportiva mostram que a OHB pode acelerar a cicatrização, reduzir a inflamação e ajudar os atletas a retornar aos treinos mais cedo.",
+            "Alguns estudos relataram níveis mais baixos de dor muscular e fadiga em atletas que receberam OHB, com tempos de recuperação reduzidos em cerca de 30%. Embora a área ainda precise de ensaios clínicos maiores e controlados, os resultados são promissores para a saúde dos atletas."
+          ],
+          source_name: "Turkish Journal of Sports Medicine",
+          source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
+        },
+        {
+          date: "2024",
+          tag: "Evidência Clínica",
+          icon: "wound",
+          title: "Meta-Análise sobre Úlceras de Pé Diabético: Menor Risco de Amputação",
+          paragraphs: [
+            "Uma meta-análise de 14 estudos, abrangendo 768 participantes, constatou que a oxigenoterapia hiperbárica proporcionou um benefício estatisticamente significativo na cicatrização completa de úlceras de pé diabético e na redução do risco de amputação maior.",
+            "Uma revisão sistemática recente, publicada em 2024, chegou a conclusões semelhantes: a maioria dos estudos revisados observou taxas mais baixas de amputação maior, taxas mais altas de cicatrização de feridas e redução do tamanho e da profundidade das úlceras com a OHB."
+          ],
+          source_name: "PMC – Eficácia da OHB para Úlceras de Pé Diabético",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
+        },
+        {
+          date: "2024",
+          tag: "Evidência Clínica",
+          icon: "ear",
+          title: "Oxigênio Hiperbárico para Perda Súbita de Audição: A Intervenção Precoce Importa",
+          paragraphs: [
+            "Em pacientes com perda auditiva neurossensorial súbita, a oxigenoterapia hiperbárica busca melhorar a microcirculação e reduzir a inflamação ao aumentar a pressão de oxigênio no ouvido interno. Estudos mostram que pacientes que iniciam o tratamento precocemente, especialmente em combinação com corticoterapia, tendem a apresentar resultados mais favoráveis.",
+            "Embora os resultados das pesquisas não ofereçam consenso total sobre a eficácia, alguns estudos observaram melhora da audição em mais da metade dos pacientes. Especialistas destacam a necessidade de mais ensaios clínicos para estabelecer protocolos padronizados de pressão e duração."
+          ],
+          source_name: "JAMA Otolaryngology–Head & Neck Surgery",
+          source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
+        },
+        {
+          date: "2024",
+          tag: "Tecnologia",
+          icon: "connect",
+          title: "A Era dos Dispositivos de Saúde Conectados: O Monitoramento Remoto Cresce Rapidamente",
+          paragraphs: [
+            "Hoje, estima-se que o mercado global de IoT em saúde tenha ultrapassado US$ 86 bilhões. Com a aceleração da transição do atendimento centrado no hospital para o atendimento domiciliar, mais de 350 hospitais nos EUA já operam programas de 'hospital em casa' habilitados por IoT.",
+            "Pesquisas mostram que os sistemas de monitoramento remoto de pacientes baseados em IoT podem reduzir as taxas de readmissão hospitalar em até 50%. A plataforma ApexConnect™ da HBOT Chamber Tech é exatamente parte dessa tendência global: conectar câmaras à nuvem para monitoramento em tempo real e manutenção preditiva."
+          ],
+          source_name: "IoT Business News",
+          source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
+        },
+        {
+          date: "2023",
+          tag: "Clínico",
+          icon: "guard",
+          title: "Gestão de Pressão em Câmaras Multiplace: Protocolos Operacionais Clínicos",
+          paragraphs: [
+            "As câmaras hiperbáricas multiplace são a escolha padrão para hospitais e clínicas, pois tratam vários pacientes ao mesmo tempo e permitem que a equipe médica acompanhe os pacientes no interior da câmara. As diretrizes operacionais publicadas pela UHMS, autoridade internacional em medicina hiperbárica, recomendam ajustar as taxas de compressão e descompressão ao conforto do paciente e ao risco de barotrauma auricular, realizar cada sessão sob supervisão de um operador certificado e treinar cenários de evacuação de emergência regularmente.",
+            "Na prática clínica, o protocolo de pressão é determinado pela indicação de tratamento: os protocolos comuns operam na faixa de 2.0–2.4 ATA, enquanto certas indicações especiais podem exigir pressões mais altas. Especialistas destacam que o nível de pressão adequado deve sempre ser avaliado por um médico especializado em medicina hiperbárica, e que os equipamentos da câmara devem ser certificados para cobrir com segurança a faixa de pressão desejada."
+          ],
+          source_name: "UHMS – Undersea & Hyperbaric Medical Society",
+          source_url: "https://www.uhms.org"
+        },
+        {
+          date: "2024",
+          tag: "Esportes",
+          icon: "healthSync",
+          title: "Preparação de Pré-Temporada em Clubes Esportivos: Programas de Suporte Hiperbárico",
+          paragraphs: [
+            "As equipes de performance e médicas de clubes esportivos profissionais estão cada vez mais recorrendo a aplicações de oxigênio hiperbárico para apoiar a recuperação durante períodos concentrados de jogos e treinos. Revisões na literatura de medicina esportiva relatam que a OHB pode ajudar a reduzir edemas e inflamações após lesões de tecidos moles e tem potencial para reduzir o tempo de retorno do atleta aos treinos.",
+            "No contexto de um clube, o planejamento está no topo das prioridades: as sessões devem ser integradas ao calendário de treinos e jogos, avaliadas em conjunto com o monitoramento de carga específico de cada jogador, e realizadas sob supervisão do médico do clube. Os pesquisadores também observam que boa parte das evidências atuais se baseia em estudos com amostras pequenas e que ensaios controlados maiores são necessários para estabelecer protocolos padronizados."
+          ],
+          source_name: "Frontiers in Physiology – Sport and Exercise",
+          source_url: "https://www.frontiersin.org/journals/physiology"
+        },
+        {
+          date: "2025",
+          tag: "Bem-Estar",
+          icon: "premium",
+          title: "Uma Nova Tendência em Hotéis de Luxo: Suítes de Bem-Estar Hiperbárico",
+          paragraphs: [
+            "Relatórios do setor sobre a economia global do bem-estar mostram que o turismo de bem-estar é um de seus segmentos de crescimento mais rápido. Refletindo essa tendência, hotéis e resorts de luxo estão indo além das ofertas de spa e fitness, adicionando tecnologias avançadas de recuperação, como câmaras de oxigênio hiperbárico, crioterapia e terapia de luz vermelha, à experiência dos hóspedes.",
+            "Observadores do setor apontam que as unidades hiperbáricas se destacam especialmente em pacotes premium com temática de 'longevidade' e 'performance'. Para os operadores hoteleiros, os temas críticos são a conformidade com normas de segurança, a contratação de equipe treinada e a estruturação adequada da triagem de saúde prévia ao uso; as aplicações voltadas aos hóspedes devem ser oferecidas como suporte ao bem-estar geral, não como tratamento médico."
+          ],
+          source_name: "Global Wellness Institute",
+          source_url: "https://globalwellnessinstitute.org"
+        },
+        {
+          date: "2024",
+          tag: "Segurança",
+          icon: "care",
+          title: "3.0 ATA e Acima: Padrões de Segurança Hiperbárica de Nível Médico",
+          paragraphs: [
+            "Níveis de pressão de 3.0 ATA e acima são uma área que a medicina hiperbárica aplica apenas em ambientes clínicos rigorosamente regulamentados. As câmaras que operam nesses níveis devem ser fabricadas em conformidade com as regulamentações de vasos de pressão, atender às disposições hiperbáricas de normas internacionais como a NFPA 99 para segurança contra incêndio, e passar por inspeções periódicas regulares. Gerenciar o risco de incêndio em uma atmosfera enriquecida com oxigênio é o tema de projeto mais crítico para essa classe de sistema.",
+            "Os outros elos da cadeia de segurança são fatores humanos: um operador hiperbárico certificado, avaliação do paciente antes da sessão, um plano de evacuação de emergência e supervisão médica. Órgãos profissionais recomendam que os tratamentos na classe de alta pressão sejam realizados somente em instituições com essa infraestrutura, e aconselham que as organizações compradoras solicitem por escrito ao fabricante certificados de pressão, relatórios de teste e programas de treinamento."
+          ],
+          source_name: "NFPA – National Fire Protection Association",
+          source_url: "https://www.nfpa.org"
+        }
+      ]
+    },
+    contact: {
+      header: { eyebrow: "CONTATO", title: "Entre em Contato", subtitle: "Preencha o formulário para suas dúvidas e solicitações de orçamento." },
+      address_label: "Endereço",
+      address_value: "Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29, Tuzla / Istanbul, Türkiye",
+      phone_label: "Telefone",
+      phone_value: "0850 888 1679",
+      email_label: "E-mail",
+      email_value: "info@hbotchambertech.com",
+      hours_label: "Horário de Funcionamento",
+      hours_value: "Segunda a sexta-feira, 09:00 – 18:00",
+      form_title: "Enviar uma Mensagem",
+      form_name: "Nome Completo",
+      form_email: "E-mail",
+      form_message: "Sua Mensagem",
+      form_submit: "Enviar",
+      form_sending: "Enviando...",
+      form_success: "Obrigado! Sua mensagem foi recebida — entraremos em contato em breve.",
+      form_error: "Ocorreu um erro. Tente novamente ou ligue diretamente para nós.",
+      map_note: "Tuzla, Istambul",
+      faq: {
+        eyebrow: "PERGUNTAS FREQUENTES",
+        title: "Perguntas Comuns",
+        subtitle: "As perguntas mais frequentes sobre sistemas hiperbáricos, modelos Apex, instalação e pedidos.",
+        sections: [
+          {
+            title: "Sobre os Sistemas Hiperbáricos",
+            items: [
+              { q: "O que é uma câmara hiperbárica?", a: "Uma câmara hiperbárica é um sistema que proporciona ao usuário um ambiente controlado e pressurizado acima da pressão atmosférica normal. Nos sistemas hiperbáricos Apex, a câmara é pressurizada de forma controlada; o oxigênio pode ser fornecido ao usuário por meio de uma máscara dedicada ou equipamento respiratório adequado, dependendo do modelo selecionado e da configuração do sistema." },
+              { q: "Como funciona um sistema hiperbárico?", a: "Depois que o usuário entra na câmara, a porta é fechada com segurança e o sistema é pressurizado de forma controlada. Assim que a pressão de trabalho-alvo é atingida, o protocolo da sessão é aplicado. Ao final da sessão, a pressão é reduzida gradualmente, e a porta é aberta quando o interior atinge a pressão atmosférica normal.\n\nO nível de pressão, o fluxo de oxigênio e a duração da sessão são determinados de acordo com as especificações do equipamento, o uso pretendido e o protocolo a ser aplicado." },
+              { q: "Uma câmara hiperbárica e um concentrador de oxigênio são o mesmo equipamento?", a: "Não. Uma câmara hiperbárica cria um ambiente de pressão controlada. Um concentrador de oxigênio produz oxigênio de alta concentração a partir do ar ambiente. Dependendo dos requisitos do projeto, esses dois sistemas podem ser usados em conjunto." },
+              { q: "Os sistemas hiperbáricos só podem ser usados em hospitais?", a: "Os ambientes em que os sistemas hiperbáricos podem ser usados variam conforme a classificação do equipamento, o uso pretendido e as regulamentações vigentes no país de instalação.\n\nDependendo do modelo e da configuração selecionados, os sistemas Apex podem ser projetados para os seguintes ambientes:", list: ["Hospitais e instituições de saúde", "Clínicas", "Centros esportivos e de performance", "Centros de bem-estar e longevidade", "Hotéis e conceitos de saúde dedicados", "Centros de reabilitação", "Instituições de pesquisa e ensino", "Residências particulares"], aAfter: "Para instalações que prestam serviços médicos, as regulamentações de saúde aplicáveis, as condições de licenciamento e os requisitos referentes a um profissional de saúde qualificado devem ser avaliados separadamente." }
+            ]
+          },
+          {
+            title: "Modelos Apex",
+            items: [
+              { q: "Quais modelos Apex estão disponíveis?", a: "A família de produtos Apex é desenvolvida para diferentes capacidades de usuários e casos de uso.\n\nApex Solo Lounge — Um sistema individual desenvolvido para usuários que precisam de tratamento na posição deitada.\n\nApex Solo — Um sistema hiperbárico individual e compacto, usado na posição sentada. Projetado tanto para uso individual/doméstico quanto para uso comercial.\n\nApex Duo — Um sistema com interior espaçoso que pode acomodar dois usuários na mesma sessão.\n\nApex Quad-Cube — Um sistema hiperbárico de grande volume, em formato cubo, para 4 usuários, desenvolvido para clínicas, hospitais e operadores profissionais.\n\nApex Nexus — Um sistema institucional de grande capacidade e nível hospitalar, com capacidade inicial de 6 usuários, expansível até 12." },
+              { q: "Para quem o Apex Solo é indicado?", a: "O Apex Solo é desenvolvido tanto para uso individual/doméstico quanto para operadores que buscam uma configuração individual. Graças à sua estrutura compacta, pode ser considerado para residências, clínicas, centros esportivos, centros de bem-estar e hotéis.\n\nAs condições exatas de uso são determinadas pela classificação do produto e pelas regulamentações do país de instalação." },
+              { q: "Quantas pessoas o Apex Duo pode acomodar?", a: "O Apex Duo foi projetado para acomodar dois usuários na mesma sessão. A estrutura dos assentos, os acabamentos internos e a disposição dos assentos podem variar conforme a configuração pedida." },
+              { q: "Qual é a capacidade de usuários do modelo Apex multipessoal?", a: "Os modelos Apex multiusuário começam com o Apex Quad-Cube, para 4 pessoas. Para o Apex Nexus, de nível hospitalar, a capacidade padrão é de 6 pessoas, com capacidade opcional de até 12 pessoas (em incrementos de 2 assentos).\n\nA capacidade exata é determinada pelos seguintes fatores:", list: ["Dimensões da câmara", "Disposição dos assentos", "Amplitude de movimento dos usuários", "Capacidade do sistema de oxigênio", "Protocolo operacional", "Requisitos locais de segurança e licenciamento"], aAfter: "Cada opção é incorporada ao projeto após uma avaliação de segurança e uma análise de adequação técnica." },
+              { q: "Quais são as dimensões dos equipamentos?", a: "Cada modelo Apex tem dimensões externas e volume interno útil diferentes. As seguintes informações são exibidas separadamente nas páginas técnicas do produto:", list: ["Dimensões externas", "Dimensões internas úteis", "Abertura da porta", "Peso total", "Capacidade de usuários", "Área mínima de instalação", "Espaço de acesso para assistência técnica"], aAfter: "Solicitações de dimensões personalizadas podem ser projetadas após uma avaliação de engenharia." }
+            ]
+          },
+          {
+            title: "Sistema de Pressão e Oxigênio",
+            items: [
+              { q: "Em que pressão os sistemas Apex operam?", a: "A pressão de operação pode variar conforme o modelo e a configuração do produto.\n\nOs documentos técnicos indicam claramente se a medição se refere à pressão absoluta ou à pressão manométrica." },
+              { q: "Qual é a diferença entre bar e ATA?", a: "Bar é uma unidade de medida de pressão. ATA se refere a atmosferas absolutas. Esses dois valores não devem ser interpretados da mesma forma.\n\nPor esse motivo, as seguintes informações são exibidas separadamente nos documentos técnicos Apex:", list: ["Pressão atmosférica ambiente", "Pressão manométrica", "Pressão absoluta", "Equivalente em ATA", "Pressão máxima de operação permitida"] },
+              { q: "De onde vem o oxigênio?", a: "Um concentrador de oxigênio adequadamente dimensionado pode ser usado conforme o projeto de instalação. A pureza de oxigênio, a taxa de fluxo, a pressão e as necessidades de backup exigidas são calculadas pela equipe técnica." },
+              { q: "O concentrador de oxigênio está incluído no preço do equipamento?", a: "Sim." },
+              { q: "Um único concentrador de oxigênio é suficiente para vários usuários?", a: "Isso depende da capacidade do concentrador, da taxa de fluxo de oxigênio necessária e do número de usuários. A taxa de fluxo de oxigênio total necessária é calculada separadamente para cada projeto." }
+            ]
+          },
+          {
+            title: "Sessão e Processo de Uso",
+            items: [
+              { q: "Quanto tempo dura uma sessão?", a: "A duração da sessão varia de acordo com o protocolo aplicado. Uma sessão geralmente consiste em três fases: pressurização controlada, aplicação na pressão-alvo e despressurização controlada.\n\nA duração total é determinada pela pressão-alvo, pelo estado do usuário e pelo protocolo de aplicação. Para aplicações de finalidade médica, a duração da sessão deve ser determinada por um profissional de saúde qualificado." },
+              { q: "Quanto tempo leva a pressurização?", a: "O tempo de pressurização pode variar conforme a pressão-alvo selecionada, o modelo do equipamento e o conforto do usuário. Nos sistemas Apex, as alterações de pressão são realizadas de forma controlada." },
+              { q: "A pressão é sentida nos ouvidos durante a sessão?", a: "Durante as alterações de pressão, pode ocorrer uma sensação de plenitude ou pressão nos ouvidos, semelhante à de viagens aéreas. Os usuários devem ser informados sobre técnicas de equalização de pressão antes da sessão." },
+              { q: "O usuário pode se comunicar com o exterior durante a sessão?", a: "Sim." },
+              { q: "O usuário pode ver o exterior durante a sessão?", a: "Os modelos Apex podem incluir amplas áreas de visualização e opções de superfície transparente para aumentar o conforto do usuário. As dimensões e a posição das janelas variam conforme o modelo." },
+              { q: "É possível usar o celular durante a sessão?", a: "Apenas equipamentos avaliados e explicitamente aprovados pelo fabricante devem ser levados para dentro da câmara hiperbárica. Celulares, tablets, smartwatches, fones de ouvido, baterias portáteis e dispositivos eletrônicos semelhantes não devem ser levados para dentro da câmara sem a aprovação do fabricante.\n\nOs sistemas de tela, áudio ou entretenimento integrados ao equipamento só podem ser usados após a conclusão da avaliação técnica e de segurança." },
+              { q: "O usuário pode sair a qualquer momento?", a: "A porta de uma câmara sob pressão não pode ser aberta diretamente. Para que o usuário saia, a pressão interna e externa deve primeiro ser equalizada com segurança.\n\nEm condições normais, aplica-se um procedimento de despressurização controlada. Em emergências, segue-se o procedimento de despressurização de emergência designado do equipamento." }
+            ]
+          },
+          {
+            title: "Segurança",
+            items: [
+              { q: "Os sistemas hiperbáricos Apex são seguros?", a: "Sim. A segurança dos sistemas hiperbáricos é garantida por meio de engenharia adequada, instalação correta, manutenção regular, pessoal treinado e adesão aos procedimentos de uso.\n\nO equipamento deve ser operado somente de acordo com o manual do usuário, e os sistemas de segurança nunca devem ser desativados." },
+              { q: "Quais sistemas de segurança os equipamentos possuem?", a: "Dependendo do modelo e da configuração pedida, os sistemas Apex podem incluir os seguintes recursos de segurança:", list: ["Sensores de pressão", "Válvula de alívio de segurança mecânica", "Controle automático de pressão", "Controle manual de pressão", "Botão de parada de emergência", "Sistema de despressurização de emergência", "Monitoramento do nível de oxigênio", "Monitor de saturação de oxigênio (padrão)", "Monitoramento de temperatura", "Sistema de alarme visual e sonoro", "Sistema de comunicação interno-externo", "Sistema de segurança da porta", "Procedimento para queda de energia", "Sistema de registro de falhas e sessões", "Fonte de energia de backup integrada de série"], aAfter: "Os sistemas de segurança padrão e opcionais incluídos em cada modelo estão listados separadamente no documento de proposta técnica." },
+              { q: "O que acontece em caso de queda de energia?", a: "Todos os modelos Apex vêm com uma fonte de energia de backup integrada de série para proteção contra quedas de energia. O procedimento a ser aplicado em caso de queda de energia pode variar conforme o modelo do equipamento.\n\nOs seguintes recursos também podem ser oferecidos dependendo da configuração do sistema:", list: ["Fonte de alimentação ininterrupta", "Controle manual de pressão", "Liberação controlada de pressão", "Iluminação de emergência", "Sistema de alerta ao operador"] },
+              { q: "A porta pode ser aberta imediatamente em uma emergência?", a: "Em câmaras pressurizadas, a pressão interna e externa deve ser equalizada antes que a porta possa ser aberta. Por esse motivo, a porta não pode ser aberta por meios normais enquanto a câmara estiver sob pressão.\n\nEm uma emergência, aplica-se o procedimento de despressurização controlada ou acelerada do sistema. As válvulas de alívio de segurança e os limites de pressão não devem ser excedidos, para a segurança do usuário." },
+              { q: "Há risco de incêndio nos sistemas hiperbáricos?", a: "Em ambientes com altas concentrações de oxigênio, o risco de combustão pode aumentar. Por esse motivo, o gerenciamento de oxigênio, a fiação elétrica, o controle de eletricidade estática, a escolha das roupas e os materiais levados para dentro da câmara estão sujeitos a regras especiais.\n\nCigarros, isqueiros, fósforos, produtos inflamáveis e dispositivos eletrônicos não aprovados pelo fabricante nunca devem ser levados para dentro da câmara." },
+              { q: "Quais itens não são permitidos dentro da câmara?", a: "Os seguintes itens não devem ser levados para dentro da câmara sem a aprovação do fabricante:", list: ["Cigarros e cigarros eletrônicos", "Isqueiros e fósforos", "Substâncias inflamáveis ou combustíveis", "Produtos à base de álcool", "Produtos cosméticos à base de óleo e petróleo", "Produtos em aerossol", "Celulares", "Tablets e laptops", "Smartwatches", "Fones de ouvido", "Baterias portáteis", "Equipamentos de aquecimento", "Dispositivos elétricos não aprovados", "Embalagens seladas que possam ser afetadas por alterações de pressão"] },
+              { q: "Que tipo de roupa deve ser usada dentro da câmara?", a: "Deve-se preferir roupas adequadas ao procedimento de segurança do operador e ao manual do usuário do equipamento. Roupas e acessórios que possam representar risco de eletricidade estática ou inflamabilidade não devem ser usados." }
+            ]
+          },
+          {
+            title: "Adequação do Usuário",
+            items: [
+              { q: "Qualquer pessoa pode usar um sistema hiperbárico?", a: "Não. Um ambiente hiperbárico pode não ser adequado para todos os usuários. Antes do uso, devem ser avaliados o estado de saúde do indivíduo, doenças existentes, medicamentos e implantes.\n\nPara aplicações de finalidade médica, a decisão de adequação deve ser tomada por um profissional de saúde qualificado." },
+              { q: "É necessária uma avaliação médica antes do uso?", a: "Para aplicações hiperbáricas de finalidade médica, o usuário deve ser avaliado por um profissional de saúde qualificado.\n\nPara aplicações voltadas ao bem-estar ou à performance, também é recomendável obter uma declaração de saúde do usuário e verificar previamente quaisquer condições potencialmente arriscadas." },
+              { q: "Quais condições de saúde devem ser informadas previamente?", a: "Os usuários devem informar as seguintes condições à equipe do operador e ao profissional de saúde antes da sessão:", list: ["Problemas de ouvido ou seios da face", "Resfriado ou febre", "Condições pulmonares", "Cirurgia recente", "Condições cardíacas ou circulatórias", "Histórico de convulsões", "Claustrofobia", "Gravidez", "Medicamentos em uso", "Marca-passo ou implantes", "Atividade de mergulho recente", "Desconforto anterior relacionado à pressão"], aAfter: "Esta lista não substitui uma avaliação médica." },
+              { q: "Gestantes podem usar um sistema hiperbárico?", a: "A decisão de uso durante a gravidez deve ser tomada exclusivamente por um médico qualificado. As decisões de uso não devem se basear em informações gerais." },
+              { q: "Crianças podem usar um sistema hiperbárico?", a: "O uso por crianças deve ser avaliado com base na idade, no estado de saúde, na finalidade de uso, nas características do equipamento e nas condições de acompanhamento. Para aplicações de finalidade médica, é necessária a aprovação de um médico e a supervisão de pessoal de saúde adequado." },
+              { q: "Pessoas com marca-passo ou implante podem usar o sistema?", a: "A adequação do implante a um ambiente pressurizado e enriquecido com oxigênio deve ser confirmada. Não se deve tomar uma decisão de uso sem as informações técnicas do fabricante do implante e a avaliação de um profissional de saúde qualificado." },
+              { q: "O sistema pode ser usado com resfriado ou dor de ouvido?", a: "Um resfriado, congestão nasal, problemas nos seios da face ou dor de ouvido podem dificultar a equalização de pressão. Essas condições devem sempre ser informadas antes da sessão.\n\nA decisão de adiar o uso deve ser tomada por um profissional de saúde qualificado ou pelo responsável pela equipe." }
+            ]
+          },
+          {
+            title: "Uso Médico e Alegações de Saúde",
+            items: [
+              { q: "Quais condições um sistema hiperbárico é usado para tratar?", a: "Os usos médicos reconhecidos da aplicação de oxigênio hiperbárico podem variar conforme o país, o órgão regulador, a classificação do equipamento e o protocolo clínico.\n\nAs aplicações de finalidade médica devem ser realizadas apenas com equipamentos devidamente classificados, em instalações de saúde autorizadas, sob supervisão de pessoal de saúde treinado, com avaliação médica e protocolo adequado.\n\nAs informações em nosso site não constituem aconselhamento pessoal para o diagnóstico ou tratamento de qualquer doença." },
+              { q: "Os equipamentos Apex tratam alguma doença?", a: "O uso pretendido de um equipamento e as alegações de saúde que podem ser feitas a seu respeito dependem da classificação oficial do produto e da documentação que ele possui.\n\nAs declarações sobre os sistemas Apex são feitas apenas dentro do uso pretendido especificado nos documentos técnicos e na avaliação de conformidade. Nenhum resultado garantido é oferecido para qualquer doença." },
+              { q: "Sistemas de baixa pressão são o mesmo que a OHB clínica?", a: "Não. Nem toda aplicação de oxigênio pressurizado pertence à mesma classe técnica ou clínica. Os seguintes fatores podem alterar a natureza da aplicação:", list: ["Pressão de operação", "Concentração de oxigênio inalado", "Método de fornecimento de oxigênio", "Duração da sessão", "Certificação do equipamento", "Uso pretendido", "Ambiente de aplicação", "Supervisão por pessoal de saúde"], aAfter: "Se um sistema pode ser definido como um \"dispositivo médico de terapia de oxigênio hiperbárico\" depende das regulamentações do mercado em questão e do uso pretendido documentado do produto." },
+              { q: "Os resultados são garantidos?", a: "A resposta dos usuários pode variar de pessoa para pessoa. Resultados de saúde, recuperação, performance ou similares não podem ser garantidos.\n\nAs decisões de uso não devem se basear exclusivamente em informações promocionais gerais ou depoimentos de usuários." }
+            ]
+          },
+          {
+            title: "Instalação",
+            items: [
+              { q: "Quanto espaço é necessário para a instalação?", a: "O espaço necessário varia conforme o modelo Apex selecionado. Ao determinar a área de instalação, os seguintes fatores devem ser considerados além das dimensões do equipamento:", list: ["Área de trabalho do operador", "Espaço total para abertura da porta", "Acesso para assistência técnica", "Área do compressor e equipamentos auxiliares", "Área do sistema de oxigênio", "Ventilação", "Painel elétrico", "Rota de saída de emergência", "Equipamento de segurança contra incêndio"], aAfter: "As dimensões mínimas de instalação são determinadas após um levantamento técnico." },
+              { q: "O equipamento pode ser instalado em uma edificação existente?", a: "A maioria dos projetos pode ser aplicada a estruturas existentes; no entanto, uma inspeção técnica deve ser realizada antes da instalação. As seguintes condições são verificadas:", list: ["Capacidade de carga do piso", "Vãos de portas e corredores", "Capacidade do elevador", "Pé-direito", "Infraestrutura elétrica", "Ventilação", "Infraestrutura de oxigênio e ar comprimido", "Segurança contra incêndio", "Acesso para assistência técnica"] },
+              { q: "Vocês realizam um levantamento no local antes da instalação?", a: "Sim. Dependendo da localização e do escopo do projeto, pode ser realizada uma avaliação técnica remota ou um levantamento presencial. As seguintes informações podem ser solicitadas ao cliente para a avaliação inicial:", list: ["Dimensões da área de instalação", "Fotos e vídeos", "Planta arquitetônica", "Infraestrutura elétrica", "Informações sobre ventilação", "Rota de acesso e transporte", "Capacidade de usuários pretendida", "Modelo e opções desejados"] },
+              { q: "É necessário reforço do piso?", a: "Isso depende do peso do equipamento, dos equipamentos auxiliares e da capacidade de carga da edificação. Quando necessário, uma avaliação estrutural deve ser realizada por um engenheiro civil ou estrutural qualificado." },
+              { q: "O equipamento pode ser realocado?", a: "Alguns modelos Apex podem ser fabricados em estrutura modular. No entanto, a desmontagem, o transporte e a reinstalação devem ser realizados apenas por uma equipe técnica autorizada.\n\nApós a realocação, o sistema deve ser reinspecionado e não deve ser usado até que os testes necessários tenham sido concluídos." },
+              { q: "Quanto tempo leva a instalação?", a: "O tempo de instalação varia conforme os seguintes fatores: modelo, dimensões do equipamento, local de instalação, infraestrutura da edificação, sistemas auxiliares, opções de personalização e o processo de testes e treinamento.\n\nO cronograma estimado de instalação é informado na proposta do projeto." }
+            ]
+          },
+          {
+            title: "Treinamento e Operação",
+            items: [
+              { q: "Vocês oferecem treinamento de equipe?", a: "Sim. Após a instalação, o pessoal autorizado recebe treinamento sobre o uso seguro e correto do equipamento. Dependendo do modelo, o escopo do treinamento pode incluir:", list: ["Ligar e desligar o sistema", "Pressurização e despressurização", "Preparação do usuário", "Orientação sobre equalização de pressão", "Uso do sistema de oxigênio", "Itens proibidos dentro da câmara", "Verificações diárias de segurança", "Condições de alarme e falha", "Procedimentos de emergência", "Limpeza e higiene", "Registro de manutenção"] },
+              { q: "Quantos funcionários são necessários para operar o equipamento?", a: "O número de funcionários necessários varia conforme o modelo, a capacidade de usuários, a natureza da operação e as regulamentações locais.\n\nSistemas multiusuário e de finalidade médica podem exigir pessoal adicional de saúde e segurança. A equipe é definida durante a fase do projeto." },
+              { q: "É possível manter registros de uso?", a: "Dependendo do sistema de controle selecionado e dos recursos do software, os seguintes registros podem ser mantidos:", list: ["Data e hora da sessão", "Duração da sessão", "Valores de pressão", "Gráfico de variação de pressão", "Registros de alarme", "Informações do operador", "Histórico de manutenção", "Horas de operação do sistema"], aAfter: "Caso dados de saúde pessoais sejam registrados, as regulamentações de proteção de dados aplicáveis devem ser respeitadas." },
+              { q: "É necessária uma licença de operação?", a: "Os requisitos de licenciamento e autorização variam conforme o país, a cidade, o tipo de instalação, a classificação do equipamento e o uso pretendido. Para instalações que prestam serviços médicos, as seguintes regulamentações devem ser avaliadas separadamente:", list: ["Licença de instalação de saúde", "Regulamentações de dispositivos médicos", "Regulamentações de equipamentos de pressão", "Segurança contra incêndio", "Saúde e segurança ocupacional", "Regras de armazenamento de oxigênio", "Qualificações do pessoal", "Conformidade elétrica e predial"], aAfter: "O operador deve obter as autorizações necessárias junto às autoridades locais competentes antes de iniciar as operações." }
+            ]
+          },
+          {
+            title: "Limpeza e Higiene",
+            items: [
+              { q: "Como a câmara hiperbárica é limpa?", a: "A câmara, os assentos, as superfícies de contato e os equipamentos do usuário devem ser limpos apenas com produtos de limpeza aprovados pelo fabricante. Produtos inflamáveis, à base de óleo, com alto teor alcoólico ou que possam danificar os materiais do equipamento não devem ser usados." },
+              { q: "A limpeza deve ser feita após cada usuário?", a: "As superfícies e os equipamentos que entram em contato com o usuário devem ser limpos após cada sessão, de acordo com o protocolo de higiene do operador. Máscaras, protetores de cabeça e equipamentos respiratórios devem ser limpos, desinfetados ou substituídos conforme as instruções do fabricante." },
+              { q: "As máscaras de oxigênio são pessoais para cada usuário?", a: "Dependendo do projeto e da preferência do operador, podem ser usadas opções de máscara pessoal, descartável ou desinfetável. A limpeza e os intervalos de substituição das máscaras devem seguir as instruções do fabricante." },
+              { q: "Com que frequência os filtros são substituídos?", a: "O intervalo de substituição do filtro varia conforme o tipo de filtro, as horas de operação, as condições ambientais e a intensidade de uso. Os intervalos de manutenção e substituição dos filtros são especificados no plano de manutenção do equipamento." }
+            ]
+          },
+          {
+            title: "Manutenção, Garantia e Assistência Técnica",
+            items: [
+              { q: "Com que frequência o equipamento recebe manutenção?", a: "A manutenção periódica é realizada a cada 6 meses. Além disso, o programa de manutenção geralmente consiste em três níveis: verificações diárias pelo usuário, manutenção periódica semestral e uma inspeção técnica abrangente anual ou definida pelo fabricante.\n\nOs intervalos exatos de manutenção são especificados no manual do usuário do equipamento." },
+              { q: "Quais peças são verificadas durante a manutenção periódica?", a: "Dependendo do modelo, os seguintes componentes podem ser verificados durante a manutenção:", list: ["Sistema de pressão", "Válvulas de alívio de segurança", "Sistema de trava e porta", "Vedações", "Sensores de pressão", "Sistema de oxigênio", "Compressor de ar", "Filtros", "Sistema elétrico", "Painel de controle", "Sistemas de alarme", "Sistema de comunicação interno-externo", "Ventilação", "Software e sistema de registro"] },
+              { q: "É necessária uma verificação diária?", a: "Sim. Antes de cada dia de operação, uma verificação básica de segurança deve ser realizada pelo usuário ou operador. Recomenda-se registrar os resultados da verificação junto com a data e as informações do operador." },
+              { q: "Qual é o período de garantia?", a: "O período de garantia padrão dos sistemas hiperbáricos Apex é de 1 ano, em conformidade com as regulamentações internacionais. Por meio do configurador, é possível adicionar uma garantia estendida opcional de +1 ano, totalizando 2 anos.\n\nA cobertura da garantia pode variar entre a câmara principal, as peças mecânicas, os componentes eletrônicos, o compressor, o sistema de oxigênio e os consumíveis. Os termos detalhados são especificados no contrato de venda." },
+              { q: "Quais peças não são cobertas pela garantia?", a: "Peças de consumo, filtros, máscaras e vedações que se desgastam com o uso normal, assim como danos resultantes de uso indevido, podem não estar cobertos pela garantia. A cobertura exata é descrita no documento de garantia." },
+              { q: "Vocês oferecem suporte de peças de reposição?", a: "Sim. Peças de reposição originais e suporte técnico são fornecidos para os sistemas Apex." },
+              { q: "Vocês oferecem suporte técnico remoto?", a: "Sim. Dependendo da natureza do problema, o suporte técnico pode ser fornecido por telefone, videochamada ou, para modelos compatíveis, conexão remota. Se o problema não puder ser resolvido remotamente, uma visita técnica presencial é agendada." },
+              { q: "O equipamento pode ser usado em caso de falha?", a: "Não. Se for detectada uma falha no sistema de pressão, na linha de oxigênio, no sistema da porta, nos sensores, no sistema de alarme ou em outros componentes de segurança, o equipamento não deve ser usado. O sistema não deve ser reiniciado até que a assistência técnica autorizada tenha realizado a inspeção e a aprovação necessárias." }
+            ]
+          },
+          {
+            title: "Pedidos, Preços e Entrega",
+            items: [
+              { q: "Qual é o preço dos sistemas hiperbáricos Apex?", a: "O preço do equipamento varia conforme os seguintes fatores (frete e instalação não estão incluídos neste preço e são cotados como itens separados):", list: ["Modelo", "Capacidade de usuários", "Dimensões da câmara", "Pressão de operação", "Sistema de oxigênio", "Sistema de compressor", "Acabamentos internos", "Recursos digitais", "Personalização", "Pacote de treinamento e serviço"], aAfter: "Por esse motivo, um orçamento personalizado é elaborado para cada projeto após uma análise de necessidades. Os orçamentos obtidos pelo configurador são válidos por apenas 15 dias e são cotados em preços FOB." },
+              { q: "Quais informações são necessárias para receber um orçamento?", a: "Compartilhar as seguintes informações é suficiente para prepararmos um orçamento:", list: ["Seu nome ou o nome da empresa", "País e cidade", "Uso pretendido", "Modelo Apex de interesse", "Capacidade de usuários", "Dimensões da área de instalação", "Recursos desejados", "Data prevista de abertura ou entrega", "Suas informações de contato"], aAfter: "Nossa equipe técnica analisará as informações e entrará em contato com você." },
+              { q: "Qual é o prazo de produção?", a: "O prazo de produção varia conforme o modelo, o volume do pedido e as solicitações de personalização. Dependendo do modelo, começa a partir de 10 semanas.\n\nO cronograma exato de entrega é informado na confirmação do pedido." },
+              { q: "Vocês entregam internacionalmente?", a: "Sim. A entrega internacional pode ser feita para países onde condições logísticas e técnicas adequadas possam ser garantidas. Os seguintes serviços podem ser planejados separadamente como parte do orçamento:", list: ["Frete internacional", "Seguro de carga", "Documentação alfandegária", "Instalação no local", "Comissionamento", "Treinamento de equipe", "Suporte técnico pós-venda"], aAfter: "As licenças de importação e os requisitos de licenciamento local podem variar conforme o país de destino." },
+              { q: "O frete e a instalação estão incluídos no preço?", a: "Os custos de frete e instalação variam conforme o local de instalação, por isso são exibidos como itens separados no orçamento. Isso permite que o cliente veja claramente os custos do equipamento, frete, instalação, treinamento e equipamentos opcionais." },
+              { q: "Quais são as condições de pagamento?", a: "Em nossas condições padrão, um sinal de 50% é cobrado no momento do pedido, com o saldo restante de 50% devido quando o produto estiver pronto para entrega. As condições exatas de pagamento são especificadas no contrato de venda." },
+              { q: "Há opções de financiamento ou leasing?", a: "As opções de financiamento e leasing podem variar conforme o país de venda e as instituições financeiras parceiras. As opções disponíveis são compartilhadas na etapa de orçamento." }
+            ]
+          },
+          {
+            title: "Certificações e Conformidade",
+            items: [
+              { q: "Os equipamentos possuem a marcação CE?", a: "O status da marcação CE é explicado conforme o modelo do produto e o escopo regulatório aplicável. A marcação CE, por si só, não significa que um produto seja um dispositivo médico para todos os usos. A declaração de conformidade deve indicar claramente a regulamentação aplicável, a classe do produto, o uso pretendido e as informações do fabricante." },
+              { q: "Posso consultar os certificados?", a: "Documentos de conformidade, relatórios de teste e documentação técnica podem ser compartilhados mediante solicitação, levando em conta o modelo do produto, o país de destino e o processo comercial." }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  de: {
+    dir: "ltr",
+    meta: {
+      home: { title: "HBOT Chamber Tech | Apex Series Hyperbare Sauerstoffkammern", desc: "IoT-vernetzte, KI-gestützte hyperbare Sauerstoffkammern. Atmen Sie auf dem Gipfel mit der Apex Series." },
+      technology: { title: "Technologie | HBOT Chamber Tech", desc: "ApexConnect, ApexOS, ApexAI, ApexSync und ApexGuard — die vernetzte, intelligente Technologieplattform der Apex Series." },
+      models: { title: "Modelle | HBOT Chamber Tech", desc: "Apex Solo Lounge, Apex Solo, Apex Duo, Apex Quad-Cube und Apex Nexus — fünf Modelle hyperbarer Sauerstoffkammern." },
+      soloLounge: { title: "Apex Solo Lounge | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer für eine Person, konzipiert für die Behandlung in liegender Position." },
+      solo: { title: "Apex Solo | HBOT Chamber Tech", desc: "Eine kompakte, voll ausgestattete hyperbare Sauerstoffkammer für die individuelle Nutzung." },
+      duo: { title: "Apex Duo | HBOT Chamber Tech", desc: "Eine gemeinsam genutzte hyperbare Sauerstofftherapie-Kammer für zwei Personen." },
+      quadCube: { title: "Apex Quad-Cube | HBOT Chamber Tech", desc: "Eine geräumige hyperbare Sauerstoffkammer im Cube-Design für vier Personen." },
+      nexus: { title: "Apex Nexus | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer in Krankenhausqualität mit großer Kapazität für sechs oder mehr Personen." },
+      hbotInfo: { title: "Was ist HBOT? | HBOT Chamber Tech", desc: "Was ist die hyperbare Sauerstofftherapie (HBOT), wofür wird sie eingesetzt und bei welchen Indikationen kommt sie zur Anwendung." },
+      blog: { title: "Blog | HBOT Chamber Tech", desc: "Aktuelle Forschung, Neuigkeiten und Entwicklungen rund um die hyperbare Sauerstofftherapie." },
+      configurator: { title: "Konfigurator | HBOT Chamber Tech", desc: "Konfigurieren Sie Ihre eigene Apex-Kammer: Wählen Sie Modell, Druckstufe und Zusatzausstattung für eine sofortige Preisschätzung." },
+      contact: { title: "Kontakt | HBOT Chamber Tech", desc: "Kontaktieren Sie HBOT Chamber Tech: Adresse, Telefon, E-Mail und Kontaktformular." }
+    },
+    common: {
+      brand: "HBOT Chamber Tech",
+      home_label: "Startseite",
+      notfound: { title: "Seite nicht gefunden", desc: "Die gesuchte Seite wurde möglicherweise verschoben oder entfernt.", button: "Zurück zur Startseite" },
+      whatsapp_message: "Hallo, ich möchte mehr über HBOT Chamber Tech erfahren.",
+      thanks: "Vielen Dank, dass Sie sich für uns entschieden haben.",
+      sticky_cta: "Kostenloses Angebot anfordern",
+      nav: { home: "Startseite", technology: "Technologie", models: "Modelle", hbotInfo: "Was ist HBOT?", blog: "Blog", configurator: "Konfigurator", contact: "Kontakt" },
+      models_menu: {
+        soloLounge: "Apex Solo Lounge",
+        solo: "Apex Solo",
+        duo: "Apex Duo",
+        quadCube: "Apex Quad-Cube",
+        nexus: "Apex Nexus",
+        all_link: "Alle Modelle"
+      },
+      footer: {
+        about_text: "HBOT Chamber Tech ist ein führender Hersteller IoT-vernetzter, KI-gestützter hyperbarer Sauerstoffkammern.",
+        models_title: "Modelle",
+        company_title: "Unternehmen",
+        contact_title: "Kontakt",
+        rights: "Alle Rechte vorbehalten.",
+        membership_note: "ist ein Mitglied der Almita Group."
+      },
+      cta_banner: {
+        title: "Finden Sie mit uns gemeinsam Ihr ideales Apex-Modell",
+        subtitle: "Wählen Sie Modell, Druckstufe und Zusatzausstattung — erhalten Sie sofort eine Preisschätzung.",
+        button: "Konfigurator starten"
+      },
+      faq_teaser: {
+        title: "Haben Sie eine Frage im Kopf?",
+        subtitle: "Durchsuchen Sie die vollständige Liste häufig gestellter Fragen.",
+        cta: "Häufig gestellte Fragen"
+      },
+      view_all: "Alle anzeigen",
+      learn_more: "Mehr erfahren",
+      back_to_models: "Zurück zu allen Modellen",
+      included_badge: "Standardmäßig enthalten",
+      configure_this: "Dieses Modell konfigurieren"
+    },
+    modelPage: {
+      overview_title: "Überblick",
+      specs_title: "Technische Daten",
+      included_title: "Apex-Technologie-Ökosystem",
+      other_models: "Unsere weiteren Modelle"
+    },
+    home: {
+      hero: {
+        eyebrow: "APEX SERIES",
+        title: "Atmen Sie\nauf dem Gipfel",
+        subtitle: "HBOT Chamber Tech ist ein führender Hersteller hyperbarer Sauerstoffkammern und hat sich der Entwicklung erstklassiger, wegweisender Lösungen für Gesundheit und Wohlbefinden verschrieben. Mit Fokus auf Innovation, Sicherheit und exzellentes Design fertigen wir Kammern, die höchsten medizinischen und kommerziellen Standards entsprechen.",
+        cta_primary: "Modelle entdecken",
+        cta_secondary: "Konfigurator starten",
+        trust_line: "Fortschrittliche Ingenieurskunst · Medizinische Sicherheitsstandards"
+      },
+      heritage: {
+        title: "20 Jahre Ingenieurserfahrung",
+        subtitle: "Ingenieurskunst auf höchstem Niveau seit 2006"
+      },
+      stats: [
+        { value: "5", label: "Apex Modelle" },
+        { value: "94%", label: "Sauerstoffreinheit" },
+        { value: "<55dB", label: "ApexSilent™ Geräuschpegel" },
+        { value: "24/7", label: "Fernüberwachung" }
+      ],
+      tech_teaser: {
+        eyebrow: "TECHNOLOGIEPLATTFORM",
+        title: "Ein intelligentes Ökosystem in der Kammer",
+        text: "Die Apex Series verfügt als einzige Serie der Branche über ein serienmäßiges IoT-Kernmodul, basierend auf ApexConnect™, ApexOS™, ApexAI™, ApexSync™ und ApexGuard™.",
+        cta: "Technologie entdecken"
+      },
+      models_teaser: {
+        eyebrow: "APEX SERIES",
+        title: "Unsere Modelle",
+        subtitle: "Von der individuellen Nutzung durch eine Person bis zu Mehrplatz-Kammern im Krankenhausmaßstab — fünf Designs für Ihre Anforderungen.",
+        cta_all: "Alle Modelle entdecken"
+      },
+      why: {
+        eyebrow: "WARUM HBOT CHAMBER TECH",
+        title: "Die einzige vernetzte Kammer auf dem Markt",
+        items: [
+          { title: "Das erste IoT-Kernmodul der Branche", desc: "Mit ApexConnect™ ist jede Kammer rund um die Uhr mit der Cloud verbunden und kann aus der Ferne überwacht werden." },
+          { title: "KI-gestützte Behandlung", desc: "ApexAI™ optimiert Druck und Sauerstofffluss dynamisch auf Basis der Patientendaten." },
+          { title: "Integration in Krankenhaussysteme", desc: "ApexSync™ ist HL7-FHIR- und DICOM-konform und verbindet sich direkt mit Krankenhausinformationssystemen." },
+          { title: "Warnt, bevor ein Ausfall eintritt", desc: "ApexGuard™ informiert Sie durch vorausschauende Wartung, ohne dass Sie auf einen Servicetermin warten müssen." }
+        ]
+      },
+      celebs: {
+        eyebrow: "WER NUTZT ES?",
+        title: "Die Besten der Welt setzen auf hyperbaren Sauerstoff",
+        subtitle: "Namen, über die in der Presse berichtet wurde, dass sie HBOT für Erholung, Leistung und Langlebigkeit nutzen — und wir bauen diese Kammern.",
+        source_label: "Quelle",
+        disclaimer: "Über die hier aufgeführten Personen wurde in Presseberichten berichtet, dass sie HBOT nutzen; sie sind keine Markenbotschafter oder Kunden von HBOT Chamber Tech.",
+        items: [
+          { name: "Cristiano Ronaldo", role: "Fußballspieler", text: "In Berichten wurde erwähnt, dass er zu Hause mit einem eigenen hyperbaren Gerät eine HBOT-Behandlung zur Therapie einer Muskelverletzung durchführt.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "LeBron James", role: "Basketballspieler", text: "In der Netflix-Serie 'Starting 5' wurde er bei einer 60- bis 90-minütigen HBOT-Sitzung gefilmt.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
+          { name: "Novak Djokovic", role: "Tennisspieler", text: "In Sportmedien wurde berichtet, dass er HBOT nutzt, um auf seinem Topniveau zu bleiben.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
+          { name: "Justin Bieber", role: "Sänger", text: "Berichten zufolge schläft er im Rahmen seines Gesundheitsregimes in einer hyperbaren Kammer.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
+          { name: "Tiger Woods", role: "Golfer", text: "Berichten zufolge nutzt er seit 2010 HBOT und hält eine Kammer zu Hause bereit.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
+          { name: "Michael Phelps", role: "Schwimmer", text: "Die Olympia-Legende soll Berichten zufolge in einer hyperbaren Kammer schlafen.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
+          { name: "Madonna", role: "Sängerin", text: "Die Modepresse berichtete über ihre Nutzung sauerstoffbasierter Behandlungen im Rahmen ihres Schönheitsregimes.", source: "https://www.nytimes.com/2006/04/06/fashion/thursdaystyles/does-the-quickfix-oxygen-facial-really-work.html" },
+          { name: "Kendall Jenner", role: "Model", text: "Die Vogue berichtete, dass sie eine hyperbare Kammer in ihrem Wellnessraum bereithält.", source: "https://www.vogue.com/article/what-kendall-jenner-keeps-in-her-wellness-room" },
+          { name: "Tom Brady", role: "NFL-Spieler", text: "In Sportmedien wurde berichtet, dass er HBOT im Rahmen seiner Erholungsroutine nutzt.", source: "https://thesportsrush.com/nfl-news-troy-aikman-and-tom-brady-use-the-same-scientific-practice-for-their-recovery-enhancement/" }
+        ]
+      },
+      indications_teaser: {
+        eyebrow: "ANWENDUNGSFÄLLE",
+        title: "Wann wird HBOT eingesetzt?",
+        text: "Wird als unterstützende Behandlung bei einer Vielzahl von Indikationen eingesetzt — von der Wundheilung bis zum plötzlichen Hörverlust, von der Dekompressionskrankheit bis zur Kohlenmonoxidvergiftung.",
+        cta: "Alle Anwendungsfälle ansehen"
+      },
+      styles_teaser: {
+        eyebrow: "DESIGNOPTIONEN",
+        title: "Wählen Sie Ihren Kammerstil",
+        subtitle: "Jedes Apex-Modell ist in verschiedenen Designoptionen erhältlich, die zu Ihrem Raum und Ihren Vorlieben passen.",
+        items: [
+          { icon: "glass", title: "Panorama-Glasserie", desc: "Ein Design mit breiten Glasflächen für Nutzer, die ein offenes Gefühl und eine visuelle Verbindung nach außen wünschen." },
+          { icon: "solid", title: "Standard-Design mit geschlossenem Korpus", desc: "Ein klares, geschlossenes Korpusdesign, das für Privatsphäre und klinische Schlichtheit bevorzugt wird." },
+          { icon: "premium", title: "Premium-Serie", desc: "Erstklassige Innenausstattung, fortschrittliche Beleuchtung und maßgeschneiderte Details für das hochwertigste Design.", badge: "Premium" }
+        ],
+        note: "Ihre bevorzugte Glasart und Ihren Kammerstil können Sie uns gerne in Ihrer Angebotsanfrage mitteilen."
+      }
+    },
+    technology: {
+      header: { eyebrow: "TECHNOLOGIEPLATTFORM", title: "Das Apex-Technologie-Ökosystem", subtitle: "Nicht nur ein Bedienfeld — ein sich ständig weiterentwickelndes, vernetztes und intelligentes System." },
+      intro: "Jedes Apex-Modell umfasst serienmäßig ApexConnect™, ApexOS™, ApexAI™, ApexSync™ und ApexGuard™. Gemeinsam verwandeln diese fünf Plattformen die Kammer von einem einfachen Behandlungsgerät in ein intelligentes, vernetztes und vorausschauendes System.",
+      pillars: {
+        connect: {
+          title: "ApexConnect™",
+          subtitle: "Dauerhafte Konnektivität, ununterbrochene Sicherheit",
+          desc: "Das erste und einzige serienmäßige IoT-Kernmodul der Branche. Jedes Apex-Modell bleibt über eine durchgehende Internetverbindung mit der HBOT Chamber Tech Cloud verbunden.",
+          features: [
+            "Echtzeit-Fernüberwachung: Ihr Techniker verfolgt Druck-, Sauerstoff-, Temperatur- und Feuchtigkeitsdaten live",
+            "Verwaltung mehrerer Geräte: Steuern Sie mehrere Kammern über ein einziges Dashboard",
+            "Automatische Störungsmeldung: Bei Abweichungen eines Druckventils wird automatisch ein Service-Ticket eröffnet",
+            "Sofortbenachrichtigungen: SMS- und E-Mail-Benachrichtigungen bei kritischen Parametern"
+          ]
+        },
+        os: {
+          title: "ApexOS™",
+          subtitle: "Ein intelligentes Gehirn in der Kammer",
+          desc: "Ein Android-basiertes, per Touchscreen gesteuertes Betriebssystem, das sich stetig weiterentwickelt.",
+          features: [
+            "Fortlaufende Software-Updates (OTA): Neue Protokolle und Sicherheitsupdates werden automatisch heruntergeladen",
+            "Über 50 fertige Behandlungsprotokolle: Verbrennungen, diabetischer Fuß, sportliche Erholung, Anti-Aging, Post-COVID-Rehabilitation",
+            "Mehrsprachige Unterstützung: Neue Sprachen werden mit Software-Updates hinzugefügt",
+            "Benutzerprofile: Ein eigenes Profil für jeden Patienten, vergangene Sitzungen werden automatisch geladen"
+          ]
+        },
+        ai: {
+          title: "ApexAI™",
+          subtitle: "KI-gestützte Behandlungsoptimierung",
+          desc: "Sensoren in der Kammer und Patientendaten werden mit Algorithmen des maschinellen Lernens analysiert.",
+          features: [
+            "Dynamische Druckanpassung: Bei Anzeichen von Unbehagen wird der Druck in Mikroschritten feinjustiert, um den Komfort zu erhalten",
+            "Optimierung der Sauerstoffeffizienz: Der Sauerstofffluss passt sich dem Atemrhythmus an und reduziert Verluste um 30 %",
+            "Sitzungsempfehlungs-Engine: Nach Abschluss eines Protokolls wird ein Bericht zur ärztlichen Freigabe erstellt",
+            "Klaustrophobie-Erkennung: Übermäßige Bewegung löst automatisch das Beleuchtungs- und Kommunikationssystem aus"
+          ]
+        },
+        sync: {
+          title: "ApexSync™",
+          subtitle: "Integration in Krankenhausinformationssysteme mit einem Klick",
+          desc: "HL7-FHIR- und DICOM-konform. Daten landen nach Ende einer Sitzung automatisch in der Patientenakte.",
+          features: [
+            "Direkte Anbindung an Epic, Cerner, Medistat, Logo und lokale KIS-Systeme",
+            "Automatische Berichterstattung: Am Ende jeder Sitzung erreicht ein Bericht den Bildschirm des behandelnden Arztes",
+            "Abrechnungsintegration: Sauerstoffvolumen und Sitzungsdauer werden automatisch an das Abrechnungsmodul übermittelt"
+          ]
+        },
+        guard: {
+          title: "ApexGuard™",
+          subtitle: "Vorausschauende Sicherheit und Wartung",
+          desc: "Warnt nicht erst, wenn etwas ausfällt — sondern sagt es voraus, bevor es passiert.",
+          features: [
+            "Vorausschauende Wartung: Das System warnt Sie, sobald sich das Vibrationsmuster des Kompressormotors verändert",
+            "Digitales Sicherheitsprotokoll: Jede Druckänderung wird verschlüsselt in der Cloud protokolliert",
+            "Verbrauchsmaterial- und Filterlebensdauer-Tracking: Warnt Sie automatisch, wenn basierend auf den Betriebsstunden ein Austausch fällig ist"
+          ]
+        }
+      },
+      extra: {
+        silent: { title: "ApexSilent™", desc: "Betriebsgeräusch unter 55 Dezibel." },
+        care: { title: "ApexCare™", desc: "Ferndiagnose und -behebung, ohne auf einen Servicetermin warten zu müssen." }
+      },
+      comparison: {
+        title: "Warum HBOT Chamber Tech?",
+        subtitle: "Vergleichen Sie die Apex Series mit anderen Kammern auf dem Markt.",
+        col_feature: "Merkmal",
+        col_competitor: "Marktwettbewerber",
+        col_apex: "HBOT Chamber Tech Apex Series",
+        rows: [
+          { feature: "Internetkonnektivität", competitor: "Keine oder optional", apex: "ApexConnect™ — Serienmäßig, rund um die Uhr" },
+          { feature: "OTA-Software-Updates", competitor: "Keine, feste Firmware", apex: "ApexOS™ — Fortlaufend aktualisiert" },
+          { feature: "Fernüberwachung", competitor: "Eingeschränkt oder keine", apex: "ApexConnect™ — Live-Dashboard" },
+          { feature: "KI-Unterstützung", competitor: "Keine", apex: "ApexAI™ — Dynamisches Protokoll" },
+          { feature: "EMR-/KIS-Integration", competitor: "Manuell oder keine", apex: "ApexSync™ — Automatisch, HL7/DICOM" },
+          { feature: "Vorausschauende Wartung", competitor: "Keine, reaktive Wartung", apex: "ApexGuard™ — Warnung vor Ausfall" },
+          { feature: "Automatische Berichterstattung", competitor: "Keine", apex: "ApexSync™ — Bericht am Ende der Sitzung" },
+          { feature: "Ferndiagnose", competitor: "Keine, Servicetermin erforderlich", apex: "ApexCare™ — Fernbehebung" },
+          { feature: "Geräuschpegel", competitor: "60–70 dB", apex: "ApexSilent™ — <55 dB" },
+          { feature: "Digitales Sicherheitsprotokoll", competitor: "Keine", apex: "ApexGuard™ — Verschlüsseltes Cloud-Protokoll" }
+        ]
+      },
+      roadmap: {
+        eyebrow: "ROADMAP",
+        title: "Was kommt als Nächstes?",
+        subtitle: "Funktionen, die derzeit für die ApexConnect™-Plattform entwickelt werden und noch nicht Standard bei aktuellen Apex-Modellen sind.",
+        badge: "In Entwicklung",
+        items: [
+          { icon: "mobileApp", title: "ApexConnect Mobile Monitoring App", desc: "Eine Überwachungs-App, mit der klinisches Personal Kammerdruck, Sauerstoffgehalt und Systemstatus vom Smartphone aus verfolgen kann." },
+          { icon: "healthSync", title: "Synchronisierung mit Gesundheits-Apps", desc: "Synchronisierung von Sitzungsdauer und -verlauf mit Apple Health, Huawei Health und Google Fit." },
+          { icon: "screen", title: "Fest verbautes, immersives Display-Erlebnis", desc: "Ein großes, in der Kammer verbautes Display, das während der Sitzungen beruhigende visuelle Inhalte bietet." }
+        ],
+        disclaimer: "Diese Funktionen befinden sich in der Entwicklung und sind für künftige Modelle geplant; sie sind nicht Standard bei aktuellen Apex-Modellen. Kammerdruck und Sauerstoffgehalt werden stets von qualifiziertem Bedienpersonal gesteuert."
+      },
+      certifications: {
+        eyebrow: "ZERTIFIZIERUNGEN",
+        title: "Normenkonformität",
+        subtitle: "Die Apex Series wird in Übereinstimmung mit internationalen Normen für medizinisches Kammerdesign, Brandschutz und Druckgeräte entwickelt.",
+        items: [
+          { code: "EN 14931", name: "Norm für medizinisches Kammerdesign" },
+          { code: "EN 16081", name: "Brandschutzsystem für medizinische Kammern" },
+          { code: "NFPA 99", name: "US-Norm für Brandschutzsysteme" },
+          { code: "ISO 9001", name: "Norm für Qualitätsmanagement" },
+          { code: "EN 13445 + PED 2014/68/EU", name: "Druckgeräterichtlinie" }
+        ]
+      }
+    },
+    modelsOverview: {
+      header: { eyebrow: "APEX SERIES", title: "Unsere Modelle", subtitle: "Von der individuellen Nutzung durch eine Person bis zu Mehrplatz-Kammern im Krankenhausmaßstab — fünf Designs." },
+      intro: "Jedes Apex-Modell umfasst serienmäßig ApexConnect™, ApexOS™, ApexAI™, ApexSync™ und ApexGuard™. Der Unterschied zwischen den Modellen liegt in Kapazität, Position und Druckbereich.",
+      compareTable: {
+        title: "Modelle vergleichen",
+        subtitle: "Finden Sie schnell heraus, welches Apex-Modell zu Ihnen passt.",
+        col_capacity: "Kapazität",
+        col_position: "Position",
+        col_pressure: "Druckbereich",
+        col_price: "Startpreis",
+        col_noise: "Geräuschpegel",
+        action_label: "Konfigurieren"
+      }
+    },
+    modelShort: {
+      soloLounge: { title: "Apex Solo Lounge", tagline: "1 Person · Liegende Position", desc: "Eine voll ausgestattete Kammer, die speziell für Nutzer entwickelt wurde, die eine Behandlung in liegender Position benötigen." },
+      solo: { title: "Apex Solo", tagline: "1 Person · Sitzende Position", desc: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstofftherapie." },
+      duo: { title: "Apex Duo", tagline: "2 Personen · Sitzende Position", desc: "Eine Zweiplatz-Kammer mit Panoramafenster — für Paare, Partner oder die Nutzung mit Begleitperson." },
+      quadCube: { title: "Apex Quad-Cube", tagline: "4 Personen · Geräumige Kabine", desc: "Eine Premium-Kabine für vier Personen mit geräumigem Cube-Design-Innenraum — gesteppte Lederpolsterung und LED-Ambientebeleuchtung." },
+      nexus: { title: "Apex Nexus", tagline: "6+ Personen · Sitzende Position", desc: "Eine großvolumige Kammer in Krankenhausqualität mit modularer Erweiterung, konzipiert für medizinische Einrichtungen." }
+    },
+    includedItems: [
+      { icon: "connect", title: "ApexConnect™ inklusive", desc: "Internetkonnektivität serienmäßig. Fernüberwachung, Sofortbenachrichtigungen und Cloud-Backup." },
+      { icon: "os", title: "ApexOS™-Updates", desc: "Ihr Gerät erhält jeden Monat neue Funktionen. OTA-Updates halten die Protokolle aktuell." },
+      { icon: "ai", title: "ApexAI™-Optimierung", desc: "KI, die Patientendaten analysiert und Sitzungen dynamisch anpasst." },
+      { icon: "sync", title: "ApexSync™-Integration", desc: "Integration in Krankenhausinformationssysteme mit einem Klick. Automatische Berichterstattung." },
+      { icon: "guard", title: "ApexGuard™-Sicherheit", desc: "Vorausschauende Wartungstechnologie, die Sie warnt, bevor ein Ausfall eintritt." },
+      { icon: "battery", title: "Serienmäßige integrierte Notstromversorgung", desc: "Jedes Modell verfügt serienmäßig über eine integrierte Notstromversorgung zum Schutz vor Stromausfällen." },
+      { icon: "pulseOx", title: "Sauerstoffsättigungsmesser", desc: "Ein Blutsauerstoffsättigungsmonitor ist in jeder Kammer Standard und überwacht die Werte während der gesamten Sitzung." }
+    ],
+    modelSoloLounge: {
+      breadcrumb: "Apex Solo Lounge", eyebrow: "APEX SOLO LOUNGE", title: "Apex Solo Lounge",
+      tagline: "Exzellenz in liegender Position. Zurücklehnen, entspannen, heilen.",
+      overview_text: "Speziell entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen. Das medizinisch-orthopädische Bett und der Korpus aus Flugzeugaluminium sorgen für maximalen Komfort bei langen Sitzungen.",
+      specs: [
+        { label: "Kapazität", value: "1 Person (liegende Position)" },
+        { label: "Druckbereich", value: "1.5 – 2.0 ATA" },
+        { label: "Bett", value: "Medizinisch-orthopädisch, 200×80 cm" },
+        { label: "Material", value: "Flugzeugaluminium" },
+        { label: "Sicherheit", value: "Doppeltes Sicherheitsventil" },
+        { label: "Außenabmessungen", value: "240×110×120 cm" },
+        { label: "Geräuschpegel", value: "<55 dB (ApexSilent™)" }
+      ]
+    },
+    modelSolo: {
+      breadcrumb: "Apex Solo", eyebrow: "APEX SOLO", title: "Apex Solo",
+      tagline: "Der Gipfel Ihrer persönlichen Gesundheit. Nur Sie und Sauerstoff.",
+      overview_text: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstofftherapie. Mit Touchscreen-Steuerung ideal für den Einsatz zu Hause oder in der Klinik.",
+      specs: [
+        { label: "Kapazität", value: "1 Person (sitzend)" },
+        { label: "Druckbereich", value: "1.5 – 2.0 ATA" },
+        { label: "Steuerung", value: "Touchscreen" },
+        { label: "Material", value: "Flugzeugaluminium" },
+        { label: "Sicherheit", value: "Doppeltes Sicherheitsventil" },
+        { label: "Außenabmessungen", value: "120×110×180 cm" },
+        { label: "Geräuschpegel", value: "<55 dB (ApexSilent™)" }
+      ]
+    },
+    modelDuo: {
+      breadcrumb: "Apex Duo", eyebrow: "APEX DUO", title: "Apex Duo",
+      tagline: "Gemeinsam heilen. Eine gemeinsame Behandlungserfahrung für zwei Personen.",
+      overview_text: "Eine Zweiplatz-Kammer für gemeinsame Therapiesitzungen. Konzipiert für Paare, Partner oder die Nutzung mit Begleitperson.",
+      specs: [
+        { label: "Kapazität", value: "2 Personen (sitzend)" },
+        { label: "Druckbereich", value: "1.5 – 2.0 ATA" },
+        { label: "Sauerstoffreinheit", value: "93–95%" },
+        { label: "Sicherheit", value: "Notfallventilsystem" },
+        { label: "Steuerung", value: "Doppeltes Steuerungssystem" },
+        { label: "Fenster", value: "Panorama" }
+      ]
+    },
+    modelQuadCube: {
+      breadcrumb: "Apex Quad-Cube", eyebrow: "APEX QUAD-CUBE", title: "Apex Quad-Cube",
+      tagline: "Ein Premium-Erlebnis für vier Personen in geräumigem Cube-Design.",
+      overview_text: "Eine Premium-Kabine für vier Personen mit geräumigem, würfelförmigem Innenraum. Mit gesteppter Lederpolsterung, LED-Ambientebeleuchtung und unabhängiger Steuereinheit bietet sie komfortable Mehrpersonentherapie für Kliniken und Wellnesszentren.",
+      specs: [
+        { label: "Kapazität", value: "4 Personen (sitzend)" },
+        { label: "Druckbereich", value: "2.5 – 6.0 ATA" },
+        { label: "Sauerstoffreinheit", value: "93–95%" },
+        { label: "Innenausstattung", value: "Gestepptes Leder, LED-Ambiente" },
+        { label: "Sicherheit", value: "Notfallventilsystem" },
+        { label: "Steuerung", value: "Unabhängige Steuereinheit" }
+      ]
+    },
+    modelNexus: {
+      breadcrumb: "Apex Nexus", eyebrow: "APEX NEXUS", title: "Apex Nexus",
+      tagline: "Eine großvolumige Lösung in Krankenhausqualität.",
+      overview_text: "Eine großvolumige Kammer in Krankenhausqualität für medizinische Einrichtungen. Ihr modulares Design und fortschrittliche Überwachungssysteme erfüllen die Anforderungen der am stärksten frequentierten Behandlungszentren.",
+      specs: [
+        { label: "Kapazität", value: "6+ Personen (sitzend)" },
+        { label: "Druckbereich", value: "2.5 – 6.0 ATA" },
+        { label: "Sauerstoffreinheit", value: "93–95%" },
+        { label: "Sicherheit", value: "Notfallventilsystem" },
+        { label: "Bauweise", value: "Krankenhausqualität" },
+        { label: "Erweiterung", value: "Modular erweiterbar" }
+      ]
+    },
+    hbotInfo: {
+      header: { eyebrow: "INFORMATIONSZENTRUM", title: "Was ist HBOT?", subtitle: "Was Sie über die hyperbare Sauerstofftherapie wissen sollten." },
+      whatIsHboc: { title: "Was ist eine hyperbare Sauerstoffkammer (HBOC)?", text: "Hyperbare Sauerstoffkammern sind speziell konzipierte, druckbeaufschlagte Kabinen, in denen Personen reinen Sauerstoff bei höherem als normalem atmosphärischem Druck einatmen können. Diese Kammern werden für die hyperbare Sauerstofftherapie (HBOT) eingesetzt, eine medizinisch anerkannte Behandlung, die die Heilung beschleunigt und das allgemeine Wohlbefinden fördert." },
+      whyNeeded: { title: "Wofür wird eine HBOC benötigt?", text: "HBOC-Kammern bieten eine kontrollierte, druckbeaufschlagte Umgebung, in der Patienten 94 % reinen Sauerstoff einatmen, was eine schnellere Erholung und eine verbesserte zelluläre Regeneration ermöglicht. Diese Kammern kommen weltweit in medizinischen Einrichtungen, Wellnesszentren, Sportkliniken und bei privaten Nutzern zum Einsatz." },
+      whatIsHbot: {
+        title: "Was ist die hyperbare Sauerstofftherapie (HBOT)?",
+        text1: "HBOT ist eine medizinische Behandlung, bei der Patienten in einer druckbeaufschlagten Kammer reinen Sauerstoff bei höherem als normalem atmosphärischem Druck einatmen. Dieser Prozess beschleunigt die Wundheilung, reduziert Entzündungen und fördert die Geweberegeneration.",
+        text2: "Patienten atmen innerhalb dieser Kammern, was der Lunge hilft, Sauerstoff effizienter aufzunehmen und zu binden. HBOT wird auch bei Patienten mit plötzlichem Hör- und Sehverlust, Knocheninfektionen und diabetischen Fußgeschwüren eingesetzt. Je nach Behandlungsart können Patienten während des Verfahrens sitzen oder liegen."
+      },
+      indications: {
+        title: "In welchen Situationen kann HBOT eingesetzt werden?",
+        subtitle: "Die hyperbare Sauerstofftherapie wird als unterstützende Behandlung bei einer Vielzahl medizinischer Indikationen eingesetzt.",
+        items: [
+          { icon: "antiaging", label: "Hautverjüngung (Anti-Aging)" },
+          { icon: "jetlag", label: "Jetlag-Erholung (Reisemüdigkeit)" },
+          { icon: "wound", label: "Wundheilung (diabetisch und nicht-diabetisch)" },
+          { icon: "eye", label: "Plötzlicher Sehverlust" },
+          { icon: "decompression", label: "Dekompressionskrankheit" },
+          { icon: "embolism", label: "Luft- oder Gasembolie" },
+          { icon: "poisoning", label: "Kohlenmonoxid- und Kraftstoffvergiftung" },
+          { icon: "ear", label: "Plötzlicher Hörverlust" },
+          { icon: "bone", label: "Osteonekrose" },
+          { icon: "burn", label: "Thermische Verbrennungen" },
+          { icon: "gangrene", label: "Gasbrand" },
+          { icon: "blood", label: "Starker Blutverlust" },
+          { icon: "brain", label: "Anoxische Enzephalopathie" },
+          { icon: "smoke", label: "Akute Rauchgasvergiftung" }
+        ]
+      },
+      disclaimer: "Diese Informationen dienen ausschließlich der allgemeinen Orientierung und stellen keine medizinische Beratung dar. Behandlungsentscheidungen müssen stets von einer medizinischen Fachkraft beurteilt werden."
+    },
+    configurator: {
+      header: { eyebrow: "KONFIGURATOR", title: "Gestalten Sie Ihre eigene Apex-Kammer", subtitle: "Wählen Sie Modell, Druckstufe und Zusatzausstattung — erhalten Sie sofort eine Preisschätzung." },
+      usage_step_title: "1. Verwendungszweck",
+      usage_step_note: "Hochdruckmodelle werden ausschließlich für institutionelle Nutzung angeboten.",
+      usage: {
+        home: { title: "Heimgebrauch", desc: "Niedrigdruckmodelle für die individuelle Nutzung und Paare (1.5–2.0 ATA)." },
+        institutional: { title: "Institutionell", desc: "Mehrplatz-Modelle mit hoher Kapazität für Kliniken, Wellnesszentren und Krankenhäuser." }
+      },
+      guide: {
+        button: "Welche Kammer sollte ich wählen?",
+        title: "Finden Sie die richtige Kammer für sich",
+        intro: "Wählen Sie die Zeile, die Ihrer Situation am nächsten kommt, und wir stellen automatisch das passende Modell und den passenden Nutzungstyp für Sie ein.",
+        select_button: "Das wähle ich",
+        close: "Schließen",
+        items: [
+          { scenario: "Zu Hause, allein, ich möchte eine Behandlung in liegender Position", model: "Apex Solo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Zu Hause, allein, ich möchte während der Sitzungen sitzen", model: "Apex Solo", modelId: "solo", usage: "home" },
+          { scenario: "Mein Partner und ich werden es gemeinsam zu Hause nutzen", model: "Apex Duo", modelId: "duo", usage: "home" },
+          { scenario: "Klinik oder Wellnesszentrum, institutionelle Nutzung für 2–4 Personen", model: "Apex Duo Plus", modelId: "duo-plus", usage: "institutional" },
+          { scenario: "Institutionelle Nutzung, geräumiger Innenraum gewünscht", model: "Apex Quad-Cube", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "In einem Krankenhaus oder einer Klinik, mehrere Patienten, hoher Druck", model: "Apex Nexus", modelId: "nexus", usage: "institutional" }
+        ]
+      },
+      step1_title: "3. Modell wählen",
+      style_step_title: "2. Kammerstil",
+      style_step_note: "Wählen Sie das Design Ihrer Kammer; der Preis variiert je nach Glasfläche und Innenausstattungsniveau.",
+      color_step_title: "4. Farbe wählen",
+      color_step_note: "Freie Auswahl aus unserer Standardfarbpalette.",
+      interior_step_title: "5. Innenfarbe",
+      interior_step_note: "Die Standard-Innenfarben sind im Preis enthalten.",
+      seat_color_step_title: "6. Sitzfarbe",
+      seat_color_step_note: "Die Farbe der Sitzpolsterung ist im Preis enthalten; Ihre Wahl wird der Zusammenfassung und dem Angebotsformular hinzugefügt.",
+      step2_title: "7. Druckstufe",
+      step3_title: "8. Zusatzausstattung",
+      step4_title: "9. Angebot anfordern",
+      models: [
+        { id: "solo-lounge", name: "Apex Solo Lounge", tagline: "1 Person · Liegende Position" },
+        { id: "solo", name: "Apex Solo", tagline: "1 Person · Sitzende Position" },
+        { id: "duo", name: "Apex Duo", tagline: "2 Personen · Sitzende Position" },
+        { id: "duo-plus", name: "Apex Duo Plus", tagline: "2-4 Personen · Institutionell" },
+        { id: "quad-cube", name: "Apex Quad-Cube", tagline: "4 Personen · Geräumige Kabine" },
+        { id: "nexus", name: "Apex Nexus", tagline: "6+ Personen · Sitzende Position" }
+      ],
+      colors: [
+        { id: "pearl-white", name: "Perlweiß", hex: "#F2F1EC" },
+        { id: "mat-siyah", name: "Mattschwarz", hex: "#16181A" },
+        { id: "antrasit", name: "Anthrazit", hex: "#3A3D42" },
+        { id: "gece-laciverti", name: "Mitternachtsblau", hex: "#1B2A4A" },
+        { id: "bordo", name: "Bordeaux", hex: "#6B2737" },
+        { id: "sampanya", name: "Champagnergold", hex: "#C9A876" },
+        { id: "grafit", name: "Graphitgrau", hex: "#3A3F44" },
+        { id: "bronz", name: "Bronze", hex: "#A5754A" },
+        { id: "zumrut", name: "Smaragdgrün", hex: "#1F6F54" }
+      ],
+      interior_colors: [
+        { id: "cream", name: "Creme", hex: "#E8DCC8" },
+        { id: "anthracite", name: "Anthrazit", hex: "#3A3D42" },
+        { id: "burgundy", name: "Bordeaux", hex: "#6B2737" },
+        { id: "navy", name: "Marineblau", hex: "#1B2A4A" },
+        { id: "konyak", name: "Cognac", hex: "#8A5A2B" },
+        { id: "kum-beji", name: "Sandbeige", hex: "#D9C7A7" }
+      ],
+      seat_colors: [
+        { id: "konyak", name: "Cognac", hex: "#8A5A2B" },
+        { id: "siyah", name: "Schwarz", hex: "#16181A" },
+        { id: "lacivert", name: "Marineblau", hex: "#1B2A4A" },
+        { id: "krem", name: "Creme", hex: "#E8DCC8" },
+        { id: "bordo", name: "Bordeaux", hex: "#6B2737" },
+        { id: "gri", name: "Grau", hex: "#6B6F75" }
+      ],
+      styles: [
+        { id: "solid", icon: "solid", name: "Standard-Design mit geschlossenem Korpus", desc: "Ein klares, geschlossenes Korpusdesign, das für Privatsphäre und klinische Schlichtheit bevorzugt wird." },
+        { id: "glass", icon: "glass", name: "Panorama-Glasserie", desc: "Design mit breiten Glasflächen für ein offenes Gefühl und visuelle Verbindung nach außen." },
+        { id: "premium", icon: "premium", name: "Premium-Serie", desc: "Erstklassige Innenausstattung, fortschrittliche Beleuchtung und individuelle Detaillösungen in unserem Spitzendesign.", badge: "Premium" }
+      ],
+      addons: [
+        { id: "massage", name: "Massagesitz", desc: "Ein beruhigendes Sitzsystem mit Massagefunktion während der Sitzungen." },
+        { id: "leather", name: "Innenausstattung der First Class", desc: "Ein handgefertigtes Upgrade der Innenausstattung in First-Class-Qualität." },
+        { id: "entertainment", name: "Entertainment- und Multimedia-System", desc: "Integrierter Bildschirm, Soundsystem und Inhaltsbibliothek." },
+        { id: "finish", name: "Individuelle Farbe und Oberfläche", desc: "Eine individuelle Außenfarbe passend zu Ihrer Markenidentität." },
+        { id: "warranty", name: "Erweiterte Garantie (+1 Jahr)", desc: "1 zusätzliches Jahr umfassender Abdeckung über die 1-jährige Standardgarantie hinaus." },
+        { id: "playstation", name: "Xbox Series X Spielekonsole", desc: "Eine Xbox Series X Konsole, integriert mit dem Bildschirm und Soundsystem der Kammer, für Unterhaltung während längerer Sitzungen." }
+      ],
+      pressure_note: "Der Druckbereich hängt vom gewählten Modell ab.",
+      pressure_nexus_only: "Nur Nexus",
+      pressure_auto_note: "3.0 und 6.0 ATA sind ausschließlich beim Apex Nexus verfügbar — die Druckstufe wurde auf 2.5 ATA zurückgesetzt.",
+      pressure_auto_note_up: "Der Apex Nexus ist eine medizinische Kammer, die ausschließlich hohen Druck bietet — die Druckstufe wurde auf 3.0 ATA gesetzt.",
+      seat_step_title: "Sitzanzahl",
+      seat_step_note: "Sie können die Sitzanzahl je nach Bedarf erhöhen oder verringern.",
+      seats_label: "Sitze",
+      currency_label: "Währung",
+      summary: {
+        title: "Konfigurationszusammenfassung",
+        model_label: "Modell",
+        seats_label: "Sitzanzahl",
+        style_label: "Kammerstil",
+        color_label: "Farbe",
+        interior_color_label: "Innenfarbe",
+        seat_color_label: "Sitzfarbe",
+        seat_type_label: "Sitztyp",
+        seat_standard: "Standard",
+        seat_massage: "Massage",
+        pressure_label: "Druckstufe",
+        addons_label: "Zusatzausstattung",
+        none_selected: "Keine Auswahl",
+        base_price_label: "Grundpreis",
+        total_label: "Geschätzter Gesamtpreis",
+        disclaimer: "Die Preise sind ungefähre Angaben zu Informationszwecken, verstehen sich FOB und sind nur 15 Tage gültig. Bitte füllen Sie das Formular für ein verbindliches Angebot aus.",
+        cta: "Angebot mit dieser Konfiguration anfordern",
+        print_button: "Drucken / Als PDF speichern",
+        share_button: "Konfigurationslink kopieren",
+        share_copied: "Link kopiert!",
+        discount_label: "Rabatt",
+        ref_badge: "Empfehlungsrabatt angewendet",
+        refer_button: "Freund empfehlen",
+        refer_copied: "Empfehlungslink kopiert!",
+        email_button: "Angebot per E-Mail senden",
+        pdf_title: "Konfigurationsangebot",
+        pdf_quote_no: "Angebotsnummer",
+        pdf_date: "Datum",
+        pdf_customer_section: "KUNDENINFORMATIONEN",
+        pdf_configuration_section: "KONFIGURATIONSDETAILS"
+      },
+      stage: {
+        view_exterior: "Außenansicht",
+        view_interior: "Innenansicht",
+        spin_hint: "↔ Ziehen, um 360° zu drehen"
+      },
+      quote_form: {
+        title: "Angebot anfordern",
+        name: "Vollständiger Name",
+        email: "E-Mail",
+        phone: "Telefon",
+        company: "Einrichtung / Klinikname (optional)",
+        message: "Zusätzliche Anmerkungen",
+        submit: "Angebotsanfrage senden",
+        sending: "Wird gesendet...",
+        success: "Vielen Dank! Ihre Konfiguration und Anfrage sind bei uns eingegangen — wir melden uns in Kürze bei Ihnen.",
+        error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an."
+      }
+    },
+    blog: {
+      header: { eyebrow: "BLOG", title: "Forschung & Neuigkeiten", subtitle: "Aktuelle wissenschaftliche Entwicklungen und Neuigkeiten zur hyperbaren Sauerstofftherapie." },
+      source_label: "Quelle:",
+      min_read: "Min. Lesezeit",
+      disclaimer: "Diese Beiträge sind Zusammenfassungen aus öffentlich zugänglichen wissenschaftlichen Publikationen und Nachrichtenquellen; sie stellen keine medizinische Beratung dar. Konsultieren Sie für Behandlungsentscheidungen stets eine medizinische Fachkraft.",
+      posts: [
+        {
+          date: "2024",
+          tag: "Vom Gründer",
+          icon: "care",
+          title: "Warum ich selbst hyperbaren Sauerstoff nutze",
+          paragraphs: [
+            "Unter dem Dach der Almita Group betreiben wir sechs verschiedene Branchen parallel, und ein anspruchsvoller Terminkalender mit ständigen Reisen gehört dazu. Bevor wir mit der Fertigung der HBOT Chamber Tech Kammern begannen, entschied ich mich, unsere eigenen Geräte regelmäßig zu nutzen — ich bin der Meinung, dass man ein Produkt selbst ausprobieren sollte, bevor man dafür einsteht.",
+            "Ich kann sagen, dass ich mich nach den Sitzungen im Allgemeinen energiegeladener und fokussierter fühle; dies ist eine persönliche Beobachtung, kein Versprechen auf dasselbe Ergebnis für jeden. Die hyperbare Sauerstofftherapie ersetzt keine medizinische Behandlung; besprechen Sie Ihre eigene Anwendung stets mit einer medizinischen Fachkraft."
+          ],
+          source_name: "Almita Group — Founder's Note",
+          source_url: "https://almitagroup.com",
+          author: "Mürsel Alkan"
+        },
+        {
+          date: "2024",
+          tag: "Langlebigkeit",
+          icon: "antiaging",
+          title: "HBOT und Langlebigkeit: Der wachsende Trend zu gesundem Altern",
+          paragraphs: [
+            "Die Longevity-Bewegung — durch Technologie-Unternehmer wie Bryan Johnson und ihre persönlichen 'Alterungsumkehr'-Protokolle in den Mainstream gebracht — hat auch das Interesse an der hyperbaren Sauerstofftherapie verstärkt. Einer ihrer wissenschaftlichen Ankerpunkte ist eine klinische Studie, die 2020 in der Fachzeitschrift Aging veröffentlicht wurde und in der 35 gesunde Erwachsene ab 64 Jahren ein 60-sitziges HBOT-Programm absolvierten.",
+            "Die Studie berichtete von einer Telomerverlängerung von über 20 % in Immunzellen — bis zu 37 % in B-Zellen — sowie einer Reduktion seneszenter Immunzellen um bis zu 37 %. Da die Studie weder eine Kontrollgruppe noch eine große Stichprobe hatte, gelten die Ergebnisse als 'vielversprechend, aber vorläufig'; die Forscher betonen, dass größere Studien erforderlich sind, um optimale Protokolle zu definieren."
+          ],
+          source_name: "PMC – HBOT Increases Telomere Length and Decreases Immunosenescence (Aging, 2020)",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
+        },
+        {
+          date: "2023",
+          tag: "Sport",
+          icon: "healthSync",
+          title: "Warum nutzen Spitzensportler hyperbaren Sauerstoff?",
+          paragraphs: [
+            "Weltberühmte Athleten wie Cristiano Ronaldo, LeBron James, Novak Djokovic und Floyd Mayweather wurden in Presseberichten erwähnt, weil sie hyperbare Kammern im Rahmen ihrer Erholungsroutine nutzen. Hinter diesem Interesse stehen sportmedizinische Erkenntnisse, die darauf hindeuten, dass HBOT Ödeme und Entzündungen reduzieren, die Gewebereparatur unterstützen und Athleten helfen kann, schneller ins Training zurückzukehren.",
+            "Zu den in Übersichtsarbeiten zitierten Studien zählen eine Beobachtung von den Olympischen Winterspielen in Nagano, bei der sich 7 Athleten durch kurze Sitzungen bei 1.3 ATA schneller erholten, ein früher klinischer Bericht über eine Reduktion der verletzungsbedingten Ausfalltage um 55 % bei Profifußballern sowie eine Universitätsstudie, die auf eine rund 30 % schnellere Rückkehr nach Knöchelverstauchungen hindeutet. Die Autoren weisen darauf hin, dass die Evidenz größtenteils auf kleinen Stichproben beruht und randomisierte kontrollierte Studien für belastbare Schlussfolgerungen erforderlich sind."
+          ],
+          source_name: "PMC – The Role of Hyperbaric Oxygen Therapy in Sports Medicine (review)",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
+        },
+        {
+          date: "2024",
+          tag: "Ratgeber",
+          icon: "oneSeat",
+          title: "Kaufratgeber für hyperbare Heimkammern",
+          paragraphs: [
+            "Die erste Frage bei der Wahl einer hyperbaren Kammer für den privaten oder häuslichen Gebrauch ist die Kapazität: Einzelkammern (monoplace) bieten einen kompakten Platzbedarf, während Mehrpersonenkammern (multiplace) es ermöglichen, Familienmitglieder oder kleine Gruppen gleichzeitig zu behandeln, und Sitzungen mit Begleitperson erleichtern. Die UHMS, die internationale Fachautorität für hyperbare Medizin, verlangt, dass Druckkammern zugelassene und regelmäßig geprüfte Geräte sind und dass Bedienpersonal speziell geschult ist.",
+            "Die Druckstufe ist das zweite zentrale Thema: Klinische Protokolle werden in der Regel im Bereich von 2.0–2.4 ATA angewendet, während bei Heimsystemen 1.3–2.0 ATA üblich sind — besprechen Sie stets mit einer medizinischen Fachkraft, welche Stufe zu Ihren Zielen passt. Das dritte Thema ist Sicherheit und Komfort: Brandschutzregeln in sauerstoffangereicherten Umgebungen, Notfalldekompression, Geräuschpegel, Innenbeleuchtung und Kommunikationssysteme prägen unmittelbar das tägliche Erlebnis; bestätigen Sie Wartungs- und Garantiebedingungen vor dem Kauf schriftlich."
+          ],
+          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Therapy",
+          source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
+        },
+        {
+          date: "2025",
+          tag: "Forschung",
+          icon: "wound",
+          title: "Die Rolle von hyperbarem Sauerstoff bei chronischen Wunden wächst weiter",
+          paragraphs: [
+            "Aktuelle Übersichtsarbeiten aus der Chirurgie und der Versorgung chronischer Wunden zeigen, dass die hyperbare Sauerstofftherapie (HBOT) den Heilungsprozess unterstützt, indem sie die Gewebesauerstoffversorgung erhöht. Bei diabetischen Fußwunden, venösen Beinulzera, Verbrennungen und strahlenbedingten Gewebeschäden wurde berichtet, dass HBOT die Wundverschlussraten verbessert und das Infektionsrisiko senkt.",
+            "Eine 2025 veröffentlichte Studie ergab, dass HBOT in Kombination mit der Unterdrucktherapie (NPWT) die Heilungsgeschwindigkeit im Vergleich zu NPWT allein deutlich erhöhte. In der rekonstruktiven Chirurgie wird berichtet, dass HBOT das Überleben von Gewebe und Transplantaten unterstützt und die Bildung neuer Blutgefäße fördert."
+          ],
+          source_name: "PMC – Hyperbaric Oxygen Therapy in Surgical Wound Healing and Tissue Salvage",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
+        },
+        {
+          date: "2023",
+          tag: "Sportgesundheit",
+          icon: "burn",
+          title: "Warum Athleten zu hyperbaren Kammern greifen",
+          paragraphs: [
+            "Viele Spitzensportler aus Tennis, Schwimmen, Basketball und Golf entscheiden sich für die hyperbare Sauerstofftherapie als Teil ihrer Erholungsroutine. Sportmedizinische Forschung zeigt, dass HBOT die Heilung beschleunigen, Entzündungen reduzieren und Athleten helfen kann, schneller ins Training zurückzukehren.",
+            "Einige Studien berichteten von geringerem Muskelkater und geringerer Erschöpfung bei Athleten, die HBOT erhielten, wobei sich die Erholungszeiten um bis zu rund 30 % verkürzten. Obwohl das Feld noch größere, kontrollierte klinische Studien benötigt, sind die Ergebnisse für die Gesundheit von Athleten vielversprechend."
+          ],
+          source_name: "Turkish Journal of Sports Medicine",
+          source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
+        },
+        {
+          date: "2024",
+          tag: "Klinische Evidenz",
+          icon: "wound",
+          title: "Metaanalyse zu diabetischen Fußgeschwüren: geringeres Amputationsrisiko",
+          paragraphs: [
+            "Eine Metaanalyse von 14 Studien mit 768 Teilnehmern ergab, dass die hyperbare Sauerstofftherapie einen statistisch signifikanten Nutzen bei der vollständigen Abheilung diabetischer Fußgeschwüre und bei der Reduktion des Risikos einer größeren Amputation bot.",
+            "Eine 2024 veröffentlichte aktuelle systematische Übersichtsarbeit kam zu ähnlichen Schlussfolgerungen: Die Mehrheit der untersuchten Studien beobachtete unter HBOT niedrigere Raten größerer Amputationen, höhere Wundheilungsraten sowie eine Verringerung von Ulkusgröße und -tiefe."
+          ],
+          source_name: "PMC – Efficacy of HBOT for Diabetic Foot Ulcer",
+          source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
+        },
+        {
+          date: "2024",
+          tag: "Klinische Evidenz",
+          icon: "ear",
+          title: "Hyperbarer Sauerstoff bei plötzlichem Hörverlust: Früher Behandlungsbeginn zählt",
+          paragraphs: [
+            "Bei Patienten mit plötzlichem sensorineuralem Hörverlust zielt die hyperbare Sauerstofftherapie darauf ab, die Mikrozirkulation zu verbessern und Entzündungen zu reduzieren, indem der Sauerstoffdruck im Innenohr erhöht wird. Studien zeigen, dass Patienten, die die Behandlung frühzeitig beginnen, insbesondere in Kombination mit einer Kortikosteroidtherapie, tendenziell günstigere Ergebnisse erzielen.",
+            "Obwohl die Forschungsergebnisse keinen vollständigen Konsens über die Wirksamkeit bieten, beobachteten einige Studien bei mehr als der Hälfte der Patienten eine Verbesserung des Hörvermögens. Experten betonen die Notwendigkeit weiterer klinischer Studien, um standardisierte Druck- und Dauerprotokolle festzulegen."
+          ],
+          source_name: "JAMA Otolaryngology–Head & Neck Surgery",
+          source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
+        },
+        {
+          date: "2024",
+          tag: "Technologie",
+          icon: "connect",
+          title: "Das Zeitalter vernetzter Medizingeräte: Fernüberwachung wächst rasant",
+          paragraphs: [
+            "Der globale Markt für Gesundheits-IoT wird heute auf über 86 Milliarden US-Dollar geschätzt. Während sich die Verlagerung von krankenhauszentrierter zu häuslicher Versorgung beschleunigt, betreiben in den USA mittlerweile mehr als 350 Krankenhäuser IoT-gestützte 'Hospital-at-Home'-Programme.",
+            "Studien zeigen, dass IoT-basierte Fernüberwachungssysteme für Patienten die Wiedereinweisungsrate ins Krankenhaus um bis zu 50 % senken können. Die ApexConnect™-Plattform von HBOT Chamber Tech ist genau Teil dieses globalen Trends: Sie verbindet Kammern mit der Cloud für Echtzeitüberwachung und vorausschauende Wartung."
+          ],
+          source_name: "IoT Business News",
+          source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
+        },
+        {
+          date: "2023",
+          tag: "Klinisch",
+          icon: "guard",
+          title: "Druckmanagement in Mehrpersonenkammern: Klinische Betriebsprotokolle",
+          paragraphs: [
+            "Mehrpersonen-Hyperbarkammern sind die Standardwahl für Krankenhäuser und Kliniken, da sie mehrere Patienten gleichzeitig behandeln und es medizinischem Personal ermöglichen, Patienten in die Kammer zu begleiten. Von der UHMS, der internationalen Fachautorität für hyperbare Medizin, veröffentlichte Betriebsrichtlinien empfehlen, die Kompressions- und Dekompressionsraten an den Komfort des Patienten und das Risiko eines Ohrbarotraumas anzupassen, jede Sitzung unter Aufsicht eines zertifizierten Bedieners durchzuführen und Notfall-Evakuierungsszenarien regelmäßig zu üben.",
+            "In der klinischen Praxis wird das Druckprotokoll durch die Behandlungsindikation bestimmt: Übliche Protokolle laufen im Bereich von 2.0–2.4 ATA, während bestimmte spezielle Indikationen höhere Druckwerte erfordern können. Experten betonen, dass die geeignete Druckstufe stets von einem auf hyperbare Medizin spezialisierten Arzt beurteilt werden muss und dass die Kammerhardware zertifiziert sein sollte, um den Zieldruckbereich sicher abzudecken."
+          ],
+          source_name: "UHMS – Undersea & Hyperbaric Medical Society",
+          source_url: "https://www.uhms.org"
+        },
+        {
+          date: "2024",
+          tag: "Sport",
+          icon: "healthSync",
+          title: "Saisonvorbereitung in Sportvereinen: Hyperbare Unterstützungsprogramme",
+          paragraphs: [
+            "Leistungs- und medizinische Teams professioneller Sportvereine setzen zunehmend auf hyperbare Sauerstoffanwendungen, um die Erholung während dicht getakteter Spiel- und Trainingsphasen zu unterstützen. Übersichtsarbeiten in der sportmedizinischen Literatur berichten, dass HBOT dazu beitragen kann, Ödeme und Entzündungen nach Weichteilverletzungen zu reduzieren, und das Potenzial birgt, die Rückkehrzeit eines Athleten ins Training zu verkürzen.",
+            "Im Vereinskontext steht die Planung an oberster Stelle der Prioritäten: Sitzungen sollten in den Trainings- und Spielkalender integriert, gemeinsam mit der spielerspezifischen Belastungssteuerung bewertet und unter Aufsicht des Vereinsarztes durchgeführt werden. Forscher weisen zudem darauf hin, dass ein Großteil der aktuellen Evidenz auf Studien mit kleinen Stichproben beruht und größere kontrollierte Studien erforderlich sind, um Standardprotokolle festzulegen."
+          ],
+          source_name: "Frontiers in Physiology – Sport and Exercise",
+          source_url: "https://www.frontiersin.org/journals/physiology"
+        },
+        {
+          date: "2025",
+          tag: "Wellness",
+          icon: "premium",
+          title: "Ein neuer Trend in Luxushotels: Hyperbare Wellness-Suiten",
+          paragraphs: [
+            "Branchenberichte zur globalen Wellness-Wirtschaft zeigen, dass Wellness-Tourismus eines der am schnellsten wachsenden Segmente ist. Diesem Trend folgend gehen Luxushotels und Resorts über Spa- und Fitnessangebote hinaus und ergänzen das Gästeerlebnis um fortschrittliche Erholungstechnologien wie hyperbare Sauerstoffkammern, Kryotherapie und Rotlichttherapie.",
+            "Branchenbeobachter weisen darauf hin, dass hyperbare Einheiten sich besonders in Premium-Paketen mit den Themen 'Longevity' und 'Performance' hervorheben. Für Hotelbetreiber sind die entscheidenden Themen die Einhaltung von Sicherheitsstandards, der Einsatz geschulten Personals und eine korrekte Gestaltung der Gesundheitsprüfung vor der Nutzung; gästeseitige Anwendungen sollten als allgemeine Wohlbefindensunterstützung angeboten werden, nicht als medizinische Behandlung."
+          ],
+          source_name: "Global Wellness Institute",
+          source_url: "https://globalwellnessinstitute.org"
+        },
+        {
+          date: "2024",
+          tag: "Sicherheit",
+          icon: "care",
+          title: "3.0 ATA und darüber: Medizinische Sicherheitsstandards für Hyperbarie",
+          paragraphs: [
+            "Druckstufen von 3.0 ATA und darüber sind ein Bereich, den die hyperbare Medizin nur in streng regulierten klinischen Umgebungen anwendet. Kammern, die auf diesen Stufen betrieben werden, müssen in Übereinstimmung mit den Vorschriften für Druckbehälter gefertigt werden, die hyperbaren Bestimmungen internationaler Normen wie NFPA 99 für Brandschutz erfüllen und regelmäßigen wiederkehrenden Prüfungen unterzogen werden. Das Management des Brandrisikos in einer sauerstoffangereicherten Atmosphäre ist das kritischste Konstruktionsthema für diese Geräteklasse.",
+            "Die weiteren Glieder der Sicherheitskette sind menschliche Faktoren: ein zertifizierter Hyperbarie-Bediener, eine Patientenbeurteilung vor der Sitzung, ein Notfall-Evakuierungsplan und medizinische Aufsicht. Fachgremien empfehlen, dass Behandlungen der Hochdruckklasse nur in Einrichtungen mit dieser Infrastruktur durchgeführt werden, und raten beschaffenden Organisationen, Druckzertifikate, Prüfberichte und Schulungsprogramme schriftlich vom Hersteller anzufordern."
+          ],
+          source_name: "NFPA – National Fire Protection Association",
+          source_url: "https://www.nfpa.org"
+        }
+      ]
+    },
+    contact: {
+      header: { eyebrow: "KONTAKT", title: "Kontaktieren Sie uns", subtitle: "Füllen Sie das Formular für Ihre Fragen und Angebotsanfragen aus." },
+      address_label: "Adresse",
+      address_value: "Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29, Tuzla / Istanbul, Türkiye",
+      phone_label: "Telefon",
+      phone_value: "0850 888 1679",
+      email_label: "E-Mail",
+      email_value: "info@hbotchambertech.com",
+      hours_label: "Öffnungszeiten",
+      hours_value: "Montag – Freitag, 09:00 – 18:00 Uhr",
+      form_title: "Nachricht senden",
+      form_name: "Vollständiger Name",
+      form_email: "E-Mail",
+      form_message: "Ihre Nachricht",
+      form_submit: "Senden",
+      form_sending: "Wird gesendet...",
+      form_success: "Vielen Dank! Ihre Nachricht ist bei uns eingegangen — wir melden uns in Kürze bei Ihnen.",
+      form_error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.",
+      map_note: "Tuzla, Istanbul",
+      faq: {
+        eyebrow: "HÄUFIG GESTELLTE FRAGEN",
+        title: "Häufige Fragen",
+        subtitle: "Die am häufigsten gestellten Fragen zu Hyperbarsystemen, Apex-Modellen, Installation und Bestellung.",
+        sections: [
+          {
+            title: "Über Hyperbarsysteme",
+            items: [
+              { q: "Was ist eine hyperbare Kammer?", a: "Eine hyperbare Kammer ist ein System, das dem Nutzer eine kontrollierte, druckbeaufschlagte Umgebung oberhalb des normalen atmosphärischen Drucks bietet. Bei Apex-Hyperbarsystemen wird die Kammer kontrolliert unter Druck gesetzt; je nach gewähltem Modell und Systemkonfiguration kann dem Nutzer Sauerstoff über eine spezielle Maske oder geeignete Atemausrüstung zugeführt werden." },
+              { q: "Wie funktioniert ein Hyperbarsystem?", a: "Nachdem der Nutzer die Kammer betreten hat, wird die Tür sicher geschlossen und das System kontrolliert unter Druck gesetzt. Sobald der Zieldruck erreicht ist, wird das Sitzungsprotokoll angewendet. Am Ende der Sitzung wird der Druck schrittweise reduziert, und die Tür wird geöffnet, sobald im Inneren wieder normaler atmosphärischer Druck herrscht.\n\nDruckstufe, Sauerstofffluss und Sitzungsdauer richten sich nach den technischen Daten des Geräts, dem Verwendungszweck und dem anzuwendenden Protokoll." },
+              { q: "Sind eine hyperbare Kammer und ein Sauerstoffkonzentrator dasselbe Gerät?", a: "Nein. Eine hyperbare Kammer schafft eine kontrollierte Druckumgebung. Ein Sauerstoffkonzentrator erzeugt hochkonzentrierten Sauerstoff aus der Umgebungsluft. Je nach Projektanforderungen können diese beiden Systeme gemeinsam eingesetzt werden." },
+              { q: "Können Hyperbarsysteme nur in Krankenhäusern eingesetzt werden?", a: "Die Umgebungen, in denen Hyperbarsysteme eingesetzt werden können, variieren je nach Geräteklassifizierung, Verwendungszweck und den geltenden Vorschriften im Installationsland.\n\nJe nach gewähltem Modell und Konfiguration können Apex-Systeme für folgende Umgebungen ausgelegt werden:", list: ["Krankenhäuser und medizinische Einrichtungen", "Kliniken", "Sport- und Leistungszentren", "Wellness- und Longevity-Zentren", "Hotels und spezielle Gesundheitskonzepte", "Rehabilitationszentren", "Forschungs- und Bildungseinrichtungen", "Privathaushalte"], aAfter: "Für Einrichtungen, die medizinische Leistungen erbringen, müssen die einschlägigen Gesundheitsvorschriften, Zulassungsbedingungen und Anforderungen an qualifiziertes medizinisches Fachpersonal gesondert geprüft werden." }
+            ]
+          },
+          {
+            title: "Apex-Modelle",
+            items: [
+              { q: "Welche Apex-Modelle sind verfügbar?", a: "Die Apex-Produktfamilie wurde für unterschiedliche Nutzerkapazitäten und Einsatzzwecke entwickelt.\n\nApex Solo Lounge — Ein Einzelnutzersystem, entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen.\n\nApex Solo — Ein kompaktes Einzelnutzer-Hyperbarsystem für die Anwendung in sitzender Position. Konzipiert sowohl für den individuellen/häuslichen als auch für den gewerblichen Einsatz.\n\nApex Duo — Ein System mit geräumigem Innenraum, das zwei Nutzer in derselben Sitzung aufnehmen kann.\n\nApex Quad-Cube — Ein würfelförmiges, großvolumiges Hyperbarsystem für 4 Nutzer, entwickelt für Kliniken, Krankenhäuser und professionelle Betreiber.\n\nApex Nexus — Ein institutionelles System in Krankenhausqualität mit großer Kapazität, beginnend bei 6 Nutzern und erweiterbar bis zu 12." },
+              { q: "Für wen eignet sich Apex Solo?", a: "Apex Solo wurde sowohl für den individuellen/häuslichen Einsatz als auch für Betreiber entwickelt, die eine Einzelnutzer-Lösung suchen. Dank seiner kompakten Struktur eignet es sich für den Einsatz in Privathaushalten, Kliniken, Sportzentren, Wellnesszentren und Hotels.\n\nDie genauen Nutzungsbedingungen richten sich nach der Klassifizierung des Produkts und den Vorschriften des Installationslandes." },
+              { q: "Wie viele Personen fasst der Apex Duo?", a: "Der Apex Duo ist so konzipiert, dass er zwei Nutzer in derselben Sitzung aufnehmen kann. Die Sitzstruktur, die Innenausstattung und die Sitzanordnung können je nach bestellter Konfiguration variieren." },
+              { q: "Wie hoch ist die Nutzerkapazität des Mehrpersonen-Apex-Modells?", a: "Die Mehrpersonen-Apex-Modelle beginnen mit dem 4-Personen-Modell Apex Quad-Cube. Beim Apex Nexus in Krankenhausqualität beträgt die Standardkapazität 6 Personen, mit einer optionalen Kapazität von bis zu 12 Personen (in Schritten von 2 Sitzplätzen).\n\nDie genaue Kapazität wird durch folgende Faktoren bestimmt:", list: ["Kammerabmessungen", "Sitzanordnung", "Bewegungsspielraum der Nutzer", "Kapazität des Sauerstoffsystems", "Betriebsprotokoll", "Lokale Sicherheits- und Zulassungsanforderungen"], aAfter: "Jede Option wird nach einer Sicherheitsbewertung und Prüfung der technischen Eignung in das Projekt aufgenommen." },
+              { q: "Wie groß sind die Geräte?", a: "Jedes Apex-Modell hat unterschiedliche Außenabmessungen und nutzbares Innenvolumen. Die folgenden Informationen werden auf den technischen Produktseiten separat angezeigt:", list: ["Außenabmessungen", "Nutzbare Innenabmessungen", "Türöffnung", "Gesamtgewicht", "Nutzerkapazität", "Mindestaufstellfläche", "Zugangsfreiraum für den technischen Service"], aAfter: "Sonderabmessungen können nach einer technischen Bewertung realisiert werden." }
+            ]
+          },
+          {
+            title: "Druck- und Sauerstoffsystem",
+            items: [
+              { q: "Mit welchem Druck arbeiten Apex-Systeme?", a: "Der Betriebsdruck kann je nach Modell und Produktkonfiguration variieren.\n\nIn den technischen Dokumenten wird eindeutig angegeben, ob sich der Messwert auf den Absolutdruck oder den Überdruck bezieht." },
+              { q: "Was ist der Unterschied zwischen bar und ATA?", a: "Bar ist eine Druckeinheit. ATA steht für Atmosphären absolut. Diese beiden Werte sollten nicht gleichgesetzt werden.\n\nAus diesem Grund werden in den technischen Apex-Dokumenten folgende Angaben separat aufgeführt:", list: ["Umgebungsluftdruck", "Überdruck", "Absolutdruck", "ATA-Äquivalent", "Maximal zulässiger Betriebsdruck"] },
+              { q: "Woher kommt der Sauerstoff?", a: "Je nach Installationsprojekt kann ein passend dimensionierter Sauerstoffkonzentrator eingesetzt werden. Die erforderliche Sauerstoffreinheit, Durchflussrate, Druck und der Backup-Bedarf werden vom technischen Team berechnet." },
+              { q: "Ist der Sauerstoffkonzentrator im Gerätepreis enthalten?", a: "Ja." },
+              { q: "Reicht ein Sauerstoffkonzentrator für mehrere Nutzer aus?", a: "Das hängt von der Kapazität des Konzentrators, der erforderlichen Sauerstoffdurchflussrate und der Anzahl der Nutzer ab. Die insgesamt erforderliche Sauerstoffdurchflussrate wird für jedes Projekt separat berechnet." }
+            ]
+          },
+          {
+            title: "Sitzungs- und Nutzungsablauf",
+            items: [
+              { q: "Wie lange dauert eine Sitzung?", a: "Die Sitzungsdauer variiert je nach angewendetem Protokoll. Eine Sitzung besteht in der Regel aus drei Phasen: kontrollierte Druckbeaufschlagung, Anwendung beim Zieldruck und kontrollierte Druckentlastung.\n\nDie Gesamtdauer wird durch den Zieldruck, den Zustand des Nutzers und das Anwendungsprotokoll bestimmt. Bei medizinisch bestimmten Anwendungen muss die Sitzungsdauer von einer qualifizierten medizinischen Fachkraft festgelegt werden." },
+              { q: "Wie lange dauert die Druckbeaufschlagung?", a: "Die Dauer der Druckbeaufschlagung kann je nach gewähltem Zieldruck, Gerätemodell und Nutzerkomfort variieren. Bei Apex-Systemen erfolgen Druckänderungen kontrolliert." },
+              { q: "Ist der Druck während einer Sitzung in den Ohren spürbar?", a: "Bei Druckänderungen kann ähnlich wie beim Fliegen ein Völle- oder Druckgefühl in den Ohren auftreten. Nutzer sollten vor der Sitzung über Techniken zum Druckausgleich informiert werden." },
+              { q: "Kann der Nutzer während einer Sitzung mit der Außenwelt kommunizieren?", a: "Ja." },
+              { q: "Kann der Nutzer während einer Sitzung nach außen sehen?", a: "Apex-Modelle können große Sichtflächen und transparente Oberflächenoptionen zur Steigerung des Nutzerkomforts umfassen. Fenstergröße und -platzierung variieren je nach Modell." },
+              { q: "Kann während einer Sitzung ein Telefon genutzt werden?", a: "In die hyperbare Kammer sollte nur Ausrüstung mitgebracht werden, die vom Hersteller geprüft und ausdrücklich freigegeben wurde. Mobiltelefone, Tablets, Smartwatches, Kopfhörer, mobile Akkus und ähnliche elektronische Geräte dürfen ohne Herstellerfreigabe nicht in die Kammer mitgenommen werden.\n\nIn das Gerät integrierte Bildschirm-, Audio- oder Unterhaltungssysteme dürfen erst nach Abschluss der technischen und sicherheitstechnischen Bewertung genutzt werden." },
+              { q: "Kann der Nutzer die Kammer jederzeit verlassen?", a: "Die Tür einer unter Druck stehenden Kammer kann nicht direkt geöffnet werden. Damit der Nutzer die Kammer verlassen kann, müssen zunächst der Innen- und Außendruck sicher ausgeglichen werden.\n\nUnter normalen Bedingungen wird ein kontrolliertes Druckentlastungsverfahren angewendet. In Notfällen wird das vom Gerät vorgesehene Not-Druckentlastungsverfahren befolgt." }
+            ]
+          },
+          {
+            title: "Sicherheit",
+            items: [
+              { q: "Sind Apex-Hyperbarsysteme sicher?", a: "Ja. Die Sicherheit von Hyperbarsystemen wird durch fachgerechte Konstruktion, korrekte Installation, regelmäßige Wartung, geschultes Personal und die Einhaltung der Nutzungsverfahren gewährleistet.\n\nDas Gerät darf nur gemäß der Bedienungsanleitung betrieben werden, und Sicherheitssysteme dürfen niemals deaktiviert werden." },
+              { q: "Welche Sicherheitssysteme sind in den Geräten enthalten?", a: "Je nach Modell und bestellter Konfiguration können Apex-Systeme folgende Sicherheitsmerkmale umfassen:", list: ["Drucksensoren", "Mechanisches Sicherheitsüberdruckventil", "Automatische Drucksteuerung", "Manuelle Drucksteuerung", "Not-Aus-Taste", "Not-Druckentlastungssystem", "Sauerstoffgehaltsüberwachung", "Sauerstoffsättigungsmonitor (Standard)", "Temperaturüberwachung", "Visuelles und akustisches Alarmsystem", "Kommunikationssystem zwischen Innen- und Außenbereich", "Türsicherheitssystem", "Verfahren bei Stromausfall", "Störungs- und Sitzungsprotokollierungssystem", "Serienmäßige integrierte Notstromquelle"], aAfter: "Die bei jedem Modell enthaltenen Standard- und optionalen Sicherheitssysteme sind im technischen Angebotsdokument separat aufgeführt." },
+              { q: "Was passiert bei einem Stromausfall?", a: "Alle Apex-Modelle verfügen serienmäßig über eine integrierte Notstromquelle zum Schutz vor Stromausfällen. Das im Falle eines Stromausfalls anzuwendende Verfahren kann je nach Gerätemodell variieren.\n\nJe nach Systemkonfiguration können zusätzlich folgende Funktionen angeboten werden:", list: ["Unterbrechungsfreie Stromversorgung", "Manuelle Drucksteuerung", "Kontrollierte Druckentlastung", "Notbeleuchtung", "Bedieneralarmsystem"] },
+              { q: "Kann die Tür im Notfall sofort geöffnet werden?", a: "Bei Druckkammern müssen Innen- und Außendruck ausgeglichen werden, bevor die Tür geöffnet werden kann. Aus diesem Grund kann die Tür nicht auf normalem Weg geöffnet werden, solange die Kammer unter Druck steht.\n\nIm Notfall wird das kontrollierte oder beschleunigte Druckentlastungsverfahren des Systems angewendet. Sicherheitsüberdruckventile und Druckgrenzwerte dürfen zum Schutz der Nutzer nicht überschritten werden." },
+              { q: "Besteht bei Hyperbarsystemen ein Brandrisiko?", a: "In Umgebungen mit hoher Sauerstoffkonzentration kann sich das Brandrisiko erhöhen. Aus diesem Grund unterliegen Sauerstoffmanagement, elektrische Verkabelung, Kontrolle statischer Elektrizität, Kleidungswahl und die in die Kammer mitgebrachten Materialien besonderen Vorschriften.\n\nZigaretten, Feuerzeuge, Streichhölzer, brennbare Produkte und vom Hersteller nicht freigegebene elektronische Geräte dürfen niemals in die Kammer mitgenommen werden." },
+              { q: "Welche Gegenstände sind in der Kammer nicht erlaubt?", a: "Folgende Gegenstände dürfen ohne Herstellerfreigabe nicht in die Kammer mitgenommen werden:", list: ["Zigaretten und E-Zigaretten", "Feuerzeuge und Streichhölzer", "Brennbare oder entzündliche Stoffe", "Alkoholhaltige Produkte", "Öl- und erdölbasierte Kosmetikprodukte", "Aerosolprodukte", "Mobiltelefone", "Tablets und Laptops", "Smartwatches", "Kopfhörer", "Mobile Akkus", "Heizgeräte", "Nicht freigegebene elektrische Geräte", "Versiegelte Verpackungen, die durch Druckänderungen beeinträchtigt werden könnten"] },
+              { q: "Welche Kleidung sollte in der Kammer getragen werden?", a: "Es sollte Kleidung getragen werden, die dem Sicherheitsverfahren des Bedieners und der Bedienungsanleitung des Geräts entspricht. Kleidung und Accessoires, die ein Risiko durch statische Elektrizität oder Entflammbarkeit darstellen können, dürfen nicht verwendet werden." }
+            ]
+          },
+          {
+            title: "Eignung der Nutzer",
+            items: [
+              { q: "Kann jeder ein Hyperbarsystem nutzen?", a: "Nein. Eine hyperbare Umgebung ist möglicherweise nicht für jeden Nutzer geeignet. Vor der Nutzung müssen der Gesundheitszustand der Person, bestehende Erkrankungen, Medikamente und Implantate beurteilt werden.\n\nBei medizinisch bestimmten Anwendungen muss die Eignungsentscheidung von einer qualifizierten medizinischen Fachkraft getroffen werden." },
+              { q: "Ist vor der Nutzung eine medizinische Untersuchung erforderlich?", a: "Bei medizinisch bestimmten Hyperbaranwendungen muss der Nutzer von einer qualifizierten medizinischen Fachkraft untersucht werden.\n\nBei Wellness- oder leistungsorientierten Anwendungen wird ebenfalls empfohlen, vom Nutzer eine Gesundheitserklärung einzuholen und mögliche Risikofaktoren im Voraus zu prüfen." },
+              { q: "Welche gesundheitlichen Beschwerden sollten im Voraus mitgeteilt werden?", a: "Nutzer sollten dem Betreiberpersonal und der medizinischen Fachkraft vor der Sitzung folgende Beschwerden mitteilen:", list: ["Ohren- oder Nasennebenhöhlenprobleme", "Erkältung oder Fieber", "Lungenerkrankungen", "Frühere Operationen", "Herz- oder Kreislauferkrankungen", "Vorgeschichte von Krampfanfällen", "Klaustrophobie", "Schwangerschaft", "Eingenommene Medikamente", "Herzschrittmacher oder Implantate", "Kürzliche Tauchaktivität", "Frühere druckbedingte Beschwerden"], aAfter: "Diese Liste ersetzt keine medizinische Untersuchung." },
+              { q: "Können schwangere Personen ein Hyperbarsystem nutzen?", a: "Die Entscheidung zur Nutzung während der Schwangerschaft darf ausschließlich von einem qualifizierten Arzt getroffen werden. Nutzungsentscheidungen sollten nicht auf allgemeinen Informationen basieren." },
+              { q: "Können Kinder ein Hyperbarsystem nutzen?", a: "Die Nutzung durch Kinder sollte anhand von Alter, Gesundheitszustand, Nutzungszweck, Geräteeigenschaften und Begleitbedingungen beurteilt werden. Bei medizinisch bestimmten Anwendungen sind eine ärztliche Freigabe und die Aufsicht durch geeignetes medizinisches Fachpersonal erforderlich." },
+              { q: "Können Personen mit Herzschrittmacher oder Implantat das System nutzen?", a: "Die Eignung des Implantats für eine druckbeaufschlagte, sauerstoffangereicherte Umgebung muss bestätigt werden. Eine Nutzungsentscheidung darf nicht ohne die technischen Angaben des Implantatherstellers und die Beurteilung durch eine qualifizierte medizinische Fachkraft getroffen werden." },
+              { q: "Kann das System bei Erkältung oder Ohrenschmerzen genutzt werden?", a: "Eine Erkältung, verstopfte Nase, Nasennebenhöhlenprobleme oder Ohrenschmerzen können den Druckausgleich erschweren. Solche Beschwerden müssen vor der Sitzung stets mitgeteilt werden.\n\nDie Entscheidung, ob die Nutzung verschoben werden sollte, sollte von einer qualifizierten medizinischen Fachkraft oder verantwortlichem Personal getroffen werden." }
+            ]
+          },
+          {
+            title: "Medizinische Nutzung und Gesundheitsaussagen",
+            items: [
+              { q: "Zur Behandlung welcher Erkrankungen wird ein Hyperbarsystem eingesetzt?", a: "Die anerkannten medizinischen Anwendungen der hyperbaren Sauerstoffanwendung können je nach Land, Aufsichtsbehörde, Geräteklassifizierung und klinischem Protokoll variieren.\n\nMedizinisch bestimmte Anwendungen sollten nur mit entsprechend klassifizierten Geräten, in zugelassenen medizinischen Einrichtungen, unter Aufsicht geschulten medizinischen Fachpersonals, mit ärztlicher Beurteilung und nach einem geeigneten Protokoll durchgeführt werden.\n\nDie Informationen auf unserer Website stellen keine persönliche Beratung zur Diagnose oder Behandlung einer Erkrankung dar." },
+              { q: "Behandeln Apex-Geräte irgendeine Krankheit?", a: "Der Verwendungszweck eines Geräts und die dazu zulässigen Gesundheitsaussagen richten sich nach der offiziellen Klassifizierung des Produkts und der vorliegenden Dokumentation.\n\nAussagen zu Apex-Systemen erfolgen ausschließlich im Rahmen des in den technischen Dokumenten und der Konformitätsbewertung festgelegten Verwendungszwecks. Für keine Erkrankung wird ein garantiertes Ergebnis angeboten." },
+              { q: "Sind Niedrigdrucksysteme mit klinischem HBOT gleichzusetzen?", a: "Nein. Nicht jede druckbeaufschlagte Sauerstoffanwendung gehört derselben technischen oder klinischen Klasse an. Folgende Faktoren können die Art der Anwendung verändern:", list: ["Betriebsdruck", "Konzentration des eingeatmeten Sauerstoffs", "Methode der Sauerstoffzufuhr", "Sitzungsdauer", "Gerätezertifizierung", "Verwendungszweck", "Anwendungsumgebung", "Aufsicht durch medizinisches Fachpersonal"], aAfter: "Ob ein System als \"medizinisches Gerät zur hyperbaren Sauerstofftherapie\" definiert werden kann, hängt von den Vorschriften des jeweiligen Marktes und dem dokumentierten Verwendungszweck des Produkts ab." },
+              { q: "Werden Ergebnisse garantiert?", a: "Die Reaktion der Nutzer kann von Person zu Person unterschiedlich ausfallen. Gesundheits-, Erholungs-, Leistungs- oder ähnliche Ergebnisse können nicht garantiert werden.\n\nNutzungsentscheidungen sollten nicht allein auf allgemeinen Werbeinformationen oder Erfahrungsberichten von Nutzern basieren." }
+            ]
+          },
+          {
+            title: "Installation",
+            items: [
+              { q: "Wie viel Platz wird für die Installation benötigt?", a: "Der benötigte Platz variiert je nach gewähltem Apex-Modell. Bei der Festlegung der Installationsfläche sollten neben den Geräteabmessungen folgende Faktoren berücksichtigt werden:", list: ["Arbeitsbereich des Bedieners", "Voller Freiraum für die Türöffnung", "Zugang für den technischen Service", "Bereich für Kompressor und Zusatzausrüstung", "Bereich für das Sauerstoffsystem", "Belüftung", "Elektroverteiler", "Notausgangsweg", "Brandschutzausrüstung"], aAfter: "Die Mindestinstallationsabmessungen werden nach einer technischen Begehung festgelegt." },
+              { q: "Kann das Gerät in einem bestehenden Gebäude installiert werden?", a: "Die meisten Projekte lassen sich in bestehenden Gebäuden umsetzen; vor der Installation muss jedoch eine technische Prüfung durchgeführt werden. Dabei werden folgende Punkte geprüft:", list: ["Tragfähigkeit des Bodens", "Tür- und Flurbreiten", "Aufzugskapazität", "Deckenhöhe", "Elektrische Infrastruktur", "Belüftung", "Sauerstoff- und Druckluftinfrastruktur", "Brandschutz", "Zugang für den technischen Service"] },
+              { q: "Führen Sie vor der Installation eine Standortbegehung durch?", a: "Ja. Je nach Standort und Umfang des Projekts kann eine technische Fernbewertung oder eine Vor-Ort-Begehung durchgeführt werden. Für die erste Bewertung können vom Kunden folgende Informationen angefordert werden:", list: ["Abmessungen der Installationsfläche", "Fotos und Videos", "Architekturplan", "Elektrische Infrastruktur", "Angaben zur Belüftung", "Zugangs- und Transportweg", "Angestrebte Nutzerkapazität", "Gewünschtes Modell und gewünschte Optionen"], aAfter: "Unser technisches Team prüft die Informationen und setzt sich mit Ihnen in Verbindung." },
+              { q: "Ist eine Bodenverstärkung erforderlich?", a: "Das hängt vom Gewicht des Geräts, der Zusatzausrüstung und der Tragfähigkeit des Gebäudes ab. Falls erforderlich, muss eine statische Bewertung von einem qualifizierten Bau- oder Statikingenieur durchgeführt werden." },
+              { q: "Kann das Gerät versetzt werden?", a: "Einige Apex-Modelle können in modularer Bauweise gefertigt werden. Demontage, Transport und Wiederinstallation dürfen jedoch ausschließlich von einem autorisierten technischen Team durchgeführt werden.\n\nNach dem Versetzen muss das System erneut geprüft werden und darf erst genutzt werden, nachdem die erforderlichen Tests abgeschlossen wurden." },
+              { q: "Wie lange dauert die Installation?", a: "Die Installationsdauer variiert je nach folgenden Faktoren: Modell, Geräteabmessungen, Installationsort, Gebäudeinfrastruktur, Zusatzsysteme, Individualisierungsoptionen sowie der Test- und Schulungsprozess.\n\nDer voraussichtliche Installationszeitplan wird im Projektangebot angegeben." }
+            ]
+          },
+          {
+            title: "Schulung und Betrieb",
+            items: [
+              { q: "Bieten Sie eine Personalschulung an?", a: "Ja. Nach der Installation wird autorisiertes Personal in der sicheren und korrekten Nutzung des Geräts geschult. Je nach Modell kann der Schulungsumfang Folgendes beinhalten:", list: ["Starten und Herunterfahren des Systems", "Druckbeaufschlagung und -entlastung", "Vorbereitung der Nutzer", "Einweisung in den Druckausgleich", "Nutzung des Sauerstoffsystems", "In der Kammer verbotene Gegenstände", "Tägliche Sicherheitsprüfungen", "Alarm- und Störungszustände", "Notfallverfahren", "Reinigung und Hygiene", "Führung von Wartungsaufzeichnungen"] },
+              { q: "Wie viel Personal wird für den Betrieb des Geräts benötigt?", a: "Die erforderliche Personalzahl variiert je nach Modell, Nutzerkapazität, Art des Betriebs und lokalen Vorschriften.\n\nBei Mehrpersonen- und medizinisch bestimmten Systemen kann zusätzliches Gesundheits- und Sicherheitspersonal erforderlich sein. Der Personalbedarf wird in der Projektphase festgelegt." },
+              { q: "Können Nutzungsaufzeichnungen geführt werden?", a: "Je nach gewähltem Steuerungssystem und Softwarefunktionen können folgende Aufzeichnungen geführt werden:", list: ["Datum und Uhrzeit der Sitzung", "Sitzungsdauer", "Druckwerte", "Druckverlaufsgrafik", "Alarmaufzeichnungen", "Bedienerinformationen", "Wartungshistorie", "Betriebsstunden des Systems"], aAfter: "Werden personenbezogene Gesundheitsdaten erfasst, müssen die einschlägigen Datenschutzvorschriften eingehalten werden." },
+              { q: "Ist eine Betriebslizenz erforderlich?", a: "Lizenz- und Genehmigungsanforderungen variieren je nach Land, Stadt, Einrichtungsart, Geräteklassifizierung und Verwendungszweck. Für Einrichtungen, die medizinische Leistungen erbringen, müssen folgende Vorschriften separat geprüft werden:", list: ["Zulassung der Gesundheitseinrichtung", "Medizinprodukterecht", "Druckgerätevorschriften", "Brandschutz", "Arbeitsschutz", "Vorschriften zur Sauerstofflagerung", "Qualifikation des Personals", "Elektro- und Bauvorschriften"], aAfter: "Der Betreiber muss die erforderlichen Genehmigungen vor Betriebsaufnahme von den zuständigen örtlichen Behörden einholen." }
+            ]
+          },
+          {
+            title: "Reinigung und Hygiene",
+            items: [
+              { q: "Wie wird die hyperbare Kammer gereinigt?", a: "Die Kammer, Sitze, Kontaktflächen und Nutzerausrüstung dürfen nur mit vom Hersteller freigegebenen Reinigungsmitteln gereinigt werden. Brennbare, ölhaltige, stark alkoholhaltige Produkte oder Produkte, die die Materialien des Geräts beschädigen könnten, dürfen nicht verwendet werden." },
+              { q: "Sollte nach jedem Nutzer gereinigt werden?", a: "Oberflächen und Ausrüstung, die mit dem Nutzer in Kontakt kommen, sollten nach jeder Sitzung gemäß dem Hygieneprotokoll des Betreibers gereinigt werden. Masken, Kopfbedeckungen und Atemausrüstung sollten gemäß den Herstellerangaben gereinigt, desinfiziert oder ausgetauscht werden." },
+              { q: "Sind Sauerstoffmasken für jeden Nutzer persönlich?", a: "Je nach Projekt und Präferenz des Betreibers können persönliche, Einweg- oder desinfizierbare Maskenoptionen verwendet werden. Reinigung und Austauschintervalle der Masken sollten den Herstellerangaben entsprechen." },
+              { q: "Wie oft werden Filter ausgetauscht?", a: "Das Austauschintervall der Filter variiert je nach Filtertyp, Betriebsstunden, Umgebungsbedingungen und Nutzungsintensität. Wartung und Austauschintervalle der Filter sind im Wartungsplan des Geräts festgelegt." }
+            ]
+          },
+          {
+            title: "Wartung, Garantie und technischer Service",
+            items: [
+              { q: "Wie oft wird das Gerät gewartet?", a: "Die regelmäßige Wartung erfolgt alle 6 Monate. Darüber hinaus besteht das Wartungsprogramm im Allgemeinen aus drei Ebenen: tägliche Nutzerprüfungen, halbjährliche Wartung sowie eine jährliche oder vom Hersteller festgelegte umfassende technische Inspektion.\n\nDie genauen Wartungsintervalle sind in der Bedienungsanleitung des Geräts festgelegt." },
+              { q: "Welche Teile werden bei der regelmäßigen Wartung geprüft?", a: "Je nach Modell können bei der Wartung folgende Komponenten geprüft werden:", list: ["Drucksystem", "Sicherheitsüberdruckventile", "Tür- und Verriegelungssystem", "Dichtungen", "Drucksensoren", "Sauerstoffsystem", "Luftkompressor", "Filter", "Elektrisches System", "Bedienfeld", "Alarmsysteme", "Kommunikationssystem zwischen Innen- und Außenbereich", "Belüftung", "Software- und Protokollierungssystem"] },
+              { q: "Ist eine tägliche Prüfung erforderlich?", a: "Ja. Vor jedem Betriebstag muss eine grundlegende Sicherheitsprüfung durch den Nutzer oder Betreiber durchgeführt werden. Es wird empfohlen, die Prüfergebnisse zusammen mit Datum und Bedienerinformationen zu protokollieren." },
+              { q: "Wie lange gilt die Garantie?", a: "Die Standardgarantiezeit für Apex-Hyperbarsysteme beträgt im Einklang mit internationalen Vorschriften 1 Jahr. Über den Konfigurator kann eine optionale, um +1 Jahr erweiterte Garantie die Gesamtlaufzeit auf 2 Jahre erhöhen.\n\nDer Garantieumfang kann für die Hauptkammer, mechanische Teile, elektronische Komponenten, den Kompressor, das Sauerstoffsystem und Verbrauchsmaterialien variieren. Die genauen Bedingungen sind im Kaufvertrag festgelegt." },
+              { q: "Welche Teile sind nicht von der Garantie abgedeckt?", a: "Verschleißteile, Filter, Masken und Dichtungen, die durch normale Nutzung verschleißen, sowie Schäden infolge unsachgemäßer Nutzung, sind möglicherweise nicht von der Garantie abgedeckt. Der genaue Umfang ist im Garantiedokument beschrieben." },
+              { q: "Bieten Sie Ersatzteilunterstützung an?", a: "Ja. Für Apex-Systeme werden Originalersatzteile und technische Serviceunterstützung bereitgestellt." },
+              { q: "Bieten Sie technischen Fernsupport an?", a: "Ja. Je nach Art des Problems kann technischer Support per Telefon, Videoanruf oder, bei geeigneten Modellen, per Fernzugriff bereitgestellt werden. Kann das Problem nicht aus der Ferne gelöst werden, wird ein Vor-Ort-Servicetermin vereinbart." },
+              { q: "Kann das Gerät bei einer Störung weiter genutzt werden?", a: "Nein. Wird eine Störung im Drucksystem, in der Sauerstoffleitung, im Türsystem, an den Sensoren, im Alarmsystem oder an anderen Sicherheitskomponenten festgestellt, darf das Gerät nicht genutzt werden. Das System darf erst wieder in Betrieb genommen werden, nachdem der autorisierte technische Service die erforderliche Prüfung und Freigabe durchgeführt hat." }
+            ]
+          },
+          {
+            title: "Bestellung, Preise und Lieferung",
+            items: [
+              { q: "Was kosten Apex-Hyperbarsysteme?", a: "Der Gerätepreis variiert je nach folgenden Faktoren (Versand und Installation sind in diesem Preis nicht enthalten und werden als separate Posten angeboten):", list: ["Modell", "Nutzerkapazität", "Kammerabmessungen", "Betriebsdruck", "Sauerstoffsystem", "Kompressorsystem", "Innenausstattung", "Digitale Funktionen", "Individualisierung", "Schulungs- und Servicepaket"], aAfter: "Aus diesem Grund wird für jedes Projekt nach einer Bedarfsanalyse ein individuelles Angebot erstellt. Über den Konfigurator erstellte Preisangebote sind nur 15 Tage gültig und verstehen sich als FOB-Preise." },
+              { q: "Welche Informationen werden für ein Angebot benötigt?", a: "Für die Erstellung eines Angebots genügt es, uns folgende Informationen mitzuteilen:", list: ["Ihr Name oder Firmenname", "Land und Stadt", "Verwendungszweck", "Das Apex-Modell, für das Sie sich interessieren", "Nutzerkapazität", "Abmessungen der Installationsfläche", "Gewünschte Funktionen", "Geplantes Eröffnungs- oder Lieferdatum", "Ihre Kontaktdaten"], aAfter: "Unser technisches Team prüft die Informationen und setzt sich mit Ihnen in Verbindung." },
+              { q: "Wie lange dauert die Produktion?", a: "Die Produktionszeit variiert je nach Modell, Bestellvolumen und Individualisierungswünschen. Je nach Modell beträgt sie mindestens 10 Wochen.\n\nDer genaue Lieferzeitplan wird mit der Auftragsbestätigung mitgeteilt." },
+              { q: "Liefern Sie international?", a: "Ja. Internationale Lieferungen sind in Länder möglich, in denen geeignete logistische und technische Voraussetzungen gegeben sind. Folgende Leistungen können separat im Rahmen des Angebots geplant werden:", list: ["Internationaler Versand", "Frachtversicherung", "Zolldokumentation", "Installation vor Ort", "Inbetriebnahme", "Personalschulung", "Technischer Support nach dem Verkauf"], aAfter: "Einfuhrgenehmigungen und lokale Zulassungsanforderungen können je nach Zielland variieren." },
+              { q: "Sind Versand und Installation im Preis enthalten?", a: "Die Kosten für Versand und Installation variieren je nach Installationsort und werden daher im Angebot als separate Posten ausgewiesen. So kann der Kunde die Kosten für Gerät, Versand, Installation, Schulung und optionale Ausrüstung klar erkennen." },
+              { q: "Wie sind die Zahlungsbedingungen?", a: "Nach unseren Standardbedingungen wird bei Bestellung eine Anzahlung von 50 % erhoben, der restliche Betrag von 50 % ist fällig, sobald das Produkt versandbereit ist. Die genauen Zahlungsbedingungen sind im Kaufvertrag festgelegt." },
+              { q: "Sind Finanzierung oder Leasing verfügbar?", a: "Finanzierungs- und Leasingoptionen können je nach Verkaufsland und Partnerfinanzinstitut variieren. Verfügbare Optionen werden in der Angebotsphase mitgeteilt." }
+            ]
+          },
+          {
+            title: "Zertifizierungen und Konformität",
+            items: [
+              { q: "Tragen die Geräte die CE-Kennzeichnung?", a: "Der CE-Status wird je nach Produktmodell und geltendem Regelungsbereich erläutert. Die CE-Kennzeichnung allein bedeutet nicht, dass ein Produkt für alle Anwendungen ein Medizinprodukt ist. Die Konformitätserklärung muss eindeutig die anwendbare Vorschrift, Produktklasse, den Verwendungszweck und die Herstellerangaben nennen." },
+              { q: "Kann ich die Zertifikate einsehen?", a: "Konformitätsdokumente, Prüfberichte und technische Unterlagen können unter Berücksichtigung von Produktmodell, Zielland und Geschäftsprozess auf Anfrage zur Verfügung gestellt werden." }
             ]
           }
         ]
