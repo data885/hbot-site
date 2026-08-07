@@ -11,6 +11,7 @@
 <meta property="og:description" content="Kendi Apex kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." />
 <meta property="og:image" content="https://hbotchambertech.com/assets/img/models/real/apex-lounge-real.webp" />
 <meta property="og:url" content="https://hbotchambertech.com/konfigurator.html" />
+<link rel="canonical" href="https://hbotchambertech.com/konfigurator.html" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Konfigüratör | HBOT Chamber Tech" />
 <meta name="twitter:description" content="Kendi Apex kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." />
@@ -20,7 +21,10 @@
 <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
 <meta name="theme-color" content="#0a0f14" />
-<link rel="stylesheet" href="assets/css/style.css?v=35" />
+<link rel="stylesheet" href="assets/css/style.css?v=36" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"HBOT Chamber Tech","url":"https://hbotchambertech.com","logo":"https://hbotchambertech.com/assets/img/logo-header.png","description":"IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları üreticisi. Apex Serisi.","email":"info@hbotchambertech.com","telephone":"+90 850 888 1679","address":{"@type":"PostalAddress","streetAddress":"Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29","addressLocality":"Tuzla / İstanbul","addressCountry":"TR"},"sameAs":["https://almitagroup.com"],"parentOrganization":{"@type":"Organization","name":"Almita Group","url":"https://almitagroup.com"}}
+</script>
 </head>
 <body data-page="configurator">
 
@@ -78,7 +82,7 @@
       </div>
       <span class="eyebrow" data-i18n="configurator.header.eyebrow">KONFİGÜRATÖR</span>
       <h1 data-i18n="configurator.header.title">Kendi Apex Kabininizi Tasarlayın</h1>
-      <p data-i18n="configurator.header.subtitle">Alt metin.</p>
+      <p data-i18n="configurator.header.subtitle">Modeli, basınç seviyesini ve ek özellikleri seçin — anında fiyat tahmini alın.</p>
       <div class="currency-bar">
         <span data-i18n="configurator.currency_label">Para Birimi</span>
         <div class="lang-switch" id="currency-switch" role="group" aria-label="Currency switch"></div>
@@ -95,13 +99,13 @@
 
           <div>
             <div class="config-step-title" data-i18n="configurator.usage_step_title">1. Kullanım Alanı</div>
-            <div class="config-step-note" data-i18n="configurator.usage_step_note">Not.</div>
+            <div class="config-step-note" data-i18n="configurator.usage_step_note">Yüksek basınçlı modeller yalnızca kurumsal kullanım için sunulur.</div>
             <div class="config-usage-grid" id="config-usage-grid"></div>
           </div>
 
           <div id="style-step-section">
             <div class="config-step-title" data-i18n="configurator.style_step_title">2. Kabin Stili</div>
-            <div class="config-step-note" data-i18n="configurator.style_step_note">Not.</div>
+            <div class="config-step-note" data-i18n="configurator.style_step_note">Kabin tasarımınızı seçin; cam yüzey oranı ve iç donanım seviyesine göre fiyat değişir.</div>
             <div class="config-style-grid" id="config-style-grid"></div>
           </div>
 
@@ -112,7 +116,7 @@
 
           <div id="nexus-seat-section" hidden>
             <div class="config-step-title" data-i18n="configurator.seat_step_title">Koltuk Sayısı</div>
-            <div class="config-step-note" data-i18n="configurator.seat_step_note">Not.</div>
+            <div class="config-step-note" data-i18n="configurator.seat_step_note">İhtiyacınıza göre koltuk sayısını artırıp azaltabilirsiniz.</div>
             <div class="seat-stepper">
               <button type="button" id="seat-decrease" aria-label="Azalt">−</button>
               <div class="seat-count-display"><span id="seat-count-value">6</span> <span data-i18n="configurator.seats_label">Koltuk</span></div>
@@ -123,25 +127,25 @@
 
           <div>
             <div class="config-step-title" data-i18n="configurator.color_step_title">4. Renk Seçin</div>
-            <div class="config-step-note" data-i18n="configurator.color_step_note">Not.</div>
+            <div class="config-step-note" data-i18n="configurator.color_step_note">Standart renk paletimizden ücretsiz seçim yapın.</div>
             <div class="config-color-grid" id="config-color-grid"></div>
           </div>
 
           <div>
             <div class="config-step-title" data-i18n="configurator.interior_step_title">5. İç Renk</div>
-            <div class="config-step-note" data-i18n="configurator.interior_step_note">Not.</div>
+            <div class="config-step-note" data-i18n="configurator.interior_step_note">Standart iç mekân renkleri fiyata dâhildir.</div>
             <div class="config-color-grid" id="config-interior-color-grid"></div>
           </div>
 
           <div>
             <div class="config-step-title" data-i18n="configurator.seat_color_step_title">6. Koltuk Rengi</div>
-            <div class="config-step-note" data-i18n="configurator.seat_color_step_note">Not.</div>
+            <div class="config-step-note" data-i18n="configurator.seat_color_step_note">Koltuk döşeme rengi fiyata dâhildir; seçiminiz özet ve teklif formuna eklenir.</div>
             <div class="config-color-grid" id="config-seat-color-grid"></div>
           </div>
 
           <div id="pressure-step-section">
             <div class="config-step-title" data-i18n="configurator.step2_title">7. Basınç Seviyesi</div>
-            <div class="config-step-note" data-i18n="configurator.pressure_note">Not.</div>
+            <div class="config-step-note" data-i18n="configurator.pressure_note">Basınç aralığı seçilen modele göre değişir.</div>
             <div class="config-pressure-grid" id="config-pressure-grid"></div>
             <div class="config-pressure-note" id="pressure-auto-note" hidden></div>
           </div>
@@ -232,7 +236,7 @@
   <div class="guide-modal-panel" role="dialog" aria-modal="true" aria-labelledby="guide-modal-title">
     <button type="button" class="guide-modal-close" id="guide-modal-close" aria-label="Close">&times;</button>
     <h3 id="guide-modal-title" data-i18n="configurator.guide.title">Size Uygun Kabini Bulalım</h3>
-    <p class="guide-modal-intro" data-i18n="configurator.guide.intro">Alt metin.</p>
+    <p class="guide-modal-intro" data-i18n="configurator.guide.intro">Kullanım şeklinize en yakın satırı seçin, sizin için doğru modeli ve kullanım alanını otomatik ayarlayalım.</p>
     <div class="guide-modal-list" id="guide-modal-list"></div>
   </div>
 </div>
@@ -241,7 +245,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="brand"><img src="assets/img/logo-header.png" alt="HBOT Chamber Tech" class="brand-logo footer-logo" /></a>
-      <p data-i18n="common.footer.about_text">Açıklama.</p>
+      <p data-i18n="common.footer.about_text">HBOT Chamber Tech; IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları üreten öncü bir markadır.</p>
       <p class="member-badge" style="margin-top:16px;" data-i18n="common.footer.membership_note">Almita Group iştirakidir.</p>
     </div>
     <div class="footer-col">
@@ -262,9 +266,9 @@
   </div>
 </footer>
 
-<script src="assets/js/translations.js?v=35"></script>
+<script src="assets/js/translations.js?v=36"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/js/recolor.js?v=25"></script>
-<script src="assets/js/main.js?v=35"></script>
+<script src="assets/js/main.js?v=36"></script>
 </body>
 </html>
