@@ -160,12 +160,13 @@ p { text-align: justify; text-align-last: left; }
   display: flex; align-items: center; gap: 2px; flex-wrap: wrap; background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 999px; padding: 4px;
 }
-.lang-switch button {
+.lang-switch a {
   border: none; background: transparent; color: rgba(255, 255, 255, 0.7); font-size: 11px; font-weight: 700;
   padding: 5px 7px; border-radius: 999px; transition: background var(--transition), color var(--transition);
+  text-decoration: none; line-height: 1.4;
 }
-.lang-switch button.is-active { background: var(--cyan-500); color: var(--ink-950); }
-.lang-switch button:hover:not(.is-active) { color: var(--white); }
+.lang-switch a.is-active { background: var(--cyan-500); color: var(--ink-950); }
+.lang-switch a:hover:not(.is-active) { color: var(--white); }
 .lang-switch--mobile { display: none; }
 
 .nav-cta {
