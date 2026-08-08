@@ -65,7 +65,9 @@ def fix_lang_switch(html, filename):
         active = ' class="is-active"' if code == "tr" else ""
         return f'<a href="{href}"{active} data-lang="{code}">{label}</a>'
 
-    return re.sub(r'<button type="button" data-lang="(\w+)">([^<]*)</button>', repl, html)
+    # matches the original <button> AND an already-converted <a data-lang>
+    # (idempotent re-run safety, same reasoning as build_i18n_pages.py's twin)
+    return re.sub(r'<(?:button[^>]*|a[^>]*)\bdata-lang="(\w+)"[^>]*>([^<]*)</(?:button|a)>', repl, html)
 
 
 def patch():

@@ -2171,6 +2171,24 @@
     });
   }
 
+  /* v17: mobil header'da her zaman görünen kompakt dil seçici (hamburger açmadan) */
+  function initLangCompact() {
+    const item = document.querySelector(".lang-item--dropdown");
+    if (!item) return;
+    const trigger = item.querySelector(".lang-compact-trigger");
+    const current = item.querySelector(".lang-compact-current");
+    if (current) current.textContent = (document.documentElement.lang || "tr").toUpperCase();
+    if (!trigger) return;
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      const open = item.classList.toggle("is-open");
+      trigger.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", (e) => {
+      if (!item.contains(e.target)) item.classList.remove("is-open");
+    });
+  }
+
   function updateWhatsAppLink(dict) {
     const link = document.getElementById("whatsapp-float-btn");
     if (!link || !dict.common) return;
@@ -2503,6 +2521,7 @@
     initLangSwitch();
     initMobileNav();
     initDropdown();
+    initLangCompact();
     initHeaderScroll();
     initActiveNav();
     initForm("contact-form", "form-success", "form-error", "contact.form_submit", "contact.form_sending");

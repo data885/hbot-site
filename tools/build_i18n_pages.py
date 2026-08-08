@@ -210,9 +210,15 @@ def rebuild_head(html, lang, filename, meta_entry, dict_):
 
 
 def fix_lang_switch_links(html, lang, filename):
-    """Turn <button type="button" data-lang="xx">XX</button> into real
-    <a href="/xx/filename"> links pointing at the sibling-language version
-    of THIS SAME page, marking the current language active."""
+    """Turn every lang-switch item — whether it's still the original
+    <button type="button" data-lang="xx">XX</button> OR an already-converted
+    <a ... data-lang="xx">XX</a> from a previous build run — into a fresh
+    <a href="/xx/filename"> pointing at the sibling-language version of THIS
+    SAME page, with is-active recomputed for the page actually being built.
+    Matching already-converted anchors too makes this idempotent: re-running
+    the generator against root templates that patch_root_pages.py already
+    touched won't freeze in stale hrefs/active-state from whatever language
+    the templates happened to be in."""
     def repl(m):
         code = m.group(1)
         label = m.group(2)
@@ -221,7 +227,7 @@ def fix_lang_switch_links(html, lang, filename):
         return f'<a href="{href}"{active} data-lang="{code}">{label}</a>'
 
     return re.sub(
-        r'<button type="button" data-lang="(\w+)">([^<]*)</button>',
+        r'<(?:button[^>]*|a[^>]*)\bdata-lang="(\w+)"[^>]*>([^<]*)</(?:button|a)>',
         repl, html,
     )
 
