@@ -70,15 +70,12 @@ const TRANSLATIONS = {
         cta_secondary: "Konfigüratörü Başlat",
         trust_line: "İleri Mühendislik · Medikal Sınıf Güvenlik Standartları"
       },
-      heritage: {
-        title: "20 Yıllık Mühendislik Deneyimi",
-        subtitle: "2006'dan Beri Mühendislik Mükemmelliği"
-      },
       stats: [
         { value: "5", label: "Apex Modeli" },
         { value: "94%", label: "Oksijen Saflığı" },
         { value: "<55dB", label: "ApexSilent™ Gürültü Seviyesi" },
-        { value: "7/24", label: "Uzaktan İzleme" }
+        { value: "7/24", label: "Uzaktan İzleme" },
+        { value: "20+", label: "Yıl Mühendislik Deneyimi" }
       ],
       tech_teaser: {
         eyebrow: "TEKNOLOJİ PLATFORMU",
@@ -913,15 +910,12 @@ const TRANSLATIONS = {
         cta_secondary: "Start the Configurator",
         trust_line: "Advanced Engineering · Medical-Grade Safety Standards"
       },
-      heritage: {
-        title: "20 Years of Engineering Experience",
-        subtitle: "Engineering Excellence Since 2006"
-      },
       stats: [
         { value: "5", label: "Apex Models" },
         { value: "94%", label: "Oxygen Purity" },
         { value: "<55dB", label: "ApexSilent™ Noise Level" },
-        { value: "24/7", label: "Remote Monitoring" }
+        { value: "24/7", label: "Remote Monitoring" },
+        { value: "20+", label: "Years of Engineering Experience" }
       ],
       tech_teaser: {
         eyebrow: "TECHNOLOGY PLATFORM",
@@ -1756,15 +1750,12 @@ const TRANSLATIONS = {
         cta_secondary: "Запустить конфигуратор",
         trust_line: "Передовая инженерия · Стандарты безопасности медицинского класса"
       },
-      heritage: {
-        title: "20 лет инженерного опыта",
-        subtitle: "Инженерное совершенство с 2006 года"
-      },
       stats: [
         { value: "5", label: "Моделей Apex" },
         { value: "94%", label: "Чистота кислорода" },
         { value: "<55дБ", label: "Уровень шума ApexSilent™" },
-        { value: "24/7", label: "Удалённый мониторинг" }
+        { value: "24/7", label: "Удалённый мониторинг" },
+        { value: "20+", label: "Лет инженерного опыта" }
       ],
       tech_teaser: {
         eyebrow: "ТЕХНОЛОГИЧЕСКАЯ ПЛАТФОРМА",
@@ -2599,15 +2590,12 @@ const TRANSLATIONS = {
         cta_secondary: "ابدأ أداة التكوين",
         trust_line: "هندسة متقدمة · معايير سلامة بمستوى طبي"
       },
-      heritage: {
-        title: "20 عامًا من الخبرة الهندسية",
-        subtitle: "التميز الهندسي منذ عام 2006"
-      },
       stats: [
         { value: "5", label: "موديلات Apex" },
         { value: "94%", label: "نقاء الأكسجين" },
         { value: "<55 ديسيبل", label: "مستوى الضجيج ApexSilent™" },
-        { value: "24/7", label: "مراقبة عن بُعد" }
+        { value: "24/7", label: "مراقبة عن بُعد" },
+        { value: "20+", label: "عامًا من الخبرة الهندسية" }
       ],
       tech_teaser: {
         eyebrow: "منصة التقنية",
@@ -3441,15 +3429,12 @@ const TRANSLATIONS = {
         cta_secondary: "Iniciar el Configurador",
         trust_line: "Ingeniería Avanzada · Estándares de Seguridad de Nivel Médico"
       },
-      heritage: {
-        title: "20 Años de Experiencia en Ingeniería",
-        subtitle: "Excelencia en Ingeniería Desde 2006"
-      },
       stats: [
         { value: "5", label: "Modelos Apex" },
         { value: "94%", label: "Pureza de Oxígeno" },
         { value: "<55dB", label: "Nivel de Ruido ApexSilent™" },
-        { value: "24/7", label: "Monitorización Remota" }
+        { value: "24/7", label: "Monitorización Remota" },
+        { value: "20+", label: "Años de Experiencia en Ingeniería" }
       ],
       tech_teaser: {
         eyebrow: "PLATAFORMA TECNOLÓGICA",
@@ -4283,15 +4268,12 @@ const TRANSLATIONS = {
         cta_secondary: "Iniciar o Configurador",
         trust_line: "Engenharia Avançada · Padrões de Segurança de Nível Médico"
       },
-      heritage: {
-        title: "20 Anos de Experiência em Engenharia",
-        subtitle: "Excelência em Engenharia Desde 2006"
-      },
       stats: [
         { value: "5", label: "Modelos Apex" },
         { value: "94%", label: "Pureza de Oxigênio" },
         { value: "<55dB", label: "Nível de Ruído ApexSilent™" },
-        { value: "24/7", label: "Monitoramento Remoto" }
+        { value: "24/7", label: "Monitoramento Remoto" },
+        { value: "20+", label: "Anos de Experiência em Engenharia" }
       ],
       tech_teaser: {
         eyebrow: "PLATAFORMA TECNOLÓGICA",
@@ -5125,15 +5107,12 @@ const TRANSLATIONS = {
         cta_secondary: "Konfigurator starten",
         trust_line: "Fortschrittliche Ingenieurskunst · Medizinische Sicherheitsstandards"
       },
-      heritage: {
-        title: "20 Jahre Ingenieurserfahrung",
-        subtitle: "Ingenieurskunst auf höchstem Niveau seit 2006"
-      },
       stats: [
         { value: "5", label: "Apex Modelle" },
         { value: "94%", label: "Sauerstoffreinheit" },
         { value: "<55dB", label: "ApexSilent™ Geräuschpegel" },
-        { value: "24/7", label: "Fernüberwachung" }
+        { value: "24/7", label: "Fernüberwachung" },
+        { value: "20+", label: "Jahre Ingenieurserfahrung" }
       ],
       tech_teaser: {
         eyebrow: "TECHNOLOGIEPLATTFORM",
