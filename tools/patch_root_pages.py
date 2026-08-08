@@ -45,11 +45,23 @@ def fix_asset_paths(html):
     return re.sub(r'([\'"])assets/', r'\1/assets/', html)
 
 
+# These two pages aren't generated in the 6 language subfolders (404.html
+# is a global error page, model-apex-quad.html is a legacy redirect-only
+# page) — their lang-switch links must point somewhere that actually
+# exists in each language instead of a same-name file that was never built.
+LANG_SWITCH_TARGET_OVERRIDE = {
+    "404.html": "index.html",  # "view in English" from an error page -> that language's homepage
+    "model-apex-quad.html": "model-apex-quad-cube.html",  # matches this page's own canonical redirect target
+}
+
+
 def fix_lang_switch(html, filename):
+    target_filename = LANG_SWITCH_TARGET_OVERRIDE.get(filename, filename)
+
     def repl(m):
         code = m.group(1)
         label = m.group(2)
-        href = resolve_url(code, filename).replace(BASE_URL, "")
+        href = resolve_url(code, target_filename).replace(BASE_URL, "")
         active = ' class="is-active"' if code == "tr" else ""
         return f'<a href="{href}"{active} data-lang="{code}">{label}</a>'
 
