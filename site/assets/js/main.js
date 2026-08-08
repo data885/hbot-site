@@ -171,15 +171,22 @@
     return path.split(".").reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
   }
 
-  function detectLang() {
-    const saved = localStorage.getItem(LANG_KEY);
-    if (saved && SUPPORTED.includes(saved)) return saved;
-    const browserLangs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  /* v16: dil artik URL'nin bir parcasi (/en/, /ru/ ...) — sayfanin kendi
+     <html lang> degeri her zaman otoritedir (o dilde baked HTML iceriyor).
+     localStorage/tarayici dili artik icerigi EZMIYOR, sadece dil onerisi
+     serididi icin kullaniliyor (bkz. initLangSuggestion). */
+  function currentPageLang() {
+    const htmlLang = document.documentElement.getAttribute("lang");
+    return (htmlLang && SUPPORTED.includes(htmlLang)) ? htmlLang : "en";
+  }
+
+  function preferredBrowserLang() {
+    const browserLangs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ""];
     for (let i = 0; i < browserLangs.length; i++) {
       const code = String(browserLangs[i]).slice(0, 2).toLowerCase();
       if (SUPPORTED.includes(code)) return code;
     }
-    return "en";
+    return null;
   }
 
   /* ---------------- Static text i18n ---------------- */
@@ -235,7 +242,7 @@
       container.innerHTML = MODEL_ORDER.map((key) => {
         const label = menu[MODEL_KEY_MAP[key]];
         const media = isNavPanel
-          ? `<img class="nav-model-thumb" src="assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp" alt="" loading="lazy">`
+          ? `<img class="nav-model-thumb" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp" alt="" loading="lazy">`
           : `<span class="dropdown-link-icon">${ICONS[MODEL_ICON[key]]}</span>`;
         return `<a href="${MODEL_PAGES[key]}" class="dropdown-link" data-model-key="${key}">
           ${media}
@@ -261,7 +268,7 @@
       const s = short[mKey];
       return `
         <article class="sector-card">
-          <img class="sector-card-img" src="assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp" alt="${s.title}" loading="lazy">
+          <img class="sector-card-img" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp" alt="${s.title}" loading="lazy">
           <h3>${s.title}</h3>
           <span class="sector-tagline">${s.tagline}</span>
           <p>${s.desc}</p>
@@ -699,7 +706,7 @@
     spinPreloadedFor = tag;
     /* frame-00 zaten yüklü — kalan 23 kareyi sırayla önden yükle */
     for (let i = 1; i < SPIN_FRAME_COUNT; i++) {
-      setTimeout(() => { const im = new Image(); im.src = `assets/img/models/spin/${tag}/frame-${String(i).padStart(2, "0")}.webp`; }, 140 * i);
+      setTimeout(() => { const im = new Image(); im.src = `/assets/img/models/spin/${tag}/frame-${String(i).padStart(2, "0")}.webp`; }, 140 * i);
     }
   }
 
@@ -1129,7 +1136,7 @@
 
   async function startRecolorJob(ck, imgKey, spec) {
     try {
-      const base = await loadRecolorImg(`assets/img/models/${imgKey}.webp`);
+      const base = await loadRecolorImg(`/assets/img/models/${imgKey}.webp`);
       const w = base.naturalWidth, h = base.naturalHeight;
       if (!w || !h) throw new Error("empty frame");
       const c = document.createElement("canvas");
@@ -1141,7 +1148,7 @@
         // v11: akıllı profil — ağırlık haritası + ağırlıklı boya
         let maskData = null;
         if (spec.mask) {
-          const mi = await loadRecolorImg(`assets/img/models/${spec.mask}.png?v=26`);
+          const mi = await loadRecolorImg(`/assets/img/models/${spec.mask}.png?v=26`);
           const mc = document.createElement("canvas");
           mc.width = w; mc.height = h;
           const mctx = mc.getContext("2d", { willReadFrequently: true });
@@ -1152,7 +1159,7 @@
         window.HBOTRecolor.applyWeightedPaint(imgData.data, weight, spec.paint);
       } else {
         // v10 yolu: maske-tabanlı passes (interior + koltuk)
-        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`assets/img/models/${p.mask}.png?v=26`)));
+        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=26`)));
         const mc = document.createElement("canvas");
         mc.width = w; mc.height = h;
         const mctx = mc.getContext("2d", { willReadFrequently: true });
@@ -1185,7 +1192,7 @@
   /* Sahne src çözümü: boya aktifse işlenmiş kare (cache hit) döner; miss'te ham
      kare gösterilir ve üretim arka planda başlar (bitince updateConfigStage tetiklenir). */
   function resolveStageSrc(target) {
-    const raw = `assets/img/models/${target.key}.webp`;
+    const raw = `/assets/img/models/${target.key}.webp`;
     const spec = stagePaintSpec(target);
     if (!spec) return raw;
     const ck = `${target.key}|${spec.tag}`;
@@ -1261,7 +1268,7 @@
       return `
         <button type="button" class="config-model-card${selected}" data-model-id="${m.id}">
           <span class="config-check">${ICONS.check}</span>
-          <img class="model-card-img" src="assets/img/models/${MODEL_CARD_IMG[m.id] || "real/apex-lounge-real"}.webp" alt="${m.name}" loading="lazy">
+          <img class="model-card-img" src="/assets/img/models/${MODEL_CARD_IMG[m.id] || "real/apex-lounge-real"}.webp" alt="${m.name}" loading="lazy">
           <h4>${m.name}</h4>
           <div class="model-tagline">${m.tagline}</div>
           <div class="model-price">${priceLabel}</div>
@@ -1715,13 +1722,13 @@
     });
   }
   function loadLogoForPdf() {
-    return loadImageForPdf("assets/img/logo-full.png", { format: "png" });
+    return loadImageForPdf("/assets/img/logo-full.png", { format: "png" });
   }
   /* Yapılandırılan modelin gercek urun fotografi (dis gorunum) — proformada gosterilir.
      JPEG + kucultme: PDF/e-posta boyutunu makul tutmak icin (PNG ile 10+ MB'a cikiyordu). */
   function loadProductPhotoForPdf() {
     const key = REAL_STAGE[configState.model] || "real/apex-lounge-real";
-    return loadImageForPdf(`assets/img/models/${key}.webp`, { format: "jpeg", maxDim: 900 });
+    return loadImageForPdf(`/assets/img/models/${key}.webp`, { format: "jpeg", maxDim: 900 });
   }
 
   /* Unicode PDF fontu (Turkce + Kiril destekli, subset NotoSans) — jsPDF'e bir kez kaydedilir. */
@@ -1733,8 +1740,8 @@
       pdfFontStatus = (async () => {
         try {
           const [reg, bold] = await Promise.all([
-            fetch("assets/fonts/NotoSans-Regular.ttf?v=3").then((r) => r.arrayBuffer()),
-            fetch("assets/fonts/NotoSans-Bold.ttf?v=3").then((r) => r.arrayBuffer()),
+            fetch("/assets/fonts/NotoSans-Regular.ttf?v=3").then((r) => r.arrayBuffer()),
+            fetch("/assets/fonts/NotoSans-Bold.ttf?v=3").then((r) => r.arrayBuffer()),
           ]);
           pdfFontRegBase64 = arrayBufferToBase64(reg);
           pdfFontBoldBase64 = arrayBufferToBase64(bold);
@@ -2123,10 +2130,12 @@
     localStorage.setItem(LANG_KEY, lang);
   }
 
+  /* v16: dil butonlari artik gercek <a href="/xx/sayfa.html"> linkleri —
+     tarayici dogal olarak o dilin baked sayfasina gider, client-side
+     re-render'a gerek yok (mobil menuyu kapatmak disinda). */
   function initLangSwitch() {
     document.querySelectorAll(".lang-switch [data-lang]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        applyLang(btn.getAttribute("data-lang"));
         closeMobileNav();
       });
     });
@@ -2449,6 +2458,47 @@
     targets.forEach((el) => io.observe(el));
   }
 
+  /* v16: kok (TR) sayfalarda, tarayici dili desteklenen baska bir dile
+     denk geliyorsa kapatilabilir bir dil onerisi seridi gosterir.
+     Sessiz otomatik yonlendirme YAPILMAZ (crawler/SEO riski) — sadece
+     kullaniciya o dilin URL'sine giden bir link sunulur. */
+  const LANG_SUGGESTION_DISMISSED_KEY = "hbot_lang_suggestion_dismissed";
+  const LANG_SUGGESTION_TEXT = {
+    en: { msg: "It looks like you browse in English. View this site in English?", cta: "View in English" },
+    ru: { msg: "Похоже, вы используете русский язык. Открыть сайт на русском?", cta: "Открыть на русском" },
+    ar: { msg: "يبدو أنك تتصفح بالعربية. هل تريد عرض الموقع بالعربية؟", cta: "عرض بالعربية" },
+    es: { msg: "Parece que navegas en español. ¿Ver este sitio en español?", cta: "Ver en español" },
+    pt: { msg: "Parece que você navega em português. Ver este site em português?", cta: "Ver em português" },
+    de: { msg: "Es sieht so aus, als würden Sie auf Deutsch surfen. Diese Seite auf Deutsch ansehen?", cta: "Auf Deutsch ansehen" }
+  };
+  function initLangSuggestion() {
+    if (currentPageLang() !== "tr") return;
+    const preferred = preferredBrowserLang();
+    if (!preferred || preferred === "tr") return;
+    if (localStorage.getItem(LANG_SUGGESTION_DISMISSED_KEY) === preferred) return;
+    const copy = LANG_SUGGESTION_TEXT[preferred];
+    if (!copy) return;
+
+    const path = window.location.pathname;
+    const filename = (path === "/" || path === "") ? "" : path.replace(/^\//, "");
+    const targetHref = "/" + preferred + "/" + filename;
+
+    const bar = document.createElement("div");
+    bar.className = "lang-suggestion-bar";
+    bar.innerHTML = `
+      <span>${copy.msg}</span>
+      <a href="${targetHref}" class="lang-suggestion-cta">${copy.cta}</a>
+      <button type="button" class="lang-suggestion-close" aria-label="Close">&times;</button>
+    `;
+    document.body.appendChild(bar);
+    requestAnimationFrame(() => bar.classList.add("is-visible"));
+    bar.querySelector(".lang-suggestion-close").addEventListener("click", () => {
+      localStorage.setItem(LANG_SUGGESTION_DISMISSED_KEY, preferred);
+      bar.classList.remove("is-visible");
+      setTimeout(() => bar.remove(), 300);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     initLangSwitch();
     initMobileNav();
@@ -2462,6 +2512,7 @@
     initWhatsAppButton();
     initStickyCta();
     initReveal();
-    applyLang(detectLang());
+    applyLang(currentPageLang());
+    initLangSuggestion();
   });
 })();

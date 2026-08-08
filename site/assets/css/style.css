@@ -1103,6 +1103,30 @@ p { text-align: justify; text-align-last: left; }
   }
 }
 
+/* v16: kok sayfalarda tarayici dili farkli oldugunda gosterilen kapatilabilir dil onerisi seridi */
+.lang-suggestion-bar {
+  position: fixed; z-index: 300; inset-inline: 0; bottom: 0;
+  display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+  background: var(--ink-950); color: rgba(255, 255, 255, 0.9); padding: 14px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(100%); transition: transform 0.35s ease;
+}
+.lang-suggestion-bar.is-visible { transform: translateY(0); }
+.lang-suggestion-bar span { font-size: 13.5px; }
+.lang-suggestion-cta {
+  background: var(--cyan-500); color: var(--ink-950); font-weight: 700; font-size: 13px;
+  padding: 8px 16px; border-radius: 999px; text-decoration: none; flex-shrink: 0;
+}
+.lang-suggestion-cta:hover { background: var(--cyan-400); }
+.lang-suggestion-close {
+  background: none; border: none; color: rgba(255, 255, 255, 0.6); font-size: 22px; line-height: 1;
+  cursor: pointer; padding: 4px 8px; flex-shrink: 0;
+}
+.lang-suggestion-close:hover { color: #fff; }
+@media (max-width: 640px) {
+  .lang-suggestion-bar { flex-direction: column; gap: 10px; padding: 16px; text-align: center; }
+}
+
 /* v6: scroll reveal */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
