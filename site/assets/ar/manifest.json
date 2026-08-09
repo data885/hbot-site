@@ -1,0 +1,32 @@
+{
+  "solo-lounge": {
+    "length_m": 2.4,
+    "diameter_m": 1.15,
+    "orientation": "horizontal",
+    "dimension_source": "real"
+  },
+  "solo": {
+    "length_m": 1.8,
+    "diameter_m": 1.15,
+    "orientation": "vertical",
+    "dimension_source": "real"
+  },
+  "duo": {
+    "length_m": 3.0,
+    "diameter_m": 1.3,
+    "orientation": "horizontal",
+    "dimension_source": "estimate"
+  },
+  "quad-cube": {
+    "length_m": 2.6,
+    "diameter_m": 1.8,
+    "orientation": "horizontal",
+    "dimension_source": "estimate"
+  },
+  "nexus": {
+    "length_m": 4.6,
+    "diameter_m": 2.0,
+    "orientation": "horizontal",
+    "dimension_source": "estimate"
+  }
+}

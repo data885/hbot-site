@@ -1546,7 +1546,14 @@
         <input type="number" id="config-discount-custom" class="config-discount-custom" min="0" max="50" step="1" value="${configState.discountPct}" aria-label="${s.discount_label} %" />
       </span></div>`;
 
+    const arDict = dict.configurator.ar;
+    const arButtonHtml = arDict ? `
+      <button type="button" class="btn-ar" id="config-ar-btn" title="${arDict.tooltip}">${arDict.button}</button>
+      <p class="config-ar-disclaimer">${arDict.disclaimer}</p>
+    ` : "";
+
     c.innerHTML = `
+      ${arButtonHtml}
       <h3>${s.title}</h3>
       <div class="config-summary-row"><span class="label">${s.model_label}</span><span class="value">${modelInfo ? modelInfo.name : ""}</span></div>
       ${seatsRow}
@@ -1596,6 +1603,9 @@
       });
     }
 
+    const arBtn = document.getElementById("config-ar-btn");
+    if (arBtn) arBtn.addEventListener("click", openArView);
+
     const printBtn = document.getElementById("config-print-btn");
     if (printBtn) printBtn.addEventListener("click", () => openQuotePdf(TRANSLATIONS[currentLang]));
 
@@ -1644,8 +1654,8 @@
     preloadSpinSet();
   }
 
-  function updateQuoteFormHiddenField() {
-    const field = document.getElementById("config-summary-text");
+  function updateQuoteFormHiddenField(fieldId) {
+    const field = document.getElementById(fieldId || "config-summary-text");
     if (!field) return;
     const dict = TRANSLATIONS[currentLang];
     const s = dict.configurator.summary;
@@ -1979,6 +1989,50 @@
     } catch (e) { /* sessiz fallback */ }
   }
 
+  /* v18: AR ("Mekaninizda Gorun") akisi — mobilde dogrudan AR sayfasina gider,
+     masaustunde QR kod modali acar (telefonla okutulup AR sayfasina gecilir). */
+  function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  function openArView() {
+    const modelId = configState.model;
+    const url = window.location.origin + "/ar-view.html?model=" + encodeURIComponent(modelId);
+
+    pushLeadToCrm({
+      source: "ar-view",
+      model: modelId,
+      addons: Array.from(configState.addons),
+      color: configState.color,
+      page: window.location.href,
+      ts: new Date().toISOString()
+    });
+
+    if (isMobileDevice()) {
+      window.location.href = url;
+      return;
+    }
+
+    const overlay = document.getElementById("ar-qr-overlay");
+    const canvasWrap = document.getElementById("ar-qr-canvas");
+    if (!overlay || !canvasWrap || typeof QRCode === "undefined") {
+      window.open(url, "_blank", "noopener");
+      return;
+    }
+    canvasWrap.innerHTML = "";
+    new QRCode(canvasWrap, { text: url, width: 200, height: 200, colorDark: "#0a0f14", colorLight: "#ffffff" });
+    overlay.hidden = false;
+  }
+
+  function initArQrModal() {
+    const overlay = document.getElementById("ar-qr-overlay");
+    const closeBtn = document.getElementById("ar-qr-close");
+    if (!overlay) return;
+    const close = () => { overlay.hidden = true; };
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
+  }
+
   let configuratorPreselected = false;
   let configuratorInitialized = false;
   function initConfigurator(dict) {
@@ -2295,6 +2349,12 @@
       // birlikte base64 olarak gonder (Google Apps Script backend'i cozup e-posta
       // ekine cevirir). Formspree dosya eki kabul etmedigi icin bu form artik
       // ayri bir Apps Script Web App endpoint'ine gidiyor (bkz. form action).
+      if (formId === "vip-form") {
+        updateQuoteFormHiddenField("vip-config-summary");
+        formData.set("config_summary", (document.getElementById("vip-config-summary") || {}).value || "");
+        formData.set("lang", currentLang);
+      }
+
       if (formId === "quote-form") {
         updateQuoteFormHiddenField();
         formData.set("config_summary", (document.getElementById("config-summary-text") || {}).value || "");
@@ -2526,6 +2586,8 @@
     initActiveNav();
     initForm("contact-form", "form-success", "form-error", "contact.form_submit", "contact.form_sending");
     initForm("quote-form", "quote-form-success", "quote-form-error", "configurator.quote_form.submit", "configurator.quote_form.sending");
+    initForm("vip-form", "vip-form-success", "vip-form-error", "configurator.vip.submit", "configurator.vip.sending");
+    initArQrModal();
     initYear();
     initHeroSlider();
     initWhatsAppButton();

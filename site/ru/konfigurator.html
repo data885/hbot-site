@@ -37,7 +37,7 @@
 <link rel="alternate" hreflang="pt" href="https://hbotchambertech.com/pt/konfigurator.html" />
 <link rel="alternate" hreflang="de" href="https://hbotchambertech.com/de/konfigurator.html" />
 <link rel="alternate" hreflang="x-default" href="https://hbotchambertech.com/konfigurator.html" />
-<link rel="stylesheet" href="/assets/css/style.css?v=40" />
+<link rel="stylesheet" href="/assets/css/style.css?v=42" />
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "HBOT Chamber Tech", "url": "https://hbotchambertech.com", "logo": "https://hbotchambertech.com/assets/img/logo-header.png", "description": "HBOT Chamber Tech — ведущий производитель гипербарических кислородных камер с IoT-подключением и поддержкой искусственного интеллекта.", "email": "info@hbotchambertech.com", "telephone": "+90 850 888 1679", "address": {"@type": "PostalAddress", "streetAddress": "Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29", "addressLocality": "Tuzla / İstanbul", "addressCountry": "TR"}, "sameAs": ["https://almitagroup.com"], "parentOrganization": {"@type": "Organization", "name": "Almita Group", "url": "https://almitagroup.com"}, "inLanguage": "ru"}
 </script>
@@ -212,6 +212,67 @@
             <div class="stage-spin-hint" id="stage-spin-hint" hidden><span data-i18n="configurator.stage.spin_hint">↔ Перетащите для поворота 360°</span></div>
           </div>
           <aside class="config-summary" id="config-summary"></aside>
+
+          <div class="vip-card">
+            <h3 data-i18n="configurator.vip.headline">Тестируйте перед покупкой: VIP-демонстрация в нашем центре</h3>
+            <p data-i18n="configurator.vip.description">Запланируйте эксклюзивный визит в наш центр в Тузле/Стамбуле, чтобы протестировать вашу индивидуальную камеру, или закажите видеотур с нашей инженерной командой.</p>
+            <form id="vip-form" action="https://formspree.io/f/mzdnqnel" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="VIP Demo Talebi — HBOT Chamber Tech" />
+              <div class="form-field">
+                <label for="vip-name" data-i18n="configurator.vip.form_name">Имя и фамилия</label>
+                <input type="text" id="vip-name" name="name" required />
+              </div>
+              <div class="form-field">
+                <label for="vip-company" data-i18n="configurator.vip.form_company">Название компании</label>
+                <input type="text" id="vip-company" name="company" />
+              </div>
+              <div class="form-field">
+                <label for="vip-email" data-i18n="configurator.vip.form_email">Эл. почта</label>
+                <input type="email" id="vip-email" name="email" required />
+              </div>
+              <div class="form-field">
+                <label for="vip-phone" data-i18n="configurator.vip.form_phone">Телефон (WhatsApp)</label>
+                <input type="tel" id="vip-phone" name="phone" />
+              </div>
+              <div class="vip-visit-options" role="radiogroup" aria-label="Visit preference">
+                <label class="vip-visit-option">
+                  <input type="radio" name="visit_preference" value="in_person" checked />
+                  <span data-i18n="configurator.vip.visit_in_person">Личный VIP-тур и демонстрация в нашем центре в Стамбуле/Тузле</span>
+                </label>
+                <label class="vip-visit-option">
+                  <input type="radio" name="visit_preference" value="online" />
+                  <span data-i18n="configurator.vip.visit_online">Живой онлайн VIP видео-тур с инженерами</span>
+                </label>
+              </div>
+              <textarea name="config_summary" id="vip-config-summary" hidden readonly></textarea>
+              <div class="form-field" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+                <label for="vip-website">Website</label>
+                <input type="text" id="vip-website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" data-i18n="configurator.vip.submit">Отправить заявку на визит</button>
+              <p class="form-success" id="vip-form-success" hidden data-i18n="configurator.vip.success">Спасибо! Ваша заявка получена — наша команда свяжется с вами в ближайшее время.</p>
+              <p class="form-error" id="vip-form-error" hidden data-i18n="configurator.vip.error">Что-то пошло не так. Пожалуйста, попробуйте ещё раз или позвоните нам напрямую.</p>
+            </form>
+          </div>
+
+          <div class="turnkey-badge">
+            <div class="turnkey-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="configurator.badge.title">Пакет «Под ключ»: обучение персонала и техническая поддержка</h4>
+              <p data-i18n="configurator.badge.subtext">Каждый заказ включает полное международное логистическое сопровождение, установку на месте, сертифицированное обучение персонала и круглосуточную удалённую техническую поддержку IoT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ar-qr-overlay" id="ar-qr-overlay" hidden>
+        <div class="ar-qr-modal">
+          <button type="button" class="ar-qr-close" id="ar-qr-close" aria-label="Close">✕</button>
+          <h3 data-i18n="configurator.qr.title">Отсканируйте телефоном</h3>
+          <p data-i18n="configurator.qr.subtitle">Отсканируйте QR-код камерой телефона, чтобы просмотреть в AR.</p>
+          <div class="ar-qr-canvas-wrap" id="ar-qr-canvas"></div>
         </div>
       </div>
 
@@ -318,9 +379,10 @@
   </div>
 </footer>
 
-<script src="/assets/js/translations.js?v=38"></script>
+<script src="/assets/js/translations.js?v=42"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/js/recolor.js?v=25"></script>
-<script src="/assets/js/main.js?v=40"></script>
+<script src="/assets/js/main.js?v=42"></script>
 </body>
 </html>

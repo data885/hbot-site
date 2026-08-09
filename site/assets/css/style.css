@@ -803,6 +803,71 @@ p { text-align: justify; text-align-last: left; }
 .config-summary .btn { margin-top: 20px; }
 .config-summary-secondary-actions .btn { font-size: 13.5px; padding: 11px 20px; }
 
+/* v18: AR ("Mekaninizda Gorun") butonu - ozet kartinin en ustunde, dikkat cekici */
+.btn-ar {
+  display: block; width: 100%; text-align: center; margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--cyan-500), var(--cyan-400)); color: var(--ink-950);
+  font-weight: 800; font-size: 15px; padding: 14px 18px; border-radius: var(--radius-md);
+  border: none; cursor: pointer; transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 6px 20px rgba(0, 128, 208, 0.3);
+}
+.btn-ar:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(0, 128, 208, 0.4); }
+.config-ar-disclaimer { font-size: 11px; color: rgba(255, 255, 255, 0.4); line-height: 1.5; margin: -8px 0 16px; text-align: center; }
+
+.ar-qr-overlay {
+  position: fixed; inset: 0; z-index: 300; background: rgba(5, 7, 10, 0.78); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.ar-qr-overlay[hidden] { display: none; }
+.ar-qr-modal {
+  background: var(--white); border-radius: var(--radius-lg); padding: 32px; max-width: 340px; width: 100%;
+  text-align: center; position: relative; box-shadow: var(--shadow-lg);
+}
+.ar-qr-modal h3 { font-size: 18px; font-weight: 800; color: var(--ink-950); margin-bottom: 8px; }
+.ar-qr-modal p { font-size: 13.5px; color: var(--gray-600); margin-bottom: 20px; }
+.ar-qr-canvas-wrap { display: flex; justify-content: center; margin-bottom: 18px; }
+.ar-qr-canvas-wrap img, .ar-qr-canvas-wrap canvas { border-radius: 10px; }
+.ar-qr-close {
+  position: absolute; top: 14px; inset-inline-end: 14px; width: 30px; height: 30px; border-radius: 999px;
+  border: none; background: var(--gray-050); color: var(--ink-700); cursor: pointer; font-size: 16px; line-height: 1;
+}
+
+.vip-card {
+  background: linear-gradient(160deg, var(--ink-900), var(--ink-950)); border: 1px solid rgba(201, 164, 92, 0.25);
+  border-radius: var(--radius-lg); padding: 26px 24px; color: var(--white);
+}
+.vip-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; line-height: 1.35; }
+.vip-card > p { font-size: 13.5px; color: rgba(255, 255, 255, 0.62); line-height: 1.6; margin-bottom: 18px; }
+.vip-card .form-field { margin-bottom: 12px; }
+.vip-card .form-field label { font-size: 12.5px; color: rgba(255, 255, 255, 0.7); margin-bottom: 5px; display: block; }
+.vip-card .form-field input {
+  width: 100%; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm); padding: 10px 12px; color: var(--white); font: inherit; font-size: 13.5px;
+}
+.vip-visit-options { display: grid; gap: 8px; margin: 14px 0 18px; }
+.vip-visit-option {
+  display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12); cursor: pointer; font-size: 13px; color: rgba(255, 255, 255, 0.85);
+  transition: border-color var(--transition), background var(--transition);
+}
+.vip-visit-option:has(input:checked) { border-color: var(--cyan-400); background: rgba(0, 128, 208, 0.1); }
+.vip-visit-option input { margin-top: 3px; flex-shrink: 0; }
+.vip-card .btn-block { width: 100%; }
+.vip-card .form-success, .vip-card .form-error { margin-top: 10px; font-size: 13px; }
+
+.turnkey-badge {
+  display: flex; align-items: flex-start; gap: 14px; padding: 20px; border-radius: var(--radius-lg);
+  background: rgba(31, 216, 198, 0.08); border: 1px solid rgba(31, 216, 198, 0.25);
+}
+.turnkey-badge-icon {
+  flex-shrink: 0; width: 38px; height: 38px; border-radius: 999px; background: rgba(31, 216, 198, 0.16);
+  display: flex; align-items: center; justify-content: center; color: var(--cyan-400);
+}
+.turnkey-badge-icon svg { width: 20px; height: 20px; }
+.turnkey-badge h4 { font-size: 14px; font-weight: 800; color: var(--white); margin-bottom: 5px; line-height: 1.35; }
+.turnkey-badge p { font-size: 12.5px; color: rgba(255, 255, 255, 0.6); line-height: 1.55; }
+@media (max-width: 640px) { .ar-qr-modal { padding: 24px 20px; } }
+
 /* Showcase stage (3D hissi + renk sihirbazlığı) — sütun tek ünite sticky */
 .config-stage-col { display: grid; gap: 24px; align-content: start; position: sticky; top: 100px; }
 .config-stage {

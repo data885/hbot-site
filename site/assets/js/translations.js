@@ -369,8 +369,37 @@ const TRANSLATIONS = {
       },
       disclaimer: "Bu bilgiler genel bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez. Tedavi kararları mutlaka bir sağlık profesyoneli tarafından değerlendirilmelidir."
     },
+    arView: {
+      back: "← Konfigüratöre dön",
+      title: "Gerçek Boyutlu Önizleme",
+      subtitle: "Telefonunuzun kamerasını zemine doğrultun; kabini gerçek boyutlarıyla mekânınıza yerleştirin. Sürükleyip döndürerek her açıdan inceleyebilirsiniz.",
+      scaleBadge: "Gerçek ölçek önizlemesi",
+      desktopNote: "AR modu yalnızca mobil cihazlarda kullanılabilir. Bu sayfayı telefonunuzda açın veya konfigüratördeki QR kodu okutun.",
+      launchButton: "📱 Mekânınızda Görün"
+    },
     configurator: {
       header: { eyebrow: "KONFİGÜRATÖR", title: "Kendi Apex Kabininizi Tasarlayın", subtitle: "Modeli, basınç seviyesini ve ek özellikleri seçin — anında fiyat tahmini alın." },
+      ar: {
+        button: "📱 Mekânınızda Görün (3D / AR)",
+        tooltip: "Telefonunuzun kamerasını mekânınıza doğrultun; tasarladığınız hiperbarik kabini birebir boyutlarıyla odanızda canlı olarak görün.",
+        disclaimer: "Bu önizleme, kabinin gerçek dış ölçülerine göre ölçeklendirilmiş bir hacim gösterimidir; nihai tasarım detayları (renk, döşeme, pencere) için satış temsilcinizle görüşün."
+      },
+      qr: { title: "Telefonunuzla Okutun", subtitle: "AR modunda görüntülemek için QR kodu telefonunuzun kamerasıyla okutun.", close: "Kapat" },
+      vip: {
+        headline: "Satın Almadan Önce Deneyimleyin: Operasyon Merkezimizde VIP Demo",
+        description: "Özel tasarımınızı test etmek için Tuzla/İstanbul merkezimize özel bir ziyaret planlayın veya mühendislik ekibimizle canlı bir sanal tur ayırtın.",
+        form_name: "Ad Soyad", form_company: "Şirket Adı", form_email: "E-posta", form_phone: "Telefon (WhatsApp)",
+        visit_label: "Ziyaret Tercihi",
+        visit_in_person: "İstanbul/Tuzla Operasyon Merkezimizde Yüz Yüze VIP Tur ve Demo",
+        visit_online: "Ürün Mühendislerimizle Canlı Online VIP Video Turu",
+        submit: "Randevu Talebi Gönder", sending: "Gönderiliyor...",
+        success: "Teşekkürler! Talebiniz alındı, ekibimiz en kısa sürede sizinle iletişime geçecek.",
+        error: "Bir şeyler ters gitti. Lütfen tekrar deneyin ya da bizi doğrudan arayın."
+      },
+      badge: {
+        title: "Anahtar Teslim Operasyon ve Sertifikalı Personel Eğitimi Dahil",
+        subtext: "Her sipariş; uluslararası lojistik, yerinde kurulum, sertifikalı personel eğitimi ve 7/24 uzaktan IoT teknik desteğini kapsar."
+      },
       usage_step_title: "1. Kullanım Alanı",
       usage_step_note: "Yüksek basınçlı modeller yalnızca kurumsal kullanım için sunulur.",
       usage: {
@@ -1209,8 +1238,37 @@ const TRANSLATIONS = {
       },
       disclaimer: "This information is for general guidance only and does not constitute medical advice. Treatment decisions must always be evaluated by a healthcare professional."
     },
+    arView: {
+      back: "← Back to configurator",
+      title: "Real-Size Preview",
+      subtitle: "Point your camera at the floor to place the chamber in your space at real size. Drag to rotate and view it from any angle.",
+      scaleBadge: "Real-scale preview",
+      desktopNote: "AR mode is only available on mobile devices. Open this page on your phone, or scan the QR code from the configurator.",
+      launchButton: "📱 View in Your Space"
+    },
     configurator: {
       header: { eyebrow: "CONFIGURATOR", title: "Design Your Own Apex Chamber", subtitle: "Choose the model, pressure level and add-ons — get an instant price estimate." },
+      ar: {
+        button: "📱 View in Your Space (3D / AR)",
+        tooltip: "Point your camera to the floor to place your custom hyperbaric chamber at real size.",
+        disclaimer: "This preview is a volume representation scaled to the chamber's real exterior dimensions; consult your sales representative for final design details (color, upholstery, windows)."
+      },
+      qr: { title: "Scan with Your Phone", subtitle: "Scan the QR code with your phone's camera to view in AR.", close: "Close" },
+      vip: {
+        headline: "Experience Before You Buy: VIP Demo at Our Operations Hub",
+        description: "Schedule an exclusive visit to our Tuzla/Istanbul center to test your custom chamber, or book a live virtual tour with our engineering team.",
+        form_name: "Full Name", form_company: "Company Name", form_email: "Email", form_phone: "Phone (WhatsApp)",
+        visit_label: "Visit Preference",
+        visit_in_person: "In-Person VIP Tour & Demo at Istanbul/Tuzla Operations Hub",
+        visit_online: "Live Online VIP Video Tour with Product Engineers",
+        submit: "Request Appointment", sending: "Sending...",
+        success: "Thank you! Your request has been received — our team will contact you shortly.",
+        error: "Something went wrong. Please try again or call us directly."
+      },
+      badge: {
+        title: "Turn-Key Operational & Certified Staff Training Included",
+        subtext: "Every order includes complete international logistics handling, on-site installation, certified staff operational training, and 24/7 remote IoT technical support."
+      },
       usage_step_title: "1. Intended Use",
       usage_step_note: "High-pressure models are only offered for institutional use.",
       usage: {
@@ -2049,8 +2107,37 @@ const TRANSLATIONS = {
       },
       disclaimer: "Данная информация носит исключительно общий ознакомительный характер и не является медицинской рекомендацией. Решения о лечении должны приниматься только специалистом-медиком."
     },
+    arView: {
+      back: "← Вернуться к конфигуратору",
+      title: "Предпросмотр в реальном размере",
+      subtitle: "Наведите камеру на пол, чтобы разместить камеру в вашем помещении в реальном размере. Проведите пальцем, чтобы повернуть и рассмотреть с любого угла.",
+      scaleBadge: "Предпросмотр в реальном масштабе",
+      desktopNote: "Режим AR доступен только на мобильных устройствах. Откройте эту страницу на телефоне или отсканируйте QR-код в конфигураторе.",
+      launchButton: "📱 Посмотреть в вашем помещении"
+    },
     configurator: {
       header: { eyebrow: "КОНФИГУРАТОР", title: "Создайте свою камеру Apex", subtitle: "Выберите модель, уровень давления и опции — получите мгновенную оценку стоимости." },
+      ar: {
+        button: "📱 Посмотреть в вашем помещении (3D / AR)",
+        tooltip: "Наведите камеру телефона на пол, чтобы разместить вашу гипербарическую камеру в реальном размере.",
+        disclaimer: "Этот предпросмотр — объёмное представление, масштабированное по реальным внешним размерам камеры; за окончательными деталями дизайна (цвет, обивка, окна) обратитесь к своему менеджеру по продажам."
+      },
+      qr: { title: "Отсканируйте телефоном", subtitle: "Отсканируйте QR-код камерой телефона, чтобы просмотреть в AR.", close: "Закрыть" },
+      vip: {
+        headline: "Тестируйте перед покупкой: VIP-демонстрация в нашем центре",
+        description: "Запланируйте эксклюзивный визит в наш центр в Тузле/Стамбуле, чтобы протестировать вашу индивидуальную камеру, или закажите видеотур с нашей инженерной командой.",
+        form_name: "Имя и фамилия", form_company: "Название компании", form_email: "Эл. почта", form_phone: "Телефон (WhatsApp)",
+        visit_label: "Формат визита",
+        visit_in_person: "Личный VIP-тур и демонстрация в нашем центре в Стамбуле/Тузле",
+        visit_online: "Живой онлайн VIP видео-тур с инженерами",
+        submit: "Отправить заявку на визит", sending: "Отправка...",
+        success: "Спасибо! Ваша заявка получена — наша команда свяжется с вами в ближайшее время.",
+        error: "Что-то пошло не так. Пожалуйста, попробуйте ещё раз или позвоните нам напрямую."
+      },
+      badge: {
+        title: "Пакет «Под ключ»: обучение персонала и техническая поддержка",
+        subtext: "Каждый заказ включает полное международное логистическое сопровождение, установку на месте, сертифицированное обучение персонала и круглосуточную удалённую техническую поддержку IoT."
+      },
       usage_step_title: "1. Сфера применения",
       usage_step_note: "Камеры высокого давления предлагаются только для учрежденческого использования.",
       usage: {
@@ -2889,8 +2976,37 @@ const TRANSLATIONS = {
       },
       disclaimer: "هذه المعلومات لأغراض التوعية العامة فقط ولا تُغني عن الاستشارة الطبية. يجب أن يقيّم أخصائي رعاية صحية دائماً قرارات العلاج."
     },
+    arView: {
+      back: "← العودة إلى أداة التكوين",
+      title: "معاينة بالحجم الحقيقي",
+      subtitle: "وجّه الكاميرا نحو الأرضية لوضع الغرفة في مساحتك بالحجم الحقيقي. اسحب لتدويرها ومشاهدتها من أي زاوية.",
+      scaleBadge: "معاينة بالمقياس الحقيقي",
+      desktopNote: "وضع الواقع المعزز متاح فقط على الأجهزة المحمولة. افتح هذه الصفحة على هاتفك أو امسح رمز QR من أداة التكوين.",
+      launchButton: "📱 عاين في مساحتك"
+    },
     configurator: {
       header: { eyebrow: "أداة التكوين", title: "صمّم غرفة Apex الخاصة بك", subtitle: "اختر الموديل ومستوى الضغط والإضافات — واحصل على تقدير فوري للسعر." },
+      ar: {
+        button: "📱 عاين الكبسولة في مساحتك الخاصة (3D / AR)",
+        tooltip: "وجّه كاميرا هاتفك نحو الأرضية لوضع غرفتك الانضغاطية المخصصة بالحجم الحقيقي في مساحتك.",
+        disclaimer: "هذه المعاينة عبارة عن تمثيل حجمي بمقياس الأبعاد الخارجية الحقيقية للغرفة؛ يرجى مراجعة ممثل المبيعات للحصول على تفاصيل التصميم النهائية (اللون، التنجيد، النوافذ)."
+      },
+      qr: { title: "امسح بهاتفك", subtitle: "امسح رمز QR بكاميرا هاتفك لعرضه بتقنية الواقع المعزز.", close: "إغلاق" },
+      vip: {
+        headline: "جرب قبل الشراء: عرض توضيحي VIP في مركز عملياتنا",
+        description: "احجز زيارة حصرية إلى مركزنا في تويزلا/إسطنبول لتجربة غرفتك المخصصة، أو احجز جولة افتراضية مباشرة مع فريق الهندسة لدينا.",
+        form_name: "الاسم الكامل", form_company: "اسم الشركة", form_email: "البريد الإلكتروني", form_phone: "الهاتف (واتساب)",
+        visit_label: "تفضيل الزيارة",
+        visit_in_person: "جولة وعرض VIP حضوري في مركز عملياتنا في إسطنبول/تويزلا",
+        visit_online: "جولة فيديو VIP مباشرة عبر الإنترنت مع مهندسي المنتج",
+        submit: "إرسال طلب الموعد", sending: "جارٍ الإرسال...",
+        success: "شكراً لك! تم استلام طلبك — سيتواصل معك فريقنا قريباً.",
+        error: "حدث خطأ ما. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة."
+      },
+      badge: {
+        title: "حزمة تشغيلية متكاملة وتدريب معتمد للموظفين مشمول بالكامل",
+        subtext: "يشمل كل طلب إدارة اللوجستيات الدولية الكاملة، والتركيب في الموقع، والتدريب التشغيلي المعتمد للموظفين، والدعم الفني عن بُعد لإنترنت الأشياء على مدار الساعة."
+      },
       usage_step_title: "1. مجال الاستخدام",
       usage_step_note: "الموديلات عالية الضغط تُقدَّم فقط للاستخدام المؤسسي.",
       usage: {
@@ -3728,8 +3844,37 @@ const TRANSLATIONS = {
       },
       disclaimer: "Esta información tiene fines meramente orientativos y no constituye asesoramiento médico. Las decisiones de tratamiento siempre deben ser evaluadas por un profesional sanitario."
     },
+    arView: {
+      back: "← Volver al configurador",
+      title: "Vista Previa a Tamaño Real",
+      subtitle: "Apunte la cámara al suelo para colocar la cámara en su espacio a tamaño real. Arrastre para rotarla y verla desde cualquier ángulo.",
+      scaleBadge: "Vista previa a escala real",
+      desktopNote: "El modo AR solo está disponible en dispositivos móviles. Abra esta página en su teléfono o escanee el código QR del configurador.",
+      launchButton: "📱 Ver en su Espacio"
+    },
     configurator: {
       header: { eyebrow: "CONFIGURADOR", title: "Diseña Tu Propia Cámara Apex", subtitle: "Elige el modelo, el nivel de presión y los complementos — obtén una estimación de precio instantánea." },
+      ar: {
+        button: "📱 Ver en su Espacio (3D / AR)",
+        tooltip: "Apunte la cámara de su teléfono al suelo para colocar su cámara hiperbárica personalizada a tamaño real.",
+        disclaimer: "Esta vista previa es una representación volumétrica escalada según las dimensiones exteriores reales de la cámara; consulte a su representante de ventas para conocer los detalles finales del diseño (color, tapicería, ventanas)."
+      },
+      qr: { title: "Escanee con su Teléfono", subtitle: "Escanee el código QR con la cámara de su teléfono para ver en AR.", close: "Cerrar" },
+      vip: {
+        headline: "Experimente Antes de Comprar: Demo VIP en Nuestro Centro de Operaciones",
+        description: "Programe una visita exclusiva a nuestro centro en Tuzla/Estambul para probar su cámara personalizada, o reserve un tour virtual en vivo con nuestro equipo de ingeniería.",
+        form_name: "Nombre Completo", form_company: "Nombre de la Empresa", form_email: "Correo Electrónico", form_phone: "Teléfono (WhatsApp)",
+        visit_label: "Preferencia de Visita",
+        visit_in_person: "Tour y Demo VIP Presencial en Nuestro Centro de Operaciones de Estambul/Tuzla",
+        visit_online: "Tour de Video VIP en Vivo con Ingenieros de Producto",
+        submit: "Solicitar Cita", sending: "Enviando...",
+        success: "¡Gracias! Hemos recibido su solicitud — nuestro equipo se pondrá en contacto pronto.",
+        error: "Algo salió mal. Por favor, inténtelo de nuevo o llámenos directamente."
+      },
+      badge: {
+        title: "Operación Llave en Mano y Capacitación de Personal Certificado Incluida",
+        subtext: "Cada pedido incluye gestión logística internacional completa, instalación in situ, capacitación operativa de personal certificado y soporte técnico remoto IoT 24/7."
+      },
       usage_step_title: "1. Uso Previsto",
       usage_step_note: "Los modelos de alta presión solo se ofrecen para uso institucional.",
       usage: {
@@ -4567,8 +4712,37 @@ const TRANSLATIONS = {
       },
       disclaimer: "Esta informação tem caráter meramente orientativo e não constitui aconselhamento médico. As decisões de tratamento devem sempre ser avaliadas por um profissional de saúde."
     },
+    arView: {
+      back: "← Voltar ao configurador",
+      title: "Pré-visualização em Tamanho Real",
+      subtitle: "Aponte a câmera para o chão para posicionar a câmara no seu espaço em tamanho real. Arraste para girar e visualizar de qualquer ângulo.",
+      scaleBadge: "Pré-visualização em escala real",
+      desktopNote: "O modo AR está disponível apenas em dispositivos móveis. Abra esta página no seu telefone ou escaneie o código QR no configurador.",
+      launchButton: "📱 Ver no seu Espaço"
+    },
     configurator: {
       header: { eyebrow: "CONFIGURADOR", title: "Monte Sua Própria Câmara Apex", subtitle: "Escolha o modelo, o nível de pressão e os opcionais — obtenha uma estimativa de preço instantânea." },
+      ar: {
+        button: "📱 Ver no seu Espaço (3D / AR)",
+        tooltip: "Aponte a câmera do seu telefone para o chão para posicionar sua câmara hiperbárica personalizada em tamanho real.",
+        disclaimer: "Esta pré-visualização é uma representação volumétrica em escala conforme as dimensões externas reais da câmara; consulte seu representante de vendas para os detalhes finais do design (cor, estofamento, janelas)."
+      },
+      qr: { title: "Escaneie com seu Telefone", subtitle: "Escaneie o código QR com a câmera do seu telefone para ver em AR.", close: "Fechar" },
+      vip: {
+        headline: "Experimente Antes de Comprar: Demo VIP em Nosso Centro de Operações",
+        description: "Agende uma visita exclusiva ao nosso centro em Tuzla/Istambul para testar sua câmara personalizada, ou reserve um tour virtual ao vivo com nossa equipe de engenharia.",
+        form_name: "Nome Completo", form_company: "Nome da Empresa", form_email: "E-mail", form_phone: "Telefone (WhatsApp)",
+        visit_label: "Preferência de Visita",
+        visit_in_person: "Tour e Demo VIP Presencial em Nosso Centro de Operações de Istambul/Tuzla",
+        visit_online: "Tour de Vídeo VIP ao Vivo com Engenheiros de Produto",
+        submit: "Solicitar Agendamento", sending: "Enviando...",
+        success: "Obrigado! Sua solicitação foi recebida — nossa equipe entrará em contato em breve.",
+        error: "Algo deu errado. Por favor, tente novamente ou ligue diretamente para nós."
+      },
+      badge: {
+        title: "Operação Turn-Key e Treinamento de Equipe Certificada Incluídos",
+        subtext: "Cada pedido inclui gestão logística internacional completa, instalação no local, treinamento operacional de equipe certificada e suporte técnico remoto de IoT 24 horas por dia, 7 dias por semana."
+      },
       usage_step_title: "1. Uso Pretendido",
       usage_step_note: "Os modelos de alta pressão são oferecidos apenas para uso institucional.",
       usage: {
@@ -5406,8 +5580,37 @@ const TRANSLATIONS = {
       },
       disclaimer: "Diese Informationen dienen ausschließlich der allgemeinen Orientierung und stellen keine medizinische Beratung dar. Behandlungsentscheidungen müssen stets von einer medizinischen Fachkraft beurteilt werden."
     },
+    arView: {
+      back: "← Zurück zum Konfigurator",
+      title: "Vorschau in Originalgröße",
+      subtitle: "Richten Sie die Kamera auf den Boden, um die Kammer in Originalgröße in Ihrem Raum zu platzieren. Ziehen Sie, um sie zu drehen und aus jedem Winkel zu betrachten.",
+      scaleBadge: "Vorschau im Originalmaßstab",
+      desktopNote: "Der AR-Modus ist nur auf Mobilgeräten verfügbar. Öffnen Sie diese Seite auf Ihrem Handy oder scannen Sie den QR-Code im Konfigurator.",
+      launchButton: "📱 In Ihrem Raum ansehen"
+    },
     configurator: {
       header: { eyebrow: "KONFIGURATOR", title: "Gestalten Sie Ihre eigene Apex-Kammer", subtitle: "Wählen Sie Modell, Druckstufe und Zusatzausstattung — erhalten Sie sofort eine Preisschätzung." },
+      ar: {
+        button: "📱 In Ihrem Raum ansehen (3D / AR)",
+        tooltip: "Richten Sie Ihre Handykamera auf den Boden, um Ihre individuelle Druckkammer in Originalgröße zu platzieren.",
+        disclaimer: "Diese Vorschau ist eine Volumendarstellung, skaliert nach den tatsächlichen Außenmaßen der Kammer; wenden Sie sich für endgültige Gestaltungsdetails (Farbe, Polsterung, Fenster) an Ihren Vertriebsmitarbeiter."
+      },
+      qr: { title: "Mit dem Handy scannen", subtitle: "Scannen Sie den QR-Code mit Ihrer Handykamera, um ihn in AR anzuzeigen.", close: "Schließen" },
+      vip: {
+        headline: "Erleben Sie es vor dem Kauf: VIP-Demo in unserem Betriebszentrum",
+        description: "Vereinbaren Sie einen exklusiven Besuch in unserem Zentrum in Tuzla/Istanbul, um Ihre individuelle Kammer zu testen, oder buchen Sie eine Live-Video-Tour mit unserem Ingenieurteam.",
+        form_name: "Vollständiger Name", form_company: "Firmenname", form_email: "E-Mail", form_phone: "Telefon (WhatsApp)",
+        visit_label: "Besuchspräferenz",
+        visit_in_person: "Persönliche VIP-Tour & Demo in unserem Betriebszentrum Istanbul/Tuzla",
+        visit_online: "Live-Online-VIP-Videotour mit Produktingenieuren",
+        submit: "Termin anfragen", sending: "Wird gesendet...",
+        success: "Vielen Dank! Ihre Anfrage ist eingegangen — unser Team wird sich in Kürze bei Ihnen melden.",
+        error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an."
+      },
+      badge: {
+        title: "Schlüsselfertiger Betrieb & Zertifizierte Mitarbeiterschulung Inbegriffen",
+        subtext: "Jede Bestellung umfasst die vollständige internationale Logistikabwicklung, Vor-Ort-Installation, zertifizierte Mitarbeiterschulung und 24/7 IoT-Fernsupport."
+      },
       usage_step_title: "1. Verwendungszweck",
       usage_step_note: "Hochdruckmodelle werden ausschließlich für institutionelle Nutzung angeboten.",
       usage: {
