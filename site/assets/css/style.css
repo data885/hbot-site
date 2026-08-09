@@ -183,13 +183,14 @@ p { text-align: justify; text-align-last: left; }
   display: flex; align-items: center; gap: 2px; flex-wrap: wrap; background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 999px; padding: 4px;
 }
-.lang-switch a {
+.lang-switch a, .lang-switch button {
   border: none; background: transparent; color: rgba(255, 255, 255, 0.7); font-size: 11px; font-weight: 700;
   padding: 5px 7px; border-radius: 999px; transition: background var(--transition), color var(--transition);
-  text-decoration: none; line-height: 1.4;
+  text-decoration: none; line-height: 1.4; font-family: inherit; cursor: pointer; appearance: none;
+  -webkit-appearance: none; min-width: 34px; text-align: center;
 }
-.lang-switch a.is-active { background: var(--cyan-500); color: var(--ink-950); }
-.lang-switch a:hover:not(.is-active) { color: var(--white); }
+.lang-switch a.is-active, .lang-switch button.is-active { background: var(--cyan-500); color: var(--ink-950); }
+.lang-switch a:hover:not(.is-active), .lang-switch button:hover:not(.is-active) { color: var(--white); }
 
 .nav-cta {
   background: var(--cyan-500); color: var(--ink-950); font-weight: 700; font-size: 13.5px;
