@@ -2,11 +2,11 @@
   "use strict";
 
   var MODEL_NAMES = {
-    "solo-lounge": "Apex Solo Lounge",
-    "solo": "Apex Solo",
-    "duo": "Apex Duo",
-    "quad-cube": "Apex Quad-Cube",
-    "nexus": "Apex Nexus"
+    "solo-lounge": "Oslo Lounge",
+    "solo": "Oslo",
+    "duo": "Tokyo",
+    "quad-cube": "Milan",
+    "nexus": "Geneva"
   };
 
   function getParam(name) {
