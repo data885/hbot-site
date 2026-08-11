@@ -2052,7 +2052,7 @@
 
   function openArView() {
     const modelId = configState.model;
-    const url = window.location.origin + "/ar-view.html?model=" + encodeURIComponent(modelId);
+    const url = window.location.origin + "/ar-view.html?model=" + encodeURIComponent(modelId) + "&color=" + encodeURIComponent(configState.color);
 
     pushLeadToCrm({
       source: "ar-view",
