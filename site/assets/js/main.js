@@ -1282,6 +1282,8 @@
 
   /* Koltuk rengi: fiyatsız görsel tercih — sahneyi değiştirmez, özette adıyla listelenir */
   function renderConfigSeatColors(dict) {
+    const seatColorSection = document.getElementById("seat-color-step-section");
+    if (seatColorSection) seatColorSection.hidden = configState.model === "solo-lounge";
     const c = document.getElementById("config-seat-color-grid");
     if (!c || !dict.configurator.seat_colors) return;
     c.innerHTML = dict.configurator.seat_colors.map((col) => {
@@ -1340,6 +1342,7 @@
         renderConfigStyles(dict);
         renderConfigPressure(dict);
         renderNexusSeatSection(dict);
+        renderConfigSeatColors(dict);
         renderConfigAddons(dict);
         renderConfigSummary(dict);
         updateConfigStage(dict);
@@ -1571,10 +1574,10 @@
       ? `<div class="config-summary-row"><span class="label">${s.interior_color_label}</span><span class="value"><span class="summary-swatch" style="background:${interiorInfo.hex}"></span>${interiorInfo.name}</span></div>`
       : "";
     const seatColorInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
-    const seatColorRow = seatColorInfo && s.seat_color_label
+    const seatColorRow = seatColorInfo && s.seat_color_label && configState.model !== "solo-lounge"
       ? `<div class="config-summary-row"><span class="label">${s.seat_color_label}</span><span class="value"><span class="summary-swatch" style="background:${seatColorInfo.hex}"></span>${seatColorInfo.name}</span></div>`
       : "";
-    const seatTypeRow = s.seat_type_label
+    const seatTypeRow = s.seat_type_label && configState.model !== "solo-lounge"
       ? `<div class="config-summary-row"><span class="label">${s.seat_type_label}</span><span class="value">${configState.addons.has("massage") ? s.seat_massage : s.seat_standard}</span></div>`
       : "";
     const styleInfo = (dict.configurator.styles || []).find((st) => st.id === configState.chamberStyle);
@@ -1723,8 +1726,8 @@
     if (styleInfo) lines.push(`${s.style_label}: ${styleInfo.name}`);
     if (colorInfo) lines.push(`${s.color_label}: ${colorInfo.name}`);
     if (interiorInfo) lines.push(`${s.interior_color_label}: ${interiorInfo.name}`);
-    if (seatColorInfo && s.seat_color_label) lines.push(`${s.seat_color_label}: ${seatColorInfo.name}`);
-    if (s.seat_type_label) lines.push(`${s.seat_type_label}: ${configState.addons.has("massage") ? s.seat_massage : s.seat_standard}`);
+    if (seatColorInfo && s.seat_color_label && configState.model !== "solo-lounge") lines.push(`${s.seat_color_label}: ${seatColorInfo.name}`);
+    if (s.seat_type_label && configState.model !== "solo-lounge") lines.push(`${s.seat_type_label}: ${configState.addons.has("massage") ? s.seat_massage : s.seat_standard}`);
     lines.push(`${s.pressure_label}: ${tier.ata}`);
     lines.push(`${s.addons_label}: ${addonNames}`);
     if (configState.discountPct > 0) lines.push(`${s.discount_label}: %${configState.discountPct} (−${formatPrice(computeDiscountAmount())})`);
@@ -1925,8 +1928,8 @@
       [s.pressure_label || "Pressure", tier.ata],
       [s.color_label || "Exterior Color", colInfo ? colInfo.name : "-"],
       [s.interior_color_label || "Interior Color", intInfo ? intInfo.name : "-"],
-      [s.seat_color_label || "Seat Color", seatInfo ? seatInfo.name : "-"],
     ];
+    if (configState.model !== "solo-lounge") confRows.push([s.seat_color_label || "Seat Color", seatInfo ? seatInfo.name : "-"]);
     if (SEAT_TIERS[configState.model]) confRows.splice(2, 0, [s.seats_label || "Seats", String(configState.nexusSeats)]);
     confRows.push([s.addons_label || "Add-ons", addonNames.length ? addonNames.join(", ") : (s.none_selected || "None")]);
     if (configState.discountPct > 0) confRows.push([s.discount_label || "Discount", `%${configState.discountPct} (-${formatPrice(computeDiscountAmount())})`]);

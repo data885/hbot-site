@@ -3,7 +3,7 @@
 
   var MODEL_NAMES = {
     "solo-lounge": "Oslo Lounge",
-    "solo": "Oslo",
+    "solo": "Dubai",
     "duo": "Tokyo",
     "quad-cube": "Milan",
     "nexus": "Geneva"
