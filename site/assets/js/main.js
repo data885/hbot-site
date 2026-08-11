@@ -556,7 +556,7 @@
      bölgesine uygulanır — sahne ve arka plan renklenmez; renk adı ayrıca özet panelinde gösterilir. */
   const REAL_STAGE = {
     "solo-lounge": "real/apex-lounge-real",
-    solo: "real/apex-lounge-real",       // Diğer renkler için boyanabilir taban görsel; bej/adaçayı gerçek fotoğraf kullanır (REAL_STAGE_BY_COLOR)
+    solo: "real/oslo-beige",             // Artık tüm renkler icin REAL_STAGE_BY_COLOR altinda gercek fotograf var
     duo: "real/apex-duo-real",
     "duo-plus": "real/apex-duo-real",    // Duo Plus için ayrı fotoğraf yok — Duo görseli paylaşılır
     "quad-cube": "real/apex-quad-cube",
@@ -604,14 +604,27 @@
   /* Gerçek renk fotoğrafları: bazı model+renk kombinasyonları için, boyanmış
      (canvas recolor) görsel yerine GERÇEK ürün fotoğrafı gösterilir. Eşleşme
      yoksa mevcut davranış (spin seti / recolor) devam eder. */
+  const PAINTED_COLOR_KEYS = {
+    "mat-siyah": "mat-siyah", sampanya: "sampanya", bronz: "bronz", grafit: "grafit",
+    antrasit: "antrasit", "gece-laciverti": "gece-laciverti", bordo: "bordo", zumrut: "zumrut"
+  };
+  function paintedStageMap(prefix) {
+    const out = {};
+    Object.keys(PAINTED_COLOR_KEYS).forEach((id) => { out[id] = `real/${prefix}-${id}`; });
+    return out;
+  }
   const REAL_STAGE_BY_COLOR = {
-    solo: { bej: "real/oslo-beige", "adacayi-yesili": "real/oslo-green" },
-    "quad-cube": {
+    "solo-lounge": paintedStageMap("lounge"),
+    solo: Object.assign({ bej: "real/oslo-beige", "adacayi-yesili": "real/oslo-green" }, paintedStageMap("oslo")),
+    duo: paintedStageMap("duo"),
+    "duo-plus": paintedStageMap("duo"),
+    "quad-cube": Object.assign({
       turkuaz: "real/milan-teal",
       "nane-yesili": "real/milan-mint",
       "tas-grisi": "real/milan-sage",
       fildisi: "real/milan-cream"
-    }
+    }, paintedStageMap("milan")),
+    nexus: paintedStageMap("nexus")
   };
 
   function currentStageTarget() {

@@ -40,6 +40,13 @@ def extract_block(source, name):
                 continue
             if ch == in_str:
                 in_str = None
+        elif ch == "/" and source[i:i + 2] == "//":
+            # Line comment: skip to end of line so apostrophes/quotes inside
+            # it can't desync the string-tracking state below.
+            i = source.find("\n", i)
+            if i == -1:
+                break
+            continue
         elif ch in "\"'":
             in_str = ch
         elif ch == opener:
