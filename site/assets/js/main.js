@@ -556,9 +556,9 @@
      bölgesine uygulanır — sahne ve arka plan renklenmez; renk adı ayrıca özet panelinde gösterilir. */
   const REAL_STAGE = {
     "solo-lounge": "real/apex-lounge-real",
-    solo: "real/apex-lounge-real",       // Solo'nun kendi fotoğrafı yok — aile görseli (Lounge)
+    solo: "real/apex-lounge-real",       // Diğer renkler için boyanabilir taban görsel; bej/adaçayı gerçek fotoğraf kullanır (REAL_STAGE_BY_COLOR)
     duo: "real/apex-duo-real",
-    "duo-plus": "real/apex-duo-real",    // Duo Plus'ın kendi fotoğrafı yok — Duo görseli paylaşılır
+    "duo-plus": "real/apex-duo-real",    // Duo Plus için ayrı fotoğraf yok — Duo görseli paylaşılır
     "quad-cube": "real/apex-quad-cube",
     nexus: "real/apex-nexus"
   };
@@ -601,10 +601,26 @@
      Görsel hedefi değişirken (model/görünüm geçişi) yarım frame yazılmasını önler. */
   let stopSpinMomentum = () => {};
 
+  /* Gerçek renk fotoğrafları: bazı model+renk kombinasyonları için, boyanmış
+     (canvas recolor) görsel yerine GERÇEK ürün fotoğrafı gösterilir. Eşleşme
+     yoksa mevcut davranış (spin seti / recolor) devam eder. */
+  const REAL_STAGE_BY_COLOR = {
+    solo: { bej: "real/oslo-beige", "adacayi-yesili": "real/oslo-green" },
+    "quad-cube": {
+      turkuaz: "real/milan-teal",
+      "nane-yesili": "real/milan-mint",
+      "tas-grisi": "real/milan-sage",
+      fildisi: "real/milan-cream"
+    }
+  };
+
   function currentStageTarget() {
     if (configState.stageView === "interior") {
       const realIc = REAL_INTERIOR[configState.model];
       if (realIc) return { key: realIc, filter: "none", interior: true, photo: true };
+    } else {
+      const realColorMatch = (REAL_STAGE_BY_COLOR[configState.model] || {})[configState.color];
+      if (realColorMatch) return { key: realColorMatch, filter: "none", interior: false, photo: true };
     }
     if (spinAvailableFor()) {
       return { key: spinFrameKey(configState.spinIdx), filter: "none", interior: false, photo: true };
@@ -1219,13 +1235,13 @@
     }
   }
 
-  /* Kart görselleri: model -> gerçek fotoğraf (Solo/Quad kendi fotosu yok — aile görseli) */
+  /* Kart görselleri: model -> gerçek fotoğraf (Duo Plus'ın kendi fotosu yok — Duo görseli paylaşılır) */
   const MODEL_CARD_IMG = {
     "solo-lounge": "real/apex-lounge-real",
-    solo: "real/apex-lounge-real",
+    solo: "real/oslo-beige",
     duo: "real/apex-duo-real",
     "duo-plus": "real/apex-duo-real",
-    "quad-cube": "real/apex-quad-cube",
+    "quad-cube": "real/milan-cream",
     nexus: "real/apex-nexus"
   };
 

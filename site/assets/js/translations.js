@@ -450,7 +450,13 @@ const TRANSLATIONS = {
         { id: "sampanya", name: "Şampanya Altın", hex: "#C9A876" },
         { id: "grafit", name: "Grafit Gri", hex: "#3A3F44" },
         { id: "bronz", name: "Bronz", hex: "#A5754A" },
-        { id: "zumrut", name: "Zümrüt Yeşili", hex: "#1F6F54" }
+        { id: "zumrut", name: "Zümrüt Yeşili", hex: "#1F6F54" },
+        { id: "bej", name: "Bej", hex: "#C7B4A6" },
+        { id: "adacayi-yesili", name: "Adaçayı Yeşili", hex: "#9BA58F" },
+        { id: "turkuaz", name: "Turkuaz", hex: "#68A5A5" },
+        { id: "nane-yesili", name: "Nane Yeşili", hex: "#9CA99D" },
+        { id: "tas-grisi", name: "Taş Grisi", hex: "#828C84" },
+        { id: "fildisi", name: "Fildişi", hex: "#AE9783" }
       ],
       interior_colors: [
         { id: "cream", name: "Krem", hex: "#E8DCC8" },
@@ -1319,7 +1325,13 @@ const TRANSLATIONS = {
         { id: "sampanya", name: "Champagne Gold", hex: "#C9A876" },
         { id: "grafit", name: "Graphite Gray", hex: "#3A3F44" },
         { id: "bronz", name: "Bronze", hex: "#A5754A" },
-        { id: "zumrut", name: "Emerald Green", hex: "#1F6F54" }
+        { id: "zumrut", name: "Emerald Green", hex: "#1F6F54" },
+        { id: "bej", name: "Beige", hex: "#C7B4A6" },
+        { id: "adacayi-yesili", name: "Sage Green", hex: "#9BA58F" },
+        { id: "turkuaz", name: "Turquoise", hex: "#68A5A5" },
+        { id: "nane-yesili", name: "Mint Green", hex: "#9CA99D" },
+        { id: "tas-grisi", name: "Stone Gray", hex: "#828C84" },
+        { id: "fildisi", name: "Ivory", hex: "#AE9783" }
       ],
       interior_colors: [
         { id: "cream", name: "Cream", hex: "#E8DCC8" },
@@ -2188,7 +2200,13 @@ const TRANSLATIONS = {
         { id: "sampanya", name: "Золото шампань", hex: "#C9A876" },
         { id: "grafit", name: "Графитовый серый", hex: "#3A3F44" },
         { id: "bronz", name: "Бронза", hex: "#A5754A" },
-        { id: "zumrut", name: "Изумрудно-зелёный", hex: "#1F6F54" }
+        { id: "zumrut", name: "Изумрудно-зелёный", hex: "#1F6F54" },
+        { id: "bej", name: "Бежевый", hex: "#C7B4A6" },
+        { id: "adacayi-yesili", name: "Шалфейный зелёный", hex: "#9BA58F" },
+        { id: "turkuaz", name: "Бирюзовый", hex: "#68A5A5" },
+        { id: "nane-yesili", name: "Мятный зелёный", hex: "#9CA99D" },
+        { id: "tas-grisi", name: "Каменно-серый", hex: "#828C84" },
+        { id: "fildisi", name: "Слоновая кость", hex: "#AE9783" }
       ],
       interior_colors: [
         { id: "cream", name: "Кремовый", hex: "#E8DCC8" },
@@ -3057,7 +3075,13 @@ const TRANSLATIONS = {
         { id: "sampanya", name: "ذهبي شمبانيا", hex: "#C9A876" },
         { id: "grafit", name: "رمادي جرافيت", hex: "#3A3F44" },
         { id: "bronz", name: "برونزي", hex: "#A5754A" },
-        { id: "zumrut", name: "أخضر زمردي", hex: "#1F6F54" }
+        { id: "zumrut", name: "أخضر زمردي", hex: "#1F6F54" },
+        { id: "bej", name: "بيج", hex: "#C7B4A6" },
+        { id: "adacayi-yesili", name: "أخضر مريمية", hex: "#9BA58F" },
+        { id: "turkuaz", name: "فيروزي", hex: "#68A5A5" },
+        { id: "nane-yesili", name: "أخضر نعناعي", hex: "#9CA99D" },
+        { id: "tas-grisi", name: "رمادي حجري", hex: "#828C84" },
+        { id: "fildisi", name: "عاجي", hex: "#AE9783" }
       ],
       interior_colors: [
         { id: "cream", name: "كريمي", hex: "#E8DCC8" },
@@ -3925,7 +3949,13 @@ const TRANSLATIONS = {
         { id: "sampanya", name: "Dorado Champán", hex: "#C9A876" },
         { id: "grafit", name: "Gris Grafito", hex: "#3A3F44" },
         { id: "bronz", name: "Bronce", hex: "#A5754A" },
-        { id: "zumrut", name: "Verde Esmeralda", hex: "#1F6F54" }
+        { id: "zumrut", name: "Verde Esmeralda", hex: "#1F6F54" },
+        { id: "bej", name: "Beige", hex: "#C7B4A6" },
+        { id: "adacayi-yesili", name: "Verde Salvia", hex: "#9BA58F" },
+        { id: "turkuaz", name: "Turquesa", hex: "#68A5A5" },
+        { id: "nane-yesili", name: "Verde Menta", hex: "#9CA99D" },
+        { id: "tas-grisi", name: "Gris Piedra", hex: "#828C84" },
+        { id: "fildisi", name: "Marfil", hex: "#AE9783" }
       ],
       interior_colors: [
         { id: "cream", name: "Crema", hex: "#E8DCC8" },
@@ -4793,7 +4823,13 @@ const TRANSLATIONS = {
         { id: "sampanya", name: "Dourado Champanhe", hex: "#C9A876" },
         { id: "grafit", name: "Cinza Grafite", hex: "#3A3F44" },
         { id: "bronz", name: "Bronze", hex: "#A5754A" },
-        { id: "zumrut", name: "Verde Esmeralda", hex: "#1F6F54" }
+        { id: "zumrut", name: "Verde Esmeralda", hex: "#1F6F54" },
+        { id: "bej", name: "Bege", hex: "#C7B4A6" },
+        { id: "adacayi-yesili", name: "Verde Sálvia", hex: "#9BA58F" },
+        { id: "turkuaz", name: "Turquesa", hex: "#68A5A5" },
+        { id: "nane-yesili", name: "Verde Menta", hex: "#9CA99D" },
+        { id: "tas-grisi", name: "Cinza Pedra", hex: "#828C84" },
+        { id: "fildisi", name: "Marfim", hex: "#AE9783" }
       ],
       interior_colors: [
         { id: "cream", name: "Creme", hex: "#E8DCC8" },
@@ -5661,7 +5697,13 @@ const TRANSLATIONS = {
         { id: "sampanya", name: "Champagnergold", hex: "#C9A876" },
         { id: "grafit", name: "Graphitgrau", hex: "#3A3F44" },
         { id: "bronz", name: "Bronze", hex: "#A5754A" },
-        { id: "zumrut", name: "Smaragdgrün", hex: "#1F6F54" }
+        { id: "zumrut", name: "Smaragdgrün", hex: "#1F6F54" },
+        { id: "bej", name: "Beige", hex: "#C7B4A6" },
+        { id: "adacayi-yesili", name: "Salbeigrün", hex: "#9BA58F" },
+        { id: "turkuaz", name: "Türkis", hex: "#68A5A5" },
+        { id: "nane-yesili", name: "Mintgrün", hex: "#9CA99D" },
+        { id: "tas-grisi", name: "Steingrau", hex: "#828C84" },
+        { id: "fildisi", name: "Elfenbein", hex: "#AE9783" }
       ],
       interior_colors: [
         { id: "cream", name: "Creme", hex: "#E8DCC8" },
