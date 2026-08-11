@@ -2085,6 +2085,29 @@
     overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
   }
 
+  /* Sticky önizleme, adım listesinin (config-steps) TAMAMI kadar kayabilsin diye
+     config-stage-col'un yüksekliğini steps yüksekliği + sticky içerik yüksekliği
+     olacak şekilde JS ile senkron tutar (CSS tek başına: sticky, kısa içerikle
+     içerme bloğunun ancak (blok yüksekliği - içerik yüksekliği) kadarlık kısmında
+     kalabiliyor — steps her değiştiğinde (model/kullanım tipi vb.) yeniden ölçer). */
+  function initStageColHeightSync() {
+    const stepsEl = document.querySelector(".config-steps");
+    const colEl = document.querySelector(".config-stage-col");
+    const innerEl = document.querySelector(".config-stage-sticky-inner");
+    if (!stepsEl || !colEl || !innerEl) return;
+    const sync = () => {
+      if (window.innerWidth <= 980) { colEl.style.minHeight = ""; return; }
+      const stepsH = stepsEl.getBoundingClientRect().height;
+      const innerH = innerEl.getBoundingClientRect().height;
+      colEl.style.minHeight = Math.ceil(stepsH + innerH) + "px";
+    };
+    sync();
+    if (window.ResizeObserver) {
+      new ResizeObserver(sync).observe(stepsEl);
+    }
+    window.addEventListener("resize", sync);
+  }
+
   let configuratorPreselected = false;
   let configuratorInitialized = false;
   function initConfigurator(dict) {
@@ -2239,9 +2262,15 @@
   /* v16: dil butonlari artik gercek <a href="/xx/sayfa.html"> linkleri —
      tarayici dogal olarak o dilin baked sayfasina gider, client-side
      re-render'a gerek yok (mobil menuyu kapatmak disinda). */
+  const LANG_MANUAL_KEY = "hbot_lang_manual";
+  function markLangManual() {
+    try { localStorage.setItem(LANG_MANUAL_KEY, "1"); } catch (e) {}
+  }
+
   function initLangSwitch() {
-    document.querySelectorAll(".lang-switch [data-lang]").forEach((btn) => {
+    document.querySelectorAll("[data-lang]").forEach((btn) => {
       btn.addEventListener("click", () => {
+        markLangManual();
         closeMobileNav();
       });
     });
@@ -2602,6 +2631,56 @@
     pt: { msg: "Parece que você navega em português. Ver este site em português?", cta: "Ver em português" },
     de: { msg: "Es sieht so aus, als würden Sie auf Deutsch surfen. Diese Seite auf Deutsch ansehen?", cta: "Auf Deutsch ansehen" }
   };
+  /* Kanka'nin ek istegi: VPN ile ABD'den girildiginde site hala TR aciliyordu —
+     tarayici dili (preferredBrowserLang) VPN ile degismedigi icin oneri seridi
+     tetiklenmiyordu. Bu fonksiyon GERCEK IP konumuna (Cloudflare'in ayni-origin
+     /cdn-cgi/trace uc noktasi — CSP degisikligi gerektirmez) gore SESSIZCE
+     yonlendirir. SEO riskini onlemek icin: bilinen bot/crawler User-Agent'lari
+     ATLANIR (boylece Googlebot vb. hep TR kok sayfayi tarar/indexler), ve
+     kullanici herhangi bir dil linkine bir kez manuel tikladiysa (markLangManual)
+     bir daha asla zorla yonlendirilmez. */
+  const GEO_REDIRECT_DONE_KEY = "hbot_geo_redirect_done";
+  const COUNTRY_TO_LANG = {
+    US: "en", GB: "en", CA: "en", AU: "en", NZ: "en", IE: "en", ZA: "en", IN: "en",
+    SG: "en", MY: "en", PH: "en", NG: "en", KE: "en", GH: "en", PK: "en", HK: "en",
+    RU: "ru", BY: "ru", KZ: "ru", KG: "ru", UZ: "ru", TJ: "ru", TM: "ru", AM: "ru",
+    AZ: "ru", MD: "ru",
+    SA: "ar", AE: "ar", QA: "ar", KW: "ar", BH: "ar", OM: "ar", EG: "ar", JO: "ar",
+    LB: "ar", IQ: "ar", MA: "ar", DZ: "ar", TN: "ar", LY: "ar", SY: "ar", YE: "ar", SD: "ar",
+    DE: "de", AT: "de", CH: "de", LI: "de",
+    PT: "pt", BR: "pt", AO: "pt", MZ: "pt",
+    ES: "es", MX: "es", AR: "es", CO: "es", CL: "es", PE: "es", VE: "es", EC: "es",
+    GT: "es", CU: "es", BO: "es", DO: "es", HN: "es", PY: "es", SV: "es", NI: "es",
+    CR: "es", PA: "es", UY: "es"
+  };
+  function isLikelyBot() {
+    return /bot|crawl|spider|slurp|facebookexternalhit|whatsapp|telegrambot|slackbot|discordbot|linkedinbot|twitterbot|googlebot|bingbot|yandex|baiduspider|duckduckbot|applebot|semrush|ahrefsbot|mj12bot|petalbot|pingdom|lighthouse|headlesschrome/i.test(navigator.userAgent || "");
+  }
+  async function initGeoRedirect() {
+    if (currentPageLang() !== "tr") return;
+    if (isLikelyBot()) return;
+    let manual = null, done = null;
+    try {
+      manual = localStorage.getItem(LANG_MANUAL_KEY);
+      done = sessionStorage.getItem(GEO_REDIRECT_DONE_KEY);
+    } catch (e) {}
+    if (manual || done) return;
+    try {
+      const res = await fetch("/cdn-cgi/trace", { cache: "no-store" });
+      if (!res.ok) return;
+      const text = await res.text();
+      const m = text.match(/^loc=([A-Z]{2})$/m);
+      if (!m) return;
+      const country = m[1];
+      const lang = COUNTRY_TO_LANG[country];
+      if (!lang || lang === "tr") return;
+      try { sessionStorage.setItem(GEO_REDIRECT_DONE_KEY, "1"); } catch (e) {}
+      const path = window.location.pathname;
+      const filename = (path === "/" || path === "") ? "" : path.replace(/^\//, "");
+      window.location.replace("/" + lang + "/" + filename + window.location.search);
+    } catch (e) {}
+  }
+
   function initLangSuggestion() {
     if (currentPageLang() !== "tr") return;
     const preferred = preferredBrowserLang();
@@ -2631,6 +2710,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    initGeoRedirect();
     initLangSwitch();
     initMobileNav();
     initDropdown();
@@ -2641,6 +2721,7 @@
     initForm("quote-form", "quote-form-success", "quote-form-error", "configurator.quote_form.submit", "configurator.quote_form.sending");
     initForm("vip-form", "vip-form-success", "vip-form-error", "configurator.vip.submit", "configurator.vip.sending");
     initArQrModal();
+    initStageColHeightSync();
     initYear();
     initHeroSlider();
     initWhatsAppButton();

@@ -37,7 +37,7 @@
 <link rel="alternate" hreflang="pt" href="https://hbotchambertech.com/pt/konfigurator.html" />
 <link rel="alternate" hreflang="de" href="https://hbotchambertech.com/de/konfigurator.html" />
 <link rel="alternate" hreflang="x-default" href="https://hbotchambertech.com/konfigurator.html" />
-<link rel="stylesheet" href="/assets/css/style.css?v=51" />
+<link rel="stylesheet" href="/assets/css/style.css?v=56" />
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "HBOT Chamber Tech", "url": "https://hbotchambertech.com", "logo": "https://hbotchambertech.com/assets/img/logo-header.png", "description": "HBOT Chamber Tech es un fabricante líder de cámaras hiperbáricas de oxígeno conectadas por IoT e impulsadas por IA.", "email": "info@hbotchambertech.com", "telephone": "+90 850 888 1679", "address": {"@type": "PostalAddress", "streetAddress": "Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29", "addressLocality": "Tuzla / İstanbul", "addressCountry": "TR"}, "sameAs": ["https://almitagroup.com"], "parentOrganization": {"@type": "Organization", "name": "Almita Group", "url": "https://almitagroup.com"}, "inLanguage": "es"}
 </script>
@@ -195,76 +195,72 @@
         </div>
 
         <div class="config-stage-col">
-          <div class="config-stage" id="config-stage" aria-hidden="true">
-            <div class="stage-spotlight"></div>
-            <div class="stage-tilt" id="stage-tilt">
-              <img class="stage-img is-active" id="stage-img-a" src="/assets/img/models/real/apex-lounge-real.webp" alt="" />
-              <img class="stage-img" id="stage-img-b" src="/assets/img/models/real/apex-lounge-real.webp" alt="" />
-              <div class="stage-tint" id="stage-tint"></div>
-              <div class="stage-tint stage-tint--seat" id="stage-seat-tint"></div>
+          <div class="config-stage-sticky-inner">
+            <div class="config-stage" id="config-stage" aria-hidden="true">
+              <div class="stage-spotlight"></div>
+              <div class="stage-tilt" id="stage-tilt">
+                <img class="stage-img is-active" id="stage-img-a" src="/assets/img/models/real/apex-lounge-real.webp" alt="" />
+                <img class="stage-img" id="stage-img-b" src="/assets/img/models/real/apex-lounge-real.webp" alt="" />
+                <div class="stage-tint" id="stage-tint"></div>
+                <div class="stage-tint stage-tint--seat" id="stage-seat-tint"></div>
+              </div>
+              <div class="stage-floor"></div>
+              <div class="stage-view-toggle" role="group" aria-label="View">
+                <button type="button" class="stage-view-btn is-active" data-view="exterior" data-i18n="configurator.stage.view_exterior">Vista Exterior</button>
+                <button type="button" class="stage-view-btn" data-view="interior" data-i18n="configurator.stage.view_interior">Vista Interior</button>
+              </div>
+              <div class="stage-model-name" id="stage-model-name"></div>
+              <div class="stage-spin-hint" id="stage-spin-hint" hidden><span data-i18n="configurator.stage.spin_hint">↔ Arrastra para girar 360°</span></div>
             </div>
-            <div class="stage-floor"></div>
-            <div class="stage-view-toggle" role="group" aria-label="View">
-              <button type="button" class="stage-view-btn is-active" data-view="exterior" data-i18n="configurator.stage.view_exterior">Vista Exterior</button>
-              <button type="button" class="stage-view-btn" data-view="interior" data-i18n="configurator.stage.view_interior">Vista Interior</button>
-            </div>
-            <div class="stage-model-name" id="stage-model-name"></div>
-            <div class="stage-spin-hint" id="stage-spin-hint" hidden><span data-i18n="configurator.stage.spin_hint">↔ Arrastra para girar 360°</span></div>
-          </div>
-          <aside class="config-summary" id="config-summary"></aside>
-
-          <div class="vip-card">
-            <h3 data-i18n="configurator.vip.headline">Experimente Antes de Comprar: Demo VIP en Nuestro Centro de Operaciones</h3>
-            <p data-i18n="configurator.vip.description">Programe una visita exclusiva a nuestro centro en Tuzla/Estambul para probar su cámara personalizada, o reserve un tour virtual en vivo con nuestro equipo de ingeniería.</p>
-            <form id="vip-form" action="https://formspree.io/f/mzdnqnel" method="POST" novalidate>
-              <input type="hidden" name="_subject" value="VIP Demo Talebi — HBOT Chamber Tech" />
-              <div class="form-field">
-                <label for="vip-name" data-i18n="configurator.vip.form_name">Nombre Completo</label>
-                <input type="text" id="vip-name" name="name" required />
-              </div>
-              <div class="form-field">
-                <label for="vip-company" data-i18n="configurator.vip.form_company">Nombre de la Empresa</label>
-                <input type="text" id="vip-company" name="company" />
-              </div>
-              <div class="form-field">
-                <label for="vip-email" data-i18n="configurator.vip.form_email">Correo Electrónico</label>
-                <input type="email" id="vip-email" name="email" required />
-              </div>
-              <div class="form-field">
-                <label for="vip-phone" data-i18n="configurator.vip.form_phone">Teléfono (WhatsApp)</label>
-                <input type="tel" id="vip-phone" name="phone" />
-              </div>
-              <div class="vip-visit-options" role="radiogroup" aria-label="Visit preference">
-                <label class="vip-visit-option">
-                  <input type="radio" name="visit_preference" value="in_person" checked />
-                  <span data-i18n="configurator.vip.visit_in_person">Tour y Demo VIP Presencial en Nuestro Centro de Operaciones de Estambul/Tuzla</span>
-                </label>
-                <label class="vip-visit-option">
-                  <input type="radio" name="visit_preference" value="online" />
-                  <span data-i18n="configurator.vip.visit_online">Tour de Video VIP en Vivo con Ingenieros de Producto</span>
-                </label>
-              </div>
-              <textarea name="config_summary" id="vip-config-summary" hidden readonly></textarea>
-              <div class="form-field" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
-                <label for="vip-website">Website</label>
-                <input type="text" id="vip-website" name="website" tabindex="-1" autocomplete="off" />
-              </div>
-              <button type="submit" class="btn btn-primary btn-block" data-i18n="configurator.vip.submit">Solicitar Cita</button>
-              <p class="form-success" id="vip-form-success" hidden data-i18n="configurator.vip.success">¡Gracias! Hemos recibido su solicitud — nuestro equipo se pondrá en contacto pronto.</p>
-              <p class="form-error" id="vip-form-error" hidden data-i18n="configurator.vip.error">Algo salió mal. Por favor, inténtelo de nuevo o llámenos directamente.</p>
-            </form>
-          </div>
-
-          <div class="turnkey-badge">
-            <div class="turnkey-badge-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            </div>
-            <div>
-              <h4 data-i18n="configurator.badge.title">Operación Llave en Mano y Capacitación de Personal Certificado Incluida</h4>
-              <p data-i18n="configurator.badge.subtext">Cada pedido incluye gestión logística internacional completa, instalación in situ, capacitación operativa de personal certificado y soporte técnico remoto IoT 24/7.</p>
-            </div>
+            <aside class="config-summary" id="config-summary"></aside>
           </div>
         </div>
+      </div>
+
+      <div class="vip-card vip-card--standalone">
+        <h3 data-i18n="configurator.vip.headline">Experimente Antes de Comprar: Demo VIP en Nuestro Centro de Operaciones</h3>
+        <p data-i18n="configurator.vip.description">Programe una visita exclusiva a nuestro centro en Tuzla/Estambul para probar su cámara personalizada, o reserve un tour virtual en vivo con nuestro equipo de ingeniería.</p>
+        <form id="vip-form" action="https://formspree.io/f/mzdnqnel" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="VIP Demo Talebi — HBOT Chamber Tech" />
+          <div class="form-row">
+            <div class="form-field">
+              <label for="vip-name" data-i18n="configurator.vip.form_name">Nombre Completo</label>
+              <input type="text" id="vip-name" name="name" required />
+            </div>
+            <div class="form-field">
+              <label for="vip-company" data-i18n="configurator.vip.form_company">Nombre de la Empresa</label>
+              <input type="text" id="vip-company" name="company" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="vip-email" data-i18n="configurator.vip.form_email">Correo Electrónico</label>
+              <input type="email" id="vip-email" name="email" required />
+            </div>
+            <div class="form-field">
+              <label for="vip-phone" data-i18n="configurator.vip.form_phone">Teléfono (WhatsApp)</label>
+              <input type="tel" id="vip-phone" name="phone" />
+            </div>
+          </div>
+          <div class="vip-visit-options" role="radiogroup" aria-label="Visit preference">
+            <label class="vip-visit-option">
+              <input type="radio" name="visit_preference" value="in_person" checked />
+              <span data-i18n="configurator.vip.visit_in_person">Tour y Demo VIP Presencial en Nuestro Centro de Operaciones de Estambul/Tuzla</span>
+            </label>
+            <label class="vip-visit-option">
+              <input type="radio" name="visit_preference" value="online" />
+              <span data-i18n="configurator.vip.visit_online">Tour de Video VIP en Vivo con Ingenieros de Producto</span>
+            </label>
+          </div>
+          <textarea name="config_summary" id="vip-config-summary" hidden readonly></textarea>
+          <div class="form-field" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+            <label for="vip-website">Website</label>
+            <input type="text" id="vip-website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="configurator.vip.submit">Solicitar Cita</button>
+          <p class="form-success" id="vip-form-success" hidden data-i18n="configurator.vip.success">¡Gracias! Hemos recibido su solicitud — nuestro equipo se pondrá en contacto pronto.</p>
+          <p class="form-error" id="vip-form-error" hidden data-i18n="configurator.vip.error">Algo salió mal. Por favor, inténtelo de nuevo o llámenos directamente.</p>
+        </form>
       </div>
 
       <div class="ar-qr-overlay" id="ar-qr-overlay" hidden>
@@ -379,10 +375,10 @@
   </div>
 </footer>
 
-<script src="/assets/js/translations.js?v=46"></script>
+<script src="/assets/js/translations.js?v=56"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/js/recolor.js?v=25"></script>
-<script src="/assets/js/main.js?v=50"></script>
+<script src="/assets/js/main.js?v=56"></script>
 </body>
 </html>
