@@ -542,7 +542,7 @@
   const REF_CODES = ["HBOT-REF-2026", "APEX-REF-2026", "ALMITA-2026"];
   const REF_DISCOUNT_PCT = 5;
   const CRM_ENDPOINT = "https://crmalmita.com/api/leads"; // public lead API yoksa sessiz fallback
-  const configState = { usageType: "home", model: "solo-lounge", tierIndex: 0, addons: new Set(), nexusSeats: NEXUS_BASE_SEATS, color: "pearl-white", chamberStyle: "solid", interiorColor: "cream", seatColor: "konyak", seatTouched: false, stageView: "exterior", spinIdx: 0, discountPct: 0, refCode: "" };
+  const configState = { usageType: "home", model: "solo-lounge", tierIndex: 0, addons: new Set(), nexusSeats: NEXUS_BASE_SEATS, color: "pearl-white", chamberStyle: "solid", interiorColor: "cream", seatColor: "konyak", seatTouched: false, lastTouchedDim: "interior", stageView: "exterior", spinIdx: 0, discountPct: 0, refCode: "" };
   /* Kullanım alanı -> izinli model id'leri. Yüksek basınç (3.0/6.0 ATA) yalnızca
      Nexus'ta mevcut olduğu için kurumsal kategori tek modelle sınırlı. */
   const USAGE_MODELS = {
@@ -627,8 +627,28 @@
     nexus: paintedStageMap("nexus")
   };
 
+  /* İç mekan/koltuk için gerçek fotoğraf ailesi: hangi model hangi baz fotoğrafı paylaşıyor
+     (REAL_INTERIOR ile ayni aile eşlemesi). Koltuk rengi dokunulduysa (seatTouched) koltuk
+     fotoğrafı öncelikli — sahne zaten iç görünüme geçiyor; aksi halde duvar/döşeme rengi. */
+  const INTERIOR_FAMILY = {
+    "solo-lounge": "lounge", solo: "milan", duo: "milan", "duo-plus": "milan",
+    "quad-cube": "milan", nexus: "nexus"
+  };
+  function realInteriorMatch() {
+    const family = INTERIOR_FAMILY[configState.model];
+    if (!family) return null;
+    const seatReady = configState.seatTouched && configState.seatColor;
+    const wallReady = configState.interiorColor && configState.interiorColor !== "cream";
+    if (configState.lastTouchedDim === "seat" && seatReady) return `real/${family}-seat-${configState.seatColor}`;
+    if (wallReady) return `real/${family}-wall-${configState.interiorColor}`;
+    if (seatReady) return `real/${family}-seat-${configState.seatColor}`;
+    return null;
+  }
+
   function currentStageTarget() {
     if (configState.stageView === "interior") {
+      const realColorMatch = realInteriorMatch();
+      if (realColorMatch) return { key: realColorMatch, filter: "none", interior: true, photo: true };
       const realIc = REAL_INTERIOR[configState.model];
       if (realIc) return { key: realIc, filter: "none", interior: true, photo: true };
     } else {
@@ -1049,6 +1069,8 @@
     c.querySelectorAll(".config-color-swatch").forEach((btn) => {
       btn.addEventListener("click", () => {
         configState.interiorColor = btn.getAttribute("data-interior-id");
+        configState.lastTouchedDim = "interior";
+        if (configState.stageView !== "interior") configState.stageView = "interior";
         const dict = TRANSLATIONS[currentLang];
         renderConfigInteriorColors(dict);
         renderConfigSummary(dict);
@@ -1276,6 +1298,7 @@
       btn.addEventListener("click", () => {
         configState.seatColor = btn.getAttribute("data-seat-id");
         configState.seatTouched = true;
+        configState.lastTouchedDim = "seat";
         // Koltuk rengi geri bildirimi iç sahnede görünsün — iç görünüme geç
         if (configState.stageView !== "interior") configState.stageView = "interior";
         const dict = TRANSLATIONS[currentLang];
