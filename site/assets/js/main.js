@@ -2441,7 +2441,8 @@
   }
 
   function initYear() {
-    document.querySelectorAll("#current-year").forEach((elm) => (elm.textContent = 2020));
+    const year = new Date().getFullYear();
+    document.querySelectorAll("#current-year").forEach((elm) => (elm.textContent = year));
   }
 
   /* ---------------- Hero banner slider ---------------- */

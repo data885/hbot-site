@@ -91,7 +91,7 @@ const TRANSLATIONS = {
       },
       why: {
         eyebrow: "NEDEN HBOT CHAMBER TECH",
-        title: "Piyasadaki Tek Bağlantılı Kabin",
+        title: "Bağlantılı Kabin Teknolojisinde Öncü",
         items: [
           { title: "Sektörde İlk IoT Çekirdeği", desc: "CityConnect™ ile tüm kabinler 7/24 buluta bağlı, uzaktan izlenebilir." },
           { title: "Yapay Zeka Destekli Tedavi", desc: "CityAI™, hasta verilerine göre basıncı ve oksijen akışını dinamik olarak optimize eder." },
@@ -102,7 +102,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "KİMLER KULLANIYOR?",
         title: "Dünyanın En İyileri Hiperbarik Oksijeni Seçiyor",
-        subtitle: "Toparlanma, performans ve uzun yaşam için HBOT kullandığı haberlerde yer alan isimler — biz o kabinleri üretiyoruz.",
+        subtitle: "Toparlanma, performans ve uzun yaşam için hiperbarik oksijen tedavisini tercih ettiği basında yer alan isimler, bu teknolojiye duyulan güvenin bir göstergesi. HBOT Chamber Tech olarak aynı teknolojiyi mühendislik hassasiyetiyle üretiyoruz.",
         source_label: "Kaynak",
         disclaimer: "Bu bölümdeki isimler, haber kaynaklarında HBOT kullandığı bildirilen kişilerdir; HBOT Chamber Tech marka elçisi veya müşterisi değildir.",
         items: [
@@ -120,7 +120,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "KULLANIM ALANLARI",
         title: "HBOT Hangi Durumlarda Kullanılır?",
-        text: "Yara iyileşmesinden ani işitme kaybına, dekompresyon hastalığından karbon monoksit zehirlenmesine kadar geniş bir tedavi yelpazesinde destekleyici olarak kullanılır.",
+        text: "Yara iyileşmesinden ani işitme kaybına, dekompresyon hastalığından karbon monoksit zehirlenmesine kadar çeşitli tıbbi durumlarda, hekim değerlendirmesi doğrultusunda destekleyici bir terapi olarak kullanılabilir.",
         cta: "Tüm Kullanım Alanlarını Gör"
       },
       styles_teaser: {
@@ -960,7 +960,7 @@ const TRANSLATIONS = {
       },
       why: {
         eyebrow: "WHY HBOT CHAMBER TECH",
-        title: "The Only Connected Chamber on the Market",
+        title: "A Pioneer in Connected Chamber Technology",
         items: [
           { title: "The Industry's First IoT Core", desc: "With CityConnect™, every chamber is connected to the cloud 24/7 and can be monitored remotely." },
           { title: "AI-Powered Treatment", desc: "CityAI™ dynamically optimizes pressure and oxygen flow based on patient data." },
@@ -971,7 +971,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "WHO USES IT?",
         title: "The World's Best Choose Hyperbaric Oxygen",
-        subtitle: "Names reported in the press to use HBOT for recovery, performance and longevity — and we build those chambers.",
+        subtitle: "Names reported in the press for using hyperbaric oxygen therapy for recovery, performance and longevity reflect the trust placed in this technology. HBOT Chamber Tech engineers that same technology.",
         source_label: "Source",
         disclaimer: "The individuals listed here have been reported by news sources to use HBOT; they are not brand ambassadors or customers of HBOT Chamber Tech.",
         items: [
@@ -989,7 +989,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "USE CASES",
         title: "When Is HBOT Used?",
-        text: "Used as a supportive treatment across a wide range of conditions — from wound healing to sudden hearing loss, decompression sickness to carbon monoxide poisoning.",
+        text: "Can be used as a supportive therapy for a range of medical conditions — from wound healing to sudden hearing loss, decompression sickness to carbon monoxide poisoning — subject to physician evaluation.",
         cta: "See All Use Cases"
       },
       styles_teaser: {
@@ -1829,7 +1829,7 @@ const TRANSLATIONS = {
       },
       why: {
         eyebrow: "ПОЧЕМУ HBOT CHAMBER TECH",
-        title: "Единственная подключённая камера на рынке",
+        title: "Пионер в области подключённых камер",
         items: [
           { title: "Первое IoT-ядро в отрасли", desc: "Благодаря CityConnect™ каждая камера подключена к облаку 24/7 и может отслеживаться удалённо." },
           { title: "Лечение с поддержкой ИИ", desc: "CityAI™ динамически оптимизирует давление и поток кислорода на основе данных пациента." },
@@ -1840,7 +1840,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "КТО ИСПОЛЬЗУЕТ?",
         title: "Лучшие в мире выбирают гипербарический кислород",
-        subtitle: "Имена, о которых пресса сообщала об использовании ГБО для восстановления, результатов и долголетия — а мы производим такие камеры.",
+        subtitle: "Имена, о которых пресса сообщала в связи с использованием гипербарической оксигенотерапии для восстановления, результатов и долголетия, отражают доверие к этой технологии. Компания HBOT Chamber Tech разрабатывает ту же технологию.",
         source_label: "Источник",
         disclaimer: "Перечисленные здесь лица, по сообщениям СМИ, используют ГБО; они не являются амбассадорами или клиентами HBOT Chamber Tech.",
         items: [
@@ -1858,7 +1858,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "ОБЛАСТИ ПРИМЕНЕНИЯ",
         title: "В каких случаях применяется ГБО?",
-        text: "Используется как вспомогательное лечение при широком спектре состояний — от заживления ран до внезапной потери слуха, от декомпрессионной болезни до отравления угарным газом.",
+        text: "Может применяться как вспомогательная терапия при ряде медицинских состояний — от заживления ран до внезапной потери слуха, от декомпрессионной болезни до отравления угарным газом — по решению врача.",
         cta: "Смотреть все области применения"
       },
       styles_teaser: {
@@ -2698,7 +2698,7 @@ const TRANSLATIONS = {
       },
       why: {
         eyebrow: "لماذا HBOT CHAMBER TECH",
-        title: "الغرفة المتصلة الوحيدة في السوق",
+        title: "رائدة في تقنية الغرف المتصلة",
         items: [
           { title: "أول نواة إنترنت أشياء في الصناعة", desc: "بفضل CityConnect™، تبقى كل غرفة متصلة بالسحابة على مدار الساعة طوال أيام الأسبوع ويمكن مراقبتها عن بُعد." },
           { title: "علاج مدعوم بالذكاء الاصطناعي", desc: "يعمل CityAI™ على تحسين الضغط وتدفق الأكسجين ديناميكياً بناءً على بيانات المريض." },
@@ -2709,7 +2709,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "من يستخدمها؟",
         title: "نخبة العالم يختارون الأكسجين عالي الضغط",
-        subtitle: "أسماء ورد في الصحافة أنها تستخدم العلاج بالأكسجين عالي الضغط للتعافي والأداء وطول العمر — ونحن نصنع تلك الغرف.",
+        subtitle: "الأسماء التي ورد في الصحافة أنها تستخدم العلاج بالأكسجين عالي الضغط من أجل التعافي والأداء وطول العمر تعكس الثقة بهذه التقنية. تقوم HBOT Chamber Tech بتصنيع التقنية ذاتها بأعلى معايير الهندسة.",
         source_label: "المصدر",
         disclaimer: "الأسماء المذكورة هنا ورد في مصادر إخبارية أنها تستخدم العلاج بالأكسجين عالي الضغط؛ وليسوا سفراء للعلامة التجارية أو عملاء HBOT Chamber Tech.",
         items: [
@@ -2727,7 +2727,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "مجالات الاستخدام",
         title: "متى يُستخدم العلاج بالأكسجين عالي الضغط؟",
-        text: "يُستخدم كعلاج مساند في نطاق واسع من الحالات — من التئام الجروح إلى فقدان السمع المفاجئ، ومن داء الانخفاض إلى التسمم بأول أكسيد الكربون.",
+        text: "يمكن استخدامه كعلاج مساند في عدد من الحالات الطبية — من التئام الجروح إلى فقدان السمع المفاجئ، ومن داء الانخفاض إلى التسمم بأول أكسيد الكربون — بناءً على تقييم الطبيب.",
         cta: "عرض جميع مجالات الاستخدام"
       },
       styles_teaser: {
@@ -3566,7 +3566,7 @@ const TRANSLATIONS = {
       },
       why: {
         eyebrow: "POR QUÉ HBOT CHAMBER TECH",
-        title: "La Única Cámara Conectada del Mercado",
+        title: "Pioneros en Tecnología de Cámaras Conectadas",
         items: [
           { title: "El Primer Núcleo IoT del Sector", desc: "Con CityConnect™, cada cámara está conectada a la nube 24/7 y puede monitorizarse de forma remota." },
           { title: "Tratamiento Impulsado por IA", desc: "CityAI™ optimiza dinámicamente la presión y el flujo de oxígeno según los datos del paciente." },
@@ -3577,7 +3577,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "¿QUIÉN LA USA?",
         title: "Los Mejores del Mundo Eligen el Oxígeno Hiperbárico",
-        subtitle: "Nombres mencionados en la prensa por usar HBOT para la recuperación, el rendimiento y la longevidad — y nosotros fabricamos esas cámaras.",
+        subtitle: "Los nombres mencionados en la prensa por su uso de la oxigenoterapia hiperbárica para la recuperación, el rendimiento y la longevidad reflejan la confianza en esta tecnología. HBOT Chamber Tech fabrica esa misma tecnología.",
         source_label: "Fuente",
         disclaimer: "Las personas mencionadas aquí han sido señaladas por medios de comunicación como usuarias de HBOT; no son embajadores de marca ni clientes de HBOT Chamber Tech.",
         items: [
@@ -3595,7 +3595,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "CASOS DE USO",
         title: "¿Cuándo se Utiliza la HBOT?",
-        text: "Se utiliza como tratamiento de apoyo en una amplia variedad de afecciones — desde la cicatrización de heridas hasta la pérdida súbita de audición, pasando por la enfermedad por descompresión y la intoxicación por monóxido de carbono.",
+        text: "Puede utilizarse como terapia de apoyo en diversas afecciones médicas — desde la cicatrización de heridas hasta la pérdida súbita de audición, pasando por la enfermedad por descompresión y la intoxicación por monóxido de carbono — según evaluación médica.",
         cta: "Ver Todos los Casos de Uso"
       },
       styles_teaser: {
@@ -4434,7 +4434,7 @@ const TRANSLATIONS = {
       },
       why: {
         eyebrow: "POR QUE A HBOT CHAMBER TECH",
-        title: "A Única Câmara Conectada do Mercado",
+        title: "Pioneiros em Tecnologia de Câmaras Conectadas",
         items: [
           { title: "O Primeiro Núcleo IoT do Setor", desc: "Com o CityConnect™, toda câmara fica conectada à nuvem 24 horas por dia, 7 dias por semana, e pode ser monitorada remotamente." },
           { title: "Tratamento Potencializado por IA", desc: "O CityAI™ otimiza dinamicamente a pressão e o fluxo de oxigênio com base nos dados do paciente." },
@@ -4445,7 +4445,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "QUEM USA?",
         title: "Os Melhores do Mundo Escolhem o Oxigênio Hiperbárico",
-        subtitle: "Nomes citados pela imprensa como usuários de OHB para recuperação, desempenho e longevidade — e nós construímos essas câmaras.",
+        subtitle: "Os nomes citados pela imprensa pelo uso da oxigenoterapia hiperbárica para recuperação, desempenho e longevidade refletem a confiança nessa tecnologia. A HBOT Chamber Tech fabrica essa mesma tecnologia.",
         source_label: "Fonte",
         disclaimer: "As pessoas listadas aqui foram citadas por fontes jornalísticas como usuárias de OHB; elas não são embaixadoras de marca nem clientes da HBOT Chamber Tech.",
         items: [
@@ -4463,7 +4463,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "CASOS DE USO",
         title: "Quando a OHB É Utilizada?",
-        text: "Utilizada como tratamento de suporte em uma ampla variedade de condições — da cicatrização de feridas à perda súbita de audição, do mal de descompressão à intoxicação por monóxido de carbono.",
+        text: "Pode ser utilizada como terapia de suporte em diversas condições médicas — da cicatrização de feridas à perda súbita de audição, do mal de descompressão à intoxicação por monóxido de carbono — conforme avaliação médica.",
         cta: "Ver Todos os Casos de Uso"
       },
       styles_teaser: {
@@ -5302,7 +5302,7 @@ const TRANSLATIONS = {
       },
       why: {
         eyebrow: "WARUM HBOT CHAMBER TECH",
-        title: "Die einzige vernetzte Kammer auf dem Markt",
+        title: "Pionier bei vernetzten Kammern",
         items: [
           { title: "Das erste IoT-Kernmodul der Branche", desc: "Mit CityConnect™ ist jede Kammer rund um die Uhr mit der Cloud verbunden und kann aus der Ferne überwacht werden." },
           { title: "KI-gestützte Behandlung", desc: "CityAI™ optimiert Druck und Sauerstofffluss dynamisch auf Basis der Patientendaten." },
@@ -5313,7 +5313,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "WER NUTZT ES?",
         title: "Die Besten der Welt setzen auf hyperbaren Sauerstoff",
-        subtitle: "Namen, über die in der Presse berichtet wurde, dass sie HBOT für Erholung, Leistung und Langlebigkeit nutzen — und wir bauen diese Kammern.",
+        subtitle: "Namen, über die in der Presse im Zusammenhang mit hyperbarer Sauerstofftherapie für Erholung, Leistung und Langlebigkeit berichtet wurde, spiegeln das Vertrauen in diese Technologie wider. HBOT Chamber Tech entwickelt genau diese Technologie.",
         source_label: "Quelle",
         disclaimer: "Über die hier aufgeführten Personen wurde in Presseberichten berichtet, dass sie HBOT nutzen; sie sind keine Markenbotschafter oder Kunden von HBOT Chamber Tech.",
         items: [
@@ -5331,7 +5331,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "ANWENDUNGSFÄLLE",
         title: "Wann wird HBOT eingesetzt?",
-        text: "Wird als unterstützende Behandlung bei einer Vielzahl von Indikationen eingesetzt — von der Wundheilung bis zum plötzlichen Hörverlust, von der Dekompressionskrankheit bis zur Kohlenmonoxidvergiftung.",
+        text: "Kann als unterstützende Therapie bei verschiedenen medizinischen Indikationen eingesetzt werden — von der Wundheilung bis zum plötzlichen Hörverlust, von der Dekompressionskrankheit bis zur Kohlenmonoxidvergiftung — nach ärztlicher Beurteilung.",
         cta: "Alle Anwendungsfälle ansehen"
       },
       styles_teaser: {
