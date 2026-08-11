@@ -574,7 +574,7 @@
     duo: "real/apex-quad-cube-ic",
     "duo-plus": "real/apex-quad-cube-ic",
     "quad-cube": "real/apex-quad-cube-ic",
-    nexus: "real/apex-nexus-ic"
+    nexus: "real/apex-quad-cube-ic"
   };
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
@@ -632,7 +632,7 @@
      fotoğrafı öncelikli — sahne zaten iç görünüme geçiyor; aksi halde duvar/döşeme rengi. */
   const INTERIOR_FAMILY = {
     "solo-lounge": "lounge", solo: "milan", duo: "milan", "duo-plus": "milan",
-    "quad-cube": "milan", nexus: "nexus"
+    "quad-cube": "milan", nexus: "milan"
   };
   function realInteriorMatch() {
     const family = INTERIOR_FAMILY[configState.model];

@@ -5,14 +5,14 @@ const TRANSLATIONS = {
       home: { title: "HBOT Chamber Tech | HBOT City Tech Serisi Hiperbarik Oksijen Odaları", desc: "IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları. HBOT City Tech Serisi ile zirvede nefes alın." },
       technology: { title: "Teknoloji | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync ve CityGuard — HBOT City Tech Serisi'nin bağlı, akıllı teknoloji platformu." },
       models: { title: "Modeller | HBOT Chamber Tech", desc: "Oslo Lounge, Oslo, Tokyo, Milan ve Geneva — beş farklı hiperbarik oksijen odası modeli." },
-      soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Yatay pozisyonda tedavi için tasarlanmış tek kişilik hiperbarik oksijen odası." },
+      soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Yatay pozisyonda terapi için tasarlanmış tek kişilik hiperbarik oksijen odası." },
       solo: { title: "Oslo | HBOT Chamber Tech", desc: "Bireysel kullanım için kompakt, tam donanımlı hiperbarik oksijen odası." },
-      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "İki kişilik paylaşımlı hiperbarik oksijen tedavisi kabini." },
+      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "İki kişilik paylaşımlı hiperbarik oksijen terapisi kabini." },
       quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Dört kişilik, geniş iç hacimli küp tasarım hiperbarik oksijen odası." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Hastane sınıfı, altı ve üzeri kişilik büyük kapasiteli hiperbarik oksijen odası." },
-      hbotInfo: { title: "HBOT Nedir? | HBOT Chamber Tech", desc: "Hiperbarik oksijen tedavisi (HBOT) nedir, ne için kullanılır ve hangi durumlarda uygulanır." },
+      hbotInfo: { title: "HBOT Nedir? | HBOT Chamber Tech", desc: "Hiperbarik oksijen terapisi (HBOT) nedir, ne için kullanılır ve hangi durumlarda uygulanır." },
       configurator: { title: "Konfigüratör | HBOT Chamber Tech", desc: "Kendi HBOT City Tech kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." },
-      blog: { title: "Blog | HBOT Chamber Tech", desc: "Hiperbarik oksijen tedavisi hakkında güncel araştırmalar, haberler ve gelişmeler." },
+      blog: { title: "Blog | HBOT Chamber Tech", desc: "Hiperbarik oksijen terapisi hakkında güncel araştırmalar, haberler ve gelişmeler." },
       contact: { title: "İletişim | HBOT Chamber Tech", desc: "HBOT Chamber Tech ile iletişime geçin: adres, telefon, e-posta ve iletişim formu." }
     },
     common: {
@@ -94,7 +94,7 @@ const TRANSLATIONS = {
         title: "Bağlantılı Kabin Teknolojisinde Öncü",
         items: [
           { title: "Sektörde İlk IoT Çekirdeği", desc: "CityConnect™ ile tüm kabinler 7/24 buluta bağlı, uzaktan izlenebilir." },
-          { title: "Yapay Zeka Destekli Tedavi", desc: "CityAI™, hasta verilerine göre basıncı ve oksijen akışını dinamik olarak optimize eder." },
+          { title: "Yapay Zeka Destekli Terapi", desc: "CityAI™, hasta verilerine göre basıncı ve oksijen akışını dinamik olarak optimize eder." },
           { title: "Hastane Sistemleriyle Entegrasyon", desc: "CitySync™; HL7 FHIR ve DICOM uyumlu, hastane bilgi sistemlerine doğrudan bağlanır." },
           { title: "Arıza Olmadan Önce Haber Verir", desc: "CityGuard™, öngörücü bakım teknolojisiyle servis çağrısını beklemeden uyarır." }
         ]
@@ -102,14 +102,14 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "KİMLER KULLANIYOR?",
         title: "Dünyanın En İyileri Hiperbarik Oksijeni Seçiyor",
-        subtitle: "Toparlanma, performans ve uzun yaşam için hiperbarik oksijen tedavisini tercih ettiği basında yer alan isimler, bu teknolojiye duyulan güvenin bir göstergesi. HBOT Chamber Tech olarak aynı teknolojiyi mühendislik hassasiyetiyle üretiyoruz.",
+        subtitle: "Toparlanma, performans ve uzun yaşam için hiperbarik oksijen terapisini tercih ettiği basında yer alan isimler, bu teknolojiye duyulan güvenin bir göstergesi. HBOT Chamber Tech olarak aynı teknolojiyi mühendislik hassasiyetiyle üretiyoruz.",
         source_label: "Kaynak",
         disclaimer: "Bu bölümdeki isimler, haber kaynaklarında HBOT kullandığı bildirilen kişilerdir; HBOT Chamber Tech marka elçisi veya müşterisi değildir.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Futbolcu", text: "Kas sakatlığının tedavisi için evinde kendi hiperbarik cihazıyla HBOT yaptığı haberlerde yer aldı.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "Cristiano Ronaldo", role: "Futbolcu", text: "Kas sakatlığının terapisi için evinde kendi hiperbarik cihazıyla HBOT yaptığı haberlerde yer aldı.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
           { name: "LeBron James", role: "Basketbolcu", text: "Netflix 'Starting 5' belgeselinde 60-90 dakikalık HBOT seansı yaparken görüntülendi.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
           { name: "Novak Djokovic", role: "Tenisçi", text: "Zirvede kalmak için HBOT kullandığı spor basınında aktarıldı.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
-          { name: "Justin Bieber", role: "Şarkıcı", text: "Hiperbarik kabinde uyuduğu ve tedavisinin parçası yaptığı haberleştirildi.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
+          { name: "Justin Bieber", role: "Şarkıcı", text: "Hiperbarik kabinde uyuduğu ve terapisinin parçası yaptığı haberleştirildi.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
           { name: "Tiger Woods", role: "Golfçü", text: "2010'dan beri HBOT kullandığı ve evinde kabin bulundurduğu bildirildi.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
           { name: "Michael Phelps", role: "Yüzücü", text: "Hiperbarik kabinde uyuduğu haberleştirilen olimpiyat efsanesi.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
           { name: "Madonna", role: "Şarkıcı", text: "Oksijen bazlı bakım ve terapileri rutininin parçası yaptığı moda basınında yazıldı.", source: "https://www.nytimes.com/2006/04/06/fashion/thursdaystyles/does-the-quickfix-oxygen-facial-really-work.html" },
@@ -137,7 +137,7 @@ const TRANSLATIONS = {
     },
     technology: {
       header: { eyebrow: "TEKNOLOJİ PLATFORMU", title: "HBOT City Tech Teknoloji Ekosistemi", subtitle: "Sıradan bir kontrol paneli değil — sürekli gelişen, bağlı ve akıllı bir sistem." },
-      intro: "Tüm HBOT City Tech modelleri; CityConnect™, CityOS™, CityAI™, CitySync™ ve CityGuard™ teknolojilerini standart olarak içerir. Bu beş platform birlikte çalışarak kabini basit bir tedavi cihazından akıllı, bağlı ve öngörücü bir sisteme dönüştürür.",
+      intro: "Tüm HBOT City Tech modelleri; CityConnect™, CityOS™, CityAI™, CitySync™ ve CityGuard™ teknolojilerini standart olarak içerir. Bu beş platform birlikte çalışarak kabini basit bir terapi cihazından akıllı, bağlı ve öngörücü bir sisteme dönüştürür.",
       pillars: {
         connect: {
           title: "CityConnect™",
@@ -156,14 +156,14 @@ const TRANSLATIONS = {
           desc: "Android tabanlı, dokunmatik ekranlı ve sürekli gelişen bir işletim sistemi.",
           features: [
             "Sürekli yazılım güncellemesi (OTA): yeni protokoller ve güvenlik güncellemeleri otomatik indirilir",
-            "50+ hazır tedavi protokolü: yanık, diyabetik ayak, sporcu iyileşmesi, anti-aging, post-COVID rehabilitasyonu",
+            "50+ hazır terapi protokolü: yanık, diyabetik ayak, sporcu iyileşmesi, anti-aging, post-COVID rehabilitasyonu",
             "Çoklu dil desteği: yazılım güncellemesiyle yeni diller eklenir",
             "Kullanıcı profilleri: her hasta için ayrı profil, geçmiş seanslar otomatik yüklenir"
           ]
         },
         ai: {
           title: "CityAI™",
-          subtitle: "Yapay Zeka Destekli Tedavi Optimizasyonu",
+          subtitle: "Yapay Zeka Destekli Terapi Optimizasyonu",
           desc: "Kabin içindeki sensörler ve hasta verileri, makine öğrenimi algoritmalarıyla analiz edilir.",
           features: [
             "Dinamik basınç ayarı: rahatsızlık belirtisinde basınç mikro adımlarla ayarlanarak konfor korunur",
@@ -256,8 +256,8 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo Lounge", tagline: "1 Kişi · Yatay Pozisyon", desc: "Yatay pozisyonda tedavi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiş, tam donanımlı kabin." },
-      solo: { title: "Oslo", tagline: "1 Kişi · Oturma Pozisyonu", desc: "Bireysel hiperbarik oksijen tedavisi için tasarlanmış kompakt, şık ve tam donanımlı kabin." },
+      soloLounge: { title: "Oslo Lounge", tagline: "1 Kişi · Yatay Pozisyon", desc: "Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiş, tam donanımlı kabin." },
+      solo: { title: "Oslo", tagline: "1 Kişi · Oturma Pozisyonu", desc: "Bireysel hiperbarik oksijen terapisi için tasarlanmış kompakt, şık ve tam donanımlı kabin." },
       duo: { title: "Tokyo", tagline: "2 Kişi · Oturma Pozisyonu", desc: "Çift koltuklu, panoramik camlı kabin — eşler, partnerler veya hasta-refakatçi kullanımı için." },
       quadCube: { title: "Milan", tagline: "4 Kişi · Geniş Kabin", desc: "Geniş iç hacimli küp tasarımıyla dört kişilik premium kabin — kapitone deri iç mekân ve LED aydınlatma." },
       nexus: { title: "Geneva", tagline: "6+ Kişi · Oturma Pozisyonu", desc: "Sağlık kurumları için hastane sınıfı, büyük kapasiteli, modüler genişlemeye hazır kabin." }
@@ -274,7 +274,7 @@ const TRANSLATIONS = {
     modelSoloLounge: {
       breadcrumb: "Oslo Lounge", eyebrow: "OSLO LOUNGE", title: "Oslo Lounge",
       tagline: "Yatayda Mükemmellik. Uzanın, rahatlayın, iyileşin.",
-      overview_text: "Yatay pozisyonda tedavi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiştir. Medikal ortopedik yatağı ve havacılık sınıfı alüminyum gövdesiyle, uzun seanslarda maksimum konfor sağlar.",
+      overview_text: "Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiştir. Medikal ortopedik yatağı ve havacılık sınıfı alüminyum gövdesiyle, uzun seanslarda maksimum konfor sağlar.",
       specs: [
         { label: "Kapasite", value: "1 kişi (yatay pozisyon)" },
         { label: "Basınç Aralığı", value: "1.5 – 2.0 ATA" },
@@ -288,7 +288,7 @@ const TRANSLATIONS = {
     modelSolo: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       tagline: "Kişisel Sağlığınızın Zirvesi. Yalnızca siz ve oksijen.",
-      overview_text: "Bireysel hiperbarik oksijen tedavisi için tasarlanmış kompakt, şık ve tam donanımlı kabin. Dokunmatik ekran kontrolüyle ev veya klinik kullanımı için idealdir.",
+      overview_text: "Bireysel hiperbarik oksijen terapisi için tasarlanmış kompakt, şık ve tam donanımlı kabin. Dokunmatik ekran kontrolüyle ev veya klinik kullanımı için idealdir.",
       specs: [
         { label: "Kapasite", value: "1 kişi (oturma)" },
         { label: "Basınç Aralığı", value: "1.5 – 2.0 ATA" },
@@ -301,8 +301,8 @@ const TRANSLATIONS = {
     },
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
-      tagline: "Birlikte İyileşin. İki kişilik paylaşımlı tedavi deneyimi.",
-      overview_text: "Çift koltuklu hiperbarik kabin, paylaşımlı tedavi seansları sunar. Eşler, partnerler veya hasta-refakatçi kullanımı için tasarlanmıştır.",
+      tagline: "Birlikte İyileşin. İki kişilik paylaşımlı terapi deneyimi.",
+      overview_text: "Çift koltuklu hiperbarik kabin, paylaşımlı terapi seansları sunar. Eşler, partnerler veya hasta-refakatçi kullanımı için tasarlanmıştır.",
       specs: [
         { label: "Kapasite", value: "2 kişi (oturma)" },
         { label: "Basınç Aralığı", value: "1.5 – 2.0 ATA" },
@@ -315,7 +315,7 @@ const TRANSLATIONS = {
     modelQuadCube: {
       breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
       tagline: "Geniş küp tasarımında dört kişilik premium deneyim.",
-      overview_text: "Küp formundaki geniş iç hacmiyle dört kişilik premium kabin. Kapitone deri iç mekânı, LED ambiyans aydınlatması ve bağımsız kontrol ünitesiyle klinik ve wellness merkezlerine konforlu çok kişilik tedavi sunar.",
+      overview_text: "Küp formundaki geniş iç hacmiyle dört kişilik premium kabin. Kapitone deri iç mekânı, LED ambiyans aydınlatması ve bağımsız kontrol ünitesiyle klinik ve wellness merkezlerine konforlu çok kişilik terapi sunar.",
       specs: [
         { label: "Kapasite", value: "4 kişi (oturma)" },
         { label: "Basınç Aralığı", value: "2.5 – 6.0 ATA" },
@@ -328,7 +328,7 @@ const TRANSLATIONS = {
     modelNexus: {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
       tagline: "Hastane sınıfı, büyük kapasiteli çözüm.",
-      overview_text: "Sağlık kurumları için hastane sınıfı, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun tedavi merkezlerinin ihtiyacını karşılar.",
+      overview_text: "Sağlık kurumları için hastane sınıfı, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun terapi merkezlerinin ihtiyacını karşılar.",
       specs: [
         { label: "Kapasite", value: "6+ kişi (oturma)" },
         { label: "Basınç Aralığı", value: "2.5 – 6.0 ATA" },
@@ -339,17 +339,17 @@ const TRANSLATIONS = {
       ]
     },
     hbotInfo: {
-      header: { eyebrow: "BİLGİ MERKEZİ", title: "HBOT Nedir?", subtitle: "Hiperbarik oksijen tedavisi hakkında bilmeniz gerekenler." },
-      whatIsHboc: { title: "Hiperbarik Oksijen Odası (HBOC) Nedir?", text: "Hiperbarik oksijen odaları, kişilerin normal atmosfer basıncından daha yüksek basınçta saf oksijen solumasını sağlayan, özel olarak tasarlanmış basınçlı kabinlerdir. Bu kabinler, iyileşmeyi hızlandıran ve genel sağlığı destekleyen, tıbbi olarak tanınmış bir tedavi olan Hiperbarik Oksijen Tedavisi (HBOT) için kullanılır." },
+      header: { eyebrow: "BİLGİ MERKEZİ", title: "HBOT Nedir?", subtitle: "Hiperbarik oksijen terapisi hakkında bilmeniz gerekenler." },
+      whatIsHboc: { title: "Hiperbarik Oksijen Odası (HBOC) Nedir?", text: "Hiperbarik oksijen odaları, kişilerin normal atmosfer basıncından daha yüksek basınçta saf oksijen solumasını sağlayan, özel olarak tasarlanmış basınçlı kabinlerdir. Bu kabinler, iyileşmeyi hızlandıran ve genel sağlığı destekleyen, tıbbi olarak tanınmış bir terapi olan Hiperbarik Oksijen Terapisi (HBOT) için kullanılır." },
       whyNeeded: { title: "HBOC Ne İçin Kullanılır?", text: "HBOC kabinleri, hastaların %94 saf oksijen soluduğu kontrollü, basınçlı bir ortam sağlayarak daha hızlı iyileşme ve gelişmiş hücresel yenilenme sunar. Bu kabinler; sağlık kuruluşlarına, wellness merkezlerine, spor kliniklerine ve bireysel kullanıcılara hizmet verir." },
       whatIsHbot: {
-        title: "Hiperbarik Oksijen Tedavisi (HBOT) Nedir?",
-        text1: "HBOT; hastaların normal atmosfer basıncından daha yüksek seviyelerde, basınçlı bir kabin içinde saf oksijen soluduğu tıbbi bir tedavidir. Bu süreç yara iyileşmesini hızlandırır, iltihabı azaltır ve doku yenilenmesini destekler.",
-        text2: "Hastalar bu kabinler içinde nefes alır, bu da akciğerlerin oksijeni daha verimli toplamasına ve emmesine yardımcı olur. HBOT ayrıca ani işitme ve görme kaybı, kemik enfeksiyonları ve diyabetik ayak ülserlerinin tedavisinde de kullanılır. Tedavi türüne bağlı olarak hastalar oturarak veya uzanarak tedavi olabilir."
+        title: "Hiperbarik Oksijen Terapisi (HBOT) Nedir?",
+        text1: "HBOT; hastaların normal atmosfer basıncından daha yüksek seviyelerde, basınçlı bir kabin içinde saf oksijen soluduğu tıbbi bir terapidir. Bu süreç yara iyileşmesini hızlandırır, iltihabı azaltır ve doku yenilenmesini destekler.",
+        text2: "Hastalar bu kabinler içinde nefes alır, bu da akciğerlerin oksijeni daha verimli toplamasına ve emmesine yardımcı olur. HBOT ayrıca ani işitme ve görme kaybı, kemik enfeksiyonları ve diyabetik ayak ülserlerinin terapisinde de kullanılır. Terapi türüne bağlı olarak hastalar oturarak veya uzanarak terapi olabilir."
       },
       indications: {
         title: "HBOT Hangi Durumlarda Kullanılır?",
-        subtitle: "Hiperbarik oksijen tedavisi, geniş bir tıbbi durum yelpazesinde destekleyici tedavi olarak kullanılır.",
+        subtitle: "Hiperbarik oksijen terapisi, geniş bir tıbbi durum yelpazesinde destekleyici terapi olarak kullanılır.",
         items: [
           { icon: "antiaging", label: "Cilt Gençleştirme (Anti-Aging)" },
           { icon: "jetlag", label: "Jetlag Toparlanması (Seyahat Yorgunluğu)" },
@@ -367,7 +367,7 @@ const TRANSLATIONS = {
           { icon: "smoke", label: "Akut Duman Zehirlenmesi" }
         ]
       },
-      disclaimer: "Bu bilgiler genel bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez. Tedavi kararları mutlaka bir sağlık profesyoneli tarafından değerlendirilmelidir."
+      disclaimer: "Bu bilgiler genel bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez. Terapi kararları mutlaka bir sağlık profesyoneli tarafından değerlendirilmelidir."
     },
     arView: {
       back: "← Konfigüratöre dön",
@@ -413,12 +413,12 @@ const TRANSLATIONS = {
         select_button: "Bunu Seç",
         close: "Kapat",
         items: [
-          { scenario: "Evde, tek başıma, yatarak tedavi almak istiyorum", model: "Oslo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Evde, tek başıma, yatarak terapi almak istiyorum", model: "Oslo Lounge", modelId: "solo-lounge", usage: "home" },
           { scenario: "Evde, tek başıma, oturarak kullanmak istiyorum", model: "Oslo", modelId: "solo", usage: "home" },
           { scenario: "Eşim/partnerimle birlikte, evde kullanacağız", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Klinik veya wellness merkezi, 2-4 kişilik kurumsal kullanım", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
           { scenario: "Kurumsal kullanım, geniş iç hacimli kabin istiyorum", model: "Milan", modelId: "quad-cube", usage: "institutional" },
-          { scenario: "Hastane veya klinikte, çok hastalı, yüksek basınçlı tedavi", model: "Geneva", modelId: "nexus", usage: "institutional" }
+          { scenario: "Hastane veya klinikte, çok hastalı, yüksek basınçlı terapi", model: "Geneva", modelId: "nexus", usage: "institutional" }
         ]
       },
       step1_title: "3. Model Seçin",
@@ -485,7 +485,7 @@ const TRANSLATIONS = {
         { id: "entertainment", name: "Eğlence & Multimedya Sistemi", desc: "Dahili ekran, ses sistemi ve içerik kütüphanesi." },
         { id: "finish", name: "Özel Renk & Kaplama", desc: "Kurumsal kimliğinize özel dış kaplama rengi seçimi." },
         { id: "warranty", name: "Genişletilmiş Garanti (+1 Yıl)", desc: "Standart 1 yıllık garantiye ek 1 yıl daha kapsamlı koruma." },
-        { id: "playstation", name: "Xbox Series X Oyun Konsolu", desc: "Uzun tedavi seanslarında eğlence için kabin içi ekran ve ses sistemine entegre Xbox Series X konsolu." }
+        { id: "playstation", name: "Xbox Series X Oyun Konsolu", desc: "Uzun terapi seanslarında eğlence için kabin içi ekran ve ses sistemine entegre Xbox Series X konsolu." }
       ],
       pressure_note: "Basınç aralığı seçilen modele göre değişir.",
       pressure_nexus_only: "Sadece Nexus",
@@ -546,10 +546,10 @@ const TRANSLATIONS = {
       }
     },
     blog: {
-      header: { eyebrow: "BLOG", title: "Araştırmalar & Haberler", subtitle: "Hiperbarik oksijen tedavisi alanındaki güncel bilimsel gelişmeler ve haberler." },
+      header: { eyebrow: "BLOG", title: "Araştırmalar & Haberler", subtitle: "Hiperbarik oksijen terapisi alanındaki güncel bilimsel gelişmeler ve haberler." },
       source_label: "Kaynak:",
       min_read: "dk okuma",
-      disclaimer: "Bu yazılar, halka açık bilimsel yayın ve haber kaynaklarından derlenen özet bilgilerdir; tıbbi tavsiye niteliği taşımaz. Tedavi kararları için mutlaka bir sağlık profesyoneline danışın.",
+      disclaimer: "Bu yazılar, halka açık bilimsel yayın ve haber kaynaklarından derlenen özet bilgilerdir; tıbbi tavsiye niteliği taşımaz. Terapi kararları için mutlaka bir sağlık profesyoneline danışın.",
       posts: [
         {
           date: "2024",
@@ -558,7 +558,7 @@ const TRANSLATIONS = {
           title: "Neden Kendim de Hiperbarik Oksijen Kullanıyorum",
           paragraphs: [
             "Almita Group çatısı altında altı farklı sektörü bir arada yürütüyoruz; yoğun bir tempo ve sürekli seyahat kaçınılmaz oluyor. HBOT Chamber Tech'i kurarken üretmeye başlamadan önce kendi kabinlerimizi düzenli olarak kullanmayı tercih ettim — bir ürünü, arkasında durmadan önce bizzat denemek gerektiğine inanıyorum.",
-            "Seanslar sonrasında kendimi daha dinç ve odaklanmış hissettiğimi söyleyebilirim; bu tamamen kişisel bir gözlem ve herkes için aynı sonucu vaat etmiyorum. Hiperbarik oksijen tedavisi bir tıbbi tedavi yerine geçmez; kullanım kararlarınızı mutlaka bir sağlık profesyoneliyle değerlendirin."
+            "Seanslar sonrasında kendimi daha dinç ve odaklanmış hissettiğimi söyleyebilirim; bu tamamen kişisel bir gözlem ve herkes için aynı sonucu vaat etmiyorum. Hiperbarik oksijen terapisi bir tıbbi terapi yerine geçmez; kullanım kararlarınızı mutlaka bir sağlık profesyoneliyle değerlendirin."
           ],
           source_name: "Almita Group – Kurucu Notu",
           source_url: "https://almitagroup.com",
@@ -570,7 +570,7 @@ const TRANSLATIONS = {
           icon: "antiaging",
           title: "HBOT ve Longevity: Yükselen Uzun Yaşam Trendi",
           paragraphs: [
-            "Bryan Johnson gibi teknoloji girişimcilerinin kişisel 'genç kalma' protokolleriyle ana akım gündeme taşınan longevity (uzun ve sağlıklı yaşam) akımı, hiperbarik oksijen tedavisine olan ilgiyi de artırdı. Bu ilginin bilimsel dayanaklarından biri, 2020 yılında Aging dergisinde yayımlanan ve 64 yaş üzeri 35 sağlıklı yetişkinin 60 seanslık bir HBOT programına katıldığı klinik çalışma oldu.",
+            "Bryan Johnson gibi teknoloji girişimcilerinin kişisel 'genç kalma' protokolleriyle ana akım gündeme taşınan longevity (uzun ve sağlıklı yaşam) akımı, hiperbarik oksijen terapisine olan ilgiyi de artırdı. Bu ilginin bilimsel dayanaklarından biri, 2020 yılında Aging dergisinde yayımlanan ve 64 yaş üzeri 35 sağlıklı yetişkinin 60 seanslık bir HBOT programına katıldığı klinik çalışma oldu.",
             "Araştırmada, bağışıklık hücrelerinin telomer uzunluklarında %20'nin üzerinde — B hücrelerinde %37'ye varan — artış, yaşlanmış (senescent) bağışıklık hücrelerinin oranında ise %37'ye varan azalma gözlemlendi. Çalışmanın kontrol grubunun olmaması ve örneklem büyüklüğünün sınırlı olması nedeniyle sonuçlar 'umut verici ama ön bulgu' olarak değerlendiriliyor; araştırmacılar optimal protokollerin belirlenmesi için daha kapsamlı çalışmalara ihtiyaç olduğunu vurguluyor."
           ],
           source_name: "PMC – HBOT Increases Telomere Length and Decreases Immunosenescence (Aging, 2020)",
@@ -606,7 +606,7 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "Kronik Yaralarda Hiperbarik Oksijenin Rolü Güçleniyor",
           paragraphs: [
-            "Cerrahi ve kronik yara bakımı alanındaki güncel derlemeler, hiperbarik oksijen tedavisinin (HBOT) doku oksijenlenmesini artırarak iyileşme sürecini desteklediğini gösteriyor. Diyabetik ayak yaraları, venöz bacak ülserleri, yanıklar ve radyasyona bağlı doku hasarlarında HBOT'un yara kapanma oranlarını iyileştirdiği ve enfeksiyon riskini azalttığı bildiriliyor.",
+            "Cerrahi ve kronik yara bakımı alanındaki güncel derlemeler, hiperbarik oksijen terapisinin (HBOT) doku oksijenlenmesini artırarak iyileşme sürecini desteklediğini gösteriyor. Diyabetik ayak yaraları, venöz bacak ülserleri, yanıklar ve radyasyona bağlı doku hasarlarında HBOT'un yara kapanma oranlarını iyileştirdiği ve enfeksiyon riskini azalttığı bildiriliyor.",
             "2025 yılında yayınlanan bir çalışma, negatif basınçlı yara terapisiyle (NPWT) birlikte uygulanan HBOT'un, tek başına NPWT'ye kıyasla iyileşme hızını belirgin şekilde artırdığını ortaya koydu. Rekonstrüktif cerrahide ise HBOT'un doku ve greft sağkalımını desteklediği, yeni damar oluşumunu teşvik ettiği aktarılıyor."
           ],
           source_name: "PMC – Hyperbaric Oxygen Therapy in Surgical Wound Healing and Tissue Salvage",
@@ -618,7 +618,7 @@ const TRANSLATIONS = {
           icon: "burn",
           title: "Sporcular Neden Hiperbarik Odaya Yöneliyor?",
           paragraphs: [
-            "Tenis, yüzme, basketbol ve golf gibi farklı dallardan pek çok elit sporcu, toparlanma sürecinin bir parçası olarak hiperbarik oksijen tedavisini tercih ediyor. Spor hekimliği alanındaki araştırmalar, HBOT'un iyileşmeyi hızlandırabildiğini, iltihabı azaltabildiğini ve sporcuların antrenmana daha kısa sürede dönebilmesine katkı sağlayabildiğini gösteriyor.",
+            "Tenis, yüzme, basketbol ve golf gibi farklı dallardan pek çok elit sporcu, toparlanma sürecinin bir parçası olarak hiperbarik oksijen terapisini tercih ediyor. Spor hekimliği alanındaki araştırmalar, HBOT'un iyileşmeyi hızlandırabildiğini, iltihabı azaltabildiğini ve sporcuların antrenmana daha kısa sürede dönebilmesine katkı sağlayabildiğini gösteriyor.",
             "Bazı çalışmalarda HBOT uygulanan sporcularda kas ağrısı ve yorgunluğun daha düşük seviyelerde seyrettiği, toparlanma sürelerinin ise yaklaşık %30'a varan oranda kısaldığı bildirildi. Alan hâlâ daha büyük ve kontrollü klinik çalışmalara ihtiyaç duysa da, sonuçlar sporcu sağlığı için umut verici."
           ],
           source_name: "Turkish Journal of Sports Medicine",
@@ -630,7 +630,7 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "Diyabetik Ayak Ülserlerinde Meta-Analiz: Ampütasyon Riski Azalıyor",
           paragraphs: [
-            "768 katılımcıyı kapsayan 14 çalışmanın meta-analizi, hiperbarik oksijen tedavisinin diyabetik ayak ülserlerinin tam iyileşmesinde ve majör ampütasyon riskinin azaltılmasında istatistiksel olarak anlamlı fayda sağladığını ortaya koydu.",
+            "768 katılımcıyı kapsayan 14 çalışmanın meta-analizi, hiperbarik oksijen terapisinin diyabetik ayak ülserlerinin tam iyileşmesinde ve majör ampütasyon riskinin azaltılmasında istatistiksel olarak anlamlı fayda sağladığını ortaya koydu.",
             "2024 yılında yayınlanan güncel bir sistematik derleme de benzer sonuçlara ulaştı: incelenen çalışmaların büyük çoğunluğunda HBOT ile birlikte majör ampütasyon oranlarının azaldığı, yara iyileşme oranlarının arttığı ve ülser boyutu ile derinliğinin küçüldüğü gözlemlendi."
           ],
           source_name: "PMC – Efficacy of HBOT for Diabetic Foot Ulcer",
@@ -642,8 +642,8 @@ const TRANSLATIONS = {
           icon: "ear",
           title: "Ani İşitme Kaybında Hiperbarik Oksijen: Erken Müdahale Önemli",
           paragraphs: [
-            "Ani sensörinöral işitme kaybı yaşayan hastalarda hiperbarik oksijen tedavisi, iç kulaktaki oksijen basıncını artırarak mikrosirkülasyonu iyileştirmeyi ve iltihabı azaltmayı hedefliyor. Çalışmalar, tedaviye erken başlanan hastalarda, özellikle kortikosteroid tedavisiyle birlikte uygulandığında, daha olumlu sonuçlar alınabildiğini gösteriyor.",
-            "Araştırma sonuçları tedavinin etkinliği konusunda tam bir fikir birliği sunmasa da, bazı çalışmalarda hastaların yarısından fazlasında işitmede iyileşme gözlemlendi. Uzmanlar, standartlaştırılmış basınç ve süre protokollerinin belirlenmesi için daha fazla klinik çalışmaya ihtiyaç olduğunu vurguluyor."
+            "Ani sensörinöral işitme kaybı yaşayan hastalarda hiperbarik oksijen terapisi, iç kulaktaki oksijen basıncını artırarak mikrosirkülasyonu iyileştirmeyi ve iltihabı azaltmayı hedefliyor. Çalışmalar, terapiye erken başlanan hastalarda, özellikle kortikosteroid terapisiyle birlikte uygulandığında, daha olumlu sonuçlar alınabildiğini gösteriyor.",
+            "Araştırma sonuçları terapinin etkinliği konusunda tam bir fikir birliği sunmasa da, bazı çalışmalarda hastaların yarısından fazlasında işitmede iyileşme gözlemlendi. Uzmanlar, standartlaştırılmış basınç ve süre protokollerinin belirlenmesi için daha fazla klinik çalışmaya ihtiyaç olduğunu vurguluyor."
           ],
           source_name: "JAMA Otolaryngology–Head & Neck Surgery",
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
@@ -666,8 +666,8 @@ const TRANSLATIONS = {
           icon: "guard",
           title: "Çok Kişilik Kabinlerde Basınç Yönetimi: Klinik İşletim Protokolleri",
           paragraphs: [
-            "Çok kişilik (multiplace) hiperbarik kabinler, aynı anda birden fazla hastanın tedavi edilebilmesi ve kabin içinde sağlık personelinin refakat edebilmesi sayesinde hastane ve klinik ortamlarının standart tercihi konumunda. Uluslararası hiperbarik tıp otoritesi UHMS'in yayımladığı işletim kılavuzları; basınç artış ve azaltış hızlarının hasta konforu ve kulak barotravması riskine göre ayarlanmasını, her seansın sertifikalı bir operatör gözetiminde yürütülmesini ve acil tahliye senaryolarının düzenli olarak tatbik edilmesini öneriyor.",
-            "Klinik pratikte basınç protokolü tedavi endikasyonuna göre belirleniyor: yaygın protokoller 2.0–2.4 ATA aralığında uygulanırken, bazı özel endikasyonlarda daha yüksek basınçlar gerekebiliyor. Uzmanlar, hangi basınç seviyesinin uygun olduğunun mutlaka hiperbarik tıp uzmanı bir hekim tarafından değerlendirilmesi gerektiğini vurguluyor; kabin donanımının ise hedef basınç aralığını güvenle karşılayacak şekilde sertifikalandırılmış olması bekleniyor."
+            "Çok kişilik (multiplace) hiperbarik kabinler, aynı anda birden fazla hastanın terapi edilebilmesi ve kabin içinde sağlık personelinin refakat edebilmesi sayesinde hastane ve klinik ortamlarının standart tercihi konumunda. Uluslararası hiperbarik tıp otoritesi UHMS'in yayımladığı işletim kılavuzları; basınç artış ve azaltış hızlarının hasta konforu ve kulak barotravması riskine göre ayarlanmasını, her seansın sertifikalı bir operatör gözetiminde yürütülmesini ve acil tahliye senaryolarının düzenli olarak tatbik edilmesini öneriyor.",
+            "Klinik pratikte basınç protokolü terapi endikasyonuna göre belirleniyor: yaygın protokoller 2.0–2.4 ATA aralığında uygulanırken, bazı özel endikasyonlarda daha yüksek basınçlar gerekebiliyor. Uzmanlar, hangi basınç seviyesinin uygun olduğunun mutlaka hiperbarik tıp uzmanı bir hekim tarafından değerlendirilmesi gerektiğini vurguluyor; kabin donanımının ise hedef basınç aralığını güvenle karşılayacak şekilde sertifikalandırılmış olması bekleniyor."
           ],
           source_name: "UHMS – Undersea & Hyperbaric Medical Society",
           source_url: "https://www.uhms.org"
@@ -691,7 +691,7 @@ const TRANSLATIONS = {
           title: "Lüks Otellerde Yeni Trend: Hiperbarik Wellness Suitleri",
           paragraphs: [
             "Küresel wellness ekonomisine dair sektör raporları, sağlıklı yaşam turizminin en hızlı büyüyen segmentlerden biri olduğunu gösteriyor. Bu eğilimin bir yansıması olarak lüks otel ve resort'lar; spa ve fitness alanlarının ötesine geçerek hiperbarik oksijen kabini, kriyoterapi ve kırmızı ışık terapisi gibi ileri toparlanma teknolojilerini misafir deneyimine eklemeye başladı.",
-            "Sektör gözlemcileri, hiperbarik ünitelerin özellikle 'uzun yaşam' ve 'performans' temalı premium paketlerde öne çıktığını belirtiyor. Otel işletmeleri için kritik başlıklar ise güvenlik standartlarına uyum, eğitimli personel istihdamı ve kullanım öncesi sağlık değerlendirmesi süreçlerinin doğru kurgulanması olarak sıralanıyor; misafirlere yönelik uygulamaların tıbbi tedavi değil, genel iyilik hali desteği kapsamında sunulması gerektiği vurgulanıyor."
+            "Sektör gözlemcileri, hiperbarik ünitelerin özellikle 'uzun yaşam' ve 'performans' temalı premium paketlerde öne çıktığını belirtiyor. Otel işletmeleri için kritik başlıklar ise güvenlik standartlarına uyum, eğitimli personel istihdamı ve kullanım öncesi sağlık değerlendirmesi süreçlerinin doğru kurgulanması olarak sıralanıyor; misafirlere yönelik uygulamaların tıbbi terapi değil, genel iyilik hali desteği kapsamında sunulması gerektiği vurgulanıyor."
           ],
           source_name: "Global Wellness Institute",
           source_url: "https://globalwellnessinstitute.org"
@@ -703,7 +703,7 @@ const TRANSLATIONS = {
           title: "3.0 ATA ve Üzeri Basınç: Tıbbi Sınıf Hiperbarik Güvenlik Standartları",
           paragraphs: [
             "3.0 ATA ve üzeri basınç seviyeleri, hiperbarik tıbbın yalnızca sıkı denetlenen klinik ortamlarda uyguladığı bir alan. Bu seviyelerde çalışan kabinlerin basınçlı kap mevzuatına uygun üretilmesi, yangın güvenliği açısından NFPA 99 gibi uluslararası standartların hiperbarik hükümlerini karşılaması ve düzenli periyodik denetimden geçmesi gerekiyor. Oksijen açısından zenginleşmiş ortamda yangın riski yönetimi, bu sınıftaki sistemlerin tasarımında en kritik başlık olarak öne çıkıyor.",
-            "Güvenlik zincirinin diğer halkaları ise insan faktörü: sertifikalı hiperbarik operatörü, seans öncesi hasta değerlendirmesi, acil durum tahliye planı ve tıbbi gözetim. Uzman kuruluşlar, yüksek basınç sınıfındaki tedavilerin yalnızca bu altyapıya sahip sağlık kurumlarında uygulanmasını öneriyor; satın alma kararı veren kurumların üreticiden basınç sertifikaları, test raporları ve eğitim programlarını yazılı olarak talep etmesi tavsiye ediliyor."
+            "Güvenlik zincirinin diğer halkaları ise insan faktörü: sertifikalı hiperbarik operatörü, seans öncesi hasta değerlendirmesi, acil durum tahliye planı ve tıbbi gözetim. Uzman kuruluşlar, yüksek basınç sınıfındaki terapilerin yalnızca bu altyapıya sahip sağlık kurumlarında uygulanmasını öneriyor; satın alma kararı veren kurumların üreticiden basınç sertifikaları, test raporları ve eğitim programlarını yazılı olarak talep etmesi tavsiye ediliyor."
           ],
           source_name: "NFPA – National Fire Protection Association",
           source_url: "https://www.nfpa.org"
@@ -746,7 +746,7 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech Modelleri",
             items: [
-              { q: "Hangi HBOT City Tech modelleri bulunmaktadır?", a: "HBOT City Tech ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nOslo Lounge — Yatay pozisyonda tedavi ihtiyacı olan kullanıcılar için geliştirilmiş, tek kullanıcılı sistemdir.\n\nOslo — Oturur pozisyonda, tek kullanıcı kapasiteli, kompakt hiperbarik sistemdir. Hem bireysel/ev hem de işletme kullanımı için tasarlanmıştır.\n\nTokyo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nMilan — Klinik, hastane ve profesyonel işletmeler için geliştirilen, 4 kullanıcı kapasiteli, küp formunda geniş hacimli hiperbarik sistemdir.\n\nGeneva — Hastane sınıfı, 6 kullanıcıdan başlayıp 12 kullanıcıya kadar genişleyebilen, büyük kapasiteli kurumsal sistemdir." },
+              { q: "Hangi HBOT City Tech modelleri bulunmaktadır?", a: "HBOT City Tech ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nOslo Lounge — Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için geliştirilmiş, tek kullanıcılı sistemdir.\n\nOslo — Oturur pozisyonda, tek kullanıcı kapasiteli, kompakt hiperbarik sistemdir. Hem bireysel/ev hem de işletme kullanımı için tasarlanmıştır.\n\nTokyo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nMilan — Klinik, hastane ve profesyonel işletmeler için geliştirilen, 4 kullanıcı kapasiteli, küp formunda geniş hacimli hiperbarik sistemdir.\n\nGeneva — Hastane sınıfı, 6 kullanıcıdan başlayıp 12 kullanıcıya kadar genişleyebilen, büyük kapasiteli kurumsal sistemdir." },
               { q: "Oslo kimler için uygundur?", a: "Oslo, hem bireysel/ev kullanımı hem de tek kullanıcılı çalışma düzeni isteyen işletmeler için geliştirilmiştir. Kompakt yapısı sayesinde evler, klinikler, spor merkezleri, wellness merkezleri ve oteller için değerlendirilebilir.\n\nKesin kullanım koşulları, ürünün sınıflandırmasına ve kurulum yapılacak ülkenin mevzuatına göre belirlenir." },
               { q: "Tokyo kaç kişiliktir?", a: "Tokyo, aynı seansta iki kullanıcının bulunabileceği şekilde tasarlanmıştır. Koltuk yapısı, iç donanım ve oturma düzeni sipariş edilen konfigürasyona göre değişebilir." },
               { q: "Çok kişilik HBOT City Tech modeli kaç kullanıcı kapasitelidir?", a: "Çok kullanıcılı HBOT City Tech modelleri 4 kişilik Milan ile başlar. Hastane sınıfı Geneva modelinde ise standart kapasite 6 kişidir ve opsiyonel olarak 12 kişiye kadar (2'şer koltuk artışlarla) genişletilebilir.\n\nKesin kapasite aşağıdaki unsurlara göre belirlenir:", list: ["Kabin ölçüsü", "Koltuk yerleşimi", "Kullanıcıların hareket alanı", "Oksijen sistemi kapasitesi", "İşletme protokolü", "Yerel güvenlik ve ruhsatlandırma şartları"], aAfter: "Her opsiyon, güvenlik değerlendirmesi ve teknik uygunluk sonrasında projeye eklenir." },
@@ -802,9 +802,9 @@ const TRANSLATIONS = {
           {
             title: "Tıbbi Kullanım ve Sağlık Beyanları",
             items: [
-              { q: "Hiperbarik sistem hangi hastalıkların tedavisinde kullanılır?", a: "Hiperbarik oksijen uygulamasının kabul edilen tıbbi kullanım alanları ülkeye, düzenleyici kuruma, cihaz sınıfına ve klinik protokole göre değişebilir.\n\nTıbbi amaçlı uygulamalar yalnızca uygun şekilde sınıflandırılmış cihazlarla, yetkili sağlık kuruluşlarında, eğitimli sağlık personeli gözetiminde, hekim değerlendirmesi ve uygun protokol doğrultusunda gerçekleştirilmelidir.\n\nWeb sitemizde bulunan bilgiler herhangi bir hastalığın teşhis veya tedavisi için kişisel tavsiye niteliğinde değildir." },
-              { q: "HBOT City Tech cihazları herhangi bir hastalığı tedavi eder mi?", a: "Bir cihazın kullanım amacı ve yapılabilecek sağlık beyanları, ürünün resmi sınıflandırmasına ve sahip olduğu belgelere bağlıdır.\n\nHBOT City Tech sistemleri hakkında yalnızca teknik belgelerde ve uygunluk değerlendirmesinde belirtilen kullanım amacı kapsamında beyanda bulunulur. Herhangi bir hastalık için garanti edilmiş sonuç sunulmaz." },
-              { q: "Düşük basınçlı sistemlerle klinik HBOT aynı şey midir?", a: "Hayır. Her basınçlı oksijen uygulaması aynı teknik veya klinik sınıfta değildir. Aşağıdaki unsurlar uygulamanın niteliğini değiştirebilir:", list: ["Çalışma basıncı", "Solunan oksijen konsantrasyonu", "Oksijenin verilme yöntemi", "Seans süresi", "Cihazın sertifikasyonu", "Kullanım amacı", "Uygulama ortamı", "Sağlık personeli gözetimi"], aAfter: "Bir sistemin \"medikal hiperbarik oksijen tedavisi cihazı\" olarak tanımlanabilmesi, ilgili pazardaki mevzuata ve ürünün belgelendirilmiş kullanım amacına bağlıdır." },
+              { q: "Hiperbarik sistem hangi hastalıkların terapisinde kullanılır?", a: "Hiperbarik oksijen uygulamasının kabul edilen tıbbi kullanım alanları ülkeye, düzenleyici kuruma, cihaz sınıfına ve klinik protokole göre değişebilir.\n\nTıbbi amaçlı uygulamalar yalnızca uygun şekilde sınıflandırılmış cihazlarla, yetkili sağlık kuruluşlarında, eğitimli sağlık personeli gözetiminde, hekim değerlendirmesi ve uygun protokol doğrultusunda gerçekleştirilmelidir.\n\nWeb sitemizde bulunan bilgiler herhangi bir hastalığın teşhis veya terapisi için kişisel tavsiye niteliğinde değildir." },
+              { q: "HBOT City Tech cihazları herhangi bir hastalığı terapi eder mi?", a: "Bir cihazın kullanım amacı ve yapılabilecek sağlık beyanları, ürünün resmi sınıflandırmasına ve sahip olduğu belgelere bağlıdır.\n\nHBOT City Tech sistemleri hakkında yalnızca teknik belgelerde ve uygunluk değerlendirmesinde belirtilen kullanım amacı kapsamında beyanda bulunulur. Herhangi bir hastalık için garanti edilmiş sonuç sunulmaz." },
+              { q: "Düşük basınçlı sistemlerle klinik HBOT aynı şey midir?", a: "Hayır. Her basınçlı oksijen uygulaması aynı teknik veya klinik sınıfta değildir. Aşağıdaki unsurlar uygulamanın niteliğini değiştirebilir:", list: ["Çalışma basıncı", "Solunan oksijen konsantrasyonu", "Oksijenin verilme yöntemi", "Seans süresi", "Cihazın sertifikasyonu", "Kullanım amacı", "Uygulama ortamı", "Sağlık personeli gözetimi"], aAfter: "Bir sistemin \"medikal hiperbarik oksijen terapisi cihazı\" olarak tanımlanabilmesi, ilgili pazardaki mevzuata ve ürünün belgelendirilmiş kullanım amacına bağlıdır." },
               { q: "Sonuçlar garanti ediliyor mu?", a: "Kullanıcıların vereceği yanıt kişiden kişiye değişebilir. Sağlık, iyileşme, performans veya benzeri sonuçlar garanti edilemez.\n\nKullanım kararı yalnızca genel tanıtım bilgilerine veya kullanıcı yorumlarına dayanılarak verilmemelidir." }
             ]
           },

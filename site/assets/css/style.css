@@ -956,10 +956,15 @@ p { text-align: justify; text-align-last: left; }
   .config-stage-col { display: contents; }
   .config-stage { order: -1; aspect-ratio: 4 / 3; position: sticky; top: 76px; z-index: 30; }
 }
-/* v14: telefon genişliğinde sabit (sticky) kabin görseli ekranın yarısını kalıcı kaplıyordu —
-   normal akışa alındı, sayfayla birlikte kayar */
+/* v14'te telefon genişliğinde sticky kabin görseli ekranın yarısını kaplıyordu diye normal
+   akışa alınmıştı; ama bu sefer renk seçimine kaydırınca görsel tamamen ekran dışında kalıyordu.
+   v15: sticky geri geldi ama çok daha kompakt (sabit düşük yükseklik) — hem seçim yaparken
+   görünür kalır hem de ekranı kaplamaz. */
 @media (max-width: 640px) {
-  .config-stage { position: static; top: auto; z-index: auto; aspect-ratio: 4 / 3.2; }
+  .config-stage { position: sticky; top: 64px; z-index: 30; aspect-ratio: auto; height: 132px; }
+  .config-stage .stage-model-name { font-size: 11px; padding: 4px 10px; }
+  .config-stage .stage-spin-hint { display: none; }
+  .config-stage .stage-view-toggle { transform: scale(0.82); transform-origin: top right; }
 }
 @media (prefers-reduced-motion: reduce) {
   .stage-img { transition: none; }
