@@ -958,8 +958,11 @@ p { text-align: justify; text-align-last: left; }
 /* v14'te telefon genişliğinde sticky kabin görseli ekranın yarısını kaplıyordu diye normal
    akışa alınmıştı; ama bu sefer renk seçimine kaydırınca görsel tamamen ekran dışında kalıyordu.
    v15: sticky geri geldi ama çok daha kompakt (sabit düşük yükseklik) — hem seçim yaparken
-   görünür kalır hem de ekranı kaplamaz. */
-@media (max-width: 640px) {
+   görünür kalır hem de ekranı kaplamaz.
+   v18: eşik 640px'ten 900px'e çıkarıldı — katlanır telefonlar açıkken ~700-840px genişlik
+   raporluyor, bu aralık eskiden 980px kuralındaki aspect-ratio:4/3 kutuya düşüp yine
+   ekranın yarısını kaplıyordu. */
+@media (max-width: 900px) {
   .config-stage { position: sticky; top: 64px; z-index: 30; aspect-ratio: auto; height: 132px; }
   .config-stage .stage-model-name { font-size: 11px; padding: 4px 10px; }
   .config-stage .stage-spin-hint { display: none; }

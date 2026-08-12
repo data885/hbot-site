@@ -82,12 +82,12 @@
      kurumsal modellerde 2.5/3.0/6.0 ATA (ücretsiz) — basınç kademelerine artık fiyat
      eklenmiyor. Apex Quad kaldırıldı (Quad-Cube tek 4 kişilik model). */
   const MODEL_PRICING = {
-    "solo-lounge": { base: 30000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
-    solo: { base: 70000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
-    duo: { base: 120000, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
-    "duo-plus": { base: 120000, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
-    "quad-cube": { base: 225000, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
-    nexus: { base: 260000, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] }
+    "solo-lounge": { base: 29900, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
+    solo: { base: 69900, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
+    duo: { base: 119900, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
+    "duo-plus": { base: 119900, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
+    "quad-cube": { base: 224900, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
+    nexus: { base: 259900, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] }
   };
   const ADDON_PRICING = { massage: 2900, leather: 2100, entertainment: 1650, finish: 900, warranty: 2500, playstation: 1900 };
   const STYLE_PRICING = { solid: 0, glass: 3500, premium: 7500 };
@@ -101,8 +101,8 @@
   /* Kademeli koltuk fiyatlaması: Nexus ve Duo Plus için taban fiyat koltuk sayısına göre
      değişir (eklenen her koltuk için ayrı ücret yerine sabit fiyat kademeleri). */
   const SEAT_TIERS = {
-    nexus: [{ seats: 6, price: 260000 }, { seats: 8, price: 280000 }, { seats: 10, price: 300000 }, { seats: 12, price: 330000 }],
-    "duo-plus": [{ seats: 2, price: 120000 }, { seats: 4, price: 170000 }]
+    nexus: [{ seats: 6, price: 259900 }, { seats: 8, price: 280000 }, { seats: 10, price: 300000 }, { seats: 12, price: 330000 }],
+    "duo-plus": [{ seats: 2, price: 119900 }, { seats: 4, price: 170000 }]
   };
   const NEXUS_BASE_SEATS = SEAT_TIERS.nexus[0].seats;
   const NEXUS_MAX_SEATS = SEAT_TIERS.nexus[SEAT_TIERS.nexus.length - 1].seats;
