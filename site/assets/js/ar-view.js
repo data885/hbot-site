@@ -69,6 +69,19 @@
     var nameEl = document.getElementById("ar-model-name");
     if (nameEl) nameEl.textContent = MODEL_NAMES[modelId];
 
+    var dimEl = document.getElementById("ar-view-dimensions");
+    if (dimEl && dict && dict.arView && dict.arView.dimensionsLabel) {
+      fetch("/assets/ar/manifest.json")
+        .then(function (r) { return r.json(); })
+        .then(function (manifest) {
+          var d = manifest[modelId];
+          if (!d) return;
+          dimEl.innerHTML = dict.arView.dimensionsLabel + ": <strong>" + d.length_m + " m × " + d.diameter_m + " m</strong>";
+          dimEl.hidden = false;
+        })
+        .catch(function () { /* sessiz fallback: boyut satiri gosterilmez */ });
+    }
+
     if (!isMobileDevice()) {
       var note = document.getElementById("ar-fallback-note");
       if (note) note.style.display = "block";

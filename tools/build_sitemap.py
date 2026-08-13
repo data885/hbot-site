@@ -12,7 +12,7 @@ from build_i18n_pages import ROOT_PAGES, ALL_LANGS, resolve_url, BASE_URL
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_DIR = os.path.join(REPO_ROOT, "site")
 
-LASTMOD = "2026-08-08"
+LASTMOD = "2026-08-12"
 
 PRIORITY = {
     "index.html": "1.0",
@@ -21,6 +21,7 @@ PRIORITY = {
     "model-apex-solo-lounge.html": "0.8",
     "model-apex-solo.html": "0.8",
     "model-apex-duo.html": "0.8",
+    "model-apex-duo-plus.html": "0.7",
     "model-apex-quad-cube.html": "0.8",
     "model-apex-nexus.html": "0.8",
     "teknoloji.html": "0.7",

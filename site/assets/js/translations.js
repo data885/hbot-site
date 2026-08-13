@@ -8,6 +8,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Yatay pozisyonda terapi için tasarlanmış tek kişilik hiperbarik oksijen odası." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Bireysel kullanım için kompakt, tam donanımlı hiperbarik oksijen odası." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "İki kişilik paylaşımlı hiperbarik oksijen terapisi kabini." },
+      duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Kurumsal kullanım için 2-4 kişilik, yüksek basınçlı hiperbarik oksijen odası." },
       quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Dört kişilik, geniş iç hacimli küp tasarım hiperbarik oksijen odası." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Hastane sınıfı, altı ve üzeri kişilik büyük kapasiteli hiperbarik oksijen odası." },
       hbotInfo: { title: "HBOT Nedir? | HBOT Chamber Tech", desc: "Hiperbarik oksijen terapisi (HBOT) nedir, ne için kullanılır ve hangi durumlarda uygulanır." },
@@ -303,6 +304,7 @@ const TRANSLATIONS = {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       tagline: "Birlikte İyileşin. İki kişilik paylaşımlı terapi deneyimi.",
       overview_text: "Çift koltuklu hiperbarik kabin, paylaşımlı terapi seansları sunar. Eşler, partnerler veya hasta-refakatçi kullanımı için tasarlanmıştır.",
+      institutionalNote: "Kurumsal, 2–4 kişilik kullanım mı arıyorsunuz? <a href=\"model-apex-duo-plus.html\">Tokyo Plus'a bakın →</a>",
       specs: [
         { label: "Kapasite", value: "2 kişi (oturma)" },
         { label: "Basınç Aralığı", value: "1.5 – 2.0 ATA" },
@@ -310,6 +312,19 @@ const TRANSLATIONS = {
         { label: "Güvenlik", value: "Acil durum valf sistemi" },
         { label: "Kontrol", value: "Çift kontrol sistemi" },
         { label: "Pencere", value: "Panoramik" }
+      ]
+    },
+    modelDuoPlus: {
+      breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      tagline: "Kurumsal kullanım için genişletilebilir, çok kişilik terapi kapasitesi.",
+      overview_text: "Tokyo'nun yüksek basınçlı, çok kişilik kurumsal versiyonu. 2 ila 4 kişi arasında kademeli koltuk kapasitesiyle klinik, hastane ve wellness merkezleri için tasarlanmıştır.",
+      specs: [
+        { label: "Kapasite", value: "2–4 kişi (kademeli)" },
+        { label: "Basınç Aralığı", value: "2.5 – 6.0 ATA" },
+        { label: "Oksijen Saflığı", value: "%93–95" },
+        { label: "Güvenlik", value: "Acil durum valf sistemi" },
+        { label: "Kontrol", value: "Çift kontrol sistemi" },
+        { label: "Kullanım Alanı", value: "Kurumsal (klinik / hastane / wellness)" }
       ]
     },
     modelQuadCube: {
@@ -374,6 +389,7 @@ const TRANSLATIONS = {
       title: "Gerçek Boyutlu Önizleme",
       subtitle: "Telefonunuzun kamerasını zemine doğrultun; kabini gerçek boyutlarıyla mekânınıza yerleştirin. Sürükleyip döndürerek her açıdan inceleyebilirsiniz.",
       scaleBadge: "Gerçek ölçek önizlemesi",
+      dimensionsLabel: "Boyutlar",
       desktopNote: "AR modu yalnızca mobil cihazlarda kullanılabilir. Bu sayfayı telefonunuzda açın veya konfigüratördeki QR kodu okutun.",
       launchButton: "📱 Mekânınızda Görün"
     },
@@ -883,6 +899,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "A single-person hyperbaric oxygen chamber designed for treatment in a lying position." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "A compact, fully equipped hyperbaric oxygen chamber for individual use." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "A two-person shared hyperbaric oxygen therapy chamber." },
+      duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "A 2-4 person, high-pressure hyperbaric oxygen chamber for institutional use." },
       quadCube: { title: "Milan | HBOT Chamber Tech", desc: "A four-person, spacious cube-design hyperbaric oxygen chamber." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "A hospital-grade, large-capacity hyperbaric oxygen chamber for six or more people." },
       hbotInfo: { title: "What Is HBOT? | HBOT Chamber Tech", desc: "What is hyperbaric oxygen therapy (HBOT), what is it used for, and in which conditions is it applied." },
@@ -1178,6 +1195,7 @@ const TRANSLATIONS = {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       tagline: "Heal Together. A shared two-person treatment experience.",
       overview_text: "A dual-seat hyperbaric chamber offering shared therapy sessions. Designed for couples, partners, or patient-companion use.",
+      institutionalNote: "Looking for a 2–4 person institutional setup? <a href=\"model-apex-duo-plus.html\">See Tokyo Plus →</a>",
       specs: [
         { label: "Capacity", value: "2 people (sitting)" },
         { label: "Pressure Range", value: "1.5 – 2.0 ATA" },
@@ -1185,6 +1203,19 @@ const TRANSLATIONS = {
         { label: "Safety", value: "Emergency valve system" },
         { label: "Control", value: "Dual control system" },
         { label: "Window", value: "Panoramic" }
+      ]
+    },
+    modelDuoPlus: {
+      breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      tagline: "Expandable, multi-person therapy capacity for institutional use.",
+      overview_text: "The high-pressure, multi-person institutional version of Tokyo. Designed for clinics, hospitals and wellness centers with tiered seating capacity from 2 to 4 people.",
+      specs: [
+        { label: "Capacity", value: "2–4 people (tiered)" },
+        { label: "Pressure Range", value: "2.5 – 6.0 ATA" },
+        { label: "Oxygen Purity", value: "93–95%" },
+        { label: "Safety", value: "Emergency valve system" },
+        { label: "Control", value: "Dual control system" },
+        { label: "Use Case", value: "Institutional (clinic / hospital / wellness)" }
       ]
     },
     modelQuadCube: {
@@ -1249,6 +1280,7 @@ const TRANSLATIONS = {
       title: "Real-Size Preview",
       subtitle: "Point your camera at the floor to place the chamber in your space at real size. Drag to rotate and view it from any angle.",
       scaleBadge: "Real-scale preview",
+      dimensionsLabel: "Dimensions",
       desktopNote: "AR mode is only available on mobile devices. Open this page on your phone, or scan the QR code from the configurator.",
       launchButton: "📱 View in Your Space"
     },
@@ -1758,6 +1790,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Одноместная гипербарическая кислородная камера для лечения в положении лёжа." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Компактная, полностью укомплектованная камера для индивидуального использования." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Двухместная камера для совместной гипербарической оксигенотерапии." },
+      duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Гипербарическая камера повышенного давления на 2-4 человека для учреждений." },
       quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Четырёхместная гипербарическая кислородная камера с просторным кубическим дизайном." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Гипербарическая камера госпитального класса большой вместимости на 6 и более человек." },
       hbotInfo: { title: "Что такое ГБО? | HBOT Chamber Tech", desc: "Что такое гипербарическая оксигенотерапия (ГБО), для чего она применяется и при каких состояниях." },
@@ -2053,6 +2086,7 @@ const TRANSLATIONS = {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       tagline: "Исцеляйтесь вместе. Совместный сеанс лечения для двоих.",
       overview_text: "Двухместная гипербарическая камера для совместных сеансов терапии. Разработана для пар, партнёров или пациента с сопровождающим.",
+      institutionalNote: "Ищете вариант для учреждений на 2–4 человека? <a href=\"model-apex-duo-plus.html\">Смотрите Tokyo Plus →</a>",
       specs: [
         { label: "Вместимость", value: "2 человека (сидя)" },
         { label: "Диапазон давления", value: "1.5 – 2.0 ATA" },
@@ -2060,6 +2094,19 @@ const TRANSLATIONS = {
         { label: "Безопасность", value: "Система аварийных клапанов" },
         { label: "Управление", value: "Двойная система управления" },
         { label: "Окно", value: "Панорамное" }
+      ]
+    },
+    modelDuoPlus: {
+      breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      tagline: "Расширяемая, многоместная вместимость для учреждений.",
+      overview_text: "Высоконапорная, многоместная институциональная версия Tokyo. Разработана для клиник, больниц и велнес-центров с поэтапной вместимостью от 2 до 4 человек.",
+      specs: [
+        { label: "Вместимость", value: "2–4 человека (поэтапно)" },
+        { label: "Диапазон давления", value: "2.5 – 6.0 ATA" },
+        { label: "Чистота кислорода", value: "93–95%" },
+        { label: "Безопасность", value: "Система аварийных клапанов" },
+        { label: "Управление", value: "Двойная система управления" },
+        { label: "Область применения", value: "Учреждения (клиники / больницы / велнес)" }
       ]
     },
     modelQuadCube: {
@@ -2124,6 +2171,7 @@ const TRANSLATIONS = {
       title: "Предпросмотр в реальном размере",
       subtitle: "Наведите камеру на пол, чтобы разместить камеру в вашем помещении в реальном размере. Проведите пальцем, чтобы повернуть и рассмотреть с любого угла.",
       scaleBadge: "Предпросмотр в реальном масштабе",
+      dimensionsLabel: "Размеры",
       desktopNote: "Режим AR доступен только на мобильных устройствах. Откройте эту страницу на телефоне или отсканируйте QR-код в конфигураторе.",
       launchButton: "📱 Посмотреть в вашем помещении"
     },
@@ -2633,6 +2681,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لشخص واحد مصممة للعلاج في وضعية الاستلقاء." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "غرفة مدمجة وكاملة التجهيز للاستخدام الفردي." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "غرفة علاج مشترك بالأكسجين عالي الضغط لشخصين." },
+      duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لـ 2-4 أشخاص للاستخدام المؤسسي." },
       quadCube: { title: "Milan | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لأربعة أشخاص بتصميم مكعّب واسع الداخل." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط بمستوى المستشفيات وسعة كبيرة لستة أشخاص أو أكثر." },
       hbotInfo: { title: "ما هو العلاج بالأكسجين عالي الضغط؟ | HBOT Chamber Tech", desc: "ما هو العلاج بالأكسجين عالي الضغط (HBOT)، ولماذا يُستخدم، وفي أي الحالات يُطبّق." },
@@ -2928,6 +2977,7 @@ const TRANSLATIONS = {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       tagline: "تعافيا معاً. تجربة علاج مشتركة لشخصين.",
       overview_text: "غرفة أكسجين عالي الضغط بمقعدين توفر جلسات علاج مشتركة. مصممة للأزواج أو الشركاء أو استخدام المريض مع مرافق.",
+      institutionalNote: "تبحث عن إعداد مؤسسي لـ 2–4 أشخاص؟ <a href=\"model-apex-duo-plus.html\">اطّلع على Tokyo Plus →</a>",
       specs: [
         { label: "السعة", value: "شخصان (جلوس)" },
         { label: "نطاق الضغط", value: "1.5 – 2.0 ATA" },
@@ -2935,6 +2985,19 @@ const TRANSLATIONS = {
         { label: "السلامة", value: "نظام صمامات الطوارئ" },
         { label: "التحكم", value: "نظام تحكم مزدوج" },
         { label: "النافذة", value: "بانورامية" }
+      ]
+    },
+    modelDuoPlus: {
+      breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      tagline: "سعة علاجية متعددة الأشخاص وقابلة للتوسع للاستخدام المؤسسي.",
+      overview_text: "النسخة المؤسسية عالية الضغط ومتعددة الأشخاص من Tokyo. صُمِّمت للعيادات والمستشفيات ومراكز العافية بسعة مقاعد متدرجة من 2 إلى 4 أشخاص.",
+      specs: [
+        { label: "السعة", value: "2–4 أشخاص (متدرجة)" },
+        { label: "نطاق الضغط", value: "2.5 – 6.0 ATA" },
+        { label: "نقاء الأكسجين", value: "93–95%" },
+        { label: "السلامة", value: "نظام صمام الطوارئ" },
+        { label: "التحكم", value: "نظام تحكم مزدوج" },
+        { label: "مجال الاستخدام", value: "مؤسسي (عيادة / مستشفى / عافية)" }
       ]
     },
     modelQuadCube: {
@@ -2999,6 +3062,7 @@ const TRANSLATIONS = {
       title: "معاينة بالحجم الحقيقي",
       subtitle: "وجّه الكاميرا نحو الأرضية لوضع الغرفة في مساحتك بالحجم الحقيقي. اسحب لتدويرها ومشاهدتها من أي زاوية.",
       scaleBadge: "معاينة بالمقياس الحقيقي",
+      dimensionsLabel: "الأبعاد",
       desktopNote: "وضع الواقع المعزز متاح فقط على الأجهزة المحمولة. افتح هذه الصفحة على هاتفك أو امسح رمز QR من أداة التكوين.",
       launchButton: "📱 عاين في مساحتك"
     },
@@ -3507,6 +3571,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno individual diseñada para tratamiento en posición tumbada." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno compacta y totalmente equipada para uso individual." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Una cámara de oxigenoterapia hiperbárica compartida para dos personas." },
+      duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Una cámara hiperbárica de alta presión para 2-4 personas, para uso institucional." },
       quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno espaciosa para cuatro personas, de diseño cúbico." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno de nivel hospitalario y gran capacidad para seis o más personas." },
       hbotInfo: { title: "¿Qué es la HBOT? | HBOT Chamber Tech", desc: "Qué es la oxigenoterapia hiperbárica (HBOT), para qué se utiliza y en qué afecciones se aplica." },
@@ -3802,6 +3867,7 @@ const TRANSLATIONS = {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       tagline: "Sana en Compañía. Una experiencia de tratamiento compartida para dos personas.",
       overview_text: "Una cámara hiperbárica de doble asiento que ofrece sesiones de terapia compartidas. Diseñada para parejas, acompañantes o uso paciente-acompañante.",
+      institutionalNote: "¿Busca una configuración institucional para 2–4 personas? <a href=\"model-apex-duo-plus.html\">Vea Tokyo Plus →</a>",
       specs: [
         { label: "Capacidad", value: "2 personas (sentadas)" },
         { label: "Rango de Presión", value: "1.5 – 2.0 ATA" },
@@ -3809,6 +3875,19 @@ const TRANSLATIONS = {
         { label: "Seguridad", value: "Sistema de válvula de emergencia" },
         { label: "Control", value: "Sistema de control dual" },
         { label: "Ventana", value: "Panorámica" }
+      ]
+    },
+    modelDuoPlus: {
+      breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      tagline: "Capacidad terapéutica multipersona y ampliable para uso institucional.",
+      overview_text: "La versión institucional de alta presión y multipersona de Tokyo. Diseñada para clínicas, hospitales y centros de bienestar, con capacidad de asientos escalonada de 2 a 4 personas.",
+      specs: [
+        { label: "Capacidad", value: "2–4 personas (escalonada)" },
+        { label: "Rango de Presión", value: "2.5 – 6.0 ATA" },
+        { label: "Pureza de Oxígeno", value: "93–95%" },
+        { label: "Seguridad", value: "Sistema de válvula de emergencia" },
+        { label: "Control", value: "Sistema de control dual" },
+        { label: "Uso", value: "Institucional (clínica / hospital / bienestar)" }
       ]
     },
     modelQuadCube: {
@@ -3873,6 +3952,7 @@ const TRANSLATIONS = {
       title: "Vista Previa a Tamaño Real",
       subtitle: "Apunte la cámara al suelo para colocar la cámara en su espacio a tamaño real. Arrastre para rotarla y verla desde cualquier ángulo.",
       scaleBadge: "Vista previa a escala real",
+      dimensionsLabel: "Dimensiones",
       desktopNote: "El modo AR solo está disponible en dispositivos móviles. Abra esta página en su teléfono o escanee el código QR del configurador.",
       launchButton: "📱 Ver en su Espacio"
     },
@@ -4381,6 +4461,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico individual projetada para tratamento na posição deitada." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico compacta e totalmente equipada para uso individual." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Uma câmara de oxigenoterapia hiperbárica compartilhada para duas pessoas." },
+      duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Uma câmara hiperbárica de alta pressão para 2-4 pessoas, para uso institucional." },
       quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico espaçosa em design cubo para quatro pessoas." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico de grande capacidade e nível hospitalar para seis ou mais pessoas." },
       hbotInfo: { title: "O Que É a OHB? | HBOT Chamber Tech", desc: "O que é a oxigenoterapia hiperbárica (OHB), para que serve e em quais condições é aplicada." },
@@ -4676,6 +4757,7 @@ const TRANSLATIONS = {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       tagline: "Cure-se em Dupla. Uma experiência de tratamento compartilhada para duas pessoas.",
       overview_text: "Uma câmara hiperbárica com dois assentos que oferece sessões de terapia compartilhadas. Projetada para casais, parceiros ou uso paciente-acompanhante.",
+      institutionalNote: "Procura uma configuração institucional para 2–4 pessoas? <a href=\"model-apex-duo-plus.html\">Veja o Tokyo Plus →</a>",
       specs: [
         { label: "Capacidade", value: "2 pessoas (sentado)" },
         { label: "Faixa de Pressão", value: "1.5 – 2.0 ATA" },
@@ -4683,6 +4765,19 @@ const TRANSLATIONS = {
         { label: "Segurança", value: "Sistema de válvula de emergência" },
         { label: "Controle", value: "Sistema de controle duplo" },
         { label: "Janela", value: "Panorâmica" }
+      ]
+    },
+    modelDuoPlus: {
+      breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      tagline: "Capacidade terapêutica multipessoa e expansível para uso institucional.",
+      overview_text: "A versão institucional de alta pressão e multipessoa do Tokyo. Projetada para clínicas, hospitais e centros de bem-estar, com capacidade de assentos escalonada de 2 a 4 pessoas.",
+      specs: [
+        { label: "Capacidade", value: "2–4 pessoas (escalonada)" },
+        { label: "Faixa de Pressão", value: "2.5 – 6.0 ATA" },
+        { label: "Pureza do Oxigênio", value: "93–95%" },
+        { label: "Segurança", value: "Sistema de válvula de emergência" },
+        { label: "Controle", value: "Sistema de controle duplo" },
+        { label: "Uso", value: "Institucional (clínica / hospital / bem-estar)" }
       ]
     },
     modelQuadCube: {
@@ -4747,6 +4842,7 @@ const TRANSLATIONS = {
       title: "Pré-visualização em Tamanho Real",
       subtitle: "Aponte a câmera para o chão para posicionar a câmara no seu espaço em tamanho real. Arraste para girar e visualizar de qualquer ângulo.",
       scaleBadge: "Pré-visualização em escala real",
+      dimensionsLabel: "Dimensões",
       desktopNote: "O modo AR está disponível apenas em dispositivos móveis. Abra esta página no seu telefone ou escaneie o código QR no configurador.",
       launchButton: "📱 Ver no seu Espaço"
     },
@@ -5255,6 +5351,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer für eine Person, konzipiert für die Behandlung in liegender Position." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Eine kompakte, voll ausgestattete hyperbare Sauerstoffkammer für die individuelle Nutzung." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Eine gemeinsam genutzte hyperbare Sauerstofftherapie-Kammer für zwei Personen." },
+      duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Eine druckstarke Kammer für 2-4 Personen für den institutionellen Einsatz." },
       quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Eine geräumige hyperbare Sauerstoffkammer im Cube-Design für vier Personen." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer in Krankenhausqualität mit großer Kapazität für sechs oder mehr Personen." },
       hbotInfo: { title: "Was ist HBOT? | HBOT Chamber Tech", desc: "Was ist die hyperbare Sauerstofftherapie (HBOT), wofür wird sie eingesetzt und bei welchen Indikationen kommt sie zur Anwendung." },
@@ -5550,6 +5647,7 @@ const TRANSLATIONS = {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       tagline: "Gemeinsam heilen. Eine gemeinsame Behandlungserfahrung für zwei Personen.",
       overview_text: "Eine Zweiplatz-Kammer für gemeinsame Therapiesitzungen. Konzipiert für Paare, Partner oder die Nutzung mit Begleitperson.",
+      institutionalNote: "Suchen Sie eine institutionelle Lösung für 2–4 Personen? <a href=\"model-apex-duo-plus.html\">Tokyo Plus ansehen →</a>",
       specs: [
         { label: "Kapazität", value: "2 Personen (sitzend)" },
         { label: "Druckbereich", value: "1.5 – 2.0 ATA" },
@@ -5557,6 +5655,19 @@ const TRANSLATIONS = {
         { label: "Sicherheit", value: "Notfallventilsystem" },
         { label: "Steuerung", value: "Doppeltes Steuerungssystem" },
         { label: "Fenster", value: "Panorama" }
+      ]
+    },
+    modelDuoPlus: {
+      breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      tagline: "Erweiterbare Mehrpersonen-Therapiekapazität für den institutionellen Einsatz.",
+      overview_text: "Die druckstarke Mehrpersonen-Institutionsversion von Tokyo. Entwickelt für Kliniken, Krankenhäuser und Wellnesszentren mit gestaffelter Sitzkapazität von 2 bis 4 Personen.",
+      specs: [
+        { label: "Kapazität", value: "2–4 Personen (gestaffelt)" },
+        { label: "Druckbereich", value: "2,5 – 6,0 ATA" },
+        { label: "Sauerstoffreinheit", value: "93–95%" },
+        { label: "Sicherheit", value: "Notfall-Ventilsystem" },
+        { label: "Steuerung", value: "Doppeltes Steuerungssystem" },
+        { label: "Einsatzbereich", value: "Institutionell (Klinik / Krankenhaus / Wellness)" }
       ]
     },
     modelQuadCube: {
@@ -5621,6 +5732,7 @@ const TRANSLATIONS = {
       title: "Vorschau in Originalgröße",
       subtitle: "Richten Sie die Kamera auf den Boden, um die Kammer in Originalgröße in Ihrem Raum zu platzieren. Ziehen Sie, um sie zu drehen und aus jedem Winkel zu betrachten.",
       scaleBadge: "Vorschau im Originalmaßstab",
+      dimensionsLabel: "Abmessungen",
       desktopNote: "Der AR-Modus ist nur auf Mobilgeräten verfügbar. Öffnen Sie diese Seite auf Ihrem Handy oder scannen Sie den QR-Code im Konfigurator.",
       launchButton: "📱 In Ihrem Raum ansehen"
     },

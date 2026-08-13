@@ -72,6 +72,7 @@
     "solo-lounge": "model-apex-solo-lounge.html",
     solo: "model-apex-solo.html",
     duo: "model-apex-duo.html",
+    "duo-plus": "model-apex-duo-plus.html",
     quad: "model-apex-quad.html",
     "quad-cube": "model-apex-quad-cube.html",
     nexus: "model-apex-nexus.html"
@@ -228,7 +229,7 @@
   function pageMetaKey(page) {
     const map = {
       home: "home", technology: "technology", "models-overview": "models",
-      "model-solo-lounge": "soloLounge", "model-solo": "solo", "model-duo": "duo", "model-quad": "quad", "model-quad-cube": "quadCube", "model-nexus": "nexus",
+      "model-solo-lounge": "soloLounge", "model-solo": "solo", "model-duo": "duo", "model-duo-plus": "duoPlus", "model-quad": "quad", "model-quad-cube": "quadCube", "model-nexus": "nexus",
       "hbot-info": "hbotInfo", blog: "blog", configurator: "configurator", contact: "contact"
     };
     return map[page] || "home";
@@ -2367,7 +2368,7 @@
     const page = document.body.getAttribute("data-page");
     const navKeyMap = {
       home: "home", technology: "technology",
-      "models-overview": "models", "model-solo-lounge": "models", "model-solo": "models", "model-duo": "models", "model-quad": "models", "model-quad-cube": "models", "model-nexus": "models",
+      "models-overview": "models", "model-solo-lounge": "models", "model-solo": "models", "model-duo": "models", "model-duo-plus": "models", "model-quad": "models", "model-quad-cube": "models", "model-nexus": "models",
       "hbot-info": "hbotInfo", blog: "blog", configurator: "configurator", contact: "contact"
     };
     const navKey = navKeyMap[page];

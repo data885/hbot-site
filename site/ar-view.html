@@ -23,6 +23,8 @@
     display: inline-block; margin-top: 14px; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700;
     background: rgba(201,164,92,.14); border: 1px solid rgba(201,164,92,.4); color: #c9a45c;
   }
+  .ar-view-dimensions { margin-top: 10px; font-size: 13px; color: rgba(255,255,255,.55); }
+  .ar-view-dimensions strong { color: rgba(255,255,255,.85); font-weight: 700; }
   .ar-fallback-note { display: none; margin-top: 10px; font-size: 12.5px; color: rgba(255,255,255,.45); }
 </style>
 </head>
@@ -59,11 +61,12 @@
   <h1 id="ar-model-name" data-i18n="arView.title">Gerçek Boyutlu Önizleme</h1>
   <p data-i18n="arView.subtitle">Telefonunuzun kamerasını zemine doğrultun; kabini gerçek boyutlarıyla mekânınıza yerleştirin. Sürükleyip döndürerek her açıdan inceleyebilirsiniz.</p>
   <span class="ar-view-badge" data-i18n="arView.scaleBadge">Gerçek ölçek önizlemesi</span>
+  <p class="ar-view-dimensions" id="ar-view-dimensions" hidden></p>
   <p class="ar-fallback-note" id="ar-fallback-note" data-i18n="arView.desktopNote">AR modu yalnızca mobil cihazlarda kullanılabilir. Bu sayfayı telefonunuzda açın veya konfigüratördeki QR kodu okutun.</p>
 </div>
 
 <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js" integrity="sha512-sai4ncU6bklxZUXJGRw21Hfoy2eG66XlZJGvs3QXXQLJ83ou2olLz0QXCdp7h6IEX9pPf76FQ5EjKqrjTnmbug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="/assets/js/translations.js?v=57"></script>
-<script src="/assets/js/ar-view.js?v=48"></script>
+<script src="/assets/js/translations.js?v=58"></script>
+<script src="/assets/js/ar-view.js?v=49"></script>
 </body>
 </html>

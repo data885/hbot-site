@@ -28,7 +28,7 @@ ROOT_PAGES = [
     "index.html", "teknoloji.html", "modeller.html", "hbot-nedir.html",
     "blog.html", "konfigurator.html", "iletisim.html",
     "model-apex-solo-lounge.html", "model-apex-solo.html", "model-apex-duo.html",
-    "model-apex-quad-cube.html", "model-apex-nexus.html",
+    "model-apex-duo-plus.html", "model-apex-quad-cube.html", "model-apex-nexus.html",
 ]
 # model-apex-quad.html deliberately excluded — it's a legacy redirect-only page.
 
@@ -38,7 +38,7 @@ DIR_MAP = {"ar": "rtl"}  # everything else ltr (translations.js also carries `di
 
 PAGE_META_KEY = {
     "home": "home", "technology": "technology", "models-overview": "models",
-    "model-solo-lounge": "soloLounge", "model-solo": "solo", "model-duo": "duo",
+    "model-solo-lounge": "soloLounge", "model-solo": "solo", "model-duo": "duo", "model-duo-plus": "duoPlus",
     "model-quad": "quad", "model-quad-cube": "quadCube", "model-nexus": "nexus",
     "hbot-info": "hbotInfo", "blog": "blog", "configurator": "configurator", "contact": "contact",
 }
