@@ -2,7 +2,7 @@
   "use strict";
 
   var MODEL_NAMES = {
-    "solo-lounge": "Oslo Lounge",
+    "solo-lounge": "Oslo",
     "solo": "Dubai",
     "duo": "Tokyo",
     "quad-cube": "Milan",

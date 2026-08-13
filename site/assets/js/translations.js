@@ -4,8 +4,8 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | HBOT City Tech Serisi Hiperbarik Oksijen Odaları", desc: "IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları. HBOT City Tech Serisi ile zirvede nefes alın." },
       technology: { title: "Teknoloji | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync ve CityGuard — HBOT City Tech Serisi'nin bağlı, akıllı teknoloji platformu." },
-      models: { title: "Modeller | HBOT Chamber Tech", desc: "Oslo Lounge, Dubai, Tokyo, Milan ve Geneva — beş farklı hiperbarik oksijen odası modeli." },
-      soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Yatay pozisyonda terapi için tasarlanmış tek kişilik hiperbarik oksijen odası." },
+      models: { title: "Modeller | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan ve Geneva — beş farklı hiperbarik oksijen odası modeli." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Yatay pozisyonda terapi için tasarlanmış tek kişilik hiperbarik oksijen odası." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Bireysel kullanım için kompakt, tam donanımlı hiperbarik oksijen odası." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "İki kişilik paylaşımlı hiperbarik oksijen terapisi kabini." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Kurumsal kullanım için 2-4 kişilik, yüksek basınçlı hiperbarik oksijen odası." },
@@ -25,7 +25,7 @@ const TRANSLATIONS = {
       sticky_cta: "Ücretsiz Teklif Al",
       nav: { home: "Ana Sayfa", technology: "Teknoloji", models: "Modeller", hbotInfo: "HBOT Nedir?", blog: "Blog", configurator: "Konfigüratör", contact: "İletişim" },
       models_menu: {
-        soloLounge: "Oslo Lounge",
+        soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
         quadCube: "Milan",
@@ -257,7 +257,7 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo Lounge", tagline: "1 Kişi · Yatay Pozisyon", desc: "Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiş, tam donanımlı kabin." },
+      soloLounge: { title: "Oslo", tagline: "1 Kişi · Yatay Pozisyon", desc: "Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiş, tam donanımlı kabin." },
       solo: { title: "Dubai", tagline: "1 Kişi · Oturma Pozisyonu", desc: "Bireysel hiperbarik oksijen terapisi için tasarlanmış kompakt, şık ve tam donanımlı kabin." },
       duo: { title: "Tokyo", tagline: "2 Kişi · Oturma Pozisyonu", desc: "Çift koltuklu, panoramik camlı kabin — eşler, partnerler veya hasta-refakatçi kullanımı için." },
       quadCube: { title: "Milan", tagline: "4 Kişi · Geniş Kabin", desc: "Geniş iç hacimli küp tasarımıyla dört kişilik premium kabin — kapitone deri iç mekân ve LED aydınlatma." },
@@ -273,7 +273,7 @@ const TRANSLATIONS = {
       { icon: "pulseOx", title: "Oksijen Satürasyon Ölçer", desc: "Seans boyunca kandaki oksijen satürasyonunu izleyen ölçüm cihazı her kabinde standarttır." }
     ],
     modelSoloLounge: {
-      breadcrumb: "Oslo Lounge", eyebrow: "OSLO LOUNGE", title: "Oslo Lounge",
+      breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       tagline: "Yatayda Mükemmellik. Uzanın, rahatlayın, iyileşin.",
       overview_text: "Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiştir. Medikal ortopedik yatağı ve havacılık sınıfı alüminyum gövdesiyle, uzun seanslarda maksimum konfor sağlar.",
       specs: [
@@ -429,7 +429,7 @@ const TRANSLATIONS = {
         select_button: "Bunu Seç",
         close: "Kapat",
         items: [
-          { scenario: "Evde, tek başıma, yatarak terapi almak istiyorum", model: "Oslo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Evde, tek başıma, yatarak terapi almak istiyorum", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "Evde, tek başıma, oturarak kullanmak istiyorum", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Eşim/partnerimle birlikte, evde kullanacağız", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Klinik veya wellness merkezi, 2-4 kişilik kurumsal kullanım", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -450,7 +450,7 @@ const TRANSLATIONS = {
       step3_title: "8. Ek Özellikler",
       step4_title: "9. Teklif İsteyin",
       models: [
-        { id: "solo-lounge", name: "Oslo Lounge", tagline: "1 Kişi · Yatay Pozisyon" },
+        { id: "solo-lounge", name: "Oslo", tagline: "1 Kişi · Yatay Pozisyon" },
         { id: "solo", name: "Dubai", tagline: "1 Kişi · Oturma Pozisyonu" },
         { id: "duo", name: "Tokyo", tagline: "2 Kişi · Oturma Pozisyonu" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 Kişi · Kurumsal" },
@@ -527,7 +527,7 @@ const TRANSLATIONS = {
         none_selected: "Seçilmedi",
         base_price_label: "Baz Fiyat",
         total_label: "Tahmini Toplam",
-        disclaimer: "Fiyatlar yaklaşık ve bilgilendirme amaçlıdır, FOB fiyatıdır ve yalnızca 15 gün geçerlidir. Renkler ve tasarım detayları üretim koşullarına bağlı olarak değişiklik gösterebilir; HBOT Chamber Tech bu değişiklikleri yapma hakkını saklı tutar. Kesin teklif için formu doldurun.",
+        disclaimer: "Fiyatlar yaklaşık ve bilgilendirme amaçlıdır, FOB fiyatıdır ve yalnızca 15 gün geçerlidir. Renkler ve tasarım detayları üretim koşullarına bağlı olarak değişiklik gösterebilir; HBOT Chamber Tech bu değişiklikleri yapma hakkını saklı tutar. Burada gösterilen renklerin dışında, geniş renk yelpazemizden dilediğiniz rengi seçip uygulanmasını talep edebilirsiniz. Kesin teklif için formu doldurun.",
         cta: "Bu Yapılandırmayla Teklif İste",
         print_button: "Yazdır / PDF Olarak Kaydet",
         share_button: "Yapılandırma Linkini Kopyala",
@@ -762,7 +762,7 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech Modelleri",
             items: [
-              { q: "Hangi HBOT City Tech modelleri bulunmaktadır?", a: "HBOT City Tech ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nOslo Lounge — Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için geliştirilmiş, tek kullanıcılı sistemdir.\n\nOslo — Oturur pozisyonda, tek kullanıcı kapasiteli, kompakt hiperbarik sistemdir. Hem bireysel/ev hem de işletme kullanımı için tasarlanmıştır.\n\nTokyo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nMilan — Klinik, hastane ve profesyonel işletmeler için geliştirilen, 4 kullanıcı kapasiteli, küp formunda geniş hacimli hiperbarik sistemdir.\n\nGeneva — Hastane sınıfı, 6 kullanıcıdan başlayıp 12 kullanıcıya kadar genişleyebilen, büyük kapasiteli kurumsal sistemdir." },
+              { q: "Hangi HBOT City Tech modelleri bulunmaktadır?", a: "HBOT City Tech ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nOslo — Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için geliştirilmiş, tek kullanıcılı sistemdir.\n\nOslo — Oturur pozisyonda, tek kullanıcı kapasiteli, kompakt hiperbarik sistemdir. Hem bireysel/ev hem de işletme kullanımı için tasarlanmıştır.\n\nTokyo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nMilan — Klinik, hastane ve profesyonel işletmeler için geliştirilen, 4 kullanıcı kapasiteli, küp formunda geniş hacimli hiperbarik sistemdir.\n\nGeneva — Hastane sınıfı, 6 kullanıcıdan başlayıp 12 kullanıcıya kadar genişleyebilen, büyük kapasiteli kurumsal sistemdir." },
               { q: "Dubai kimler için uygundur?", a: "Dubai, hem bireysel/ev kullanımı hem de tek kullanıcılı çalışma düzeni isteyen işletmeler için geliştirilmiştir. Kompakt yapısı sayesinde evler, klinikler, spor merkezleri, wellness merkezleri ve oteller için değerlendirilebilir.\n\nKesin kullanım koşulları, ürünün sınıflandırmasına ve kurulum yapılacak ülkenin mevzuatına göre belirlenir." },
               { q: "Tokyo kaç kişiliktir?", a: "Tokyo, aynı seansta iki kullanıcının bulunabileceği şekilde tasarlanmıştır. Koltuk yapısı, iç donanım ve oturma düzeni sipariş edilen konfigürasyona göre değişebilir." },
               { q: "Çok kişilik HBOT City Tech modeli kaç kullanıcı kapasitelidir?", a: "Çok kullanıcılı HBOT City Tech modelleri 4 kişilik Milan ile başlar. Hastane sınıfı Geneva modelinde ise standart kapasite 6 kişidir ve opsiyonel olarak 12 kişiye kadar (2'şer koltuk artışlarla) genişletilebilir.\n\nKesin kapasite aşağıdaki unsurlara göre belirlenir:", list: ["Kabin ölçüsü", "Koltuk yerleşimi", "Kullanıcıların hareket alanı", "Oksijen sistemi kapasitesi", "İşletme protokolü", "Yerel güvenlik ve ruhsatlandırma şartları"], aAfter: "Her opsiyon, güvenlik değerlendirmesi ve teknik uygunluk sonrasında projeye eklenir." },
@@ -895,8 +895,8 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | HBOT City Tech Series Hyperbaric Oxygen Chambers", desc: "IoT-connected, AI-powered hyperbaric oxygen chambers. Breathe at the summit with the HBOT City Tech Series." },
       technology: { title: "Technology | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync and CityGuard — the connected, intelligent technology platform of the HBOT City Tech Series." },
-      models: { title: "Models | HBOT Chamber Tech", desc: "Oslo Lounge, Dubai, Tokyo, Milan and Geneva — five hyperbaric oxygen chamber models." },
-      soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "A single-person hyperbaric oxygen chamber designed for treatment in a lying position." },
+      models: { title: "Models | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan and Geneva — five hyperbaric oxygen chamber models." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "A single-person hyperbaric oxygen chamber designed for treatment in a lying position." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "A compact, fully equipped hyperbaric oxygen chamber for individual use." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "A two-person shared hyperbaric oxygen therapy chamber." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "A 2-4 person, high-pressure hyperbaric oxygen chamber for institutional use." },
@@ -916,7 +916,7 @@ const TRANSLATIONS = {
       sticky_cta: "Get a Free Quote",
       nav: { home: "Home", technology: "Technology", models: "Models", hbotInfo: "What Is HBOT?", blog: "Blog", configurator: "Configurator", contact: "Contact" },
       models_menu: {
-        soloLounge: "Oslo Lounge",
+        soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
         quadCube: "Milan",
@@ -1148,7 +1148,7 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo Lounge", tagline: "1 Person · Lying Position", desc: "A fully equipped chamber developed specifically for users who need treatment in a lying position." },
+      soloLounge: { title: "Oslo", tagline: "1 Person · Lying Position", desc: "A fully equipped chamber developed specifically for users who need treatment in a lying position." },
       solo: { title: "Dubai", tagline: "1 Person · Sitting Position", desc: "A compact, elegant, fully equipped chamber designed for individual hyperbaric oxygen therapy." },
       duo: { title: "Tokyo", tagline: "2 People · Sitting Position", desc: "A dual-seat, panoramic-window chamber — for couples, partners, or patient-companion use." },
       quadCube: { title: "Milan", tagline: "4 People · Spacious Cabin", desc: "A four-person premium cabin with a spacious cube-design interior — quilted leather upholstery and LED ambient lighting." },
@@ -1164,7 +1164,7 @@ const TRANSLATIONS = {
       { icon: "pulseOx", title: "Oxygen Saturation Meter", desc: "A blood-oxygen saturation monitor is standard in every chamber, tracking levels throughout the session." }
     ],
     modelSoloLounge: {
-      breadcrumb: "Oslo Lounge", eyebrow: "OSLO LOUNGE", title: "Oslo Lounge",
+      breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       tagline: "Excellence in a Lying Position. Lie back, relax, heal.",
       overview_text: "Developed specifically for users who need treatment in a lying position. Its medical orthopedic bed and aviation-grade aluminum body provide maximum comfort during long sessions.",
       specs: [
@@ -1320,7 +1320,7 @@ const TRANSLATIONS = {
         select_button: "Choose This",
         close: "Close",
         items: [
-          { scenario: "At home, alone, I want lying-position treatment", model: "Oslo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "At home, alone, I want lying-position treatment", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "At home, alone, I want to sit during sessions", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "My partner and I will use it together, at home", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Clinic or wellness center, 2-4 person institutional use", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -1341,7 +1341,7 @@ const TRANSLATIONS = {
       step3_title: "8. Add-Ons",
       step4_title: "9. Request a Quote",
       models: [
-        { id: "solo-lounge", name: "Oslo Lounge", tagline: "1 Person · Lying Position" },
+        { id: "solo-lounge", name: "Oslo", tagline: "1 Person · Lying Position" },
         { id: "solo", name: "Dubai", tagline: "1 Person · Sitting Position" },
         { id: "duo", name: "Tokyo", tagline: "2 People · Sitting Position" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 People · Institutional" },
@@ -1418,7 +1418,7 @@ const TRANSLATIONS = {
         none_selected: "None selected",
         base_price_label: "Base Price",
         total_label: "Estimated Total",
-        disclaimer: "Prices are approximate and for informational purposes, are FOB, and are valid for 15 days only. Colors and design details may vary depending on production conditions; HBOT Chamber Tech reserves the right to make such changes. Please fill out the form for an exact quote.",
+        disclaimer: "Prices are approximate and for informational purposes, are FOB, and are valid for 15 days only. Colors and design details may vary depending on production conditions; HBOT Chamber Tech reserves the right to make such changes. Beyond the colors shown here, you may choose any color from our wide color range and request it be applied. Please fill out the form for an exact quote.",
         cta: "Request a Quote With This Configuration",
         print_button: "Print / Save as PDF",
         share_button: "Copy Configuration Link",
@@ -1653,7 +1653,7 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech Models",
             items: [
-              { q: "Which HBOT City Tech models are available?", a: "The HBOT City Tech product family is developed for different user capacities and use cases.\n\nOslo Lounge — A single-user system developed for users who need treatment in a lying position.\n\nOslo — A compact, single-user hyperbaric system used in a sitting position. Designed for both individual/home use and business use.\n\nTokyo — A system with a spacious interior that can accommodate two users in the same session.\n\nMilan — A 4-user, cube-shaped, large-volume hyperbaric system developed for clinics, hospitals and professional operators.\n\nGeneva — A hospital-grade, large-capacity institutional system starting at 6 users and expandable up to 12." },
+              { q: "Which HBOT City Tech models are available?", a: "The HBOT City Tech product family is developed for different user capacities and use cases.\n\nOslo — A single-user system developed for users who need treatment in a lying position.\n\nOslo — A compact, single-user hyperbaric system used in a sitting position. Designed for both individual/home use and business use.\n\nTokyo — A system with a spacious interior that can accommodate two users in the same session.\n\nMilan — A 4-user, cube-shaped, large-volume hyperbaric system developed for clinics, hospitals and professional operators.\n\nGeneva — A hospital-grade, large-capacity institutional system starting at 6 users and expandable up to 12." },
               { q: "Who is Dubai suitable for?", a: "Dubai is developed for both individual/home use and operators seeking a single-user setup. Thanks to its compact structure, it can be considered for homes, clinics, sports centers, wellness centers and hotels.\n\nThe exact conditions of use are determined by the product's classification and the regulations of the country of installation." },
               { q: "How many people can Tokyo accommodate?", a: "Tokyo is designed to accommodate two users in the same session. The seating structure, interior fittings and seating layout may vary according to the ordered configuration." },
               { q: "What is the user capacity of the multi-person HBOT City Tech model?", a: "Multi-user HBOT City Tech models start with the 4-person Milan. For the hospital-grade Geneva, the standard capacity is 6 people, with an optional capacity of up to 12 people (in increments of 2 seats).\n\nThe exact capacity is determined by the following factors:", list: ["Chamber dimensions", "Seating layout", "Users' range of movement", "Oxygen system capacity", "Operating protocol", "Local safety and licensing requirements"], aAfter: "Each option is added to the project following a safety assessment and technical suitability review." },
@@ -1786,8 +1786,8 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | Гипербарические кислородные камеры серии HBOT City Tech", desc: "Гипербарические кислородные камеры с IoT-подключением и поддержкой ИИ. Дышите на вершине с серией HBOT City Tech." },
       technology: { title: "Технологии | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync и CityGuard — подключённая интеллектуальная технологическая платформа серии HBOT City Tech." },
-      models: { title: "Модели | HBOT Chamber Tech", desc: "Oslo Lounge, Dubai, Tokyo, Milan и Geneva — пять моделей гипербарических кислородных камер." },
-      soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Одноместная гипербарическая кислородная камера для лечения в положении лёжа." },
+      models: { title: "Модели | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan и Geneva — пять моделей гипербарических кислородных камер." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Одноместная гипербарическая кислородная камера для лечения в положении лёжа." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Компактная, полностью укомплектованная камера для индивидуального использования." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Двухместная камера для совместной гипербарической оксигенотерапии." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Гипербарическая камера повышенного давления на 2-4 человека для учреждений." },
@@ -1807,7 +1807,7 @@ const TRANSLATIONS = {
       sticky_cta: "Получить предложение",
       nav: { home: "Главная", technology: "Технологии", models: "Модели", hbotInfo: "Что такое ГБО?", blog: "Блог", configurator: "Конфигуратор", contact: "Контакты" },
       models_menu: {
-        soloLounge: "Oslo Lounge",
+        soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
         quadCube: "Milan",
@@ -2039,7 +2039,7 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo Lounge", tagline: "1 человек · Положение лёжа", desc: "Полностью укомплектованная камера, разработанная специально для пользователей, нуждающихся в лечении в положении лёжа." },
+      soloLounge: { title: "Oslo", tagline: "1 человек · Положение лёжа", desc: "Полностью укомплектованная камера, разработанная специально для пользователей, нуждающихся в лечении в положении лёжа." },
       solo: { title: "Dubai", tagline: "1 человек · Положение сидя", desc: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарической оксигенотерапии." },
       duo: { title: "Tokyo", tagline: "2 человека · Положение сидя", desc: "Двухместная камера с панорамным окном — для пар, партнёров или пациента с сопровождающим." },
       quadCube: { title: "Milan", tagline: "4 человека · Просторная кабина", desc: "Четырёхместная премиум-кабина с просторным кубическим интерьером — стёганая кожа и LED-подсветка." },
@@ -2055,7 +2055,7 @@ const TRANSLATIONS = {
       { icon: "pulseOx", title: "Датчик сатурации кислорода", desc: "Монитор насыщения крови кислородом является стандартным оснащением каждой камеры и отслеживает показатели на протяжении сеанса." }
     ],
     modelSoloLounge: {
-      breadcrumb: "Oslo Lounge", eyebrow: "OSLO LOUNGE", title: "Oslo Lounge",
+      breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       tagline: "Совершенство в положении лёжа. Прилягте, расслабьтесь, восстановитесь.",
       overview_text: "Разработана специально для пользователей, нуждающихся в лечении в положении лёжа. Медицинское ортопедическое ложе и корпус из авиационного алюминия обеспечивают максимальный комфорт во время длительных сеансов.",
       specs: [
@@ -2211,7 +2211,7 @@ const TRANSLATIONS = {
         select_button: "Выбрать это",
         close: "Закрыть",
         items: [
-          { scenario: "Дома, один, хочу лежачее положение при сеансах", model: "Oslo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Дома, один, хочу лежачее положение при сеансах", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "Дома, один, хочу сидеть во время сеансов", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Будем использовать вместе с партнёром, дома", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Клиника или велнес-центр, для учреждений на 2-4 человека", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -2232,7 +2232,7 @@ const TRANSLATIONS = {
       step3_title: "8. Дополнительные опции",
       step4_title: "9. Запросите предложение",
       models: [
-        { id: "solo-lounge", name: "Oslo Lounge", tagline: "1 человек · Положение лёжа" },
+        { id: "solo-lounge", name: "Oslo", tagline: "1 человек · Положение лёжа" },
         { id: "solo", name: "Dubai", tagline: "1 человек · Положение сидя" },
         { id: "duo", name: "Tokyo", tagline: "2 человека · Положение сидя" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 человека · Для учреждений" },
@@ -2309,7 +2309,7 @@ const TRANSLATIONS = {
         none_selected: "Не выбрано",
         base_price_label: "Базовая цена",
         total_label: "Ориентировочная сумма",
-        disclaimer: "Цены являются ориентировочными, указаны на условиях FOB и действительны только 15 дней. Цвета и детали дизайна могут отличаться в зависимости от условий производства; компания HBOT Chamber Tech оставляет за собой право вносить такие изменения. Для точного расчёта заполните форму.",
+        disclaimer: "Цены являются ориентировочными, указаны на условиях FOB и действительны только 15 дней. Цвета и детали дизайна могут отличаться в зависимости от условий производства; компания HBOT Chamber Tech оставляет за собой право вносить такие изменения. Помимо цветов, показанных здесь, вы можете выбрать любой цвет из нашей широкой цветовой палитры и запросить его применение. Для точного расчёта заполните форму.",
         cta: "Запросить предложение по этой конфигурации",
         print_button: "Печать / Сохранить как PDF",
         share_button: "Скопировать ссылку на конфигурацию",
@@ -2544,7 +2544,7 @@ const TRANSLATIONS = {
           {
             title: "Модели HBOT City Tech",
             items: [
-              { q: "Какие модели HBOT City Tech доступны?", a: "Линейка продуктов HBOT City Tech разрабатывается для разных пользовательских ёмкостей и сфер применения.\n\nOslo Lounge — система для одного пользователя, разработанная для тех, кому необходимо лечение в положении лёжа.\n\nOslo — компактная гипербарическая система для одного пользователя в положении сидя. Разработана как для индивидуального/домашнего использования, так и для бизнеса.\n\nTokyo — система с просторным внутренним пространством, рассчитанная на двух пользователей в одном сеансе.\n\nMilan — гипербарическая система кубической формы большого объёма на 4 пользователей, разработанная для клиник, больниц и профессиональных операторов.\n\nGeneva — крупногабаритная система корпоративного уровня, аналогичная больничному оборудованию, вместимостью от 6 до 12 пользователей." },
+              { q: "Какие модели HBOT City Tech доступны?", a: "Линейка продуктов HBOT City Tech разрабатывается для разных пользовательских ёмкостей и сфер применения.\n\nOslo — система для одного пользователя, разработанная для тех, кому необходимо лечение в положении лёжа.\n\nOslo — компактная гипербарическая система для одного пользователя в положении сидя. Разработана как для индивидуального/домашнего использования, так и для бизнеса.\n\nTokyo — система с просторным внутренним пространством, рассчитанная на двух пользователей в одном сеансе.\n\nMilan — гипербарическая система кубической формы большого объёма на 4 пользователей, разработанная для клиник, больниц и профессиональных операторов.\n\nGeneva — крупногабаритная система корпоративного уровня, аналогичная больничному оборудованию, вместимостью от 6 до 12 пользователей." },
               { q: "Кому подходит Dubai?", a: "Dubai разработана как для индивидуального/домашнего использования, так и для операторов, которым требуется однопользовательская конфигурация. Благодаря компактной конструкции она может рассматриваться для дома, клиник, спортивных центров, wellness-центров и отелей.\n\nТочные условия использования определяются классификацией продукта и законодательством страны установки." },
               { q: "На сколько человек рассчитана Tokyo?", a: "Tokyo рассчитана на двух пользователей в одном сеансе. Конструкция сидений, внутреннее оснащение и компоновка мест могут различаться в зависимости от заказанной конфигурации." },
               { q: "Какова вместимость многопользовательской модели HBOT City Tech?", a: "Многопользовательские модели HBOT City Tech начинаются с 4-местной Milan. Для больничной модели Geneva стандартная вместимость составляет 6 человек, с возможностью расширения до 12 человек (с шагом по 2 места).\n\nТочная вместимость определяется следующими факторами:", list: ["Размеры камеры", "Компоновка сидений", "Диапазон движения пользователей", "Мощность кислородной системы", "Протокол эксплуатации", "Местные требования безопасности и лицензирования"], aAfter: "Каждая опция добавляется в проект после оценки безопасности и технической пригодности." },
@@ -2677,8 +2677,8 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | غرف الأكسجين عالي الضغط من سلسلة HBOT City Tech", desc: "غرف أكسجين عالي الضغط متصلة بإنترنت الأشياء ومدعومة بالذكاء الاصطناعي. تنفّس في القمة مع سلسلة HBOT City Tech." },
       technology: { title: "التقنية | HBOT Chamber Tech", desc: "CityConnect و CityOS و CityAI و CitySync و CityGuard — منصة التقنية الذكية والمتصلة لسلسلة HBOT City Tech." },
-      models: { title: "الموديلات | HBOT Chamber Tech", desc: "Oslo Lounge و Dubai و Tokyo و Milan و Geneva — خمسة موديلات لغرف الأكسجين عالي الضغط." },
-      soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لشخص واحد مصممة للعلاج في وضعية الاستلقاء." },
+      models: { title: "الموديلات | HBOT Chamber Tech", desc: "Oslo و Dubai و Tokyo و Milan و Geneva — خمسة موديلات لغرف الأكسجين عالي الضغط." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لشخص واحد مصممة للعلاج في وضعية الاستلقاء." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "غرفة مدمجة وكاملة التجهيز للاستخدام الفردي." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "غرفة علاج مشترك بالأكسجين عالي الضغط لشخصين." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لـ 2-4 أشخاص للاستخدام المؤسسي." },
@@ -2698,7 +2698,7 @@ const TRANSLATIONS = {
       sticky_cta: "احصل على عرض سعر",
       nav: { home: "الرئيسية", technology: "التقنية", models: "الموديلات", hbotInfo: "ما هو HBOT؟", blog: "المدونة", configurator: "أداة التكوين", contact: "اتصل بنا" },
       models_menu: {
-        soloLounge: "Oslo Lounge",
+        soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
         quadCube: "Milan",
@@ -2930,7 +2930,7 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo Lounge", tagline: "شخص واحد · وضعية الاستلقاء", desc: "غرفة كاملة التجهيز طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء." },
+      soloLounge: { title: "Oslo", tagline: "شخص واحد · وضعية الاستلقاء", desc: "غرفة كاملة التجهيز طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء." },
       solo: { title: "Dubai", tagline: "شخص واحد · وضعية الجلوس", desc: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للعلاج الفردي بالأكسجين عالي الضغط." },
       duo: { title: "Tokyo", tagline: "شخصان · وضعية الجلوس", desc: "غرفة بمقعدين ونافذة بانورامية — للأزواج أو الشركاء أو استخدام المريض مع مرافق." },
       quadCube: { title: "Milan", tagline: "4 أشخاص · مقصورة واسعة", desc: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب — جلد مبطّن وإضاءة LED محيطية." },
@@ -2946,7 +2946,7 @@ const TRANSLATIONS = {
       { icon: "pulseOx", title: "جهاز قياس تشبع الأكسجين", desc: "جهاز مراقبة تشبع الأكسجين في الدم قياسي في كل كابينة، ويتتبع المستويات طوال الجلسة." }
     ],
     modelSoloLounge: {
-      breadcrumb: "Oslo Lounge", eyebrow: "OSLO LOUNGE", title: "Oslo Lounge",
+      breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       tagline: "التميّز في وضعية الاستلقاء. استلقِ، استرخِ، تعافَ.",
       overview_text: "طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء. يوفر سريرها الطبي التقويمي وهيكلها من الألومنيوم بمعايير الطيران أقصى درجات الراحة خلال الجلسات الطويلة.",
       specs: [
@@ -3102,7 +3102,7 @@ const TRANSLATIONS = {
         select_button: "اختر هذا",
         close: "إغلاق",
         items: [
-          { scenario: "في المنزل، بمفردي، أريد العلاج في وضعية الاستلقاء", model: "Oslo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "في المنزل، بمفردي، أريد العلاج في وضعية الاستلقاء", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "في المنزل، بمفردي، أريد الجلوس أثناء الجلسات", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "سأستخدمها مع شريكي، في المنزل", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "عيادة أو مركز عافية، استخدام مؤسسي لـ 2-4 أشخاص", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -3123,7 +3123,7 @@ const TRANSLATIONS = {
       step3_title: "8. الإضافات",
       step4_title: "9. اطلب عرض سعر",
       models: [
-        { id: "solo-lounge", name: "Oslo Lounge", tagline: "شخص واحد · وضعية الاستلقاء" },
+        { id: "solo-lounge", name: "Oslo", tagline: "شخص واحد · وضعية الاستلقاء" },
         { id: "solo", name: "Dubai", tagline: "شخص واحد · وضعية الجلوس" },
         { id: "duo", name: "Tokyo", tagline: "شخصان · وضعية الجلوس" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 أشخاص · للمؤسسات" },
@@ -3200,7 +3200,7 @@ const TRANSLATIONS = {
         none_selected: "لم يتم الاختيار",
         base_price_label: "السعر الأساسي",
         total_label: "الإجمالي التقديري",
-        disclaimer: "الأسعار تقريبية ولأغراض إعلامية، وهي أسعار FOB وصالحة لمدة 15 يوماً فقط. قد تختلف الألوان وتفاصيل التصميم حسب ظروف الإنتاج، وتحتفظ HBOT Chamber Tech بحقها في إجراء هذه التغييرات. يرجى ملء النموذج للحصول على عرض سعر دقيق.",
+        disclaimer: "الأسعار تقريبية ولأغراض إعلامية، وهي أسعار FOB وصالحة لمدة 15 يوماً فقط. قد تختلف الألوان وتفاصيل التصميم حسب ظروف الإنتاج، وتحتفظ HBOT Chamber Tech بحقها في إجراء هذه التغييرات. بالإضافة إلى الألوان المعروضة هنا، يمكنكم اختيار أي لون من مجموعتنا الواسعة من الألوان وطلب تطبيقه. يرجى ملء النموذج للحصول على عرض سعر دقيق.",
         cta: "اطلب عرض سعر بهذا التكوين",
         print_button: "طباعة / حفظ كملف PDF",
         share_button: "نسخ رابط التكوين",
@@ -3435,7 +3435,7 @@ const TRANSLATIONS = {
           {
             title: "موديلات HBOT City Tech",
             items: [
-              { q: "ما هي موديلات HBOT City Tech المتوفرة؟", a: "تُطوَّر عائلة منتجات HBOT City Tech لسعات مستخدمين مختلفة ومجالات استخدام متنوعة.\n\nOslo Lounge — نظام لمستخدم واحد، صُمِّم لمن يحتاج إلى العلاج في وضعية الاستلقاء.\n\nOslo — نظام انضغاطي مدمج لمستخدم واحد في وضعية الجلوس. صُمِّم للاستخدام الفردي/المنزلي وللاستخدام التجاري على حدٍّ سواء.\n\nTokyo — نظام ذو حجم داخلي واسع يستوعب مستخدمَين في نفس الجلسة.\n\nMilan — نظام انضغاطي بتصميم مكعّب وحجم كبير لأربعة مستخدمين، طُوِّر للعيادات والمستشفيات والمشغّلين المحترفين.\n\nGeneva — نظام مؤسسي كبير بمستوى المستشفيات، يبدأ من 6 مستخدمين ويمكن توسيعه حتى 12 مستخدمًا." },
+              { q: "ما هي موديلات HBOT City Tech المتوفرة؟", a: "تُطوَّر عائلة منتجات HBOT City Tech لسعات مستخدمين مختلفة ومجالات استخدام متنوعة.\n\nOslo — نظام لمستخدم واحد، صُمِّم لمن يحتاج إلى العلاج في وضعية الاستلقاء.\n\nOslo — نظام انضغاطي مدمج لمستخدم واحد في وضعية الجلوس. صُمِّم للاستخدام الفردي/المنزلي وللاستخدام التجاري على حدٍّ سواء.\n\nTokyo — نظام ذو حجم داخلي واسع يستوعب مستخدمَين في نفس الجلسة.\n\nMilan — نظام انضغاطي بتصميم مكعّب وحجم كبير لأربعة مستخدمين، طُوِّر للعيادات والمستشفيات والمشغّلين المحترفين.\n\nGeneva — نظام مؤسسي كبير بمستوى المستشفيات، يبدأ من 6 مستخدمين ويمكن توسيعه حتى 12 مستخدمًا." },
               { q: "لمن تناسب Dubai؟", a: "طُوِّرت Dubai للاستخدام الفردي/المنزلي وللمشغّلين الذين يرغبون في نظام تشغيل لمستخدم واحد على حدٍّ سواء. بفضل بنيتها المدمجة، يمكن اعتبارها مناسبة للمنازل والعيادات ومراكز الرياضة ومراكز العافية والفنادق.\n\nتُحدَّد شروط الاستخدام الدقيقة حسب تصنيف المنتج ولوائح بلد التركيب." },
               { q: "كم عدد الأشخاص الذين تستوعبهم Tokyo؟", a: "صُمِّمت Tokyo لاستيعاب مستخدمَين في نفس الجلسة. قد يختلف هيكل المقاعد والتجهيزات الداخلية وترتيب الجلوس حسب التهيئة المطلوبة." },
               { q: "ما هي السعة الاستيعابية لموديل HBOT City Tech متعدد الأشخاص؟", a: "تبدأ موديلات HBOT City Tech متعددة المستخدمين بموديل Milan الذي يستوعب 4 أشخاص. أما موديل Geneva بمستوى المستشفيات، فسعته القياسية 6 أشخاص، مع إمكانية اختيارية للوصول إلى 12 شخصًا (بزيادات مقعدَين في كل مرة).\n\nتُحدَّد السعة الدقيقة وفقًا للعوامل التالية:", list: ["أبعاد الغرفة", "تخطيط المقاعد", "نطاق حركة المستخدمين", "سعة نظام الأكسجين", "بروتوكول التشغيل", "متطلبات السلامة والترخيص المحلية"], aAfter: "تُضاف كل خيار إلى المشروع بعد تقييم السلامة والملاءمة الفنية." },
@@ -3567,8 +3567,8 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | Cámaras Hiperbáricas de Oxígeno HBOT City Tech Series", desc: "Cámaras hiperbáricas de oxígeno conectadas por IoT e impulsadas por IA. Respira en la cumbre con la HBOT City Tech Series." },
       technology: { title: "Tecnología | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync y CityGuard — la plataforma tecnológica conectada e inteligente de la HBOT City Tech Series." },
-      models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo Lounge, Dubai, Tokyo, Milan y Geneva — cinco modelos de cámaras hiperbáricas de oxígeno." },
-      soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno individual diseñada para tratamiento en posición tumbada." },
+      models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan y Geneva — cinco modelos de cámaras hiperbáricas de oxígeno." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno individual diseñada para tratamiento en posición tumbada." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno compacta y totalmente equipada para uso individual." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Una cámara de oxigenoterapia hiperbárica compartida para dos personas." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Una cámara hiperbárica de alta presión para 2-4 personas, para uso institucional." },
@@ -3588,7 +3588,7 @@ const TRANSLATIONS = {
       sticky_cta: "Solicitar Presupuesto Gratuito",
       nav: { home: "Inicio", technology: "Tecnología", models: "Modelos", hbotInfo: "¿Qué es la HBOT?", blog: "Blog", configurator: "Configurador", contact: "Contacto" },
       models_menu: {
-        soloLounge: "Oslo Lounge",
+        soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
         quadCube: "Milan",
@@ -3820,7 +3820,7 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo Lounge", tagline: "1 Persona · Posición Tumbada", desc: "Una cámara totalmente equipada, desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada." },
+      soloLounge: { title: "Oslo", tagline: "1 Persona · Posición Tumbada", desc: "Una cámara totalmente equipada, desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada." },
       solo: { title: "Dubai", tagline: "1 Persona · Posición Sentada", desc: "Una cámara compacta, elegante y totalmente equipada, diseñada para la oxigenoterapia hiperbárica individual." },
       duo: { title: "Tokyo", tagline: "2 Personas · Posición Sentada", desc: "Una cámara de doble asiento con ventana panorámica — para parejas, acompañantes o uso paciente-acompañante." },
       quadCube: { title: "Milan", tagline: "4 Personas · Cabina Espaciosa", desc: "Una cabina premium para cuatro personas con un interior espacioso de diseño cúbico — tapicería de cuero acolchado e iluminación ambiental LED." },
@@ -3836,7 +3836,7 @@ const TRANSLATIONS = {
       { icon: "pulseOx", title: "Medidor de Saturación de Oxígeno", desc: "Un monitor de saturación de oxígeno en sangre viene de serie en cada cámara, controlando los niveles durante toda la sesión." }
     ],
     modelSoloLounge: {
-      breadcrumb: "Oslo Lounge", eyebrow: "OSLO LOUNGE", title: "Oslo Lounge",
+      breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       tagline: "Excelencia en Posición Tumbada. Recuéstate, relájate, sana.",
       overview_text: "Desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada. Su camilla ortopédica médica y su carrocería de aluminio de grado aeronáutico ofrecen el máximo confort durante sesiones prolongadas.",
       specs: [
@@ -3992,7 +3992,7 @@ const TRANSLATIONS = {
         select_button: "Elegir Esta",
         close: "Cerrar",
         items: [
-          { scenario: "En casa, solo/a, quiero tratamiento en posición tumbada", model: "Oslo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "En casa, solo/a, quiero tratamiento en posición tumbada", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "En casa, solo/a, quiero estar sentado/a durante las sesiones", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Mi pareja y yo lo usaremos juntos, en casa", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Clínica o centro de bienestar, uso institucional para 2-4 personas", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -4013,7 +4013,7 @@ const TRANSLATIONS = {
       step3_title: "8. Complementos",
       step4_title: "9. Solicitar un Presupuesto",
       models: [
-        { id: "solo-lounge", name: "Oslo Lounge", tagline: "1 Persona · Posición Tumbada" },
+        { id: "solo-lounge", name: "Oslo", tagline: "1 Persona · Posición Tumbada" },
         { id: "solo", name: "Dubai", tagline: "1 Persona · Posición Sentada" },
         { id: "duo", name: "Tokyo", tagline: "2 Personas · Posición Sentada" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 Personas · Institucional" },
@@ -4090,7 +4090,7 @@ const TRANSLATIONS = {
         none_selected: "Ninguno seleccionado",
         base_price_label: "Precio Base",
         total_label: "Total Estimado",
-        disclaimer: "Los precios son aproximados y de carácter informativo, se entienden en condiciones FOB y son válidos únicamente durante 15 días. Los colores y los detalles de diseño pueden variar según las condiciones de producción; HBOT Chamber Tech se reserva el derecho de realizar dichos cambios. Completa el formulario para obtener un presupuesto exacto.",
+        disclaimer: "Los precios son aproximados y de carácter informativo, se entienden en condiciones FOB y son válidos únicamente durante 15 días. Los colores y los detalles de diseño pueden variar según las condiciones de producción; HBOT Chamber Tech se reserva el derecho de realizar dichos cambios. Además de los colores mostrados aquí, puede elegir cualquier color de nuestra amplia gama y solicitar que se aplique. Completa el formulario para obtener un presupuesto exacto.",
         cta: "Solicitar un Presupuesto con Esta Configuración",
         print_button: "Imprimir / Guardar como PDF",
         share_button: "Copiar Enlace de la Configuración",
@@ -4325,7 +4325,7 @@ const TRANSLATIONS = {
           {
             title: "Modelos HBOT City Tech",
             items: [
-              { q: "¿Qué modelos HBOT City Tech están disponibles?", a: "La familia de productos HBOT City Tech se desarrolla para diferentes capacidades de usuarios y casos de uso.\n\nOslo Lounge — Un sistema para un solo usuario desarrollado para quienes necesitan tratamiento en posición tumbada.\n\nOslo — Un sistema hiperbárico compacto para un solo usuario, utilizado en posición sentada. Diseñado tanto para uso individual/doméstico como para uso profesional.\n\nTokyo — Un sistema con un interior espacioso que puede acoger a dos usuarios en la misma sesión.\n\nMilan — Un sistema hiperbárico de gran volumen y forma cúbica para 4 usuarios, desarrollado para clínicas, hospitales y operadores profesionales.\n\nGeneva — Un sistema institucional de nivel hospitalario y gran capacidad, desde 6 usuarios y ampliable hasta 12." },
+              { q: "¿Qué modelos HBOT City Tech están disponibles?", a: "La familia de productos HBOT City Tech se desarrolla para diferentes capacidades de usuarios y casos de uso.\n\nOslo — Un sistema para un solo usuario desarrollado para quienes necesitan tratamiento en posición tumbada.\n\nOslo — Un sistema hiperbárico compacto para un solo usuario, utilizado en posición sentada. Diseñado tanto para uso individual/doméstico como para uso profesional.\n\nTokyo — Un sistema con un interior espacioso que puede acoger a dos usuarios en la misma sesión.\n\nMilan — Un sistema hiperbárico de gran volumen y forma cúbica para 4 usuarios, desarrollado para clínicas, hospitales y operadores profesionales.\n\nGeneva — Un sistema institucional de nivel hospitalario y gran capacidad, desde 6 usuarios y ampliable hasta 12." },
               { q: "¿Para quién es adecuado el Dubai?", a: "El Dubai está desarrollado tanto para uso individual/doméstico como para operadores que buscan una configuración de un solo usuario. Gracias a su estructura compacta, puede considerarse para hogares, clínicas, centros deportivos, centros de bienestar y hoteles.\n\nLas condiciones exactas de uso vienen determinadas por la clasificación del producto y la normativa del país de instalación." },
               { q: "¿A cuántas personas puede acoger el Tokyo?", a: "El Tokyo está diseñado para acoger a dos usuarios en la misma sesión. La estructura de los asientos, el equipamiento interior y la disposición de los asientos pueden variar según la configuración solicitada." },
               { q: "¿Cuál es la capacidad de usuarios del modelo HBOT City Tech multipersona?", a: "Los modelos HBOT City Tech multiusuario comienzan con el Milan de 4 personas. Para el Geneva de nivel hospitalario, la capacidad estándar es de 6 personas, con una capacidad opcional de hasta 12 personas (en incrementos de 2 asientos).\n\nLa capacidad exacta viene determinada por los siguientes factores:", list: ["Dimensiones de la cámara", "Disposición de los asientos", "Margen de movimiento de los usuarios", "Capacidad del sistema de oxígeno", "Protocolo operativo", "Requisitos locales de seguridad y licencias"], aAfter: "Cada opción se incorpora al proyecto tras una evaluación de seguridad y un análisis de idoneidad técnica." },
@@ -4457,8 +4457,8 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | Câmaras de Oxigênio Hiperbárico Série HBOT City Tech", desc: "Câmaras de oxigênio hiperbárico conectadas por IoT e com tecnologia de IA. Respire no topo com a Série HBOT City Tech." },
       technology: { title: "Tecnologia | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync e CityGuard — a plataforma tecnológica conectada e inteligente da Série HBOT City Tech." },
-      models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo Lounge, Dubai, Tokyo, Milan e Geneva — cinco modelos de câmaras de oxigênio hiperbárico." },
-      soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico individual projetada para tratamento na posição deitada." },
+      models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan e Geneva — cinco modelos de câmaras de oxigênio hiperbárico." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico individual projetada para tratamento na posição deitada." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico compacta e totalmente equipada para uso individual." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Uma câmara de oxigenoterapia hiperbárica compartilhada para duas pessoas." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Uma câmara hiperbárica de alta pressão para 2-4 pessoas, para uso institucional." },
@@ -4478,7 +4478,7 @@ const TRANSLATIONS = {
       sticky_cta: "Solicitar Orçamento Gratuito",
       nav: { home: "Início", technology: "Tecnologia", models: "Modelos", hbotInfo: "O Que É a OHB?", blog: "Blog", configurator: "Configurador", contact: "Contato" },
       models_menu: {
-        soloLounge: "Oslo Lounge",
+        soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
         quadCube: "Milan",
@@ -4710,7 +4710,7 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo Lounge", tagline: "1 Pessoa · Posição Deitada", desc: "Uma câmara totalmente equipada, desenvolvida especificamente para usuários que precisam de tratamento na posição deitada." },
+      soloLounge: { title: "Oslo", tagline: "1 Pessoa · Posição Deitada", desc: "Uma câmara totalmente equipada, desenvolvida especificamente para usuários que precisam de tratamento na posição deitada." },
       solo: { title: "Dubai", tagline: "1 Pessoa · Posição Sentada", desc: "Uma câmara compacta, elegante e totalmente equipada, projetada para oxigenoterapia hiperbárica individual." },
       duo: { title: "Tokyo", tagline: "2 Pessoas · Posição Sentada", desc: "Uma câmara com dois assentos e janela panorâmica — para casais, parceiros ou uso paciente-acompanhante." },
       quadCube: { title: "Milan", tagline: "4 Pessoas · Cabine Espaçosa", desc: "Uma cabine premium para quatro pessoas com interior espaçoso em design cubo — estofamento em couro acolchoado e iluminação ambiente em LED." },
@@ -4726,7 +4726,7 @@ const TRANSLATIONS = {
       { icon: "pulseOx", title: "Medidor de Saturação de Oxigênio", desc: "Um monitor de saturação de oxigênio no sangue é de série em toda câmara, acompanhando os níveis durante toda a sessão." }
     ],
     modelSoloLounge: {
-      breadcrumb: "Oslo Lounge", eyebrow: "OSLO LOUNGE", title: "Oslo Lounge",
+      breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       tagline: "Excelência na Posição Deitada. Deite-se, relaxe, cure-se.",
       overview_text: "Desenvolvida especificamente para usuários que precisam de tratamento na posição deitada. Sua maca ortopédica médica e estrutura em alumínio de nível aeronáutico proporcionam o máximo conforto durante sessões longas.",
       specs: [
@@ -4882,7 +4882,7 @@ const TRANSLATIONS = {
         select_button: "Escolher Esta",
         close: "Fechar",
         items: [
-          { scenario: "Em casa, sozinho, quero tratamento na posição deitada", model: "Oslo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Em casa, sozinho, quero tratamento na posição deitada", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "Em casa, sozinho, quero ficar sentado durante as sessões", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Eu e meu(minha) parceiro(a) vamos usar juntos, em casa", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Clínica ou centro de bem-estar, uso institucional para 2 a 4 pessoas", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -4903,7 +4903,7 @@ const TRANSLATIONS = {
       step3_title: "8. Opcionais",
       step4_title: "9. Solicitar Orçamento",
       models: [
-        { id: "solo-lounge", name: "Oslo Lounge", tagline: "1 Pessoa · Posição Deitada" },
+        { id: "solo-lounge", name: "Oslo", tagline: "1 Pessoa · Posição Deitada" },
         { id: "solo", name: "Dubai", tagline: "1 Pessoa · Posição Sentada" },
         { id: "duo", name: "Tokyo", tagline: "2 Pessoas · Posição Sentada" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 Pessoas · Institucional" },
@@ -4980,7 +4980,7 @@ const TRANSLATIONS = {
         none_selected: "Nenhum selecionado",
         base_price_label: "Preço Base",
         total_label: "Total Estimado",
-        disclaimer: "Os preços são aproximados e têm caráter meramente informativo, são FOB e válidos por apenas 15 dias. As cores e os detalhes de design podem variar de acordo com as condições de produção; a HBOT Chamber Tech reserva-se o direito de realizar essas alterações. Preencha o formulário para obter um orçamento exato.",
+        disclaimer: "Os preços são aproximados e têm caráter meramente informativo, são FOB e válidos por apenas 15 dias. As cores e os detalhes de design podem variar de acordo com as condições de produção; a HBOT Chamber Tech reserva-se o direito de realizar essas alterações. Além das cores mostradas aqui, você pode escolher qualquer cor da nossa ampla gama e solicitar que seja aplicada. Preencha o formulário para obter um orçamento exato.",
         cta: "Solicitar Orçamento com Esta Configuração",
         print_button: "Imprimir / Salvar como PDF",
         share_button: "Copiar Link da Configuração",
@@ -5215,7 +5215,7 @@ const TRANSLATIONS = {
           {
             title: "Modelos HBOT City Tech",
             items: [
-              { q: "Quais modelos HBOT City Tech estão disponíveis?", a: "A família de produtos HBOT City Tech é desenvolvida para diferentes capacidades de usuários e casos de uso.\n\nOslo Lounge — Um sistema individual desenvolvido para usuários que precisam de tratamento na posição deitada.\n\nOslo — Um sistema hiperbárico individual e compacto, usado na posição sentada. Projetado tanto para uso individual/doméstico quanto para uso comercial.\n\nTokyo — Um sistema com interior espaçoso que pode acomodar dois usuários na mesma sessão.\n\nMilan — Um sistema hiperbárico de grande volume, em formato cubo, para 4 usuários, desenvolvido para clínicas, hospitais e operadores profissionais.\n\nGeneva — Um sistema institucional de grande capacidade e nível hospitalar, com capacidade inicial de 6 usuários, expansível até 12." },
+              { q: "Quais modelos HBOT City Tech estão disponíveis?", a: "A família de produtos HBOT City Tech é desenvolvida para diferentes capacidades de usuários e casos de uso.\n\nOslo — Um sistema individual desenvolvido para usuários que precisam de tratamento na posição deitada.\n\nOslo — Um sistema hiperbárico individual e compacto, usado na posição sentada. Projetado tanto para uso individual/doméstico quanto para uso comercial.\n\nTokyo — Um sistema com interior espaçoso que pode acomodar dois usuários na mesma sessão.\n\nMilan — Um sistema hiperbárico de grande volume, em formato cubo, para 4 usuários, desenvolvido para clínicas, hospitais e operadores profissionais.\n\nGeneva — Um sistema institucional de grande capacidade e nível hospitalar, com capacidade inicial de 6 usuários, expansível até 12." },
               { q: "Para quem o Dubai é indicado?", a: "O Dubai é desenvolvido tanto para uso individual/doméstico quanto para operadores que buscam uma configuração individual. Graças à sua estrutura compacta, pode ser considerado para residências, clínicas, centros esportivos, centros de bem-estar e hotéis.\n\nAs condições exatas de uso são determinadas pela classificação do produto e pelas regulamentações do país de instalação." },
               { q: "Quantas pessoas o Tokyo pode acomodar?", a: "O Tokyo foi projetado para acomodar dois usuários na mesma sessão. A estrutura dos assentos, os acabamentos internos e a disposição dos assentos podem variar conforme a configuração pedida." },
               { q: "Qual é a capacidade de usuários do modelo HBOT City Tech multipessoal?", a: "Os modelos HBOT City Tech multiusuário começam com o Milan, para 4 pessoas. Para o Geneva, de nível hospitalar, a capacidade padrão é de 6 pessoas, com capacidade opcional de até 12 pessoas (em incrementos de 2 assentos).\n\nA capacidade exata é determinada pelos seguintes fatores:", list: ["Dimensões da câmara", "Disposição dos assentos", "Amplitude de movimento dos usuários", "Capacidade do sistema de oxigênio", "Protocolo operacional", "Requisitos locais de segurança e licenciamento"], aAfter: "Cada opção é incorporada ao projeto após uma avaliação de segurança e uma análise de adequação técnica." },
@@ -5347,8 +5347,8 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | HBOT City Tech Series Hyperbare Sauerstoffkammern", desc: "IoT-vernetzte, KI-gestützte hyperbare Sauerstoffkammern. Atmen Sie auf dem Gipfel mit der HBOT City Tech Series." },
       technology: { title: "Technologie | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync und CityGuard — die vernetzte, intelligente Technologieplattform der HBOT City Tech Series." },
-      models: { title: "Modelle | HBOT Chamber Tech", desc: "Oslo Lounge, Dubai, Tokyo, Milan und Geneva — fünf Modelle hyperbarer Sauerstoffkammern." },
-      soloLounge: { title: "Oslo Lounge | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer für eine Person, konzipiert für die Behandlung in liegender Position." },
+      models: { title: "Modelle | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan und Geneva — fünf Modelle hyperbarer Sauerstoffkammern." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer für eine Person, konzipiert für die Behandlung in liegender Position." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Eine kompakte, voll ausgestattete hyperbare Sauerstoffkammer für die individuelle Nutzung." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Eine gemeinsam genutzte hyperbare Sauerstofftherapie-Kammer für zwei Personen." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Eine druckstarke Kammer für 2-4 Personen für den institutionellen Einsatz." },
@@ -5368,7 +5368,7 @@ const TRANSLATIONS = {
       sticky_cta: "Kostenloses Angebot anfordern",
       nav: { home: "Startseite", technology: "Technologie", models: "Modelle", hbotInfo: "Was ist HBOT?", blog: "Blog", configurator: "Konfigurator", contact: "Kontakt" },
       models_menu: {
-        soloLounge: "Oslo Lounge",
+        soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
         quadCube: "Milan",
@@ -5600,7 +5600,7 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo Lounge", tagline: "1 Person · Liegende Position", desc: "Eine voll ausgestattete Kammer, die speziell für Nutzer entwickelt wurde, die eine Behandlung in liegender Position benötigen." },
+      soloLounge: { title: "Oslo", tagline: "1 Person · Liegende Position", desc: "Eine voll ausgestattete Kammer, die speziell für Nutzer entwickelt wurde, die eine Behandlung in liegender Position benötigen." },
       solo: { title: "Dubai", tagline: "1 Person · Sitzende Position", desc: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstofftherapie." },
       duo: { title: "Tokyo", tagline: "2 Personen · Sitzende Position", desc: "Eine Zweiplatz-Kammer mit Panoramafenster — für Paare, Partner oder die Nutzung mit Begleitperson." },
       quadCube: { title: "Milan", tagline: "4 Personen · Geräumige Kabine", desc: "Eine Premium-Kabine für vier Personen mit geräumigem Cube-Design-Innenraum — gesteppte Lederpolsterung und LED-Ambientebeleuchtung." },
@@ -5616,7 +5616,7 @@ const TRANSLATIONS = {
       { icon: "pulseOx", title: "Sauerstoffsättigungsmesser", desc: "Ein Blutsauerstoffsättigungsmonitor ist in jeder Kammer Standard und überwacht die Werte während der gesamten Sitzung." }
     ],
     modelSoloLounge: {
-      breadcrumb: "Oslo Lounge", eyebrow: "OSLO LOUNGE", title: "Oslo Lounge",
+      breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       tagline: "Exzellenz in liegender Position. Zurücklehnen, entspannen, heilen.",
       overview_text: "Speziell entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen. Das medizinisch-orthopädische Bett und der Korpus aus Flugzeugaluminium sorgen für maximalen Komfort bei langen Sitzungen.",
       specs: [
@@ -5772,7 +5772,7 @@ const TRANSLATIONS = {
         select_button: "Das wähle ich",
         close: "Schließen",
         items: [
-          { scenario: "Zu Hause, allein, ich möchte eine Behandlung in liegender Position", model: "Oslo Lounge", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Zu Hause, allein, ich möchte eine Behandlung in liegender Position", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "Zu Hause, allein, ich möchte während der Sitzungen sitzen", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Mein Partner und ich werden es gemeinsam zu Hause nutzen", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Klinik oder Wellnesszentrum, institutionelle Nutzung für 2–4 Personen", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -5793,7 +5793,7 @@ const TRANSLATIONS = {
       step3_title: "8. Zusatzausstattung",
       step4_title: "9. Angebot anfordern",
       models: [
-        { id: "solo-lounge", name: "Oslo Lounge", tagline: "1 Person · Liegende Position" },
+        { id: "solo-lounge", name: "Oslo", tagline: "1 Person · Liegende Position" },
         { id: "solo", name: "Dubai", tagline: "1 Person · Sitzende Position" },
         { id: "duo", name: "Tokyo", tagline: "2 Personen · Sitzende Position" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 Personen · Institutionell" },
@@ -5870,7 +5870,7 @@ const TRANSLATIONS = {
         none_selected: "Keine Auswahl",
         base_price_label: "Grundpreis",
         total_label: "Geschätzter Gesamtpreis",
-        disclaimer: "Die Preise sind ungefähre Angaben zu Informationszwecken, verstehen sich FOB und sind nur 15 Tage gültig. Farben und Designdetails können je nach Produktionsbedingungen variieren; HBOT Chamber Tech behält sich das Recht vor, solche Änderungen vorzunehmen. Bitte füllen Sie das Formular für ein verbindliches Angebot aus.",
+        disclaimer: "Die Preise sind ungefähre Angaben zu Informationszwecken, verstehen sich FOB und sind nur 15 Tage gültig. Farben und Designdetails können je nach Produktionsbedingungen variieren; HBOT Chamber Tech behält sich das Recht vor, solche Änderungen vorzunehmen. Über die hier gezeigten Farben hinaus können Sie jede Farbe aus unserer breiten Farbpalette wählen und deren Anwendung anfragen. Bitte füllen Sie das Formular für ein verbindliches Angebot aus.",
         cta: "Angebot mit dieser Konfiguration anfordern",
         print_button: "Drucken / Als PDF speichern",
         share_button: "Konfigurationslink kopieren",
@@ -6105,7 +6105,7 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech-Modelle",
             items: [
-              { q: "Welche HBOT City Tech-Modelle sind verfügbar?", a: "Die HBOT City Tech-Produktfamilie wurde für unterschiedliche Nutzerkapazitäten und Einsatzzwecke entwickelt.\n\nOslo Lounge — Ein Einzelnutzersystem, entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen.\n\nOslo — Ein kompaktes Einzelnutzer-Hyperbarsystem für die Anwendung in sitzender Position. Konzipiert sowohl für den individuellen/häuslichen als auch für den gewerblichen Einsatz.\n\nTokyo — Ein System mit geräumigem Innenraum, das zwei Nutzer in derselben Sitzung aufnehmen kann.\n\nMilan — Ein würfelförmiges, großvolumiges Hyperbarsystem für 4 Nutzer, entwickelt für Kliniken, Krankenhäuser und professionelle Betreiber.\n\nGeneva — Ein institutionelles System in Krankenhausqualität mit großer Kapazität, beginnend bei 6 Nutzern und erweiterbar bis zu 12." },
+              { q: "Welche HBOT City Tech-Modelle sind verfügbar?", a: "Die HBOT City Tech-Produktfamilie wurde für unterschiedliche Nutzerkapazitäten und Einsatzzwecke entwickelt.\n\nOslo — Ein Einzelnutzersystem, entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen.\n\nOslo — Ein kompaktes Einzelnutzer-Hyperbarsystem für die Anwendung in sitzender Position. Konzipiert sowohl für den individuellen/häuslichen als auch für den gewerblichen Einsatz.\n\nTokyo — Ein System mit geräumigem Innenraum, das zwei Nutzer in derselben Sitzung aufnehmen kann.\n\nMilan — Ein würfelförmiges, großvolumiges Hyperbarsystem für 4 Nutzer, entwickelt für Kliniken, Krankenhäuser und professionelle Betreiber.\n\nGeneva — Ein institutionelles System in Krankenhausqualität mit großer Kapazität, beginnend bei 6 Nutzern und erweiterbar bis zu 12." },
               { q: "Für wen eignet sich Dubai?", a: "Dubai wurde sowohl für den individuellen/häuslichen Einsatz als auch für Betreiber entwickelt, die eine Einzelnutzer-Lösung suchen. Dank seiner kompakten Struktur eignet es sich für den Einsatz in Privathaushalten, Kliniken, Sportzentren, Wellnesszentren und Hotels.\n\nDie genauen Nutzungsbedingungen richten sich nach der Klassifizierung des Produkts und den Vorschriften des Installationslandes." },
               { q: "Wie viele Personen fasst der Tokyo?", a: "Der Tokyo ist so konzipiert, dass er zwei Nutzer in derselben Sitzung aufnehmen kann. Die Sitzstruktur, die Innenausstattung und die Sitzanordnung können je nach bestellter Konfiguration variieren." },
               { q: "Wie hoch ist die Nutzerkapazität des Mehrpersonen-HBOT City Tech-Modells?", a: "Die Mehrpersonen-HBOT City Tech-Modelle beginnen mit dem 4-Personen-Modell Milan. Beim Geneva in Krankenhausqualität beträgt die Standardkapazität 6 Personen, mit einer optionalen Kapazität von bis zu 12 Personen (in Schritten von 2 Sitzplätzen).\n\nDie genaue Kapazität wird durch folgende Faktoren bestimmt:", list: ["Kammerabmessungen", "Sitzanordnung", "Bewegungsspielraum der Nutzer", "Kapazität des Sauerstoffsystems", "Betriebsprotokoll", "Lokale Sicherheits- und Zulassungsanforderungen"], aAfter: "Jede Option wird nach einer Sicherheitsbewertung und Prüfung der technischen Eignung in das Projekt aufgenommen." },

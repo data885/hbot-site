@@ -1028,7 +1028,13 @@
       btn.addEventListener("click", () => {
         configState.chamberStyle = btn.getAttribute("data-style-id");
         const dict = TRANSLATIONS[currentLang];
+        /* Premium Seri: paketin "hepsi dahil" hissini yansıtmak için tüm
+           uygun ek özellikler otomatik işaretlenir. */
+        if (configState.chamberStyle === "premium") {
+          visibleAddonsFor(dict).forEach((a) => configState.addons.add(a.id));
+        }
         renderConfigStyles(dict);
+        renderConfigAddons(dict);
         renderConfigSummary(dict);
         updateConfigStage(dict);
       });
@@ -1061,6 +1067,11 @@
   }
 
   function renderConfigInteriorColors(dict) {
+    /* Oslo (solo-lounge): iç mekan fotoğraflarının açısı iyi değil — bu adım
+       tamamen gizlenir, varsayılan iç görsel (REAL_INTERIOR.solo-lounge)
+       sabit kalır. */
+    const interiorSection = document.getElementById("interior-color-step-section");
+    if (interiorSection) interiorSection.hidden = configState.model === "solo-lounge";
     const c = document.getElementById("config-interior-color-grid");
     if (!c || !dict.configurator.interior_colors) return;
     c.innerHTML = dict.configurator.interior_colors.map((col) => {
@@ -1362,6 +1373,7 @@
         renderConfigModels(dict);
         renderConfigStyles(dict);
         renderConfigColors(dict);
+        renderConfigInteriorColors(dict);
         renderConfigPressure(dict);
         renderNexusSeatSection(dict);
         renderConfigSeatColors(dict);
@@ -1592,7 +1604,7 @@
       ? `<div class="config-summary-row"><span class="label">${s.color_label}</span><span class="value"><span class="summary-swatch" style="background:${colorInfo.hex}"></span>${colorInfo.name}</span></div>`
       : "";
     const interiorInfo = (dict.configurator.interior_colors || []).find((col) => col.id === configState.interiorColor);
-    const interiorRow = interiorInfo
+    const interiorRow = interiorInfo && configState.model !== "solo-lounge"
       ? `<div class="config-summary-row"><span class="label">${s.interior_color_label}</span><span class="value"><span class="summary-swatch" style="background:${interiorInfo.hex}"></span>${interiorInfo.name}</span></div>`
       : "";
     const seatColorInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
@@ -1747,7 +1759,7 @@
     if (SEAT_TIERS[configState.model]) lines.push(`${s.seats_label}: ${configState.nexusSeats}`);
     if (styleInfo) lines.push(`${s.style_label}: ${styleInfo.name}`);
     if (colorInfo) lines.push(`${s.color_label}: ${colorInfo.name}`);
-    if (interiorInfo) lines.push(`${s.interior_color_label}: ${interiorInfo.name}`);
+    if (interiorInfo && configState.model !== "solo-lounge") lines.push(`${s.interior_color_label}: ${interiorInfo.name}`);
     if (seatColorInfo && s.seat_color_label && configState.model !== "solo-lounge") lines.push(`${s.seat_color_label}: ${seatColorInfo.name}`);
     if (s.seat_type_label && configState.model !== "solo-lounge") lines.push(`${s.seat_type_label}: ${configState.addons.has("massage") ? s.seat_massage : s.seat_standard}`);
     lines.push(`${s.pressure_label}: ${tier.ata}`);
@@ -1949,9 +1961,11 @@
       [s.style_label || "Cabin Style", styleInfo ? styleInfo.name : "-"],
       [s.pressure_label || "Pressure", tier.ata],
       [s.color_label || "Exterior Color", colInfo ? colInfo.name : "-"],
-      [s.interior_color_label || "Interior Color", intInfo ? intInfo.name : "-"],
     ];
-    if (configState.model !== "solo-lounge") confRows.push([s.seat_color_label || "Seat Color", seatInfo ? seatInfo.name : "-"]);
+    if (configState.model !== "solo-lounge") {
+      confRows.push([s.interior_color_label || "Interior Color", intInfo ? intInfo.name : "-"]);
+      confRows.push([s.seat_color_label || "Seat Color", seatInfo ? seatInfo.name : "-"]);
+    }
     if (SEAT_TIERS[configState.model]) confRows.splice(2, 0, [s.seats_label || "Seats", String(configState.nexusSeats)]);
     confRows.push([s.addons_label || "Add-ons", addonNames.length ? addonNames.join(", ") : (s.none_selected || "None")]);
     if (configState.discountPct > 0) confRows.push([s.discount_label || "Discount", `%${configState.discountPct} (-${formatPrice(computeDiscountAmount())})`]);
