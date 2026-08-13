@@ -636,6 +636,11 @@
     "quad-cube": "milan", nexus: "milan"
   };
   function realInteriorMatch() {
+    /* Dubai'nin kendi duvar/koltuk renk varyantı fotoğrafları yok — ailesi
+       "milan" olduğu için renk dokunulunca Milan'ın (4 kişilik) fotoğrafına
+       düşüyordu. Yanlış ürün göstermektense her zaman Dubai'nin kendi
+       varsayılan iç görselinde (REAL_INTERIOR.solo) sabit kal. */
+    if (configState.model === "solo") return null;
     const family = INTERIOR_FAMILY[configState.model];
     if (!family) return null;
     const seatReady = configState.seatTouched && configState.seatColor;
