@@ -571,7 +571,7 @@
      paylaşır — pozisyon en azından doğru gösterilir. */
   const REAL_INTERIOR = {
     "solo-lounge": "real/apex-lounge-ic",
-    solo: "real/apex-quad-cube-ic",
+    solo: "real/oslo-interior",
     duo: "real/apex-quad-cube-ic",
     "duo-plus": "real/apex-quad-cube-ic",
     "quad-cube": "real/apex-quad-cube-ic",
@@ -1033,7 +1033,8 @@
   function renderConfigColors(dict) {
     const c = document.getElementById("config-color-grid");
     if (!c || !dict.configurator.colors) return;
-    c.innerHTML = dict.configurator.colors.map((col) => {
+    const availableColors = dict.configurator.colors.filter((col) => colorWorksFor(configState.model, col.id));
+    c.innerHTML = availableColors.map((col) => {
       const selected = configState.color === col.id ? " is-selected" : "";
       return `
         <button type="button" class="config-color-swatch${selected}" data-color-id="${col.id}" title="${col.name}">
@@ -1092,6 +1093,19 @@
     "grafit": "metal", "antrasit": "metal", "mat-siyah": "metal",
     "gece-laciverti": "paint", "bordo": "paint", "zumrut": "paint"
   };
+
+  /* Bir renk, seçili modelde GERÇEKTEN görsel bir değişikliğe yol açıyor mu?
+     Ya modele özel gerçek fotoğrafı olmalı (REAL_STAGE_BY_COLOR) ya da boya
+     modu + o modelin gösterdiği ham görsel için bir STAGE_EXT_PROFILE olmalı.
+     İkisi de yoksa renk seçilse bile sahne değişmez — böyle renkler seçiciden
+     gizlenir (bkz. renderConfigColors). */
+  function colorWorksFor(modelId, colorId) {
+    if ((REAL_STAGE_BY_COLOR[modelId] || {})[colorId]) return true;
+    if (!(colorId in EXT_PAINT_MODE)) return false;
+    if (EXT_PAINT_MODE[colorId] === null) return true;
+    const key = SPIN_MODELS[modelId] ? `spin:${modelId}` : REAL_STAGE[modelId];
+    return !!STAGE_EXT_PROFILE[key];
+  }
   const INT_PAINT_MODE = {
     "cream": null,
     "kum-beji": "paint", "konyak": "paint", "anthracite": "metal",
@@ -1338,9 +1352,11 @@
         const seatTiers = SEAT_TIERS[configState.model];
         configState.nexusSeats = seatTiers ? seatTiers[0].seats : NEXUS_BASE_SEATS;
         if (!styleAllowedFor(configState.model, configState.chamberStyle)) configState.chamberStyle = "solid";
+        if (!colorWorksFor(configState.model, configState.color)) configState.color = "pearl-white";
         const dict = TRANSLATIONS[currentLang];
         renderConfigModels(dict);
         renderConfigStyles(dict);
+        renderConfigColors(dict);
         renderConfigPressure(dict);
         renderNexusSeatSection(dict);
         renderConfigSeatColors(dict);
@@ -2128,7 +2144,9 @@
       if (preStyle && STYLE_PRICING[preStyle] !== undefined) configState.chamberStyle = preStyle;
 
       const preColor = params.get("color");
-      if (preColor && (TRANSLATIONS.tr.configurator.colors || []).some((col) => col.id === preColor)) configState.color = preColor;
+      if (preColor && (TRANSLATIONS.tr.configurator.colors || []).some((col) => col.id === preColor) && colorWorksFor(configState.model, preColor)) {
+        configState.color = preColor;
+      }
 
       const preInterior = params.get("interior");
       if (preInterior && (TRANSLATIONS.tr.configurator.interior_colors || []).some((col) => col.id === preInterior)) configState.interiorColor = preInterior;
