@@ -389,3 +389,9 @@ class Renderers:
     ''')
             return "".join(parts)
         return "".join(self._faq_item_html(item, i) for i, item in enumerate(faq["items"]))
+
+    def model_faq(self, dict_, model_key):
+        items = (dict_.get("modelsFaq") or {}).get(model_key)
+        if not items:
+            return ""
+        return "".join(self._faq_item_html(item, i) for i, item in enumerate(items))

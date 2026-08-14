@@ -60,7 +60,8 @@ const TRANSLATIONS = {
       overview_title: "Genel Bakış",
       specs_title: "Teknik Özellikler",
       included_title: "HBOT City Tech Teknoloji Ekosistemi",
-      other_models: "Diğer Modellerimiz"
+      other_models: "Diğer Modellerimiz",
+      faq_eyebrow: "Bilmeniz Gerekenler"
     },
     home: {
       hero: {
@@ -274,6 +275,7 @@ const TRANSLATIONS = {
     ],
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
+      faq_title: "Oslo hakkında merak edilenler",
       tagline: "Yatayda Mükemmellik. Uzanın, rahatlayın, iyileşin.",
       overview_text: "Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiştir. Medikal ortopedik yatağı ve havacılık sınıfı alüminyum gövdesiyle, uzun seanslarda maksimum konfor sağlar.",
       specs: [
@@ -288,6 +290,7 @@ const TRANSLATIONS = {
     },
     modelSolo: {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
+      faq_title: "Dubai hakkında merak edilenler",
       tagline: "Kişisel Sağlığınızın Zirvesi. Yalnızca siz ve oksijen.",
       overview_text: "Bireysel hiperbarik oksijen terapisi için tasarlanmış kompakt, şık ve tam donanımlı kabin. Dokunmatik ekran kontrolüyle ev veya klinik kullanımı için idealdir.",
       specs: [
@@ -302,6 +305,7 @@ const TRANSLATIONS = {
     },
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
+      faq_title: "Tokyo hakkında merak edilenler",
       tagline: "Birlikte İyileşin. İki kişilik paylaşımlı terapi deneyimi.",
       overview_text: "Çift koltuklu hiperbarik kabin, paylaşımlı terapi seansları sunar. Eşler, partnerler veya hasta-refakatçi kullanımı için tasarlanmıştır.",
       institutionalNote: "Kurumsal, 2–4 kişilik kullanım mı arıyorsunuz? <a href=\"model-apex-duo-plus.html\">Tokyo Plus'a bakın →</a>",
@@ -316,6 +320,7 @@ const TRANSLATIONS = {
     },
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      faq_title: "Tokyo Plus hakkında merak edilenler",
       tagline: "Kurumsal kullanım için genişletilebilir, çok kişilik terapi kapasitesi.",
       overview_text: "Tokyo'nun yüksek basınçlı, çok kişilik kurumsal versiyonu. 2 ila 4 kişi arasında kademeli koltuk kapasitesiyle klinik, hastane ve wellness merkezleri için tasarlanmıştır.",
       specs: [
@@ -329,6 +334,7 @@ const TRANSLATIONS = {
     },
     modelQuadCube: {
       breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
+      faq_title: "Milan hakkında merak edilenler",
       tagline: "Geniş küp tasarımında dört kişilik premium deneyim.",
       overview_text: "Küp formundaki geniş iç hacmiyle dört kişilik premium kabin. Kapitone deri iç mekânı, LED ambiyans aydınlatması ve bağımsız kontrol ünitesiyle klinik ve wellness merkezlerine konforlu çok kişilik terapi sunar.",
       specs: [
@@ -342,6 +348,7 @@ const TRANSLATIONS = {
     },
     modelNexus: {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
+      faq_title: "Geneva hakkında merak edilenler",
       tagline: "Hastane sınıfı, büyük kapasiteli çözüm.",
       overview_text: "Sağlık kurumları için hastane sınıfı, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun terapi merkezlerinin ihtiyacını karşılar.",
       specs: [
@@ -393,6 +400,50 @@ const TRANSLATIONS = {
       desktopNote: "AR modu yalnızca mobil cihazlarda kullanılabilir. Bu sayfayı telefonunuzda açın veya konfigüratördeki QR kodu okutun.",
       launchButton: "📱 Mekânınızda Görün"
     },
+    modelsFaq: {
+      "solo-lounge": [
+        { q: "Oslo kaç kişilik ve hangi pozisyonda kullanılıyor?", a: "Oslo tek kişilik ve tamamen yatay pozisyonda kullanılır. 200×80 cm medikal ortopedik yatağı, uzun seanslarda sırt ve bel üzerindeki baskıyı azaltır." },
+        { q: "Oslo'da koltuk veya iç duvar rengi seçebilir miyim?", a: "Hayır — Oslo'nun koltuğu yoktur ve iç mekân görseli sabittir; bu adım konfigüratörden bilinçli olarak kaldırılmıştır. Dış gövde rengini yine de standart palettemizden seçebilir, listede olmayan bir rengi de talep edebilirsiniz." },
+        { q: "Oslo hangi basınç aralığında çalışır?", a: "1.5–2.0 ATA aralığında, ev tipi kullanıma uygun düşük basınçlı bir sistemdir." },
+        { q: "Oslo'nun gürültü seviyesi evde rahatsız eder mi?", a: "55 dB'nin altında çalışır — sakin bir odanın ortam gürültüsüne yakındır." },
+        { q: "Oslo için nasıl teklif alabilirim?", a: "Konfigüratörden Oslo'yu seçip rengini belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
+      ],
+      "solo": [
+        { q: "Dubai kaç kişilik ve hangi pozisyonda kullanılıyor?", a: "Dubai tek kişilik, oturma pozisyonunda kullanılan kompakt bir kabindir; dokunmatik ekran kontrolüyle ev veya klinik kullanımı için uygundur." },
+        { q: "Dubai'de renk seçimi nasıl çalışıyor?", a: "Dış gövde rengini standart palettemizden seçebilirsiniz. Dubai'nin kendine özel iç/koltuk fotoğrafı bulunmadığından iç mekân görseli sabit kalır; listedeki renklerin dışında özel bir renk de talep edebilirsiniz." },
+        { q: "Dubai hangi basınç aralığında çalışır?", a: "1.5–2.0 ATA aralığında çalışan, ev tipi kullanım için tasarlanmış bir sistemdir." },
+        { q: "Dubai'nin dış ölçüleri nedir, evime sığar mı?", a: "120×110×180 cm dış ölçülere sahiptir — standart bir oda köşesine rahatça yerleştirilebilecek kompakt bir ayak izi sunar." },
+        { q: "Dubai için nasıl teklif alabilirim?", a: "Konfigüratörden Dubai'yi seçip rengini belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
+      ],
+      "duo": [
+        { q: "Tokyo kaç kişilik?", a: "Tokyo, 2 kişilik oturma pozisyonunda kullanılan çift koltuklu bir kabindir — eş, partner veya hasta-refakatçi kullanımı için uygundur." },
+        { q: "Tokyo'da iç mekân ve koltuk rengini ayrı ayrı seçebilir miyim?", a: "Evet. Dış gövde, iç duvar ve koltuk döşemesi için ayrı standart renk paletlerimiz vardır; her birini bağımsız seçebilirsiniz." },
+        { q: "Tokyo hangi basınç aralığında ve oksijen saflığında çalışır?", a: "1.5–2.0 ATA basınç aralığında, %93–95 oksijen saflığıyla çalışır." },
+        { q: "Tokyo'da güvenlik nasıl sağlanıyor?", a: "Acil durum valf sistemi ve çift kontrol paneli standarttır; her iki kullanıcı da sistemi bağımsız izleyebilir." },
+        { q: "Tokyo için nasıl teklif alabilirim?", a: "Konfigüratörden Tokyo'yu seçip renklerinizi belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
+      ],
+      "duo-plus": [
+        { q: "Tokyo Plus'ın Tokyo'dan farkı nedir?", a: "Tokyo Plus, Tokyo'nun daha yüksek basınçlı ve kademeli koltuk kapasiteli kurumsal versiyonudur; 2 ile 4 kişi arasında ölçeklenir." },
+        { q: "Tokyo Plus hangi kullanım alanları için uygundur?", a: "Klinik, hastane ve wellness merkezleri gibi kurumsal ortamlar için tasarlanmıştır." },
+        { q: "Tokyo Plus hangi basınç aralığında çalışır?", a: "2.5–6.0 ATA aralığında, kurumsal/yüksek basınçlı kullanım için uygundur." },
+        { q: "Tokyo Plus'ın koltuk sayısı nasıl belirlenir?", a: "Konfigüratördeki koltuk sayısı adımından ihtiyacınıza göre 2 ile 4 arasında ayarlayabilirsiniz; fiyat buna göre güncellenir." },
+        { q: "Tokyo Plus için nasıl teklif alabilirim?", a: "Konfigüratörden Tokyo Plus'ı seçip koltuk sayısı ve renklerinizi belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
+      ],
+      "quad-cube": [
+        { q: "Milan kaç kişilik ve tasarımı nasıl?", a: "Milan, küp formundaki geniş iç hacmiyle 4 kişilik oturma pozisyonunda kullanılan premium bir kabindir." },
+        { q: "Milan'ın iç mekânı hangi malzemelerle döşeniyor?", a: "Kapitone deri iç mekân ve LED ambiyans aydınlatmasıyla gelir; iç duvar ve koltuk renklerini standart palettemizden ayrı seçebilirsiniz." },
+        { q: "Milan hangi basınç aralığında çalışır?", a: "2.5–6.0 ATA aralığında, kurumsal kullanım için uygundur." },
+        { q: "Milan'ın kontrol sistemi nasıl çalışır?", a: "Bağımsız kontrol ünitesiyle gelir; klinik ve wellness merkezlerinde operatör kontrolüne uygundur." },
+        { q: "Milan için nasıl teklif alabilirim?", a: "Konfigüratörden Milan'ı seçip iç/dış renklerinizi belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
+      ],
+      "nexus": [
+        { q: "Geneva kaç kişilik?", a: "Geneva, 6 kişiden başlayıp 6/8/10/12 kademeli olarak genişleyebilen, hastane sınıfı büyük kapasiteli bir kabindir." },
+        { q: "Geneva hangi tesisler için uygundur?", a: "Yoğun terapi hacmi olan hastaneler ve büyük sağlık merkezleri için tasarlanmıştır; modüler yapısı gelecekteki genişlemeye hazırdır." },
+        { q: "Geneva hangi basınç aralığında çalışır?", a: "2.5–6.0 ATA aralığında, %93–95 oksijen saflığıyla çalışır." },
+        { q: "Geneva'nın güvenlik donanımı nedir?", a: "Acil durum valf sistemi standarttır; hastane sınıfı yapısı yoğun kullanıma göre mühendislik edilmiştir." },
+        { q: "Geneva için nasıl teklif alabilirim?", a: "Kapasite ihtiyacınızı (6/8/10/12 kişi) belirterek bizimle iletişime geçin; kurumunuza özel teknik çizim ve teklif hazırlayalım." }
+      ]
+    },
     configurator: {
       header: { eyebrow: "KONFİGÜRATÖR", title: "Kendi HBOT City Tech Kabininizi Tasarlayın", subtitle: "Modeli, basınç seviyesini ve ek özellikleri seçin — anında fiyat tahmini alın." },
       ar: {
@@ -442,6 +493,8 @@ const TRANSLATIONS = {
       style_step_note: "Kabin tasarımınızı seçin; cam yüzey oranı ve iç donanım seviyesine göre fiyat değişir.",
       color_step_title: "4. Renk Seçin",
       color_step_note: "Standart renk paletimizden ücretsiz seçim yapın.",
+      ext_color_chart_link: "Tüm dış renk kartını indirin (PDF)",
+      int_color_chart_link: "Tüm iç döşeme renk kartını indirin (PDF)",
       interior_step_title: "5. İç Renk",
       interior_step_note: "Standart iç mekân renkleri fiyata dâhildir.",
       seat_color_step_title: "6. Koltuk Rengi",
@@ -951,7 +1004,8 @@ const TRANSLATIONS = {
       overview_title: "Overview",
       specs_title: "Technical Specifications",
       included_title: "HBOT City Tech Technology Ecosystem",
-      other_models: "Our Other Models"
+      other_models: "Our Other Models",
+      faq_eyebrow: "Good to Know"
     },
     home: {
       hero: {
@@ -1165,6 +1219,7 @@ const TRANSLATIONS = {
     ],
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
+      faq_title: "What people want to know about the Oslo",
       tagline: "Excellence in a Lying Position. Lie back, relax, heal.",
       overview_text: "Developed specifically for users who need treatment in a lying position. Its medical orthopedic bed and aviation-grade aluminum body provide maximum comfort during long sessions.",
       specs: [
@@ -1179,6 +1234,7 @@ const TRANSLATIONS = {
     },
     modelSolo: {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
+      faq_title: "What people want to know about the Dubai",
       tagline: "The Summit of Your Personal Health. Just you and oxygen.",
       overview_text: "A compact, elegant, fully equipped chamber designed for individual hyperbaric oxygen therapy. With touchscreen control, it's ideal for home or clinic use.",
       specs: [
@@ -1193,6 +1249,7 @@ const TRANSLATIONS = {
     },
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
+      faq_title: "What people want to know about the Tokyo",
       tagline: "Heal Together. A shared two-person treatment experience.",
       overview_text: "A dual-seat hyperbaric chamber offering shared therapy sessions. Designed for couples, partners, or patient-companion use.",
       institutionalNote: "Looking for a 2–4 person institutional setup? <a href=\"model-apex-duo-plus.html\">See Tokyo Plus →</a>",
@@ -1207,6 +1264,7 @@ const TRANSLATIONS = {
     },
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      faq_title: "What people want to know about the Tokyo Plus",
       tagline: "Expandable, multi-person therapy capacity for institutional use.",
       overview_text: "The high-pressure, multi-person institutional version of Tokyo. Designed for clinics, hospitals and wellness centers with tiered seating capacity from 2 to 4 people.",
       specs: [
@@ -1220,6 +1278,7 @@ const TRANSLATIONS = {
     },
     modelQuadCube: {
       breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
+      faq_title: "What people want to know about the Milan",
       tagline: "A premium four-person experience in a spacious cube design.",
       overview_text: "A four-person premium cabin with a spacious cube-form interior. With quilted leather upholstery, LED ambient lighting, and an independent control unit, it delivers comfortable multi-person therapy for clinics and wellness centers.",
       specs: [
@@ -1233,6 +1292,7 @@ const TRANSLATIONS = {
     },
     modelNexus: {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
+      faq_title: "What people want to know about the Geneva",
       tagline: "A hospital-grade, large-capacity solution.",
       overview_text: "A hospital-grade, large-capacity chamber for medical institutions. Its modular design and advanced monitoring systems meet the needs of the busiest treatment centers.",
       specs: [
@@ -1284,6 +1344,50 @@ const TRANSLATIONS = {
       desktopNote: "AR mode is only available on mobile devices. Open this page on your phone, or scan the QR code from the configurator.",
       launchButton: "📱 View in Your Space"
     },
+    modelsFaq: {
+      "solo-lounge": [
+        { q: "How many people does the Oslo fit, and in what position?", a: "The Oslo is a single-person chamber used in a fully lying-down position. Its 200×80 cm medical orthopaedic mattress reduces back and lower-back pressure during long sessions." },
+        { q: "Can I choose a seat or interior wall colour for the Oslo?", a: "No — the Oslo has no seat, and its interior view is fixed by design, so this step is deliberately removed from the configurator. You can still choose the exterior colour from our standard palette, or request a shade outside the list." },
+        { q: "What pressure range does the Oslo operate at?", a: "1.5–2.0 ATA — a low-pressure system suited to home use." },
+        { q: "Is the Oslo noisy enough to disturb a home environment?", a: "It runs below 55 dB, close to the ambient noise of a quiet room." },
+        { q: "How do I get a quote for the Oslo?", a: "Select the Oslo in the configurator and pick a colour to see an instant price estimate, then request a final quote through the form." }
+      ],
+      "solo": [
+        { q: "How many people does the Dubai fit, and in what position?", a: "The Dubai is a compact, single-person chamber used seated, with touchscreen control suited to home or clinical use." },
+        { q: "How does colour selection work for the Dubai?", a: "You can choose the exterior colour from our standard palette. Since the Dubai has no dedicated interior/seat photography, the interior view stays fixed — you can still request a custom shade beyond the ones shown." },
+        { q: "What pressure range does the Dubai operate at?", a: "1.5–2.0 ATA, designed for home use." },
+        { q: "What are the Dubai's exterior dimensions — will it fit my space?", a: "120×110×180 cm — a compact footprint that fits comfortably into a standard room corner." },
+        { q: "How do I get a quote for the Dubai?", a: "Select the Dubai in the configurator and pick a colour to see an instant price estimate, then request a final quote through the form." }
+      ],
+      "duo": [
+        { q: "How many people does the Tokyo fit?", a: "The Tokyo is a two-seat chamber used seated — suited to couples, partners, or a patient with a companion." },
+        { q: "Can I choose the interior and seat colour separately on the Tokyo?", a: "Yes. We offer separate standard palettes for the exterior shell, interior walls, and seat upholstery, each selectable independently." },
+        { q: "What pressure range and oxygen purity does the Tokyo run at?", a: "1.5–2.0 ATA, with 93–95% oxygen purity." },
+        { q: "How is safety handled on the Tokyo?", a: "An emergency valve system and dual control panel come standard, so both users can monitor the session independently." },
+        { q: "How do I get a quote for the Tokyo?", a: "Select the Tokyo in the configurator, choose your colours, and see an instant price estimate — then request a final quote through the form." }
+      ],
+      "duo-plus": [
+        { q: "How is the Tokyo Plus different from the Tokyo?", a: "The Tokyo Plus is the higher-pressure, institutional version of the Tokyo, with tiered seating that scales from 2 to 4 people." },
+        { q: "What settings is the Tokyo Plus suited for?", a: "It's built for institutional environments — clinics, hospitals, and wellness centres." },
+        { q: "What pressure range does the Tokyo Plus operate at?", a: "2.5–6.0 ATA, suited to institutional, higher-pressure use." },
+        { q: "How is the Tokyo Plus's seat count determined?", a: "Use the seat-count step in the configurator to set anywhere from 2 to 4 seats; the price updates accordingly." },
+        { q: "How do I get a quote for the Tokyo Plus?", a: "Select the Tokyo Plus in the configurator, set your seat count and colours, and see an instant price estimate — then request a final quote through the form." }
+      ],
+      "quad-cube": [
+        { q: "How many people does the Milan fit, and what's its design?", a: "The Milan is a premium four-person chamber, seated, with a spacious cube-shaped interior." },
+        { q: "What materials finish the Milan's interior?", a: "It comes with quilted leather interior and ambient LED lighting; you can choose interior wall and seat colours separately from our standard palette." },
+        { q: "What pressure range does the Milan operate at?", a: "2.5–6.0 ATA, suited to institutional use." },
+        { q: "How does the Milan's control system work?", a: "It comes with an independent control unit, suited to operator control in clinics and wellness centres." },
+        { q: "How do I get a quote for the Milan?", a: "Select the Milan in the configurator, choose your interior and exterior colours, and see an instant price estimate — then request a final quote through the form." }
+      ],
+      "nexus": [
+        { q: "How many people does the Geneva fit?", a: "The Geneva is a hospital-grade, large-capacity chamber that starts at 6 people and scales in tiers of 6/8/10/12." },
+        { q: "What facilities is the Geneva suited for?", a: "It's designed for hospitals and large health centres with high therapy volume; its modular structure is ready for future expansion." },
+        { q: "What pressure range does the Geneva operate at?", a: "2.5–6.0 ATA, with 93–95% oxygen purity." },
+        { q: "What safety equipment does the Geneva have?", a: "An emergency valve system comes standard; its hospital-grade construction is engineered for continuous, high-volume use." },
+        { q: "How do I get a quote for the Geneva?", a: "Contact us with your capacity needs (6/8/10/12 people) and we'll prepare a technical drawing and quote tailored to your institution." }
+      ]
+    },
     configurator: {
       header: { eyebrow: "CONFIGURATOR", title: "Design Your Own HBOT City Tech Chamber", subtitle: "Choose the model, pressure level and add-ons — get an instant price estimate." },
       ar: {
@@ -1333,6 +1437,8 @@ const TRANSLATIONS = {
       style_step_note: "Choose your chamber's design; pricing varies with glass surface area and interior finish level.",
       color_step_title: "4. Choose a Color",
       color_step_note: "Free selection from our standard color palette.",
+      ext_color_chart_link: "Download the full exterior colour chart (PDF)",
+      int_color_chart_link: "Download the full interior upholstery colour chart (PDF)",
       interior_step_title: "5. Interior Color",
       interior_step_note: "Standard interior colors are included in the price.",
       seat_color_step_title: "6. Seat Color",
@@ -1842,7 +1948,8 @@ const TRANSLATIONS = {
       overview_title: "Обзор",
       specs_title: "Технические характеристики",
       included_title: "Технологическая экосистема HBOT City Tech",
-      other_models: "Другие модели"
+      other_models: "Другие модели",
+      faq_eyebrow: "Полезно знать"
     },
     home: {
       hero: {
@@ -2056,6 +2163,7 @@ const TRANSLATIONS = {
     ],
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
+      faq_title: "Часто задаваемые вопросы об Oslo",
       tagline: "Совершенство в положении лёжа. Прилягте, расслабьтесь, восстановитесь.",
       overview_text: "Разработана специально для пользователей, нуждающихся в лечении в положении лёжа. Медицинское ортопедическое ложе и корпус из авиационного алюминия обеспечивают максимальный комфорт во время длительных сеансов.",
       specs: [
@@ -2070,6 +2178,7 @@ const TRANSLATIONS = {
     },
     modelSolo: {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
+      faq_title: "Часто задаваемые вопросы о Dubai",
       tagline: "Вершина вашего личного здоровья. Только вы и кислород.",
       overview_text: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарической оксигенотерапии. С сенсорным управлением идеально подходит для домашнего или клинического использования.",
       specs: [
@@ -2084,6 +2193,7 @@ const TRANSLATIONS = {
     },
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
+      faq_title: "Часто задаваемые вопросы о Tokyo",
       tagline: "Исцеляйтесь вместе. Совместный сеанс лечения для двоих.",
       overview_text: "Двухместная гипербарическая камера для совместных сеансов терапии. Разработана для пар, партнёров или пациента с сопровождающим.",
       institutionalNote: "Ищете вариант для учреждений на 2–4 человека? <a href=\"model-apex-duo-plus.html\">Смотрите Tokyo Plus →</a>",
@@ -2098,6 +2208,7 @@ const TRANSLATIONS = {
     },
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      faq_title: "Часто задаваемые вопросы о Tokyo Plus",
       tagline: "Расширяемая, многоместная вместимость для учреждений.",
       overview_text: "Высоконапорная, многоместная институциональная версия Tokyo. Разработана для клиник, больниц и велнес-центров с поэтапной вместимостью от 2 до 4 человек.",
       specs: [
@@ -2111,6 +2222,7 @@ const TRANSLATIONS = {
     },
     modelQuadCube: {
       breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
+      faq_title: "Часто задаваемые вопросы о Milan",
       tagline: "Премиальный четырёхместный опыт в просторном кубическом дизайне.",
       overview_text: "Четырёхместная премиум-кабина с просторным кубическим интерьером. Стёганая кожаная обивка, LED-подсветка и независимый блок управления обеспечивают комфортную многоместную терапию для клиник и wellness-центров.",
       specs: [
@@ -2124,6 +2236,7 @@ const TRANSLATIONS = {
     },
     modelNexus: {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
+      faq_title: "Часто задаваемые вопросы о Geneva",
       tagline: "Решение госпитального класса большой вместимости.",
       overview_text: "Камера госпитального класса большой вместимости для медицинских учреждений. Модульная конструкция и продвинутые системы мониторинга отвечают потребностям самых загруженных лечебных центров.",
       specs: [
@@ -2175,6 +2288,50 @@ const TRANSLATIONS = {
       desktopNote: "Режим AR доступен только на мобильных устройствах. Откройте эту страницу на телефоне или отсканируйте QR-код в конфигураторе.",
       launchButton: "📱 Посмотреть в вашем помещении"
     },
+    modelsFaq: {
+      "solo-lounge": [
+        { q: "На сколько человек рассчитан Oslo и в каком положении он используется?", a: "Oslo — одноместная капсула, используемая полностью лёжа. Медицинский ортопедический матрас 200×80 см снижает нагрузку на спину и поясницу во время долгих сеансов." },
+        { q: "Можно ли выбрать цвет сиденья или внутренней стены в Oslo?", a: "Нет — у Oslo нет сиденья, а изображение интерьера фиксировано; этот шаг намеренно убран из конфигуратора. Цвет внешнего корпуса вы всё же можете выбрать из стандартной палитры или запросить оттенок, которого нет в списке." },
+        { q: "В каком диапазоне давления работает Oslo?", a: "1.5–2.0 ATA — система низкого давления, подходящая для домашнего использования." },
+        { q: "Насколько шумно работает Oslo — не помешает ли дома?", a: "Уровень шума ниже 55 дБ — это близко к фоновому шуму тихой комнаты." },
+        { q: "Как получить расчёт стоимости на Oslo?", a: "Выберите Oslo в конфигураторе и укажите цвет, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
+      ],
+      "solo": [
+        { q: "На сколько человек рассчитан Dubai и в каком положении он используется?", a: "Dubai — компактная одноместная капсула, используемая сидя, с сенсорным управлением, подходящая для дома или клиники." },
+        { q: "Как работает выбор цвета для Dubai?", a: "Цвет внешнего корпуса можно выбрать из стандартной палитры. Так как у Dubai нет отдельных фото интерьера/сиденья, изображение интерьера остаётся фиксированным — оттенок, которого нет в списке, всё же можно запросить." },
+        { q: "В каком диапазоне давления работает Dubai?", a: "1.5–2.0 ATA — система, разработанная для домашнего использования." },
+        { q: "Каковы внешние размеры Dubai — поместится ли она в моём помещении?", a: "Внешние размеры 120×110×180 см — компактная площадь, которая удобно размещается в углу стандартной комнаты." },
+        { q: "Как получить расчёт стоимости на Dubai?", a: "Выберите Dubai в конфигураторе и укажите цвет, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
+      ],
+      "duo": [
+        { q: "На сколько человек рассчитан Tokyo?", a: "Tokyo — двухместная капсула с сиденьями, подходящая для пары, партнёров или пациента с сопровождающим." },
+        { q: "Можно ли отдельно выбрать цвет интерьера и сидений в Tokyo?", a: "Да. У нас есть отдельные стандартные палитры для внешнего корпуса, внутренних стен и обивки сидений — каждую можно выбрать независимо." },
+        { q: "В каком диапазоне давления и чистоты кислорода работает Tokyo?", a: "Диапазон давления 1.5–2.0 ATA, чистота кислорода 93–95%." },
+        { q: "Как обеспечивается безопасность в Tokyo?", a: "В стандартную комплектацию входят аварийная клапанная система и сдвоенная панель управления — каждый пользователь может независимо следить за сеансом." },
+        { q: "Как получить расчёт стоимости на Tokyo?", a: "Выберите Tokyo в конфигураторе, укажите цвета и мгновенно увидьте примерную стоимость, а для точного предложения заполните форму." }
+      ],
+      "duo-plus": [
+        { q: "Чем Tokyo Plus отличается от Tokyo?", a: "Tokyo Plus — это институциональная версия Tokyo с более высоким давлением и ступенчатой вместимостью от 2 до 4 человек." },
+        { q: "Для каких учреждений подходит Tokyo Plus?", a: "Она разработана для институциональных пространств — клиник, больниц и велнес-центров." },
+        { q: "В каком диапазоне давления работает Tokyo Plus?", a: "2.5–6.0 ATA — подходит для институционального использования с более высоким давлением." },
+        { q: "Как определяется количество сидений в Tokyo Plus?", a: "На шаге выбора количества сидений в конфигураторе можно установить от 2 до 4 мест; цена обновляется соответственно." },
+        { q: "Как получить расчёт стоимости на Tokyo Plus?", a: "Выберите Tokyo Plus в конфигураторе, укажите количество сидений и цвета, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
+      ],
+      "quad-cube": [
+        { q: "На сколько человек рассчитан Milan и как он устроен?", a: "Milan — премиальная четырёхместная капсула с сиденьями и просторным кубическим интерьером." },
+        { q: "Какими материалами отделан интерьер Milan?", a: "Интерьер отделан стёганой кожей с LED-подсветкой; цвет внутренних стен и сидений можно выбрать отдельно из стандартной палитры." },
+        { q: "В каком диапазоне давления работает Milan?", a: "2.5–6.0 ATA — подходит для институционального использования." },
+        { q: "Как работает система управления Milan?", a: "Она оснащена независимым блоком управления, подходящим для контроля оператором в клиниках и велнес-центрах." },
+        { q: "Как получить расчёт стоимости на Milan?", a: "Выберите Milan в конфигураторе, укажите цвета интерьера и экстерьера, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
+      ],
+      "nexus": [
+        { q: "На сколько человек рассчитан Geneva?", a: "Geneva — капсула большой вместимости больничного класса, начиная от 6 человек с шагом 6/8/10/12." },
+        { q: "Для каких учреждений подходит Geneva?", a: "Она разработана для больниц и крупных медицинских центров с высокой терапевтической нагрузкой; модульная конструкция готова к будущему расширению." },
+        { q: "В каком диапазоне давления работает Geneva?", a: "2.5–6.0 ATA, чистота кислорода 93–95%." },
+        { q: "Какое оборудование безопасности установлено в Geneva?", a: "В стандартную комплектацию входит аварийная клапанная система; конструкция больничного класса рассчитана на непрерывную интенсивную эксплуатацию." },
+        { q: "Как получить расчёт стоимости на Geneva?", a: "Свяжитесь с нами и укажите нужную вместимость (6/8/10/12 человек) — мы подготовим техническую документацию и предложение для вашего учреждения." }
+      ]
+    },
     configurator: {
       header: { eyebrow: "КОНФИГУРАТОР", title: "Создайте свою камеру HBOT City Tech", subtitle: "Выберите модель, уровень давления и опции — получите мгновенную оценку стоимости." },
       ar: {
@@ -2224,6 +2381,8 @@ const TRANSLATIONS = {
       style_step_note: "Выберите дизайн камеры; цена зависит от площади остекления и уровня отделки интерьера.",
       color_step_title: "4. Выберите цвет",
       color_step_note: "Бесплатный выбор из нашей стандартной цветовой палитры.",
+      ext_color_chart_link: "Скачать полную карту внешних цветов (PDF)",
+      int_color_chart_link: "Скачать полную карту цветов внутренней обивки (PDF)",
       interior_step_title: "5. Цвет интерьера",
       interior_step_note: "Стандартные цвета интерьера включены в стоимость.",
       seat_color_step_title: "6. Цвет кресел",
@@ -2733,7 +2892,8 @@ const TRANSLATIONS = {
       overview_title: "نظرة عامة",
       specs_title: "المواصفات الفنية",
       included_title: "منظومة HBOT City Tech التقنية",
-      other_models: "موديلاتنا الأخرى"
+      other_models: "موديلاتنا الأخرى",
+      faq_eyebrow: "معلومات مفيدة"
     },
     home: {
       hero: {
@@ -2947,6 +3107,7 @@ const TRANSLATIONS = {
     ],
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
+      faq_title: "أسئلة شائعة حول أوسلو",
       tagline: "التميّز في وضعية الاستلقاء. استلقِ، استرخِ، تعافَ.",
       overview_text: "طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء. يوفر سريرها الطبي التقويمي وهيكلها من الألومنيوم بمعايير الطيران أقصى درجات الراحة خلال الجلسات الطويلة.",
       specs: [
@@ -2961,6 +3122,7 @@ const TRANSLATIONS = {
     },
     modelSolo: {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
+      faq_title: "أسئلة شائعة حول دبي",
       tagline: "قمة صحتك الشخصية. أنت والأكسجين فقط.",
       overview_text: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للعلاج الفردي بالأكسجين عالي الضغط. بفضل التحكم بشاشة اللمس، فهي مثالية للاستخدام المنزلي أو في العيادة.",
       specs: [
@@ -2975,6 +3137,7 @@ const TRANSLATIONS = {
     },
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
+      faq_title: "أسئلة شائعة حول طوكيو",
       tagline: "تعافيا معاً. تجربة علاج مشتركة لشخصين.",
       overview_text: "غرفة أكسجين عالي الضغط بمقعدين توفر جلسات علاج مشتركة. مصممة للأزواج أو الشركاء أو استخدام المريض مع مرافق.",
       institutionalNote: "تبحث عن إعداد مؤسسي لـ 2–4 أشخاص؟ <a href=\"model-apex-duo-plus.html\">اطّلع على Tokyo Plus →</a>",
@@ -2989,6 +3152,7 @@ const TRANSLATIONS = {
     },
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      faq_title: "أسئلة شائعة حول طوكيو بلس",
       tagline: "سعة علاجية متعددة الأشخاص وقابلة للتوسع للاستخدام المؤسسي.",
       overview_text: "النسخة المؤسسية عالية الضغط ومتعددة الأشخاص من Tokyo. صُمِّمت للعيادات والمستشفيات ومراكز العافية بسعة مقاعد متدرجة من 2 إلى 4 أشخاص.",
       specs: [
@@ -3002,6 +3166,7 @@ const TRANSLATIONS = {
     },
     modelQuadCube: {
       breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
+      faq_title: "أسئلة شائعة حول ميلانو",
       tagline: "تجربة فاخرة لأربعة أشخاص في تصميم مكعّب واسع.",
       overview_text: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب. مع تنجيد جلدي مبطّن وإضاءة LED محيطية ووحدة تحكم مستقلة، تقدّم علاجاً مريحاً متعدد الأشخاص للعيادات ومراكز العافية.",
       specs: [
@@ -3015,6 +3180,7 @@ const TRANSLATIONS = {
     },
     modelNexus: {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
+      faq_title: "أسئلة شائعة حول جنيف",
       tagline: "حل بمستوى المستشفيات وسعة كبيرة.",
       overview_text: "غرفة بمستوى المستشفيات وسعة كبيرة للمؤسسات الطبية. يلبي تصميمها المعياري وأنظمة المراقبة المتقدمة احتياجات أكثر مراكز العلاج ازدحاماً.",
       specs: [
@@ -3066,6 +3232,50 @@ const TRANSLATIONS = {
       desktopNote: "وضع الواقع المعزز متاح فقط على الأجهزة المحمولة. افتح هذه الصفحة على هاتفك أو امسح رمز QR من أداة التكوين.",
       launchButton: "📱 عاين في مساحتك"
     },
+    modelsFaq: {
+      "solo-lounge": [
+        { q: "كم شخصًا تتسع له غرفة أوسلو (Oslo) وبأي وضعية تُستخدم؟", a: "أوسلو غرفة لشخص واحد تُستخدم بوضعية الاستلقاء الكامل. يقلل مرتبتها الطبية التقويمية (200×80 سم) من الضغط على الظهر وأسفل الظهر خلال الجلسات الطويلة." },
+        { q: "هل يمكنني اختيار لون المقعد أو الجدار الداخلي في أوسلو؟", a: "لا — لا يوجد مقعد في أوسلو وصورة الداخل ثابتة، لذلك تمت إزالة هذه الخطوة عمدًا من أداة التكوين. يمكنك مع ذلك اختيار لون الهيكل الخارجي من مجموعتنا القياسية، أو طلب لون غير مدرج في القائمة." },
+        { q: "ما نطاق الضغط الذي تعمل به أوسلو؟", a: "تعمل ضمن نطاق 1.5–2.0 ATA، وهو نظام منخفض الضغط مناسب للاستخدام المنزلي." },
+        { q: "هل مستوى الضجيج في أوسلو مزعج للاستخدام المنزلي؟", a: "تعمل بأقل من 55 ديسيبل — قريب من الضجيج المحيط في غرفة هادئة." },
+        { q: "كيف أحصل على عرض سعر لأوسلو؟", a: "اختر أوسلو في أداة التكوين وحدد اللون لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
+      ],
+      "solo": [
+        { q: "كم شخصًا تتسع له غرفة دبي (Dubai) وبأي وضعية تُستخدم؟", a: "دبي غرفة مدمجة لشخص واحد تُستخدم بوضعية الجلوس، مزودة بتحكم بشاشة لمس، مناسبة للاستخدام المنزلي أو السريري." },
+        { q: "كيف يعمل اختيار اللون في دبي؟", a: "يمكنك اختيار لون الهيكل الخارجي من مجموعتنا القياسية. نظرًا لعدم وجود صور داخلية/مقعد خاصة بدبي، تبقى صورة الداخل ثابتة — ويمكنك مع ذلك طلب لون مخصص خارج القائمة المعروضة." },
+        { q: "ما نطاق الضغط الذي تعمل به دبي؟", a: "تعمل ضمن نطاق 1.5–2.0 ATA، وهي مصممة للاستخدام المنزلي." },
+        { q: "ما الأبعاد الخارجية لدبي، وهل تناسب مساحتي؟", a: "أبعادها الخارجية 120×110×180 سم — مساحة أرضية مدمجة تتناسب بسهولة مع زاوية غرفة عادية." },
+        { q: "كيف أحصل على عرض سعر لدبي؟", a: "اختر دبي في أداة التكوين وحدد اللون لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
+      ],
+      "duo": [
+        { q: "كم شخصًا تتسع له طوكيو (Tokyo)؟", a: "طوكيو غرفة بمقعدين تُستخدم بوضعية الجلوس — مناسبة للأزواج أو الشركاء أو مريض برفقة مرافق." },
+        { q: "هل يمكنني اختيار لون الداخل والمقعد بشكل منفصل في طوكيو؟", a: "نعم. لدينا مجموعات ألوان قياسية منفصلة للهيكل الخارجي والجدران الداخلية وتنجيد المقعد، ويمكن اختيار كل منها بشكل مستقل." },
+        { q: "ما نطاق الضغط ونقاء الأكسجين اللذان تعمل بهما طوكيو؟", a: "تعمل ضمن نطاق ضغط 1.5–2.0 ATA، بنقاء أكسجين 93–95%." },
+        { q: "كيف تُضمن السلامة في طوكيو؟", a: "يأتي نظام صمام الطوارئ ولوحة تحكم مزدوجة كمعيار قياسي، بحيث يمكن لكل مستخدم مراقبة الجلسة بشكل مستقل." },
+        { q: "كيف أحصل على عرض سعر لطوكيو؟", a: "اختر طوكيو في أداة التكوين وحدد ألوانك لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
+      ],
+      "duo-plus": [
+        { q: "ما الفرق بين طوكيو بلس (Tokyo Plus) وطوكيو؟", a: "طوكيو بلس هي النسخة المؤسسية الأعلى ضغطًا من طوكيو، بسعة مقاعد متدرجة من 2 إلى 4 أشخاص." },
+        { q: "لأي بيئات استخدام تناسب طوكيو بلس؟", a: "صُممت للبيئات المؤسسية مثل العيادات والمستشفيات ومراكز العافية." },
+        { q: "ما نطاق الضغط الذي تعمل به طوكيو بلس؟", a: "تعمل ضمن نطاق 2.5–6.0 ATA، مناسب للاستخدام المؤسسي عالي الضغط." },
+        { q: "كيف يُحدَّد عدد المقاعد في طوكيو بلس؟", a: "استخدم خطوة عدد المقاعد في أداة التكوين لضبط العدد بين 2 و4 مقاعد؛ يتحدث السعر تبعًا لذلك." },
+        { q: "كيف أحصل على عرض سعر لطوكيو بلس؟", a: "اختر طوكيو بلس في أداة التكوين وحدد عدد المقاعد والألوان لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
+      ],
+      "quad-cube": [
+        { q: "كم شخصًا تتسع له ميلانو (Milan) وما تصميمها؟", a: "ميلانو غرفة فاخرة لأربعة أشخاص بوضعية الجلوس، بتصميم مكعب وحجم داخلي واسع." },
+        { q: "بأي مواد يُكسى داخل ميلانو؟", a: "تأتي بتنجيد جلدي مبطن وإضاءة LED محيطية؛ يمكن اختيار ألوان الجدران الداخلية والمقعد بشكل منفصل من مجموعتنا القياسية." },
+        { q: "ما نطاق الضغط الذي تعمل به ميلانو؟", a: "تعمل ضمن نطاق 2.5–6.0 ATA، مناسب للاستخدام المؤسسي." },
+        { q: "كيف يعمل نظام التحكم في ميلانو؟", a: "تأتي بوحدة تحكم مستقلة، مناسبة لتحكم المشغّل في العيادات ومراكز العافية." },
+        { q: "كيف أحصل على عرض سعر لميلانو؟", a: "اختر ميلانو في أداة التكوين وحدد ألوان الداخل والخارج لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
+      ],
+      "nexus": [
+        { q: "كم شخصًا تتسع له جنيف (Geneva)؟", a: "جنيف غرفة كبيرة السعة بمعايير المستشفيات، تبدأ من 6 أشخاص وتتدرج بسعة 6/8/10/12." },
+        { q: "لأي منشآت تناسب جنيف؟", a: "صُممت للمستشفيات والمراكز الصحية الكبيرة ذات الحجم العلاجي المرتفع؛ وبنيتها المعيارية جاهزة للتوسع المستقبلي." },
+        { q: "ما نطاق الضغط الذي تعمل به جنيف؟", a: "تعمل ضمن نطاق 2.5–6.0 ATA، بنقاء أكسجين 93–95%." },
+        { q: "ما تجهيزات السلامة في جنيف؟", a: "يأتي نظام صمام الطوارئ كمعيار قياسي؛ وبنيتها بمعايير المستشفيات مصممة هندسيًا للاستخدام المستمر والمكثف." },
+        { q: "كيف أحصل على عرض سعر لجنيف؟", a: "تواصل معنا وحدد احتياجك من السعة (6/8/10/12 شخصًا)، وسنُعد لك مخططًا فنيًا وعرض سعر مخصصًا لمنشأتك." }
+      ]
+    },
     configurator: {
       header: { eyebrow: "أداة التكوين", title: "صمّم غرفة HBOT City Tech الخاصة بك", subtitle: "اختر الموديل ومستوى الضغط والإضافات — واحصل على تقدير فوري للسعر." },
       ar: {
@@ -3115,6 +3325,8 @@ const TRANSLATIONS = {
       style_step_note: "اختر تصميم الكابينة؛ يختلف السعر حسب مساحة الزجاج ومستوى التشطيب الداخلي.",
       color_step_title: "4. اختر اللون",
       color_step_note: "اختيار مجاني من لوحة الألوان القياسية لدينا.",
+      ext_color_chart_link: "تنزيل بطاقة الألوان الخارجية الكاملة (PDF)",
+      int_color_chart_link: "تنزيل بطاقة ألوان التنجيد الداخلي الكاملة (PDF)",
       interior_step_title: "5. لون الداخل",
       interior_step_note: "ألوان الداخل القياسية مشمولة في السعر.",
       seat_color_step_title: "6. لون المقاعد",
@@ -3623,7 +3835,8 @@ const TRANSLATIONS = {
       overview_title: "Descripción General",
       specs_title: "Especificaciones Técnicas",
       included_title: "Ecosistema Tecnológico HBOT City Tech",
-      other_models: "Nuestros Otros Modelos"
+      other_models: "Nuestros Otros Modelos",
+      faq_eyebrow: "Lo que debes saber"
     },
     home: {
       hero: {
@@ -3837,6 +4050,7 @@ const TRANSLATIONS = {
     ],
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
+      faq_title: "Preguntas frecuentes sobre el Oslo",
       tagline: "Excelencia en Posición Tumbada. Recuéstate, relájate, sana.",
       overview_text: "Desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada. Su camilla ortopédica médica y su carrocería de aluminio de grado aeronáutico ofrecen el máximo confort durante sesiones prolongadas.",
       specs: [
@@ -3851,6 +4065,7 @@ const TRANSLATIONS = {
     },
     modelSolo: {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
+      faq_title: "Preguntas frecuentes sobre el Dubai",
       tagline: "La Cumbre de Tu Salud Personal. Solo tú y el oxígeno.",
       overview_text: "Una cámara compacta, elegante y totalmente equipada, diseñada para la oxigenoterapia hiperbárica individual. Con control por pantalla táctil, es ideal para uso doméstico o clínico.",
       specs: [
@@ -3865,6 +4080,7 @@ const TRANSLATIONS = {
     },
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
+      faq_title: "Preguntas frecuentes sobre el Tokyo",
       tagline: "Sana en Compañía. Una experiencia de tratamiento compartida para dos personas.",
       overview_text: "Una cámara hiperbárica de doble asiento que ofrece sesiones de terapia compartidas. Diseñada para parejas, acompañantes o uso paciente-acompañante.",
       institutionalNote: "¿Busca una configuración institucional para 2–4 personas? <a href=\"model-apex-duo-plus.html\">Vea Tokyo Plus →</a>",
@@ -3879,6 +4095,7 @@ const TRANSLATIONS = {
     },
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      faq_title: "Preguntas frecuentes sobre el Tokyo Plus",
       tagline: "Capacidad terapéutica multipersona y ampliable para uso institucional.",
       overview_text: "La versión institucional de alta presión y multipersona de Tokyo. Diseñada para clínicas, hospitales y centros de bienestar, con capacidad de asientos escalonada de 2 a 4 personas.",
       specs: [
@@ -3892,6 +4109,7 @@ const TRANSLATIONS = {
     },
     modelQuadCube: {
       breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
+      faq_title: "Preguntas frecuentes sobre el Milan",
       tagline: "Una experiencia premium para cuatro personas en un diseño cúbico espacioso.",
       overview_text: "Una cabina premium para cuatro personas con un interior espacioso de forma cúbica. Con tapicería de cuero acolchado, iluminación ambiental LED y una unidad de control independiente, ofrece una terapia multiusuario cómoda para clínicas y centros de bienestar.",
       specs: [
@@ -3905,6 +4123,7 @@ const TRANSLATIONS = {
     },
     modelNexus: {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
+      faq_title: "Preguntas frecuentes sobre el Geneva",
       tagline: "Una solución de nivel hospitalario y gran capacidad.",
       overview_text: "Una cámara de nivel hospitalario y gran capacidad para instituciones médicas. Su diseño modular y sus sistemas de monitorización avanzados cubren las necesidades de los centros de tratamiento con mayor actividad.",
       specs: [
@@ -3956,6 +4175,50 @@ const TRANSLATIONS = {
       desktopNote: "El modo AR solo está disponible en dispositivos móviles. Abra esta página en su teléfono o escanee el código QR del configurador.",
       launchButton: "📱 Ver en su Espacio"
     },
+    modelsFaq: {
+      "solo-lounge": [
+        { q: "¿Para cuántas personas es el Oslo y en qué posición se usa?", a: "El Oslo es una cámara individual que se usa completamente tumbado. Su colchón médico ortopédico de 200×80 cm reduce la presión en la espalda y la zona lumbar durante sesiones largas." },
+        { q: "¿Puedo elegir el color del asiento o de la pared interior en el Oslo?", a: "No — el Oslo no tiene asiento y su vista interior es fija, por lo que este paso se ha eliminado deliberadamente del configurador. Aun así puedes elegir el color exterior de nuestra paleta estándar, o solicitar un tono que no esté en la lista." },
+        { q: "¿En qué rango de presión funciona el Oslo?", a: "Entre 1.5 y 2.0 ATA — un sistema de baja presión adecuado para uso doméstico." },
+        { q: "¿El nivel de ruido del Oslo molesta en casa?", a: "Funciona por debajo de 55 dB, cercano al ruido ambiente de una habitación tranquila." },
+        { q: "¿Cómo obtengo un presupuesto para el Oslo?", a: "Selecciona el Oslo en el configurador y elige un color para ver una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
+      ],
+      "solo": [
+        { q: "¿Para cuántas personas es el Dubai y en qué posición se usa?", a: "El Dubai es una cámara individual compacta que se usa sentado, con control por pantalla táctil, adecuada para uso doméstico o clínico." },
+        { q: "¿Cómo funciona la elección de color en el Dubai?", a: "Puedes elegir el color exterior de nuestra paleta estándar. Como el Dubai no tiene fotografía interior/de asiento propia, la vista interior permanece fija; aun así puedes solicitar un tono personalizado fuera de los mostrados." },
+        { q: "¿En qué rango de presión funciona el Dubai?", a: "Entre 1.5 y 2.0 ATA, diseñado para uso doméstico." },
+        { q: "¿Cuáles son las dimensiones exteriores del Dubai? ¿Cabrá en mi espacio?", a: "120×110×180 cm — una huella compacta que se ajusta cómodamente a la esquina de una habitación estándar." },
+        { q: "¿Cómo obtengo un presupuesto para el Dubai?", a: "Selecciona el Dubai en el configurador y elige un color para ver una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
+      ],
+      "duo": [
+        { q: "¿Para cuántas personas es el Tokyo?", a: "El Tokyo es una cámara de dos plazas, sentado, adecuada para parejas o para un paciente con acompañante." },
+        { q: "¿Puedo elegir el color del interior y del asiento por separado en el Tokyo?", a: "Sí. Tenemos paletas estándar independientes para la carcasa exterior, las paredes interiores y la tapicería del asiento; cada una se puede elegir de forma independiente." },
+        { q: "¿En qué rango de presión y pureza de oxígeno funciona el Tokyo?", a: "Entre 1.5 y 2.0 ATA, con una pureza de oxígeno del 93–95%." },
+        { q: "¿Cómo se garantiza la seguridad en el Tokyo?", a: "Incluye de serie un sistema de válvula de emergencia y un panel de control doble, para que ambos usuarios puedan supervisar la sesión de forma independiente." },
+        { q: "¿Cómo obtengo un presupuesto para el Tokyo?", a: "Selecciona el Tokyo en el configurador, elige tus colores y ve una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
+      ],
+      "duo-plus": [
+        { q: "¿En qué se diferencia el Tokyo Plus del Tokyo?", a: "El Tokyo Plus es la versión institucional de mayor presión del Tokyo, con capacidad de asientos escalonada de 2 a 4 personas." },
+        { q: "¿Para qué entornos es adecuado el Tokyo Plus?", a: "Está diseñado para entornos institucionales como clínicas, hospitales y centros de bienestar." },
+        { q: "¿En qué rango de presión funciona el Tokyo Plus?", a: "Entre 2.5 y 6.0 ATA, adecuado para uso institucional de mayor presión." },
+        { q: "¿Cómo se determina el número de asientos del Tokyo Plus?", a: "Usa el paso de número de asientos en el configurador para ajustar entre 2 y 4 plazas; el precio se actualiza en consecuencia." },
+        { q: "¿Cómo obtengo un presupuesto para el Tokyo Plus?", a: "Selecciona el Tokyo Plus en el configurador, define el número de asientos y los colores, y ve una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
+      ],
+      "quad-cube": [
+        { q: "¿Para cuántas personas es el Milan y cómo es su diseño?", a: "El Milan es una cámara premium para cuatro personas, sentado, con un amplio interior en forma de cubo." },
+        { q: "¿Con qué materiales se acaba el interior del Milan?", a: "Incluye interior de cuero acolchado e iluminación LED ambiental; puedes elegir los colores de las paredes interiores y del asiento por separado de nuestra paleta estándar." },
+        { q: "¿En qué rango de presión funciona el Milan?", a: "Entre 2.5 y 6.0 ATA, adecuado para uso institucional." },
+        { q: "¿Cómo funciona el sistema de control del Milan?", a: "Incluye una unidad de control independiente, adecuada para el control por parte de un operador en clínicas y centros de bienestar." },
+        { q: "¿Cómo obtengo un presupuesto para el Milan?", a: "Selecciona el Milan en el configurador, elige los colores interiores y exteriores, y ve una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
+      ],
+      "nexus": [
+        { q: "¿Para cuántas personas es el Geneva?", a: "El Geneva es una cámara de gran capacidad de grado hospitalario que empieza en 6 personas y escala en niveles de 6/8/10/12." },
+        { q: "¿Para qué instalaciones es adecuado el Geneva?", a: "Está diseñado para hospitales y grandes centros de salud con alto volumen terapéutico; su estructura modular está lista para futuras ampliaciones." },
+        { q: "¿En qué rango de presión funciona el Geneva?", a: "Entre 2.5 y 6.0 ATA, con una pureza de oxígeno del 93–95%." },
+        { q: "¿Qué equipamiento de seguridad tiene el Geneva?", a: "Incluye de serie un sistema de válvula de emergencia; su construcción de grado hospitalario está diseñada para un uso continuo y de alto volumen." },
+        { q: "¿Cómo obtengo un presupuesto para el Geneva?", a: "Contáctanos indicando la capacidad que necesitas (6/8/10/12 personas) y prepararemos un plano técnico y un presupuesto a medida para tu institución." }
+      ]
+    },
     configurator: {
       header: { eyebrow: "CONFIGURADOR", title: "Diseña Tu Propia Cámara HBOT City Tech", subtitle: "Elige el modelo, el nivel de presión y los complementos — obtén una estimación de precio instantánea." },
       ar: {
@@ -4005,6 +4268,8 @@ const TRANSLATIONS = {
       style_step_note: "Elige el diseño de tu cámara; el precio varía según la superficie de cristal y el nivel de acabado interior.",
       color_step_title: "4. Elige un Color",
       color_step_note: "Selección libre entre nuestra paleta de colores estándar.",
+      ext_color_chart_link: "Descargar la carta completa de colores exteriores (PDF)",
+      int_color_chart_link: "Descargar la carta completa de colores de tapicería interior (PDF)",
       interior_step_title: "5. Color Interior",
       interior_step_note: "Los colores interiores estándar están incluidos en el precio.",
       seat_color_step_title: "6. Color del Asiento",
@@ -4513,7 +4778,8 @@ const TRANSLATIONS = {
       overview_title: "Visão Geral",
       specs_title: "Especificações Técnicas",
       included_title: "Ecossistema Tecnológico HBOT City Tech",
-      other_models: "Nossos Outros Modelos"
+      other_models: "Nossos Outros Modelos",
+      faq_eyebrow: "O que você precisa saber"
     },
     home: {
       hero: {
@@ -4727,6 +4993,7 @@ const TRANSLATIONS = {
     ],
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
+      faq_title: "Perguntas frequentes sobre o Oslo",
       tagline: "Excelência na Posição Deitada. Deite-se, relaxe, cure-se.",
       overview_text: "Desenvolvida especificamente para usuários que precisam de tratamento na posição deitada. Sua maca ortopédica médica e estrutura em alumínio de nível aeronáutico proporcionam o máximo conforto durante sessões longas.",
       specs: [
@@ -4741,6 +5008,7 @@ const TRANSLATIONS = {
     },
     modelSolo: {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
+      faq_title: "Perguntas frequentes sobre o Dubai",
       tagline: "O Ápice da Sua Saúde Pessoal. Só você e o oxigênio.",
       overview_text: "Uma câmara compacta, elegante e totalmente equipada, projetada para oxigenoterapia hiperbárica individual. Com controle por tela touchscreen, é ideal para uso doméstico ou clínico.",
       specs: [
@@ -4755,6 +5023,7 @@ const TRANSLATIONS = {
     },
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
+      faq_title: "Perguntas frequentes sobre o Tokyo",
       tagline: "Cure-se em Dupla. Uma experiência de tratamento compartilhada para duas pessoas.",
       overview_text: "Uma câmara hiperbárica com dois assentos que oferece sessões de terapia compartilhadas. Projetada para casais, parceiros ou uso paciente-acompanhante.",
       institutionalNote: "Procura uma configuração institucional para 2–4 pessoas? <a href=\"model-apex-duo-plus.html\">Veja o Tokyo Plus →</a>",
@@ -4769,6 +5038,7 @@ const TRANSLATIONS = {
     },
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      faq_title: "Perguntas frequentes sobre o Tokyo Plus",
       tagline: "Capacidade terapêutica multipessoa e expansível para uso institucional.",
       overview_text: "A versão institucional de alta pressão e multipessoa do Tokyo. Projetada para clínicas, hospitais e centros de bem-estar, com capacidade de assentos escalonada de 2 a 4 pessoas.",
       specs: [
@@ -4782,6 +5052,7 @@ const TRANSLATIONS = {
     },
     modelQuadCube: {
       breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
+      faq_title: "Perguntas frequentes sobre o Milan",
       tagline: "Uma experiência premium para quatro pessoas em design cubo espaçoso.",
       overview_text: "Uma cabine premium para quatro pessoas com interior espaçoso em formato cubo. Com estofamento em couro acolchoado, iluminação ambiente em LED e unidade de controle independente, proporciona terapia multipessoal confortável para clínicas e centros de bem-estar.",
       specs: [
@@ -4795,6 +5066,7 @@ const TRANSLATIONS = {
     },
     modelNexus: {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
+      faq_title: "Perguntas frequentes sobre o Geneva",
       tagline: "Uma solução de nível hospitalar e grande capacidade.",
       overview_text: "Uma câmara de nível hospitalar e grande capacidade para instituições médicas. Seu design modular e sistemas avançados de monitoramento atendem às necessidades dos centros de tratamento mais movimentados.",
       specs: [
@@ -4846,6 +5118,50 @@ const TRANSLATIONS = {
       desktopNote: "O modo AR está disponível apenas em dispositivos móveis. Abra esta página no seu telefone ou escaneie o código QR no configurador.",
       launchButton: "📱 Ver no seu Espaço"
     },
+    modelsFaq: {
+      "solo-lounge": [
+        { q: "Para quantas pessoas é o Oslo e em que posição é usado?", a: "O Oslo é uma câmara individual usada totalmente deitado. Seu colchão médico ortopédico de 200×80 cm reduz a pressão nas costas e na região lombar durante sessões longas." },
+        { q: "Posso escolher a cor do assento ou da parede interna no Oslo?", a: "Não — o Oslo não tem assento e sua vista interna é fixa, por isso essa etapa foi deliberadamente removida do configurador. Você ainda pode escolher a cor externa em nossa paleta padrão, ou solicitar uma cor fora da lista." },
+        { q: "Em qual faixa de pressão o Oslo opera?", a: "Entre 1,5 e 2,0 ATA — um sistema de baixa pressão adequado para uso doméstico." },
+        { q: "O nível de ruído do Oslo incomoda em casa?", a: "Opera abaixo de 55 dB, próximo ao ruído ambiente de um quarto silencioso." },
+        { q: "Como faço para obter um orçamento para o Oslo?", a: "Selecione o Oslo no configurador e escolha uma cor para ver uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
+      ],
+      "solo": [
+        { q: "Para quantas pessoas é o Dubai e em que posição é usado?", a: "O Dubai é uma câmara individual compacta usada sentado, com controle por tela touch, adequada para uso doméstico ou clínico." },
+        { q: "Como funciona a escolha de cor no Dubai?", a: "Você pode escolher a cor externa em nossa paleta padrão. Como o Dubai não tem fotografia própria de interior/assento, a vista interna permanece fixa; ainda assim você pode solicitar uma cor personalizada fora das mostradas." },
+        { q: "Em qual faixa de pressão o Dubai opera?", a: "Entre 1,5 e 2,0 ATA, projetado para uso doméstico." },
+        { q: "Quais são as dimensões externas do Dubai — cabe no meu espaço?", a: "120×110×180 cm — uma área compacta que se encaixa confortavelmente no canto de um quarto padrão." },
+        { q: "Como faço para obter um orçamento para o Dubai?", a: "Selecione o Dubai no configurador e escolha uma cor para ver uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
+      ],
+      "duo": [
+        { q: "Para quantas pessoas é o Tokyo?", a: "O Tokyo é uma câmara de dois lugares, sentado, adequada para casais, parceiros ou um paciente com acompanhante." },
+        { q: "Posso escolher a cor do interior e do assento separadamente no Tokyo?", a: "Sim. Temos paletas padrão separadas para a carcaça externa, as paredes internas e o estofamento do assento; cada uma pode ser escolhida de forma independente." },
+        { q: "Em qual faixa de pressão e pureza de oxigênio o Tokyo opera?", a: "Entre 1,5 e 2,0 ATA, com pureza de oxigênio de 93–95%." },
+        { q: "Como a segurança é garantida no Tokyo?", a: "Um sistema de válvula de emergência e um painel de controle duplo vêm de série, permitindo que ambos os usuários monitorem a sessão de forma independente." },
+        { q: "Como faço para obter um orçamento para o Tokyo?", a: "Selecione o Tokyo no configurador, escolha suas cores e veja uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
+      ],
+      "duo-plus": [
+        { q: "Qual a diferença entre o Tokyo Plus e o Tokyo?", a: "O Tokyo Plus é a versão institucional de maior pressão do Tokyo, com capacidade de assentos escalonada de 2 a 4 pessoas." },
+        { q: "Para quais ambientes o Tokyo Plus é adequado?", a: "Foi projetado para ambientes institucionais como clínicas, hospitais e centros de bem-estar." },
+        { q: "Em qual faixa de pressão o Tokyo Plus opera?", a: "Entre 2,5 e 6,0 ATA, adequado para uso institucional de maior pressão." },
+        { q: "Como é determinado o número de assentos do Tokyo Plus?", a: "Use a etapa de número de assentos no configurador para ajustar entre 2 e 4 lugares; o preço é atualizado de acordo." },
+        { q: "Como faço para obter um orçamento para o Tokyo Plus?", a: "Selecione o Tokyo Plus no configurador, defina o número de assentos e as cores, e veja uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
+      ],
+      "quad-cube": [
+        { q: "Para quantas pessoas é o Milan e como é seu design?", a: "O Milan é uma câmara premium para quatro pessoas, sentado, com um amplo interior em formato de cubo." },
+        { q: "Com quais materiais o interior do Milan é acabado?", a: "Vem com interior em couro acolchoado e iluminação LED ambiente; você pode escolher as cores das paredes internas e do assento separadamente em nossa paleta padrão." },
+        { q: "Em qual faixa de pressão o Milan opera?", a: "Entre 2,5 e 6,0 ATA, adequado para uso institucional." },
+        { q: "Como funciona o sistema de controle do Milan?", a: "Vem com uma unidade de controle independente, adequada para controle por operador em clínicas e centros de bem-estar." },
+        { q: "Como faço para obter um orçamento para o Milan?", a: "Selecione o Milan no configurador, escolha as cores internas e externas, e veja uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
+      ],
+      "nexus": [
+        { q: "Para quantas pessoas é o Geneva?", a: "O Geneva é uma câmara de grande capacidade e grau hospitalar, que começa em 6 pessoas e escala em níveis de 6/8/10/12." },
+        { q: "Para quais instalações o Geneva é adequado?", a: "Foi projetado para hospitais e grandes centros de saúde com alto volume terapêutico; sua estrutura modular está pronta para expansão futura." },
+        { q: "Em qual faixa de pressão o Geneva opera?", a: "Entre 2,5 e 6,0 ATA, com pureza de oxigênio de 93–95%." },
+        { q: "Que equipamento de segurança o Geneva possui?", a: "Um sistema de válvula de emergência vem de série; sua construção de grau hospitalar é projetada para uso contínuo e de alto volume." },
+        { q: "Como faço para obter um orçamento para o Geneva?", a: "Entre em contato informando a capacidade necessária (6/8/10/12 pessoas) e prepararemos um desenho técnico e um orçamento sob medida para sua instituição." }
+      ]
+    },
     configurator: {
       header: { eyebrow: "CONFIGURADOR", title: "Monte Sua Própria Câmara HBOT City Tech", subtitle: "Escolha o modelo, o nível de pressão e os opcionais — obtenha uma estimativa de preço instantânea." },
       ar: {
@@ -4895,6 +5211,8 @@ const TRANSLATIONS = {
       style_step_note: "Escolha o design da sua câmara; o preço varia conforme a área de superfície de vidro e o nível de acabamento interno.",
       color_step_title: "4. Escolha uma Cor",
       color_step_note: "Seleção livre em nossa paleta de cores padrão.",
+      ext_color_chart_link: "Baixar a carta completa de cores externas (PDF)",
+      int_color_chart_link: "Baixar a carta completa de cores do estofamento interno (PDF)",
       interior_step_title: "5. Cor Interna",
       interior_step_note: "As cores internas padrão estão incluídas no preço.",
       seat_color_step_title: "6. Cor do Assento",
@@ -5403,7 +5721,8 @@ const TRANSLATIONS = {
       overview_title: "Überblick",
       specs_title: "Technische Daten",
       included_title: "HBOT City Tech-Technologie-Ökosystem",
-      other_models: "Unsere weiteren Modelle"
+      other_models: "Unsere weiteren Modelle",
+      faq_eyebrow: "Wissenswertes"
     },
     home: {
       hero: {
@@ -5617,6 +5936,7 @@ const TRANSLATIONS = {
     ],
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
+      faq_title: "Häufige Fragen zum Oslo",
       tagline: "Exzellenz in liegender Position. Zurücklehnen, entspannen, heilen.",
       overview_text: "Speziell entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen. Das medizinisch-orthopädische Bett und der Korpus aus Flugzeugaluminium sorgen für maximalen Komfort bei langen Sitzungen.",
       specs: [
@@ -5631,6 +5951,7 @@ const TRANSLATIONS = {
     },
     modelSolo: {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
+      faq_title: "Häufige Fragen zum Dubai",
       tagline: "Der Gipfel Ihrer persönlichen Gesundheit. Nur Sie und Sauerstoff.",
       overview_text: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstofftherapie. Mit Touchscreen-Steuerung ideal für den Einsatz zu Hause oder in der Klinik.",
       specs: [
@@ -5645,6 +5966,7 @@ const TRANSLATIONS = {
     },
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
+      faq_title: "Häufige Fragen zum Tokyo",
       tagline: "Gemeinsam heilen. Eine gemeinsame Behandlungserfahrung für zwei Personen.",
       overview_text: "Eine Zweiplatz-Kammer für gemeinsame Therapiesitzungen. Konzipiert für Paare, Partner oder die Nutzung mit Begleitperson.",
       institutionalNote: "Suchen Sie eine institutionelle Lösung für 2–4 Personen? <a href=\"model-apex-duo-plus.html\">Tokyo Plus ansehen →</a>",
@@ -5659,6 +5981,7 @@ const TRANSLATIONS = {
     },
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
+      faq_title: "Häufige Fragen zum Tokyo Plus",
       tagline: "Erweiterbare Mehrpersonen-Therapiekapazität für den institutionellen Einsatz.",
       overview_text: "Die druckstarke Mehrpersonen-Institutionsversion von Tokyo. Entwickelt für Kliniken, Krankenhäuser und Wellnesszentren mit gestaffelter Sitzkapazität von 2 bis 4 Personen.",
       specs: [
@@ -5672,6 +5995,7 @@ const TRANSLATIONS = {
     },
     modelQuadCube: {
       breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
+      faq_title: "Häufige Fragen zum Milan",
       tagline: "Ein Premium-Erlebnis für vier Personen in geräumigem Cube-Design.",
       overview_text: "Eine Premium-Kabine für vier Personen mit geräumigem, würfelförmigem Innenraum. Mit gesteppter Lederpolsterung, LED-Ambientebeleuchtung und unabhängiger Steuereinheit bietet sie komfortable Mehrpersonentherapie für Kliniken und Wellnesszentren.",
       specs: [
@@ -5685,6 +6009,7 @@ const TRANSLATIONS = {
     },
     modelNexus: {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
+      faq_title: "Häufige Fragen zum Geneva",
       tagline: "Eine großvolumige Lösung in Krankenhausqualität.",
       overview_text: "Eine großvolumige Kammer in Krankenhausqualität für medizinische Einrichtungen. Ihr modulares Design und fortschrittliche Überwachungssysteme erfüllen die Anforderungen der am stärksten frequentierten Behandlungszentren.",
       specs: [
@@ -5736,6 +6061,50 @@ const TRANSLATIONS = {
       desktopNote: "Der AR-Modus ist nur auf Mobilgeräten verfügbar. Öffnen Sie diese Seite auf Ihrem Handy oder scannen Sie den QR-Code im Konfigurator.",
       launchButton: "📱 In Ihrem Raum ansehen"
     },
+    modelsFaq: {
+      "solo-lounge": [
+        { q: "Für wie viele Personen ist der Oslo ausgelegt und in welcher Position wird er genutzt?", a: "Der Oslo ist eine Einzelkammer, die vollständig liegend genutzt wird. Die medizinische orthopädische Matratze (200×80 cm) reduziert den Druck auf Rücken und Lendenwirbelsäule bei langen Sitzungen." },
+        { q: "Kann ich beim Oslo die Sitz- oder Innenwandfarbe wählen?", a: "Nein — der Oslo hat keinen Sitz, und die Innenansicht ist fest; dieser Schritt wurde daher bewusst aus dem Konfigurator entfernt. Die Außenfarbe können Sie dennoch aus unserer Standardpalette wählen oder einen Farbton außerhalb der Liste anfragen." },
+        { q: "In welchem Druckbereich arbeitet der Oslo?", a: "Zwischen 1,5 und 2,0 ATA — ein Niederdrucksystem für den Heimgebrauch." },
+        { q: "Ist der Oslo zu Hause störend laut?", a: "Er arbeitet unter 55 dB, nahe der Umgebungslautstärke eines ruhigen Zimmers." },
+        { q: "Wie erhalte ich ein Angebot für den Oslo?", a: "Wählen Sie den Oslo im Konfigurator und eine Farbe, um sofort eine Preisschätzung zu sehen; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
+      ],
+      "solo": [
+        { q: "Für wie viele Personen ist der Dubai ausgelegt und in welcher Position wird er genutzt?", a: "Der Dubai ist eine kompakte Einzelkammer, die sitzend genutzt wird, mit Touchscreen-Steuerung — geeignet für Zuhause oder Klinik." },
+        { q: "Wie funktioniert die Farbwahl beim Dubai?", a: "Die Außenfarbe können Sie aus unserer Standardpalette wählen. Da für den Dubai keine eigenen Innen-/Sitzfotos existieren, bleibt die Innenansicht fest — einen individuellen Farbton außerhalb der gezeigten Auswahl können Sie dennoch anfragen." },
+        { q: "In welchem Druckbereich arbeitet der Dubai?", a: "Zwischen 1,5 und 2,0 ATA, ausgelegt für den Heimgebrauch." },
+        { q: "Wie groß sind die Außenmaße des Dubai — passt er in meinen Raum?", a: "120×110×180 cm — eine kompakte Stellfläche, die bequem in eine Standard-Zimmerecke passt." },
+        { q: "Wie erhalte ich ein Angebot für den Dubai?", a: "Wählen Sie den Dubai im Konfigurator und eine Farbe, um sofort eine Preisschätzung zu sehen; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
+      ],
+      "duo": [
+        { q: "Für wie viele Personen ist der Tokyo ausgelegt?", a: "Der Tokyo ist eine Zweiplatzkammer, sitzend genutzt — geeignet für Paare, Partner oder einen Patienten mit Begleitperson." },
+        { q: "Kann ich beim Tokyo Innen- und Sitzfarbe getrennt wählen?", a: "Ja. Wir bieten separate Standardpaletten für die Außenhülle, die Innenwände und die Sitzpolsterung, jede unabhängig wählbar." },
+        { q: "In welchem Druckbereich und mit welcher Sauerstoffreinheit arbeitet der Tokyo?", a: "Druckbereich 1,5–2,0 ATA, bei 93–95 % Sauerstoffreinheit." },
+        { q: "Wie ist die Sicherheit beim Tokyo gewährleistet?", a: "Ein Notfall-Ventilsystem und ein doppeltes Bedienfeld gehören zur Standardausstattung, sodass beide Nutzer die Sitzung unabhängig überwachen können." },
+        { q: "Wie erhalte ich ein Angebot für den Tokyo?", a: "Wählen Sie den Tokyo im Konfigurator, legen Sie Ihre Farben fest und sehen Sie sofort eine Preisschätzung; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
+      ],
+      "duo-plus": [
+        { q: "Worin unterscheidet sich der Tokyo Plus vom Tokyo?", a: "Der Tokyo Plus ist die institutionelle Version des Tokyo mit höherem Druck und gestufter Sitzkapazität von 2 bis 4 Personen." },
+        { q: "Für welche Einsatzbereiche eignet sich der Tokyo Plus?", a: "Er ist für institutionelle Umgebungen wie Kliniken, Krankenhäuser und Wellnesszentren konzipiert." },
+        { q: "In welchem Druckbereich arbeitet der Tokyo Plus?", a: "Zwischen 2,5 und 6,0 ATA, geeignet für institutionellen Einsatz mit höherem Druck." },
+        { q: "Wie wird die Sitzanzahl beim Tokyo Plus festgelegt?", a: "Nutzen Sie den Schritt zur Sitzanzahl im Konfigurator, um zwischen 2 und 4 Plätzen einzustellen; der Preis aktualisiert sich entsprechend." },
+        { q: "Wie erhalte ich ein Angebot für den Tokyo Plus?", a: "Wählen Sie den Tokyo Plus im Konfigurator, legen Sie Sitzanzahl und Farben fest und sehen Sie sofort eine Preisschätzung; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
+      ],
+      "quad-cube": [
+        { q: "Für wie viele Personen ist der Milan ausgelegt und wie ist sein Design?", a: "Der Milan ist eine Premium-Kammer für vier Personen, sitzend, mit geräumigem würfelförmigem Innenraum." },
+        { q: "Mit welchen Materialien ist der Innenraum des Milan ausgestattet?", a: "Er verfügt über gestepptes Lederinterieur und LED-Ambientebeleuchtung; Innenwand- und Sitzfarben können Sie separat aus unserer Standardpalette wählen." },
+        { q: "In welchem Druckbereich arbeitet der Milan?", a: "Zwischen 2,5 und 6,0 ATA, geeignet für institutionellen Einsatz." },
+        { q: "Wie funktioniert das Bediensystem des Milan?", a: "Er verfügt über eine unabhängige Bedieneinheit, geeignet für die Bedienung durch Personal in Kliniken und Wellnesszentren." },
+        { q: "Wie erhalte ich ein Angebot für den Milan?", a: "Wählen Sie den Milan im Konfigurator, legen Sie Innen- und Außenfarben fest und sehen Sie sofort eine Preisschätzung; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
+      ],
+      "nexus": [
+        { q: "Für wie viele Personen ist der Geneva ausgelegt?", a: "Der Geneva ist eine großvolumige Kammer im Krankenhausstandard, die bei 6 Personen beginnt und in Stufen von 6/8/10/12 skaliert." },
+        { q: "Für welche Einrichtungen eignet sich der Geneva?", a: "Er ist für Krankenhäuser und große Gesundheitszentren mit hohem Therapievolumen konzipiert; die modulare Struktur ist für künftige Erweiterungen vorbereitet." },
+        { q: "In welchem Druckbereich arbeitet der Geneva?", a: "Zwischen 2,5 und 6,0 ATA, bei 93–95 % Sauerstoffreinheit." },
+        { q: "Welche Sicherheitsausstattung hat der Geneva?", a: "Ein Notfall-Ventilsystem gehört zur Standardausstattung; die Konstruktion im Krankenhausstandard ist für den durchgehenden Intensivbetrieb ausgelegt." },
+        { q: "Wie erhalte ich ein Angebot für den Geneva?", a: "Kontaktieren Sie uns mit Ihrem Kapazitätsbedarf (6/8/10/12 Personen) — wir erstellen eine technische Zeichnung und ein maßgeschneidertes Angebot für Ihre Einrichtung." }
+      ]
+    },
     configurator: {
       header: { eyebrow: "KONFIGURATOR", title: "Gestalten Sie Ihre eigene HBOT City Tech-Kammer", subtitle: "Wählen Sie Modell, Druckstufe und Zusatzausstattung — erhalten Sie sofort eine Preisschätzung." },
       ar: {
@@ -5785,6 +6154,8 @@ const TRANSLATIONS = {
       style_step_note: "Wählen Sie das Design Ihrer Kammer; der Preis variiert je nach Glasfläche und Innenausstattungsniveau.",
       color_step_title: "4. Farbe wählen",
       color_step_note: "Freie Auswahl aus unserer Standardfarbpalette.",
+      ext_color_chart_link: "Vollständige Außenfarbkarte herunterladen (PDF)",
+      int_color_chart_link: "Vollständige Innenpolster-Farbkarte herunterladen (PDF)",
       interior_step_title: "5. Innenfarbe",
       interior_step_note: "Die Standard-Innenfarben sind im Preis enthalten.",
       seat_color_step_title: "6. Sitzfarbe",

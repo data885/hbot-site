@@ -149,6 +149,7 @@ def render_page_containers(html, page, dict_, r, model_key=None):
     if model_key:
         html = fill_container(html, "spec-list", r.specs(dict_, model_key))
         html = fill_container(html, "model-crosslinks", r.model_crosslinks(dict_, model_key))
+        html = fill_container(html, "model-faq-list", r.model_faq(dict_, model_key))
     return html
 
 

@@ -487,6 +487,28 @@
     }).join("");
   }
 
+  /* Model sayfalarındaki modele özel SSS: dict.modelsFaq[modelKey] varsa
+     #model-faq-list konteynerine, sitenin genel FAQ akordeonuyla aynı
+     görsel/etkileşim mantığıyla (soru/cevap açılır-kapanır) render edilir. */
+  function renderModelFaq(dict, modelKey) {
+    const c = document.getElementById("model-faq-list");
+    if (!c || !dict.modelsFaq || !dict.modelsFaq[modelKey]) return;
+    c.innerHTML = dict.modelsFaq[modelKey].map((item, i) => `
+      <div class="faq-item">
+        <button type="button" class="faq-question" data-faq-index="${i}">
+          <span>${item.q}</span>
+          ${ICONS.chevronDown}
+        </button>
+        <div class="faq-answer"><p>${item.a}</p></div>
+      </div>
+    `).join("");
+    c.querySelectorAll(".faq-question").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.closest(".faq-item").classList.toggle("is-open");
+      });
+    });
+  }
+
   /* FAQ: dict.contact.faq.sections varsa gruplu (başlıklı) gösterilir;
      yoksa geriye dönük uyumluluk için düz dict.contact.faq.items listelenir. */
   function renderFaq(dict) {
@@ -2274,6 +2296,7 @@
         renderSpecs(dict, modelKey);
         renderIncludedGrid(dict);
         renderModelCrosslinks(dict, modelKey);
+        renderModelFaq(dict, modelKey);
       }
     } else if (page === "hbot-info") {
       renderIndicationsGrid(dict, "indications-grid");
