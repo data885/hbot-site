@@ -101,14 +101,35 @@ def apply_data_i18n_placeholder(html, dict_):
 
 # ---------------- container fill (JS render functions ported to Python) ----------------
 def fill_container(html, container_id, inner_html):
-    """Replace the contents of <tag id="container_id" ...>...</tag> (empty or not)."""
-    pattern = re.compile(
-        r'(<([a-zA-Z0-9]+)\b[^<>]*\bid="' + re.escape(container_id) + r'"[^<>]*>)(.*?)(</\2>)',
-        re.DOTALL,
-    )
-    if not pattern.search(html):
+    """Replace the contents of <tag id="container_id" ...>...</tag> (empty or not).
+    Depth-aware: a naive non-greedy regex up to the first </tag> is wrong
+    whenever the container's own children reuse the same tag name (e.g. a
+    <div id="faq-list"> full of nested <div class="faq-item">) — it would
+    match the FIRST child's closing tag instead of the container's own,
+    truncating the write and leaving stale content trailing after it on
+    every re-run against already-filled output. Track nesting depth instead."""
+    open_re = re.compile(r'<([a-zA-Z0-9]+)\b[^<>]*\bid="' + re.escape(container_id) + r'"[^<>]*>')
+    m = open_re.search(html)
+    if not m:
         return html
-    return pattern.sub(lambda m: m.group(1) + inner_html + m.group(4), html, count=1)
+    tag = m.group(1)
+    start = m.end()
+    tag_re = re.compile(r'<(/?)' + re.escape(tag) + r'\b[^<>]*?(/?)>')
+    depth = 1
+    end = None
+    for tm in tag_re.finditer(html, start):
+        if tm.group(2) == "/":  # self-closing, e.g. <div ... />
+            continue
+        if tm.group(1) == "/":
+            depth -= 1
+            if depth == 0:
+                end = tm.start()
+                break
+        else:
+            depth += 1
+    if end is None:
+        return html
+    return html[:start] + inner_html + html[end:]
 
 
 def fill_all_models_menu(html, r, dict_):
@@ -171,6 +192,10 @@ def rebuild_head(html, lang, filename, meta_entry, dict_):
     html = re.sub(r'(<meta name="twitter:description" content=")[^"]*(" />)', rf'\g<1>{desc}\g<2>', html, count=1)
 
     # hreflang alternates (7 langs + x-default -> tr)
+    # Strip any hreflang block already present (the root TR template carries
+    # its own correct 8-tag set) before inserting ours, or re-running this
+    # against a template that already has hreflang tags doubles them.
+    html = re.sub(r'<link rel="alternate" hreflang="[^"]*" href="[^"]*" />\n?', '', html)
     hreflang_lines = []
     for hl in ALL_LANGS:
         hreflang_lines.append(f'<link rel="alternate" hreflang="{hl}" href="{resolve_url(hl, filename)}" />')

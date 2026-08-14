@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /tint_preview.html
 
 Sitemap: https://hbotchambertech.com/sitemap.xml

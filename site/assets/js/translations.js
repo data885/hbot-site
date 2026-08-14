@@ -4,12 +4,12 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | HBOT City Tech Serisi Hiperbarik Oksijen Odaları", desc: "IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları. HBOT City Tech Serisi ile zirvede nefes alın." },
       technology: { title: "Teknoloji | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync ve CityGuard — HBOT City Tech Serisi'nin bağlı, akıllı teknoloji platformu." },
-      models: { title: "Modeller | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan ve Geneva — beş farklı hiperbarik oksijen odası modeli." },
+      models: { title: "Modeller | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milano ve Geneva — beş farklı hiperbarik oksijen odası modeli." },
       soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Yatay pozisyonda terapi için tasarlanmış tek kişilik hiperbarik oksijen odası." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Bireysel kullanım için kompakt, tam donanımlı hiperbarik oksijen odası." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "İki kişilik paylaşımlı hiperbarik oksijen terapisi kabini." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Kurumsal kullanım için 2-4 kişilik, yüksek basınçlı hiperbarik oksijen odası." },
-      quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Dört kişilik, geniş iç hacimli küp tasarım hiperbarik oksijen odası." },
+      quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Dört kişilik, geniş iç hacimli küp tasarım hiperbarik oksijen odası." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Hastane sınıfı, altı ve üzeri kişilik büyük kapasiteli hiperbarik oksijen odası." },
       hbotInfo: { title: "HBOT Nedir? | HBOT Chamber Tech", desc: "Hiperbarik oksijen terapisi (HBOT) nedir, ne için kullanılır ve hangi durumlarda uygulanır." },
       configurator: { title: "Konfigüratör | HBOT Chamber Tech", desc: "Kendi HBOT City Tech kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." },
@@ -28,7 +28,7 @@ const TRANSLATIONS = {
         soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
-        quadCube: "Milan",
+        quadCube: "Milano",
         nexus: "Geneva",
         all_link: "Tüm Modeller"
       },
@@ -261,7 +261,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 Kişi · Yatay Pozisyon", desc: "Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiş, tam donanımlı kabin." },
       solo: { title: "Dubai", tagline: "1 Kişi · Oturma Pozisyonu", desc: "Bireysel hiperbarik oksijen terapisi için tasarlanmış kompakt, şık ve tam donanımlı kabin." },
       duo: { title: "Tokyo", tagline: "2 Kişi · Oturma Pozisyonu", desc: "Çift koltuklu, panoramik camlı kabin — eşler, partnerler veya hasta-refakatçi kullanımı için." },
-      quadCube: { title: "Milan", tagline: "4 Kişi · Geniş Kabin", desc: "Geniş iç hacimli küp tasarımıyla dört kişilik premium kabin — kapitone deri iç mekân ve LED aydınlatma." },
+      quadCube: { title: "Milano", tagline: "4 Kişi · Geniş Kabin", desc: "Geniş iç hacimli küp tasarımıyla dört kişilik premium kabin — kapitone deri iç mekân ve LED aydınlatma." },
       nexus: { title: "Geneva", tagline: "6+ Kişi · Oturma Pozisyonu", desc: "Sağlık kurumları için hastane sınıfı, büyük kapasiteli, modüler genişlemeye hazır kabin." }
     },
     includedItems: [
@@ -333,8 +333,8 @@ const TRANSLATIONS = {
       ]
     },
     modelQuadCube: {
-      breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
-      faq_title: "Milan hakkında merak edilenler",
+      breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
+      faq_title: "Milano hakkında merak edilenler",
       tagline: "Geniş küp tasarımında dört kişilik premium deneyim.",
       overview_text: "Küp formundaki geniş iç hacmiyle dört kişilik premium kabin. Kapitone deri iç mekânı, LED ambiyans aydınlatması ve bağımsız kontrol ünitesiyle klinik ve wellness merkezlerine konforlu çok kişilik terapi sunar.",
       specs: [
@@ -430,11 +430,11 @@ const TRANSLATIONS = {
         { q: "Tokyo Plus için nasıl teklif alabilirim?", a: "Konfigüratörden Tokyo Plus'ı seçip koltuk sayısı ve renklerinizi belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
       ],
       "quad-cube": [
-        { q: "Milan kaç kişilik ve tasarımı nasıl?", a: "Milan, küp formundaki geniş iç hacmiyle 4 kişilik oturma pozisyonunda kullanılan premium bir kabindir." },
-        { q: "Milan'ın iç mekânı hangi malzemelerle döşeniyor?", a: "Kapitone deri iç mekân ve LED ambiyans aydınlatmasıyla gelir; iç duvar ve koltuk renklerini standart palettemizden ayrı seçebilirsiniz." },
-        { q: "Milan hangi basınç aralığında çalışır?", a: "2.5–6.0 ATA aralığında, kurumsal kullanım için uygundur." },
-        { q: "Milan'ın kontrol sistemi nasıl çalışır?", a: "Bağımsız kontrol ünitesiyle gelir; klinik ve wellness merkezlerinde operatör kontrolüne uygundur." },
-        { q: "Milan için nasıl teklif alabilirim?", a: "Konfigüratörden Milan'ı seçip iç/dış renklerinizi belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
+        { q: "Milano kaç kişilik ve tasarımı nasıl?", a: "Milano, küp formundaki geniş iç hacmiyle 4 kişilik oturma pozisyonunda kullanılan premium bir kabindir." },
+        { q: "Milano'nun iç mekânı hangi malzemelerle döşeniyor?", a: "Kapitone deri iç mekân ve LED ambiyans aydınlatmasıyla gelir; iç duvar ve koltuk renklerini standart palettemizden ayrı seçebilirsiniz." },
+        { q: "Milano hangi basınç aralığında çalışır?", a: "2.5–6.0 ATA aralığında, kurumsal kullanım için uygundur." },
+        { q: "Milano'nun kontrol sistemi nasıl çalışır?", a: "Bağımsız kontrol ünitesiyle gelir; klinik ve wellness merkezlerinde operatör kontrolüne uygundur." },
+        { q: "Milano için nasıl teklif alabilirim?", a: "Konfigüratörden Milano'yu seçip iç/dış renklerinizi belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
       ],
       "nexus": [
         { q: "Geneva kaç kişilik?", a: "Geneva, 6 kişiden başlayıp 6/8/10/12 kademeli olarak genişleyebilen, hastane sınıfı büyük kapasiteli bir kabindir." },
@@ -484,7 +484,7 @@ const TRANSLATIONS = {
           { scenario: "Evde, tek başıma, oturarak kullanmak istiyorum", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Eşim/partnerimle birlikte, evde kullanacağız", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Klinik veya wellness merkezi, 2-4 kişilik kurumsal kullanım", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
-          { scenario: "Kurumsal kullanım, geniş iç hacimli kabin istiyorum", model: "Milan", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "Kurumsal kullanım, geniş iç hacimli kabin istiyorum", model: "Milano", modelId: "quad-cube", usage: "institutional" },
           { scenario: "Hastane veya klinikte, çok hastalı, yüksek basınçlı terapi", model: "Geneva", modelId: "nexus", usage: "institutional" }
         ]
       },
@@ -507,7 +507,7 @@ const TRANSLATIONS = {
         { id: "solo", name: "Dubai", tagline: "1 Kişi · Oturma Pozisyonu" },
         { id: "duo", name: "Tokyo", tagline: "2 Kişi · Oturma Pozisyonu" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 Kişi · Kurumsal" },
-        { id: "quad-cube", name: "Milan", tagline: "4 Kişi · Geniş Kabin" },
+        { id: "quad-cube", name: "Milano", tagline: "4 Kişi · Geniş Kabin" },
         { id: "nexus", name: "Geneva", tagline: "6+ Kişi · Oturma Pozisyonu" }
       ],
       colors: [
@@ -815,10 +815,10 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech Modelleri",
             items: [
-              { q: "Hangi HBOT City Tech modelleri bulunmaktadır?", a: "HBOT City Tech ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nOslo — Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için geliştirilmiş, tek kullanıcılı sistemdir.\n\nOslo — Oturur pozisyonda, tek kullanıcı kapasiteli, kompakt hiperbarik sistemdir. Hem bireysel/ev hem de işletme kullanımı için tasarlanmıştır.\n\nTokyo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nMilan — Klinik, hastane ve profesyonel işletmeler için geliştirilen, 4 kullanıcı kapasiteli, küp formunda geniş hacimli hiperbarik sistemdir.\n\nGeneva — Hastane sınıfı, 6 kullanıcıdan başlayıp 12 kullanıcıya kadar genişleyebilen, büyük kapasiteli kurumsal sistemdir." },
+              { q: "Hangi HBOT City Tech modelleri bulunmaktadır?", a: "HBOT City Tech ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nOslo — Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için geliştirilmiş, tek kullanıcılı sistemdir.\n\nOslo — Oturur pozisyonda, tek kullanıcı kapasiteli, kompakt hiperbarik sistemdir. Hem bireysel/ev hem de işletme kullanımı için tasarlanmıştır.\n\nTokyo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nMilano — Klinik, hastane ve profesyonel işletmeler için geliştirilen, 4 kullanıcı kapasiteli, küp formunda geniş hacimli hiperbarik sistemdir.\n\nGeneva — Hastane sınıfı, 6 kullanıcıdan başlayıp 12 kullanıcıya kadar genişleyebilen, büyük kapasiteli kurumsal sistemdir." },
               { q: "Dubai kimler için uygundur?", a: "Dubai, hem bireysel/ev kullanımı hem de tek kullanıcılı çalışma düzeni isteyen işletmeler için geliştirilmiştir. Kompakt yapısı sayesinde evler, klinikler, spor merkezleri, wellness merkezleri ve oteller için değerlendirilebilir.\n\nKesin kullanım koşulları, ürünün sınıflandırmasına ve kurulum yapılacak ülkenin mevzuatına göre belirlenir." },
               { q: "Tokyo kaç kişiliktir?", a: "Tokyo, aynı seansta iki kullanıcının bulunabileceği şekilde tasarlanmıştır. Koltuk yapısı, iç donanım ve oturma düzeni sipariş edilen konfigürasyona göre değişebilir." },
-              { q: "Çok kişilik HBOT City Tech modeli kaç kullanıcı kapasitelidir?", a: "Çok kullanıcılı HBOT City Tech modelleri 4 kişilik Milan ile başlar. Hastane sınıfı Geneva modelinde ise standart kapasite 6 kişidir ve opsiyonel olarak 12 kişiye kadar (2'şer koltuk artışlarla) genişletilebilir.\n\nKesin kapasite aşağıdaki unsurlara göre belirlenir:", list: ["Kabin ölçüsü", "Koltuk yerleşimi", "Kullanıcıların hareket alanı", "Oksijen sistemi kapasitesi", "İşletme protokolü", "Yerel güvenlik ve ruhsatlandırma şartları"], aAfter: "Her opsiyon, güvenlik değerlendirmesi ve teknik uygunluk sonrasında projeye eklenir." },
+              { q: "Çok kişilik HBOT City Tech modeli kaç kullanıcı kapasitelidir?", a: "Çok kullanıcılı HBOT City Tech modelleri 4 kişilik Milano ile başlar. Hastane sınıfı Geneva modelinde ise standart kapasite 6 kişidir ve opsiyonel olarak 12 kişiye kadar (2'şer koltuk artışlarla) genişletilebilir.\n\nKesin kapasite aşağıdaki unsurlara göre belirlenir:", list: ["Kabin ölçüsü", "Koltuk yerleşimi", "Kullanıcıların hareket alanı", "Oksijen sistemi kapasitesi", "İşletme protokolü", "Yerel güvenlik ve ruhsatlandırma şartları"], aAfter: "Her opsiyon, güvenlik değerlendirmesi ve teknik uygunluk sonrasında projeye eklenir." },
               { q: "Cihazların ölçüleri nelerdir?", a: "Her HBOT City Tech modeli farklı dış ölçülere ve iç kullanım hacmine sahiptir. Teknik ürün sayfalarında aşağıdaki bilgiler ayrı ayrı gösterilir:", list: ["Dış ölçüler", "İç kullanım ölçüleri", "Kapı açıklığı", "Toplam ağırlık", "Kullanıcı kapasitesi", "Minimum kurulum alanı", "Teknik servis erişim mesafesi"], aAfter: "Özel ölçü talepleri, mühendislik değerlendirmesinin ardından projelendirilebilir." }
             ]
           },
@@ -948,12 +948,12 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | HBOT City Tech Series Hyperbaric Oxygen Chambers", desc: "IoT-connected, AI-powered hyperbaric oxygen chambers. Breathe at the summit with the HBOT City Tech Series." },
       technology: { title: "Technology | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync and CityGuard — the connected, intelligent technology platform of the HBOT City Tech Series." },
-      models: { title: "Models | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan and Geneva — five hyperbaric oxygen chamber models." },
+      models: { title: "Models | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milano and Geneva — five hyperbaric oxygen chamber models." },
       soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "A single-person hyperbaric oxygen chamber designed for treatment in a lying position." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "A compact, fully equipped hyperbaric oxygen chamber for individual use." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "A two-person shared hyperbaric oxygen therapy chamber." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "A 2-4 person, high-pressure hyperbaric oxygen chamber for institutional use." },
-      quadCube: { title: "Milan | HBOT Chamber Tech", desc: "A four-person, spacious cube-design hyperbaric oxygen chamber." },
+      quadCube: { title: "Milano | HBOT Chamber Tech", desc: "A four-person, spacious cube-design hyperbaric oxygen chamber." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "A hospital-grade, large-capacity hyperbaric oxygen chamber for six or more people." },
       hbotInfo: { title: "What Is HBOT? | HBOT Chamber Tech", desc: "What is hyperbaric oxygen therapy (HBOT), what is it used for, and in which conditions is it applied." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Recent research, news and developments on hyperbaric oxygen therapy." },
@@ -972,7 +972,7 @@ const TRANSLATIONS = {
         soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
-        quadCube: "Milan",
+        quadCube: "Milano",
         nexus: "Geneva",
         all_link: "All Models"
       },
@@ -1205,7 +1205,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 Person · Lying Position", desc: "A fully equipped chamber developed specifically for users who need treatment in a lying position." },
       solo: { title: "Dubai", tagline: "1 Person · Sitting Position", desc: "A compact, elegant, fully equipped chamber designed for individual hyperbaric oxygen therapy." },
       duo: { title: "Tokyo", tagline: "2 People · Sitting Position", desc: "A dual-seat, panoramic-window chamber — for couples, partners, or patient-companion use." },
-      quadCube: { title: "Milan", tagline: "4 People · Spacious Cabin", desc: "A four-person premium cabin with a spacious cube-design interior — quilted leather upholstery and LED ambient lighting." },
+      quadCube: { title: "Milano", tagline: "4 People · Spacious Cabin", desc: "A four-person premium cabin with a spacious cube-design interior — quilted leather upholstery and LED ambient lighting." },
       nexus: { title: "Geneva", tagline: "6+ People · Sitting Position", desc: "A hospital-grade, large-capacity chamber with modular expansion, built for medical institutions." }
     },
     includedItems: [
@@ -1277,8 +1277,8 @@ const TRANSLATIONS = {
       ]
     },
     modelQuadCube: {
-      breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
-      faq_title: "What people want to know about the Milan",
+      breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
+      faq_title: "What people want to know about the Milano",
       tagline: "A premium four-person experience in a spacious cube design.",
       overview_text: "A four-person premium cabin with a spacious cube-form interior. With quilted leather upholstery, LED ambient lighting, and an independent control unit, it delivers comfortable multi-person therapy for clinics and wellness centers.",
       specs: [
@@ -1374,11 +1374,11 @@ const TRANSLATIONS = {
         { q: "How do I get a quote for the Tokyo Plus?", a: "Select the Tokyo Plus in the configurator, set your seat count and colours, and see an instant price estimate — then request a final quote through the form." }
       ],
       "quad-cube": [
-        { q: "How many people does the Milan fit, and what's its design?", a: "The Milan is a premium four-person chamber, seated, with a spacious cube-shaped interior." },
-        { q: "What materials finish the Milan's interior?", a: "It comes with quilted leather interior and ambient LED lighting; you can choose interior wall and seat colours separately from our standard palette." },
-        { q: "What pressure range does the Milan operate at?", a: "2.5–6.0 ATA, suited to institutional use." },
-        { q: "How does the Milan's control system work?", a: "It comes with an independent control unit, suited to operator control in clinics and wellness centres." },
-        { q: "How do I get a quote for the Milan?", a: "Select the Milan in the configurator, choose your interior and exterior colours, and see an instant price estimate — then request a final quote through the form." }
+        { q: "How many people does the Milano fit, and what's its design?", a: "The Milano is a premium four-person chamber, seated, with a spacious cube-shaped interior." },
+        { q: "What materials finish the Milano's interior?", a: "It comes with quilted leather interior and ambient LED lighting; you can choose interior wall and seat colours separately from our standard palette." },
+        { q: "What pressure range does the Milano operate at?", a: "2.5–6.0 ATA, suited to institutional use." },
+        { q: "How does the Milano's control system work?", a: "It comes with an independent control unit, suited to operator control in clinics and wellness centres." },
+        { q: "How do I get a quote for the Milano?", a: "Select the Milano in the configurator, choose your interior and exterior colours, and see an instant price estimate — then request a final quote through the form." }
       ],
       "nexus": [
         { q: "How many people does the Geneva fit?", a: "The Geneva is a hospital-grade, large-capacity chamber that starts at 6 people and scales in tiers of 6/8/10/12." },
@@ -1428,7 +1428,7 @@ const TRANSLATIONS = {
           { scenario: "At home, alone, I want to sit during sessions", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "My partner and I will use it together, at home", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Clinic or wellness center, 2-4 person institutional use", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
-          { scenario: "Institutional use, want a spacious interior chamber", model: "Milan", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "Institutional use, want a spacious interior chamber", model: "Milano", modelId: "quad-cube", usage: "institutional" },
           { scenario: "In a hospital or clinic, multiple patients, high pressure", model: "Geneva", modelId: "nexus", usage: "institutional" }
         ]
       },
@@ -1451,7 +1451,7 @@ const TRANSLATIONS = {
         { id: "solo", name: "Dubai", tagline: "1 Person · Sitting Position" },
         { id: "duo", name: "Tokyo", tagline: "2 People · Sitting Position" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 People · Institutional" },
-        { id: "quad-cube", name: "Milan", tagline: "4 People · Spacious Cabin" },
+        { id: "quad-cube", name: "Milano", tagline: "4 People · Spacious Cabin" },
         { id: "nexus", name: "Geneva", tagline: "6+ People · Sitting Position" }
       ],
       colors: [
@@ -1759,10 +1759,10 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech Models",
             items: [
-              { q: "Which HBOT City Tech models are available?", a: "The HBOT City Tech product family is developed for different user capacities and use cases.\n\nOslo — A single-user system developed for users who need treatment in a lying position.\n\nOslo — A compact, single-user hyperbaric system used in a sitting position. Designed for both individual/home use and business use.\n\nTokyo — A system with a spacious interior that can accommodate two users in the same session.\n\nMilan — A 4-user, cube-shaped, large-volume hyperbaric system developed for clinics, hospitals and professional operators.\n\nGeneva — A hospital-grade, large-capacity institutional system starting at 6 users and expandable up to 12." },
+              { q: "Which HBOT City Tech models are available?", a: "The HBOT City Tech product family is developed for different user capacities and use cases.\n\nOslo — A single-user system developed for users who need treatment in a lying position.\n\nOslo — A compact, single-user hyperbaric system used in a sitting position. Designed for both individual/home use and business use.\n\nTokyo — A system with a spacious interior that can accommodate two users in the same session.\n\nMilano — A 4-user, cube-shaped, large-volume hyperbaric system developed for clinics, hospitals and professional operators.\n\nGeneva — A hospital-grade, large-capacity institutional system starting at 6 users and expandable up to 12." },
               { q: "Who is Dubai suitable for?", a: "Dubai is developed for both individual/home use and operators seeking a single-user setup. Thanks to its compact structure, it can be considered for homes, clinics, sports centers, wellness centers and hotels.\n\nThe exact conditions of use are determined by the product's classification and the regulations of the country of installation." },
               { q: "How many people can Tokyo accommodate?", a: "Tokyo is designed to accommodate two users in the same session. The seating structure, interior fittings and seating layout may vary according to the ordered configuration." },
-              { q: "What is the user capacity of the multi-person HBOT City Tech model?", a: "Multi-user HBOT City Tech models start with the 4-person Milan. For the hospital-grade Geneva, the standard capacity is 6 people, with an optional capacity of up to 12 people (in increments of 2 seats).\n\nThe exact capacity is determined by the following factors:", list: ["Chamber dimensions", "Seating layout", "Users' range of movement", "Oxygen system capacity", "Operating protocol", "Local safety and licensing requirements"], aAfter: "Each option is added to the project following a safety assessment and technical suitability review." },
+              { q: "What is the user capacity of the multi-person HBOT City Tech model?", a: "Multi-user HBOT City Tech models start with the 4-person Milano. For the hospital-grade Geneva, the standard capacity is 6 people, with an optional capacity of up to 12 people (in increments of 2 seats).\n\nThe exact capacity is determined by the following factors:", list: ["Chamber dimensions", "Seating layout", "Users' range of movement", "Oxygen system capacity", "Operating protocol", "Local safety and licensing requirements"], aAfter: "Each option is added to the project following a safety assessment and technical suitability review." },
               { q: "What are the dimensions of the devices?", a: "Each HBOT City Tech model has different exterior dimensions and interior usable volume. The following information is shown separately on the technical product pages:", list: ["Exterior dimensions", "Interior usable dimensions", "Door opening", "Total weight", "User capacity", "Minimum installation area", "Technical service access clearance"], aAfter: "Custom dimension requests can be engineered following an engineering assessment." }
             ]
           },
@@ -1892,12 +1892,12 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | Гипербарические кислородные камеры серии HBOT City Tech", desc: "Гипербарические кислородные камеры с IoT-подключением и поддержкой ИИ. Дышите на вершине с серией HBOT City Tech." },
       technology: { title: "Технологии | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync и CityGuard — подключённая интеллектуальная технологическая платформа серии HBOT City Tech." },
-      models: { title: "Модели | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan и Geneva — пять моделей гипербарических кислородных камер." },
+      models: { title: "Модели | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milano и Geneva — пять моделей гипербарических кислородных камер." },
       soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Одноместная гипербарическая кислородная камера для лечения в положении лёжа." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Компактная, полностью укомплектованная камера для индивидуального использования." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Двухместная камера для совместной гипербарической оксигенотерапии." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Гипербарическая камера повышенного давления на 2-4 человека для учреждений." },
-      quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Четырёхместная гипербарическая кислородная камера с просторным кубическим дизайном." },
+      quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Четырёхместная гипербарическая кислородная камера с просторным кубическим дизайном." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Гипербарическая камера госпитального класса большой вместимости на 6 и более человек." },
       hbotInfo: { title: "Что такое ГБО? | HBOT Chamber Tech", desc: "Что такое гипербарическая оксигенотерапия (ГБО), для чего она применяется и при каких состояниях." },
       blog: { title: "Блог | HBOT Chamber Tech", desc: "Актуальные исследования, новости и разработки в области гипербарической оксигенотерапии." },
@@ -1916,7 +1916,7 @@ const TRANSLATIONS = {
         soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
-        quadCube: "Milan",
+        quadCube: "Milano",
         nexus: "Geneva",
         all_link: "Все модели"
       },
@@ -2149,7 +2149,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 человек · Положение лёжа", desc: "Полностью укомплектованная камера, разработанная специально для пользователей, нуждающихся в лечении в положении лёжа." },
       solo: { title: "Dubai", tagline: "1 человек · Положение сидя", desc: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарической оксигенотерапии." },
       duo: { title: "Tokyo", tagline: "2 человека · Положение сидя", desc: "Двухместная камера с панорамным окном — для пар, партнёров или пациента с сопровождающим." },
-      quadCube: { title: "Milan", tagline: "4 человека · Просторная кабина", desc: "Четырёхместная премиум-кабина с просторным кубическим интерьером — стёганая кожа и LED-подсветка." },
+      quadCube: { title: "Milano", tagline: "4 человека · Просторная кабина", desc: "Четырёхместная премиум-кабина с просторным кубическим интерьером — стёганая кожа и LED-подсветка." },
       nexus: { title: "Geneva", tagline: "6+ человек · Положение сидя", desc: "Камера госпитального класса большой вместимости с модульным расширением для медицинских учреждений." }
     },
     includedItems: [
@@ -2221,8 +2221,8 @@ const TRANSLATIONS = {
       ]
     },
     modelQuadCube: {
-      breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
-      faq_title: "Часто задаваемые вопросы о Milan",
+      breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
+      faq_title: "Часто задаваемые вопросы о Milano",
       tagline: "Премиальный четырёхместный опыт в просторном кубическом дизайне.",
       overview_text: "Четырёхместная премиум-кабина с просторным кубическим интерьером. Стёганая кожаная обивка, LED-подсветка и независимый блок управления обеспечивают комфортную многоместную терапию для клиник и wellness-центров.",
       specs: [
@@ -2318,11 +2318,11 @@ const TRANSLATIONS = {
         { q: "Как получить расчёт стоимости на Tokyo Plus?", a: "Выберите Tokyo Plus в конфигураторе, укажите количество сидений и цвета, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
       ],
       "quad-cube": [
-        { q: "На сколько человек рассчитан Milan и как он устроен?", a: "Milan — премиальная четырёхместная капсула с сиденьями и просторным кубическим интерьером." },
-        { q: "Какими материалами отделан интерьер Milan?", a: "Интерьер отделан стёганой кожей с LED-подсветкой; цвет внутренних стен и сидений можно выбрать отдельно из стандартной палитры." },
-        { q: "В каком диапазоне давления работает Milan?", a: "2.5–6.0 ATA — подходит для институционального использования." },
-        { q: "Как работает система управления Milan?", a: "Она оснащена независимым блоком управления, подходящим для контроля оператором в клиниках и велнес-центрах." },
-        { q: "Как получить расчёт стоимости на Milan?", a: "Выберите Milan в конфигураторе, укажите цвета интерьера и экстерьера, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
+        { q: "На сколько человек рассчитан Milano и как он устроен?", a: "Milano — премиальная четырёхместная капсула с сиденьями и просторным кубическим интерьером." },
+        { q: "Какими материалами отделан интерьер Milano?", a: "Интерьер отделан стёганой кожей с LED-подсветкой; цвет внутренних стен и сидений можно выбрать отдельно из стандартной палитры." },
+        { q: "В каком диапазоне давления работает Milano?", a: "2.5–6.0 ATA — подходит для институционального использования." },
+        { q: "Как работает система управления Milano?", a: "Она оснащена независимым блоком управления, подходящим для контроля оператором в клиниках и велнес-центрах." },
+        { q: "Как получить расчёт стоимости на Milano?", a: "Выберите Milano в конфигураторе, укажите цвета интерьера и экстерьера, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
       ],
       "nexus": [
         { q: "На сколько человек рассчитан Geneva?", a: "Geneva — капсула большой вместимости больничного класса, начиная от 6 человек с шагом 6/8/10/12." },
@@ -2372,7 +2372,7 @@ const TRANSLATIONS = {
           { scenario: "Дома, один, хочу сидеть во время сеансов", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Будем использовать вместе с партнёром, дома", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Клиника или велнес-центр, для учреждений на 2-4 человека", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
-          { scenario: "Учрежденческое использование, нужна просторная камера", model: "Milan", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "Учрежденческое использование, нужна просторная камера", model: "Milano", modelId: "quad-cube", usage: "institutional" },
           { scenario: "В больнице или клинике, несколько пациентов, высокое давление", model: "Geneva", modelId: "nexus", usage: "institutional" }
         ]
       },
@@ -2395,7 +2395,7 @@ const TRANSLATIONS = {
         { id: "solo", name: "Dubai", tagline: "1 человек · Положение сидя" },
         { id: "duo", name: "Tokyo", tagline: "2 человека · Положение сидя" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 человека · Для учреждений" },
-        { id: "quad-cube", name: "Milan", tagline: "4 человека · Просторная кабина" },
+        { id: "quad-cube", name: "Milano", tagline: "4 человека · Просторная кабина" },
         { id: "nexus", name: "Geneva", tagline: "6+ человек · Положение сидя" }
       ],
       colors: [
@@ -2703,10 +2703,10 @@ const TRANSLATIONS = {
           {
             title: "Модели HBOT City Tech",
             items: [
-              { q: "Какие модели HBOT City Tech доступны?", a: "Линейка продуктов HBOT City Tech разрабатывается для разных пользовательских ёмкостей и сфер применения.\n\nOslo — система для одного пользователя, разработанная для тех, кому необходимо лечение в положении лёжа.\n\nOslo — компактная гипербарическая система для одного пользователя в положении сидя. Разработана как для индивидуального/домашнего использования, так и для бизнеса.\n\nTokyo — система с просторным внутренним пространством, рассчитанная на двух пользователей в одном сеансе.\n\nMilan — гипербарическая система кубической формы большого объёма на 4 пользователей, разработанная для клиник, больниц и профессиональных операторов.\n\nGeneva — крупногабаритная система корпоративного уровня, аналогичная больничному оборудованию, вместимостью от 6 до 12 пользователей." },
+              { q: "Какие модели HBOT City Tech доступны?", a: "Линейка продуктов HBOT City Tech разрабатывается для разных пользовательских ёмкостей и сфер применения.\n\nOslo — система для одного пользователя, разработанная для тех, кому необходимо лечение в положении лёжа.\n\nOslo — компактная гипербарическая система для одного пользователя в положении сидя. Разработана как для индивидуального/домашнего использования, так и для бизнеса.\n\nTokyo — система с просторным внутренним пространством, рассчитанная на двух пользователей в одном сеансе.\n\nMilano — гипербарическая система кубической формы большого объёма на 4 пользователей, разработанная для клиник, больниц и профессиональных операторов.\n\nGeneva — крупногабаритная система корпоративного уровня, аналогичная больничному оборудованию, вместимостью от 6 до 12 пользователей." },
               { q: "Кому подходит Dubai?", a: "Dubai разработана как для индивидуального/домашнего использования, так и для операторов, которым требуется однопользовательская конфигурация. Благодаря компактной конструкции она может рассматриваться для дома, клиник, спортивных центров, wellness-центров и отелей.\n\nТочные условия использования определяются классификацией продукта и законодательством страны установки." },
               { q: "На сколько человек рассчитана Tokyo?", a: "Tokyo рассчитана на двух пользователей в одном сеансе. Конструкция сидений, внутреннее оснащение и компоновка мест могут различаться в зависимости от заказанной конфигурации." },
-              { q: "Какова вместимость многопользовательской модели HBOT City Tech?", a: "Многопользовательские модели HBOT City Tech начинаются с 4-местной Milan. Для больничной модели Geneva стандартная вместимость составляет 6 человек, с возможностью расширения до 12 человек (с шагом по 2 места).\n\nТочная вместимость определяется следующими факторами:", list: ["Размеры камеры", "Компоновка сидений", "Диапазон движения пользователей", "Мощность кислородной системы", "Протокол эксплуатации", "Местные требования безопасности и лицензирования"], aAfter: "Каждая опция добавляется в проект после оценки безопасности и технической пригодности." },
+              { q: "Какова вместимость многопользовательской модели HBOT City Tech?", a: "Многопользовательские модели HBOT City Tech начинаются с 4-местной Milano. Для больничной модели Geneva стандартная вместимость составляет 6 человек, с возможностью расширения до 12 человек (с шагом по 2 места).\n\nТочная вместимость определяется следующими факторами:", list: ["Размеры камеры", "Компоновка сидений", "Диапазон движения пользователей", "Мощность кислородной системы", "Протокол эксплуатации", "Местные требования безопасности и лицензирования"], aAfter: "Каждая опция добавляется в проект после оценки безопасности и технической пригодности." },
               { q: "Каковы размеры устройств?", a: "Каждая модель HBOT City Tech имеет свои внешние размеры и полезный внутренний объём. На технических страницах продуктов отдельно указывается следующая информация:", list: ["Внешние размеры", "Полезные внутренние размеры", "Проём двери", "Общий вес", "Вместимость пользователей", "Минимальная площадь для установки", "Расстояние доступа для технического обслуживания"], aAfter: "Запросы на нестандартные размеры могут быть спроектированы после инженерной оценки." }
             ]
           },
@@ -2836,12 +2836,12 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | غرف الأكسجين عالي الضغط من سلسلة HBOT City Tech", desc: "غرف أكسجين عالي الضغط متصلة بإنترنت الأشياء ومدعومة بالذكاء الاصطناعي. تنفّس في القمة مع سلسلة HBOT City Tech." },
       technology: { title: "التقنية | HBOT Chamber Tech", desc: "CityConnect و CityOS و CityAI و CitySync و CityGuard — منصة التقنية الذكية والمتصلة لسلسلة HBOT City Tech." },
-      models: { title: "الموديلات | HBOT Chamber Tech", desc: "Oslo و Dubai و Tokyo و Milan و Geneva — خمسة موديلات لغرف الأكسجين عالي الضغط." },
+      models: { title: "الموديلات | HBOT Chamber Tech", desc: "Oslo و Dubai و Tokyo و Milano و Geneva — خمسة موديلات لغرف الأكسجين عالي الضغط." },
       soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لشخص واحد مصممة للعلاج في وضعية الاستلقاء." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "غرفة مدمجة وكاملة التجهيز للاستخدام الفردي." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "غرفة علاج مشترك بالأكسجين عالي الضغط لشخصين." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لـ 2-4 أشخاص للاستخدام المؤسسي." },
-      quadCube: { title: "Milan | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لأربعة أشخاص بتصميم مكعّب واسع الداخل." },
+      quadCube: { title: "Milano | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لأربعة أشخاص بتصميم مكعّب واسع الداخل." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط بمستوى المستشفيات وسعة كبيرة لستة أشخاص أو أكثر." },
       hbotInfo: { title: "ما هو العلاج بالأكسجين عالي الضغط؟ | HBOT Chamber Tech", desc: "ما هو العلاج بالأكسجين عالي الضغط (HBOT)، ولماذا يُستخدم، وفي أي الحالات يُطبّق." },
       blog: { title: "المدونة | HBOT Chamber Tech", desc: "أحدث الأبحاث والأخبار والتطورات في مجال العلاج بالأكسجين عالي الضغط." },
@@ -2860,7 +2860,7 @@ const TRANSLATIONS = {
         soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
-        quadCube: "Milan",
+        quadCube: "Milano",
         nexus: "Geneva",
         all_link: "جميع الموديلات"
       },
@@ -3093,7 +3093,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "شخص واحد · وضعية الاستلقاء", desc: "غرفة كاملة التجهيز طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء." },
       solo: { title: "Dubai", tagline: "شخص واحد · وضعية الجلوس", desc: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للعلاج الفردي بالأكسجين عالي الضغط." },
       duo: { title: "Tokyo", tagline: "شخصان · وضعية الجلوس", desc: "غرفة بمقعدين ونافذة بانورامية — للأزواج أو الشركاء أو استخدام المريض مع مرافق." },
-      quadCube: { title: "Milan", tagline: "4 أشخاص · مقصورة واسعة", desc: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب — جلد مبطّن وإضاءة LED محيطية." },
+      quadCube: { title: "Milano", tagline: "4 أشخاص · مقصورة واسعة", desc: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب — جلد مبطّن وإضاءة LED محيطية." },
       nexus: { title: "Geneva", tagline: "6+ أشخاص · وضعية الجلوس", desc: "غرفة بمستوى المستشفيات وسعة كبيرة قابلة للتوسع المعياري، مصممة للمؤسسات الطبية." }
     },
     includedItems: [
@@ -3165,7 +3165,7 @@ const TRANSLATIONS = {
       ]
     },
     modelQuadCube: {
-      breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
+      breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
       faq_title: "أسئلة شائعة حول ميلانو",
       tagline: "تجربة فاخرة لأربعة أشخاص في تصميم مكعّب واسع.",
       overview_text: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب. مع تنجيد جلدي مبطّن وإضاءة LED محيطية ووحدة تحكم مستقلة، تقدّم علاجاً مريحاً متعدد الأشخاص للعيادات ومراكز العافية.",
@@ -3262,7 +3262,7 @@ const TRANSLATIONS = {
         { q: "كيف أحصل على عرض سعر لطوكيو بلس؟", a: "اختر طوكيو بلس في أداة التكوين وحدد عدد المقاعد والألوان لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
       ],
       "quad-cube": [
-        { q: "كم شخصًا تتسع له ميلانو (Milan) وما تصميمها؟", a: "ميلانو غرفة فاخرة لأربعة أشخاص بوضعية الجلوس، بتصميم مكعب وحجم داخلي واسع." },
+        { q: "كم شخصًا تتسع له ميلانو (Milano) وما تصميمها؟", a: "ميلانو غرفة فاخرة لأربعة أشخاص بوضعية الجلوس، بتصميم مكعب وحجم داخلي واسع." },
         { q: "بأي مواد يُكسى داخل ميلانو؟", a: "تأتي بتنجيد جلدي مبطن وإضاءة LED محيطية؛ يمكن اختيار ألوان الجدران الداخلية والمقعد بشكل منفصل من مجموعتنا القياسية." },
         { q: "ما نطاق الضغط الذي تعمل به ميلانو؟", a: "تعمل ضمن نطاق 2.5–6.0 ATA، مناسب للاستخدام المؤسسي." },
         { q: "كيف يعمل نظام التحكم في ميلانو؟", a: "تأتي بوحدة تحكم مستقلة، مناسبة لتحكم المشغّل في العيادات ومراكز العافية." },
@@ -3316,7 +3316,7 @@ const TRANSLATIONS = {
           { scenario: "في المنزل، بمفردي، أريد الجلوس أثناء الجلسات", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "سأستخدمها مع شريكي، في المنزل", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "عيادة أو مركز عافية، استخدام مؤسسي لـ 2-4 أشخاص", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
-          { scenario: "استخدام مؤسسي، أريد كابينة بمساحة داخلية واسعة", model: "Milan", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "استخدام مؤسسي، أريد كابينة بمساحة داخلية واسعة", model: "Milano", modelId: "quad-cube", usage: "institutional" },
           { scenario: "في مستشفى أو عيادة، مرضى متعددون، ضغط عالٍ", model: "Geneva", modelId: "nexus", usage: "institutional" }
         ]
       },
@@ -3339,7 +3339,7 @@ const TRANSLATIONS = {
         { id: "solo", name: "Dubai", tagline: "شخص واحد · وضعية الجلوس" },
         { id: "duo", name: "Tokyo", tagline: "شخصان · وضعية الجلوس" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 أشخاص · للمؤسسات" },
-        { id: "quad-cube", name: "Milan", tagline: "4 أشخاص · مقصورة واسعة" },
+        { id: "quad-cube", name: "Milano", tagline: "4 أشخاص · مقصورة واسعة" },
         { id: "nexus", name: "Geneva", tagline: "6+ أشخاص · وضعية الجلوس" }
       ],
       colors: [
@@ -3647,10 +3647,10 @@ const TRANSLATIONS = {
           {
             title: "موديلات HBOT City Tech",
             items: [
-              { q: "ما هي موديلات HBOT City Tech المتوفرة؟", a: "تُطوَّر عائلة منتجات HBOT City Tech لسعات مستخدمين مختلفة ومجالات استخدام متنوعة.\n\nOslo — نظام لمستخدم واحد، صُمِّم لمن يحتاج إلى العلاج في وضعية الاستلقاء.\n\nOslo — نظام انضغاطي مدمج لمستخدم واحد في وضعية الجلوس. صُمِّم للاستخدام الفردي/المنزلي وللاستخدام التجاري على حدٍّ سواء.\n\nTokyo — نظام ذو حجم داخلي واسع يستوعب مستخدمَين في نفس الجلسة.\n\nMilan — نظام انضغاطي بتصميم مكعّب وحجم كبير لأربعة مستخدمين، طُوِّر للعيادات والمستشفيات والمشغّلين المحترفين.\n\nGeneva — نظام مؤسسي كبير بمستوى المستشفيات، يبدأ من 6 مستخدمين ويمكن توسيعه حتى 12 مستخدمًا." },
+              { q: "ما هي موديلات HBOT City Tech المتوفرة؟", a: "تُطوَّر عائلة منتجات HBOT City Tech لسعات مستخدمين مختلفة ومجالات استخدام متنوعة.\n\nOslo — نظام لمستخدم واحد، صُمِّم لمن يحتاج إلى العلاج في وضعية الاستلقاء.\n\nOslo — نظام انضغاطي مدمج لمستخدم واحد في وضعية الجلوس. صُمِّم للاستخدام الفردي/المنزلي وللاستخدام التجاري على حدٍّ سواء.\n\nTokyo — نظام ذو حجم داخلي واسع يستوعب مستخدمَين في نفس الجلسة.\n\nMilano — نظام انضغاطي بتصميم مكعّب وحجم كبير لأربعة مستخدمين، طُوِّر للعيادات والمستشفيات والمشغّلين المحترفين.\n\nGeneva — نظام مؤسسي كبير بمستوى المستشفيات، يبدأ من 6 مستخدمين ويمكن توسيعه حتى 12 مستخدمًا." },
               { q: "لمن تناسب Dubai؟", a: "طُوِّرت Dubai للاستخدام الفردي/المنزلي وللمشغّلين الذين يرغبون في نظام تشغيل لمستخدم واحد على حدٍّ سواء. بفضل بنيتها المدمجة، يمكن اعتبارها مناسبة للمنازل والعيادات ومراكز الرياضة ومراكز العافية والفنادق.\n\nتُحدَّد شروط الاستخدام الدقيقة حسب تصنيف المنتج ولوائح بلد التركيب." },
               { q: "كم عدد الأشخاص الذين تستوعبهم Tokyo؟", a: "صُمِّمت Tokyo لاستيعاب مستخدمَين في نفس الجلسة. قد يختلف هيكل المقاعد والتجهيزات الداخلية وترتيب الجلوس حسب التهيئة المطلوبة." },
-              { q: "ما هي السعة الاستيعابية لموديل HBOT City Tech متعدد الأشخاص؟", a: "تبدأ موديلات HBOT City Tech متعددة المستخدمين بموديل Milan الذي يستوعب 4 أشخاص. أما موديل Geneva بمستوى المستشفيات، فسعته القياسية 6 أشخاص، مع إمكانية اختيارية للوصول إلى 12 شخصًا (بزيادات مقعدَين في كل مرة).\n\nتُحدَّد السعة الدقيقة وفقًا للعوامل التالية:", list: ["أبعاد الغرفة", "تخطيط المقاعد", "نطاق حركة المستخدمين", "سعة نظام الأكسجين", "بروتوكول التشغيل", "متطلبات السلامة والترخيص المحلية"], aAfter: "تُضاف كل خيار إلى المشروع بعد تقييم السلامة والملاءمة الفنية." },
+              { q: "ما هي السعة الاستيعابية لموديل HBOT City Tech متعدد الأشخاص؟", a: "تبدأ موديلات HBOT City Tech متعددة المستخدمين بموديل Milano الذي يستوعب 4 أشخاص. أما موديل Geneva بمستوى المستشفيات، فسعته القياسية 6 أشخاص، مع إمكانية اختيارية للوصول إلى 12 شخصًا (بزيادات مقعدَين في كل مرة).\n\nتُحدَّد السعة الدقيقة وفقًا للعوامل التالية:", list: ["أبعاد الغرفة", "تخطيط المقاعد", "نطاق حركة المستخدمين", "سعة نظام الأكسجين", "بروتوكول التشغيل", "متطلبات السلامة والترخيص المحلية"], aAfter: "تُضاف كل خيار إلى المشروع بعد تقييم السلامة والملاءمة الفنية." },
               { q: "ما هي أبعاد الأجهزة؟", a: "لكل موديل من HBOT City Tech أبعاد خارجية مختلفة وحجم استخدام داخلي مختلف. تُعرض المعلومات التالية بشكل منفصل في صفحات المنتج الفنية:", list: ["الأبعاد الخارجية", "الأبعاد الداخلية القابلة للاستخدام", "فتحة الباب", "الوزن الإجمالي", "سعة المستخدمين", "الحد الأدنى لمساحة التركيب", "مسافة الوصول للخدمة الفنية"], aAfter: "يمكن تصميم طلبات الأبعاد المخصصة بعد إجراء تقييم هندسي." }
             ]
           },
@@ -3779,12 +3779,12 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | Cámaras Hiperbáricas de Oxígeno HBOT City Tech Series", desc: "Cámaras hiperbáricas de oxígeno conectadas por IoT e impulsadas por IA. Respira en la cumbre con la HBOT City Tech Series." },
       technology: { title: "Tecnología | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync y CityGuard — la plataforma tecnológica conectada e inteligente de la HBOT City Tech Series." },
-      models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan y Geneva — cinco modelos de cámaras hiperbáricas de oxígeno." },
+      models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milano y Geneva — cinco modelos de cámaras hiperbáricas de oxígeno." },
       soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno individual diseñada para tratamiento en posición tumbada." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno compacta y totalmente equipada para uso individual." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Una cámara de oxigenoterapia hiperbárica compartida para dos personas." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Una cámara hiperbárica de alta presión para 2-4 personas, para uso institucional." },
-      quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno espaciosa para cuatro personas, de diseño cúbico." },
+      quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno espaciosa para cuatro personas, de diseño cúbico." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno de nivel hospitalario y gran capacidad para seis o más personas." },
       hbotInfo: { title: "¿Qué es la HBOT? | HBOT Chamber Tech", desc: "Qué es la oxigenoterapia hiperbárica (HBOT), para qué se utiliza y en qué afecciones se aplica." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Investigaciones, noticias y novedades recientes sobre la oxigenoterapia hiperbárica." },
@@ -3803,7 +3803,7 @@ const TRANSLATIONS = {
         soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
-        quadCube: "Milan",
+        quadCube: "Milano",
         nexus: "Geneva",
         all_link: "Todos los Modelos"
       },
@@ -4036,7 +4036,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 Persona · Posición Tumbada", desc: "Una cámara totalmente equipada, desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada." },
       solo: { title: "Dubai", tagline: "1 Persona · Posición Sentada", desc: "Una cámara compacta, elegante y totalmente equipada, diseñada para la oxigenoterapia hiperbárica individual." },
       duo: { title: "Tokyo", tagline: "2 Personas · Posición Sentada", desc: "Una cámara de doble asiento con ventana panorámica — para parejas, acompañantes o uso paciente-acompañante." },
-      quadCube: { title: "Milan", tagline: "4 Personas · Cabina Espaciosa", desc: "Una cabina premium para cuatro personas con un interior espacioso de diseño cúbico — tapicería de cuero acolchado e iluminación ambiental LED." },
+      quadCube: { title: "Milano", tagline: "4 Personas · Cabina Espaciosa", desc: "Una cabina premium para cuatro personas con un interior espacioso de diseño cúbico — tapicería de cuero acolchado e iluminación ambiental LED." },
       nexus: { title: "Geneva", tagline: "6+ Personas · Posición Sentada", desc: "Una cámara de nivel hospitalario y gran capacidad, con expansión modular, diseñada para instituciones médicas." }
     },
     includedItems: [
@@ -4108,8 +4108,8 @@ const TRANSLATIONS = {
       ]
     },
     modelQuadCube: {
-      breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
-      faq_title: "Preguntas frecuentes sobre el Milan",
+      breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
+      faq_title: "Preguntas frecuentes sobre el Milano",
       tagline: "Una experiencia premium para cuatro personas en un diseño cúbico espacioso.",
       overview_text: "Una cabina premium para cuatro personas con un interior espacioso de forma cúbica. Con tapicería de cuero acolchado, iluminación ambiental LED y una unidad de control independiente, ofrece una terapia multiusuario cómoda para clínicas y centros de bienestar.",
       specs: [
@@ -4205,11 +4205,11 @@ const TRANSLATIONS = {
         { q: "¿Cómo obtengo un presupuesto para el Tokyo Plus?", a: "Selecciona el Tokyo Plus en el configurador, define el número de asientos y los colores, y ve una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
       ],
       "quad-cube": [
-        { q: "¿Para cuántas personas es el Milan y cómo es su diseño?", a: "El Milan es una cámara premium para cuatro personas, sentado, con un amplio interior en forma de cubo." },
-        { q: "¿Con qué materiales se acaba el interior del Milan?", a: "Incluye interior de cuero acolchado e iluminación LED ambiental; puedes elegir los colores de las paredes interiores y del asiento por separado de nuestra paleta estándar." },
-        { q: "¿En qué rango de presión funciona el Milan?", a: "Entre 2.5 y 6.0 ATA, adecuado para uso institucional." },
-        { q: "¿Cómo funciona el sistema de control del Milan?", a: "Incluye una unidad de control independiente, adecuada para el control por parte de un operador en clínicas y centros de bienestar." },
-        { q: "¿Cómo obtengo un presupuesto para el Milan?", a: "Selecciona el Milan en el configurador, elige los colores interiores y exteriores, y ve una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
+        { q: "¿Para cuántas personas es el Milano y cómo es su diseño?", a: "El Milano es una cámara premium para cuatro personas, sentado, con un amplio interior en forma de cubo." },
+        { q: "¿Con qué materiales se acaba el interior del Milano?", a: "Incluye interior de cuero acolchado e iluminación LED ambiental; puedes elegir los colores de las paredes interiores y del asiento por separado de nuestra paleta estándar." },
+        { q: "¿En qué rango de presión funciona el Milano?", a: "Entre 2.5 y 6.0 ATA, adecuado para uso institucional." },
+        { q: "¿Cómo funciona el sistema de control del Milano?", a: "Incluye una unidad de control independiente, adecuada para el control por parte de un operador en clínicas y centros de bienestar." },
+        { q: "¿Cómo obtengo un presupuesto para el Milano?", a: "Selecciona el Milano en el configurador, elige los colores interiores y exteriores, y ve una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
       ],
       "nexus": [
         { q: "¿Para cuántas personas es el Geneva?", a: "El Geneva es una cámara de gran capacidad de grado hospitalario que empieza en 6 personas y escala en niveles de 6/8/10/12." },
@@ -4259,7 +4259,7 @@ const TRANSLATIONS = {
           { scenario: "En casa, solo/a, quiero estar sentado/a durante las sesiones", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Mi pareja y yo lo usaremos juntos, en casa", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Clínica o centro de bienestar, uso institucional para 2-4 personas", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
-          { scenario: "Uso institucional, quiero un interior de cámara espacioso", model: "Milan", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "Uso institucional, quiero un interior de cámara espacioso", model: "Milano", modelId: "quad-cube", usage: "institutional" },
           { scenario: "En un hospital o clínica, varios pacientes, alta presión", model: "Geneva", modelId: "nexus", usage: "institutional" }
         ]
       },
@@ -4282,7 +4282,7 @@ const TRANSLATIONS = {
         { id: "solo", name: "Dubai", tagline: "1 Persona · Posición Sentada" },
         { id: "duo", name: "Tokyo", tagline: "2 Personas · Posición Sentada" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 Personas · Institucional" },
-        { id: "quad-cube", name: "Milan", tagline: "4 Personas · Cabina Espaciosa" },
+        { id: "quad-cube", name: "Milano", tagline: "4 Personas · Cabina Espaciosa" },
         { id: "nexus", name: "Geneva", tagline: "6+ Personas · Posición Sentada" }
       ],
       colors: [
@@ -4590,10 +4590,10 @@ const TRANSLATIONS = {
           {
             title: "Modelos HBOT City Tech",
             items: [
-              { q: "¿Qué modelos HBOT City Tech están disponibles?", a: "La familia de productos HBOT City Tech se desarrolla para diferentes capacidades de usuarios y casos de uso.\n\nOslo — Un sistema para un solo usuario desarrollado para quienes necesitan tratamiento en posición tumbada.\n\nOslo — Un sistema hiperbárico compacto para un solo usuario, utilizado en posición sentada. Diseñado tanto para uso individual/doméstico como para uso profesional.\n\nTokyo — Un sistema con un interior espacioso que puede acoger a dos usuarios en la misma sesión.\n\nMilan — Un sistema hiperbárico de gran volumen y forma cúbica para 4 usuarios, desarrollado para clínicas, hospitales y operadores profesionales.\n\nGeneva — Un sistema institucional de nivel hospitalario y gran capacidad, desde 6 usuarios y ampliable hasta 12." },
+              { q: "¿Qué modelos HBOT City Tech están disponibles?", a: "La familia de productos HBOT City Tech se desarrolla para diferentes capacidades de usuarios y casos de uso.\n\nOslo — Un sistema para un solo usuario desarrollado para quienes necesitan tratamiento en posición tumbada.\n\nOslo — Un sistema hiperbárico compacto para un solo usuario, utilizado en posición sentada. Diseñado tanto para uso individual/doméstico como para uso profesional.\n\nTokyo — Un sistema con un interior espacioso que puede acoger a dos usuarios en la misma sesión.\n\nMilano — Un sistema hiperbárico de gran volumen y forma cúbica para 4 usuarios, desarrollado para clínicas, hospitales y operadores profesionales.\n\nGeneva — Un sistema institucional de nivel hospitalario y gran capacidad, desde 6 usuarios y ampliable hasta 12." },
               { q: "¿Para quién es adecuado el Dubai?", a: "El Dubai está desarrollado tanto para uso individual/doméstico como para operadores que buscan una configuración de un solo usuario. Gracias a su estructura compacta, puede considerarse para hogares, clínicas, centros deportivos, centros de bienestar y hoteles.\n\nLas condiciones exactas de uso vienen determinadas por la clasificación del producto y la normativa del país de instalación." },
               { q: "¿A cuántas personas puede acoger el Tokyo?", a: "El Tokyo está diseñado para acoger a dos usuarios en la misma sesión. La estructura de los asientos, el equipamiento interior y la disposición de los asientos pueden variar según la configuración solicitada." },
-              { q: "¿Cuál es la capacidad de usuarios del modelo HBOT City Tech multipersona?", a: "Los modelos HBOT City Tech multiusuario comienzan con el Milan de 4 personas. Para el Geneva de nivel hospitalario, la capacidad estándar es de 6 personas, con una capacidad opcional de hasta 12 personas (en incrementos de 2 asientos).\n\nLa capacidad exacta viene determinada por los siguientes factores:", list: ["Dimensiones de la cámara", "Disposición de los asientos", "Margen de movimiento de los usuarios", "Capacidad del sistema de oxígeno", "Protocolo operativo", "Requisitos locales de seguridad y licencias"], aAfter: "Cada opción se incorpora al proyecto tras una evaluación de seguridad y un análisis de idoneidad técnica." },
+              { q: "¿Cuál es la capacidad de usuarios del modelo HBOT City Tech multipersona?", a: "Los modelos HBOT City Tech multiusuario comienzan con el Milano de 4 personas. Para el Geneva de nivel hospitalario, la capacidad estándar es de 6 personas, con una capacidad opcional de hasta 12 personas (en incrementos de 2 asientos).\n\nLa capacidad exacta viene determinada por los siguientes factores:", list: ["Dimensiones de la cámara", "Disposición de los asientos", "Margen de movimiento de los usuarios", "Capacidad del sistema de oxígeno", "Protocolo operativo", "Requisitos locales de seguridad y licencias"], aAfter: "Cada opción se incorpora al proyecto tras una evaluación de seguridad y un análisis de idoneidad técnica." },
               { q: "¿Cuáles son las dimensiones de los dispositivos?", a: "Cada modelo HBOT City Tech tiene diferentes dimensiones exteriores y un volumen interior útil distinto. La siguiente información se muestra por separado en las páginas técnicas de cada producto:", list: ["Dimensiones exteriores", "Dimensiones interiores útiles", "Apertura de la puerta", "Peso total", "Capacidad de usuarios", "Superficie mínima de instalación", "Espacio de acceso para el servicio técnico"], aAfter: "Las solicitudes de dimensiones personalizadas pueden diseñarse tras una evaluación de ingeniería." }
             ]
           },
@@ -4722,12 +4722,12 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | Câmaras de Oxigênio Hiperbárico Série HBOT City Tech", desc: "Câmaras de oxigênio hiperbárico conectadas por IoT e com tecnologia de IA. Respire no topo com a Série HBOT City Tech." },
       technology: { title: "Tecnologia | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync e CityGuard — a plataforma tecnológica conectada e inteligente da Série HBOT City Tech." },
-      models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan e Geneva — cinco modelos de câmaras de oxigênio hiperbárico." },
+      models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milano e Geneva — cinco modelos de câmaras de oxigênio hiperbárico." },
       soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico individual projetada para tratamento na posição deitada." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico compacta e totalmente equipada para uso individual." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Uma câmara de oxigenoterapia hiperbárica compartilhada para duas pessoas." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Uma câmara hiperbárica de alta pressão para 2-4 pessoas, para uso institucional." },
-      quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico espaçosa em design cubo para quatro pessoas." },
+      quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico espaçosa em design cubo para quatro pessoas." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico de grande capacidade e nível hospitalar para seis ou mais pessoas." },
       hbotInfo: { title: "O Que É a OHB? | HBOT Chamber Tech", desc: "O que é a oxigenoterapia hiperbárica (OHB), para que serve e em quais condições é aplicada." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Pesquisas, notícias e novidades recentes sobre a oxigenoterapia hiperbárica." },
@@ -4746,7 +4746,7 @@ const TRANSLATIONS = {
         soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
-        quadCube: "Milan",
+        quadCube: "Milano",
         nexus: "Geneva",
         all_link: "Todos os Modelos"
       },
@@ -4979,7 +4979,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 Pessoa · Posição Deitada", desc: "Uma câmara totalmente equipada, desenvolvida especificamente para usuários que precisam de tratamento na posição deitada." },
       solo: { title: "Dubai", tagline: "1 Pessoa · Posição Sentada", desc: "Uma câmara compacta, elegante e totalmente equipada, projetada para oxigenoterapia hiperbárica individual." },
       duo: { title: "Tokyo", tagline: "2 Pessoas · Posição Sentada", desc: "Uma câmara com dois assentos e janela panorâmica — para casais, parceiros ou uso paciente-acompanhante." },
-      quadCube: { title: "Milan", tagline: "4 Pessoas · Cabine Espaçosa", desc: "Uma cabine premium para quatro pessoas com interior espaçoso em design cubo — estofamento em couro acolchoado e iluminação ambiente em LED." },
+      quadCube: { title: "Milano", tagline: "4 Pessoas · Cabine Espaçosa", desc: "Uma cabine premium para quatro pessoas com interior espaçoso em design cubo — estofamento em couro acolchoado e iluminação ambiente em LED." },
       nexus: { title: "Geneva", tagline: "6+ Pessoas · Posição Sentada", desc: "Uma câmara de grande capacidade e nível hospitalar, com expansão modular, construída para instituições médicas." }
     },
     includedItems: [
@@ -5051,8 +5051,8 @@ const TRANSLATIONS = {
       ]
     },
     modelQuadCube: {
-      breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
-      faq_title: "Perguntas frequentes sobre o Milan",
+      breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
+      faq_title: "Perguntas frequentes sobre o Milano",
       tagline: "Uma experiência premium para quatro pessoas em design cubo espaçoso.",
       overview_text: "Uma cabine premium para quatro pessoas com interior espaçoso em formato cubo. Com estofamento em couro acolchoado, iluminação ambiente em LED e unidade de controle independente, proporciona terapia multipessoal confortável para clínicas e centros de bem-estar.",
       specs: [
@@ -5148,11 +5148,11 @@ const TRANSLATIONS = {
         { q: "Como faço para obter um orçamento para o Tokyo Plus?", a: "Selecione o Tokyo Plus no configurador, defina o número de assentos e as cores, e veja uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
       ],
       "quad-cube": [
-        { q: "Para quantas pessoas é o Milan e como é seu design?", a: "O Milan é uma câmara premium para quatro pessoas, sentado, com um amplo interior em formato de cubo." },
-        { q: "Com quais materiais o interior do Milan é acabado?", a: "Vem com interior em couro acolchoado e iluminação LED ambiente; você pode escolher as cores das paredes internas e do assento separadamente em nossa paleta padrão." },
-        { q: "Em qual faixa de pressão o Milan opera?", a: "Entre 2,5 e 6,0 ATA, adequado para uso institucional." },
-        { q: "Como funciona o sistema de controle do Milan?", a: "Vem com uma unidade de controle independente, adequada para controle por operador em clínicas e centros de bem-estar." },
-        { q: "Como faço para obter um orçamento para o Milan?", a: "Selecione o Milan no configurador, escolha as cores internas e externas, e veja uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
+        { q: "Para quantas pessoas é o Milano e como é seu design?", a: "O Milano é uma câmara premium para quatro pessoas, sentado, com um amplo interior em formato de cubo." },
+        { q: "Com quais materiais o interior do Milano é acabado?", a: "Vem com interior em couro acolchoado e iluminação LED ambiente; você pode escolher as cores das paredes internas e do assento separadamente em nossa paleta padrão." },
+        { q: "Em qual faixa de pressão o Milano opera?", a: "Entre 2,5 e 6,0 ATA, adequado para uso institucional." },
+        { q: "Como funciona o sistema de controle do Milano?", a: "Vem com uma unidade de controle independente, adequada para controle por operador em clínicas e centros de bem-estar." },
+        { q: "Como faço para obter um orçamento para o Milano?", a: "Selecione o Milano no configurador, escolha as cores internas e externas, e veja uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
       ],
       "nexus": [
         { q: "Para quantas pessoas é o Geneva?", a: "O Geneva é uma câmara de grande capacidade e grau hospitalar, que começa em 6 pessoas e escala em níveis de 6/8/10/12." },
@@ -5202,7 +5202,7 @@ const TRANSLATIONS = {
           { scenario: "Em casa, sozinho, quero ficar sentado durante as sessões", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Eu e meu(minha) parceiro(a) vamos usar juntos, em casa", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Clínica ou centro de bem-estar, uso institucional para 2 a 4 pessoas", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
-          { scenario: "Uso institucional, quero uma câmara com interior espaçoso", model: "Milan", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "Uso institucional, quero uma câmara com interior espaçoso", model: "Milano", modelId: "quad-cube", usage: "institutional" },
           { scenario: "Em hospital ou clínica, múltiplos pacientes, alta pressão", model: "Geneva", modelId: "nexus", usage: "institutional" }
         ]
       },
@@ -5225,7 +5225,7 @@ const TRANSLATIONS = {
         { id: "solo", name: "Dubai", tagline: "1 Pessoa · Posição Sentada" },
         { id: "duo", name: "Tokyo", tagline: "2 Pessoas · Posição Sentada" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 Pessoas · Institucional" },
-        { id: "quad-cube", name: "Milan", tagline: "4 Pessoas · Cabine Espaçosa" },
+        { id: "quad-cube", name: "Milano", tagline: "4 Pessoas · Cabine Espaçosa" },
         { id: "nexus", name: "Geneva", tagline: "6+ Pessoas · Posição Sentada" }
       ],
       colors: [
@@ -5533,10 +5533,10 @@ const TRANSLATIONS = {
           {
             title: "Modelos HBOT City Tech",
             items: [
-              { q: "Quais modelos HBOT City Tech estão disponíveis?", a: "A família de produtos HBOT City Tech é desenvolvida para diferentes capacidades de usuários e casos de uso.\n\nOslo — Um sistema individual desenvolvido para usuários que precisam de tratamento na posição deitada.\n\nOslo — Um sistema hiperbárico individual e compacto, usado na posição sentada. Projetado tanto para uso individual/doméstico quanto para uso comercial.\n\nTokyo — Um sistema com interior espaçoso que pode acomodar dois usuários na mesma sessão.\n\nMilan — Um sistema hiperbárico de grande volume, em formato cubo, para 4 usuários, desenvolvido para clínicas, hospitais e operadores profissionais.\n\nGeneva — Um sistema institucional de grande capacidade e nível hospitalar, com capacidade inicial de 6 usuários, expansível até 12." },
+              { q: "Quais modelos HBOT City Tech estão disponíveis?", a: "A família de produtos HBOT City Tech é desenvolvida para diferentes capacidades de usuários e casos de uso.\n\nOslo — Um sistema individual desenvolvido para usuários que precisam de tratamento na posição deitada.\n\nOslo — Um sistema hiperbárico individual e compacto, usado na posição sentada. Projetado tanto para uso individual/doméstico quanto para uso comercial.\n\nTokyo — Um sistema com interior espaçoso que pode acomodar dois usuários na mesma sessão.\n\nMilano — Um sistema hiperbárico de grande volume, em formato cubo, para 4 usuários, desenvolvido para clínicas, hospitais e operadores profissionais.\n\nGeneva — Um sistema institucional de grande capacidade e nível hospitalar, com capacidade inicial de 6 usuários, expansível até 12." },
               { q: "Para quem o Dubai é indicado?", a: "O Dubai é desenvolvido tanto para uso individual/doméstico quanto para operadores que buscam uma configuração individual. Graças à sua estrutura compacta, pode ser considerado para residências, clínicas, centros esportivos, centros de bem-estar e hotéis.\n\nAs condições exatas de uso são determinadas pela classificação do produto e pelas regulamentações do país de instalação." },
               { q: "Quantas pessoas o Tokyo pode acomodar?", a: "O Tokyo foi projetado para acomodar dois usuários na mesma sessão. A estrutura dos assentos, os acabamentos internos e a disposição dos assentos podem variar conforme a configuração pedida." },
-              { q: "Qual é a capacidade de usuários do modelo HBOT City Tech multipessoal?", a: "Os modelos HBOT City Tech multiusuário começam com o Milan, para 4 pessoas. Para o Geneva, de nível hospitalar, a capacidade padrão é de 6 pessoas, com capacidade opcional de até 12 pessoas (em incrementos de 2 assentos).\n\nA capacidade exata é determinada pelos seguintes fatores:", list: ["Dimensões da câmara", "Disposição dos assentos", "Amplitude de movimento dos usuários", "Capacidade do sistema de oxigênio", "Protocolo operacional", "Requisitos locais de segurança e licenciamento"], aAfter: "Cada opção é incorporada ao projeto após uma avaliação de segurança e uma análise de adequação técnica." },
+              { q: "Qual é a capacidade de usuários do modelo HBOT City Tech multipessoal?", a: "Os modelos HBOT City Tech multiusuário começam com o Milano, para 4 pessoas. Para o Geneva, de nível hospitalar, a capacidade padrão é de 6 pessoas, com capacidade opcional de até 12 pessoas (em incrementos de 2 assentos).\n\nA capacidade exata é determinada pelos seguintes fatores:", list: ["Dimensões da câmara", "Disposição dos assentos", "Amplitude de movimento dos usuários", "Capacidade do sistema de oxigênio", "Protocolo operacional", "Requisitos locais de segurança e licenciamento"], aAfter: "Cada opção é incorporada ao projeto após uma avaliação de segurança e uma análise de adequação técnica." },
               { q: "Quais são as dimensões dos equipamentos?", a: "Cada modelo HBOT City Tech tem dimensões externas e volume interno útil diferentes. As seguintes informações são exibidas separadamente nas páginas técnicas do produto:", list: ["Dimensões externas", "Dimensões internas úteis", "Abertura da porta", "Peso total", "Capacidade de usuários", "Área mínima de instalação", "Espaço de acesso para assistência técnica"], aAfter: "Solicitações de dimensões personalizadas podem ser projetadas após uma avaliação de engenharia." }
             ]
           },
@@ -5665,12 +5665,12 @@ const TRANSLATIONS = {
     meta: {
       home: { title: "HBOT Chamber Tech | HBOT City Tech Series Hyperbare Sauerstoffkammern", desc: "IoT-vernetzte, KI-gestützte hyperbare Sauerstoffkammern. Atmen Sie auf dem Gipfel mit der HBOT City Tech Series." },
       technology: { title: "Technologie | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync und CityGuard — die vernetzte, intelligente Technologieplattform der HBOT City Tech Series." },
-      models: { title: "Modelle | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milan und Geneva — fünf Modelle hyperbarer Sauerstoffkammern." },
+      models: { title: "Modelle | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Milano und Geneva — fünf Modelle hyperbarer Sauerstoffkammern." },
       soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer für eine Person, konzipiert für die Behandlung in liegender Position." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Eine kompakte, voll ausgestattete hyperbare Sauerstoffkammer für die individuelle Nutzung." },
       duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Eine gemeinsam genutzte hyperbare Sauerstofftherapie-Kammer für zwei Personen." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Eine druckstarke Kammer für 2-4 Personen für den institutionellen Einsatz." },
-      quadCube: { title: "Milan | HBOT Chamber Tech", desc: "Eine geräumige hyperbare Sauerstoffkammer im Cube-Design für vier Personen." },
+      quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Eine geräumige hyperbare Sauerstoffkammer im Cube-Design für vier Personen." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer in Krankenhausqualität mit großer Kapazität für sechs oder mehr Personen." },
       hbotInfo: { title: "Was ist HBOT? | HBOT Chamber Tech", desc: "Was ist die hyperbare Sauerstofftherapie (HBOT), wofür wird sie eingesetzt und bei welchen Indikationen kommt sie zur Anwendung." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Aktuelle Forschung, Neuigkeiten und Entwicklungen rund um die hyperbare Sauerstofftherapie." },
@@ -5689,7 +5689,7 @@ const TRANSLATIONS = {
         soloLounge: "Oslo",
         solo: "Dubai",
         duo: "Tokyo",
-        quadCube: "Milan",
+        quadCube: "Milano",
         nexus: "Geneva",
         all_link: "Alle Modelle"
       },
@@ -5922,7 +5922,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 Person · Liegende Position", desc: "Eine voll ausgestattete Kammer, die speziell für Nutzer entwickelt wurde, die eine Behandlung in liegender Position benötigen." },
       solo: { title: "Dubai", tagline: "1 Person · Sitzende Position", desc: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstofftherapie." },
       duo: { title: "Tokyo", tagline: "2 Personen · Sitzende Position", desc: "Eine Zweiplatz-Kammer mit Panoramafenster — für Paare, Partner oder die Nutzung mit Begleitperson." },
-      quadCube: { title: "Milan", tagline: "4 Personen · Geräumige Kabine", desc: "Eine Premium-Kabine für vier Personen mit geräumigem Cube-Design-Innenraum — gesteppte Lederpolsterung und LED-Ambientebeleuchtung." },
+      quadCube: { title: "Milano", tagline: "4 Personen · Geräumige Kabine", desc: "Eine Premium-Kabine für vier Personen mit geräumigem Cube-Design-Innenraum — gesteppte Lederpolsterung und LED-Ambientebeleuchtung." },
       nexus: { title: "Geneva", tagline: "6+ Personen · Sitzende Position", desc: "Eine großvolumige Kammer in Krankenhausqualität mit modularer Erweiterung, konzipiert für medizinische Einrichtungen." }
     },
     includedItems: [
@@ -5994,8 +5994,8 @@ const TRANSLATIONS = {
       ]
     },
     modelQuadCube: {
-      breadcrumb: "Milan", eyebrow: "MILAN", title: "Milan",
-      faq_title: "Häufige Fragen zum Milan",
+      breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
+      faq_title: "Häufige Fragen zum Milano",
       tagline: "Ein Premium-Erlebnis für vier Personen in geräumigem Cube-Design.",
       overview_text: "Eine Premium-Kabine für vier Personen mit geräumigem, würfelförmigem Innenraum. Mit gesteppter Lederpolsterung, LED-Ambientebeleuchtung und unabhängiger Steuereinheit bietet sie komfortable Mehrpersonentherapie für Kliniken und Wellnesszentren.",
       specs: [
@@ -6091,11 +6091,11 @@ const TRANSLATIONS = {
         { q: "Wie erhalte ich ein Angebot für den Tokyo Plus?", a: "Wählen Sie den Tokyo Plus im Konfigurator, legen Sie Sitzanzahl und Farben fest und sehen Sie sofort eine Preisschätzung; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
       ],
       "quad-cube": [
-        { q: "Für wie viele Personen ist der Milan ausgelegt und wie ist sein Design?", a: "Der Milan ist eine Premium-Kammer für vier Personen, sitzend, mit geräumigem würfelförmigem Innenraum." },
-        { q: "Mit welchen Materialien ist der Innenraum des Milan ausgestattet?", a: "Er verfügt über gestepptes Lederinterieur und LED-Ambientebeleuchtung; Innenwand- und Sitzfarben können Sie separat aus unserer Standardpalette wählen." },
-        { q: "In welchem Druckbereich arbeitet der Milan?", a: "Zwischen 2,5 und 6,0 ATA, geeignet für institutionellen Einsatz." },
-        { q: "Wie funktioniert das Bediensystem des Milan?", a: "Er verfügt über eine unabhängige Bedieneinheit, geeignet für die Bedienung durch Personal in Kliniken und Wellnesszentren." },
-        { q: "Wie erhalte ich ein Angebot für den Milan?", a: "Wählen Sie den Milan im Konfigurator, legen Sie Innen- und Außenfarben fest und sehen Sie sofort eine Preisschätzung; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
+        { q: "Für wie viele Personen ist der Milano ausgelegt und wie ist sein Design?", a: "Der Milano ist eine Premium-Kammer für vier Personen, sitzend, mit geräumigem würfelförmigem Innenraum." },
+        { q: "Mit welchen Materialien ist der Innenraum des Milano ausgestattet?", a: "Er verfügt über gestepptes Lederinterieur und LED-Ambientebeleuchtung; Innenwand- und Sitzfarben können Sie separat aus unserer Standardpalette wählen." },
+        { q: "In welchem Druckbereich arbeitet der Milano?", a: "Zwischen 2,5 und 6,0 ATA, geeignet für institutionellen Einsatz." },
+        { q: "Wie funktioniert das Bediensystem des Milano?", a: "Er verfügt über eine unabhängige Bedieneinheit, geeignet für die Bedienung durch Personal in Kliniken und Wellnesszentren." },
+        { q: "Wie erhalte ich ein Angebot für den Milano?", a: "Wählen Sie den Milano im Konfigurator, legen Sie Innen- und Außenfarben fest und sehen Sie sofort eine Preisschätzung; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
       ],
       "nexus": [
         { q: "Für wie viele Personen ist der Geneva ausgelegt?", a: "Der Geneva ist eine großvolumige Kammer im Krankenhausstandard, die bei 6 Personen beginnt und in Stufen von 6/8/10/12 skaliert." },
@@ -6145,7 +6145,7 @@ const TRANSLATIONS = {
           { scenario: "Zu Hause, allein, ich möchte während der Sitzungen sitzen", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Mein Partner und ich werden es gemeinsam zu Hause nutzen", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Klinik oder Wellnesszentrum, institutionelle Nutzung für 2–4 Personen", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
-          { scenario: "Institutionelle Nutzung, geräumiger Innenraum gewünscht", model: "Milan", modelId: "quad-cube", usage: "institutional" },
+          { scenario: "Institutionelle Nutzung, geräumiger Innenraum gewünscht", model: "Milano", modelId: "quad-cube", usage: "institutional" },
           { scenario: "In einem Krankenhaus oder einer Klinik, mehrere Patienten, hoher Druck", model: "Geneva", modelId: "nexus", usage: "institutional" }
         ]
       },
@@ -6168,7 +6168,7 @@ const TRANSLATIONS = {
         { id: "solo", name: "Dubai", tagline: "1 Person · Sitzende Position" },
         { id: "duo", name: "Tokyo", tagline: "2 Personen · Sitzende Position" },
         { id: "duo-plus", name: "Tokyo Plus", tagline: "2-4 Personen · Institutionell" },
-        { id: "quad-cube", name: "Milan", tagline: "4 Personen · Geräumige Kabine" },
+        { id: "quad-cube", name: "Milano", tagline: "4 Personen · Geräumige Kabine" },
         { id: "nexus", name: "Geneva", tagline: "6+ Personen · Sitzende Position" }
       ],
       colors: [
@@ -6476,10 +6476,10 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech-Modelle",
             items: [
-              { q: "Welche HBOT City Tech-Modelle sind verfügbar?", a: "Die HBOT City Tech-Produktfamilie wurde für unterschiedliche Nutzerkapazitäten und Einsatzzwecke entwickelt.\n\nOslo — Ein Einzelnutzersystem, entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen.\n\nOslo — Ein kompaktes Einzelnutzer-Hyperbarsystem für die Anwendung in sitzender Position. Konzipiert sowohl für den individuellen/häuslichen als auch für den gewerblichen Einsatz.\n\nTokyo — Ein System mit geräumigem Innenraum, das zwei Nutzer in derselben Sitzung aufnehmen kann.\n\nMilan — Ein würfelförmiges, großvolumiges Hyperbarsystem für 4 Nutzer, entwickelt für Kliniken, Krankenhäuser und professionelle Betreiber.\n\nGeneva — Ein institutionelles System in Krankenhausqualität mit großer Kapazität, beginnend bei 6 Nutzern und erweiterbar bis zu 12." },
+              { q: "Welche HBOT City Tech-Modelle sind verfügbar?", a: "Die HBOT City Tech-Produktfamilie wurde für unterschiedliche Nutzerkapazitäten und Einsatzzwecke entwickelt.\n\nOslo — Ein Einzelnutzersystem, entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen.\n\nOslo — Ein kompaktes Einzelnutzer-Hyperbarsystem für die Anwendung in sitzender Position. Konzipiert sowohl für den individuellen/häuslichen als auch für den gewerblichen Einsatz.\n\nTokyo — Ein System mit geräumigem Innenraum, das zwei Nutzer in derselben Sitzung aufnehmen kann.\n\nMilano — Ein würfelförmiges, großvolumiges Hyperbarsystem für 4 Nutzer, entwickelt für Kliniken, Krankenhäuser und professionelle Betreiber.\n\nGeneva — Ein institutionelles System in Krankenhausqualität mit großer Kapazität, beginnend bei 6 Nutzern und erweiterbar bis zu 12." },
               { q: "Für wen eignet sich Dubai?", a: "Dubai wurde sowohl für den individuellen/häuslichen Einsatz als auch für Betreiber entwickelt, die eine Einzelnutzer-Lösung suchen. Dank seiner kompakten Struktur eignet es sich für den Einsatz in Privathaushalten, Kliniken, Sportzentren, Wellnesszentren und Hotels.\n\nDie genauen Nutzungsbedingungen richten sich nach der Klassifizierung des Produkts und den Vorschriften des Installationslandes." },
               { q: "Wie viele Personen fasst der Tokyo?", a: "Der Tokyo ist so konzipiert, dass er zwei Nutzer in derselben Sitzung aufnehmen kann. Die Sitzstruktur, die Innenausstattung und die Sitzanordnung können je nach bestellter Konfiguration variieren." },
-              { q: "Wie hoch ist die Nutzerkapazität des Mehrpersonen-HBOT City Tech-Modells?", a: "Die Mehrpersonen-HBOT City Tech-Modelle beginnen mit dem 4-Personen-Modell Milan. Beim Geneva in Krankenhausqualität beträgt die Standardkapazität 6 Personen, mit einer optionalen Kapazität von bis zu 12 Personen (in Schritten von 2 Sitzplätzen).\n\nDie genaue Kapazität wird durch folgende Faktoren bestimmt:", list: ["Kammerabmessungen", "Sitzanordnung", "Bewegungsspielraum der Nutzer", "Kapazität des Sauerstoffsystems", "Betriebsprotokoll", "Lokale Sicherheits- und Zulassungsanforderungen"], aAfter: "Jede Option wird nach einer Sicherheitsbewertung und Prüfung der technischen Eignung in das Projekt aufgenommen." },
+              { q: "Wie hoch ist die Nutzerkapazität des Mehrpersonen-HBOT City Tech-Modells?", a: "Die Mehrpersonen-HBOT City Tech-Modelle beginnen mit dem 4-Personen-Modell Milano. Beim Geneva in Krankenhausqualität beträgt die Standardkapazität 6 Personen, mit einer optionalen Kapazität von bis zu 12 Personen (in Schritten von 2 Sitzplätzen).\n\nDie genaue Kapazität wird durch folgende Faktoren bestimmt:", list: ["Kammerabmessungen", "Sitzanordnung", "Bewegungsspielraum der Nutzer", "Kapazität des Sauerstoffsystems", "Betriebsprotokoll", "Lokale Sicherheits- und Zulassungsanforderungen"], aAfter: "Jede Option wird nach einer Sicherheitsbewertung und Prüfung der technischen Eignung in das Projekt aufgenommen." },
               { q: "Wie groß sind die Geräte?", a: "Jedes HBOT City Tech-Modell hat unterschiedliche Außenabmessungen und nutzbares Innenvolumen. Die folgenden Informationen werden auf den technischen Produktseiten separat angezeigt:", list: ["Außenabmessungen", "Nutzbare Innenabmessungen", "Türöffnung", "Gesamtgewicht", "Nutzerkapazität", "Mindestaufstellfläche", "Zugangsfreiraum für den technischen Service"], aAfter: "Sonderabmessungen können nach einer technischen Bewertung realisiert werden." }
             ]
           },

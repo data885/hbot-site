@@ -3,6 +3,10 @@ services:
     name: hbot-site
     runtime: static
     staticPublishPath: ./site
+    routes:
+      - type: redirect
+        source: /model-apex-quad.html
+        destination: /model-apex-quad-cube.html
     headers:
       - path: /*
         name: Strict-Transport-Security

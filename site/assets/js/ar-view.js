@@ -5,7 +5,7 @@
     "solo-lounge": "Oslo",
     "solo": "Dubai",
     "duo": "Tokyo",
-    "quad-cube": "Milan",
+    "quad-cube": "Milano",
     "nexus": "Geneva"
   };
 

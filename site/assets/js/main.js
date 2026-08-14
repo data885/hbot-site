@@ -73,7 +73,6 @@
     solo: "model-apex-solo.html",
     duo: "model-apex-duo.html",
     "duo-plus": "model-apex-duo-plus.html",
-    quad: "model-apex-quad.html",
     "quad-cube": "model-apex-quad-cube.html",
     nexus: "model-apex-nexus.html"
   };
@@ -659,7 +658,7 @@
   };
   function realInteriorMatch() {
     /* Dubai'nin kendi duvar/koltuk renk varyantı fotoğrafları yok — ailesi
-       "milan" olduğu için renk dokunulunca Milan'ın (4 kişilik) fotoğrafına
+       "milan" olduğu için renk dokunulunca Milano'nun (4 kişilik) fotoğrafına
        düşüyordu. Yanlış ürün göstermektense her zaman Dubai'nin kendi
        varsayılan iç görselinde (REAL_INTERIOR.solo) sabit kal. */
     if (configState.model === "solo") return null;
