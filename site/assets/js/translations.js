@@ -33,7 +33,7 @@ const TRANSLATIONS = {
         all_link: "Tüm Modeller"
       },
       footer: {
-        about_text: "HBOT Chamber Tech; IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları üreten öncü bir markadır.",
+        about_text: "HBOT Chamber Tech; Almita Group çatısı altında 2007'den bu yana süregelen mühendislik deneyimiyle, IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları üreten öncü bir markadır.",
         models_title: "Modeller",
         company_title: "Kurumsal",
         contact_title: "İletişim",
@@ -75,7 +75,7 @@ const TRANSLATIONS = {
       stats: [
         { value: "5", label: "HBOT City Tech Modeli" },
         { value: "94%", label: "Oksijen Saflığı" },
-        { value: "<55dB", label: "CitySilent™ Gürültü Seviyesi" },
+        { value: "<60dB", label: "CitySilent™ Gürültü Seviyesi" },
         { value: "7/24", label: "Uzaktan İzleme" },
         { value: "20+", label: "Yıl Mühendislik Deneyimi" }
       ],
@@ -169,7 +169,7 @@ const TRANSLATIONS = {
           desc: "Kabin içindeki sensörler ve hasta verileri, makine öğrenimi algoritmalarıyla analiz edilir.",
           features: [
             "Dinamik basınç ayarı: rahatsızlık belirtisinde basınç mikro adımlarla ayarlanarak konfor korunur",
-            "Oksijen verimlilik optimizasyonu: nefes ritmine göre oksijen akışı ayarlanır, tüketim %30 azalır",
+            "Oksijen verimlilik optimizasyonu: nefes ritmine göre oksijen akışı ayarlanır, tüketimde %30'a varan azalma hedeflenir (saha testleri sürüyor)",
             "Seans öneri motoru: protokol tamamlandığında doktor onayına rapor hazırlanır",
             "Klostrofobi algılama: aşırı hareketlilik algılandığında aydınlatma ve iletişim sistemi devreye girer"
           ]
@@ -179,7 +179,7 @@ const TRANSLATIONS = {
           subtitle: "Hastane Bilgi Sistemleriyle Tek Tık Entegrasyon",
           desc: "HL7 FHIR ve DICOM uyumlu. Seans bitince veriler otomatik hasta dosyasına düşer.",
           features: [
-            "Epic, Cerner, Medistat, Logo ve yerel hastane bilgi sistemlerine doğrudan bağlantı",
+            "Epic, Cerner, Medistat, Logo ve yerel hastane bilgi sistemlerine doğrudan bağlantı (entegrasyon testleri sürüyor, yakında canlıya alınacak)",
             "Otomatik raporlama: her seans sonunda doktorun ekranına rapor gelir",
             "Fatura entegrasyonu: oksijen miktarı ve seans süresi otomatik muhasebe modülüne aktarılır"
           ]
@@ -196,7 +196,7 @@ const TRANSLATIONS = {
         }
       },
       extra: {
-        silent: { title: "CitySilent™", desc: "55 desibelin altında çalışma gürültüsü." },
+        silent: { title: "CitySilent™", desc: "60 desibelin altında çalışma gürültüsü." },
         care: { title: "CityCare™", desc: "Servis çağrısı beklemeden uzaktan teşhis ve çözüm." }
       },
       comparison: {
@@ -214,7 +214,7 @@ const TRANSLATIONS = {
           { feature: "Tahmine Dayalı Bakım", competitor: "Yok, reaktif bakım", apex: "CityGuard™ — Arıza öncesi uyarı" },
           { feature: "Otomatik Raporlama", competitor: "Yok", apex: "CitySync™ — Seans bitince rapor" },
           { feature: "Uzaktan Teşhis", competitor: "Yok, servis çağrısı gerekir", apex: "CityCare™ — Uzaktan çözüm" },
-          { feature: "Gürültü Seviyesi", competitor: "60–70 dB", apex: "CitySilent™ — <55 dB" },
+          { feature: "Gürültü Seviyesi", competitor: "60–70 dB", apex: "CitySilent™ — <60 dB" },
           { feature: "Dijital Güvenlik Günlüğü", competitor: "Yok", apex: "CityGuard™ — Şifreli bulut kayıt" }
         ]
       },
@@ -231,9 +231,9 @@ const TRANSLATIONS = {
         disclaimer: "Bu özellikler geliştirme aşamasındadır ve gelecekteki modellerde sunulması planlanmaktadır; mevcut HBOT City Tech modellerinde standart değildir. Kabin basıncı ve oksijen seviyesi her zaman yetkili bir operatör tarafından kontrol edilir."
       },
       certifications: {
-        eyebrow: "SERTİFİKALAR",
-        title: "Standartlara Uygunluk",
-        subtitle: "HBOT City Tech Serisi, medikal kabin tasarımı, yangın güvenliği ve basınçlı ekipman alanındaki uluslararası standartlara göre geliştirilir.",
+        eyebrow: "HEDEFLENEN STANDARTLAR",
+        title: "Hedeflediğimiz Sertifikasyon Standartları",
+        subtitle: "HBOT City Tech Serisi'nin mühendisliği, medikal kabin tasarımı, yangın güvenliği ve basınçlı ekipman alanındaki şu uluslararası standartlar referans alınarak yürütülür; sertifikasyon süreçleri devam etmektedir.",
         items: [
           { code: "EN 14931", name: "Medikal Kabin Dizayn Standardı" },
           { code: "EN 16081", name: "Medikal Kabin Yangın Sistemi" },
@@ -285,7 +285,7 @@ const TRANSLATIONS = {
         { label: "Malzeme", value: "Havacılık sınıfı alüminyum" },
         { label: "Güvenlik", value: "Çift emniyet valfi" },
         { label: "Dış Ölçüler", value: "240×110×120 cm" },
-        { label: "Gürültü Seviyesi", value: "<55 dB (CitySilent™)" }
+        { label: "Gürültü Seviyesi", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelSolo: {
@@ -300,7 +300,7 @@ const TRANSLATIONS = {
         { label: "Malzeme", value: "Havacılık sınıfı alüminyum" },
         { label: "Güvenlik", value: "Çift emniyet valfi" },
         { label: "Dış Ölçüler", value: "120×110×180 cm" },
-        { label: "Gürültü Seviyesi", value: "<55 dB (CitySilent™)" }
+        { label: "Gürültü Seviyesi", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelDuo: {
@@ -405,7 +405,7 @@ const TRANSLATIONS = {
         { q: "Oslo kaç kişilik ve hangi pozisyonda kullanılıyor?", a: "Oslo tek kişilik ve tamamen yatay pozisyonda kullanılır. 200×80 cm medikal ortopedik yatağı, uzun seanslarda sırt ve bel üzerindeki baskıyı azaltır." },
         { q: "Oslo'da koltuk veya iç duvar rengi seçebilir miyim?", a: "Hayır — Oslo'nun koltuğu yoktur ve iç mekân görseli sabittir; bu adım konfigüratörden bilinçli olarak kaldırılmıştır. Dış gövde rengini yine de standart palettemizden seçebilir, listede olmayan bir rengi de talep edebilirsiniz." },
         { q: "Oslo hangi basınç aralığında çalışır?", a: "1.5–2.0 ATA aralığında, ev tipi kullanıma uygun düşük basınçlı bir sistemdir." },
-        { q: "Oslo'nun gürültü seviyesi evde rahatsız eder mi?", a: "55 dB'nin altında çalışır — sakin bir odanın ortam gürültüsüne yakındır." },
+        { q: "Oslo'nun gürültü seviyesi evde rahatsız eder mi?", a: "60 dB'nin altında çalışır — sakin bir odanın ortam gürültüsüne yakındır." },
         { q: "Oslo için nasıl teklif alabilirim?", a: "Konfigüratörden Oslo'yu seçip rengini belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
       ],
       "solo": [
@@ -881,6 +881,7 @@ const TRANSLATIONS = {
             title: "Kurulum",
             items: [
               { q: "Kurulum için ne kadar alan gerekir?", a: "Gerekli alan seçilen HBOT City Tech modeline göre değişir. Kurulum alanı belirlenirken yalnızca cihaz ölçüsü değil, aşağıdaki unsurlar da dikkate alınmalıdır:", list: ["Operatör çalışma alanı", "Kapının tam açılma mesafesi", "Teknik servis erişimi", "Kompresör ve yardımcı sistem alanı", "Oksijen sistemi alanı", "Havalandırma", "Elektrik panosu", "Acil çıkış güzergâhı", "Yangın güvenliği ekipmanları"], aAfter: "Minimum kurulum ölçüleri teknik keşif sonrasında belirlenir." },
+              { q: "Cihazın mekânıma sığıp sığmayacağını nasıl anlarım?", a: "En pratik yöntem, konfigüratördeki '📱 Mekânınızda Görün (3D / AR)' özelliğini kullanmaktır: telefonunuzun kamerasıyla, seçtiğiniz modeli gerçek ölçeğinde kendi mekânınıza yerleştirip her açıdan inceleyebilirsiniz. Model bazındaki dış ölçüler de teknik özellikler tablosunda ayrıca listelenir." },
               { q: "Cihaz mevcut bir binaya kurulabilir mi?", a: "Çoğu proje mevcut yapılara uygulanabilir; ancak kurulum öncesinde teknik inceleme yapılmalıdır. Aşağıdaki koşullar kontrol edilir:", list: ["Zemin taşıma kapasitesi", "Kapı ve koridor geçişleri", "Asansör kapasitesi", "Tavan yüksekliği", "Elektrik altyapısı", "Havalandırma", "Oksijen ve basınçlı hava altyapısı", "Yangın güvenliği", "Teknik servis erişimi"] },
               { q: "Kurulum öncesinde keşif yapıyor musunuz?", a: "Evet. Projenin konumuna ve kapsamına göre uzaktan teknik değerlendirme veya yerinde keşif yapılabilir. İlk değerlendirme için müşteriden aşağıdaki bilgiler talep edilebilir:", list: ["Kurulum alanı ölçüleri", "Fotoğraf ve videolar", "Mimari plan", "Elektrik altyapısı", "Havalandırma bilgileri", "Giriş ve taşıma güzergâhı", "Hedef kullanıcı kapasitesi", "İstenen model ve opsiyonlar"] },
               { q: "Zemin güçlendirmesi gerekir mi?", a: "Bu durum cihazın ağırlığına, yardımcı ekipmanlara ve binanın taşıma kapasitesine bağlıdır. Gerekli olduğunda yetkili inşaat veya yapı mühendisi tarafından statik değerlendirme yapılmalıdır." },
@@ -977,7 +978,7 @@ const TRANSLATIONS = {
         all_link: "All Models"
       },
       footer: {
-        about_text: "HBOT Chamber Tech is a leading manufacturer of IoT-connected, AI-powered hyperbaric oxygen chambers.",
+        about_text: "HBOT Chamber Tech is a leading manufacturer of IoT-connected, AI-powered hyperbaric oxygen chambers, backed by engineering experience under Almita Group dating back to 2007.",
         models_title: "Models",
         company_title: "Company",
         contact_title: "Contact",
@@ -1019,7 +1020,7 @@ const TRANSLATIONS = {
       stats: [
         { value: "5", label: "HBOT City Tech Models" },
         { value: "94%", label: "Oxygen Purity" },
-        { value: "<55dB", label: "CitySilent™ Noise Level" },
+        { value: "<60dB", label: "CitySilent™ Noise Level" },
         { value: "24/7", label: "Remote Monitoring" },
         { value: "20+", label: "Years of Engineering Experience" }
       ],
@@ -1113,7 +1114,7 @@ const TRANSLATIONS = {
           desc: "Sensors inside the chamber and patient data are analyzed with machine learning algorithms.",
           features: [
             "Dynamic pressure adjustment: if signs of discomfort appear, pressure is fine-tuned in micro-steps to preserve comfort",
-            "Oxygen efficiency optimization: oxygen flow adjusts to breathing rhythm, cutting waste by 30%",
+            "Oxygen efficiency optimization: oxygen flow adjusts to breathing rhythm, targeting up to 30% less waste (field testing underway)",
             "Session recommendation engine: a report is prepared for physician approval once a protocol is complete",
             "Claustrophobia detection: excessive movement triggers the lighting and communication system automatically"
           ]
@@ -1123,7 +1124,7 @@ const TRANSLATIONS = {
           subtitle: "One-Click Integration With Hospital Information Systems",
           desc: "HL7 FHIR and DICOM compliant. Data lands in the patient's file automatically once a session ends.",
           features: [
-            "Direct connection to Epic, Cerner, Medistat, Logo and local HIS systems",
+            "Direct connection to Epic, Cerner, Medistat, Logo and local HIS systems (integration testing underway, rolling out soon)",
             "Automatic reporting: a report reaches the physician's screen at the end of every session",
             "Billing integration: oxygen volume and session duration are pushed automatically to the accounting module"
           ]
@@ -1140,7 +1141,7 @@ const TRANSLATIONS = {
         }
       },
       extra: {
-        silent: { title: "CitySilent™", desc: "Operating noise below 55 decibels." },
+        silent: { title: "CitySilent™", desc: "Operating noise below 60 decibels." },
         care: { title: "CityCare™", desc: "Remote diagnosis and resolution without waiting for a service call." }
       },
       comparison: {
@@ -1158,7 +1159,7 @@ const TRANSLATIONS = {
           { feature: "Predictive Maintenance", competitor: "None, reactive maintenance", apex: "CityGuard™ — Pre-failure warning" },
           { feature: "Automatic Reporting", competitor: "None", apex: "CitySync™ — Report at session end" },
           { feature: "Remote Diagnosis", competitor: "None, service call required", apex: "CityCare™ — Remote resolution" },
-          { feature: "Noise Level", competitor: "60–70 dB", apex: "CitySilent™ — <55 dB" },
+          { feature: "Noise Level", competitor: "60–70 dB", apex: "CitySilent™ — <60 dB" },
           { feature: "Digital Security Log", competitor: "None", apex: "CityGuard™ — Encrypted cloud log" }
         ]
       },
@@ -1175,9 +1176,9 @@ const TRANSLATIONS = {
         disclaimer: "These features are under development and planned for future models; they are not standard on current HBOT City Tech models. Chamber pressure and oxygen levels are always controlled by a qualified operator."
       },
       certifications: {
-        eyebrow: "CERTIFICATIONS",
-        title: "Standards Compliance",
-        subtitle: "The HBOT City Tech Series is developed in line with international standards for medical chamber design, fire safety, and pressure equipment.",
+        eyebrow: "STANDARDS WE TARGET",
+        title: "The Certification Standards We're Working Toward",
+        subtitle: "The engineering of the HBOT City Tech Series is carried out with reference to the following international standards for medical chamber design, fire safety, and pressure equipment; certification is in progress.",
         items: [
           { code: "EN 14931", name: "Medical Chamber Design Standard" },
           { code: "EN 16081", name: "Medical Chamber Fire System" },
@@ -1229,7 +1230,7 @@ const TRANSLATIONS = {
         { label: "Material", value: "Aviation-grade aluminum" },
         { label: "Safety", value: "Dual safety valve" },
         { label: "Exterior Dimensions", value: "240×110×120 cm" },
-        { label: "Noise Level", value: "<55 dB (CitySilent™)" }
+        { label: "Noise Level", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelSolo: {
@@ -1244,7 +1245,7 @@ const TRANSLATIONS = {
         { label: "Material", value: "Aviation-grade aluminum" },
         { label: "Safety", value: "Dual safety valve" },
         { label: "Exterior Dimensions", value: "120×110×180 cm" },
-        { label: "Noise Level", value: "<55 dB (CitySilent™)" }
+        { label: "Noise Level", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelDuo: {
@@ -1349,7 +1350,7 @@ const TRANSLATIONS = {
         { q: "How many people does the Oslo fit, and in what position?", a: "The Oslo is a single-person chamber used in a fully lying-down position. Its 200×80 cm medical orthopaedic mattress reduces back and lower-back pressure during long sessions." },
         { q: "Can I choose a seat or interior wall colour for the Oslo?", a: "No — the Oslo has no seat, and its interior view is fixed by design, so this step is deliberately removed from the configurator. You can still choose the exterior colour from our standard palette, or request a shade outside the list." },
         { q: "What pressure range does the Oslo operate at?", a: "1.5–2.0 ATA — a low-pressure system suited to home use." },
-        { q: "Is the Oslo noisy enough to disturb a home environment?", a: "It runs below 55 dB, close to the ambient noise of a quiet room." },
+        { q: "Is the Oslo noisy enough to disturb a home environment?", a: "It runs below 60 dB, close to the ambient noise of a quiet room." },
         { q: "How do I get a quote for the Oslo?", a: "Select the Oslo in the configurator and pick a colour to see an instant price estimate, then request a final quote through the form." }
       ],
       "solo": [
@@ -1825,6 +1826,7 @@ const TRANSLATIONS = {
             title: "Installation",
             items: [
               { q: "How much space is required for installation?", a: "The required space varies according to the selected HBOT City Tech model. When determining the installation area, the following factors should be considered in addition to the device dimensions:", list: ["Operator working area", "Full door-opening clearance", "Technical service access", "Compressor and auxiliary equipment area", "Oxygen system area", "Ventilation", "Electrical panel", "Emergency exit route", "Fire safety equipment"], aAfter: "Minimum installation dimensions are determined following a technical survey." },
+              { q: "How do I know if the device will fit my space?", a: "The most practical way is to use the '📱 View in Your Space (3D / AR)' feature in the configurator: using your phone's camera, you can place the model you've chosen at true scale in your own space and inspect it from every angle. Exterior dimensions for each model are also listed separately in the technical specifications table." },
               { q: "Can the device be installed in an existing building?", a: "Most projects can be applied to existing structures; however, a technical inspection must be conducted before installation. The following conditions are checked:", list: ["Floor load-bearing capacity", "Door and corridor clearances", "Elevator capacity", "Ceiling height", "Electrical infrastructure", "Ventilation", "Oxygen and compressed air infrastructure", "Fire safety", "Technical service access"] },
               { q: "Do you conduct a site survey before installation?", a: "Yes. Depending on the project's location and scope, a remote technical assessment or an on-site survey can be conducted. The following information may be requested from the customer for the initial assessment:", list: ["Installation area dimensions", "Photos and videos", "Architectural plan", "Electrical infrastructure", "Ventilation information", "Access and transport route", "Target user capacity", "Desired model and options"] },
               { q: "Is floor reinforcement required?", a: "This depends on the device's weight, auxiliary equipment and the building's load-bearing capacity. When required, a static assessment must be carried out by a qualified construction or structural engineer." },
@@ -1921,7 +1923,7 @@ const TRANSLATIONS = {
         all_link: "Все модели"
       },
       footer: {
-        about_text: "HBOT Chamber Tech — ведущий производитель гипербарических кислородных камер с IoT-подключением и поддержкой искусственного интеллекта.",
+        about_text: "HBOT Chamber Tech — ведущий производитель гипербарических кислородных камер с IoT-подключением и поддержкой искусственного интеллекта, опирающийся на инженерный опыт группы Almita Group с 2007 года.",
         models_title: "Модели",
         company_title: "Компания",
         contact_title: "Контакты",
@@ -2057,7 +2059,7 @@ const TRANSLATIONS = {
           desc: "Датчики внутри камеры и данные пациента анализируются алгоритмами машинного обучения.",
           features: [
             "Динамическая регулировка давления: при признаках дискомфорта давление настраивается микрошагами для сохранения комфорта",
-            "Оптимизация эффективности кислорода: поток кислорода подстраивается под ритм дыхания, сокращая расход на 30%",
+            "Оптимизация эффективности кислорода: поток кислорода подстраивается под ритм дыхания, цель — сократить расход до 30% (полевые испытания продолжаются)",
             "Механизм рекомендации сеансов: по завершении протокола готовится отчёт для утверждения врачом",
             "Обнаружение клаустрофобии: при чрезмерной подвижности автоматически включается система освещения и связи"
           ]
@@ -2067,7 +2069,7 @@ const TRANSLATIONS = {
           subtitle: "Интеграция с больничными информационными системами в один клик",
           desc: "Соответствует стандартам HL7 FHIR и DICOM. По окончании сеанса данные автоматически попадают в карту пациента.",
           features: [
-            "Прямое подключение к Epic, Cerner, Medistat, Logo и локальным больничным информационным системам",
+            "Прямое подключение к Epic, Cerner, Medistat, Logo и локальным больничным информационным системам (интеграция тестируется, скоро будет запущена)",
             "Автоматическая отчётность: отчёт поступает на экран врача по окончании каждого сеанса",
             "Интеграция с биллингом: объём кислорода и продолжительность сеанса автоматически передаются в модуль учёта"
           ]
@@ -2084,7 +2086,7 @@ const TRANSLATIONS = {
         }
       },
       extra: {
-        silent: { title: "CitySilent™", desc: "Уровень рабочего шума ниже 55 децибел." },
+        silent: { title: "CitySilent™", desc: "Уровень рабочего шума ниже 60 децибел." },
         care: { title: "CityCare™", desc: "Удалённая диагностика и решение проблем без ожидания вызова сервиса." }
       },
       comparison: {
@@ -2119,9 +2121,9 @@ const TRANSLATIONS = {
         disclaimer: "Эти функции находятся в разработке и планируются для будущих моделей; они не входят в стандартную комплектацию текущих моделей HBOT City Tech. Давление и уровень кислорода в камере всегда контролируются квалифицированным оператором."
       },
       certifications: {
-        eyebrow: "СЕРТИФИКАТЫ",
-        title: "Соответствие стандартам",
-        subtitle: "Серия HBOT City Tech разрабатывается в соответствии с международными стандартами в области конструкции медицинских камер, пожарной безопасности и оборудования под давлением.",
+        eyebrow: "ЦЕЛЕВЫЕ СТАНДАРТЫ",
+        title: "Стандарты сертификации, к которым мы стремимся",
+        subtitle: "Инженерная разработка серии HBOT City Tech ведётся с ориентацией на следующие международные стандарты в области конструкции медицинских камер, пожарной безопасности и оборудования под давлением; процесс сертификации продолжается.",
         items: [
           { code: "EN 14931", name: "Стандарт конструкции медицинских камер" },
           { code: "EN 16081", name: "Система пожаротушения медицинских камер" },
@@ -2769,6 +2771,7 @@ const TRANSLATIONS = {
             title: "Установка",
             items: [
               { q: "Сколько места требуется для установки?", a: "Необходимая площадь варьируется в зависимости от выбранной модели HBOT City Tech. При определении зоны установки, помимо размеров устройства, следует учитывать следующие факторы:", list: ["Рабочая зона оператора", "Полный проём для открытия двери", "Доступ для технического обслуживания", "Зона для компрессора и вспомогательного оборудования", "Зона кислородной системы", "Вентиляция", "Электрощит", "Маршрут аварийного выхода", "Противопожарное оборудование"], aAfter: "Минимальные размеры установки определяются после технического обследования." },
+              { q: "Как понять, поместится ли устройство в моё помещение?", a: "Самый практичный способ — использовать функцию «📱 Посмотреть в вашем помещении (3D / AR)» в конфигураторе: с помощью камеры телефона вы можете разместить выбранную модель в реальном масштабе в своём помещении и рассмотреть её со всех сторон. Внешние размеры каждой модели также отдельно указаны в таблице технических характеристик." },
               { q: "Можно ли установить устройство в существующем здании?", a: "Большинство проектов может быть реализовано в существующих зданиях; однако перед установкой необходимо провести техническое обследование. Проверяются следующие условия:", list: ["Несущая способность пола", "Проёмы дверей и коридоров", "Грузоподъёмность лифта", "Высота потолков", "Электрическая инфраструктура", "Вентиляция", "Инфраструктура кислорода и сжатого воздуха", "Пожарная безопасность", "Доступ для технического обслуживания"] },
               { q: "Проводите ли вы обследование перед установкой?", a: "Да. В зависимости от местоположения и масштаба проекта может проводиться дистанционная техническая оценка или выездное обследование. Для первичной оценки у клиента может быть запрошена следующая информация:", list: ["Размеры зоны установки", "Фотографии и видео", "Архитектурный план", "Электрическая инфраструктура", "Информация о вентиляции", "Маршрут доступа и транспортировки", "Целевая вместимость пользователей", "Желаемая модель и опции"] },
               { q: "Требуется ли усиление пола?", a: "Это зависит от веса устройства, вспомогательного оборудования и несущей способности здания. При необходимости статическая оценка должна проводиться квалифицированным инженером-строителем." },
@@ -2865,7 +2868,7 @@ const TRANSLATIONS = {
         all_link: "جميع الموديلات"
       },
       footer: {
-        about_text: "HBOT Chamber Tech هي شركة رائدة في تصنيع غرف الأكسجين عالي الضغط المتصلة بإنترنت الأشياء والمدعومة بالذكاء الاصطناعي.",
+        about_text: "HBOT Chamber Tech هي شركة رائدة في تصنيع غرف الأكسجين عالي الضغط المتصلة بإنترنت الأشياء والمدعومة بالذكاء الاصطناعي، مستندة إلى خبرة هندسية تعود إلى عام 2007 ضمن مجموعة Almita Group.",
         models_title: "الموديلات",
         company_title: "الشركة",
         contact_title: "اتصل بنا",
@@ -2907,7 +2910,7 @@ const TRANSLATIONS = {
       stats: [
         { value: "5", label: "موديلات HBOT City Tech" },
         { value: "94%", label: "نقاء الأكسجين" },
-        { value: "<55 ديسيبل", label: "مستوى الضجيج CitySilent™" },
+        { value: "<60 ديسيبل", label: "مستوى الضجيج CitySilent™" },
         { value: "24/7", label: "مراقبة عن بُعد" },
         { value: "20+", label: "عامًا من الخبرة الهندسية" }
       ],
@@ -3001,7 +3004,7 @@ const TRANSLATIONS = {
           desc: "تُحلَّل بيانات المستشعرات داخل الغرفة وبيانات المريض بخوارزميات التعلم الآلي.",
           features: [
             "ضبط ديناميكي للضغط: عند ظهور علامات عدم الراحة، يُضبط الضغط بخطوات دقيقة للحفاظ على الراحة",
-            "تحسين كفاءة الأكسجين: يُضبط تدفق الأكسجين حسب إيقاع التنفس، مما يقلل الهدر بنسبة 30%",
+            "تحسين كفاءة الأكسجين: يُضبط تدفق الأكسجين حسب إيقاع التنفس، بهدف تقليل الهدر بنسبة تصل إلى 30% (الاختبارات الميدانية جارية)",
             "محرك اقتراح الجلسات: يُعد تقرير لموافقة الطبيب عند اكتمال البروتوكول",
             "كشف رهاب الأماكن المغلقة: عند رصد حركة مفرطة، يتم تفعيل نظام الإضاءة والتواصل تلقائياً"
           ]
@@ -3011,7 +3014,7 @@ const TRANSLATIONS = {
           subtitle: "تكامل بنقرة واحدة مع أنظمة معلومات المستشفيات",
           desc: "متوافق مع معياري HL7 FHIR و DICOM. تُضاف البيانات تلقائياً إلى ملف المريض بمجرد انتهاء الجلسة.",
           features: [
-            "اتصال مباشر بأنظمة Epic و Cerner و Medistat و Logo وأنظمة معلومات المستشفيات المحلية",
+            "اتصال مباشر بأنظمة Epic و Cerner و Medistat و Logo وأنظمة معلومات المستشفيات المحلية (اختبارات التكامل جارية، وسيتم إطلاقها قريباً)",
             "تقارير تلقائية: يصل تقرير إلى شاشة الطبيب في نهاية كل جلسة",
             "تكامل الفوترة: تُنقل كمية الأكسجين ومدة الجلسة تلقائياً إلى وحدة المحاسبة"
           ]
@@ -3028,7 +3031,7 @@ const TRANSLATIONS = {
         }
       },
       extra: {
-        silent: { title: "CitySilent™", desc: "ضجيج تشغيل أقل من 55 ديسيبل." },
+        silent: { title: "CitySilent™", desc: "ضجيج تشغيل أقل من 60 ديسيبل." },
         care: { title: "CityCare™", desc: "تشخيص وحل عن بُعد دون انتظار طلب خدمة." }
       },
       comparison: {
@@ -3046,7 +3049,7 @@ const TRANSLATIONS = {
           { feature: "الصيانة التنبؤية", competitor: "غير متوفرة، صيانة تفاعلية", apex: "CityGuard™ — تحذير قبل العطل" },
           { feature: "التقارير التلقائية", competitor: "غير متوفرة", apex: "CitySync™ — تقرير عند انتهاء الجلسة" },
           { feature: "التشخيص عن بُعد", competitor: "غير متوفر، يتطلب طلب خدمة", apex: "CityCare™ — حل عن بُعد" },
-          { feature: "مستوى الضجيج", competitor: "60–70 ديسيبل", apex: "CitySilent™ — أقل من 55 ديسيبل" },
+          { feature: "مستوى الضجيج", competitor: "60–70 ديسيبل", apex: "CitySilent™ — أقل من 60 ديسيبل" },
           { feature: "سجل الأمان الرقمي", competitor: "غير متوفر", apex: "CityGuard™ — سجل سحابي مشفّر" }
         ]
       },
@@ -3063,9 +3066,9 @@ const TRANSLATIONS = {
         disclaimer: "هذه الميزات قيد التطوير ومخطط لتقديمها في موديلات مستقبلية؛ وهي غير معيارية في موديلات HBOT City Tech الحالية. يتم دائمًا التحكم بضغط الكابينة ومستوى الأكسجين من قبل مشغّل مؤهّل."
       },
       certifications: {
-        eyebrow: "الشهادات",
-        title: "الامتثال للمعايير",
-        subtitle: "يتم تطوير سلسلة HBOT City Tech وفقاً للمعايير الدولية في تصميم الكبائن الطبية والسلامة من الحرائق ومعدات الضغط.",
+        eyebrow: "المعايير المستهدفة",
+        title: "معايير الاعتماد التي نسعى لتحقيقها",
+        subtitle: "تُنفَّذ هندسة سلسلة HBOT City Tech بالاسترشاد بالمعايير الدولية التالية في تصميم الكبائن الطبية والسلامة من الحرائق ومعدات الضغط؛ وعملية الاعتماد جارية حالياً.",
         items: [
           { code: "EN 14931", name: "معيار تصميم الكبائن الطبية" },
           { code: "EN 16081", name: "نظام إطفاء حرائق الكبائن الطبية" },
@@ -3117,7 +3120,7 @@ const TRANSLATIONS = {
         { label: "المادة", value: "ألومنيوم بمعايير الطيران" },
         { label: "السلامة", value: "صمام أمان مزدوج" },
         { label: "الأبعاد الخارجية", value: "240×110×120 سم" },
-        { label: "مستوى الضجيج", value: "أقل من 55 ديسيبل (CitySilent™)" }
+        { label: "مستوى الضجيج", value: "أقل من 60 ديسيبل (CitySilent™)" }
       ]
     },
     modelSolo: {
@@ -3132,7 +3135,7 @@ const TRANSLATIONS = {
         { label: "المادة", value: "ألومنيوم بمعايير الطيران" },
         { label: "السلامة", value: "صمام أمان مزدوج" },
         { label: "الأبعاد الخارجية", value: "120×110×180 سم" },
-        { label: "مستوى الضجيج", value: "أقل من 55 ديسيبل (CitySilent™)" }
+        { label: "مستوى الضجيج", value: "أقل من 60 ديسيبل (CitySilent™)" }
       ]
     },
     modelDuo: {
@@ -3237,7 +3240,7 @@ const TRANSLATIONS = {
         { q: "كم شخصًا تتسع له غرفة أوسلو (Oslo) وبأي وضعية تُستخدم؟", a: "أوسلو غرفة لشخص واحد تُستخدم بوضعية الاستلقاء الكامل. يقلل مرتبتها الطبية التقويمية (200×80 سم) من الضغط على الظهر وأسفل الظهر خلال الجلسات الطويلة." },
         { q: "هل يمكنني اختيار لون المقعد أو الجدار الداخلي في أوسلو؟", a: "لا — لا يوجد مقعد في أوسلو وصورة الداخل ثابتة، لذلك تمت إزالة هذه الخطوة عمدًا من أداة التكوين. يمكنك مع ذلك اختيار لون الهيكل الخارجي من مجموعتنا القياسية، أو طلب لون غير مدرج في القائمة." },
         { q: "ما نطاق الضغط الذي تعمل به أوسلو؟", a: "تعمل ضمن نطاق 1.5–2.0 ATA، وهو نظام منخفض الضغط مناسب للاستخدام المنزلي." },
-        { q: "هل مستوى الضجيج في أوسلو مزعج للاستخدام المنزلي؟", a: "تعمل بأقل من 55 ديسيبل — قريب من الضجيج المحيط في غرفة هادئة." },
+        { q: "هل مستوى الضجيج في أوسلو مزعج للاستخدام المنزلي؟", a: "تعمل بأقل من 60 ديسيبل — قريب من الضجيج المحيط في غرفة هادئة." },
         { q: "كيف أحصل على عرض سعر لأوسلو؟", a: "اختر أوسلو في أداة التكوين وحدد اللون لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
       ],
       "solo": [
@@ -3713,6 +3716,7 @@ const TRANSLATIONS = {
             title: "التركيب",
             items: [
               { q: "كم مساحة تلزم للتركيب؟", a: "تختلف المساحة المطلوبة حسب موديل HBOT City Tech المختار. عند تحديد منطقة التركيب، يجب مراعاة العوامل التالية بالإضافة إلى أبعاد الجهاز:", list: ["منطقة عمل المشغّل", "مسافة الفتح الكامل للباب", "الوصول للخدمة الفنية", "منطقة الضاغط والمعدات المساعدة", "منطقة نظام الأكسجين", "التهوية", "لوحة الكهرباء", "مسار الخروج الطارئ", "معدات السلامة من الحرائق"], aAfter: "تُحدَّد أبعاد التركيب الدنيا بعد المسح الفني." },
+              { q: "كيف أعرف ما إذا كان الجهاز سيناسب مساحتي؟", a: "أفضل طريقة عملية هي استخدام ميزة «📱 عاين الكبسولة في مساحتك الخاصة (3D / AR)» في أداة التكوين: باستخدام كاميرا هاتفك، يمكنك وضع الموديل الذي اخترته بالحجم الحقيقي في مساحتك الخاصة ومعاينته من جميع الزوايا. كما تُدرَج الأبعاد الخارجية لكل موديل بشكل منفصل في جدول المواصفات الفنية." },
               { q: "هل يمكن تركيب الجهاز في مبنى قائم؟", a: "يمكن تطبيق معظم المشاريع على المباني القائمة؛ لكن يجب إجراء فحص فني قبل التركيب. تُفحص الشروط التالية:", list: ["قدرة تحمّل الأرضية", "فتحات الأبواب والممرات", "سعة المصعد", "ارتفاع السقف", "البنية التحتية الكهربائية", "التهوية", "البنية التحتية للأكسجين والهواء المضغوط", "السلامة من الحرائق", "الوصول للخدمة الفنية"] },
               { q: "هل تجرون مسحًا ميدانيًا قبل التركيب؟", a: "نعم. حسب موقع المشروع ونطاقه، يمكن إجراء تقييم فني عن بُعد أو مسح ميداني. للتقييم الأولي، قد يُطلَب من العميل تقديم المعلومات التالية:", list: ["أبعاد منطقة التركيب", "صور ومقاطع فيديو", "المخطط المعماري", "البنية التحتية الكهربائية", "معلومات التهوية", "مسار الدخول والنقل", "سعة المستخدمين المستهدفة", "الموديل والخيارات المرغوبة"] },
               { q: "هل يلزم تدعيم الأرضية؟", a: "يعتمد ذلك على وزن الجهاز والمعدات المساعدة وقدرة تحمّل المبنى. عند الحاجة، يجب إجراء تقييم إنشائي من قِبل مهندس إنشائي أو معماري مؤهل." },
@@ -3808,7 +3812,7 @@ const TRANSLATIONS = {
         all_link: "Todos los Modelos"
       },
       footer: {
-        about_text: "HBOT Chamber Tech es un fabricante líder de cámaras hiperbáricas de oxígeno conectadas por IoT e impulsadas por IA.",
+        about_text: "HBOT Chamber Tech es un fabricante líder de cámaras hiperbáricas de oxígeno conectadas por IoT e impulsadas por IA, respaldado por la experiencia de ingeniería del Grupo Almita que se remonta a 2007.",
         models_title: "Modelos",
         company_title: "Empresa",
         contact_title: "Contacto",
@@ -3850,7 +3854,7 @@ const TRANSLATIONS = {
       stats: [
         { value: "5", label: "Modelos HBOT City Tech" },
         { value: "94%", label: "Pureza de Oxígeno" },
-        { value: "<55dB", label: "Nivel de Ruido CitySilent™" },
+        { value: "<60dB", label: "Nivel de Ruido CitySilent™" },
         { value: "24/7", label: "Monitorización Remota" },
         { value: "20+", label: "Años de Experiencia en Ingeniería" }
       ],
@@ -3944,7 +3948,7 @@ const TRANSLATIONS = {
           desc: "Los sensores dentro de la cámara y los datos del paciente se analizan con algoritmos de aprendizaje automático.",
           features: [
             "Ajuste dinámico de presión: si aparecen señales de incomodidad, la presión se ajusta en microincrementos para preservar el confort",
-            "Optimización de la eficiencia del oxígeno: el flujo de oxígeno se adapta al ritmo respiratorio, reduciendo el desperdicio en un 30%",
+            "Optimización de la eficiencia del oxígeno: el flujo de oxígeno se adapta al ritmo respiratorio, con el objetivo de reducir el desperdicio hasta en un 30% (pruebas de campo en curso)",
             "Motor de recomendación de sesiones: se prepara un informe para la aprobación del médico una vez completado un protocolo",
             "Detección de claustrofobia: un movimiento excesivo activa automáticamente el sistema de iluminación y comunicación"
           ]
@@ -3954,7 +3958,7 @@ const TRANSLATIONS = {
           subtitle: "Integración con un Solo Clic con los Sistemas de Información Hospitalaria",
           desc: "Compatible con HL7 FHIR y DICOM. Los datos se registran automáticamente en el historial del paciente al finalizar la sesión.",
           features: [
-            "Conexión directa con Epic, Cerner, Medistat, Logo y sistemas HIS locales",
+            "Conexión directa con Epic, Cerner, Medistat, Logo y sistemas HIS locales (integración en fase de pruebas, disponible próximamente)",
             "Informes automáticos: al final de cada sesión, un informe llega a la pantalla del médico",
             "Integración de facturación: el volumen de oxígeno y la duración de la sesión se envían automáticamente al módulo de contabilidad"
           ]
@@ -3971,7 +3975,7 @@ const TRANSLATIONS = {
         }
       },
       extra: {
-        silent: { title: "CitySilent™", desc: "Ruido de funcionamiento por debajo de 55 decibelios." },
+        silent: { title: "CitySilent™", desc: "Ruido de funcionamiento por debajo de 60 decibelios." },
         care: { title: "CityCare™", desc: "Diagnóstico y resolución remotos sin esperar a una llamada de servicio." }
       },
       comparison: {
@@ -3989,7 +3993,7 @@ const TRANSLATIONS = {
           { feature: "Mantenimiento Predictivo", competitor: "Ninguno, mantenimiento reactivo", apex: "CityGuard™ — Aviso previo al fallo" },
           { feature: "Informes Automáticos", competitor: "Ninguno", apex: "CitySync™ — Informe al final de la sesión" },
           { feature: "Diagnóstico Remoto", competitor: "Ninguno, requiere llamada de servicio", apex: "CityCare™ — Resolución remota" },
-          { feature: "Nivel de Ruido", competitor: "60–70 dB", apex: "CitySilent™ — <55 dB" },
+          { feature: "Nivel de Ruido", competitor: "60–70 dB", apex: "CitySilent™ — <60 dB" },
           { feature: "Registro de Seguridad Digital", competitor: "Ninguno", apex: "CityGuard™ — Registro cifrado en la nube" }
         ]
       },
@@ -4006,9 +4010,9 @@ const TRANSLATIONS = {
         disclaimer: "Estas funciones están en desarrollo y previstas para futuros modelos; no son estándar en los modelos HBOT City Tech actuales. La presión y los niveles de oxígeno de la cámara siempre son controlados por un operador cualificado."
       },
       certifications: {
-        eyebrow: "CERTIFICACIONES",
-        title: "Cumplimiento Normativo",
-        subtitle: "La HBOT City Tech Series se desarrolla conforme a normas internacionales de diseño de cámaras médicas, seguridad contra incendios y equipos a presión.",
+        eyebrow: "NORMAS QUE PERSEGUIMOS",
+        title: "Las Normas de Certificación Hacia las que Trabajamos",
+        subtitle: "La ingeniería de la HBOT City Tech Series se lleva a cabo tomando como referencia las siguientes normas internacionales de diseño de cámaras médicas, seguridad contra incendios y equipos a presión; el proceso de certificación está en curso.",
         items: [
           { code: "EN 14931", name: "Norma de Diseño de Cámaras Médicas" },
           { code: "EN 16081", name: "Sistema Contra Incendios de Cámaras Médicas" },
@@ -4060,7 +4064,7 @@ const TRANSLATIONS = {
         { label: "Material", value: "Aluminio de grado aeronáutico" },
         { label: "Seguridad", value: "Válvula de seguridad dual" },
         { label: "Dimensiones Exteriores", value: "240×110×120 cm" },
-        { label: "Nivel de Ruido", value: "<55 dB (CitySilent™)" }
+        { label: "Nivel de Ruido", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelSolo: {
@@ -4075,7 +4079,7 @@ const TRANSLATIONS = {
         { label: "Material", value: "Aluminio de grado aeronáutico" },
         { label: "Seguridad", value: "Válvula de seguridad dual" },
         { label: "Dimensiones Exteriores", value: "120×110×180 cm" },
-        { label: "Nivel de Ruido", value: "<55 dB (CitySilent™)" }
+        { label: "Nivel de Ruido", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelDuo: {
@@ -4180,7 +4184,7 @@ const TRANSLATIONS = {
         { q: "¿Para cuántas personas es el Oslo y en qué posición se usa?", a: "El Oslo es una cámara individual que se usa completamente tumbado. Su colchón médico ortopédico de 200×80 cm reduce la presión en la espalda y la zona lumbar durante sesiones largas." },
         { q: "¿Puedo elegir el color del asiento o de la pared interior en el Oslo?", a: "No — el Oslo no tiene asiento y su vista interior es fija, por lo que este paso se ha eliminado deliberadamente del configurador. Aun así puedes elegir el color exterior de nuestra paleta estándar, o solicitar un tono que no esté en la lista." },
         { q: "¿En qué rango de presión funciona el Oslo?", a: "Entre 1.5 y 2.0 ATA — un sistema de baja presión adecuado para uso doméstico." },
-        { q: "¿El nivel de ruido del Oslo molesta en casa?", a: "Funciona por debajo de 55 dB, cercano al ruido ambiente de una habitación tranquila." },
+        { q: "¿El nivel de ruido del Oslo molesta en casa?", a: "Funciona por debajo de 60 dB, cercano al ruido ambiente de una habitación tranquila." },
         { q: "¿Cómo obtengo un presupuesto para el Oslo?", a: "Selecciona el Oslo en el configurador y elige un color para ver una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
       ],
       "solo": [
@@ -4656,6 +4660,7 @@ const TRANSLATIONS = {
             title: "Instalación",
             items: [
               { q: "¿Cuánto espacio se requiere para la instalación?", a: "El espacio requerido varía según el modelo HBOT City Tech seleccionado. Al determinar la superficie de instalación, deben tenerse en cuenta los siguientes factores además de las dimensiones del dispositivo:", list: ["Área de trabajo del operador", "Espacio libre total para la apertura de la puerta", "Acceso para el servicio técnico", "Área para el compresor y el equipo auxiliar", "Área del sistema de oxígeno", "Ventilación", "Cuadro eléctrico", "Ruta de salida de emergencia", "Equipo de seguridad contra incendios"], aAfter: "Las dimensiones mínimas de instalación se determinan tras un estudio técnico." },
+              { q: "¿Cómo sé si el equipo cabrá en mi espacio?", a: "La forma más práctica es usar la función '📱 Ver en su Espacio (3D / AR)' del configurador: con la cámara de tu teléfono, puedes colocar el modelo elegido a escala real en tu propio espacio y examinarlo desde cualquier ángulo. Las dimensiones exteriores de cada modelo también se indican por separado en la tabla de especificaciones técnicas." },
               { q: "¿Se puede instalar el dispositivo en un edificio existente?", a: "La mayoría de los proyectos pueden aplicarse a estructuras existentes; no obstante, debe realizarse una inspección técnica antes de la instalación. Se comprueban las siguientes condiciones:", list: ["Capacidad de carga del suelo", "Espacios libres de puertas y pasillos", "Capacidad del ascensor", "Altura del techo", "Infraestructura eléctrica", "Ventilación", "Infraestructura de oxígeno y aire comprimido", "Seguridad contra incendios", "Acceso para el servicio técnico"] },
               { q: "¿Realizan un estudio del emplazamiento antes de la instalación?", a: "Sí. Según la ubicación y el alcance del proyecto, puede realizarse una evaluación técnica remota o un estudio in situ. Para la evaluación inicial, se puede solicitar al cliente la siguiente información:", list: ["Dimensiones del área de instalación", "Fotos y vídeos", "Plano arquitectónico", "Infraestructura eléctrica", "Información sobre la ventilación", "Ruta de acceso y transporte", "Capacidad de usuarios objetivo", "Modelo y opciones deseados"] },
               { q: "¿Se requiere refuerzo del suelo?", a: "Esto depende del peso del dispositivo, del equipo auxiliar y de la capacidad de carga del edificio. Cuando sea necesario, un ingeniero de construcción o estructural cualificado debe realizar una evaluación estática." },
@@ -4751,7 +4756,7 @@ const TRANSLATIONS = {
         all_link: "Todos os Modelos"
       },
       footer: {
-        about_text: "A HBOT Chamber Tech é uma fabricante líder de câmaras de oxigênio hiperbárico conectadas por IoT e com tecnologia de IA.",
+        about_text: "A HBOT Chamber Tech é uma fabricante líder de câmaras de oxigênio hiperbárico conectadas por IoT e com tecnologia de IA, apoiada pela experiência de engenharia do Almita Group desde 2007.",
         models_title: "Modelos",
         company_title: "Empresa",
         contact_title: "Contato",
@@ -4793,7 +4798,7 @@ const TRANSLATIONS = {
       stats: [
         { value: "5", label: "Modelos HBOT City Tech" },
         { value: "94%", label: "Pureza de Oxigênio" },
-        { value: "<55dB", label: "Nível de Ruído CitySilent™" },
+        { value: "<60dB", label: "Nível de Ruído CitySilent™" },
         { value: "24/7", label: "Monitoramento Remoto" },
         { value: "20+", label: "Anos de Experiência em Engenharia" }
       ],
@@ -4887,7 +4892,7 @@ const TRANSLATIONS = {
           desc: "Sensores dentro da câmara e dados do paciente são analisados por algoritmos de aprendizado de máquina.",
           features: [
             "Ajuste dinâmico de pressão: ao surgirem sinais de desconforto, a pressão é ajustada em micropassos para preservar o conforto",
-            "Otimização da eficiência de oxigênio: o fluxo de oxigênio se ajusta ao ritmo respiratório, reduzindo o desperdício em 30%",
+            "Otimização da eficiência de oxigênio: o fluxo de oxigênio se ajusta ao ritmo respiratório, com a meta de reduzir o desperdício em até 30% (testes de campo em andamento)",
             "Motor de recomendação de sessões: um relatório é preparado para aprovação médica assim que um protocolo é concluído",
             "Detecção de claustrofobia: movimentos excessivos acionam automaticamente o sistema de iluminação e comunicação"
           ]
@@ -4897,7 +4902,7 @@ const TRANSLATIONS = {
           subtitle: "Integração com Sistemas de Informação Hospitalar em Um Clique",
           desc: "Compatível com HL7 FHIR e DICOM. Os dados são registrados automaticamente no prontuário do paciente assim que a sessão termina.",
           features: [
-            "Conexão direta com Epic, Cerner, Medistat, Logo e sistemas HIS locais",
+            "Conexão direta com Epic, Cerner, Medistat, Logo e sistemas HIS locais (integração em fase de testes, em breve disponível)",
             "Geração automática de relatórios: um relatório chega à tela do médico ao final de cada sessão",
             "Integração com faturamento: volume de oxigênio e duração da sessão são enviados automaticamente ao módulo contábil"
           ]
@@ -4914,7 +4919,7 @@ const TRANSLATIONS = {
         }
       },
       extra: {
-        silent: { title: "CitySilent™", desc: "Ruído operacional abaixo de 55 decibéis." },
+        silent: { title: "CitySilent™", desc: "Ruído operacional abaixo de 60 decibéis." },
         care: { title: "CityCare™", desc: "Diagnóstico e resolução remotos sem esperar por uma chamada de serviço." }
       },
       comparison: {
@@ -4932,7 +4937,7 @@ const TRANSLATIONS = {
           { feature: "Manutenção Preditiva", competitor: "Nenhuma, manutenção reativa", apex: "CityGuard™ — Alerta antes da falha" },
           { feature: "Relatórios Automáticos", competitor: "Nenhum", apex: "CitySync™ — Relatório ao final da sessão" },
           { feature: "Diagnóstico Remoto", competitor: "Nenhum, exige chamada de serviço", apex: "CityCare™ — Resolução remota" },
-          { feature: "Nível de Ruído", competitor: "60–70 dB", apex: "CitySilent™ — <55 dB" },
+          { feature: "Nível de Ruído", competitor: "60–70 dB", apex: "CitySilent™ — <60 dB" },
           { feature: "Registro Digital de Segurança", competitor: "Nenhum", apex: "CityGuard™ — Registro criptografado na nuvem" }
         ]
       },
@@ -4949,9 +4954,9 @@ const TRANSLATIONS = {
         disclaimer: "Esses recursos estão em desenvolvimento e previstos para modelos futuros; não são de série nos modelos HBOT City Tech atuais. A pressão e os níveis de oxigênio da câmara são sempre controlados por um operador qualificado."
       },
       certifications: {
-        eyebrow: "CERTIFICAÇÕES",
-        title: "Conformidade com Normas",
-        subtitle: "A Série HBOT City Tech é desenvolvida em conformidade com normas internacionais de projeto de câmaras médicas, segurança contra incêndio e equipamentos de pressão.",
+        eyebrow: "NORMAS QUE BUSCAMOS ALCANÇAR",
+        title: "As Normas de Certificação que Estamos Buscando",
+        subtitle: "A engenharia da Série HBOT City Tech é conduzida com referência às seguintes normas internacionais de projeto de câmaras médicas, segurança contra incêndio e equipamentos de pressão; o processo de certificação está em andamento.",
         items: [
           { code: "EN 14931", name: "Norma de Projeto de Câmara Médica" },
           { code: "EN 16081", name: "Sistema de Combate a Incêndio para Câmaras Médicas" },
@@ -5003,7 +5008,7 @@ const TRANSLATIONS = {
         { label: "Material", value: "Alumínio de nível aeronáutico" },
         { label: "Segurança", value: "Válvula de segurança dupla" },
         { label: "Dimensões Externas", value: "240×110×120 cm" },
-        { label: "Nível de Ruído", value: "<55 dB (CitySilent™)" }
+        { label: "Nível de Ruído", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelSolo: {
@@ -5018,7 +5023,7 @@ const TRANSLATIONS = {
         { label: "Material", value: "Alumínio de nível aeronáutico" },
         { label: "Segurança", value: "Válvula de segurança dupla" },
         { label: "Dimensões Externas", value: "120×110×180 cm" },
-        { label: "Nível de Ruído", value: "<55 dB (CitySilent™)" }
+        { label: "Nível de Ruído", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelDuo: {
@@ -5123,7 +5128,7 @@ const TRANSLATIONS = {
         { q: "Para quantas pessoas é o Oslo e em que posição é usado?", a: "O Oslo é uma câmara individual usada totalmente deitado. Seu colchão médico ortopédico de 200×80 cm reduz a pressão nas costas e na região lombar durante sessões longas." },
         { q: "Posso escolher a cor do assento ou da parede interna no Oslo?", a: "Não — o Oslo não tem assento e sua vista interna é fixa, por isso essa etapa foi deliberadamente removida do configurador. Você ainda pode escolher a cor externa em nossa paleta padrão, ou solicitar uma cor fora da lista." },
         { q: "Em qual faixa de pressão o Oslo opera?", a: "Entre 1,5 e 2,0 ATA — um sistema de baixa pressão adequado para uso doméstico." },
-        { q: "O nível de ruído do Oslo incomoda em casa?", a: "Opera abaixo de 55 dB, próximo ao ruído ambiente de um quarto silencioso." },
+        { q: "O nível de ruído do Oslo incomoda em casa?", a: "Opera abaixo de 60 dB, próximo ao ruído ambiente de um quarto silencioso." },
         { q: "Como faço para obter um orçamento para o Oslo?", a: "Selecione o Oslo no configurador e escolha uma cor para ver uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
       ],
       "solo": [
@@ -5599,6 +5604,7 @@ const TRANSLATIONS = {
             title: "Instalação",
             items: [
               { q: "Quanto espaço é necessário para a instalação?", a: "O espaço necessário varia conforme o modelo HBOT City Tech selecionado. Ao determinar a área de instalação, os seguintes fatores devem ser considerados além das dimensões do equipamento:", list: ["Área de trabalho do operador", "Espaço total para abertura da porta", "Acesso para assistência técnica", "Área do compressor e equipamentos auxiliares", "Área do sistema de oxigênio", "Ventilação", "Painel elétrico", "Rota de saída de emergência", "Equipamento de segurança contra incêndio"], aAfter: "As dimensões mínimas de instalação são determinadas após um levantamento técnico." },
+              { q: "Como sei se o equipamento vai caber no meu espaço?", a: "A forma mais prática é usar o recurso '📱 Ver no seu Espaço (3D / AR)' no configurador: com a câmera do seu telefone, você pode posicionar o modelo escolhido em escala real no seu próprio espaço e examiná-lo de todos os ângulos. As dimensões externas de cada modelo também são listadas separadamente na tabela de especificações técnicas." },
               { q: "O equipamento pode ser instalado em uma edificação existente?", a: "A maioria dos projetos pode ser aplicada a estruturas existentes; no entanto, uma inspeção técnica deve ser realizada antes da instalação. As seguintes condições são verificadas:", list: ["Capacidade de carga do piso", "Vãos de portas e corredores", "Capacidade do elevador", "Pé-direito", "Infraestrutura elétrica", "Ventilação", "Infraestrutura de oxigênio e ar comprimido", "Segurança contra incêndio", "Acesso para assistência técnica"] },
               { q: "Vocês realizam um levantamento no local antes da instalação?", a: "Sim. Dependendo da localização e do escopo do projeto, pode ser realizada uma avaliação técnica remota ou um levantamento presencial. As seguintes informações podem ser solicitadas ao cliente para a avaliação inicial:", list: ["Dimensões da área de instalação", "Fotos e vídeos", "Planta arquitetônica", "Infraestrutura elétrica", "Informações sobre ventilação", "Rota de acesso e transporte", "Capacidade de usuários pretendida", "Modelo e opções desejados"] },
               { q: "É necessário reforço do piso?", a: "Isso depende do peso do equipamento, dos equipamentos auxiliares e da capacidade de carga da edificação. Quando necessário, uma avaliação estrutural deve ser realizada por um engenheiro civil ou estrutural qualificado." },
@@ -5694,7 +5700,7 @@ const TRANSLATIONS = {
         all_link: "Alle Modelle"
       },
       footer: {
-        about_text: "HBOT Chamber Tech ist ein führender Hersteller IoT-vernetzter, KI-gestützter hyperbarer Sauerstoffkammern.",
+        about_text: "HBOT Chamber Tech ist ein führender Hersteller IoT-vernetzter, KI-gestützter hyperbarer Sauerstoffkammern, gestützt auf die technische Erfahrung der Almita Group seit 2007.",
         models_title: "Modelle",
         company_title: "Unternehmen",
         contact_title: "Kontakt",
@@ -5736,7 +5742,7 @@ const TRANSLATIONS = {
       stats: [
         { value: "5", label: "HBOT City Tech Modelle" },
         { value: "94%", label: "Sauerstoffreinheit" },
-        { value: "<55dB", label: "CitySilent™ Geräuschpegel" },
+        { value: "<60dB", label: "CitySilent™ Geräuschpegel" },
         { value: "24/7", label: "Fernüberwachung" },
         { value: "20+", label: "Jahre Ingenieurserfahrung" }
       ],
@@ -5830,7 +5836,7 @@ const TRANSLATIONS = {
           desc: "Sensoren in der Kammer und Patientendaten werden mit Algorithmen des maschinellen Lernens analysiert.",
           features: [
             "Dynamische Druckanpassung: Bei Anzeichen von Unbehagen wird der Druck in Mikroschritten feinjustiert, um den Komfort zu erhalten",
-            "Optimierung der Sauerstoffeffizienz: Der Sauerstofffluss passt sich dem Atemrhythmus an und reduziert Verluste um 30 %",
+            "Optimierung der Sauerstoffeffizienz: Der Sauerstofffluss passt sich dem Atemrhythmus an, mit dem Ziel, Verluste um bis zu 30 % zu senken (Feldtests laufen)",
             "Sitzungsempfehlungs-Engine: Nach Abschluss eines Protokolls wird ein Bericht zur ärztlichen Freigabe erstellt",
             "Klaustrophobie-Erkennung: Übermäßige Bewegung löst automatisch das Beleuchtungs- und Kommunikationssystem aus"
           ]
@@ -5840,7 +5846,7 @@ const TRANSLATIONS = {
           subtitle: "Integration in Krankenhausinformationssysteme mit einem Klick",
           desc: "HL7-FHIR- und DICOM-konform. Daten landen nach Ende einer Sitzung automatisch in der Patientenakte.",
           features: [
-            "Direkte Anbindung an Epic, Cerner, Medistat, Logo und lokale KIS-Systeme",
+            "Direkte Anbindung an Epic, Cerner, Medistat, Logo und lokale KIS-Systeme (Integration befindet sich in der Testphase, Start in Kürze)",
             "Automatische Berichterstattung: Am Ende jeder Sitzung erreicht ein Bericht den Bildschirm des behandelnden Arztes",
             "Abrechnungsintegration: Sauerstoffvolumen und Sitzungsdauer werden automatisch an das Abrechnungsmodul übermittelt"
           ]
@@ -5857,7 +5863,7 @@ const TRANSLATIONS = {
         }
       },
       extra: {
-        silent: { title: "CitySilent™", desc: "Betriebsgeräusch unter 55 Dezibel." },
+        silent: { title: "CitySilent™", desc: "Betriebsgeräusch unter 60 Dezibel." },
         care: { title: "CityCare™", desc: "Ferndiagnose und -behebung, ohne auf einen Servicetermin warten zu müssen." }
       },
       comparison: {
@@ -5875,7 +5881,7 @@ const TRANSLATIONS = {
           { feature: "Vorausschauende Wartung", competitor: "Keine, reaktive Wartung", apex: "CityGuard™ — Warnung vor Ausfall" },
           { feature: "Automatische Berichterstattung", competitor: "Keine", apex: "CitySync™ — Bericht am Ende der Sitzung" },
           { feature: "Ferndiagnose", competitor: "Keine, Servicetermin erforderlich", apex: "CityCare™ — Fernbehebung" },
-          { feature: "Geräuschpegel", competitor: "60–70 dB", apex: "CitySilent™ — <55 dB" },
+          { feature: "Geräuschpegel", competitor: "60–70 dB", apex: "CitySilent™ — <60 dB" },
           { feature: "Digitales Sicherheitsprotokoll", competitor: "Keine", apex: "CityGuard™ — Verschlüsseltes Cloud-Protokoll" }
         ]
       },
@@ -5892,9 +5898,9 @@ const TRANSLATIONS = {
         disclaimer: "Diese Funktionen befinden sich in der Entwicklung und sind für künftige Modelle geplant; sie sind nicht Standard bei aktuellen HBOT City Tech-Modellen. Kammerdruck und Sauerstoffgehalt werden stets von qualifiziertem Bedienpersonal gesteuert."
       },
       certifications: {
-        eyebrow: "ZERTIFIZIERUNGEN",
-        title: "Normenkonformität",
-        subtitle: "Die HBOT City Tech Series wird in Übereinstimmung mit internationalen Normen für medizinisches Kammerdesign, Brandschutz und Druckgeräte entwickelt.",
+        eyebrow: "ANGESTREBTE NORMEN",
+        title: "Die Zertifizierungsstandards, die wir anstreben",
+        subtitle: "Die technische Entwicklung der HBOT City Tech Series orientiert sich an den folgenden internationalen Normen für medizinisches Kammerdesign, Brandschutz und Druckgeräte; der Zertifizierungsprozess läuft.",
         items: [
           { code: "EN 14931", name: "Norm für medizinisches Kammerdesign" },
           { code: "EN 16081", name: "Brandschutzsystem für medizinische Kammern" },
@@ -5946,7 +5952,7 @@ const TRANSLATIONS = {
         { label: "Material", value: "Flugzeugaluminium" },
         { label: "Sicherheit", value: "Doppeltes Sicherheitsventil" },
         { label: "Außenabmessungen", value: "240×110×120 cm" },
-        { label: "Geräuschpegel", value: "<55 dB (CitySilent™)" }
+        { label: "Geräuschpegel", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelSolo: {
@@ -5961,7 +5967,7 @@ const TRANSLATIONS = {
         { label: "Material", value: "Flugzeugaluminium" },
         { label: "Sicherheit", value: "Doppeltes Sicherheitsventil" },
         { label: "Außenabmessungen", value: "120×110×180 cm" },
-        { label: "Geräuschpegel", value: "<55 dB (CitySilent™)" }
+        { label: "Geräuschpegel", value: "<60 dB (CitySilent™)" }
       ]
     },
     modelDuo: {
@@ -6066,7 +6072,7 @@ const TRANSLATIONS = {
         { q: "Für wie viele Personen ist der Oslo ausgelegt und in welcher Position wird er genutzt?", a: "Der Oslo ist eine Einzelkammer, die vollständig liegend genutzt wird. Die medizinische orthopädische Matratze (200×80 cm) reduziert den Druck auf Rücken und Lendenwirbelsäule bei langen Sitzungen." },
         { q: "Kann ich beim Oslo die Sitz- oder Innenwandfarbe wählen?", a: "Nein — der Oslo hat keinen Sitz, und die Innenansicht ist fest; dieser Schritt wurde daher bewusst aus dem Konfigurator entfernt. Die Außenfarbe können Sie dennoch aus unserer Standardpalette wählen oder einen Farbton außerhalb der Liste anfragen." },
         { q: "In welchem Druckbereich arbeitet der Oslo?", a: "Zwischen 1,5 und 2,0 ATA — ein Niederdrucksystem für den Heimgebrauch." },
-        { q: "Ist der Oslo zu Hause störend laut?", a: "Er arbeitet unter 55 dB, nahe der Umgebungslautstärke eines ruhigen Zimmers." },
+        { q: "Ist der Oslo zu Hause störend laut?", a: "Er arbeitet unter 60 dB, nahe der Umgebungslautstärke eines ruhigen Zimmers." },
         { q: "Wie erhalte ich ein Angebot für den Oslo?", a: "Wählen Sie den Oslo im Konfigurator und eine Farbe, um sofort eine Preisschätzung zu sehen; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
       ],
       "solo": [
@@ -6542,6 +6548,7 @@ const TRANSLATIONS = {
             title: "Installation",
             items: [
               { q: "Wie viel Platz wird für die Installation benötigt?", a: "Der benötigte Platz variiert je nach gewähltem HBOT City Tech-Modell. Bei der Festlegung der Installationsfläche sollten neben den Geräteabmessungen folgende Faktoren berücksichtigt werden:", list: ["Arbeitsbereich des Bedieners", "Voller Freiraum für die Türöffnung", "Zugang für den technischen Service", "Bereich für Kompressor und Zusatzausrüstung", "Bereich für das Sauerstoffsystem", "Belüftung", "Elektroverteiler", "Notausgangsweg", "Brandschutzausrüstung"], aAfter: "Die Mindestinstallationsabmessungen werden nach einer technischen Begehung festgelegt." },
+              { q: "Woher weiß ich, ob das Gerät in meinen Raum passt?", a: "Am praktischsten ist die Funktion „📱 In Ihrem Raum ansehen (3D / AR)“ im Konfigurator: Mit der Kamera Ihres Smartphones können Sie das gewählte Modell in Originalgröße in Ihrem eigenen Raum platzieren und aus jedem Blickwinkel betrachten. Die Außenmaße jedes Modells sind zudem separat in der technischen Spezifikationstabelle aufgeführt." },
               { q: "Kann das Gerät in einem bestehenden Gebäude installiert werden?", a: "Die meisten Projekte lassen sich in bestehenden Gebäuden umsetzen; vor der Installation muss jedoch eine technische Prüfung durchgeführt werden. Dabei werden folgende Punkte geprüft:", list: ["Tragfähigkeit des Bodens", "Tür- und Flurbreiten", "Aufzugskapazität", "Deckenhöhe", "Elektrische Infrastruktur", "Belüftung", "Sauerstoff- und Druckluftinfrastruktur", "Brandschutz", "Zugang für den technischen Service"] },
               { q: "Führen Sie vor der Installation eine Standortbegehung durch?", a: "Ja. Je nach Standort und Umfang des Projekts kann eine technische Fernbewertung oder eine Vor-Ort-Begehung durchgeführt werden. Für die erste Bewertung können vom Kunden folgende Informationen angefordert werden:", list: ["Abmessungen der Installationsfläche", "Fotos und Videos", "Architekturplan", "Elektrische Infrastruktur", "Angaben zur Belüftung", "Zugangs- und Transportweg", "Angestrebte Nutzerkapazität", "Gewünschtes Modell und gewünschte Optionen"], aAfter: "Unser technisches Team prüft die Informationen und setzt sich mit Ihnen in Verbindung." },
               { q: "Ist eine Bodenverstärkung erforderlich?", a: "Das hängt vom Gewicht des Geräts, der Zusatzausrüstung und der Tragfähigkeit des Gebäudes ab. Falls erforderlich, muss eine statische Bewertung von einem qualifizierten Bau- oder Statikingenieur durchgeführt werden." },

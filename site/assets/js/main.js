@@ -401,7 +401,7 @@
           <div class="compare-row"><span>${t.col_capacity}</span><strong>${capacity}</strong></div>
           <div class="compare-row"><span>${t.col_position}</span><strong>${position}</strong></div>
           <div class="compare-row"><span>${t.col_pressure}</span><strong>${PRESSURE_RANGE[key]}</strong></div>
-          <div class="compare-row"><span>${t.col_noise}</span><strong>&lt;55 dB</strong></div>
+          <div class="compare-row"><span>${t.col_noise}</span><strong>&lt;60 dB</strong></div>
           <div class="compare-row compare-row-price"><span>${t.col_price}</span><strong>${priceLabel}</strong></div>
           <a href="konfigurator.html?model=${key}" class="btn btn-primary btn-block">${t.action_label}</a>
         </div>
