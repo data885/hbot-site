@@ -119,6 +119,22 @@ class Renderers:
     ''')
         return "".join(parts)
 
+    def target_markets(self, dict_):
+        home = dict_.get("home")
+        if not home or "targetMarkets" not in home:
+            return ""
+        tm = home["targetMarkets"]
+        parts = []
+        for item in tm["items"]:
+            parts.append(f'''
+      <div class="market-card">
+        <span class="market-flag">{item["flag"]}</span>
+        <span class="market-name">{item["name"]}</span>
+        <span class="market-badge">{tm["badge"]}</span>
+      </div>
+    ''')
+        return "".join(parts)
+
     def styles_teaser(self, dict_):
         home = dict_.get("home")
         if not home or "styles_teaser" not in home:

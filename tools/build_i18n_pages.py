@@ -154,6 +154,7 @@ def render_page_containers(html, page, dict_, r, model_key=None):
     html = fill_container(html, "styles-grid", r.styles_teaser(dict_))
     html = fill_container(html, "why-grid", r.why_grid(dict_))
     html = fill_container(html, "celebs-grid", r.celebs_grid(dict_))
+    html = fill_container(html, "market-grid", r.target_markets(dict_))
     html = fill_container(html, "indications-teaser-grid", r.indications_grid(dict_, limit=6))
     html = fill_container(html, "indications-grid", r.indications_grid(dict_))
     html = fill_container(html, "pillars-list", r.pillars(dict_))

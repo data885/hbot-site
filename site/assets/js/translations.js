@@ -77,7 +77,7 @@ const TRANSLATIONS = {
         { value: "94%", label: "Oksijen Saflığı" },
         { value: "<60dB", label: "CitySilent™ Gürültü Seviyesi" },
         { value: "7/24", label: "Uzaktan İzleme" },
-        { value: "20+", label: "Yıl Mühendislik Deneyimi" }
+        { value: "2007", label: "Yılından Beri Mühendislik" }
       ],
       tech_teaser: {
         eyebrow: "TEKNOLOJİ PLATFORMU",
@@ -124,6 +124,19 @@ const TRANSLATIONS = {
         title: "HBOT Hangi Durumlarda Kullanılır?",
         text: "Yara iyileşmesinden ani işitme kaybına, dekompresyon hastalığından karbon monoksit zehirlenmesine kadar çeşitli tıbbi durumlarda, hekim değerlendirmesi doğrultusunda destekleyici bir terapi olarak kullanılabilir.",
         cta: "Tüm Kullanım Alanlarını Gör"
+      },
+      targetMarkets: {
+        eyebrow: "GENİŞLEME HEDEFİMİZ",
+        title: "Sıradaki Hedef Pazarlarımız",
+        subtitle: "Bugün Türkiye merkezli mühendislik ve üretimle çalışıyoruz; önümüzdeki dönemde büyümeyi hedeflediğimiz pazarlardan bazıları:",
+        badge: "Hedef Pazar",
+        items: [
+          { flag: "🇬🇧", name: "İngiltere" },
+          { flag: "🇦🇪", name: "BAE (Dubai)" },
+          { flag: "🇶🇦", name: "Katar" },
+          { flag: "🇺🇸", name: "ABD" }
+        ],
+        disclaimer: "Bu ülkeler hedeflenen genişleme pazarlarımızdır; henüz tamamlanmış bir teslimat veya distribütörlük anlamına gelmez."
       },
       styles_teaser: {
         eyebrow: "TASARIM SEÇENEKLERİ",
@@ -1022,7 +1035,7 @@ const TRANSLATIONS = {
         { value: "94%", label: "Oxygen Purity" },
         { value: "<60dB", label: "CitySilent™ Noise Level" },
         { value: "24/7", label: "Remote Monitoring" },
-        { value: "20+", label: "Years of Engineering Experience" }
+        { value: "2007", label: "Engineering Since" }
       ],
       tech_teaser: {
         eyebrow: "TECHNOLOGY PLATFORM",
@@ -1069,6 +1082,19 @@ const TRANSLATIONS = {
         title: "When Is HBOT Used?",
         text: "Can be used as a supportive therapy for a range of medical conditions — from wound healing to sudden hearing loss, decompression sickness to carbon monoxide poisoning — subject to physician evaluation.",
         cta: "See All Use Cases"
+      },
+      targetMarkets: {
+        eyebrow: "OUR EXPANSION GOAL",
+        title: "Markets We're Targeting Next",
+        subtitle: "Today we operate with engineering and manufacturing based in Turkey; here are some of the markets we're aiming to grow into next:",
+        badge: "Target Market",
+        items: [
+          { flag: "🇬🇧", name: "United Kingdom" },
+          { flag: "🇦🇪", name: "UAE (Dubai)" },
+          { flag: "🇶🇦", name: "Qatar" },
+          { flag: "🇺🇸", name: "USA" }
+        ],
+        disclaimer: "These countries are targeted expansion markets; this does not represent a completed delivery or distribution agreement."
       },
       styles_teaser: {
         eyebrow: "DESIGN OPTIONS",
@@ -1967,7 +1993,7 @@ const TRANSLATIONS = {
         { value: "94%", label: "Чистота кислорода" },
         { value: "<55дБ", label: "Уровень шума CitySilent™" },
         { value: "24/7", label: "Удалённый мониторинг" },
-        { value: "20+", label: "Лет инженерного опыта" }
+        { value: "2007", label: "Инженерный опыт с" }
       ],
       tech_teaser: {
         eyebrow: "ТЕХНОЛОГИЧЕСКАЯ ПЛАТФОРМА",
@@ -2014,6 +2040,19 @@ const TRANSLATIONS = {
         title: "В каких случаях применяется ГБО?",
         text: "Может применяться как вспомогательная терапия при ряде медицинских состояний — от заживления ран до внезапной потери слуха, от декомпрессионной болезни до отравления угарным газом — по решению врача.",
         cta: "Смотреть все области применения"
+      },
+      targetMarkets: {
+        eyebrow: "НАША ЦЕЛЬ РАЗВИТИЯ",
+        title: "Следующие целевые рынки",
+        subtitle: "Сегодня наша инженерия и производство базируются в Турции; вот некоторые рынки, на которые мы стремимся выйти в ближайшее время:",
+        badge: "Целевой рынок",
+        items: [
+          { flag: "🇬🇧", name: "Великобритания" },
+          { flag: "🇦🇪", name: "ОАЭ (Дубай)" },
+          { flag: "🇶🇦", name: "Катар" },
+          { flag: "🇺🇸", name: "США" }
+        ],
+        disclaimer: "Эти страны — целевые рынки для расширения; это не означает завершённой поставки или дистрибьюторского соглашения."
       },
       styles_teaser: {
         eyebrow: "ВАРИАНТЫ ДИЗАЙНА",
@@ -2912,7 +2951,7 @@ const TRANSLATIONS = {
         { value: "94%", label: "نقاء الأكسجين" },
         { value: "<60 ديسيبل", label: "مستوى الضجيج CitySilent™" },
         { value: "24/7", label: "مراقبة عن بُعد" },
-        { value: "20+", label: "عامًا من الخبرة الهندسية" }
+        { value: "2007", label: "خبرة هندسية منذ" }
       ],
       tech_teaser: {
         eyebrow: "منصة التقنية",
@@ -2959,6 +2998,19 @@ const TRANSLATIONS = {
         title: "متى يُستخدم العلاج بالأكسجين عالي الضغط؟",
         text: "يمكن استخدامه كعلاج مساند في عدد من الحالات الطبية — من التئام الجروح إلى فقدان السمع المفاجئ، ومن داء الانخفاض إلى التسمم بأول أكسيد الكربون — بناءً على تقييم الطبيب.",
         cta: "عرض جميع مجالات الاستخدام"
+      },
+      targetMarkets: {
+        eyebrow: "هدفنا في التوسع",
+        title: "الأسواق المستهدفة القادمة",
+        subtitle: "نعمل اليوم بهندسة وتصنيع مقرهما تركيا؛ وفيما يلي بعض الأسواق التي نهدف إلى التوسع فيها مستقبلاً:",
+        badge: "سوق مستهدف",
+        items: [
+          { flag: "🇬🇧", name: "المملكة المتحدة" },
+          { flag: "🇦🇪", name: "الإمارات (دبي)" },
+          { flag: "🇶🇦", name: "قطر" },
+          { flag: "🇺🇸", name: "الولايات المتحدة" }
+        ],
+        disclaimer: "هذه الدول هي أسواق توسع مستهدفة؛ ولا تمثّل تسليماً مكتملاً أو اتفاقية توزيع قائمة."
       },
       styles_teaser: {
         eyebrow: "خيارات التصميم",
@@ -3856,7 +3908,7 @@ const TRANSLATIONS = {
         { value: "94%", label: "Pureza de Oxígeno" },
         { value: "<60dB", label: "Nivel de Ruido CitySilent™" },
         { value: "24/7", label: "Monitorización Remota" },
-        { value: "20+", label: "Años de Experiencia en Ingeniería" }
+        { value: "2007", label: "Ingeniería Desde" }
       ],
       tech_teaser: {
         eyebrow: "PLATAFORMA TECNOLÓGICA",
@@ -3903,6 +3955,19 @@ const TRANSLATIONS = {
         title: "¿Cuándo se Utiliza la HBOT?",
         text: "Puede utilizarse como terapia de apoyo en diversas afecciones médicas — desde la cicatrización de heridas hasta la pérdida súbita de audición, pasando por la enfermedad por descompresión y la intoxicación por monóxido de carbono — según evaluación médica.",
         cta: "Ver Todos los Casos de Uso"
+      },
+      targetMarkets: {
+        eyebrow: "NUESTRO OBJETIVO DE EXPANSIÓN",
+        title: "Los Próximos Mercados que Buscamos",
+        subtitle: "Hoy operamos con ingeniería y fabricación con base en Turquía; estos son algunos de los mercados hacia los que buscamos expandirnos próximamente:",
+        badge: "Mercado Objetivo",
+        items: [
+          { flag: "🇬🇧", name: "Reino Unido" },
+          { flag: "🇦🇪", name: "EAU (Dubái)" },
+          { flag: "🇶🇦", name: "Catar" },
+          { flag: "🇺🇸", name: "EE. UU." }
+        ],
+        disclaimer: "Estos países son mercados de expansión objetivo; esto no representa una entrega completada ni un acuerdo de distribución vigente."
       },
       styles_teaser: {
         eyebrow: "OPCIONES DE DISEÑO",
@@ -4800,7 +4865,7 @@ const TRANSLATIONS = {
         { value: "94%", label: "Pureza de Oxigênio" },
         { value: "<60dB", label: "Nível de Ruído CitySilent™" },
         { value: "24/7", label: "Monitoramento Remoto" },
-        { value: "20+", label: "Anos de Experiência em Engenharia" }
+        { value: "2007", label: "Engenharia Desde" }
       ],
       tech_teaser: {
         eyebrow: "PLATAFORMA TECNOLÓGICA",
@@ -4847,6 +4912,19 @@ const TRANSLATIONS = {
         title: "Quando a OHB É Utilizada?",
         text: "Pode ser utilizada como terapia de suporte em diversas condições médicas — da cicatrização de feridas à perda súbita de audição, do mal de descompressão à intoxicação por monóxido de carbono — conforme avaliação médica.",
         cta: "Ver Todos os Casos de Uso"
+      },
+      targetMarkets: {
+        eyebrow: "NOSSO OBJETIVO DE EXPANSÃO",
+        title: "Os Próximos Mercados-Alvo",
+        subtitle: "Hoje operamos com engenharia e fabricação baseadas na Turquia; estes são alguns dos mercados para os quais buscamos expandir em breve:",
+        badge: "Mercado-Alvo",
+        items: [
+          { flag: "🇬🇧", name: "Reino Unido" },
+          { flag: "🇦🇪", name: "EAU (Dubai)" },
+          { flag: "🇶🇦", name: "Catar" },
+          { flag: "🇺🇸", name: "EUA" }
+        ],
+        disclaimer: "Esses países são mercados de expansão-alvo; isso não representa uma entrega concluída nem um acordo de distribuição vigente."
       },
       styles_teaser: {
         eyebrow: "OPÇÕES DE DESIGN",
@@ -5744,7 +5822,7 @@ const TRANSLATIONS = {
         { value: "94%", label: "Sauerstoffreinheit" },
         { value: "<60dB", label: "CitySilent™ Geräuschpegel" },
         { value: "24/7", label: "Fernüberwachung" },
-        { value: "20+", label: "Jahre Ingenieurserfahrung" }
+        { value: "2007", label: "Ingenieurserfahrung seit" }
       ],
       tech_teaser: {
         eyebrow: "TECHNOLOGIEPLATTFORM",
@@ -5791,6 +5869,19 @@ const TRANSLATIONS = {
         title: "Wann wird HBOT eingesetzt?",
         text: "Kann als unterstützende Therapie bei verschiedenen medizinischen Indikationen eingesetzt werden — von der Wundheilung bis zum plötzlichen Hörverlust, von der Dekompressionskrankheit bis zur Kohlenmonoxidvergiftung — nach ärztlicher Beurteilung.",
         cta: "Alle Anwendungsfälle ansehen"
+      },
+      targetMarkets: {
+        eyebrow: "UNSER EXPANSIONSZIEL",
+        title: "Unsere nächsten Zielmärkte",
+        subtitle: "Heute arbeiten wir mit Entwicklung und Fertigung mit Sitz in der Türkei; hier einige der Märkte, in die wir als Nächstes expandieren möchten:",
+        badge: "Zielmarkt",
+        items: [
+          { flag: "🇬🇧", name: "Vereinigtes Königreich" },
+          { flag: "🇦🇪", name: "VAE (Dubai)" },
+          { flag: "🇶🇦", name: "Katar" },
+          { flag: "🇺🇸", name: "USA" }
+        ],
+        disclaimer: "Diese Länder sind angestrebte Expansionsmärkte; dies stellt keine abgeschlossene Lieferung oder bestehende Vertriebsvereinbarung dar."
       },
       styles_teaser: {
         eyebrow: "DESIGNOPTIONEN",

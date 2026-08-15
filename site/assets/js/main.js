@@ -307,6 +307,19 @@
     `).join("");
   }
 
+  function renderTargetMarkets(dict) {
+    const c = document.getElementById("market-grid");
+    if (!c || !dict.home || !dict.home.targetMarkets) return;
+    const tm = dict.home.targetMarkets;
+    c.innerHTML = tm.items.map((item) => `
+      <div class="market-card">
+        <span class="market-flag">${item.flag}</span>
+        <span class="market-name">${item.name}</span>
+        <span class="market-badge">${tm.badge}</span>
+      </div>
+    `).join("");
+  }
+
   function renderPillars(dict) {
     const c = document.getElementById("pillars-list");
     if (!c || !dict.technology) return;
@@ -2279,6 +2292,7 @@
       renderStylesTeaser(dict);
       renderWhyGrid(dict);
       renderCelebsGrid(dict);
+      renderTargetMarkets(dict);
       renderIndicationsGrid(dict, "indications-teaser-grid", 6);
     } else if (page === "technology") {
       renderPillars(dict);
