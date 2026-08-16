@@ -577,7 +577,7 @@
   const REF_CODES = ["HBOT-REF-2026", "APEX-REF-2026", "ALMITA-2026"];
   const REF_DISCOUNT_PCT = 5;
   const CRM_ENDPOINT = "https://crmalmita.com/api/leads"; // public lead API yoksa sessiz fallback
-  const configState = { usageType: "home", model: "solo-lounge", tierIndex: 0, addons: new Set(), nexusSeats: NEXUS_BASE_SEATS, color: "pearl-white", chamberStyle: "solid", interiorColor: "cream", seatColor: "konyak", seatTouched: false, lastTouchedDim: "interior", stageView: "exterior", spinIdx: 0, discountPct: 0, refCode: "" };
+  const configState = { usageType: "home", model: "solo-lounge", tierIndex: 0, addons: new Set(), nexusSeats: NEXUS_BASE_SEATS, color: "pearl-white", chamberStyle: "solid", interiorColor: "cream", seatColor: "konyak", seatTouched: false, stageView: "exterior", spinIdx: 0, discountPct: 0, refCode: "" };
   /* Kullanım alanı -> izinli model id'leri. Yüksek basınç (3.0/6.0 ATA) yalnızca
      Nexus'ta mevcut olduğu için kurumsal kategori tek modelle sınırlı. */
   const USAGE_MODELS = {
@@ -667,7 +667,7 @@
      fotoğrafı öncelikli — sahne zaten iç görünüme geçiyor; aksi halde duvar/döşeme rengi. */
   const INTERIOR_FAMILY = {
     "solo-lounge": "lounge", solo: "milan", duo: "milan", "duo-plus": "milan",
-    "quad-cube": "milan", nexus: "milan"
+    "quad-cube": "milan", nexus: "nexus"
   };
   function realInteriorMatch() {
     /* Dubai'nin kendi duvar/koltuk renk varyantı fotoğrafları yok — ailesi
@@ -679,9 +679,15 @@
     if (!family) return null;
     const seatReady = configState.seatTouched && configState.seatColor;
     const wallReady = configState.interiorColor && configState.interiorColor !== "cream";
-    if (configState.lastTouchedDim === "seat" && seatReady) return `real/${family}-seat-${configState.seatColor}`;
-    if (wallReady) return `real/${family}-wall-${configState.interiorColor}`;
+    /* Duvar VE koltuk rengi aynı anda seçiliyse ikisini birden gösteren tek
+       bir gerçek fotoğraf yok (fotoğraflar tek eksenli: ya duvar ya koltuk
+       değişir, öbürü sabit kalır) — biri seçilirse öbürü sessizce
+       görmezden geliniyordu. null dönüp varsayılan iç fotoğrafına düşerek
+       canvas boyama sistemine (stagePaintSpec) HER İKİ rengi birden
+       uygulatıyoruz. */
+    if (seatReady && wallReady) return null;
     if (seatReady) return `real/${family}-seat-${configState.seatColor}`;
+    if (wallReady) return `real/${family}-wall-${configState.interiorColor}`;
     return null;
   }
 
@@ -1121,7 +1127,6 @@
     c.querySelectorAll(".config-color-swatch").forEach((btn) => {
       btn.addEventListener("click", () => {
         configState.interiorColor = btn.getAttribute("data-interior-id");
-        configState.lastTouchedDim = "interior";
         if (configState.stageView !== "interior") configState.stageView = "interior";
         const dict = TRANSLATIONS[currentLang];
         renderConfigInteriorColors(dict);
@@ -1365,7 +1370,6 @@
       btn.addEventListener("click", () => {
         configState.seatColor = btn.getAttribute("data-seat-id");
         configState.seatTouched = true;
-        configState.lastTouchedDim = "seat";
         // Koltuk rengi geri bildirimi iç sahnede görünsün — iç görünüme geç
         if (configState.stageView !== "interior") configState.stageView = "interior";
         const dict = TRANSLATIONS[currentLang];
