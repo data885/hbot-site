@@ -135,15 +135,23 @@
      TAM bu aralığa düşüyor, bu yüzden deri kendi highlight'larında rastgele
      boyanmamış lekeler kalıyordu (yamalı, amatör görünüm). Maske zaten hangi
      pikselin koltuk/duvar olduğunu tanımlıyor — ayrıca bir renk-bazlı filtreye
-     gerek yok; sadece gerçek gölge/boşlukları (çok koyu pikseller) koru. */
-  function isProtectedPixel(h, s, l) {
-    return l < 0.10;
+     gerek yok.
+     Çok koyu pikseller (ekipman/monitör gövdesi gibi) TAMAMEN atlanmıyor artık —
+     eski hard-skip (l<0.10 ise hiç boyama) kapitone dikiş oyuklarının/derin
+     kırışıklıkların (bu fotoğraflarda genelde sıcak/kahverengi gölge, saf siyah
+     değil) boyanmadan kalıp yeni renk dolgusunun içinde renkli benek gibi
+     görünmesine yol açıyordu. Bunun yerine yumuşak bir koruma: en koyu piksel
+     bile en az %30 oranında hedef rengine kayar (benek etkisini yok eder),
+     l>=0.10'da tam boyama. */
+  function protectionStrength(l) {
+    return 1 - smoothstep(l, 0, 0.10);
   }
 
   function recolorPixel(r, g2, b, alpha, paint) {
     if (alpha <= 0) return [r, g2, b];
     const hsl = rgbToHsl(r, g2, b);
-    if (isProtectedPixel(hsl[0], hsl[1], hsl[2])) return [r, g2, b];
+    const protect = protectionStrength(hsl[2]);
+    alpha = alpha * (1 - protect * 0.7);
     const out = paintPixel(r, g2, b, paint);
     const a = clamp01(alpha);
     return [r + (out[0] - r) * a, g2 + (out[1] - g2) * a, b + (out[2] - b) * a];
@@ -169,6 +177,6 @@
   g.HBOTRecolor = {
     hexToHsl, rgbToHsl, hslToRgb,
     computeWeight, applyWeightedPaint, paintPixel,
-    isProtectedPixel, recolorPixel, recolorImageData
+    protectionStrength, recolorPixel, recolorImageData
   };
 })(typeof window !== "undefined" ? window : globalThis);

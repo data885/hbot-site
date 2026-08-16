@@ -1272,7 +1272,7 @@
         // v11: akıllı profil — ağırlık haritası + ağırlıklı boya
         let maskData = null;
         if (spec.mask) {
-          const mi = await loadRecolorImg(`/assets/img/models/${spec.mask}.png?v=26`);
+          const mi = await loadRecolorImg(`/assets/img/models/${spec.mask}.png?v=27`);
           const mc = document.createElement("canvas");
           mc.width = w; mc.height = h;
           const mctx = mc.getContext("2d", { willReadFrequently: true });
@@ -1283,7 +1283,7 @@
         window.HBOTRecolor.applyWeightedPaint(imgData.data, weight, spec.paint);
       } else {
         // v10 yolu: maske-tabanlı passes (interior + koltuk)
-        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=26`)));
+        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=27`)));
         const mc = document.createElement("canvas");
         mc.width = w; mc.height = h;
         const mctx = mc.getContext("2d", { willReadFrequently: true });
