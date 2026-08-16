@@ -17,12 +17,11 @@ from build_i18n_pages import ROOT_PAGES, ALL_LANGS, resolve_url, BASE_URL
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_DIR = os.path.join(REPO_ROOT, "site")
 
-# model-apex-quad.html is a legacy redirect page; 404.html is noindex —
-# both still get the asset-path + lang-switch-link fix for consistency
-# (needed so assets resolve correctly even when reached via a /xx/ path),
-# but no hreflang block (canonical/robots already handle those correctly).
-ALL_ROOT_FILES = ROOT_PAGES + ["model-apex-quad.html", "404.html"]
-NO_HREFLANG = {"model-apex-quad.html", "404.html"}
+# 404.html is noindex — it still gets the asset-path + lang-switch-link fix
+# for consistency (needed so assets resolve correctly even when reached via
+# a /xx/ path), but no hreflang block (canonical/robots already handle that).
+ALL_ROOT_FILES = ROOT_PAGES + ["404.html"]
+NO_HREFLANG = {"404.html"}
 
 
 def add_hreflang(html, filename):
@@ -45,13 +44,11 @@ def fix_asset_paths(html):
     return re.sub(r'([\'"])assets/', r'\1/assets/', html)
 
 
-# These two pages aren't generated in the 6 language subfolders (404.html
-# is a global error page, model-apex-quad.html is a legacy redirect-only
-# page) — their lang-switch links must point somewhere that actually
+# 404.html isn't generated in the 6 language subfolders (it's a global
+# error page) — its lang-switch links must point somewhere that actually
 # exists in each language instead of a same-name file that was never built.
 LANG_SWITCH_TARGET_OVERRIDE = {
     "404.html": "index.html",  # "view in English" from an error page -> that language's homepage
-    "model-apex-quad.html": "model-apex-quad-cube.html",  # matches this page's own canonical redirect target
 }
 
 

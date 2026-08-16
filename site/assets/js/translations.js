@@ -321,7 +321,7 @@ const TRANSLATIONS = {
       faq_title: "Tokyo hakkında merak edilenler",
       tagline: "Birlikte İyileşin. İki kişilik paylaşımlı terapi deneyimi.",
       overview_text: "Çift koltuklu hiperbarik kabin, paylaşımlı terapi seansları sunar. Eşler, partnerler veya hasta-refakatçi kullanımı için tasarlanmıştır.",
-      institutionalNote: "Kurumsal, 2–4 kişilik kullanım mı arıyorsunuz? <a href=\"model-apex-duo-plus.html\">Tokyo Plus'a bakın →</a>",
+      institutionalNote: "Kurumsal, 2–4 kişilik kullanım mı arıyorsunuz? <a href=\"model-tokyo-plus.html\">Tokyo Plus'a bakın →</a>",
       specs: [
         { label: "Kapasite", value: "2 kişi (oturma)" },
         { label: "Basınç Aralığı", value: "1.5 – 2.0 ATA" },
@@ -1279,7 +1279,7 @@ const TRANSLATIONS = {
       faq_title: "What people want to know about the Tokyo",
       tagline: "Heal Together. A shared two-person treatment experience.",
       overview_text: "A dual-seat hyperbaric chamber offering shared therapy sessions. Designed for couples, partners, or patient-companion use.",
-      institutionalNote: "Looking for a 2–4 person institutional setup? <a href=\"model-apex-duo-plus.html\">See Tokyo Plus →</a>",
+      institutionalNote: "Looking for a 2–4 person institutional setup? <a href=\"model-tokyo-plus.html\">See Tokyo Plus →</a>",
       specs: [
         { label: "Capacity", value: "2 people (sitting)" },
         { label: "Pressure Range", value: "1.5 – 2.0 ATA" },
@@ -2237,7 +2237,7 @@ const TRANSLATIONS = {
       faq_title: "Часто задаваемые вопросы о Tokyo",
       tagline: "Исцеляйтесь вместе. Совместный сеанс лечения для двоих.",
       overview_text: "Двухместная гипербарическая камера для совместных сеансов терапии. Разработана для пар, партнёров или пациента с сопровождающим.",
-      institutionalNote: "Ищете вариант для учреждений на 2–4 человека? <a href=\"model-apex-duo-plus.html\">Смотрите Tokyo Plus →</a>",
+      institutionalNote: "Ищете вариант для учреждений на 2–4 человека? <a href=\"model-tokyo-plus.html\">Смотрите Tokyo Plus →</a>",
       specs: [
         { label: "Вместимость", value: "2 человека (сидя)" },
         { label: "Диапазон давления", value: "1.5 – 2.0 ATA" },
@@ -3195,7 +3195,7 @@ const TRANSLATIONS = {
       faq_title: "أسئلة شائعة حول طوكيو",
       tagline: "تعافيا معاً. تجربة علاج مشتركة لشخصين.",
       overview_text: "غرفة أكسجين عالي الضغط بمقعدين توفر جلسات علاج مشتركة. مصممة للأزواج أو الشركاء أو استخدام المريض مع مرافق.",
-      institutionalNote: "تبحث عن إعداد مؤسسي لـ 2–4 أشخاص؟ <a href=\"model-apex-duo-plus.html\">اطّلع على Tokyo Plus →</a>",
+      institutionalNote: "تبحث عن إعداد مؤسسي لـ 2–4 أشخاص؟ <a href=\"model-tokyo-plus.html\">اطّلع على Tokyo Plus →</a>",
       specs: [
         { label: "السعة", value: "شخصان (جلوس)" },
         { label: "نطاق الضغط", value: "1.5 – 2.0 ATA" },
@@ -4152,7 +4152,7 @@ const TRANSLATIONS = {
       faq_title: "Preguntas frecuentes sobre el Tokyo",
       tagline: "Sana en Compañía. Una experiencia de tratamiento compartida para dos personas.",
       overview_text: "Una cámara hiperbárica de doble asiento que ofrece sesiones de terapia compartidas. Diseñada para parejas, acompañantes o uso paciente-acompañante.",
-      institutionalNote: "¿Busca una configuración institucional para 2–4 personas? <a href=\"model-apex-duo-plus.html\">Vea Tokyo Plus →</a>",
+      institutionalNote: "¿Busca una configuración institucional para 2–4 personas? <a href=\"model-tokyo-plus.html\">Vea Tokyo Plus →</a>",
       specs: [
         { label: "Capacidad", value: "2 personas (sentadas)" },
         { label: "Rango de Presión", value: "1.5 – 2.0 ATA" },
@@ -5109,7 +5109,7 @@ const TRANSLATIONS = {
       faq_title: "Perguntas frequentes sobre o Tokyo",
       tagline: "Cure-se em Dupla. Uma experiência de tratamento compartilhada para duas pessoas.",
       overview_text: "Uma câmara hiperbárica com dois assentos que oferece sessões de terapia compartilhadas. Projetada para casais, parceiros ou uso paciente-acompanhante.",
-      institutionalNote: "Procura uma configuração institucional para 2–4 pessoas? <a href=\"model-apex-duo-plus.html\">Veja o Tokyo Plus →</a>",
+      institutionalNote: "Procura uma configuração institucional para 2–4 pessoas? <a href=\"model-tokyo-plus.html\">Veja o Tokyo Plus →</a>",
       specs: [
         { label: "Capacidade", value: "2 pessoas (sentado)" },
         { label: "Faixa de Pressão", value: "1.5 – 2.0 ATA" },
@@ -6066,7 +6066,7 @@ const TRANSLATIONS = {
       faq_title: "Häufige Fragen zum Tokyo",
       tagline: "Gemeinsam heilen. Eine gemeinsame Behandlungserfahrung für zwei Personen.",
       overview_text: "Eine Zweiplatz-Kammer für gemeinsame Therapiesitzungen. Konzipiert für Paare, Partner oder die Nutzung mit Begleitperson.",
-      institutionalNote: "Suchen Sie eine institutionelle Lösung für 2–4 Personen? <a href=\"model-apex-duo-plus.html\">Tokyo Plus ansehen →</a>",
+      institutionalNote: "Suchen Sie eine institutionelle Lösung für 2–4 Personen? <a href=\"model-tokyo-plus.html\">Tokyo Plus ansehen →</a>",
       specs: [
         { label: "Kapazität", value: "2 Personen (sitzend)" },
         { label: "Druckbereich", value: "1.5 – 2.0 ATA" },

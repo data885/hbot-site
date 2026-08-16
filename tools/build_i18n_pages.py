@@ -27,10 +27,11 @@ BASE_URL = "https://hbotchambertech.com"
 ROOT_PAGES = [
     "index.html", "teknoloji.html", "modeller.html", "hbot-nedir.html",
     "blog.html", "konfigurator.html", "iletisim.html",
-    "model-apex-solo-lounge.html", "model-apex-solo.html", "model-apex-duo.html",
-    "model-apex-duo-plus.html", "model-apex-quad-cube.html", "model-apex-nexus.html",
+    "model-oslo.html", "model-dubai.html", "model-tokyo.html",
+    "model-tokyo-plus.html", "model-milano.html", "model-geneva.html",
 ]
-# model-apex-quad.html deliberately excluded — it's a legacy redirect-only page.
+# Legacy model-apex-*.html URLs are excluded — they're now redirect-only
+# stub pages (see tools/build_legacy_redirects.py), not real templates.
 
 NON_TR_LANGS = ["en", "ru", "ar", "es", "pt", "de"]
 ALL_LANGS = ["tr"] + NON_TR_LANGS

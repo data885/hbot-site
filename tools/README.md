@@ -17,9 +17,16 @@ language) **or** the structure of a root `site/*.html` template changes
 (new section, new render container, new page), re-run:
 
 ```bash
-python3 tools/build_i18n_pages.py   # regenerates all 72 language pages
-python3 tools/patch_root_pages.py   # re-applies hreflang/asset-path/lang-link edits to the 13 TR root pages (safe to re-run, idempotent)
-python3 tools/build_sitemap.py      # regenerates sitemap.xml with all 84 URLs + hreflang
+python3 tools/bake_root_pages.py       # bakes real TR content into the 13 root site/*.html templates
+python3 tools/build_i18n_pages.py      # regenerates all 78 language pages (13 pages x 6 non-TR langs)
+python3 tools/patch_root_pages.py      # re-applies hreflang/asset-path/lang-link edits to the 13 TR root pages (safe to re-run, idempotent)
+python3 tools/build_sitemap.py         # regenerates sitemap.xml with all 91 URLs + hreflang
+```
+
+Only if a model page's filename/slug changes, also re-run:
+
+```bash
+python3 tools/build_legacy_redirects.py   # (re)writes redirect stubs at the old URL(s) -> new URL
 ```
 
 Then bump the `?v=NN` cache-busting query param on `main.js`/`translations.js`/
@@ -47,11 +54,18 @@ find site -name "*.html" ! -name "tint_preview.html" -exec sed -i '' -E \
 - `renderers.py` — Python port of `main.js`'s `renderXxx(dict)` functions.
   **Keep in sync by hand**: if a render function's markup changes in
   `main.js`, update the matching function here.
+- `bake_root_pages.py` — bakes real TR content (nav menus, crosslinks, FAQ,
+  comparison tables, etc.) directly into the 13 root `site/*.html` files,
+  using the same renderer functions as `build_i18n_pages.py`.
 - `build_i18n_pages.py` — main orchestrator; also defines `ROOT_PAGES`,
   `ALL_LANGS`, `resolve_url()` reused by the other scripts.
 - `patch_root_pages.py` — the small, additive edit pass for the TR root
   pages (does not touch their JS-driven rendering).
 - `build_sitemap.py` — regenerates `site/sitemap.xml`.
+- `build_legacy_redirects.py` — writes lightweight meta-refresh + canonical
+  redirect stubs at retired model-page URLs (root + all 6 language
+  subfolders), pointing at the current URL. Edit `OLD_TO_NEW` there when a
+  model page's filename changes again.
 
 ## Known scope limits (intentional)
 
@@ -59,6 +73,10 @@ find site -name "*.html" ! -name "tint_preview.html" -exec sed -i '' -E \
   pricing tool itself (model/pressure/addon/color pickers, summary,
   pricing) stays 100% client-JS-driven, same as it must be for an
   interactive tool. Not a gap — a deliberate scope boundary.
-- `model-apex-quad.html` (legacy redirect to `model-apex-quad-cube.html`)
-  and `404.html` are excluded from language-subfolder generation and from
-  hreflang (they already have their own canonical/`noindex` handling).
+- The old `model-apex-*.html` URLs (and the even-older `model-apex-quad.html`
+  double-alias) are excluded from language-subfolder generation and from
+  hreflang — they're now redirect-only stubs (see
+  `build_legacy_redirects.py`) pointing at the current `model-{city}.html`
+  URLs, with their own canonical/meta-refresh handling.
+- `404.html` is excluded from language-subfolder generation and hreflang
+  (it already has its own canonical/`noindex` handling).

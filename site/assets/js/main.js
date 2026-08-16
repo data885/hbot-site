@@ -69,12 +69,12 @@
   const MODEL_ORDER = ["solo-lounge", "solo", "duo", "quad-cube", "nexus"];
   const MODEL_KEY_MAP = { "solo-lounge": "soloLounge", solo: "solo", duo: "duo", "quad-cube": "quadCube", nexus: "nexus" };
   const MODEL_PAGES = {
-    "solo-lounge": "model-apex-solo-lounge.html",
-    solo: "model-apex-solo.html",
-    duo: "model-apex-duo.html",
-    "duo-plus": "model-apex-duo-plus.html",
-    "quad-cube": "model-apex-quad-cube.html",
-    nexus: "model-apex-nexus.html"
+    "solo-lounge": "model-oslo.html",
+    solo: "model-dubai.html",
+    duo: "model-tokyo.html",
+    "duo-plus": "model-tokyo-plus.html",
+    "quad-cube": "model-milano.html",
+    nexus: "model-geneva.html"
   };
 
   /* ---------------- Pricing data (EUR bazlı — illustrative, update with real figures) ---------------- */
