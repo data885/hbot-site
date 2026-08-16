@@ -129,11 +129,15 @@
     }
   }
 
-  /* ---- v10 uyumluluk: maske-tabanlı boyama (interior + koltuk renkleri) ---- */
+  /* ---- v10 uyumluluk: maske-tabanlı boyama (interior + koltuk renkleri) ----
+     Not: eskiden burada "amber LED koruması" için h 25-60/s>0.35/l>0.5 aralığı
+     da korunuyordu — ama koltuk/döşemenin kendi doğal kahve/camel deri tonu
+     TAM bu aralığa düşüyor, bu yüzden deri kendi highlight'larında rastgele
+     boyanmamış lekeler kalıyordu (yamalı, amatör görünüm). Maske zaten hangi
+     pikselin koltuk/duvar olduğunu tanımlıyor — ayrıca bir renk-bazlı filtreye
+     gerek yok; sadece gerçek gölge/boşlukları (çok koyu pikseller) koru. */
   function isProtectedPixel(h, s, l) {
-    if (l < 0.10) return true;
-    if (h >= 25 && h <= 60 && s > 0.35 && l > 0.5) return true;
-    return false;
+    return l < 0.10;
   }
 
   function recolorPixel(r, g2, b, alpha, paint) {
