@@ -598,7 +598,8 @@
     nexus: "real/apex-nexus"
   };
   /* İç mekân: modelin kendi gerçek iç fotoğrafı; olmayan modeller aile iç mekânına düşer
-     (solo/duo/duo-plus -> Quad-Cube iç, oturma pozisyonu daha doğru). */
+     (solo/duo/duo-plus -> Quad-Cube iç, oturma pozisyonu daha doğru). Nexus'un
+     kendi iç fotoğrafı (apex-nexus-ic) var, paylaşmıyor. */
   /* solo-lounge tek yatay (yatan) model — kendi iç fotoğrafı doğru.
      Diğer tüm modeller OTURMA pozisyonunda; kendi iç fotoğrafı olmayanlar
      yatan lounge yerine oturma pozisyonundaki quad-cube iç görselini
@@ -609,7 +610,7 @@
     duo: "real/apex-quad-cube-ic",
     "duo-plus": "real/apex-quad-cube-ic",
     "quad-cube": "real/apex-quad-cube-ic",
-    nexus: "real/apex-quad-cube-ic"
+    nexus: "real/apex-nexus-ic"
   };
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
@@ -1185,12 +1186,14 @@
   const STAGE_TINT_MASKS = {
     "real/apex-lounge-ic": "masks/int-lounge",
     "real/apex-quad-cube-ic": "masks/int-quadcube",
-    "real/apex-nexus-ic": "masks/int-nexus"
+    "real/apex-nexus-ic": "masks/int-nexus",
+    "real/oslo-interior": "masks/int-oslo"
   };
   const STAGE_SEAT_MASKS = {
     "real/apex-lounge-ic": "masks/seat-lounge",
     "real/apex-quad-cube-ic": "masks/seat-quadcube",
-    "real/apex-nexus-ic": "masks/seat-nexus"
+    "real/apex-nexus-ic": "masks/seat-nexus",
+    "real/oslo-interior": "masks/seat-oslo"
   };
 
   /* v11: recolor motor tutkalı — işlenmiş kare cache'i + async üretim.
