@@ -423,7 +423,7 @@ const TRANSLATIONS = {
       ],
       "solo": [
         { q: "Dubai kaç kişilik ve hangi pozisyonda kullanılıyor?", a: "Dubai tek kişilik, oturma pozisyonunda kullanılan kompakt bir kabindir; dokunmatik ekran kontrolüyle ev veya klinik kullanımı için uygundur." },
-        { q: "Dubai'de renk seçimi nasıl çalışıyor?", a: "Dış gövde rengini standart palettemizden seçebilirsiniz. Dubai'nin kendine özel iç/koltuk fotoğrafı bulunmadığından iç mekân görseli sabit kalır; listedeki renklerin dışında özel bir renk de talep edebilirsiniz." },
+        { q: "Dubai'de renk seçimi nasıl çalışıyor?", a: "Dış gövde rengini standart palettemizden seçebilirsiniz. İç mekân ve koltuk rengi de konfigüratörde seçtiğiniz renge göre anında güncellenir; listedeki renklerin dışında özel bir renk de talep edebilirsiniz." },
         { q: "Dubai hangi basınç aralığında çalışır?", a: "1.5–2.0 ATA aralığında çalışan, ev tipi kullanım için tasarlanmış bir sistemdir." },
         { q: "Dubai'nin dış ölçüleri nedir, evime sığar mı?", a: "120×110×180 cm dış ölçülere sahiptir — standart bir oda köşesine rahatça yerleştirilebilecek kompakt bir ayak izi sunar." },
         { q: "Dubai için nasıl teklif alabilirim?", a: "Konfigüratörden Dubai'yi seçip rengini belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
@@ -1381,7 +1381,7 @@ const TRANSLATIONS = {
       ],
       "solo": [
         { q: "How many people does the Dubai fit, and in what position?", a: "The Dubai is a compact, single-person chamber used seated, with touchscreen control suited to home or clinical use." },
-        { q: "How does colour selection work for the Dubai?", a: "You can choose the exterior colour from our standard palette. Since the Dubai has no dedicated interior/seat photography, the interior view stays fixed — you can still request a custom shade beyond the ones shown." },
+        { q: "How does colour selection work for the Dubai?", a: "You can choose the exterior colour from our standard palette. The interior and seat colour also update instantly in the configurator to match your selection — you can still request a custom shade beyond the ones shown." },
         { q: "What pressure range does the Dubai operate at?", a: "1.5–2.0 ATA, designed for home use." },
         { q: "What are the Dubai's exterior dimensions — will it fit my space?", a: "120×110×180 cm — a compact footprint that fits comfortably into a standard room corner." },
         { q: "How do I get a quote for the Dubai?", a: "Select the Dubai in the configurator and pick a colour to see an instant price estimate, then request a final quote through the form." }
@@ -2339,7 +2339,7 @@ const TRANSLATIONS = {
       ],
       "solo": [
         { q: "На сколько человек рассчитан Dubai и в каком положении он используется?", a: "Dubai — компактная одноместная капсула, используемая сидя, с сенсорным управлением, подходящая для дома или клиники." },
-        { q: "Как работает выбор цвета для Dubai?", a: "Цвет внешнего корпуса можно выбрать из стандартной палитры. Так как у Dubai нет отдельных фото интерьера/сиденья, изображение интерьера остаётся фиксированным — оттенок, которого нет в списке, всё же можно запросить." },
+        { q: "Как работает выбор цвета для Dubai?", a: "Цвет внешнего корпуса можно выбрать из стандартной палитры. Цвет интерьера и сиденья также мгновенно обновляется в конфигураторе в соответствии с выбором — оттенок, которого нет в списке, всё же можно запросить." },
         { q: "В каком диапазоне давления работает Dubai?", a: "1.5–2.0 ATA — система, разработанная для домашнего использования." },
         { q: "Каковы внешние размеры Dubai — поместится ли она в моём помещении?", a: "Внешние размеры 120×110×180 см — компактная площадь, которая удобно размещается в углу стандартной комнаты." },
         { q: "Как получить расчёт стоимости на Dubai?", a: "Выберите Dubai в конфигураторе и укажите цвет, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
@@ -4254,7 +4254,7 @@ const TRANSLATIONS = {
       ],
       "solo": [
         { q: "¿Para cuántas personas es el Dubai y en qué posición se usa?", a: "El Dubai es una cámara individual compacta que se usa sentado, con control por pantalla táctil, adecuada para uso doméstico o clínico." },
-        { q: "¿Cómo funciona la elección de color en el Dubai?", a: "Puedes elegir el color exterior de nuestra paleta estándar. Como el Dubai no tiene fotografía interior/de asiento propia, la vista interior permanece fija; aun así puedes solicitar un tono personalizado fuera de los mostrados." },
+        { q: "¿Cómo funciona la elección de color en el Dubai?", a: "Puedes elegir el color exterior de nuestra paleta estándar. El color del interior y del asiento también se actualiza al instante en el configurador según tu selección; aun así puedes solicitar un tono personalizado fuera de los mostrados." },
         { q: "¿En qué rango de presión funciona el Dubai?", a: "Entre 1.5 y 2.0 ATA, diseñado para uso doméstico." },
         { q: "¿Cuáles son las dimensiones exteriores del Dubai? ¿Cabrá en mi espacio?", a: "120×110×180 cm — una huella compacta que se ajusta cómodamente a la esquina de una habitación estándar." },
         { q: "¿Cómo obtengo un presupuesto para el Dubai?", a: "Selecciona el Dubai en el configurador y elige un color para ver una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
@@ -5211,7 +5211,7 @@ const TRANSLATIONS = {
       ],
       "solo": [
         { q: "Para quantas pessoas é o Dubai e em que posição é usado?", a: "O Dubai é uma câmara individual compacta usada sentado, com controle por tela touch, adequada para uso doméstico ou clínico." },
-        { q: "Como funciona a escolha de cor no Dubai?", a: "Você pode escolher a cor externa em nossa paleta padrão. Como o Dubai não tem fotografia própria de interior/assento, a vista interna permanece fixa; ainda assim você pode solicitar uma cor personalizada fora das mostradas." },
+        { q: "Como funciona a escolha de cor no Dubai?", a: "Você pode escolher a cor externa em nossa paleta padrão. A cor do interior e do assento também é atualizada instantaneamente no configurador conforme sua escolha; ainda assim você pode solicitar uma cor personalizada fora das mostradas." },
         { q: "Em qual faixa de pressão o Dubai opera?", a: "Entre 1,5 e 2,0 ATA, projetado para uso doméstico." },
         { q: "Quais são as dimensões externas do Dubai — cabe no meu espaço?", a: "120×110×180 cm — uma área compacta que se encaixa confortavelmente no canto de um quarto padrão." },
         { q: "Como faço para obter um orçamento para o Dubai?", a: "Selecione o Dubai no configurador e escolha uma cor para ver uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
@@ -6168,7 +6168,7 @@ const TRANSLATIONS = {
       ],
       "solo": [
         { q: "Für wie viele Personen ist der Dubai ausgelegt und in welcher Position wird er genutzt?", a: "Der Dubai ist eine kompakte Einzelkammer, die sitzend genutzt wird, mit Touchscreen-Steuerung — geeignet für Zuhause oder Klinik." },
-        { q: "Wie funktioniert die Farbwahl beim Dubai?", a: "Die Außenfarbe können Sie aus unserer Standardpalette wählen. Da für den Dubai keine eigenen Innen-/Sitzfotos existieren, bleibt die Innenansicht fest — einen individuellen Farbton außerhalb der gezeigten Auswahl können Sie dennoch anfragen." },
+        { q: "Wie funktioniert die Farbwahl beim Dubai?", a: "Die Außenfarbe können Sie aus unserer Standardpalette wählen. Auch die Innen- und Sitzfarbe wird im Konfigurator sofort entsprechend Ihrer Auswahl aktualisiert — einen individuellen Farbton außerhalb der gezeigten Auswahl können Sie dennoch anfragen." },
         { q: "In welchem Druckbereich arbeitet der Dubai?", a: "Zwischen 1,5 und 2,0 ATA, ausgelegt für den Heimgebrauch." },
         { q: "Wie groß sind die Außenmaße des Dubai — passt er in meinen Raum?", a: "120×110×180 cm — eine kompakte Stellfläche, die bequem in eine Standard-Zimmerecke passt." },
         { q: "Wie erhalte ich ein Angebot für den Dubai?", a: "Wählen Sie den Dubai im Konfigurator und eine Farbe, um sofort eine Preisschätzung zu sehen; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }

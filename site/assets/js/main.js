@@ -597,18 +597,19 @@
     "quad-cube": "real/apex-quad-cube",
     nexus: "real/apex-nexus"
   };
-  /* İç mekân: modelin kendi gerçek iç fotoğrafı; olmayan modeller aile iç mekânına düşer
-     (solo/duo/duo-plus -> Quad-Cube iç, oturma pozisyonu daha doğru). Nexus'un
-     kendi iç fotoğrafı (apex-nexus-ic) var, paylaşmıyor. */
-  /* solo-lounge tek yatay (yatan) model — kendi iç fotoğrafı doğru.
-     Diğer tüm modeller OTURMA pozisyonunda; kendi iç fotoğrafı olmayanlar
-     yatan lounge yerine oturma pozisyonundaki quad-cube iç görselini
-     paylaşır — pozisyon en azından doğru gösterilir. */
+  /* İç mekân: her modelin artık kendi gerçek iç fotoğrafı var. Duo/Duo Plus
+     için ayrı bir iç çekim hiç yapılmamıştı — kod bu ikisini Milano'nun
+     (Quad-Cube) 4 kişilik küp kabinine düşürüyordu, ki bu Duo'nun kendi 2
+     kişilik pod gövdesiyle hiç uyuşmuyordu (dış görünüm sekmesinde doğru
+     pod'u, iç görünümde bambaşka bir kabini gösteriyordu). apex-duo-real.webp
+     (dış görünüm fotoğrafı) aslında pencereden koltuğu net gösteriyor —
+     o bölgeyi kırpıp Duo'nun kendi iç fotoğrafı (duo-interior.webp) olarak
+     kullanıyoruz. */
   const REAL_INTERIOR = {
     "solo-lounge": "real/apex-lounge-ic",
     solo: "real/oslo-interior",
-    duo: "real/apex-quad-cube-ic",
-    "duo-plus": "real/apex-quad-cube-ic",
+    duo: "real/duo-interior",
+    "duo-plus": "real/duo-interior",
     "quad-cube": "real/apex-quad-cube-ic",
     nexus: "real/apex-nexus-ic"
   };
@@ -667,15 +668,19 @@
      (REAL_INTERIOR ile ayni aile eşlemesi). Koltuk rengi dokunulduysa (seatTouched) koltuk
      fotoğrafı öncelikli — sahne zaten iç görünüme geçiyor; aksi halde duvar/döşeme rengi. */
   const INTERIOR_FAMILY = {
-    "solo-lounge": "lounge", solo: "milan", duo: "milan", "duo-plus": "milan",
+    "solo-lounge": "lounge", solo: "milan",
     "quad-cube": "milan", nexus: "nexus"
   };
   function realInteriorMatch() {
-    /* Dubai'nin kendi duvar/koltuk renk varyantı fotoğrafları yok — ailesi
-       "milan" olduğu için renk dokunulunca Milano'nun (4 kişilik) fotoğrafına
-       düşüyordu. Yanlış ürün göstermektense her zaman Dubai'nin kendi
-       varsayılan iç görselinde (REAL_INTERIOR.solo) sabit kal. */
-    if (configState.model === "solo") return null;
+    /* Dubai/Tokyo/Tokyo Plus'ın kendi duvar+koltuk renk varyantı fotoğrafları
+       yok — "milan" ailesine eşlenmiş olmaları, renk dokunulunca Milano'nun
+       (4 kişilik küp) fotoğrafına düşmelerine yol açıyordu: kullanıcı hiç
+       renk seçmemişken kendi kabinini görüyor, TEK bir renk dokununca aniden
+       başka bir modelin kabinine sıçrıyordu. Yanlış ürün göstermektense her
+       zaman kendi varsayılan iç görsellerinde (REAL_INTERIOR) sabit kalıp
+       renklendirmeyi canvas boyama sistemine (stagePaintSpec + kendi
+       maskeleri) bırakıyoruz — tutarlı kabin, her renk kombinasyonunda. */
+    if (configState.model === "solo" || configState.model === "duo" || configState.model === "duo-plus") return null;
     const family = INTERIOR_FAMILY[configState.model];
     if (!family) return null;
     const seatReady = configState.seatTouched && configState.seatColor;
@@ -1187,13 +1192,15 @@
     "real/apex-lounge-ic": "masks/int-lounge",
     "real/apex-quad-cube-ic": "masks/int-quadcube",
     "real/apex-nexus-ic": "masks/int-nexus",
-    "real/oslo-interior": "masks/int-oslo"
+    "real/oslo-interior": "masks/int-oslo",
+    "real/duo-interior": "masks/int-duo"
   };
   const STAGE_SEAT_MASKS = {
     "real/apex-lounge-ic": "masks/seat-lounge",
     "real/apex-quad-cube-ic": "masks/seat-quadcube",
     "real/apex-nexus-ic": "masks/seat-nexus",
-    "real/oslo-interior": "masks/seat-oslo"
+    "real/oslo-interior": "masks/seat-oslo",
+    "real/duo-interior": "masks/seat-duo"
   };
 
   /* v11: recolor motor tutkalı — işlenmiş kare cache'i + async üretim.
