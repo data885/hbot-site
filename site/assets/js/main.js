@@ -2230,6 +2230,9 @@
         });
       }
 
+      const preView = params.get("view");
+      if (preView === "interior" || preView === "exterior") configState.stageView = preView;
+
       const preRef = params.get("ref");
       if (preRef && REF_CODES.includes(preRef.trim().toUpperCase())) {
         configState.refCode = preRef.trim().toUpperCase();
