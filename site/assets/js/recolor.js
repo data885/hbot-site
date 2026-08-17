@@ -102,14 +102,23 @@
     const l0 = hsl[2];
     const hi = clamp01((l0 - 0.78) / 0.22);
     let h, s, l;
+    // paint.body = dış gövde boyaması (extended palet renkleri). Açık gövdeli
+    // modellerde (beyaz Geneva, bej Dubai) standart boya, gövde parlaklığını
+    // hedef L'nin çok üstüne taşıdığı için AÇIK renkler (bej/fildişi/taş-grisi)
+    // neredeyse beyaz kalıyor — "renk uygulanmadı" izlenimi veriyordu. Gövde
+    // modunda parlaklık büyük oranda hedef L'ye sabitlenir (gövdenin kendi
+    // parlaklığı yalnızca hafif etki eder), böylece açık renkler de net okunur;
+    // en parlak specular highlight'lar (hi) yine kısmen korunur.
+    const lightLift = paint.body ? 0.15 : (paint.metal ? 0.35 : 0.30);
+    const hiSat = paint.body ? 0.20 : 0.40;
     if (paint.metal) {
-      l = clamp01(paint.l + (l0 - 0.55) * 0.35 + 0.05 * hi);
-      s = 0.05;
+      l = clamp01(paint.l + (l0 - 0.55) * lightLift + 0.05 * hi);
+      s = paint.body ? clamp01(paint.s) * 0.5 * (1 - hiSat * hi) : 0.05;
       h = paint.h;
     } else {
       h = paint.h;
-      l = clamp01(paint.l + (l0 - 0.55) * 0.30 + 0.05 * hi);
-      s = clamp01(paint.s) * (1 - 0.40 * hi);
+      l = clamp01(paint.l + (l0 - 0.55) * lightLift + 0.05 * hi);
+      s = clamp01(paint.s) * (1 - hiSat * hi);
     }
     return hslToRgb(h, s, l);
   }

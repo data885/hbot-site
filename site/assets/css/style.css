@@ -650,6 +650,8 @@ p { text-align: justify; text-align-last: left; }
 .config-steps { display: grid; gap: 56px; }
 .config-step-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
 .config-step-note { font-size: 14px; color: var(--gray-500); margin-bottom: 22px; }
+.config-decor-note { margin-bottom: 22px; padding: 14px 16px; border: 1px solid var(--line, #d7dee2); border-radius: 10px; background: var(--paper-tint, #f5f7f8); }
+.config-decor-note p { font-size: 13.5px; line-height: 1.5; color: var(--gray-500); margin: 6px 0 0; }
 .config-color-chart-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--cyan-500); text-decoration: none; margin-top: 14px; }
 .config-color-chart-link:hover { color: var(--cyan-400); text-decoration: underline; }
 .config-color-chart-link svg { width: 14px; height: 14px; flex: none; }

@@ -764,6 +764,17 @@
       nameEl.textContent = base + viewLabel;
     }
 
+    // Oslo (solo-lounge): iç mekan fotoğrafı (aşırı geniş, mor LED'li soyut yakın
+    // çekim) katalog kalitesinde değil — "İç Görünüm" sekmesini tamamen gizle ve
+    // yalnızca dış görünüm göster. İç dekor tercihi ayrı bir notla toplanır
+    // (bkz. lounge-decor-note). Diğer modeller etkilenmez.
+    const hideInterior = configState.model === "solo-lounge";
+    if (hideInterior && configState.stageView === "interior") configState.stageView = "exterior";
+    const interiorViewBtn = document.querySelector('.stage-view-btn[data-view="interior"]');
+    if (interiorViewBtn) interiorViewBtn.hidden = hideInterior;
+    const loungeNote = document.getElementById("lounge-decor-note");
+    if (loungeNote) loungeNote.hidden = !hideInterior;
+
     // Görünüm toggle butonlarının durumu
     document.querySelectorAll(".stage-view-btn").forEach((btn) => {
       btn.classList.toggle("is-active", btn.getAttribute("data-view") === configState.stageView);
@@ -1152,7 +1163,16 @@
     "pearl-white": null,
     "sampanya": "paint", "bronz": "paint",
     "grafit": "metal", "antrasit": "metal", "mat-siyah": "metal",
-    "gece-laciverti": "paint", "bordo": "paint", "zumrut": "paint"
+    "gece-laciverti": "paint", "bordo": "paint", "zumrut": "paint",
+    // Genişletilmiş palet: bu 6 renk için yalnızca birkaç modele özel gerçek
+    // fotoğraf vardı (oslo: bej+adaçayı, milan: turkuaz/nane/taş-grisi/fildişi),
+    // diğer modellerde colorWorksFor false döndürüp SEÇİCİDEN GİZLİYORDU — palet
+    // modelden modele 9–13 renk arası tutarsız görünüyordu. Canvas boyama moduna
+    // ekleyerek (profili olan her modelde) tüm 15 rengi seçilebilir yapıyoruz;
+    // gerçek fotoğrafı olan model+renk kombinasyonları yine gerçek fotoğrafı
+    // kullanır (currentStageTarget önce onu kontrol eder).
+    "bej": "paint", "adacayi-yesili": "paint", "turkuaz": "paint",
+    "nane-yesili": "paint", "fildisi": "paint", "tas-grisi": "metal"
   };
 
   /* Bir renk, seçili modelde GERÇEKTEN görsel bir değişikliğe yol açıyor mu?
@@ -1184,7 +1204,13 @@
     "spin:quad-cube": { profile: "ledlit-qc" },
     "spin:nexus": { profile: "plain" },
     "real/apex-lounge-real": { profile: "masked", mask: "masks/ext-lounge" },
-    "real/apex-quad-cube-2": { profile: "masked", mask: "masks/ext-quadcube2" }
+    "real/apex-quad-cube-2": { profile: "masked", mask: "masks/ext-quadcube2" },
+    // Dubai (solo) ve Tokyo Plus (duo-plus) spin seti olmayan, tek statik dış
+    // fotoğraf gösteren modeller — genişletilmiş palet renklerinin bu modellerde
+    // de canvas boyama ile uygulanabilmesi (ve seçiciden gizlenmemesi) için profil.
+    // Dubai gövdesi bej/inci; Tokyo Plus, Duo ile aynı LED'li kabin.
+    "real/oslo-beige": { profile: "masked", mask: "masks/ext-oslo" },
+    "real/apex-duo-real": { profile: "ledlit-duo" }
   };
 
   /* Interior + koltuk renklendirmesi (maske-tabanlı v10 yolu) */
@@ -1239,9 +1265,10 @@
     if (!target.interior) {
       const p = paintSpecFor(EXT_PAINT_MODE, configState.color, dict.configurator.colors);
       if (!p) return null;
+      p.body = true; // dış gövde boyaması: açık renkler net okunsun (bkz. paintPixel)
       const prof = STAGE_EXT_PROFILE[maskKey];
       if (!prof) return null;
-      return { ext: true, profile: prof.profile, mask: prof.mask || null, paint: p, tag: `v11-${prof.profile}-${configState.color}` };
+      return { ext: true, profile: prof.profile, mask: prof.mask || null, paint: p, tag: `v11b-${prof.profile}-${configState.color}` };
     }
     const bodyMask = STAGE_TINT_MASKS[maskKey];
     const passes = [];
@@ -1279,7 +1306,7 @@
         // v11: akıllı profil — ağırlık haritası + ağırlıklı boya
         let maskData = null;
         if (spec.mask) {
-          const mi = await loadRecolorImg(`/assets/img/models/${spec.mask}.png?v=27`);
+          const mi = await loadRecolorImg(`/assets/img/models/${spec.mask}.png?v=28`);
           const mc = document.createElement("canvas");
           mc.width = w; mc.height = h;
           const mctx = mc.getContext("2d", { willReadFrequently: true });
@@ -1290,7 +1317,7 @@
         window.HBOTRecolor.applyWeightedPaint(imgData.data, weight, spec.paint);
       } else {
         // v10 yolu: maske-tabanlı passes (interior + koltuk)
-        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=27`)));
+        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=28`)));
         const mc = document.createElement("canvas");
         mc.width = w; mc.height = h;
         const mctx = mc.getContext("2d", { willReadFrequently: true });
