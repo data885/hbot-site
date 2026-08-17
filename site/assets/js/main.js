@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  // Ürün fotoğrafları (assets/img/models/**) değiştiğinde bump edilir — tarayıcı
+  // eski görseli sonsuza dek cache'lemesin diye (bkz. kullanıcı raporu: yeni Dubai
+  // fotoğrafı ve watermark temizliği canlıda "değişmemiş" görünüyordu, sebep buydu).
+  const IMG_V = "2";
   const LANG_KEY = "hbot_lang";
   const SUPPORTED = ["en", "tr", "ar", "ru", "es", "pt", "de"];
   const PDF_DATE_LOCALE = { tr: "tr-TR", en: "en-GB", ru: "ru-RU", ar: "ar", es: "es-ES", pt: "pt-PT", de: "de-DE" };
@@ -91,8 +95,9 @@
   };
   const ADDON_PRICING = { massage: 2900, leather: 2100, entertainment: 1650, finish: 900, warranty: 2500, playstation: 1900 };
   const STYLE_PRICING = { solid: 0, glass: 3500, premium: 7500 };
-  /* Panoramik cam seri yalnızca Apex Solo ve Apex Duo'da sunulur. */
-  const GLASS_STYLE_MODELS = ["solo", "duo"];
+  /* Panoramik camlı seri geçici olarak kapatıldı — henüz gerçek fotoğrafı yok
+     (bkz. kullanıcı talebi: fotoğraflar gelince tekrar açılacak). */
+  const GLASS_STYLE_MODELS = [];
   function styleAllowedFor(modelId, styleId) {
     return styleId !== "glass" || GLASS_STYLE_MODELS.includes(modelId);
   }
@@ -242,7 +247,7 @@
       container.innerHTML = MODEL_ORDER.map((key) => {
         const label = menu[MODEL_KEY_MAP[key]];
         const media = isNavPanel
-          ? `<img class="nav-model-thumb" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp" alt="" loading="lazy">`
+          ? `<img class="nav-model-thumb" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp?v=${IMG_V}" alt="" loading="lazy">`
           : `<span class="dropdown-link-icon">${ICONS[MODEL_ICON[key]]}</span>`;
         return `<a href="${MODEL_PAGES[key]}" class="dropdown-link" data-model-key="${key}">
           ${media}
@@ -268,7 +273,7 @@
       const s = short[mKey];
       return `
         <article class="sector-card">
-          <img class="sector-card-img" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp" alt="${s.title}" loading="lazy">
+          <img class="sector-card-img" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp?v=${IMG_V}" alt="${s.title}" loading="lazy">
           <h3>${s.title}</h3>
           <span class="sector-tagline">${s.tagline}</span>
           <p>${s.desc}</p>
@@ -823,7 +828,7 @@
     spinPreloadedFor = tag;
     /* frame-00 zaten yüklü — kalan 23 kareyi sırayla önden yükle */
     for (let i = 1; i < SPIN_FRAME_COUNT; i++) {
-      setTimeout(() => { const im = new Image(); im.src = `/assets/img/models/spin/${tag}/frame-${String(i).padStart(2, "0")}.webp`; }, 140 * i);
+      setTimeout(() => { const im = new Image(); im.src = `/assets/img/models/spin/${tag}/frame-${String(i).padStart(2, "0")}.webp?v=${IMG_V}`; }, 140 * i);
     }
   }
 
@@ -1103,9 +1108,28 @@
     });
   }
 
+  /* Geneva (nexus): medikal cihaz olduğu için dış renk sabit İnci Beyazı —
+     seçici yerine kilitli gösterge + neden notu; renk kartı PDF linki (statik
+     HTML'de, koşulsuz) yine de görünür kalır — talep gelirse özel renk teklif
+     aşamasında değerlendirilebilir. */
   function renderConfigColors(dict) {
     const c = document.getElementById("config-color-grid");
     if (!c || !dict.configurator.colors) return;
+    if (configState.model === "nexus") {
+      configState.color = "pearl-white";
+      const pearl = dict.configurator.colors.find((col) => col.id === "pearl-white");
+      const note = dict.configurator.ext_color_locked_note || "";
+      c.innerHTML = `
+        <div class="config-color-locked">
+          <span class="swatch-dot" style="background:${pearl ? pearl.hex : "#f4f4f2"}"></span>
+          <div>
+            <strong>${pearl ? pearl.name : "İnci Beyazı"}</strong>
+            <p>${note}</p>
+          </div>
+        </div>
+      `;
+      return;
+    }
     const availableColors = dict.configurator.colors.filter((col) => colorWorksFor(configState.model, col.id));
     c.innerHTML = availableColors.map((col) => {
       const selected = configState.color === col.id ? " is-selected" : "";
@@ -1311,7 +1335,7 @@
 
   async function startRecolorJob(ck, imgKey, spec) {
     try {
-      const base = await loadRecolorImg(`/assets/img/models/${imgKey}.webp`);
+      const base = await loadRecolorImg(`/assets/img/models/${imgKey}.webp?v=${IMG_V}`);
       const w = base.naturalWidth, h = base.naturalHeight;
       if (!w || !h) throw new Error("empty frame");
       const c = document.createElement("canvas");
@@ -1367,7 +1391,7 @@
   /* Sahne src çözümü: boya aktifse işlenmiş kare (cache hit) döner; miss'te ham
      kare gösterilir ve üretim arka planda başlar (bitince updateConfigStage tetiklenir). */
   function resolveStageSrc(target) {
-    const raw = `/assets/img/models/${target.key}.webp`;
+    const raw = `/assets/img/models/${target.key}.webp?v=${IMG_V}`;
     const spec = stagePaintSpec(target);
     if (!spec) return raw;
     const ck = `${target.key}|${spec.tag}`;
@@ -1449,7 +1473,7 @@
       return `
         <button type="button" class="config-model-card${selected}" data-model-id="${m.id}">
           <span class="config-check">${ICONS.check}</span>
-          <img class="model-card-img" src="/assets/img/models/${MODEL_CARD_IMG[m.id] || "real/apex-lounge-real"}.webp" alt="${m.name}" loading="lazy">
+          <img class="model-card-img" src="/assets/img/models/${MODEL_CARD_IMG[m.id] || "real/apex-lounge-real"}.webp?v=${IMG_V}" alt="${m.name}" loading="lazy">
           <h4>${m.name}</h4>
           <div class="model-tagline">${m.tagline}</div>
           <div class="model-price">${priceLabel}</div>
@@ -1964,7 +1988,7 @@
      JPEG + kucultme: PDF/e-posta boyutunu makul tutmak icin (PNG ile 10+ MB'a cikiyordu). */
   function loadProductPhotoForPdf() {
     const key = REAL_STAGE[configState.model] || "real/apex-lounge-real";
-    return loadImageForPdf(`/assets/img/models/${key}.webp`, { format: "jpeg", maxDim: 900 });
+    return loadImageForPdf(`/assets/img/models/${key}.webp?v=${IMG_V}`, { format: "jpeg", maxDim: 900 });
   }
 
   /* Unicode PDF fontu (Turkce + Kiril destekli, subset NotoSans) — jsPDF'e bir kez kaydedilir. */
