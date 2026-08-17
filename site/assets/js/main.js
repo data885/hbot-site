@@ -4,7 +4,7 @@
   // Ürün fotoğrafları (assets/img/models/**) değiştiğinde bump edilir — tarayıcı
   // eski görseli sonsuza dek cache'lemesin diye (bkz. kullanıcı raporu: yeni Dubai
   // fotoğrafı ve watermark temizliği canlıda "değişmemiş" görünüyordu, sebep buydu).
-  const IMG_V = "2";
+  const IMG_V = "3";
   const LANG_KEY = "hbot_lang";
   const SUPPORTED = ["en", "tr", "ar", "ru", "es", "pt", "de"];
   const PDF_DATE_LOCALE = { tr: "tr-TR", en: "en-GB", ru: "ru-RU", ar: "ar", es: "es-ES", pt: "pt-PT", de: "de-DE" };
