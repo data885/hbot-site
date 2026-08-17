@@ -661,10 +661,13 @@ p { text-align: justify; text-align-last: left; }
 /* ---------- Configurator ---------- */
 /* Grid yerine flex: CSS Grid'de sticky torun, align-items:start + kısa kardeş kombinasyonunda
    içerme bloğu (containing block) hesaplamasında tarayıcı tutarsızlığı nedeniyle erken "yapışkanlıktan
-   çıkabiliyor". Flex + stretch (varsayılan align-items), sticky kenar çubuğu için daha güvenilir. */
-.configurator-layout { display: flex; gap: 48px; align-items: stretch; }
+   çıkabiliyor". .config-stage-col'a SADECE kendi üzerinde align-self:stretch veriliyor (aşağıda) —
+   .configurator-layout'un genelinde align-items:stretch KULLANMA: config-steps de kendi içinde bir
+   grid (align-items ayarsız → varsayılan stretch miras alır), dıştan zorlanınca kendi satırları
+   (örn. "Hangi Kabini Seçmeliyim?" butonu) absürt boyutlara şişiyor — bunu yaşayıp düzelttik. */
+.configurator-layout { display: flex; gap: 48px; align-items: flex-start; }
 .configurator-layout > .config-steps { flex: 1; min-width: 0; }
-.configurator-layout > .config-stage-col { flex: 1.3; min-width: 480px; }
+.configurator-layout > .config-stage-col { flex: 1.3; min-width: 480px; align-self: stretch; }
 .config-steps { display: grid; gap: 56px; align-content: start; align-items: start; }
 .config-step-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
 .config-step-note { font-size: 14px; color: var(--gray-500); margin-bottom: 22px; }
