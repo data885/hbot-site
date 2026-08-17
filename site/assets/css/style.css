@@ -805,6 +805,8 @@ p { text-align: justify; text-align-last: left; }
 .config-addon-card h4 { font-size: 14.5px; font-weight: 800; }
 .config-addon-card p { font-size: 12.5px; color: var(--gray-500); }
 .config-addon-card .addon-price { font-size: 13px; font-weight: 800; color: var(--cyan-500); }
+.config-addon-card .addon-price-per-seat { font-size: 10.5px; font-weight: 600; color: var(--gray-500); margin-inline-start: 3px; }
+.config-addon-card .addon-note { font-size: 11.5px; color: var(--gray-500); background: var(--gray-50, #f4f6f8); border-radius: 6px; padding: 6px 9px; line-height: 1.4; }
 
 /* Summary sidebar */
 .config-summary {
@@ -884,6 +886,18 @@ p { text-align: justify; text-align-last: left; }
 .vip-card--standalone { max-width: 640px; margin: 40px auto 0; padding: 32px 30px; }
 .vip-card--standalone h3 { font-size: 20px; }
 .vip-card--standalone > p { font-size: 14px; }
+/* VIP demo formu ile teklif formu, konfigüratörün altında simetrik iki sütun.
+   Eskiden demo formu 640px ortada tek başına, teklif formu da onun altında tam
+   genişlikte duruyordu; aşağı kaydırınca demo formu ortada yalnız kalıyor,
+   hemen altında ikinci bir form geliyordu. Yan yana yerleşim dengeli görünür. */
+.config-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; align-items: stretch; }
+.config-cta-grid > .vip-card { padding: 32px 30px; display: flex; flex-direction: column; }
+.config-cta-grid > .vip-card h3 { font-size: 20px; }
+.config-cta-grid > .vip-card > p { font-size: 14px; }
+.config-cta-grid > .vip-card form { display: flex; flex-direction: column; flex: 1; }
+.config-cta-grid > .vip-card .btn-block { margin-top: auto; }
+.config-cta-grid > .quote-form-panel { margin-top: 0; }
+@media (max-width: 900px) { .config-cta-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; } }
 @media (max-width: 640px) { .ar-qr-modal { padding: 24px 20px; } }
 
 /* Showcase stage (3D hissi + renk sihirbazlığı) — sütun tek ünite sticky */

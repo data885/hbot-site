@@ -29,7 +29,7 @@
 <link rel="alternate" hreflang="pt" href="https://hbotchambertech.com/pt/konfigurator.html" />
 <link rel="alternate" hreflang="de" href="https://hbotchambertech.com/de/konfigurator.html" />
 <link rel="alternate" hreflang="x-default" href="https://hbotchambertech.com/konfigurator.html" />
-<link rel="stylesheet" href="/assets/css/style.css?v=63" />
+<link rel="stylesheet" href="/assets/css/style.css?v=66" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"HBOT Chamber Tech","url":"https://hbotchambertech.com","logo":"https://hbotchambertech.com/assets/img/logo-header.png","description":"IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları üreticisi. HBOT City Tech Serisi.","email":"info@hbotchambertech.com","telephone":"+90 850 888 1679","address":{"@type":"PostalAddress","streetAddress":"Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29","addressLocality":"Tuzla / İstanbul","addressCountry":"TR"},"sameAs":["https://almitagroup.com"],"parentOrganization":{"@type":"Organization","name":"Almita Group","url":"https://almitagroup.com"}}
 </script>
@@ -216,7 +216,8 @@
         </div>
       </div>
 
-      <div class="vip-card vip-card--standalone">
+      <div class="config-cta-grid">
+        <div class="vip-card">
         <h3 data-i18n="configurator.vip.headline">Satın Almadan Önce Deneyimleyin: Operasyon Merkezimizde VIP Demo</h3>
         <p data-i18n="configurator.vip.description">Özel tasarımınızı test etmek için Tuzla/İstanbul merkezimize özel bir ziyaret planlayın veya mühendislik ekibimizle canlı bir sanal tur ayırtın.</p>
         <form id="vip-form" action="https://formspree.io/f/mzdnqnel" method="POST" novalidate>
@@ -260,18 +261,9 @@
           <p class="form-success" id="vip-form-success" hidden data-i18n="configurator.vip.success">Teşekkürler! Talebiniz alındı, ekibimiz en kısa sürede sizinle iletişime geçecek.</p>
           <p class="form-error" id="vip-form-error" hidden data-i18n="configurator.vip.error">Bir şeyler ters gitti. Lütfen tekrar deneyin ya da bizi doğrudan arayın.</p>
         </form>
-      </div>
-
-      <div class="ar-qr-overlay" id="ar-qr-overlay" hidden>
-        <div class="ar-qr-modal">
-          <button type="button" class="ar-qr-close" id="ar-qr-close" aria-label="Close">✕</button>
-          <h3 data-i18n="configurator.qr.title">Telefonunuzla Okutun</h3>
-          <p data-i18n="configurator.qr.subtitle">AR modunda görüntülemek için QR kodu telefonunuzun kamerasıyla okutun.</p>
-          <div class="ar-qr-canvas-wrap" id="ar-qr-canvas"></div>
         </div>
-      </div>
 
-      <div class="quote-form-panel">
+        <div class="quote-form-panel">
         <h3 data-i18n="configurator.step4_title">9. Teklif İsteyin</h3>
         <form id="quote-form" action="https://script.google.com/macros/s/AKfycbzKAGNUi3YYMMUx2hlWTsFtTwJGo_B-NLve480yCWyblbCsmJRQ95qGiHMsz1HsMnVWtw/exec" method="POST" novalidate>
           <div class="form-row">
@@ -307,6 +299,16 @@
           <p class="form-success" id="quote-form-success" hidden data-i18n="configurator.quote_form.success">Teşekkürler! Yapılandırmanız ve talebiniz alındı, en kısa sürede size dönüş yapacağız.</p>
           <p class="form-error" id="quote-form-error" hidden data-i18n="configurator.quote_form.error">Bir şeyler ters gitti. Lütfen tekrar deneyin ya da bizi doğrudan arayın.</p>
         </form>
+        </div>
+      </div>
+
+      <div class="ar-qr-overlay" id="ar-qr-overlay" hidden>
+        <div class="ar-qr-modal">
+          <button type="button" class="ar-qr-close" id="ar-qr-close" aria-label="Close">✕</button>
+          <h3 data-i18n="configurator.qr.title">Telefonunuzla Okutun</h3>
+          <p data-i18n="configurator.qr.subtitle">AR modunda görüntülemek için QR kodu telefonunuzun kamerasıyla okutun.</p>
+          <div class="ar-qr-canvas-wrap" id="ar-qr-canvas"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -374,11 +376,11 @@
   </div>
 </footer>
 
-<script src="/assets/js/translations.js?v=65"></script>
+<script src="/assets/js/translations.js?v=67"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="/assets/js/recolor.js?v=29"></script>
-<script src="/assets/js/main.js?v=78"></script>
+<script src="/assets/js/recolor.js?v=30"></script>
+<script src="/assets/js/main.js?v=81"></script>
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cf0cc32d03eb472dbf76d59a2f982ff9"}'></script>
 </body>
 </html>

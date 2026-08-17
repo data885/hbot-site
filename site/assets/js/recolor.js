@@ -109,7 +109,10 @@
     // modunda parlaklık büyük oranda hedef L'ye sabitlenir (gövdenin kendi
     // parlaklığı yalnızca hafif etki eder), böylece açık renkler de net okunur;
     // en parlak specular highlight'lar (hi) yine kısmen korunur.
-    const lightLift = paint.body ? 0.15 : (paint.metal ? 0.35 : 0.30);
+    // İç/koltuk boyamada (body değil) l0 varyansı eskiden %30 korunuyordu — koyu,
+    // yüksek doygunluklu hedeflerde (bordo, lacivert) bu neredeyse hiç gölge/parlaklık
+    // dokusu bırakmıyor, düz "plastik boya" görünümü veriyordu. %50'ye çıkarıldı.
+    const lightLift = paint.body ? 0.15 : (paint.metal ? 0.35 : 0.50);
     const hiSat = paint.body ? 0.20 : 0.40;
     if (paint.metal) {
       l = clamp01(paint.l + (l0 - 0.55) * lightLift + 0.05 * hi);
@@ -118,7 +121,15 @@
     } else {
       h = paint.h;
       l = clamp01(paint.l + (l0 - 0.55) * lightLift + 0.05 * hi);
-      s = clamp01(paint.s) * (1 - hiSat * hi);
+      if (paint.body) {
+        s = clamp01(paint.s) * (1 - hiSat * hi);
+      } else {
+        // Pivot'tan (orta ton) uzaklaştıkça — gölge veya parlak bölgede — doygunluk
+        // hafifçe düşer: gerçek deri/kumaşın ışığa tepkisini taklit eder, orijinal
+        // fotoğrafın doku/gölge yapısını görünür kılar (tek düze renk yerine).
+        const shade = clamp01(1 - Math.abs(l0 - 0.55) * 0.85);
+        s = clamp01(paint.s) * (0.6 + 0.4 * shade) * (1 - hiSat * hi);
+      }
     }
     return hslToRgb(h, s, l);
   }

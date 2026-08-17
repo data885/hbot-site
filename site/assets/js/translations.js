@@ -570,6 +570,7 @@ const TRANSLATIONS = {
         { id: "warranty", name: "Genişletilmiş Garanti (+1 Yıl)", desc: "Standart 1 yıllık garantiye ek 1 yıl daha kapsamlı koruma." },
         { id: "playstation", name: "Xbox Series X Oyun Konsolu", desc: "Uzun terapi seanslarında eğlence için kabin içi ekran ve ses sistemine entegre Xbox Series X konsolu." }
       ],
+      nexus_entertainment_note: "8″ ekran; fiyat koltuk başına verilir — {perSeat} × {seats} koltuk = {total}.",
       pressure_note: "Basınç aralığı seçilen modele göre değişir.",
       pressure_nexus_only: "Sadece Nexus",
       pressure_auto_note: "3.0 ve 6.0 ATA yalnızca Geneva modelinde sunulur — basınç seviyesi 2.5 ATA'ya ayarlandı.",
@@ -1529,6 +1530,7 @@ const TRANSLATIONS = {
         { id: "warranty", name: "Extended Warranty (+1 Year)", desc: "1 additional year of comprehensive coverage beyond the standard 1-year warranty." },
         { id: "playstation", name: "Xbox Series X Gaming Console", desc: "An Xbox Series X console integrated with the in-chamber screen and sound system for entertainment during longer sessions." }
       ],
+      nexus_entertainment_note: "8″ screen; price is given per seat — {perSeat} × {seats} seats = {total}.",
       pressure_note: "The pressure range depends on the model you select.",
       pressure_nexus_only: "Nexus only",
       pressure_auto_note: "3.0 and 6.0 ATA are available on the Geneva only — pressure level has been reset to 2.5 ATA.",
@@ -2488,6 +2490,7 @@ const TRANSLATIONS = {
         { id: "warranty", name: "Расширенная гарантия (+1 год)", desc: "Дополнительный 1 год комплексной защиты сверх стандартной 1-летней гарантии." },
         { id: "playstation", name: "Игровая консоль Xbox Series X", desc: "Консоль Xbox Series X, интегрированная с экраном и звуковой системой камеры, для развлечения во время длительных сеансов." }
       ],
+      nexus_entertainment_note: "Экран 8″; цена указана за одно место — {perSeat} × {seats} мест = {total}.",
       pressure_note: "Диапазон давления зависит от выбранной модели.",
       pressure_nexus_only: "Только Nexus",
       pressure_auto_note: "Уровни 3.0 и 6.0 ATA доступны только для Geneva — давление изменено на 2.5 ATA.",
@@ -3447,6 +3450,7 @@ const TRANSLATIONS = {
         { id: "warranty", name: "ضمان ممتد (+سنة واحدة)", desc: "سنة إضافية واحدة من التغطية الشاملة بعد الضمان القياسي لمدة سنة." },
         { id: "playstation", name: "جهاز ألعاب Xbox Series X", desc: "جهاز Xbox Series X متكامل مع شاشة الكابينة ونظام الصوت للترفيه خلال الجلسات الطويلة." }
       ],
+      nexus_entertainment_note: "شاشة 8 بوصة؛ يُحتسب السعر لكل مقعد — {perSeat} × {seats} مقاعد = {total}.",
       pressure_note: "يعتمد نطاق الضغط على الموديل المختار.",
       pressure_nexus_only: "Nexus فقط",
       pressure_auto_note: "مستويا 3.0 و6.0 ATA متاحان فقط في طراز Geneva — تمت إعادة مستوى الضغط إلى 2.5 ATA.",
@@ -4405,6 +4409,7 @@ const TRANSLATIONS = {
         { id: "warranty", name: "Garantía Ampliada (+1 Año)", desc: "1 año adicional de cobertura integral más allá de la garantía estándar de 1 año." },
         { id: "playstation", name: "Consola de Videojuegos Xbox Series X", desc: "Una consola Xbox Series X integrada con la pantalla y el sistema de sonido de la cámara para entretenimiento durante sesiones más largas." }
       ],
+      nexus_entertainment_note: "Pantalla de 8″; el precio se da por asiento — {perSeat} × {seats} asientos = {total}.",
       pressure_note: "El rango de presión depende del modelo que selecciones.",
       pressure_nexus_only: "Solo Nexus",
       pressure_auto_note: "3.0 y 6.0 ATA solo están disponibles en el Geneva — el nivel de presión se ha restablecido a 2.5 ATA.",
@@ -5363,6 +5368,7 @@ const TRANSLATIONS = {
         { id: "warranty", name: "Garantia Estendida (+1 Ano)", desc: "1 ano adicional de cobertura completa além da garantia padrão de 1 ano." },
         { id: "playstation", name: "Console de Videogame Xbox Series X", desc: "Um console Xbox Series X integrado à tela e ao sistema de som da câmara para entretenimento durante sessões mais longas." }
       ],
+      nexus_entertainment_note: "Tela de 8″; o preço é por assento — {perSeat} × {seats} assentos = {total}.",
       pressure_note: "A faixa de pressão depende do modelo selecionado.",
       pressure_nexus_only: "Somente Nexus",
       pressure_auto_note: "3.0 e 6.0 ATA estão disponíveis apenas no Geneva — o nível de pressão foi redefinido para 2.5 ATA.",
@@ -6321,6 +6327,7 @@ const TRANSLATIONS = {
         { id: "warranty", name: "Erweiterte Garantie (+1 Jahr)", desc: "1 zusätzliches Jahr umfassender Abdeckung über die 1-jährige Standardgarantie hinaus." },
         { id: "playstation", name: "Xbox Series X Spielekonsole", desc: "Eine Xbox Series X Konsole, integriert mit dem Bildschirm und Soundsystem der Kammer, für Unterhaltung während längerer Sitzungen." }
       ],
+      nexus_entertainment_note: "8″-Bildschirm; der Preis gilt pro Sitz — {perSeat} × {seats} Sitze = {total}.",
       pressure_note: "Der Druckbereich hängt vom gewählten Modell ab.",
       pressure_nexus_only: "Nur Nexus",
       pressure_auto_note: "3.0 und 6.0 ATA sind ausschließlich beim Geneva verfügbar — die Druckstufe wurde auf 2.5 ATA zurückgesetzt.",

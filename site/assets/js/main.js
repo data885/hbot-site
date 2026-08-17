@@ -1125,10 +1125,10 @@
 
   function renderConfigInteriorColors(dict) {
     /* Oslo (solo-lounge): iç mekan fotoğraflarının açısı iyi değil — bu adım
-       tamamen gizlenir, varsayılan iç görsel (REAL_INTERIOR.solo-lounge)
-       sabit kalır. */
+       tamamen gizlenir, varsayılan iç görsel (REAL_INTERIOR.solo-lounge) sabit kalır.
+       Geneva (nexus): kurumsal/klinik standart iç donanım, özelleştirme sunulmuyor. */
     const interiorSection = document.getElementById("interior-color-step-section");
-    if (interiorSection) interiorSection.hidden = configState.model === "solo-lounge";
+    if (interiorSection) interiorSection.hidden = !interiorColorCustomizable(configState.model);
     const c = document.getElementById("config-interior-color-grid");
     if (!c || !dict.configurator.interior_colors) return;
     c.innerHTML = dict.configurator.interior_colors.map((col) => {
@@ -1390,7 +1390,7 @@
   /* Koltuk rengi: fiyatsız görsel tercih — sahneyi değiştirmez, özette adıyla listelenir */
   function renderConfigSeatColors(dict) {
     const seatColorSection = document.getElementById("seat-color-step-section");
-    if (seatColorSection) seatColorSection.hidden = configState.model === "solo-lounge";
+    if (seatColorSection) seatColorSection.hidden = !interiorColorCustomizable(configState.model);
     const c = document.getElementById("config-seat-color-grid");
     if (!c || !dict.configurator.seat_colors) return;
     c.innerHTML = dict.configurator.seat_colors.map((col) => {
@@ -1577,12 +1577,26 @@
     }
   }
 
+  /* İç mekân + koltuk renk seçimi sunulmayan modeller: Oslo (iç fotoğraf kalitesi
+     yetersiz — bkz. hideInterior), Geneva/Nexus (kurumsal/klinik standart iç donanım,
+     özelleştirme sunulmuyor — bkz. visibleAddonsFor). */
+  function interiorColorCustomizable(modelId) {
+    return modelId !== "solo-lounge" && modelId !== "nexus";
+  }
+
   /* Solo Lounge: sadece garanti eklentisi sunulur (sade konfigürasyon).
+     Nexus/Geneva: yalnızca eğlence & multimedya + garanti sunulur (masaj, birinci
+     sınıf döşeme, özel kaplama kurumsal/klinik standart konfigürasyonda sunulmuyor —
+     kaldırılmışsa state'ten de otomatik temizlenir).
      Duo Plus: 2 koltuğu geçince masajlı koltuk seçeneği kalkar (kaldırıldıysa da otomatik temizlenir). */
   function visibleAddonsFor(dict) {
     let list = dict.configurator.addons;
     if (configState.model === "solo-lounge") {
       list = list.filter((a) => a.id === "warranty");
+    }
+    if (configState.model === "nexus") {
+      list = list.filter((a) => a.id === "entertainment" || a.id === "warranty");
+      ["massage", "leather", "finish", "playstation"].forEach((id) => configState.addons.delete(id));
     }
     if (configState.model === "duo-plus" && configState.nexusSeats > 2) {
       list = list.filter((a) => a.id !== "massage");
@@ -1591,17 +1605,43 @@
     return list;
   }
 
+  /* Eğlence & Multimedya sistemi Geneva/Nexus'ta ekran koltuk başına verildiği için
+     sabit değil, koltuk sayısına göre ölçeklenir (bkz. kullanıcı notu: 8" ekran,
+     koltuk başına 450 USD). Taban değer gerçekten USD'dir (site fiyatlarının geri
+     kalanı gibi EUR değil) — canlı kurdan (exchangeRates.USD) EUR karşılığına çevrilip
+     formatPrice ile seçili para birimine basılır; böylece USD'de her zaman tam 450,
+     diğer para birimlerinde güncel çapraz kur gösterilir. Diğer tüm modellerde ve
+     eklentilerde ADDON_PRICING sabiti geçerli. */
+  const NEXUS_ENTERTAINMENT_PER_SEAT_USD = 450;
+  function nexusEntertainmentPerSeatEur() {
+    return NEXUS_ENTERTAINMENT_PER_SEAT_USD / (exchangeRates.USD || 1.09);
+  }
+  function addonPriceFor(id) {
+    if (id === "entertainment" && configState.model === "nexus") {
+      return nexusEntertainmentPerSeatEur() * configState.nexusSeats;
+    }
+    return ADDON_PRICING[id] || 0;
+  }
+
   function renderConfigAddons(dict) {
     const c = document.getElementById("config-addon-grid");
     if (!c) return;
     c.innerHTML = visibleAddonsFor(dict).map((a) => {
       const selected = configState.addons.has(a.id) ? " is-selected" : "";
+      const isNexusEntertainment = a.id === "entertainment" && configState.model === "nexus";
+      const note = isNexusEntertainment && dict.configurator.nexus_entertainment_note
+        ? `<span class="addon-note">${dict.configurator.nexus_entertainment_note
+            .replace("{seats}", configState.nexusSeats)
+            .replace("{perSeat}", formatPrice(nexusEntertainmentPerSeatEur()))
+            .replace("{total}", formatPrice(addonPriceFor(a.id)))}</span>`
+        : "";
       return `
         <button type="button" class="config-addon-card${selected}" data-addon-id="${a.id}">
           <span class="config-check">${ICONS.check}</span>
           <h4>${a.name}</h4>
           <p>${a.desc}</p>
-          <span class="addon-price">+${formatPrice(ADDON_PRICING[a.id])}</span>
+          ${note}
+          <span class="addon-price">+${formatPrice(addonPriceFor(a.id))}${isNexusEntertainment ? `<small class="addon-price-per-seat">/${configState.nexusSeats} ${dict.configurator.seats_label || ""}</small>` : ""}</span>
         </button>
       `;
     }).join("");
@@ -1643,7 +1683,7 @@
     const seatTiers = SEAT_TIERS[configState.model];
     const seatTier = seatTiers && seatTiers.find((t) => t.seats === configState.nexusSeats);
     let total = (seatTier ? seatTier.price : model.base) + model.tiers[configState.tierIndex].price;
-    configState.addons.forEach((id) => (total += ADDON_PRICING[id] || 0));
+    configState.addons.forEach((id) => (total += addonPriceFor(id)));
     total += STYLE_PRICING[configState.chamberStyle] || 0;
     return total;
   }
@@ -1665,7 +1705,7 @@
     const addonNames = dict.configurator.addons.filter((a) => configState.addons.has(a.id));
 
     const addonsHtml = addonNames.length
-      ? addonNames.map((a) => `<div>${a.name} <span style="opacity:.6">(+${formatPrice(ADDON_PRICING[a.id])})</span></div>`).join("")
+      ? addonNames.map((a) => `<div>${a.name} <span style="opacity:.6">(+${formatPrice(addonPriceFor(a.id))})</span></div>`).join("")
       : s.none_selected;
 
     const seatTiersForRow = SEAT_TIERS[configState.model];
@@ -1679,14 +1719,14 @@
       ? `<div class="config-summary-row"><span class="label">${s.color_label}</span><span class="value"><span class="summary-swatch" style="background:${colorInfo.hex}"></span>${colorInfo.name}</span></div>`
       : "";
     const interiorInfo = (dict.configurator.interior_colors || []).find((col) => col.id === configState.interiorColor);
-    const interiorRow = interiorInfo && configState.model !== "solo-lounge"
+    const interiorRow = interiorInfo && interiorColorCustomizable(configState.model)
       ? `<div class="config-summary-row"><span class="label">${s.interior_color_label}</span><span class="value"><span class="summary-swatch" style="background:${interiorInfo.hex}"></span>${interiorInfo.name}</span></div>`
       : "";
     const seatColorInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
-    const seatColorRow = seatColorInfo && s.seat_color_label && configState.model !== "solo-lounge"
+    const seatColorRow = seatColorInfo && s.seat_color_label && interiorColorCustomizable(configState.model)
       ? `<div class="config-summary-row"><span class="label">${s.seat_color_label}</span><span class="value"><span class="summary-swatch" style="background:${seatColorInfo.hex}"></span>${seatColorInfo.name}</span></div>`
       : "";
-    const seatTypeRow = s.seat_type_label && configState.model !== "solo-lounge"
+    const seatTypeRow = s.seat_type_label && interiorColorCustomizable(configState.model)
       ? `<div class="config-summary-row"><span class="label">${s.seat_type_label}</span><span class="value">${configState.addons.has("massage") ? s.seat_massage : s.seat_standard}</span></div>`
       : "";
     const styleInfo = (dict.configurator.styles || []).find((st) => st.id === configState.chamberStyle);
@@ -1834,9 +1874,9 @@
     if (SEAT_TIERS[configState.model]) lines.push(`${s.seats_label}: ${configState.nexusSeats}`);
     if (styleInfo) lines.push(`${s.style_label}: ${styleInfo.name}`);
     if (colorInfo) lines.push(`${s.color_label}: ${colorInfo.name}`);
-    if (interiorInfo && configState.model !== "solo-lounge") lines.push(`${s.interior_color_label}: ${interiorInfo.name}`);
-    if (seatColorInfo && s.seat_color_label && configState.model !== "solo-lounge") lines.push(`${s.seat_color_label}: ${seatColorInfo.name}`);
-    if (s.seat_type_label && configState.model !== "solo-lounge") lines.push(`${s.seat_type_label}: ${configState.addons.has("massage") ? s.seat_massage : s.seat_standard}`);
+    if (interiorInfo && interiorColorCustomizable(configState.model)) lines.push(`${s.interior_color_label}: ${interiorInfo.name}`);
+    if (seatColorInfo && s.seat_color_label && interiorColorCustomizable(configState.model)) lines.push(`${s.seat_color_label}: ${seatColorInfo.name}`);
+    if (s.seat_type_label && interiorColorCustomizable(configState.model)) lines.push(`${s.seat_type_label}: ${configState.addons.has("massage") ? s.seat_massage : s.seat_standard}`);
     lines.push(`${s.pressure_label}: ${tier.ata}`);
     lines.push(`${s.addons_label}: ${addonNames}`);
     if (configState.discountPct > 0) lines.push(`${s.discount_label}: %${configState.discountPct} (−${formatPrice(computeDiscountAmount())})`);
@@ -2030,14 +2070,14 @@
     const intInfo = (cfg.interior_colors || []).find((c2) => c2.id === configState.interiorColor);
     const seatInfo = (cfg.seat_colors || []).find((c2) => c2.id === configState.seatColor);
     const addonNames = cfg.addons.filter((a) => configState.addons.has(a.id))
-      .map((a) => `${a.name} (+${formatPrice(ADDON_PRICING[a.id])})`);
+      .map((a) => `${a.name} (+${formatPrice(addonPriceFor(a.id))})`);
     const confRows = [
       [s.model_label || "Model", modelInfo ? modelInfo.name : ""],
       [s.style_label || "Cabin Style", styleInfo ? styleInfo.name : "-"],
       [s.pressure_label || "Pressure", tier.ata],
       [s.color_label || "Exterior Color", colInfo ? colInfo.name : "-"],
     ];
-    if (configState.model !== "solo-lounge") {
+    if (interiorColorCustomizable(configState.model)) {
       confRows.push([s.interior_color_label || "Interior Color", intInfo ? intInfo.name : "-"]);
       confRows.push([s.seat_color_label || "Seat Color", seatInfo ? seatInfo.name : "-"]);
     }
