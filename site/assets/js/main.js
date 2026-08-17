@@ -616,7 +616,13 @@
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
   const SPIN_FRAME_COUNT = 24;
-  const SPIN_MODELS = { "quad-cube": true, nexus: true, duo: true };
+  // duo (Tokyo) buradan çıkarıldı: spin kareleri maskesiz eşik-tabanlı profil
+  // kullanıyordu (koltuk rengi gövdeyle aynı ton aralığına düşünce dış renk
+  // seçince koltuk da boyanıyordu — bkz. kullanıcı bug raporu). Statik foto +
+  // maskeli profile (masks/ext-duo, Tokyo Plus ile paylaşılan) düşerek düzeldi;
+  // 24 spin karesinin her biri için ayrı maske gerektirmemek adına spin bilinçli
+  // olarak kapatıldı.
+  const SPIN_MODELS = { "quad-cube": true, nexus: true };
   let spinDragging = false;
   function spinNormIdx(idx) {
     return ((idx % SPIN_FRAME_COUNT) + SPIN_FRAME_COUNT) % SPIN_FRAME_COUNT;
@@ -780,11 +786,10 @@
       btn.classList.toggle("is-active", btn.getAttribute("data-view") === configState.stageView);
     });
 
-    // 360° rozeti + imleç: sadece dış görünümde ve spin seti olan modelde
+    // İmleç: sadece dış görünümde ve spin seti olan modelde (metin ipucu kaldırıldı —
+    // sürükle-döndür bazı cihazlarda güvenilir hissettirmiyordu, bkz. kullanıcı geri bildirimi)
     const canSpin = spinAvailableFor() && configState.stageView === "exterior";
     stage.classList.toggle("spinnable", canSpin);
-    const hint = document.getElementById("stage-spin-hint");
-    if (hint) hint.hidden = !canSpin;
 
     // Boya aktifse ve spin modeli gösteriliyorsa kalan kareleri boşta önceden işle
     prewalkRecolor(target);
@@ -1131,7 +1136,14 @@
     if (interiorSection) interiorSection.hidden = !interiorColorCustomizable(configState.model);
     const c = document.getElementById("config-interior-color-grid");
     if (!c || !dict.configurator.interior_colors) return;
-    c.innerHTML = dict.configurator.interior_colors.map((col) => {
+    const visibleInteriorColors = visibleColorList(dict.configurator.interior_colors, INTERIOR_COLOR_ALLOWLIST);
+    // Model değişince (ör. Milano'nun kısıtlı paletine geçince) state'te kalan
+    // artık-gösterilmeyen bir renk varsa sessizce ilk seçeneğe düş — aksi halde
+    // sahne, swatch grid'de "seçili" görünmeyen bir renkle boyanmaya devam eder.
+    if (visibleInteriorColors.length && !visibleInteriorColors.some((c2) => c2.id === configState.interiorColor)) {
+      configState.interiorColor = visibleInteriorColors[0].id;
+    }
+    c.innerHTML = visibleInteriorColors.map((col) => {
       const selected = configState.interiorColor === col.id ? " is-selected" : "";
       return `
         <button type="button" class="config-color-swatch${selected}" data-interior-id="${col.id}" title="${col.name}">
@@ -1210,7 +1222,12 @@
     // de canvas boyama ile uygulanabilmesi (ve seçiciden gizlenmemesi) için profil.
     // Dubai gövdesi bej/inci; Tokyo Plus, Duo ile aynı LED'li kabin.
     "real/oslo-beige": { profile: "masked", mask: "masks/ext-oslo" },
-    "real/apex-duo-real": { profile: "ledlit-duo" }
+    // Eskiden maskesiz "ledlit-duo" (salt L/S eşiği) kullanıyordu — koltuk/ekran
+    // görseldeki gövdeyle benzer ton aralığına düştüğü için dış renk değiştirince
+    // koltuk/ekran da boyanıyordu (bkz. kullanıcı bug raporu). Artık koltuk+ekranı
+    // açıkça dışlayan maskeyle (masks/ext-duo) sınırlı — Tokyo ve Tokyo Plus ikisi
+    // de bu fotoğrafı paylaşıyor.
+    "real/apex-duo-real": { profile: "masked", mask: "masks/ext-duo" }
   };
 
   /* Interior + koltuk renklendirmesi (maske-tabanlı v10 yolu) */
@@ -1306,7 +1323,7 @@
         // v11: akıllı profil — ağırlık haritası + ağırlıklı boya
         let maskData = null;
         if (spec.mask) {
-          const mi = await loadRecolorImg(`/assets/img/models/${spec.mask}.png?v=28`);
+          const mi = await loadRecolorImg(`/assets/img/models/${spec.mask}.png?v=32`);
           const mc = document.createElement("canvas");
           mc.width = w; mc.height = h;
           const mctx = mc.getContext("2d", { willReadFrequently: true });
@@ -1317,7 +1334,7 @@
         window.HBOTRecolor.applyWeightedPaint(imgData.data, weight, spec.paint);
       } else {
         // v10 yolu: maske-tabanlı passes (interior + koltuk)
-        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=28`)));
+        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=32`)));
         const mc = document.createElement("canvas");
         mc.width = w; mc.height = h;
         const mctx = mc.getContext("2d", { willReadFrequently: true });
@@ -1393,7 +1410,11 @@
     if (seatColorSection) seatColorSection.hidden = !interiorColorCustomizable(configState.model);
     const c = document.getElementById("config-seat-color-grid");
     if (!c || !dict.configurator.seat_colors) return;
-    c.innerHTML = dict.configurator.seat_colors.map((col) => {
+    const visibleSeatColors = visibleColorList(dict.configurator.seat_colors, SEAT_COLOR_ALLOWLIST);
+    if (visibleSeatColors.length && !visibleSeatColors.some((c2) => c2.id === configState.seatColor)) {
+      configState.seatColor = visibleSeatColors[0].id;
+    }
+    c.innerHTML = visibleSeatColors.map((col) => {
       const selected = configState.seatColor === col.id ? " is-selected" : "";
       return `
         <button type="button" class="config-color-swatch${selected}" data-seat-id="${col.id}" title="${col.name}">
@@ -1584,6 +1605,17 @@
     return modelId !== "solo-lounge" && modelId !== "nexus";
   }
 
+  /* Milano (quad-cube): iç mekân/koltuk renk paleti 6'dan 3'e indirildi — çok
+     renk seçeneği gereksizdi (kullanıcı talebi). Krem (varsayılan/güvenli) +
+     Lacivert + Bordo bırakıldı — bu ikisi yeni maskelerle test edilip iyi
+     sonuç verdiği doğrulanan renkler. */
+  const INTERIOR_COLOR_ALLOWLIST = { "quad-cube": ["cream", "navy", "burgundy"] };
+  const SEAT_COLOR_ALLOWLIST = { "quad-cube": ["krem", "lacivert", "bordo"] };
+  function visibleColorList(list, allowlistMap) {
+    const allow = allowlistMap[configState.model];
+    return allow ? list.filter((c) => allow.includes(c.id)) : list;
+  }
+
   /* Solo Lounge: sadece garanti eklentisi sunulur (sade konfigürasyon).
      Nexus/Geneva: yalnızca eğlence & multimedya + garanti sunulur (masaj, birinci
      sınıf döşeme, özel kaplama kurumsal/klinik standart konfigürasyonda sunulmuyor —
@@ -1592,7 +1624,7 @@
   function visibleAddonsFor(dict) {
     let list = dict.configurator.addons;
     if (configState.model === "solo-lounge") {
-      list = list.filter((a) => a.id === "warranty");
+      list = list.filter((a) => a.id === "warranty" || a.id === "leather" || a.id === "entertainment");
     }
     if (configState.model === "nexus") {
       list = list.filter((a) => a.id === "entertainment" || a.id === "warranty");
@@ -1750,14 +1782,7 @@
         <input type="number" id="config-discount-custom" class="config-discount-custom" min="0" max="50" step="1" value="${configState.discountPct}" aria-label="${s.discount_label} %" />
       </span></div>`;
 
-    const arDict = dict.configurator.ar;
-    const arButtonHtml = arDict ? `
-      <button type="button" class="btn-ar" id="config-ar-btn" title="${arDict.tooltip}">${arDict.button}</button>
-      <p class="config-ar-disclaimer">${arDict.disclaimer}</p>
-    ` : "";
-
     c.innerHTML = `
-      ${arButtonHtml}
       <h3>${s.title}</h3>
       <div class="config-summary-row"><span class="label">${s.model_label}</span><span class="value">${modelInfo ? modelInfo.name : ""}</span></div>
       ${seatsRow}
@@ -1806,9 +1831,6 @@
         setTimeout(updateQuoteFormHiddenField, 50);
       });
     }
-
-    const arBtn = document.getElementById("config-ar-btn");
-    if (arBtn) arBtn.addEventListener("click", openArView);
 
     const printBtn = document.getElementById("config-print-btn");
     if (printBtn) printBtn.addEventListener("click", () => openQuotePdf(TRANSLATIONS[currentLang]));
@@ -2193,50 +2215,6 @@
         body: JSON.stringify(payload)
       }).catch(() => {});
     } catch (e) { /* sessiz fallback */ }
-  }
-
-  /* v18: AR ("Mekaninizda Gorun") akisi — mobilde dogrudan AR sayfasina gider,
-     masaustunde QR kod modali acar (telefonla okutulup AR sayfasina gecilir). */
-  function isMobileDevice() {
-    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  }
-
-  function openArView() {
-    const modelId = configState.model;
-    const url = window.location.origin + "/ar-view.html?model=" + encodeURIComponent(modelId) + "&color=" + encodeURIComponent(configState.color);
-
-    pushLeadToCrm({
-      source: "ar-view",
-      model: modelId,
-      addons: Array.from(configState.addons),
-      color: configState.color,
-      page: window.location.href,
-      ts: new Date().toISOString()
-    });
-
-    if (isMobileDevice()) {
-      window.location.href = url;
-      return;
-    }
-
-    const overlay = document.getElementById("ar-qr-overlay");
-    const canvasWrap = document.getElementById("ar-qr-canvas");
-    if (!overlay || !canvasWrap || typeof QRCode === "undefined") {
-      window.open(url, "_blank", "noopener");
-      return;
-    }
-    canvasWrap.innerHTML = "";
-    new QRCode(canvasWrap, { text: url, width: 200, height: 200, colorDark: "#0a0f14", colorLight: "#ffffff" });
-    overlay.hidden = false;
-  }
-
-  function initArQrModal() {
-    const overlay = document.getElementById("ar-qr-overlay");
-    const closeBtn = document.getElementById("ar-qr-close");
-    if (!overlay) return;
-    const close = () => { overlay.hidden = true; };
-    if (closeBtn) closeBtn.addEventListener("click", close);
-    overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
   }
 
   /* Sticky önizleme, adım listesinin (config-steps) TAMAMI kadar kayabilsin diye
@@ -2881,7 +2859,6 @@
     initForm("contact-form", "form-success", "form-error", "contact.form_submit", "contact.form_sending");
     initForm("quote-form", "quote-form-success", "quote-form-error", "configurator.quote_form.submit", "configurator.quote_form.sending");
     initForm("vip-form", "vip-form-success", "vip-form-error", "configurator.vip.submit", "configurator.vip.sending");
-    initArQrModal();
     initStageColHeightSync();
     initYear();
     initHeroSlider();

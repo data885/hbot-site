@@ -124,6 +124,13 @@
       if (paint.body) {
         s = clamp01(paint.s) * (1 - hiSat * hi);
       } else {
+        // Karanlık/loş ortam fotoğraflarında (ör. koyu ambiyanslı kabin içleri) l0
+        // ortalaması pivot'un (0.55) çok altında kalabiliyor — koyu hedef renklerle
+        // (lacivert, bordo) birleşince l neredeyse sıfıra çöküyor, koltuk/duvar
+        // simsiyah/boğuk çıkıyordu ("tamamen bozulma" — bkz. kullanıcı bug raporu).
+        // Hedef rengin kendi parlaklığına bağlı bir taban koyarak gölgenin asla
+        // hedef tondan orantısız derecede koyulaşmasını engelliyoruz.
+        l = Math.max(l, paint.l * 0.45);
         // Pivot'tan (orta ton) uzaklaştıkça — gölge veya parlak bölgede — doygunluk
         // hafifçe düşer: gerçek deri/kumaşın ışığa tepkisini taklit eder, orijinal
         // fotoğrafın doku/gölge yapısını görünür kılar (tek düze renk yerine).
