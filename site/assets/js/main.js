@@ -2628,34 +2628,11 @@
         ts: new Date().toISOString()
       });
 
-      // Apps Script web app'i CORS yaniti dondurmuyor (opaque); no-cors ile
-      // gonderiyoruz ve agdan atmadigi surece basarili sayiyoruz. Formspree
-      // ise normal CORS + JSON yaniti destekliyor, onu okuyup dogruluyoruz.
-      const isAppsScript = form.action.indexOf("script.google.com") !== -1;
-      if (isAppsScript) {
-        fetch(form.action, { method: "POST", body: formData, mode: "no-cors" })
-          .then(() => {
-            form.reset();
-            if (successEl) {
-              successEl.hidden = false;
-              setTimeout(() => (successEl.hidden = true), 8000);
-            }
-          })
-          .catch(() => {
-            if (errorEl) {
-              errorEl.hidden = false;
-              setTimeout(() => (errorEl.hidden = true), 8000);
-            }
-          })
-          .finally(() => {
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.textContent = getByPath(dict, submitKey) || "Send";
-            }
-          });
-        return;
-      }
-
+      // Apps Script web app'i de (Formspree gibi) normal CORS + JSON yaniti
+      // destekliyor (dogru "Who has access: Anyone" ile deploy edildiginde) —
+      // asagidaki genel yol ikisi icin de gecerli, yanit gercekten okunup
+      // dogrulaniyor (eskiden no-cors ile korlemesine "basarili" sayiliyordu,
+      // bu da backend kopse bile kullaniciya sahte basari mesaji gosteriyordu).
       fetch(form.action, { method: "POST", body: formData, headers: { Accept: "application/json" } })
         .then((res) => res.json().catch(() => ({ success: res.ok })))
         .then((data) => {
