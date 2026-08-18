@@ -2241,29 +2241,6 @@
     } catch (e) { /* sessiz fallback */ }
   }
 
-  /* Sticky önizleme, adım listesinin (config-steps) TAMAMI kadar kayabilsin diye
-     config-stage-col'un yüksekliğini steps yüksekliği + sticky içerik yüksekliği
-     olacak şekilde JS ile senkron tutar (CSS tek başına: sticky, kısa içerikle
-     içerme bloğunun ancak (blok yüksekliği - içerik yüksekliği) kadarlık kısmında
-     kalabiliyor — steps her değiştiğinde (model/kullanım tipi vb.) yeniden ölçer). */
-  function initStageColHeightSync() {
-    const stepsEl = document.querySelector(".config-steps");
-    const colEl = document.querySelector(".config-stage-col");
-    const innerEl = document.querySelector(".config-stage-sticky-inner");
-    if (!stepsEl || !colEl || !innerEl) return;
-    const sync = () => {
-      if (window.innerWidth <= 980) { colEl.style.minHeight = ""; return; }
-      const stepsH = stepsEl.getBoundingClientRect().height;
-      const innerH = innerEl.getBoundingClientRect().height;
-      colEl.style.minHeight = Math.ceil(stepsH + innerH) + "px";
-    };
-    sync();
-    if (window.ResizeObserver) {
-      new ResizeObserver(sync).observe(stepsEl);
-    }
-    window.addEventListener("resize", sync);
-  }
-
   let configuratorPreselected = false;
   let configuratorInitialized = false;
   function initConfigurator(dict) {
@@ -2860,7 +2837,6 @@
     initForm("contact-form", "form-success", "form-error", "contact.form_submit", "contact.form_sending");
     initForm("quote-form", "quote-form-success", "quote-form-error", "configurator.quote_form.submit", "configurator.quote_form.sending");
     initForm("vip-form", "vip-form-success", "vip-form-error", "configurator.vip.submit", "configurator.vip.sending");
-    initStageColHeightSync();
     initYear();
     initHeroSlider();
     initWhatsAppButton();
