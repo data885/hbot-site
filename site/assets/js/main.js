@@ -2052,7 +2052,7 @@
     const logo = await loadLogoForPdf();
     if (logo) {
       const w = 46, h = w * logo.ratio;
-      doc.addImage(logo.dataUrl, "PNG", mL, 10, w, h);
+      doc.addImage(logo.dataUrl, "PNG", mL, 10, w, h, undefined, "FAST");
     }
     doc.setFont(FONT, "bold");
     doc.setFontSize(19);
@@ -2076,7 +2076,7 @@
       let pw = maxW, ph = pw * productPhoto.ratio;
       if (ph > maxH) { ph = maxH; pw = ph / productPhoto.ratio; }
       const px = mL + (maxW - pw) / 2;
-      doc.addImage(productPhoto.dataUrl, productPhoto.format || "JPEG", px, y, pw, ph);
+      doc.addImage(productPhoto.dataUrl, productPhoto.format || "JPEG", px, y, pw, ph, undefined, "FAST");
       y += ph + 10;
     }
 
@@ -2164,8 +2164,9 @@
     doc.setFontSize(8.5);
     doc.setTextColor(...GRAY);
     const disclaimerTxt = s.disclaimer || "This proforma quote is not a binding contract. Final pricing and specifications are confirmed following consultation with our sales team.";
-    doc.text(doc.splitTextToSize(T(disclaimerTxt), mR - mL), mL, y);
-    y += 12;
+    const disclaimerLines = doc.splitTextToSize(T(disclaimerTxt), mR - mL);
+    doc.text(disclaimerLines, mL, y);
+    y += disclaimerLines.length * 3.6 + 6;
     doc.setFontSize(11);
     doc.setTextColor(...NAVY);
     doc.text(T((pdfDict.common && pdfDict.common.thanks) || "Thank you for choosing us."), mL, y);
