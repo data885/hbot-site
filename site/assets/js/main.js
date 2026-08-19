@@ -9,8 +9,10 @@
   const SUPPORTED = ["en", "tr", "ar", "ru", "es", "pt", "de"];
   const PDF_DATE_LOCALE = { tr: "tr-TR", en: "en-GB", ru: "ru-RU", ar: "ar", es: "es-ES", pt: "pt-PT", de: "de-DE" };
 
-  /* Gecici: kullanicinin kisisel numarasi, kalici WhatsApp Business numarasi gelince degistirilecek. */
+  /* İletişim ve WhatsApp hattı */
   const WHATSAPP_NUMBER = "905326279998";
+  const CONTACT_PHONE_TEL = "+905326279998";
+  const CONTACT_PHONE_DISPLAY = "+90 532 627 9998";
 
   /* ---------------- Icon library ---------------- */
   const ICONS = {
@@ -2298,7 +2300,7 @@
   <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #c9a45c;padding-bottom:18px;margin-bottom:24px;">
     <div>
       <div style="font-size:22px;font-weight:800;letter-spacing:.02em;">HBOT CHAMBER TECH</div>
-      <div style="color:#777;font-size:13px;margin-top:4px;">info@hbotchambertech.com · 0850 888 1679 · hbotchambertech.com</div>
+      <div style="color:#777;font-size:13px;margin-top:4px;">info@hbotchambertech.com · +90 532 627 9998 · hbotchambertech.com</div>
     </div>
     <div style="text-align:right;">
       <div style="font-size:18px;font-weight:700;">${s.pdf_title}</div>
@@ -2578,6 +2580,13 @@
       link.href = `mailto:info@hbotchambertech.com?subject=${subject}`;
       link.removeAttribute("target");
     }
+  }
+
+  function updateContactPhone() {
+    document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+      link.href = `tel:${CONTACT_PHONE_TEL}`;
+      link.textContent = CONTACT_PHONE_DISPLAY;
+    });
   }
 
   function initWhatsAppButton() {
@@ -2940,6 +2949,7 @@
     initYear();
     initHeroSlider();
     initWhatsAppButton();
+    updateContactPhone();
     initStickyCta();
     initReveal();
     applyLang(currentPageLang());
