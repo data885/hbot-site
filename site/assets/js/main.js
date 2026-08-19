@@ -2331,7 +2331,13 @@
       if (preInterior && (TRANSLATIONS.tr.configurator.interior_colors || []).some((col) => col.id === preInterior)) configState.interiorColor = preInterior;
 
       const preSeat = params.get("seat");
-      if (preSeat && (TRANSLATIONS.tr.configurator.seat_colors || []).some((col) => col.id === preSeat)) configState.seatColor = preSeat;
+      if (preSeat && (TRANSLATIONS.tr.configurator.seat_colors || []).some((col) => col.id === preSeat)) {
+        configState.seatColor = preSeat;
+        // Paylaşılan / QR ile açılan konfigürasyonlarda koltuk rengi de
+        // iç sahneye uygulanmalı; aksi halde özet doğru olsa bile sahne
+        // varsayılan koltuk rengini gösteriyordu.
+        configState.seatTouched = true;
+      }
 
       const preTier = params.get("tier");
       if (preTier !== null) {
