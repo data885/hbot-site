@@ -1,100 +1,53 @@
 (function () {
   "use strict";
 
-  var MODEL_NAMES = {
-    "solo-lounge": "Oslo",
-    "solo": "Dubai",
-    "duo": "Tokyo",
-    "quad-cube": "Milano",
-    "nexus": "Geneva"
+  var MODEL_NAMES = { "solo-lounge": "Oslo", solo: "Dubai", duo: "Tokyo", "duo-plus": "Tokyo Plus", "quad-cube": "Milano", nexus: "Geneva" };
+  var SUPPORTED_LANGUAGES = ["tr", "en", "ru", "ar", "es", "pt", "de"];
+  var SHOWROOM_COPY = {
+    tr: { back: "← Konfigüratöre dön", label: "SEÇİLEN KONFİGÜRASYON", badge: "SHOWROOM ÖNİZLEMESİ", subtitle: "Seçtiğiniz konfigürasyona ait doğrulanmış ürün renderı.", note: "Doğrulanmış 3D ürün modeli hazırlandığında iPhone ve Android için AR açılışı burada etkinleşecek." },
+    en: { back: "← Back to configurator", label: "SELECTED CONFIGURATION", badge: "SHOWROOM PREVIEW", subtitle: "Verified product render for your selected configuration.", note: "AR for iPhone and Android will be enabled here once the verified 3D product model is ready." },
+    ru: { back: "← Вернуться к конфигуратору", label: "ВЫБРАННАЯ КОНФИГУРАЦИЯ", badge: "ПРЕДПРОСМОТР ШОУРУМА", subtitle: "Проверенный рендер изделия для выбранной конфигурации.", note: "Запуск AR на iPhone и Android будет включён здесь после подготовки подтверждённой 3D-модели изделия." },
+    ar: { back: "← العودة إلى أداة التكوين", label: "التكوين المختار", badge: "معاينة صالة العرض", subtitle: "عرض منتج موثّق للتكوين الذي اخترته.", note: "سيتم تفعيل الواقع المعزز على iPhone وAndroid هنا بعد تجهيز نموذج المنتج ثلاثي الأبعاد المعتمد." },
+    es: { back: "← Volver al configurador", label: "CONFIGURACIÓN SELECCIONADA", badge: "VISTA PREVIA DEL SHOWROOM", subtitle: "Render de producto verificado para la configuración seleccionada.", note: "La experiencia AR para iPhone y Android se activará aquí cuando esté listo el modelo 3D de producto verificado." },
+    pt: { back: "← Voltar ao configurador", label: "CONFIGURAÇÃO SELECIONADA", badge: "PRÉVIA DO SHOWROOM", subtitle: "Render de produto validado para a configuração selecionada.", note: "A experiência AR para iPhone e Android será ativada aqui quando o modelo 3D validado estiver pronto." },
+    de: { back: "← Zurück zum Konfigurator", label: "AUSGEWÄHLTE KONFIGURATION", badge: "SHOWROOM-VORSCHAU", subtitle: "Verifiziertes Produktrendering für Ihre ausgewählte Konfiguration.", note: "AR für iPhone und Android wird hier aktiviert, sobald das verifizierte 3D-Produktmodell bereitsteht." }
   };
 
-  function getParam(name) {
-    var params = new URLSearchParams(window.location.search);
-    return params.get(name);
-  }
-
-  function isMobileDevice() {
-    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  }
-
-  /* glTF baseColorFactor beklenen renk uzayi linear'dir, hex kodlar sRGB'dir —
-     donusum yapilmazsa renkler solgun/yanlis gorunur. */
-  function srgbToLinear(c) {
-    return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-  }
-
-  function hexToLinearRgba(hex) {
-    if (!hex) return null;
-    var m = /^#?([0-9a-f]{6})$/i.exec(hex);
-    if (!m) return null;
-    var n = parseInt(m[1], 16);
-    var r = ((n >> 16) & 255) / 255;
-    var g = ((n >> 8) & 255) / 255;
-    var b = (n & 255) / 255;
-    return [srgbToLinear(r), srgbToLinear(g), srgbToLinear(b), 1];
-  }
-
-  /* Konfiguratorde secilen dis renk AR onizlemesine de yansisin — model-viewer'in
-     canli materyal API'si uzerinden hacmin rengini musterinin secimiyle esler. */
-  function applySelectedColor(viewer, hex) {
-    var rgba = hexToLinearRgba(hex);
-    if (!rgba) return;
-    var apply = function () {
-      try {
-        var material = viewer.model && viewer.model.materials && viewer.model.materials[0];
-        if (material) material.pbrMetallicRoughness.setBaseColorFactor(rgba);
-      } catch (e) { /* sessiz fallback: renk uygulanamazsa varsayilan gorunur */ }
-    };
-    if (viewer.loaded) apply();
-    viewer.addEventListener("load", apply);
+  function param(name) { return new URLSearchParams(window.location.search).get(name); }
+  function language() { var value = param("lang") || document.documentElement.lang; return SUPPORTED_LANGUAGES.indexOf(value) !== -1 ? value : "tr"; }
+  function configuratorPath(lang) { return lang === "tr" ? "/konfigurator.html" : "/" + lang + "/konfigurator.html"; }
+  function realRender(model, color) {
+    var family = { "solo-lounge": "lounge", solo: "oslo", duo: "duo", "duo-plus": "duo", "quad-cube": "milan", nexus: "nexus" }[model];
+    var approved = ["mat-siyah", "sampanya", "bronz", "grafit", "antrasit", "gece-laciverti", "bordo", "zumrut"];
+    if (model === "solo" && color === "bej") return "/assets/img/models/real/oslo-beige.webp";
+    if (model === "solo" && color === "adacayi-yesili") return "/assets/img/models/real/oslo-green.webp";
+    if (model === "quad-cube") { var special = { turkuaz: "milan-teal", "nane-yesili": "milan-mint", "tas-grisi": "milan-sage", fildisi: "milan-cream" }; if (special[color]) return "/assets/img/models/real/" + special[color] + ".webp"; }
+    if (family && approved.indexOf(color) !== -1) return "/assets/img/models/real/" + family + "-" + color + ".webp";
+    var fallback = { "solo-lounge": "apex-lounge-real", solo: "oslo-beige", duo: "apex-duo-real", "duo-plus": "apex-duo-real", "quad-cube": "apex-quad-cube", nexus: "apex-nexus" };
+    return "/assets/img/models/real/" + fallback[model] + ".webp";
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    var modelId = getParam("model");
-    if (!modelId || !MODEL_NAMES[modelId]) modelId = "solo-lounge";
-    var colorId = getParam("color");
-
-    var lang = (localStorage.getItem("hbot_lang") || document.documentElement.lang || "tr");
-    var dict = (typeof TRANSLATIONS !== "undefined") && TRANSLATIONS[lang];
-
-    var viewer = document.getElementById("ar-model");
-    viewer.setAttribute("src", "/assets/ar/" + modelId + ".glb");
-    viewer.setAttribute("ios-src", "/assets/ar/" + modelId + ".usdz");
-    if (colorId && dict) {
-      var colorInfo = (dict.configurator.colors || []).find(function (c) { return c.id === colorId; });
-      if (colorInfo) applySelectedColor(viewer, colorInfo.hex);
-    }
-
-    var nameEl = document.getElementById("ar-model-name");
-    if (nameEl) nameEl.textContent = MODEL_NAMES[modelId];
-
-    var dimEl = document.getElementById("ar-view-dimensions");
-    if (dimEl && dict && dict.arView && dict.arView.dimensionsLabel) {
-      fetch("/assets/ar/manifest.json")
-        .then(function (r) { return r.json(); })
-        .then(function (manifest) {
-          var d = manifest[modelId];
-          if (!d) return;
-          dimEl.innerHTML = dict.arView.dimensionsLabel + ": <strong>" + d.length_m + " m × " + d.diameter_m + " m</strong>";
-          dimEl.hidden = false;
-        })
-        .catch(function () { /* sessiz fallback: boyut satiri gosterilmez */ });
-    }
-
-    if (!isMobileDevice()) {
-      var note = document.getElementById("ar-fallback-note");
-      if (note) note.style.display = "block";
-    }
-
-    if (dict) {
-      document.documentElement.lang = lang;
-      document.documentElement.dir = dict.dir || "ltr";
-      document.querySelectorAll("[data-i18n]").forEach(function (elm) {
-        var key = elm.getAttribute("data-i18n");
-        var value = key.split(".").reduce(function (o, k) { return o && o[k] !== undefined ? o[k] : undefined; }, dict);
-        if (value !== undefined) elm.textContent = value;
-      });
+    var model = param("model"); if (!MODEL_NAMES[model]) model = "solo-lounge";
+    var lang = language(), copy = SHOWROOM_COPY[lang];
+    var dict = typeof TRANSLATIONS !== "undefined" && TRANSLATIONS[lang];
+    var color = param("color"), style = param("style");
+    var img = document.getElementById("showroom-render");
+    img.src = realRender(model, color); img.alt = MODEL_NAMES[model] + " product render";
+    document.getElementById("ar-model-name").textContent = MODEL_NAMES[model];
+    document.getElementById("ar-back-link").href = configuratorPath(lang);
+    document.getElementById("ar-back-link").textContent = copy.back;
+    document.getElementById("showroom-label").textContent = copy.label;
+    document.getElementById("showroom-badge").textContent = copy.badge;
+    document.getElementById("showroom-subtitle").textContent = copy.subtitle;
+    document.getElementById("ar-fallback-note").textContent = copy.note;
+    document.documentElement.lang = lang; document.documentElement.dir = dict && dict.dir || "ltr";
+    var selection = document.getElementById("ar-selection");
+    if (dict && dict.configurator) {
+      var values = [], selectedColor = (dict.configurator.colors || []).find(function (c) { return c.id === color; });
+      var selectedStyle = (dict.configurator.styles || []).find(function (s) { return s.id === style; });
+      if (selectedColor) values.push(selectedColor.name); if (selectedStyle) values.push(selectedStyle.name);
+      selection.textContent = values.join(" · "); selection.hidden = !values.length;
     }
   });
 })();

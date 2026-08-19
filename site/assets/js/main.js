@@ -1733,6 +1733,64 @@
     return `${window.location.origin}${window.location.pathname}?${params.toString()}`;
   }
 
+  /* Doğrulanmış ürün 3D dosyaları teslim edilene dek QR / native AR açılışı
+     yerine, seçilen konfigürasyonun gerçek ürün renderını showroom modunda
+     gösteriyoruz. Böylece müşteriye basitleştirilmiş placeholder model
+     gösterilmez. */
+  const SHOWROOM_UI = {
+    tr: { button: "Showroom'da Görüntüle", comingSoon: "AR deneyimi yakında", qrTitle: "Telefonunla Görüntüle", qrSubtitle: "Seçtiğin ürün renderını telefonunda açmak için QR kodu okut." },
+    en: { button: "View in showroom", comingSoon: "AR experience coming soon", qrTitle: "View on your phone", qrSubtitle: "Scan the QR code to open your selected product render on your phone." },
+    ru: { button: "Посмотреть в шоуруме", comingSoon: "AR-режим скоро появится", qrTitle: "Открыть на телефоне", qrSubtitle: "Отсканируйте QR-код, чтобы открыть выбранный рендер изделия на телефоне." },
+    ar: { button: "عرض في صالة العرض", comingSoon: "تجربة الواقع المعزز قريباً", qrTitle: "اعرضه على هاتفك", qrSubtitle: "امسح رمز QR لفتح عرض المنتج الذي اخترته على هاتفك." },
+    es: { button: "Ver en showroom", comingSoon: "Experiencia AR próximamente", qrTitle: "Ver en tu teléfono", qrSubtitle: "Escanea el código QR para abrir el render del producto seleccionado en tu teléfono." },
+    pt: { button: "Ver no showroom", comingSoon: "Experiência AR em breve", qrTitle: "Ver no seu telefone", qrSubtitle: "Leia o código QR para abrir o render do produto selecionado no seu telefone." },
+    de: { button: "Im Showroom ansehen", comingSoon: "AR-Erlebnis in Kürze", qrTitle: "Auf dem Telefon ansehen", qrSubtitle: "Scannen Sie den QR-Code, um das ausgewählte Produktrendering auf Ihrem Telefon zu öffnen." }
+  };
+
+  function showroomUi() { return SHOWROOM_UI[currentPageLang()] || SHOWROOM_UI.tr; }
+
+  function buildShowroomUrl() {
+    const params = new URLSearchParams();
+    params.set("model", configState.model);
+    params.set("style", configState.chamberStyle);
+    params.set("color", configState.color);
+    const lang = currentPageLang();
+    params.set("lang", lang);
+    return window.location.origin + "/ar-view.html?" + params.toString();
+  }
+
+  function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  }
+
+  function openShowroomView() {
+    const url = buildShowroomUrl();
+    if (isMobileDevice()) { window.location.href = url; return; }
+    const overlay = document.getElementById("ar-qr-overlay");
+    const canvasWrap = document.getElementById("ar-qr-canvas");
+    if (!overlay || !canvasWrap || typeof QRCode === "undefined") { window.open(url, "_blank", "noopener"); return; }
+    const ui = showroomUi();
+    const title = overlay.querySelector("h3");
+    const subtitle = overlay.querySelector("p");
+    if (title) title.textContent = ui.qrTitle;
+    if (subtitle) subtitle.textContent = ui.qrSubtitle;
+    canvasWrap.innerHTML = "";
+    new QRCode(canvasWrap, { text: url, width: 200, height: 200, colorDark: "#0a0f14", colorLight: "#ffffff" });
+    overlay.hidden = false;
+  }
+
+  function initShowroomQrModal() {
+    const overlay = document.getElementById("ar-qr-overlay");
+    const closeBtn = document.getElementById("ar-qr-close");
+    if (!overlay || overlay.dataset.showroomInitialized === "true") return;
+    overlay.dataset.showroomInitialized = "true";
+    const close = () => { overlay.hidden = true; };
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  }
+
   function computeSubtotal() {
     const model = MODEL_PRICING[configState.model];
     const seatTiers = SEAT_TIERS[configState.model];
@@ -1805,7 +1863,11 @@
         <input type="number" id="config-discount-custom" class="config-discount-custom" min="0" max="50" step="1" value="${configState.discountPct}" aria-label="${s.discount_label} %" />
       </span></div>`;
 
+    const showroom = showroomUi();
+    const showroomButton = `<button type="button" class="btn-ar" id="config-showroom-btn">${showroom.button}</button><span class="ar-coming-soon" role="status">${showroom.comingSoon}</span>`;
+
     c.innerHTML = `
+      ${showroomButton}
       <h3>${s.title}</h3>
       <div class="config-summary-row"><span class="label">${s.model_label}</span><span class="value">${modelInfo ? modelInfo.name : ""}</span></div>
       ${seatsRow}
@@ -1854,6 +1916,9 @@
         setTimeout(updateQuoteFormHiddenField, 50);
       });
     }
+
+    const showroomBtn = document.getElementById("config-showroom-btn");
+    if (showroomBtn) showroomBtn.addEventListener("click", openShowroomView);
 
     const printBtn = document.getElementById("config-print-btn");
     if (printBtn) printBtn.addEventListener("click", () => openQuotePdf(TRANSLATIONS[currentLang]));
@@ -2245,6 +2310,7 @@
   let configuratorInitialized = false;
   function initConfigurator(dict) {
     if (!document.getElementById("config-model-grid")) return;
+    initShowroomQrModal();
     if (!configuratorPreselected) {
       const params = new URLSearchParams(window.location.search);
       const preModel = params.get("model");

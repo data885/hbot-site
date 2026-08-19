@@ -3,71 +3,48 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mekânınızda Görün (AR) | HBOT Chamber Tech</title>
-<meta name="description" content="Seçtiğiniz HBOT City Tech hiperbarik kabinini artırılmış gerçeklik (AR) ile kendi mekânınızda, gerçek boyutlarıyla görün." />
+<title>Showroom Önizlemesi | HBOT Chamber Tech</title>
+<meta name="description" content="Seçtiğiniz HBOT Chamber Tech kabininin doğrulanmış ürün renderı." />
 <meta name="robots" content="noindex" />
 <link rel="icon" type="image/png" href="/assets/img/logo-icon.png" />
 <meta name="theme-color" content="#0a0f14" />
-<link rel="stylesheet" href="/assets/css/style.css?v=73" />
+<link rel="stylesheet" href="/assets/css/style.css?v=74" />
 <style>
   body { background: var(--ink-950); min-height: 100vh; display: flex; flex-direction: column; }
   .ar-view-header { padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; }
   .ar-view-header img { height: 32px; }
   .ar-view-header a { color: rgba(255,255,255,.7); font-size: 13px; font-weight: 600; }
-  .ar-view-stage { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; }
-  model-viewer { width: 100%; max-width: 720px; height: 56vh; min-height: 320px; --poster-color: transparent; }
-  .ar-view-info { max-width: 520px; text-align: center; padding: 20px 24px 40px; color: rgba(255,255,255,.85); }
+  .showroom-stage { width: min(100% - 32px, 1040px); margin: auto; padding: 28px 0 12px; }
+  .showroom-frame { position: relative; overflow: hidden; min-height: 340px; border: 1px solid rgba(255,255,255,.1); border-radius: 22px; background: radial-gradient(circle at 50% 30%, rgba(201,164,92,.16), transparent 42%), linear-gradient(145deg, #1b252e, #080d12 70%); box-shadow: 0 28px 70px rgba(0,0,0,.32); }
+  .showroom-frame::after { content: ""; position: absolute; inset: auto 7% 7%; height: 13%; border-radius: 50%; background: rgba(0,0,0,.38); filter: blur(22px); }
+  .showroom-render { position: relative; z-index: 1; display: block; width: 100%; height: min(58vh, 570px); min-height: 340px; object-fit: contain; padding: 12px 4%; }
+  .showroom-label { position: absolute; z-index: 2; top: 18px; left: 18px; padding: 7px 11px; border: 1px solid rgba(201,164,92,.45); border-radius: 999px; background: rgba(6,11,16,.74); color: #e6c87e; font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+  .ar-view-info { max-width: 620px; text-align: center; padding: 20px 24px 40px; color: rgba(255,255,255,.85); }
   .ar-view-info h1 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
   .ar-view-info p { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.6; }
-  .ar-view-badge {
-    display: inline-block; margin-top: 14px; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700;
-    background: rgba(201,164,92,.14); border: 1px solid rgba(201,164,92,.4); color: #c9a45c;
-  }
-  .ar-view-dimensions { margin-top: 10px; font-size: 13px; color: rgba(255,255,255,.55); }
-  .ar-view-dimensions strong { color: rgba(255,255,255,.85); font-weight: 700; }
-  .ar-fallback-note { display: none; margin-top: 10px; font-size: 12.5px; color: rgba(255,255,255,.45); }
+  .ar-view-badge { display: inline-block; margin-top: 14px; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; background: rgba(201,164,92,.14); border: 1px solid rgba(201,164,92,.4); color: #c9a45c; }
+  .ar-fallback-note { margin-top: 12px; font-size: 13px; color: rgba(255,255,255,.58); line-height: 1.55; }
+  @media (max-width: 640px) { .showroom-stage { width: min(100% - 24px, 1040px); padding-top: 12px; } .showroom-frame { min-height: 280px; border-radius: 16px; } .showroom-render { min-height: 280px; height: 46vh; padding: 8px 2%; } }
 </style>
 </head>
 <body data-page="ar-view">
-
 <div class="ar-view-header">
   <a href="/"><img src="/assets/img/logo-header.png" alt="HBOT Chamber Tech" /></a>
-  <a href="javascript:history.back()" data-i18n="arView.back">← Konfigüratöre dön</a>
+  <a id="ar-back-link" href="/konfigurator.html">← Konfigüratöre dön</a>
 </div>
-
-<div class="ar-view-stage">
-  <model-viewer
-    id="ar-model"
-    src=""
-    ios-src=""
-    alt="HBOT City Tech hiperbarik kabin — gerçek boyutlu önizleme"
-    ar
-    ar-modes="scene-viewer quick-look webxr"
-    ar-placement="floor"
-    ar-scale="fixed"
-    camera-controls
-    auto-rotate
-    shadow-intensity="1"
-    exposure="1.1"
-    environment-image="neutral"
-  >
-    <button slot="ar-button" id="ar-button" class="btn btn-primary" style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%);" data-i18n="arView.launchButton">
-      📱 Mekânınızda Görün
-    </button>
-  </model-viewer>
-</div>
-
+<div class="showroom-stage"><div class="showroom-frame">
+  <span class="showroom-label" id="showroom-label">SEÇİLEN KONFİGÜRASYON</span>
+  <img class="showroom-render" id="showroom-render" src="/assets/img/models/real/apex-duo-real.webp" alt="HBOT Chamber Tech ürün renderı" />
+</div></div>
 <div class="ar-view-info">
-  <h1 id="ar-model-name" data-i18n="arView.title">Gerçek Boyutlu Önizleme</h1>
-  <p data-i18n="arView.subtitle">Telefonunuzun kamerasını zemine doğrultun; kabini gerçek boyutlarıyla mekânınıza yerleştirin. Sürükleyip döndürerek her açıdan inceleyebilirsiniz.</p>
-  <span class="ar-view-badge" data-i18n="arView.scaleBadge">Gerçek ölçek önizlemesi</span>
-  <p class="ar-view-dimensions" id="ar-view-dimensions" hidden></p>
-  <p class="ar-fallback-note" id="ar-fallback-note" data-i18n="arView.desktopNote">AR modu yalnızca mobil cihazlarda kullanılabilir. Bu sayfayı telefonunuzda açın veya konfigüratördeki QR kodu okutun.</p>
+  <h1 id="ar-model-name">Tokyo</h1>
+  <p class="ar-selection" id="ar-selection" hidden></p>
+  <p id="showroom-subtitle">Seçtiğiniz konfigürasyona ait doğrulanmış ürün renderı.</p>
+  <span class="ar-view-badge" id="showroom-badge">SHOWROOM ÖNİZLEMESİ</span>
+  <p class="ar-fallback-note" id="ar-fallback-note">Doğrulanmış 3D ürün modeli hazırlandığında iPhone ve Android için AR açılışı burada etkinleşecek.</p>
 </div>
-
-<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js" integrity="sha512-sai4ncU6bklxZUXJGRw21Hfoy2eG66XlZJGvs3QXXQLJ83ou2olLz0QXCdp7h6IEX9pPf76FQ5EjKqrjTnmbug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/js/translations.js?v=70"></script>
-<script src="/assets/js/ar-view.js?v=49"></script>
-<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cf0cc32d03eb472dbf76d59a2f982ff9"}'></script>
+<script src="/assets/js/ar-view.js?v=52"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cf0cc32d03eb472dbf76d59a2f982ff9"}'></script>
 </body>
 </html>
