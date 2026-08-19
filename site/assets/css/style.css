@@ -843,6 +843,7 @@ p { text-align: justify; text-align-last: left; }
 .config-summary {
   background: linear-gradient(160deg, var(--ink-900), var(--ink-950)); color: var(--white);
   border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-lg);
+  width: 100%; max-width: none; box-sizing: border-box;
   max-height: max(360px, calc(100vh - 460px)); overflow-y: auto;
 }
 .config-summary h3 { font-size: 18px; font-weight: 800; margin-bottom: 20px; }
@@ -909,13 +910,13 @@ p { text-align: justify; text-align-last: left; }
    genişlikte duruyordu; aşağı kaydırınca demo formu ortada yalnız kalıyor,
    hemen altında ikinci bir form geliyordu. Yan yana yerleşim dengeli görünür. */
 .config-cta-grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 56px; align-items: stretch; }
-.config-cta-grid > .vip-card { display: none; }
 .config-cta-grid > .vip-card { padding: 32px 30px; display: flex; flex-direction: column; }
 .config-cta-grid > .vip-card h3 { font-size: 20px; }
 .config-cta-grid > .vip-card > p { font-size: 14px; }
 .config-cta-grid > .vip-card form { display: flex; flex-direction: column; flex: 1; }
 .config-cta-grid > .vip-card .btn-block { margin-top: auto; }
 .config-cta-grid > .quote-form-panel { margin-top: 0; }
+body[data-page="configurator"] .vip-card { display: none !important; }
 @media (max-width: 900px) { .config-cta-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; } }
 @media (max-width: 640px) { .ar-qr-modal { padding: 24px 20px; } }
 
@@ -923,9 +924,9 @@ p { text-align: justify; text-align-last: left; }
 /* Dış grid hücresi kardeş sütunla (config-steps) aynı yüksekliğe gerilir (align-self: stretch) —
    sticky iç sarmalayıcı, tüm bu yükseklik boyunca sayfayla birlikte kayar; erken "yapışkanlıktan
    çıkma" sorununu önler. align-items:start sadece config-steps için geçerli kalır. */
-.config-stage-sticky-inner { display: grid; grid-template-columns: 1fr; gap: 28px; align-content: start; align-items: start; position: sticky; top: 100px; }
+.config-stage-sticky-inner { display: grid; grid-template-columns: 1fr; gap: 28px; width: 100%; align-content: start; align-items: start; position: sticky; top: 100px; }
 .config-stage {
-  position: relative; overflow: hidden; border-radius: var(--radius-lg);
+  position: relative; width: 100%; box-sizing: border-box; overflow: hidden; border-radius: var(--radius-lg);
   background: linear-gradient(160deg, var(--ink-900), var(--ink-950));
   box-shadow: var(--shadow-lg); aspect-ratio: 16 / 9; min-height: 420px; perspective: 900px;
 }
