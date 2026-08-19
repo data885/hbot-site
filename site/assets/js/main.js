@@ -1809,6 +1809,31 @@
     return computeSubtotal() - computeDiscountAmount();
   }
 
+  /* Telefonlarda tam özet paneli bütün ekranı kaplamasın; seçilen kabin,
+     dış renk ve güncel toplam, seçim adımları boyunca sabit kısa şeritte
+     görünür kalsın. */
+  function renderMobileConfigStatus(modelInfo, colorInfo, total) {
+    const stage = document.getElementById("config-stage");
+    if (!stage) return;
+    let status = document.getElementById("mobile-config-status");
+    if (!status) {
+      status = document.createElement("div");
+      status.id = "mobile-config-status";
+      status.className = "mobile-config-status";
+      stage.insertAdjacentElement("afterend", status);
+    }
+    const modelName = modelInfo ? modelInfo.name : "";
+    const colorName = colorInfo ? colorInfo.name : "";
+    const swatch = colorInfo ? `<span class="mobile-config-status-swatch" style="background:${colorInfo.hex}"></span>` : "";
+    status.innerHTML = `
+      <div class="mobile-config-status-selection">
+        <strong>${modelName}</strong>
+        <span>${swatch}${colorName}</span>
+      </div>
+      <strong class="mobile-config-status-total">${formatPrice(total)}</strong>
+    `;
+  }
+
   function renderConfigSummary(dict) {
     const c = document.getElementById("config-summary");
     if (!c || !dict.configurator) return;
@@ -1828,6 +1853,7 @@
       ? `<div class="config-summary-row"><span class="label">${s.seats_label}</span><span class="value">${configState.nexusSeats}${seatExtra > 0 ? " (+" + formatPrice(seatExtra) + ")" : ""}</span></div>`
       : "";
     const colorInfo = (dict.configurator.colors || []).find((col) => col.id === configState.color);
+    const total = computeTotal();
     const colorRow = colorInfo
       ? `<div class="config-summary-row"><span class="label">${s.color_label}</span><span class="value"><span class="summary-swatch" style="background:${colorInfo.hex}"></span>${colorInfo.name}</span></div>`
       : "";
@@ -1881,7 +1907,7 @@
       ${discountControlRow}
       ${discountAmountRow}
       ${refBadgeRow}
-      <div class="config-summary-total"><span class="label">${s.total_label}</span><span class="amount">${formatPrice(computeTotal())}</span></div>
+      <div class="config-summary-total"><span class="label">${s.total_label}</span><span class="amount">${formatPrice(total)}</span></div>
       <p class="config-summary-disclaimer">${s.disclaimer}</p>
       <a href="#quote-form" class="btn btn-primary btn-block" id="config-cta">${s.cta}</a>
       <div class="config-summary-secondary-actions">
@@ -1891,6 +1917,8 @@
         <button type="button" class="btn btn-outline btn-block" id="config-refer-btn">${s.refer_button}</button>
       </div>
     `;
+
+    renderMobileConfigStatus(modelInfo, colorInfo, total);
 
     const discountSelect = document.getElementById("config-discount-select");
     if (discountSelect) {

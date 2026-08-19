@@ -863,6 +863,7 @@ p { text-align: justify; text-align-last: left; }
 .config-summary-disclaimer { margin-top: 14px; font-size: 12px; color: rgba(255, 255, 255, 0.45); line-height: 1.5; }
 .config-summary .btn { margin-top: 20px; }
 .config-summary-secondary-actions .btn { font-size: 13.5px; padding: 11px 20px; }
+.mobile-config-status { display: none; }
 .btn-ar {
   display: block; width: 100%; margin: 0 0 16px; padding: 14px 18px; border: 0; border-radius: var(--radius-md);
   background: linear-gradient(135deg, var(--cyan-500), var(--cyan-400)); color: var(--ink-950);
@@ -1019,10 +1020,22 @@ body[data-page="configurator"] .vip-card { display: none !important; }
    raporluyor, bu aralık eskiden 980px kuralındaki aspect-ratio:4/3 kutuya düşüp yine
    ekranın yarısını kaplıyordu. */
 @media (max-width: 900px) {
-  .config-stage { position: static; aspect-ratio: 4 / 3; height: auto; }
+  .configurator-layout > .config-stage-col, .config-stage-sticky-inner { display: contents; }
+  .config-stage { order: -2; position: sticky; top: 64px; z-index: 32; aspect-ratio: auto; height: 150px; min-height: 0; }
+  .mobile-config-status {
+    order: -1; position: sticky; top: 214px; z-index: 31; display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    padding: 11px 16px; background: var(--ink-950); color: var(--white); border-bottom: 1px solid rgba(255,255,255,.13);
+    box-shadow: 0 8px 18px rgba(5, 8, 12, .18); font-size: 13px;
+  }
+  .mobile-config-status-selection { display: grid; gap: 3px; min-width: 0; }
+  .mobile-config-status-selection > strong { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mobile-config-status-selection > span { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,.65); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mobile-config-status-swatch { width: 11px; height: 11px; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; flex: none; }
+  .mobile-config-status-total { color: var(--cyan-400); font-size: 15px; white-space: nowrap; }
+  .config-summary { order: 1; }
   .config-stage .stage-model-name { font-size: 11px; padding: 4px 10px; }
   .config-stage .stage-spin-hint { display: none; }
-  .config-stage .stage-view-toggle { transform: scale(0.88); transform-origin: top right; }
+  .config-stage .stage-view-toggle { transform: scale(0.82); transform-origin: top right; }
 }
 @media (prefers-reduced-motion: reduce) {
   .stage-img { transition: none; }
