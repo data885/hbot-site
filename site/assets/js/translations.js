@@ -625,7 +625,7 @@ const TRANSLATIONS = {
         company: "Kurum / Klinik Adı (opsiyonel)",
         message: "Ek Notlar",
         submit: "Teklif Talebini Gönder",
-        sending: "Gönderiliyor...",
+        sending: "PDF hazırlanıyor ve gönderiliyor...",
         success: "Teşekkürler! Yapılandırmanız ve talebiniz alındı, en kısa sürede size dönüş yapacağız.",
         error: "Bir şeyler ters gitti. Lütfen tekrar deneyin ya da bizi doğrudan arayın."
       }
@@ -1586,7 +1586,7 @@ const TRANSLATIONS = {
         company: "Facility / Clinic Name (optional)",
         message: "Additional Notes",
         submit: "Send Quote Request",
-        sending: "Sending...",
+        sending: "Preparing PDF and sending...",
         success: "Thank you! Your configuration and request have been received — we'll get back to you shortly.",
         error: "Something went wrong. Please try again or call us directly."
       }
@@ -2547,7 +2547,7 @@ const TRANSLATIONS = {
         company: "Название учреждения / клиники (необязательно)",
         message: "Дополнительные примечания",
         submit: "Отправить запрос",
-        sending: "Отправка...",
+        sending: "Подготовка PDF и отправка...",
         success: "Спасибо! Ваша конфигурация и запрос получены — мы скоро свяжемся с вами.",
         error: "Что-то пошло не так. Пожалуйста, попробуйте ещё раз или позвоните нам напрямую."
       }
@@ -3508,7 +3508,7 @@ const TRANSLATIONS = {
         company: "اسم المنشأة / العيادة (اختياري)",
         message: "ملاحظات إضافية",
         submit: "إرسال طلب عرض السعر",
-        sending: "جارٍ الإرسال...",
+        sending: "جارٍ تجهيز ملف PDF وإرساله...",
         success: "شكراً لك! تم استلام تكوينك وطلبك، وسنتواصل معك قريباً.",
         error: "حدث خطأ ما. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة."
       }
@@ -4468,7 +4468,7 @@ const TRANSLATIONS = {
         company: "Nombre del Centro / Clínica (opcional)",
         message: "Notas Adicionales",
         submit: "Enviar Solicitud de Presupuesto",
-        sending: "Enviando...",
+        sending: "Preparando PDF y enviando...",
         success: "¡Gracias! Hemos recibido tu configuración y tu solicitud — te responderemos en breve.",
         error: "Algo salió mal. Inténtalo de nuevo o llámanos directamente."
       }
@@ -5428,7 +5428,7 @@ const TRANSLATIONS = {
         company: "Nome da Instituição / Clínica (opcional)",
         message: "Observações Adicionais",
         submit: "Enviar Solicitação de Orçamento",
-        sending: "Enviando...",
+        sending: "Preparando PDF e enviando...",
         success: "Obrigado! Sua configuração e solicitação foram recebidas — entraremos em contato em breve.",
         error: "Ocorreu um erro. Tente novamente ou ligue diretamente para nós."
       }
@@ -6388,7 +6388,7 @@ const TRANSLATIONS = {
         company: "Einrichtung / Klinikname (optional)",
         message: "Zusätzliche Anmerkungen",
         submit: "Angebotsanfrage senden",
-        sending: "Wird gesendet...",
+        sending: "PDF wird vorbereitet und gesendet...",
         success: "Vielen Dank! Ihre Konfiguration und Anfrage sind bei uns eingegangen — wir melden uns in Kürze bei Ihnen.",
         error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an."
       }

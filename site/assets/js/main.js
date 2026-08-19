@@ -9,9 +9,8 @@
   const SUPPORTED = ["en", "tr", "ar", "ru", "es", "pt", "de"];
   const PDF_DATE_LOCALE = { tr: "tr-TR", en: "en-GB", ru: "ru-RU", ar: "ar", es: "es-ES", pt: "pt-PT", de: "de-DE" };
 
-  /* TODO: replace with the real WhatsApp Business number (country code, digits only, e.g. "905XXXXXXXXX") before launch.
-     Bos birakilirsa WhatsApp butonu numara gelene kadar e-posta taslagina yonlendirir. */
-  const WHATSAPP_NUMBER = "";
+  /* Gecici: kullanicinin kisisel numarasi, kalici WhatsApp Business numarasi gelince degistirilecek. */
+  const WHATSAPP_NUMBER = "905326279998";
 
   /* ---------------- Icon library ---------------- */
   const ICONS = {
