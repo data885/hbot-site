@@ -667,7 +667,7 @@ p { text-align: justify; text-align-last: left; }
    (örn. "Hangi Kabini Seçmeliyim?" butonu) absürt boyutlara şişiyor — bunu yaşayıp düzelttik. */
 .configurator-layout { display: flex; gap: 48px; align-items: flex-start; }
 .configurator-layout > .config-steps { flex: 1; min-width: 0; }
-.configurator-layout > .config-stage-col { flex: 1.3; min-width: 480px; align-self: stretch; }
+.configurator-layout > .config-stage-col { flex: 1; min-width: 0; align-self: stretch; }
 .config-steps { display: grid; gap: 56px; align-content: start; align-items: start; }
 .config-step-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
 .config-step-note { font-size: 14px; color: var(--gray-500); margin-bottom: 22px; }
@@ -908,7 +908,8 @@ p { text-align: justify; text-align-last: left; }
    Eskiden demo formu 640px ortada tek başına, teklif formu da onun altında tam
    genişlikte duruyordu; aşağı kaydırınca demo formu ortada yalnız kalıyor,
    hemen altında ikinci bir form geliyordu. Yan yana yerleşim dengeli görünür. */
-.config-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; align-items: stretch; }
+.config-cta-grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 56px; align-items: stretch; }
+.config-cta-grid > .vip-card { display: none; }
 .config-cta-grid > .vip-card { padding: 32px 30px; display: flex; flex-direction: column; }
 .config-cta-grid > .vip-card h3 { font-size: 20px; }
 .config-cta-grid > .vip-card > p { font-size: 14px; }
