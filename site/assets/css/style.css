@@ -1125,6 +1125,62 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 .member-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
 .member-badge a { color: var(--cyan-400); font-weight: 700; }
 
+/* ---------- Buyer journey / confidence path ---------- */
+.section--buyer-journey {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(0, 128, 208, 0.16), transparent 34%),
+    radial-gradient(circle at 90% 80%, rgba(201, 164, 92, 0.12), transparent 32%),
+    var(--ink-950);
+  color: var(--white);
+}
+.section--buyer-journey::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 80%);
+}
+.section--buyer-journey .container { position: relative; z-index: 1; }
+.buyer-journey-head { max-width: 760px; }
+.buyer-journey-head p { color: rgba(255,255,255,.68); }
+.buyer-journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.buyer-journey-card {
+  min-height: 250px;
+  padding: 30px 26px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius-md);
+  background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,.16);
+}
+.buyer-journey-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(201,164,92,.55);
+  color: #d7b86f;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.buyer-journey-card h3 { font-size: 18px; line-height: 1.35; margin-bottom: 12px; }
+.buyer-journey-card p { color: rgba(255,255,255,.62); font-size: 14.5px; line-height: 1.72; }
+.buyer-journey-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+.buyer-journey-note { margin-top: 14px; color: rgba(255,255,255,.5); font-size: 13.5px; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
   .overview-split, .contact-grid, .pillar-block { grid-template-columns: 1fr; gap: 40px; }
@@ -1138,6 +1194,7 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   .included-grid { grid-template-columns: repeat(3, 1fr); }
   .indication-grid { grid-template-columns: repeat(3, 1fr); }
   .extra-badge-grid { grid-template-columns: 1fr; }
+  .buyer-journey-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cta-banner { padding: 40px; }
   .config-summary { position: static; }
 }
@@ -1177,6 +1234,10 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; }
   .contact-form, .quote-form-panel { padding: 26px; }
+  .buyer-journey-grid { grid-template-columns: 1fr; }
+  .buyer-journey-card { min-height: 0; }
+  .buyer-journey-actions { flex-direction: column; align-items: stretch; }
+  .buyer-journey-actions .btn { justify-content: center; }
   .config-summary { padding: 24px; }
   .blog-post-card { flex-direction: column; padding: 24px; }
 }
@@ -1294,3 +1355,95 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   background: var(--gray-050); box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
 }
 @media (max-width: 960px) { .nav-model-thumb { width: 46px; height: 34px; } }
+
+/* Brand film: real product footage with a restrained luxury presentation. */
+.section--brand-film {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(12, 184, 199, 0.1), transparent 34%),
+    linear-gradient(135deg, #071019 0%, #0d1b25 100%);
+  color: #fff;
+  overflow: hidden;
+}
+.brand-film-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 84px);
+}
+.brand-film-media {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #02070b;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+}
+.brand-film-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.brand-film-media video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #02070b;
+}
+.brand-film-badge {
+  position: absolute;
+  inset-inline-start: 18px;
+  top: 18px;
+  z-index: 2;
+  padding: 9px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(4, 12, 18, 0.7);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  backdrop-filter: blur(10px);
+}
+.brand-film-copy .eyebrow { color: var(--cyan-400); }
+.brand-film-copy h2 {
+  margin: 10px 0 18px;
+  color: #fff;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+.brand-film-copy > p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.75;
+}
+.brand-film-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 26px 0 30px;
+}
+.brand-film-tech span {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 12px;
+  font-weight: 700;
+}
+.brand-film-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.section--brand-film .btn-ghost { color: #fff; border-color: rgba(255, 255, 255, 0.26); }
+.section--brand-film .btn-ghost:hover { border-color: #fff; background: rgba(255, 255, 255, 0.08); }
+@media (max-width: 900px) {
+  .brand-film-grid { grid-template-columns: 1fr; }
+  .brand-film-copy { max-width: 720px; }
+}
+@media (max-width: 560px) {
+  .brand-film-media { border-radius: 16px; }
+  .brand-film-badge { inset-inline-start: 12px; top: 12px; }
+  .brand-film-actions .btn { width: 100%; justify-content: center; }
+}

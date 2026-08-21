@@ -14,7 +14,7 @@ function flatKeys(obj, prefix, out) {
       out[p + "[]"] = "len:" + v.length;
       // recurse into array objects for structure (ids)
       v.forEach((item, i) => {
-        if (item && typeof item === "object") flatKeys(item, p + "[" + i + "]", out);
+        if (item && typeof item === "object") flatKeys(item, p + "." + i, out);
       });
     } else if (v && typeof v === "object") {
       flatKeys(v, p, out);

@@ -48,9 +48,17 @@ PAGE_META_KEY = {
 def get_by_path(d, path):
     cur = d
     for part in path.split("."):
-        if not isinstance(cur, dict) or part not in cur:
+        if isinstance(cur, dict):
+            if part not in cur:
+                return None
+            cur = cur[part]
+        elif isinstance(cur, list) and part.isdigit():
+            index = int(part)
+            if index >= len(cur):
+                return None
+            cur = cur[index]
+        else:
             return None
-        cur = cur[part]
     return cur
 
 

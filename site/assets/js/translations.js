@@ -148,6 +148,20 @@ const TRANSLATIONS = {
           { icon: "premium", title: "Premium Seri", desc: "Üst düzey iç döşeme, gelişmiş aydınlatma ve özel detaylarla donatılmış en üst segment tasarım.", badge: "Premium" }
         ],
         note: "Cam tipi ve kabin stili tercihinizi, teklif talebinizde bize iletebilirsiniz."
+      },
+      buyer_journey: {
+        eyebrow: "PROJENİZİ BİRLİKTE PLANLAYALIM",
+        title: "Kabin Teslim Etmekten Fazlası",
+        subtitle: "Doğru modeli seçmekten kurulum ve eğitime kadar her adım, projenize özel olarak yazılı ve şeffaf biçimde planlanır.",
+        steps: [
+          { number: "01", title: "15 Dakikalık Uygunluk Görüşmesi", desc: "Kullanım amacınızı, kapasite ihtiyacınızı, ülkenizi ve kurulum takviminizi birlikte netleştirelim." },
+          { number: "02", title: "Konfigüratör + AR Yerleşim", desc: "Modeli, basıncı ve tasarımı seçin; kabinin gerçek ölçekli hacmini mekânınızda önizleyin." },
+          { number: "03", title: "Yazılı Proje Kapsamı", desc: "Cihaz, lojistik, kurulum, devreye alma, eğitim ve servis kalemleri teklifinizde ayrı ayrı gösterilir." },
+          { number: "04", title: "Bağlantılı Satış Sonrası Destek", desc: "CityConnect ve CityGuard altyapısı, uygun modellerde uzaktan izleme, uyarı ve servis planlamasını destekler." }
+        ],
+        cta_primary: "15 Dakikalık Görüşme Planla",
+        cta_secondary: "Konfigüratörü Başlat",
+        note: "Baskısız bir ilk görüşme: projeniz için uygun değilsek bunu da açıkça söyleriz."
       }
     },
     technology: {
@@ -1109,6 +1123,20 @@ const TRANSLATIONS = {
           { icon: "premium", title: "Premium Series", desc: "Top-tier interior upholstery, advanced lighting and bespoke details for the highest-end design.", badge: "Premium" }
         ],
         note: "You can share your glass type and chamber style preference with us in your quote request."
+      },
+      buyer_journey: {
+        eyebrow: "LET'S PLAN YOUR PROJECT",
+        title: "More Than Delivering a Chamber",
+        subtitle: "From selecting the right model to installation and training, every step is planned transparently around your project.",
+        steps: [
+          { number: "01", title: "15-Minute Fit Call", desc: "We clarify your intended use, capacity, country and installation timeline together." },
+          { number: "02", title: "Configurator + AR Placement", desc: "Choose the model, pressure and design, then preview the chamber's true-scale volume in your space." },
+          { number: "03", title: "Written Project Scope", desc: "Equipment, logistics, installation, commissioning, training and service are shown as separate items in your proposal." },
+          { number: "04", title: "Connected After-Sales Support", desc: "On compatible models, CityConnect and CityGuard support remote monitoring, alerts and service planning." }
+        ],
+        cta_primary: "Book a 15-Minute Fit Call",
+        cta_secondary: "Start the Configurator",
+        note: "A no-pressure first conversation: if the project is not a fit, we will say so clearly."
       }
     },
     technology: {
@@ -2070,6 +2098,20 @@ const TRANSLATIONS = {
           { icon: "premium", title: "Премиальная серия", desc: "Высококлассная отделка салона, продвинутое освещение и эксклюзивные детали для дизайна высшего сегмента.", badge: "Премиум" }
         ],
         note: "Вы можете указать предпочтения по типу стекла и стилю камеры в запросе на предложение."
+      },
+      buyer_journey: {
+        eyebrow: "СПЛАНИРУЕМ ВАШ ПРОЕКТ ВМЕСТЕ",
+        title: "Больше, чем просто поставка камеры",
+        subtitle: "От выбора модели до установки и обучения — каждый этап прозрачно планируется под ваш проект.",
+        steps: [
+          { number: "01", title: "15-минутная консультация", desc: "Вместе уточним назначение, требуемую вместимость, страну и сроки установки." },
+          { number: "02", title: "Конфигуратор + AR", desc: "Выберите модель, давление и дизайн, затем оцените реальный масштаб камеры в своём помещении." },
+          { number: "03", title: "Письменный объём проекта", desc: "Оборудование, логистика, установка, ввод в эксплуатацию, обучение и сервис указываются отдельными позициями." },
+          { number: "04", title: "Подключённая поддержка", desc: "В совместимых моделях CityConnect и CityGuard поддерживают удалённый мониторинг, уведомления и планирование сервиса." }
+        ],
+        cta_primary: "Запланировать 15-минутную встречу",
+        cta_secondary: "Запустить конфигуратор",
+        note: "Первая беседа без давления: если решение вам не подходит, мы скажем об этом прямо."
       }
     },
     technology: {
@@ -3031,6 +3073,20 @@ const TRANSLATIONS = {
           { icon: "premium", title: "السلسلة المميزة", desc: "تنجيد داخلي راقٍ، إضاءة متقدمة وتفاصيل مخصصة لأعلى فئة تصميم.", badge: "مميز" }
         ],
         note: "يمكنك مشاركة تفضيلاتك لنوع الزجاج وطراز الغرفة معنا ضمن طلب عرض السعر."
+      },
+      buyer_journey: {
+        eyebrow: "لنخطط لمشروعك معاً",
+        title: "أكثر من مجرد تسليم غرفة",
+        subtitle: "من اختيار الموديل المناسب إلى التركيب والتدريب، يتم تخطيط كل خطوة بشفافية وفق مشروعك.",
+        steps: [
+          { number: "01", title: "مكالمة ملاءمة لمدة 15 دقيقة", desc: "نحدد معاً هدف الاستخدام والسعة المطلوبة والدولة والجدول الزمني للتركيب." },
+          { number: "02", title: "المكوّن + عرض الواقع المعزز", desc: "اختر الموديل والضغط والتصميم، ثم عاين حجم الغرفة بمقياس حقيقي داخل مساحتك." },
+          { number: "03", title: "نطاق مشروع مكتوب", desc: "يتم عرض الجهاز والخدمات اللوجستية والتركيب والتشغيل والتدريب والصيانة كبنود منفصلة في العرض." },
+          { number: "04", title: "دعم متصل لما بعد البيع", desc: "في الموديلات المتوافقة، يدعم CityConnect وCityGuard المراقبة عن بُعد والتنبيهات وتخطيط الخدمة." }
+        ],
+        cta_primary: "احجز مكالمة ملاءمة لمدة 15 دقيقة",
+        cta_secondary: "ابدأ المكوّن",
+        note: "محادثة أولى بلا ضغط: إذا لم يكن الحل مناسباً لمشروعك فسنخبرك بذلك بوضوح."
       }
     },
     technology: {
@@ -3991,6 +4047,20 @@ const TRANSLATIONS = {
           { icon: "premium", title: "Serie Premium", desc: "Tapicería interior de máxima calidad, iluminación avanzada y detalles a medida para el diseño más exclusivo.", badge: "Premium" }
         ],
         note: "Puedes indicarnos tu preferencia de tipo de cristal y estilo de cámara en tu solicitud de presupuesto."
+      },
+      buyer_journey: {
+        eyebrow: "PLANIFIQUEMOS TU PROYECTO",
+        title: "Más que entregar una cámara",
+        subtitle: "Desde elegir el modelo adecuado hasta la instalación y formación, cada paso se planifica con transparencia para tu proyecto.",
+        steps: [
+          { number: "01", title: "Consulta de 15 minutos", desc: "Aclaramos juntos el uso previsto, la capacidad, el país y el calendario de instalación." },
+          { number: "02", title: "Configurador + ubicación AR", desc: "Elige modelo, presión y diseño y visualiza el volumen de la cámara a escala real en tu espacio." },
+          { number: "03", title: "Alcance escrito del proyecto", desc: "Equipo, logística, instalación, puesta en marcha, formación y servicio aparecen como partidas separadas en la propuesta." },
+          { number: "04", title: "Soporte posventa conectado", desc: "En modelos compatibles, CityConnect y CityGuard facilitan la monitorización remota, las alertas y la planificación del servicio." }
+        ],
+        cta_primary: "Reservar una consulta de 15 minutos",
+        cta_secondary: "Iniciar el configurador",
+        note: "Una primera conversación sin presión: si no es adecuado para tu proyecto, te lo diremos con claridad."
       }
     },
     technology: {
@@ -4951,6 +5021,20 @@ const TRANSLATIONS = {
           { icon: "premium", title: "Série Premium", desc: "Estofamento interno de altíssimo padrão, iluminação avançada e detalhes exclusivos para o design mais sofisticado.", badge: "Premium" }
         ],
         note: "Você pode nos informar sua preferência de tipo de vidro e estilo de câmara na sua solicitação de orçamento."
+      },
+      buyer_journey: {
+        eyebrow: "VAMOS PLANEJAR SEU PROJETO",
+        title: "Mais do que entregar uma câmara",
+        subtitle: "Da escolha do modelo à instalação e treinamento, cada etapa é planejada com transparência para o seu projeto.",
+        steps: [
+          { number: "01", title: "Consulta de 15 minutos", desc: "Alinhamos finalidade, capacidade, país e cronograma de instalação." },
+          { number: "02", title: "Configurador + posicionamento em AR", desc: "Escolha modelo, pressão e design e visualize o volume da câmara em escala real no seu espaço." },
+          { number: "03", title: "Escopo escrito do projeto", desc: "Equipamento, logística, instalação, comissionamento, treinamento e serviço aparecem separadamente na proposta." },
+          { number: "04", title: "Suporte pós-venda conectado", desc: "Nos modelos compatíveis, CityConnect e CityGuard apoiam monitoramento remoto, alertas e planejamento de serviço." }
+        ],
+        cta_primary: "Agendar uma consulta de 15 minutos",
+        cta_secondary: "Iniciar o configurador",
+        note: "Uma primeira conversa sem pressão: se não for adequado ao seu projeto, diremos isso claramente."
       }
     },
     technology: {
@@ -5911,6 +5995,20 @@ const TRANSLATIONS = {
           { icon: "premium", title: "Premium-Serie", desc: "Erstklassige Innenausstattung, fortschrittliche Beleuchtung und maßgeschneiderte Details für das hochwertigste Design.", badge: "Premium" }
         ],
         note: "Ihre bevorzugte Glasart und Ihren Kammerstil können Sie uns gerne in Ihrer Angebotsanfrage mitteilen."
+      },
+      buyer_journey: {
+        eyebrow: "PLANEN WIR IHR PROJEKT GEMEINSAM",
+        title: "Mehr als nur die Lieferung einer Kammer",
+        subtitle: "Von der Modellauswahl bis zu Installation und Schulung wird jeder Schritt transparent für Ihr Projekt geplant.",
+        steps: [
+          { number: "01", title: "15-minütiges Beratungsgespräch", desc: "Gemeinsam klären wir Verwendungszweck, Kapazität, Zielland und Installationszeitplan." },
+          { number: "02", title: "Konfigurator + AR-Platzierung", desc: "Wählen Sie Modell, Druck und Design und sehen Sie das Kammermaß in Originalgröße in Ihrem Raum." },
+          { number: "03", title: "Schriftlicher Projektumfang", desc: "Gerät, Logistik, Installation, Inbetriebnahme, Schulung und Service werden im Angebot getrennt ausgewiesen." },
+          { number: "04", title: "Vernetzter After-Sales-Support", desc: "Bei kompatiblen Modellen unterstützen CityConnect und CityGuard Fernüberwachung, Warnmeldungen und Serviceplanung." }
+        ],
+        cta_primary: "15-minütiges Gespräch buchen",
+        cta_secondary: "Konfigurator starten",
+        note: "Ein unverbindliches Erstgespräch: Wenn es nicht zu Ihrem Projekt passt, sagen wir das offen."
       }
     },
     technology: {
