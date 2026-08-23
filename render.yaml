@@ -3,13 +3,6 @@ services:
     name: hbot-site
     runtime: static
     staticPublishPath: ./site
-    routes:
-      - type: redirect
-        source: /model-a*
-        destination: /modeller.html
-      - type: redirect
-        source: /:lang/model-a*
-        destination: /:lang/modeller.html
     headers:
       - path: /*
         name: Strict-Transport-Security
