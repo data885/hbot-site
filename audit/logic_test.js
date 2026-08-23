@@ -80,7 +80,8 @@ modelIds.forEach((id) => {
   M.configState.model = id;
   M.configState.stageView = "exterior";
   M.normalizeConfigStageView();
-  check(`${id}: sahne hedefi manifest ile aynı`, M.currentStageTarget().key === (id === "nexus" ? item.interior : item.exterior), M.currentStageTarget().key);
+  const expectedTarget = id === "nexus" ? item.interior : `renders/${id}/pearl-white`;
+  check(`${id}: sahne hedefi doğru statik render`, M.currentStageTarget().key === expectedTarget, M.currentStageTarget().key);
 });
 check("konfigüratör ağır spin boyamasını kullanmıyor", Object.keys(M.SPIN_MODELS).length === 0);
 
@@ -88,7 +89,8 @@ console.log("\n== 3. Renk paleti ve maske kapsamı ==");
 const tr = TRANSLATIONS.tr.configurator;
 const validMode = (v) => v === null || v === "paint" || v === "metal";
 check("15 dış rengin tamamı tanımlı", tr.colors.length === 15 && tr.colors.every((c) => validMode(M.EXT_PAINT_MODE[c.id])));
-check("İnci Beyazı görünür bir boya üretir", M.EXT_PAINT_MODE["pearl-white"] === "paint");
+M.configState.model = "solo"; M.configState.color = "pearl-white"; M.configState.stageView = "exterior";
+check("İnci Beyazı hazır statik rendera gider", M.currentStageTarget().key === "renders/solo/pearl-white", M.currentStageTarget().key);
 check("Fildişi gerçek ivory tonunda", tr.colors.find((c) => c.id === "fildisi").hex === "#E3D5BD");
 check("tüm renk hex değerleri geçerli", [...tr.colors, ...tr.interior_colors, ...tr.seat_colors].every((c) => RC.hexToHsl(c.hex)));
 modelIds.filter((id) => id !== "nexus").forEach((id) => {

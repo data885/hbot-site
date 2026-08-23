@@ -69,6 +69,21 @@ Object.entries(manifestExpectations).forEach(([model, [image, mask]]) => {
 });
 if (!mainSrc.includes("const SPIN_MODELS = Object.freeze({});")) problems.push("[CONFIG] configurator spin recolor must remain disabled");
 
+// Five configurable exterior models must have a complete pre-rendered 15-color set.
+const staticModels = ["solo-lounge", "solo", "duo", "duo-plus", "quad-cube"];
+const staticColors = [
+  "pearl-white", "sampanya", "bronz", "grafit", "antrasit", "mat-siyah",
+  "gece-laciverti", "bordo", "zumrut", "bej", "adacayi-yesili", "turkuaz",
+  "nane-yesili", "fildisi", "tas-grisi"
+];
+staticModels.forEach((model) => staticColors.forEach((color) => {
+  const rel = `assets/img/models/renders/${model}/${color}.webp`;
+  if (!exists(rel)) problems.push(`[STATIC-RENDER] missing: ${rel}`);
+}));
+if (!mainSrc.includes('`renders/${configState.model}/${configState.color}`')) {
+  problems.push("[CONFIG] static exterior render routing is missing");
+}
+
 // other assets in JS: logo-full.png, logo-header.png
 ["assets/img/logo-full.png", "assets/img/logo-header.png", "assets/img/logo-icon.png",
  "assets/img/favicon-32.png", "assets/img/favicon-48.png", "assets/img/apple-touch-icon.png"
