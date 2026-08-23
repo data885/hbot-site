@@ -571,6 +571,14 @@ body.indication-modal-open { overflow: hidden; }
 .indication-modal-status { display: grid; grid-template-columns: minmax(120px, .45fr) 1fr; gap: 16px; align-items: center; padding: 15px 17px; border: 1px solid var(--gray-100); border-radius: 14px; background: var(--gray-050); }
 .indication-modal-status span { color: var(--gray-500); font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .indication-modal-status strong { color: var(--ink-900); font-size: 14px; }
+.indication-modal-sources { margin-top: 18px; padding: 17px 18px; border: 1px solid rgba(20,191,211,.2); border-radius: 14px; background: rgba(234,248,251,.55); }
+.indication-modal-sources h3 { margin: 0 0 10px; color: var(--ink-900); font-size: 14px; }
+.indication-modal-sources ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.indication-modal-sources li { position: relative; padding-inline-start: 17px; }
+.indication-modal-sources li::before { content: "↗"; position: absolute; inset-inline-start: 0; top: 1px; color: var(--cyan-600); font-size: 12px; font-weight: 900; }
+.indication-modal-sources a { color: var(--cyan-700); font-size: 13px; font-weight: 750; line-height: 1.45; text-decoration: underline; text-decoration-color: rgba(13,139,146,.3); text-underline-offset: 3px; }
+.indication-modal-sources a:hover { color: var(--ink-900); text-decoration-color: currentColor; }
+.indication-modal-sources a:focus-visible { border-radius: 3px; outline: 3px solid rgba(20,191,211,.3); outline-offset: 3px; }
 .indication-modal-safety { margin: 20px 0 24px; padding: 18px; border-inline-start: 3px solid var(--cyan-500); border-radius: 0 14px 14px 0; background: rgba(20,191,211,.07); }
 [dir="rtl"] .indication-modal-safety { border-radius: 14px 0 0 14px; }
 .indication-modal-safety h3 { margin: 0 0 7px; color: var(--ink-900); font-size: 14px; }

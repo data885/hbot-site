@@ -111,14 +111,61 @@
     ear: "selected", bone: "selected", burn: "selected", gangrene: "established",
     blood: "selected", brain: "emerging", smoke: "urgent"
   };
+  const INDICATION_SOURCES = {
+    antiaging: [
+      { title: "Prospective healthy-ageing trial — PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/33206062/" }
+    ],
+    jetlag: [
+      { title: "CDC Yellow Book — Jet Lag Disorder", url: "https://www.cdc.gov/yellow-book/hcp/travel-air-sea/jet-lag-disorder.html" }
+    ],
+    wound: [
+      { title: "CMS — Hyperbaric Oxygen Therapy (NCD 20.29)", url: "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=12" },
+      { title: "UHMS — Accepted HBOT indications", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    eye: [
+      { title: "UHMS — Central retinal artery occlusion", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    decompression: [
+      { title: "UHMS — Decompression sickness", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    embolism: [
+      { title: "UHMS — Air or gas embolism", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    poisoning: [
+      { title: "CDC — Clinical guidance for carbon monoxide poisoning", url: "https://www.cdc.gov/carbon-monoxide/hcp/clinical-guidance/index.html" },
+      { title: "UHMS — Carbon monoxide poisoning", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    ear: [
+      { title: "Systematic review and meta-analysis — PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/34709348/" },
+      { title: "UHMS — Sudden sensorineural hearing loss", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    bone: [
+      { title: "UHMS — Avascular necrosis and refractory osteomyelitis", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    burn: [
+      { title: "UHMS — Acute thermal burn injury", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    gangrene: [
+      { title: "UHMS — Gas gangrene", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    blood: [
+      { title: "UHMS — Severe anaemia", url: "https://www.uhms.org/resources/featured-resources/hbo-indications.html" }
+    ],
+    brain: [
+      { title: "Systematic review of acute severe traumatic brain injury — PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/29132229/" }
+    ],
+    smoke: [
+      { title: "CDC — Clinical guidance for carbon monoxide poisoning", url: "https://www.cdc.gov/carbon-monoxide/hcp/clinical-guidance/index.html" }
+    ]
+  };
   const INDICATION_MODAL_COPY = {
-    tr: { eyebrow: "KULLANIM ALANI BİLGİSİ", status: "Klinik durum", safety: "Önemli güvenlik notu", fallback: "HBOT'un bu alandaki rolü; altta yatan neden, belirtilerin süresi ve kişinin klinik durumuna göre değişir. Uygunluk, uzman değerlendirmesi sonrasında belirlenmelidir.", disclaimer: "Bu içerik genel bilgilendirme amaçlıdır; tanı, tedavi protokolü veya tıbbi tavsiye değildir. HBOT uygunluğu ve seans planı yetkili sağlık profesyoneli tarafından belirlenmelidir.", close: "Pencereyi kapat", cta: "Uzman ekibimizle görüşün", statuses: { established: "Yerleşik acil/klinik kullanım", selected: "Seçilmiş vakalarda yardımcı kullanım", emerging: "Araştırılan / sınırlı kanıt", urgent: "Acil uzman değerlendirmesi gerekir" } },
-    en: { eyebrow: "USE-CASE INFORMATION", status: "Clinical context", safety: "Important safety note", fallback: "The role of HBOT in this area varies with the underlying cause, duration of symptoms and the person's clinical condition. Suitability should be determined after specialist assessment.", disclaimer: "This content is general information, not a diagnosis, treatment protocol or medical advice. HBOT suitability and session planning must be determined by a qualified healthcare professional.", close: "Close dialog", cta: "Talk to our specialist team", statuses: { established: "Established emergency/clinical use", selected: "Adjunct use in selected cases", emerging: "Emerging / limited evidence", urgent: "Urgent specialist assessment required" } },
-    ru: { eyebrow: "ИНФОРМАЦИЯ О ПРИМЕНЕНИИ", status: "Клинический контекст", safety: "Важное примечание по безопасности", fallback: "Роль HBOT в этой области зависит от основной причины, длительности симптомов и клинического состояния человека. Целесообразность определяется после оценки специалистом.", disclaimer: "Материал носит общий информационный характер и не является диагнозом, протоколом лечения или медицинской консультацией. Решение о применении HBOT принимает квалифицированный медицинский специалист.", close: "Закрыть окно", cta: "Связаться с нашей командой", statuses: { established: "Признанное экстренное/клиническое применение", selected: "Дополнительное применение в отдельных случаях", emerging: "Исследуется / ограниченные данные", urgent: "Требуется срочная оценка специалиста" } },
-    ar: { eyebrow: "معلومات مجال الاستخدام", status: "السياق السريري", safety: "ملاحظة سلامة مهمة", fallback: "يختلف دور العلاج بالأكسجين عالي الضغط في هذا المجال بحسب السبب الأساسي ومدة الأعراض والحالة السريرية للشخص. ويجب تحديد الملاءمة بعد تقييم مختص.", disclaimer: "هذا المحتوى للتوعية العامة ولا يعد تشخيصاً أو بروتوكول علاج أو نصيحة طبية. يجب أن يحدد مختص صحي مؤهل مدى ملاءمة العلاج وخطة الجلسة.", close: "إغلاق النافذة", cta: "تحدث مع فريقنا المختص", statuses: { established: "استخدام طارئ/سريري معتمد", selected: "استخدام مساعد في حالات مختارة", emerging: "قيد البحث / أدلة محدودة", urgent: "يتطلب تقييماً عاجلاً من مختص" } },
-    es: { eyebrow: "INFORMACIÓN DEL ÁREA DE USO", status: "Contexto clínico", safety: "Nota importante de seguridad", fallback: "El papel de la HBOT en esta área depende de la causa, la duración de los síntomas y la situación clínica de cada persona. La idoneidad debe determinarse tras una valoración especializada.", disclaimer: "Este contenido es información general y no constituye diagnóstico, protocolo terapéutico ni consejo médico. La idoneidad de la HBOT debe determinarla un profesional sanitario cualificado.", close: "Cerrar ventana", cta: "Hable con nuestro equipo", statuses: { established: "Uso de urgencia/clínico establecido", selected: "Uso complementario en casos seleccionados", emerging: "En investigación / evidencia limitada", urgent: "Requiere valoración urgente" } },
-    pt: { eyebrow: "INFORMAÇÃO DA ÁREA DE UTILIZAÇÃO", status: "Contexto clínico", safety: "Nota de segurança importante", fallback: "O papel da HBOT nesta área varia conforme a causa, a duração dos sintomas e a condição clínica da pessoa. A adequação deve ser definida após avaliação especializada.", disclaimer: "Este conteúdo é informação geral e não constitui diagnóstico, protocolo de tratamento ou aconselhamento médico. A adequação da HBOT deve ser definida por um profissional de saúde qualificado.", close: "Fechar janela", cta: "Fale com a nossa equipa", statuses: { established: "Utilização de emergência/clínica estabelecida", selected: "Utilização adjuvante em casos selecionados", emerging: "Em investigação / evidência limitada", urgent: "Requer avaliação urgente" } },
-    de: { eyebrow: "INFORMATION ZUM ANWENDUNGSBEREICH", status: "Klinischer Kontext", safety: "Wichtiger Sicherheitshinweis", fallback: "Die Rolle der HBOT in diesem Bereich hängt von der Ursache, der Dauer der Beschwerden und dem klinischen Zustand ab. Die Eignung sollte nach fachärztlicher Beurteilung festgestellt werden.", disclaimer: "Dieser Inhalt dient der allgemeinen Information und ist keine Diagnose, kein Behandlungsprotokoll und keine medizinische Beratung. Die Eignung für HBOT muss von qualifiziertem medizinischem Fachpersonal beurteilt werden.", close: "Fenster schließen", cta: "Mit unserem Expertenteam sprechen", statuses: { established: "Etablierte Notfall-/klinische Anwendung", selected: "Ergänzende Anwendung in ausgewählten Fällen", emerging: "In Erforschung / begrenzte Evidenz", urgent: "Dringende fachärztliche Beurteilung erforderlich" } }
+    tr: { eyebrow: "KULLANIM ALANI BİLGİSİ", status: "Klinik durum", sources: "Kaynaklar ve ilgili yayınlar", safety: "Önemli güvenlik notu", fallback: "HBOT'un bu alandaki rolü; altta yatan neden, belirtilerin süresi ve kişinin klinik durumuna göre değişir. Uygunluk, uzman değerlendirmesi sonrasında belirlenmelidir.", disclaimer: "Bu içerik genel bilgilendirme amaçlıdır; tanı, tedavi protokolü veya tıbbi tavsiye değildir. HBOT uygunluğu ve seans planı yetkili sağlık profesyoneli tarafından belirlenmelidir.", close: "Pencereyi kapat", cta: "Uzman ekibimizle görüşün", statuses: { established: "Yerleşik acil/klinik kullanım", selected: "Seçilmiş vakalarda yardımcı kullanım", emerging: "Araştırılan / sınırlı kanıt", urgent: "Acil uzman değerlendirmesi gerekir" } },
+    en: { eyebrow: "USE-CASE INFORMATION", status: "Clinical context", sources: "Sources and related publications", safety: "Important safety note", fallback: "The role of HBOT in this area varies with the underlying cause, duration of symptoms and the person's clinical condition. Suitability should be determined after specialist assessment.", disclaimer: "This content is general information, not a diagnosis, treatment protocol or medical advice. HBOT suitability and session planning must be determined by a qualified healthcare professional.", close: "Close dialog", cta: "Talk to our specialist team", statuses: { established: "Established emergency/clinical use", selected: "Adjunct use in selected cases", emerging: "Emerging / limited evidence", urgent: "Urgent specialist assessment required" } },
+    ru: { eyebrow: "ИНФОРМАЦИЯ О ПРИМЕНЕНИИ", status: "Клинический контекст", sources: "Источники и публикации", safety: "Важное примечание по безопасности", fallback: "Роль HBOT в этой области зависит от основной причины, длительности симптомов и клинического состояния человека. Целесообразность определяется после оценки специалистом.", disclaimer: "Материал носит общий информационный характер и не является диагнозом, протоколом лечения или медицинской консультацией. Решение о применении HBOT принимает квалифицированный медицинский специалист.", close: "Закрыть окно", cta: "Связаться с нашей командой", statuses: { established: "Признанное экстренное/клиническое применение", selected: "Дополнительное применение в отдельных случаях", emerging: "Исследуется / ограниченные данные", urgent: "Требуется срочная оценка специалиста" } },
+    ar: { eyebrow: "معلومات مجال الاستخدام", status: "السياق السريري", sources: "المصادر والمنشورات ذات الصلة", safety: "ملاحظة سلامة مهمة", fallback: "يختلف دور العلاج بالأكسجين عالي الضغط في هذا المجال بحسب السبب الأساسي ومدة الأعراض والحالة السريرية للشخص. ويجب تحديد الملاءمة بعد تقييم مختص.", disclaimer: "هذا المحتوى للتوعية العامة ولا يعد تشخيصاً أو بروتوكول علاج أو نصيحة طبية. يجب أن يحدد مختص صحي مؤهل مدى ملاءمة العلاج وخطة الجلسة.", close: "إغلاق النافذة", cta: "تحدث مع فريقنا المختص", statuses: { established: "استخدام طارئ/سريري معتمد", selected: "استخدام مساعد في حالات مختارة", emerging: "قيد البحث / أدلة محدودة", urgent: "يتطلب تقييماً عاجلاً من مختص" } },
+    es: { eyebrow: "INFORMACIÓN DEL ÁREA DE USO", status: "Contexto clínico", sources: "Fuentes y publicaciones relacionadas", safety: "Nota importante de seguridad", fallback: "El papel de la HBOT en esta área depende de la causa, la duración de los síntomas y la situación clínica de cada persona. La idoneidad debe determinarse tras una valoración especializada.", disclaimer: "Este contenido es información general y no constituye diagnóstico, protocolo terapéutico ni consejo médico. La idoneidad de la HBOT debe determinarla un profesional sanitario cualificado.", close: "Cerrar ventana", cta: "Hable con nuestro equipo", statuses: { established: "Uso de urgencia/clínico establecido", selected: "Uso complementario en casos seleccionados", emerging: "En investigación / evidencia limitada", urgent: "Requiere valoración urgente" } },
+    pt: { eyebrow: "INFORMAÇÃO DA ÁREA DE UTILIZAÇÃO", status: "Contexto clínico", sources: "Fontes e publicações relacionadas", safety: "Nota de segurança importante", fallback: "O papel da HBOT nesta área varia conforme a causa, a duração dos sintomas e a condição clínica da pessoa. A adequação deve ser definida após avaliação especializada.", disclaimer: "Este conteúdo é informação geral e não constitui diagnóstico, protocolo de tratamento ou aconselhamento médico. A adequação da HBOT deve ser definida por um profissional de saúde qualificado.", close: "Fechar janela", cta: "Fale com a nossa equipa", statuses: { established: "Utilização de emergência/clínica estabelecida", selected: "Utilização adjuvante em casos selecionados", emerging: "Em investigação / evidência limitada", urgent: "Requer avaliação urgente" } },
+    de: { eyebrow: "INFORMATION ZUM ANWENDUNGSBEREICH", status: "Klinischer Kontext", sources: "Quellen und weiterführende Publikationen", safety: "Wichtiger Sicherheitshinweis", fallback: "Die Rolle der HBOT in diesem Bereich hängt von der Ursache, der Dauer der Beschwerden und dem klinischen Zustand ab. Die Eignung sollte nach fachärztlicher Beurteilung festgestellt werden.", disclaimer: "Dieser Inhalt dient der allgemeinen Information und ist keine Diagnose, kein Behandlungsprotokoll und keine medizinische Beratung. Die Eignung für HBOT muss von qualifiziertem medizinischem Fachpersonal beurteilt werden.", close: "Fenster schließen", cta: "Mit unserem Expertenteam sprechen", statuses: { established: "Etablierte Notfall-/klinische Anwendung", selected: "Ergänzende Anwendung in ausgewählten Fällen", emerging: "In Erforschung / begrenzte Evidenz", urgent: "Dringende fachärztliche Beurteilung erforderlich" } }
   };
 
   /* Tokyo Plus ayrı ürün sayfası, teknik kapsamı ve filmi olan altıncı modeldir. */
@@ -535,6 +582,7 @@
         </div>
         <p class="indication-modal-summary" id="indication-modal-summary"></p>
         <div class="indication-modal-status"><span data-indication-status-label></span><strong data-indication-status></strong></div>
+        <div class="indication-modal-sources"><h3 data-indication-sources-title></h3><ul data-indication-sources></ul></div>
         <div class="indication-modal-safety"><h3 data-indication-safety-title></h3><p data-indication-disclaimer></p></div>
         <a href="iletisim.html#contact-form" class="btn btn-primary" data-indication-cta></a>
       </section>`;
@@ -567,6 +615,19 @@
     modal.querySelector("#indication-modal-summary").textContent = summary;
     modal.querySelector("[data-indication-status-label]").textContent = copy.status;
     modal.querySelector("[data-indication-status]").textContent = copy.statuses[statusKey];
+    modal.querySelector("[data-indication-sources-title]").textContent = copy.sources;
+    const sourceList = modal.querySelector("[data-indication-sources]");
+    sourceList.replaceChildren();
+    (INDICATION_SOURCES[item.icon] || []).forEach((source) => {
+      const listItem = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = source.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = source.title;
+      listItem.appendChild(link);
+      sourceList.appendChild(listItem);
+    });
     modal.querySelector("[data-indication-safety-title]").textContent = copy.safety;
     modal.querySelector("[data-indication-disclaimer]").textContent = copy.disclaimer;
     modal.querySelector("[data-indication-cta]").textContent = copy.cta;
