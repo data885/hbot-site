@@ -769,34 +769,40 @@
     institutional: ["duo-plus", "quad-cube", "nexus"]
   };
 
-  /* Showcase stage: model -> gerçek fotoğraf / 360° spin seti.
-     Dış görünüm = gerçek fotoğraf (REAL_STAGE) veya 360° spin seti (SPIN_MODELS).
-     Renk seçimi: maskeli tint katmanı (STAGE_TINT_MASKS + multiply blend) kabin/döşeme/koltuk
-     bölgesine uygulanır — sahne ve arka plan renklenmez; renk adı ayrıca özet panelinde gösterilir. */
-  const REAL_STAGE = {
-    "solo-lounge": "real/oslo-real",
-    solo: "real/dubai-real",             // Artık tüm renkler icin REAL_STAGE_BY_COLOR altinda gercek fotograf var
-    duo: "real/tokyo-real",
-    "duo-plus": "real/tokyo-plus-real",
-    "quad-cube": "real/milano-config",
-    nexus: "real/geneva-real"
-  };
-  /* İç mekân: her modelin artık kendi gerçek iç fotoğrafı var. Duo/Duo Plus
-     için ayrı bir iç çekim hiç yapılmamıştı — kod bu ikisini Milano'nun
-     (Quad-Cube) 4 kişilik küp kabinine düşürüyordu, ki bu Duo'nun kendi 2
-     kişilik pod gövdesiyle hiç uyuşmuyordu (dış görünüm sekmesinde doğru
-     pod'u, iç görünümde bambaşka bir kabini gösteriyordu). Tokyo dış fotoğrafının
-     (dış görünüm fotoğrafı) aslında pencereden koltuğu net gösteriyor —
-     o bölgeyi kırpıp Duo'nun kendi iç fotoğrafı (duo-interior.webp) olarak
-     kullanıyoruz. */
-  const REAL_INTERIOR = {
-    "solo-lounge": "real/oslo-lounge-interior",
-    solo: "real/oslo-interior",
-    duo: "real/duo-interior",
-    "duo-plus": "real/duo-interior",
-    "quad-cube": "real/milano-interior",
-    nexus: "real/geneva-interior"
-  };
+  function resetModelVisualState() {
+    if (!colorWorksFor(configState.model, configState.color)) configState.color = "pearl-white";
+    configState.interiorColor = "cream";
+    configState.seatColor = "konyak";
+    configState.seatTouched = false;
+    configState.stageView = configState.model === "nexus" ? "interior" : "exterior";
+  }
+
+  function renderAllConfigControls(dict) {
+    renderUsageType(dict);
+    renderConfigModels(dict);
+    renderConfigStyles(dict);
+    renderConfigColors(dict);
+    renderConfigInteriorColors(dict);
+    renderConfigSeatColors(dict);
+    renderConfigPressure(dict);
+    renderNexusSeatSection(dict);
+    renderConfigAddons(dict);
+    renderConfigSummary(dict);
+  }
+
+  /* Tek doğruluk kaynağı: her model yalnız kendi sabit ana görseli ve o görsele
+     tam oturan maskeleri kullanır. Renk seçimi hiçbir zaman başka bir modelin
+     hazır fotoğrafına yönlenmez. */
+  const STAGE_RENDER_MANIFEST = Object.freeze({
+    "solo-lounge": { exterior: "real/oslo-real", exteriorMask: "masks/ext-lounge", interior: "real/oslo-lounge-interior", interiorMask: "masks/int-lounge", seatMask: "masks/seat-lounge" },
+    solo: { exterior: "real/dubai-real", exteriorMask: "masks/ext-oslo", interior: "real/oslo-interior", interiorMask: "masks/int-oslo", seatMask: "masks/seat-oslo" },
+    duo: { exterior: "real/tokyo-real", exteriorMask: "masks/ext-duo", interior: "real/duo-interior", interiorMask: "masks/int-duo", seatMask: "masks/seat-duo" },
+    "duo-plus": { exterior: "real/tokyo-plus-real", exteriorMask: "masks/ext-duo", interior: "real/duo-interior", interiorMask: "masks/int-duo", seatMask: "masks/seat-duo" },
+    "quad-cube": { exterior: "real/milano-config", exteriorMask: "masks/ext-quadcube2", interior: "real/milano-interior", interiorMask: "masks/int-quadcube", seatMask: "masks/seat-quadcube" },
+    nexus: { exterior: "real/geneva-real", exteriorMask: null, interior: "real/geneva-interior", interiorMask: "masks/int-nexus", seatMask: "masks/seat-nexus" }
+  });
+  const REAL_STAGE = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.exterior]));
+  const REAL_INTERIOR = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.interior]));
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
   const SPIN_FRAME_COUNT = 24;
@@ -806,7 +812,10 @@
   // maskeli profile (masks/ext-duo, Tokyo Plus ile paylaşılan) düşerek düzeldi;
   // 24 spin karesinin her biri için ayrı maske gerektirmemek adına spin bilinçli
   // olarak kapatıldı.
-  const SPIN_MODELS = { "quad-cube": true, nexus: true };
+  /* Konfigüratör renk önizlemesinde 24 tam çözünürlüklü karenin aynı anda
+     boyanması arayüzü kilitliyordu. Model filmleri/galerileri yerinde kalır;
+     burada güvenilir ve anlık statik renk önizlemesi kullanılır. */
+  const SPIN_MODELS = Object.freeze({});
   let spinDragging = false;
   function spinNormIdx(idx) {
     return ((idx % SPIN_FRAME_COUNT) + SPIN_FRAME_COUNT) % SPIN_FRAME_COUNT;
@@ -824,91 +833,25 @@
      iki katmanı üst üste bindiriyor / opacity'yi ters gösteriyordu. */
   let stageCurrentKey = "real/oslo-real";
   let stageCurrentSrc = "";
+  let stageRequestedKey = "";
+  let stageRequestedSrc = "";
+  let stageRequestToken = 0;
+  let stageDesiredVariant = "";
   /* Spin momentum'unu dışarıdan durdurma kancası — initSpin içinde atanır.
      Görsel hedefi değişirken (model/görünüm geçişi) yarım frame yazılmasını önler. */
   let stopSpinMomentum = () => {};
 
-  /* Gerçek renk fotoğrafları: bazı model+renk kombinasyonları için, boyanmış
-     (canvas recolor) görsel yerine GERÇEK ürün fotoğrafı gösterilir. Eşleşme
-     yoksa mevcut davranış (spin seti / recolor) devam eder. */
-  const PAINTED_COLOR_KEYS = {
-    "mat-siyah": "mat-siyah", sampanya: "sampanya", bronz: "bronz", grafit: "grafit",
-    antrasit: "antrasit", "gece-laciverti": "gece-laciverti", bordo: "bordo", zumrut: "zumrut"
-  };
-  function paintedStageMap(prefix) {
-    const out = {};
-    Object.keys(PAINTED_COLOR_KEYS).forEach((id) => { out[id] = `real/${prefix}-${id}`; });
-    return out;
-  }
-  const REAL_STAGE_BY_COLOR = {
-    "solo-lounge": paintedStageMap("lounge"),
-    solo: Object.assign({ bej: "real/dubai-real", "adacayi-yesili": "real/oslo-green" }, paintedStageMap("oslo")),
-    duo: paintedStageMap("duo"),
-    "duo-plus": paintedStageMap("duo"),
-    "quad-cube": Object.assign({
-      // turkuaz: "real/milan-teal" kaldırıldı — bu fotoğraf bozuktu (üstte havada
-      // asılı renk lekesi + sağda hayalet/çift görüntü, muhtemelen kötü bir AI
-      // yeniden-renklendirme kalıntısı, bkz. kullanıcı raporu "berbat olmuş").
-      // Artık diğer genişletilmiş palet renkleri (bej, adaçayı) gibi canvas
-      // boyama sistemine (STAGE_EXT_PROFILE["spin:quad-cube"]) düşüyor — temiz,
-      // artefaktsız sonuç veriyor.
-      "nane-yesili": "real/milan-mint",
-      "tas-grisi": "real/milan-sage",
-      fildisi: "real/milano-real"
-    }, paintedStageMap("milan")),
-    nexus: paintedStageMap("nexus")
-  };
-
-  /* İç mekan/koltuk için gerçek fotoğraf ailesi: hangi model hangi baz fotoğrafı paylaşıyor
-     (REAL_INTERIOR ile ayni aile eşlemesi). Koltuk rengi dokunulduysa (seatTouched) koltuk
-     fotoğrafı öncelikli — sahne zaten iç görünüme geçiyor; aksi halde duvar/döşeme rengi. */
-  const INTERIOR_FAMILY = {
-    "solo-lounge": "lounge", solo: "milan",
-    "quad-cube": "milan", nexus: "nexus"
-  };
-  function realInteriorMatch() {
-    /* Dubai/Tokyo/Tokyo Plus'ın kendi duvar+koltuk renk varyantı fotoğrafları
-       yok — "milan" ailesine eşlenmiş olmaları, renk dokunulunca Milano'nun
-       (4 kişilik küp) fotoğrafına düşmelerine yol açıyordu: kullanıcı hiç
-       renk seçmemişken kendi kabinini görüyor, TEK bir renk dokununca aniden
-       başka bir modelin kabinine sıçrıyordu. Yanlış ürün göstermektense her
-       zaman kendi varsayılan iç görsellerinde (REAL_INTERIOR) sabit kalıp
-       renklendirmeyi canvas boyama sistemine (stagePaintSpec + kendi
-       maskeleri) bırakıyoruz — tutarlı kabin, her renk kombinasyonunda. */
-    if (configState.model === "solo" || configState.model === "duo" || configState.model === "duo-plus") return null;
-    const family = INTERIOR_FAMILY[configState.model];
-    if (!family) return null;
-    const seatReady = configState.seatTouched && configState.seatColor;
-    const wallReady = configState.interiorColor && configState.interiorColor !== "cream";
-    /* Duvar VE koltuk rengi aynı anda seçiliyse ikisini birden gösteren tek
-       bir gerçek fotoğraf yok (fotoğraflar tek eksenli: ya duvar ya koltuk
-       değişir, öbürü sabit kalır) — biri seçilirse öbürü sessizce
-       görmezden geliniyordu. null dönüp varsayılan iç fotoğrafına düşerek
-       canvas boyama sistemine (stagePaintSpec) HER İKİ rengi birden
-       uygulatıyoruz. */
-    if (seatReady && wallReady) return null;
-    if (seatReady) return `real/${family}-seat-${configState.seatColor}`;
-    if (wallReady) return `real/${family}-wall-${configState.interiorColor}`;
-    return null;
+  function normalizeConfigStageView() {
+    if (configState.model === "solo-lounge") configState.stageView = "exterior";
+    if (configState.model === "nexus") configState.stageView = "interior";
   }
 
   function currentStageTarget() {
+    const manifest = STAGE_RENDER_MANIFEST[configState.model] || STAGE_RENDER_MANIFEST["solo-lounge"];
     if (configState.stageView === "interior") {
-      const realColorMatch = realInteriorMatch();
-      if (realColorMatch) return { key: realColorMatch, filter: "none", interior: true, photo: true };
-      const realIc = REAL_INTERIOR[configState.model];
-      if (realIc) return { key: realIc, filter: "none", interior: true, photo: true };
-    } else {
-      const realColorMatch = (REAL_STAGE_BY_COLOR[configState.model] || {})[configState.color];
-      if (realColorMatch) return { key: realColorMatch, filter: "none", interior: false, photo: true };
+      return { key: manifest.interior, filter: "none", interior: true, photo: true };
     }
-    if (spinAvailableFor()) {
-      return { key: spinFrameKey(configState.spinIdx), filter: "none", interior: false, photo: true };
-    }
-    const realExt = REAL_STAGE[configState.model];
-    if (realExt) return { key: realExt, filter: "none", interior: false, photo: true };
-    /* Hiç görseli olmayan model kalmamalı — güvenlik ağı: Lounge gerçek fotoğrafı */
-    return { key: "real/oslo-real", filter: "none", interior: false, photo: true };
+    return { key: manifest.exterior, filter: "none", interior: false, photo: true };
   }
 
   function updateConfigStage(dict) {
@@ -918,8 +861,23 @@
     const imgB = document.getElementById("stage-img-b");
     if (!imgA || !imgB) return;
 
+    /* Görünümü hedef çözülmeden ÖNCE normalleştir. Eski sırada Geneva bir kare
+       dış görünüm, Oslo ise bir kare iç görünüm gösterebiliyordu. */
+    normalizeConfigStageView();
     const target = currentStageTarget();
-    // v11: boya aktifse akıllı-profil ile işlenmiş kare (canvas recolor) — yoksa ham kare
+    const desiredVariant = target.interior
+      ? `${target.key}|${configState.interiorColor}|${configState.seatTouched ? configState.seatColor : "seat-default"}`
+      : `${target.key}|${configState.color}`;
+    /* Boyanmış A görseli yüklenirken kullanıcı B rengini seçerse B'nin ham baz
+       görseli mevcut src ile aynı olabilir. Variant token'ı yine de değişir ve
+       geç kalan A yüklemesini iptal eder. */
+    if (desiredVariant !== stageDesiredVariant) {
+      stageDesiredVariant = desiredVariant;
+      stageRequestToken++;
+      stageRequestedKey = "";
+      stageRequestedSrc = "";
+    }
+    // v12: modelin kendi baz görseli + tam maskesiyle üretilmiş renk önizlemesi
     const src = resolveStageSrc(target);
 
     const active = stageActiveImg === "a" ? imgA : imgB;
@@ -931,18 +889,37 @@
     };
 
     if (target.key !== stageCurrentKey || stageCurrentSrc !== src) {
-      // Görsel veya boya değişti: pasif karta yenisini yükle, cross-fade.
-      // Momentum durdurma sadece görsel ANAHTARI değiştiğinde (yeni katmana
-      // yarım frame yazılmasın) — salt renk değişiminde spin devam edebilir.
-      if (target.key !== stageCurrentKey) stopSpinMomentum();
-      passive.src = src;
-      passive.style.filter = target.filter;
-      applyMode(passive);
-      passive.classList.add("is-active");
-      active.classList.remove("is-active");
-      stageActiveImg = stageActiveImg === "a" ? "b" : "a";
-      stageCurrentKey = target.key;
-      stageCurrentSrc = src;
+      /* Cross-fade yalnız yeni görsel gerçekten yüklendikten sonra yapılır.
+         Token, hızlı renk/model tıklamalarında geç biten eski isteğin güncel
+         seçimin üstüne yazmasını engeller. */
+      if (target.key !== stageRequestedKey || src !== stageRequestedSrc) {
+        stageRequestedKey = target.key;
+        stageRequestedSrc = src;
+        const token = ++stageRequestToken;
+        const loader = new Image();
+        loader.onload = () => {
+          if (token !== stageRequestToken) return;
+          const liveActive = stageActiveImg === "a" ? imgA : imgB;
+          const livePassive = stageActiveImg === "a" ? imgB : imgA;
+          if (target.key !== stageCurrentKey) stopSpinMomentum();
+          livePassive.src = src;
+          livePassive.style.filter = target.filter;
+          applyMode(livePassive);
+          livePassive.classList.add("is-active");
+          liveActive.classList.remove("is-active");
+          stageActiveImg = stageActiveImg === "a" ? "b" : "a";
+          stageCurrentKey = target.key;
+          stageCurrentSrc = src;
+        };
+        loader.onerror = () => {
+          if (token === stageRequestToken) {
+            stageRequestedKey = "";
+            stageRequestedSrc = "";
+            console.warn("HBOT configurator image could not be loaded", target.key);
+          }
+        };
+        loader.src = src;
+      }
     } else {
       active.style.filter = target.filter;
       applyMode(active);
@@ -964,7 +941,6 @@
     // yalnızca dış görünüm göster. İç dekor tercihi ayrı bir notla toplanır
     // (bkz. lounge-decor-note). Diğer modeller etkilenmez.
     const hideInterior = configState.model === "solo-lounge";
-    if (hideInterior && configState.stageView === "interior") configState.stageView = "exterior";
     const interiorViewBtn = document.querySelector('.stage-view-btn[data-view="interior"]');
     if (interiorViewBtn) interiorViewBtn.hidden = hideInterior;
     const loungeNote = document.getElementById("lounge-decor-note");
@@ -975,7 +951,6 @@
     // gerçek fotoğraf (REAL_INTERIOR.nexus) yeterli. Görünüm sekmesini tamamen gizleyip
     // sahneyi her zaman iç görünümde sabitliyoruz (bkz. kullanıcı talebi).
     const lockToInterior = configState.model === "nexus";
-    if (lockToInterior && configState.stageView !== "interior") configState.stageView = "interior";
     const viewToggleGroup = document.querySelector(".stage-view-toggle");
     if (viewToggleGroup) viewToggleGroup.hidden = lockToInterior;
 
@@ -1184,16 +1159,11 @@
           configState.tierIndex = 0;
           const seatTiers0 = SEAT_TIERS[configState.model];
           configState.nexusSeats = seatTiers0 ? seatTiers0[0].seats : NEXUS_BASE_SEATS;
+          resetModelVisualState();
         }
         if (!styleAllowedFor(configState.model, configState.chamberStyle)) configState.chamberStyle = "solid";
         const dict2 = TRANSLATIONS[currentLang];
-        renderUsageType(dict2);
-        renderConfigModels(dict2);
-        renderConfigStyles(dict2);
-        renderConfigPressure(dict2);
-        renderNexusSeatSection(dict2);
-        renderConfigSummary(dict2);
-        updateConfigStage(dict2);
+        renderAllConfigControls(dict2);
       });
     });
   }
@@ -1225,15 +1195,9 @@
         if (!styleAllowedFor(configState.model, configState.chamberStyle)) configState.chamberStyle = "solid";
         const seatTiers1 = SEAT_TIERS[configState.model];
         configState.nexusSeats = seatTiers1 ? seatTiers1[0].seats : NEXUS_BASE_SEATS;
+        resetModelVisualState();
         const dict2 = TRANSLATIONS[currentLang];
-        renderUsageType(dict2);
-        renderConfigModels(dict2);
-        renderConfigStyles(dict2);
-        renderConfigPressure(dict2);
-        renderNexusSeatSection(dict2);
-        renderConfigAddons(dict2);
-        renderConfigSummary(dict2);
-        updateConfigStage(dict2);
+        renderAllConfigControls(dict2);
         closeGuideModal();
         document.getElementById("config-usage-grid").scrollIntoView({ behavior: "smooth", block: "center" });
       });
@@ -1382,14 +1346,14 @@
     });
   }
 
-  /* v11: model-profili tabanlı akıllı boya (canvas recolor, assets/js/recolor.js).
-     CSS tint katmanı terk edildi — "ışık hüzmesi" görünümüne yol açıyordu.
-     Yeni motor piksel piksel "boyanma ağırlığı" hesaplar: gövde tam boyanır,
-     koltuk/LED/cam/arka plan korunur. Boya MODU tabloları:
+  /* v12: kesin maske tabanlı boya (canvas recolor, assets/js/recolor.js).
+     CSS tint ve HSL-eşik tahmini terk edildi. Hangi pikselin boyanacağı her
+     modelin kendi maskesinde açıkça tanımlıdır; cam, ekran, koltuk ve arka plan
+     renk seçiminden etkilenmez. Boya MODU tabloları:
      "paint" = hue+sat uygula | "metal" = düşük sat + lightness ölçekle
      null = varsayılan renk, ham kare gösterilir. */
   const EXT_PAINT_MODE = {
-    "pearl-white": null,
+    "pearl-white": "paint",
     "sampanya": "paint", "bronz": "paint",
     "grafit": "metal", "antrasit": "metal", "mat-siyah": "metal",
     "gece-laciverti": "paint", "bordo": "paint", "zumrut": "paint",
@@ -1404,17 +1368,12 @@
     "nane-yesili": "paint", "fildisi": "paint", "tas-grisi": "metal"
   };
 
-  /* Bir renk, seçili modelde GERÇEKTEN görsel bir değişikliğe yol açıyor mu?
-     Ya modele özel gerçek fotoğrafı olmalı (REAL_STAGE_BY_COLOR) ya da boya
-     modu + o modelin gösterdiği ham görsel için bir STAGE_EXT_PROFILE olmalı.
-     İkisi de yoksa renk seçilse bile sahne değişmez — böyle renkler seçiciden
-     gizlenir (bkz. renderConfigColors). */
+  /* Bir renk, seçili modelde gerçekten görsel değişikliğe yol açıyor mu? */
   function colorWorksFor(modelId, colorId) {
-    if ((REAL_STAGE_BY_COLOR[modelId] || {})[colorId]) return true;
     if (!(colorId in EXT_PAINT_MODE)) return false;
-    if (EXT_PAINT_MODE[colorId] === null) return true;
-    const key = SPIN_MODELS[modelId] ? `spin:${modelId}` : REAL_STAGE[modelId];
-    return !!STAGE_EXT_PROFILE[key];
+    if (modelId === "nexus") return colorId === "pearl-white";
+    const manifest = STAGE_RENDER_MANIFEST[modelId];
+    return !!(manifest && manifest.exterior && manifest.exteriorMask);
   }
   const INT_PAINT_MODE = {
     "cream": null,
@@ -1426,47 +1385,10 @@
     "krem": "paint", "bordo": "paint", "gri": "metal"
   };
 
-  /* v11: dış görünüm boyama — model başına akıllı profil (spin setleri maskesiz,
-     real fotoğraflar offline düzeltilmiş maske ile). Profil yoksa o görsel boyanmaz. */
-  const STAGE_EXT_PROFILE = {
-    "spin:duo": { profile: "ledlit-duo" },
-    "spin:quad-cube": { profile: "ledlit-qc" },
-    "spin:nexus": { profile: "plain" },
-    "real/oslo-real": { profile: "masked", mask: "masks/ext-lounge" },
-    "real/milano-hero-alt": { profile: "masked", mask: "masks/ext-quadcube2" },
-    // Dubai (solo) ve Tokyo Plus (duo-plus) spin seti olmayan, tek statik dış
-    // fotoğraf gösteren modeller — genişletilmiş palet renklerinin bu modellerde
-    // de canvas boyama ile uygulanabilmesi (ve seçiciden gizlenmemesi) için profil.
-    // Dubai gövdesi bej/inci; Tokyo Plus, Duo ile aynı LED'li kabin.
-    "real/dubai-real": { profile: "masked", mask: "masks/ext-oslo" },
-    // Eskiden maskesiz "ledlit-duo" (salt L/S eşiği) kullanıyordu — koltuk/ekran
-    // görseldeki gövdeyle benzer ton aralığına düştüğü için dış renk değiştirince
-    // koltuk/ekran da boyanıyordu (bkz. kullanıcı bug raporu). Artık koltuk+ekranı
-    // açıkça dışlayan maskeyle (masks/ext-duo) sınırlı — Tokyo ve Tokyo Plus ikisi
-    // de bu fotoğrafı paylaşıyor.
-    "real/tokyo-real": { profile: "masked", mask: "masks/ext-duo" }
-  };
-
-  /* Interior + koltuk renklendirmesi (maske-tabanlı v10 yolu) */
-  const STAGE_TINT_MASKS = {
-    "real/oslo-lounge-interior": "masks/int-lounge",
-    "real/milano-interior": "masks/int-quadcube",
-    "real/geneva-interior": "masks/int-nexus",
-    "real/oslo-interior": "masks/int-oslo",
-    "real/duo-interior": "masks/int-duo"
-  };
-  const STAGE_SEAT_MASKS = {
-    "real/oslo-lounge-interior": "masks/seat-lounge",
-    "real/milano-interior": "masks/seat-quadcube",
-    "real/geneva-interior": "masks/seat-nexus",
-    "real/oslo-interior": "masks/seat-oslo",
-    "real/duo-interior": "masks/seat-duo"
-  };
-
-  /* v11: recolor motor tutkalı — işlenmiş kare cache'i + async üretim.
+  /* v12: recolor motor tutkalı — işlenmiş kare cache'i + async üretim.
      İşlenmiş kareler data: URL olarak cache'lenir (CSP blob: engeller, data: izinli). */
   const recolorCache = new Map(); // ck -> dataUrl | "pending"
-  const RECOLOR_CACHE_MAX = 40;
+  const RECOLOR_CACHE_MAX = 12;
   let recolorOK = null;
 
   function recolorSupported() {
@@ -1489,29 +1411,26 @@
   }
 
   /* Aktif sahne hedefi için boya spec'i: null = ham görsel (işlem yok).
-     Dış görünüm: v11 akıllı profil ({ext, profile, mask, paint}).
-     İç görünüm: v10 maske yolu ({passes}). */
+     Dış, iç ve koltuk aynı kesin maske motorundan geçer. */
   function stagePaintSpec(target) {
     if (!recolorSupported()) return null;
     const dict = TRANSLATIONS[currentLang];
     if (!dict || !dict.configurator) return null;
-    const maskKey = target.key.indexOf("spin/") === 0 ? `spin:${configState.model}` : target.key;
+    const manifest = STAGE_RENDER_MANIFEST[configState.model];
+    if (!manifest) return null;
     if (!target.interior) {
       const p = paintSpecFor(EXT_PAINT_MODE, configState.color, dict.configurator.colors);
       if (!p) return null;
-      p.body = true; // dış gövde boyaması: açık renkler net okunsun (bkz. paintPixel)
-      const prof = STAGE_EXT_PROFILE[maskKey];
-      if (!prof) return null;
-      return { ext: true, profile: prof.profile, mask: prof.mask || null, paint: p, tag: `v11b-${prof.profile}-${configState.color}` };
+      if (!manifest.exteriorMask) return null;
+      p.body = true;
+      return { passes: [{ mask: manifest.exteriorMask, paint: p, id: `ext-${configState.color}` }], tag: `v12-${configState.model}-${configState.color}` };
     }
-    const bodyMask = STAGE_TINT_MASKS[maskKey];
     const passes = [];
     const p = paintSpecFor(INT_PAINT_MODE, configState.interiorColor, dict.configurator.interior_colors);
-    if (p && bodyMask) passes.push({ mask: bodyMask, paint: p, id: configState.interiorColor });
+    if (p && manifest.interiorMask) passes.push({ mask: manifest.interiorMask, paint: p, id: configState.interiorColor });
     if (configState.seatTouched) {
-      const seatMask = STAGE_SEAT_MASKS[target.key];
       const sp = paintSpecFor(SEAT_PAINT_MODE, configState.seatColor, dict.configurator.seat_colors);
-      if (sp && seatMask) passes.push({ mask: seatMask, paint: sp, id: "seat-" + configState.seatColor });
+      if (sp && manifest.seatMask) passes.push({ mask: manifest.seatMask, paint: sp, id: "seat-" + configState.seatColor });
     }
     if (!passes.length) return null;
     return { passes, tag: passes.map((x) => x.id).join("+") };
@@ -1536,32 +1455,16 @@
       const ctx = c.getContext("2d", { willReadFrequently: true });
       ctx.drawImage(base, 0, 0);
       const imgData = ctx.getImageData(0, 0, w, h);
-      if (spec.ext) {
-        // v11: akıllı profil — ağırlık haritası + ağırlıklı boya
-        let maskData = null;
-        if (spec.mask) {
-          const mi = await loadRecolorImg(`/assets/img/models/${spec.mask}.png?v=32`);
-          const mc = document.createElement("canvas");
-          mc.width = w; mc.height = h;
-          const mctx = mc.getContext("2d", { willReadFrequently: true });
-          mctx.drawImage(mi, 0, 0, w, h);
-          maskData = mctx.getImageData(0, 0, w, h).data;
-        }
-        const weight = window.HBOTRecolor.computeWeight(imgData.data, spec.profile, maskData);
-        window.HBOTRecolor.applyWeightedPaint(imgData.data, weight, spec.paint);
-      } else {
-        // v10 yolu: maske-tabanlı passes (interior + koltuk)
-        const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=32`)));
-        const mc = document.createElement("canvas");
-        mc.width = w; mc.height = h;
-        const mctx = mc.getContext("2d", { willReadFrequently: true });
-        const passes = spec.passes.map((p, i) => {
-          mctx.clearRect(0, 0, w, h);
-          mctx.drawImage(masks[i], 0, 0, w, h);
-          return { data: mctx.getImageData(0, 0, w, h).data, paint: p.paint };
-        });
-        window.HBOTRecolor.recolorImageData(imgData.data, passes);
-      }
+      const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=33`)));
+      const mc = document.createElement("canvas");
+      mc.width = w; mc.height = h;
+      const mctx = mc.getContext("2d", { willReadFrequently: true });
+      const passes = spec.passes.map((p, i) => {
+        mctx.clearRect(0, 0, w, h);
+        mctx.drawImage(masks[i], 0, 0, w, h);
+        return { data: mctx.getImageData(0, 0, w, h).data, paint: p.paint };
+      });
+      window.HBOTRecolor.recolorImageData(imgData.data, passes);
       ctx.putImageData(imgData, 0, 0);
       try {
         const dataUrl = c.toDataURL("image/webp", 0.92);
@@ -1578,6 +1481,7 @@
       }
     } catch (e) {
       recolorCache.delete(ck);
+      console.warn("HBOT configurator recolor failed", imgKey, e && e.message ? e.message : e);
     }
   }
 
@@ -1680,19 +1584,10 @@
         configState.tierIndex = 0;
         const seatTiers = SEAT_TIERS[configState.model];
         configState.nexusSeats = seatTiers ? seatTiers[0].seats : NEXUS_BASE_SEATS;
+        resetModelVisualState();
         if (!styleAllowedFor(configState.model, configState.chamberStyle)) configState.chamberStyle = "solid";
-        if (!colorWorksFor(configState.model, configState.color)) configState.color = "pearl-white";
         const dict = TRANSLATIONS[currentLang];
-        renderConfigModels(dict);
-        renderConfigStyles(dict);
-        renderConfigColors(dict);
-        renderConfigInteriorColors(dict);
-        renderConfigPressure(dict);
-        renderNexusSeatSection(dict);
-        renderConfigSeatColors(dict);
-        renderConfigAddons(dict);
-        renderConfigSummary(dict);
-        updateConfigStage(dict);
+        renderAllConfigControls(dict);
       });
     });
   }
@@ -2605,17 +2500,8 @@
 
       configuratorPreselected = true;
     }
-    renderUsageType(dict);
     renderGuideModal(dict);
-    renderConfigModels(dict);
-    renderConfigStyles(dict);
-    renderConfigColors(dict);
-    renderConfigInteriorColors(dict);
-    renderConfigSeatColors(dict);
-    renderConfigPressure(dict);
-    renderNexusSeatSection(dict);
-    renderConfigAddons(dict);
-    renderConfigSummary(dict);
+    renderAllConfigControls(dict);
 
     if (!configuratorInitialized) {
       initSeatStepper();

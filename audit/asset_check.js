@@ -15,7 +15,13 @@ function exists(rel) {
 }
 
 // --- 1) HTML references ---
-const htmlFiles = fs.readdirSync(siteDir).filter((f) => f.endsWith(".html"));
+function walkHtml(dir, prefix = "") {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const rel = path.join(prefix, entry.name);
+    return entry.isDirectory() ? walkHtml(path.join(dir, entry.name), rel) : (entry.name.endsWith(".html") ? [rel] : []);
+  });
+}
+const htmlFiles = walkHtml(siteDir);
 const attrRe = /(?:src|href|action)="([^"]+)"/g;
 htmlFiles.forEach((f) => {
   const html = fs.readFileSync(path.join(siteDir, f), "utf8");
@@ -46,34 +52,22 @@ maskMaps.forEach((s) => {
   if (!exists(rel)) problems.push(`[JS] missing mask: ${rel}`);
 });
 
-// STAGE_TINT_MASKS/STAGE_SEAT_MASKS keys must each exist as real/spin imagery
-const tintMaskBlock = mainSrc.match(/const STAGE_TINT_MASKS = \{([\s\S]*?)\};/)[1];
-[...tintMaskBlock.matchAll(/"([^"]+)":/g)].forEach((m) => {
-  const key = m[1];
-  if (key.startsWith("spin:")) {
-    const model = key.slice(5);
-    for (let i = 0; i < 24; i++) {
-      const rel = `assets/img/models/spin/${model}/frame-${String(i).padStart(2, "0")}.webp`;
-      if (!exists(rel)) problems.push(`[SPIN] missing frame: ${rel}`);
-    }
-  } else {
-    const rel = `assets/img/models/${key}.webp`;
-    if (!exists(rel)) problems.push(`[TINT-KEY] no image for mask key: ${rel}`);
+// v12 manifest: all six models must use their own canonical base and masks.
+const manifestExpectations = {
+  "solo-lounge": ["real/oslo-real", "masks/ext-lounge"],
+  solo: ["real/dubai-real", "masks/ext-oslo"],
+  duo: ["real/tokyo-real", "masks/ext-duo"],
+  "duo-plus": ["real/tokyo-plus-real", "masks/ext-duo"],
+  "quad-cube": ["real/milano-config", "masks/ext-quadcube2"],
+  nexus: ["real/geneva-real", null]
+};
+Object.entries(manifestExpectations).forEach(([model, [image, mask]]) => {
+  if (!mainSrc.includes(`${model.includes("-") ? `"${model}"` : model}: { exterior: "${image}"`)) {
+    problems.push(`[MANIFEST] ${model}: canonical exterior is missing or changed`);
   }
+  if (mask && !mainSrc.includes(`exteriorMask: "${mask}"`)) problems.push(`[MANIFEST] ${model}: exterior mask is missing`);
 });
-
-// spin sets for SPIN_MODELS=true
-const spinModelsBlock = mainSrc.match(/const SPIN_MODELS = \{([^}]*)\}/)[1];
-[...spinModelsBlock.matchAll(/"?([a-z-]+)"?:\s*true/g)].forEach((m) => {
-  const model = m[1];
-  let count = 0;
-  for (let i = 0; i < 24; i++) {
-    const rel = `assets/img/models/spin/${model}/frame-${String(i).padStart(2, "0")}.webp`;
-    if (exists(rel)) count++;
-  }
-  console.log(`spin set ${model}: ${count}/24 frames`);
-  if (count !== 24) problems.push(`[SPIN] ${model}: only ${count}/24 frames`);
-});
+if (!mainSrc.includes("const SPIN_MODELS = Object.freeze({});")) problems.push("[CONFIG] configurator spin recolor must remain disabled");
 
 // other assets in JS: logo-full.png, logo-header.png
 ["assets/img/logo-full.png", "assets/img/logo-header.png", "assets/img/logo-icon.png",

@@ -578,7 +578,7 @@ const TRANSLATIONS = {
         { id: "turkuaz", name: "Turkuaz", hex: "#68A5A5" },
         { id: "nane-yesili", name: "Nane Yeşili", hex: "#9CA99D" },
         { id: "tas-grisi", name: "Taş Grisi", hex: "#828C84" },
-        { id: "fildisi", name: "Fildişi", hex: "#AE9783" }
+        { id: "fildisi", name: "Fildişi", hex: "#E3D5BD" }
       ],
       interior_colors: [
         { id: "cream", name: "Krem", hex: "#E8DCC8" },
@@ -1577,7 +1577,7 @@ const TRANSLATIONS = {
         { id: "turkuaz", name: "Turquoise", hex: "#68A5A5" },
         { id: "nane-yesili", name: "Mint Green", hex: "#9CA99D" },
         { id: "tas-grisi", name: "Stone Gray", hex: "#828C84" },
-        { id: "fildisi", name: "Ivory", hex: "#AE9783" }
+        { id: "fildisi", name: "Ivory", hex: "#E3D5BD" }
       ],
       interior_colors: [
         { id: "cream", name: "Cream", hex: "#E8DCC8" },
@@ -2576,7 +2576,7 @@ const TRANSLATIONS = {
         { id: "turkuaz", name: "Бирюзовый", hex: "#68A5A5" },
         { id: "nane-yesili", name: "Мятный зелёный", hex: "#9CA99D" },
         { id: "tas-grisi", name: "Каменно-серый", hex: "#828C84" },
-        { id: "fildisi", name: "Слоновая кость", hex: "#AE9783" }
+        { id: "fildisi", name: "Слоновая кость", hex: "#E3D5BD" }
       ],
       interior_colors: [
         { id: "cream", name: "Кремовый", hex: "#E8DCC8" },
@@ -3565,7 +3565,7 @@ const TRANSLATIONS = {
         { id: "turkuaz", name: "فيروزي", hex: "#68A5A5" },
         { id: "nane-yesili", name: "أخضر نعناعي", hex: "#9CA99D" },
         { id: "tas-grisi", name: "رمادي حجري", hex: "#828C84" },
-        { id: "fildisi", name: "عاجي", hex: "#AE9783" }
+        { id: "fildisi", name: "عاجي", hex: "#E3D5BD" }
       ],
       interior_colors: [
         { id: "cream", name: "كريمي", hex: "#E8DCC8" },
@@ -4563,7 +4563,7 @@ const TRANSLATIONS = {
         { id: "turkuaz", name: "Turquesa", hex: "#68A5A5" },
         { id: "nane-yesili", name: "Verde Menta", hex: "#9CA99D" },
         { id: "tas-grisi", name: "Gris Piedra", hex: "#828C84" },
-        { id: "fildisi", name: "Marfil", hex: "#AE9783" }
+        { id: "fildisi", name: "Marfil", hex: "#E3D5BD" }
       ],
       interior_colors: [
         { id: "cream", name: "Crema", hex: "#E8DCC8" },
@@ -5561,7 +5561,7 @@ const TRANSLATIONS = {
         { id: "turkuaz", name: "Turquesa", hex: "#68A5A5" },
         { id: "nane-yesili", name: "Verde Menta", hex: "#9CA99D" },
         { id: "tas-grisi", name: "Cinza Pedra", hex: "#828C84" },
-        { id: "fildisi", name: "Marfim", hex: "#AE9783" }
+        { id: "fildisi", name: "Marfim", hex: "#E3D5BD" }
       ],
       interior_colors: [
         { id: "cream", name: "Creme", hex: "#E8DCC8" },
@@ -6559,7 +6559,7 @@ const TRANSLATIONS = {
         { id: "turkuaz", name: "Türkis", hex: "#68A5A5" },
         { id: "nane-yesili", name: "Mintgrün", hex: "#9CA99D" },
         { id: "tas-grisi", name: "Steingrau", hex: "#828C84" },
-        { id: "fildisi", name: "Elfenbein", hex: "#AE9783" }
+        { id: "fildisi", name: "Elfenbein", hex: "#E3D5BD" }
       ],
       interior_colors: [
         { id: "cream", name: "Creme", hex: "#E8DCC8" },
