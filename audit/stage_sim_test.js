@@ -21,7 +21,7 @@ function makeEl(id) {
 const stage = makeEl("config-stage");
 const imgA = makeEl("stage-img-a");
 const imgB = makeEl("stage-img-b");
-imgA.src = "/assets/img/models/renders/solo-lounge/pearl-white.webp?v=6";
+imgA.src = "/assets/img/models/real/oslo-real.webp?v=5";
 imgB.src = imgA.src;
 imgA.classList.add("is-active");
 const ids = {
@@ -79,7 +79,7 @@ check("üç yükleme isteği oluştu", pending.length === 3, String(pending.leng
 pending[2].resolve(); // latest first
 pending[1].resolve(); // stale Dubai afterwards
 pending[0].resolve(); // stale Oslo last
-check("en son seçim Tokyo statik renderı olarak kalır", activeImage().src.includes("renders/duo/pearl-white.webp"), activeImage().src);
+check("en son seçim Tokyo olarak kalır", activeImage().src.includes("real/tokyo-real.webp"), activeImage().src);
 check("yalnız bir sahne katmanı aktif", imgA.classList.contains("is-active") !== imgB.classList.contains("is-active"));
 
 console.log("\n== 2. Görünüm normalizasyonu ==");
@@ -88,7 +88,7 @@ M.configState.stageView = "interior";
 M.updateConfigStage(dict);
 pending.at(-1).resolve();
 check("Oslo iç görünüm talebi dış görünüme normalize edilir", M.configState.stageView === "exterior");
-check("Oslo kendi statik renderını gösterir", activeImage().src.includes("renders/solo-lounge/pearl-white.webp"), activeImage().src);
+check("Oslo kendi görselini gösterir", activeImage().src.includes("real/oslo-real.webp"), activeImage().src);
 
 M.configState.model = "nexus";
 M.configState.stageView = "exterior";

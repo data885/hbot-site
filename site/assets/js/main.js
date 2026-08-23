@@ -4,7 +4,7 @@
   // Ürün fotoğrafları (assets/img/models/**) değiştiğinde bump edilir — tarayıcı
   // eski görseli sonsuza dek cache'lemesin diye (bkz. kullanıcı raporu: yeni Dubai
   // fotoğrafı ve watermark temizliği canlıda "değişmemiş" görünüyordu, sebep buydu).
-  const IMG_V = "6";
+  const IMG_V = "5";
   const LANG_KEY = "hbot_lang";
   const SUPPORTED = ["en", "tr", "ar", "ru", "es", "pt", "de"];
   const PDF_DATE_LOCALE = { tr: "tr-TR", en: "en-GB", ru: "ru-RU", ar: "ar", es: "es-ES", pt: "pt-PT", de: "de-DE" };
@@ -804,10 +804,36 @@
   const REAL_STAGE = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.exterior]));
   const REAL_INTERIOR = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.interior]));
 
-  /* Dış renkler çalışma anında canvas ile üretilmez. Beş modelin 15 rengi,
-     kendi gerçek ürün fotoğrafı ve birebir maskesi kullanılarak önceden WebP
-     olarak hazırlanır. Böylece tüm tarayıcılar aynı, doğrulanmış kareyi gösterir. */
-  const STATIC_EXTERIOR_MODELS = new Set(["solo-lounge", "solo", "duo", "duo-plus", "quad-cube"]);
+  /* v13: Gerçek renk fotoğrafları geri bağlandı. v12 TÜM renkleri (hazır profesyonel
+     render'ı olanlar dahil) tek baz fotoğraf üzerine canvas ile boyuyordu — koyu baz
+     fotoğraflı modellerde (Oslo, Tokyo) boya cam/pencereye taşıyor, İnci Beyazı
+     tebeşir gibi görünüyordu (bkz. kullanıcı raporu: "boyama mahvoldu"). Kural:
+     seçilen renk için profesyonel ürün fotoğrafı varsa HER ZAMAN o gösterilir;
+     canvas boyama yalnızca fotoğrafı olmayan renklerde ve boyanın iyi sonuç verdiği
+     doğrulanmış açık-zeminli modellerde (EXT_PAINTABLE_MODELS) devrededir.
+     Kusurlu fotoğraflar bilinçli olarak liste DIŞI: milan-teal (hayalet/çift
+     görüntü artefaktı), duo gece-laciverti/bordo/zumrut (yarı saydam camsı render). */
+  const PAINTED_COLOR_KEYS = ["mat-siyah", "sampanya", "bronz", "grafit", "antrasit", "gece-laciverti", "bordo", "zumrut"];
+  function paintedStageMap(prefix, excluded) {
+    const out = {};
+    PAINTED_COLOR_KEYS.forEach((id) => { if (!excluded || !excluded.includes(id)) out[id] = `real/${prefix}-${id}`; });
+    return out;
+  }
+  const REAL_STAGE_BY_COLOR = {
+    "solo-lounge": paintedStageMap("lounge"),
+    solo: Object.assign({ bej: "real/dubai-real", "adacayi-yesili": "real/oslo-green" }, paintedStageMap("oslo")),
+    duo: paintedStageMap("duo", ["gece-laciverti", "bordo", "zumrut"]),
+    "duo-plus": paintedStageMap("duo", ["gece-laciverti", "bordo", "zumrut"]),
+    "quad-cube": Object.assign({
+      "nane-yesili": "real/milan-mint",
+      "tas-grisi": "real/milan-sage",
+      fildisi: "real/milano-real"
+    }, paintedStageMap("milan")),
+    nexus: {}
+  };
+  function realStageForColor(modelId, colorId) {
+    return (REAL_STAGE_BY_COLOR[modelId] || {})[colorId] || null;
+  }
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
   const SPIN_FRAME_COUNT = 24;
@@ -856,9 +882,10 @@
     if (configState.stageView === "interior") {
       return { key: manifest.interior, filter: "none", interior: true, photo: true };
     }
-    if (STATIC_EXTERIOR_MODELS.has(configState.model)) {
-      return { key: `renders/${configState.model}/${configState.color}`, filter: "none", interior: false, photo: true, staticRender: true };
-    }
+    // v13: seçilen rengin profesyonel ürün fotoğrafı varsa her zaman o gösterilir;
+    // canvas boyama yalnızca fotoğrafsız renklerin fallback'i (bkz. stagePaintSpec).
+    const realColor = realStageForColor(configState.model, configState.color);
+    if (realColor) return { key: realColor, filter: "none", interior: false, photo: true, realColor: true };
     return { key: manifest.exterior, filter: "none", interior: false, photo: true };
   }
 
@@ -1358,10 +1385,12 @@
      CSS tint ve HSL-eşik tahmini terk edildi. Hangi pikselin boyanacağı her
      modelin kendi maskesinde açıkça tanımlıdır; cam, ekran, koltuk ve arka plan
      renk seçiminden etkilenmez. Boya MODU tabloları:
-     "paint" = hue+sat uygula | "metal" = düşük sat + lightness ölçekle.
-     Bu tablo statik dış render üreticisinin renk davranışını da tanımlar. */
+     "paint" = hue+sat uygula | "metal" = düşük sat + lightness ölçekle
+     null = varsayılan renk, ham kare gösterilir. */
   const EXT_PAINT_MODE = {
-    // İnci Beyazı için dosya önceden üretilir; tarayıcıda yeniden boyanmaz.
+    // pearl-white = null: varsayılan renk asla boyanmaz, modelin kendi ham baz
+    // fotoğrafı gösterilir (v12 pearl'ü de boyuyordu — koyu fotoğraflarda tebeşir
+    // gibi bir hayalet üretiyordu).
     "pearl-white": null,
     "sampanya": "paint", "bronz": "paint",
     "grafit": "metal", "antrasit": "metal", "mat-siyah": "metal",
@@ -1370,12 +1399,24 @@
     "nane-yesili": "paint", "fildisi": "paint", "tas-grisi": "metal"
   };
 
-  /* Statik render setinde beş modelin 15 rengi eksiksizdir. Geneva medikal
-     görünümü nedeniyle İnci Beyazı'na kilitli kalır. */
+  /* Canvas boyamanın profesyonel sonuç verdiği DOĞRULANMIŞ modeller: yalnızca
+     açık/nötr baz fotoğraflılar (Dubai; 4 boyalı rengi tek tek görsel doğrulandı).
+     Koyu baz fotoğraflar (Oslo, Tokyo) boyayı tutmuyor; Milano'nun maskesi ise
+     baz fotoğrafına (milano-config) oturmuyor — o modellerde fotoğrafı olmayan
+     renkler seçiciden gizlenir, palet %100 gerçek fotoğraftan oluşur. */
+  const EXT_PAINTABLE_MODELS = { solo: true };
+
+  /* Bir renk, seçili modelde gerçekten profesyonel bir görselle sonuçlanıyor mu?
+     Evet ise seçicide gösterilir: ya gerçek ürün fotoğrafı vardır ya da model,
+     boyaması doğrulanmış (EXT_PAINTABLE_MODELS) bir modeldir. */
   function colorWorksFor(modelId, colorId) {
     if (!(colorId in EXT_PAINT_MODE)) return false;
-    if (modelId === "nexus") return colorId === "pearl-white";
-    return STATIC_EXTERIOR_MODELS.has(modelId);
+    if (colorId === "pearl-white") return true;
+    if (modelId === "nexus") return false; // Geneva pearl'e kilitli (medikal standart)
+    if (realStageForColor(modelId, colorId)) return true;
+    if (!EXT_PAINT_MODE[colorId]) return false;
+    const manifest = STAGE_RENDER_MANIFEST[modelId];
+    return !!(manifest && manifest.exteriorMask && EXT_PAINTABLE_MODELS[modelId]);
   }
   const INT_PAINT_MODE = {
     "cream": null,
@@ -1415,14 +1456,21 @@
   /* Aktif sahne hedefi için boya spec'i: null = ham görsel (işlem yok).
      Dış, iç ve koltuk aynı kesin maske motorundan geçer. */
   function stagePaintSpec(target) {
-    if (target.staticRender) return null;
     if (!recolorSupported()) return null;
     const dict = TRANSLATIONS[currentLang];
     if (!dict || !dict.configurator) return null;
     const manifest = STAGE_RENDER_MANIFEST[configState.model];
     if (!manifest) return null;
     if (!target.interior) {
-      return null;
+      // v13: gerçek ürün fotoğrafı gösteriliyorsa ASLA boyama yapılmaz; boya sadece
+      // fotoğrafsız renklerde ve doğrulanmış modellerde (EXT_PAINTABLE_MODELS) çalışır.
+      if (target.realColor) return null;
+      if (!EXT_PAINTABLE_MODELS[configState.model]) return null;
+      const p = paintSpecFor(EXT_PAINT_MODE, configState.color, dict.configurator.colors);
+      if (!p) return null;
+      if (!manifest.exteriorMask) return null;
+      p.body = true;
+      return { passes: [{ mask: manifest.exteriorMask, paint: p, id: `ext-${configState.color}` }], tag: `v13-${configState.model}-${configState.color}` };
     }
     const passes = [];
     const p = paintSpecFor(INT_PAINT_MODE, configState.interiorColor, dict.configurator.interior_colors);
