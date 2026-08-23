@@ -803,6 +803,37 @@
   });
   const REAL_STAGE = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.exterior]));
   const REAL_INTERIOR = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.interior]));
+
+  /* v13: Gerçek renk fotoğrafları geri bağlandı. v12 TÜM renkleri (hazır profesyonel
+     render'ı olanlar dahil) tek baz fotoğraf üzerine canvas ile boyuyordu — koyu baz
+     fotoğraflı modellerde (Oslo, Tokyo) boya cam/pencereye taşıyor, İnci Beyazı
+     tebeşir gibi görünüyordu (bkz. kullanıcı raporu: "boyama mahvoldu"). Kural:
+     seçilen renk için profesyonel ürün fotoğrafı varsa HER ZAMAN o gösterilir;
+     canvas boyama yalnızca fotoğrafı olmayan renklerde ve boyanın iyi sonuç verdiği
+     doğrulanmış açık-zeminli modellerde (EXT_PAINTABLE_MODELS) devrededir.
+     Kusurlu fotoğraflar bilinçli olarak liste DIŞI: milan-teal (hayalet/çift
+     görüntü artefaktı), duo gece-laciverti/bordo/zumrut (yarı saydam camsı render). */
+  const PAINTED_COLOR_KEYS = ["mat-siyah", "sampanya", "bronz", "grafit", "antrasit", "gece-laciverti", "bordo", "zumrut"];
+  function paintedStageMap(prefix, excluded) {
+    const out = {};
+    PAINTED_COLOR_KEYS.forEach((id) => { if (!excluded || !excluded.includes(id)) out[id] = `real/${prefix}-${id}`; });
+    return out;
+  }
+  const REAL_STAGE_BY_COLOR = {
+    "solo-lounge": paintedStageMap("lounge"),
+    solo: Object.assign({ bej: "real/dubai-real", "adacayi-yesili": "real/oslo-green" }, paintedStageMap("oslo")),
+    duo: paintedStageMap("duo", ["gece-laciverti", "bordo", "zumrut"]),
+    "duo-plus": paintedStageMap("duo", ["gece-laciverti", "bordo", "zumrut"]),
+    "quad-cube": Object.assign({
+      "nane-yesili": "real/milan-mint",
+      "tas-grisi": "real/milan-sage",
+      fildisi: "real/milano-real"
+    }, paintedStageMap("milan")),
+    nexus: {}
+  };
+  function realStageForColor(modelId, colorId) {
+    return (REAL_STAGE_BY_COLOR[modelId] || {})[colorId] || null;
+  }
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
   const SPIN_FRAME_COUNT = 24;
@@ -851,6 +882,10 @@
     if (configState.stageView === "interior") {
       return { key: manifest.interior, filter: "none", interior: true, photo: true };
     }
+    // v13: seçilen rengin profesyonel ürün fotoğrafı varsa her zaman o gösterilir;
+    // canvas boyama yalnızca fotoğrafsız renklerin fallback'i (bkz. stagePaintSpec).
+    const realColor = realStageForColor(configState.model, configState.color);
+    if (realColor) return { key: realColor, filter: "none", interior: false, photo: true, realColor: true };
     return { key: manifest.exterior, filter: "none", interior: false, photo: true };
   }
 
@@ -1353,27 +1388,35 @@
      "paint" = hue+sat uygula | "metal" = düşük sat + lightness ölçekle
      null = varsayılan renk, ham kare gösterilir. */
   const EXT_PAINT_MODE = {
-    "pearl-white": "paint",
+    // pearl-white = null: varsayılan renk asla boyanmaz, modelin kendi ham baz
+    // fotoğrafı gösterilir (v12 pearl'ü de boyuyordu — koyu fotoğraflarda tebeşir
+    // gibi bir hayalet üretiyordu).
+    "pearl-white": null,
     "sampanya": "paint", "bronz": "paint",
     "grafit": "metal", "antrasit": "metal", "mat-siyah": "metal",
     "gece-laciverti": "paint", "bordo": "paint", "zumrut": "paint",
-    // Genişletilmiş palet: bu 6 renk için yalnızca birkaç modele özel gerçek
-    // fotoğraf vardı (oslo: bej+adaçayı, milan: turkuaz/nane/taş-grisi/fildişi),
-    // diğer modellerde colorWorksFor false döndürüp SEÇİCİDEN GİZLİYORDU — palet
-    // modelden modele 9–13 renk arası tutarsız görünüyordu. Canvas boyama moduna
-    // ekleyerek (profili olan her modelde) tüm 15 rengi seçilebilir yapıyoruz;
-    // gerçek fotoğrafı olan model+renk kombinasyonları yine gerçek fotoğrafı
-    // kullanır (currentStageTarget önce onu kontrol eder).
     "bej": "paint", "adacayi-yesili": "paint", "turkuaz": "paint",
     "nane-yesili": "paint", "fildisi": "paint", "tas-grisi": "metal"
   };
 
-  /* Bir renk, seçili modelde gerçekten görsel değişikliğe yol açıyor mu? */
+  /* Canvas boyamanın profesyonel sonuç verdiği DOĞRULANMIŞ modeller: yalnızca
+     açık/nötr baz fotoğraflılar (Dubai; 4 boyalı rengi tek tek görsel doğrulandı).
+     Koyu baz fotoğraflar (Oslo, Tokyo) boyayı tutmuyor; Milano'nun maskesi ise
+     baz fotoğrafına (milano-config) oturmuyor — o modellerde fotoğrafı olmayan
+     renkler seçiciden gizlenir, palet %100 gerçek fotoğraftan oluşur. */
+  const EXT_PAINTABLE_MODELS = { solo: true };
+
+  /* Bir renk, seçili modelde gerçekten profesyonel bir görselle sonuçlanıyor mu?
+     Evet ise seçicide gösterilir: ya gerçek ürün fotoğrafı vardır ya da model,
+     boyaması doğrulanmış (EXT_PAINTABLE_MODELS) bir modeldir. */
   function colorWorksFor(modelId, colorId) {
     if (!(colorId in EXT_PAINT_MODE)) return false;
-    if (modelId === "nexus") return colorId === "pearl-white";
+    if (colorId === "pearl-white") return true;
+    if (modelId === "nexus") return false; // Geneva pearl'e kilitli (medikal standart)
+    if (realStageForColor(modelId, colorId)) return true;
+    if (!EXT_PAINT_MODE[colorId]) return false;
     const manifest = STAGE_RENDER_MANIFEST[modelId];
-    return !!(manifest && manifest.exterior && manifest.exteriorMask);
+    return !!(manifest && manifest.exteriorMask && EXT_PAINTABLE_MODELS[modelId]);
   }
   const INT_PAINT_MODE = {
     "cream": null,
@@ -1419,11 +1462,15 @@
     const manifest = STAGE_RENDER_MANIFEST[configState.model];
     if (!manifest) return null;
     if (!target.interior) {
+      // v13: gerçek ürün fotoğrafı gösteriliyorsa ASLA boyama yapılmaz; boya sadece
+      // fotoğrafsız renklerde ve doğrulanmış modellerde (EXT_PAINTABLE_MODELS) çalışır.
+      if (target.realColor) return null;
+      if (!EXT_PAINTABLE_MODELS[configState.model]) return null;
       const p = paintSpecFor(EXT_PAINT_MODE, configState.color, dict.configurator.colors);
       if (!p) return null;
       if (!manifest.exteriorMask) return null;
       p.body = true;
-      return { passes: [{ mask: manifest.exteriorMask, paint: p, id: `ext-${configState.color}` }], tag: `v12-${configState.model}-${configState.color}` };
+      return { passes: [{ mask: manifest.exteriorMask, paint: p, id: `ext-${configState.color}` }], tag: `v13-${configState.model}-${configState.color}` };
     }
     const passes = [];
     const p = paintSpecFor(INT_PAINT_MODE, configState.interiorColor, dict.configurator.interior_colors);
