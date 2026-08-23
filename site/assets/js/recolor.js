@@ -112,7 +112,15 @@
     // İç/koltuk boyamada (body değil) l0 varyansı eskiden %30 korunuyordu — koyu,
     // yüksek doygunluklu hedeflerde (bordo, lacivert) bu neredeyse hiç gölge/parlaklık
     // dokusu bırakmıyor, düz "plastik boya" görünümü veriyordu. %50'ye çıkarıldı.
-    const lightLift = paint.body ? 0.15 : (paint.metal ? 0.35 : 0.50);
+    // Ama bu %50 lift, parlak/cilalı yüzeylerde (ör. Dubai/Tokyo'nun cilalı kapitone
+    // iç paneli, l0~0.8) KOYU hedef renklerle (lacivert, bordo, siyah) birleşince ters
+    // yönde bozuluyordu: sonuç, seçilen koyu tondan çok daha AÇIK ve doygun (neon mavi/
+    // fuşya) çıkıyor, "amatörce" görünüyordu (bkz. kullanıcı raporu). darkRetain, hedef
+    // rengin kendi parlaklığı düşük olduğunda lift'i orantılı olarak kısar — koyu
+    // hedefler parlak zeminde bile koyu kalır, orta/açık hedefler (konyak, kum beji)
+    // tam lift'i korur; gövde (body=true, dış renk) modu hiç etkilenmez.
+    const darkRetain = paint.body ? 1 : clamp01(0.35 + paint.l * 1.3);
+    const lightLift = (paint.body ? 0.15 : (paint.metal ? 0.35 : 0.50)) * darkRetain;
     const hiSat = paint.body ? 0.20 : 0.40;
     if (paint.metal) {
       l = clamp01(paint.l + (l0 - 0.55) * lightLift + 0.05 * hi);
