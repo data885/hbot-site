@@ -30,9 +30,6 @@ ROOT_PAGES = [
     "model-oslo.html", "model-dubai.html", "model-tokyo.html",
     "model-tokyo-plus.html", "model-milano.html", "model-geneva.html",
 ]
-# Legacy model-apex-*.html URLs are excluded — they're now redirect-only
-# stub pages (see tools/build_legacy_redirects.py), not real templates.
-
 NON_TR_LANGS = ["en", "ru", "ar", "es", "pt", "de"]
 ALL_LANGS = ["tr"] + NON_TR_LANGS
 DIR_MAP = {"ar": "rtl"}  # everything else ltr (translations.js also carries `dir`, used as source of truth)

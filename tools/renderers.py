@@ -218,14 +218,14 @@ class Renderers:
         if not tech:
             return "", ""
         cmp_ = tech["comparison"]
-        head = f'<tr><th>{cmp_["col_feature"]}</th><th>{cmp_["col_competitor"]}</th><th>{cmp_["col_apex"]}</th></tr>'
+        head = f'<tr><th>{cmp_["col_feature"]}</th><th>{cmp_["col_competitor"]}</th><th>{cmp_["col_city"]}</th></tr>'
         body_parts = []
         for row in cmp_["rows"]:
             body_parts.append(f'''
       <tr>
         <td>{row["feature"]}</td>
         <td><span class="compare-cell-no">{row["competitor"]}</span></td>
-        <td><span class="compare-cell-yes">{row["apex"]}</span></td>
+        <td><span class="compare-cell-yes">{row["city"]}</span></td>
       </tr>
     ''')
         return head, "".join(body_parts)

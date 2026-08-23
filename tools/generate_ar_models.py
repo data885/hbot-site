@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generates to-scale capsule-shaped placeholder 3D models (GLB for
 Android Scene Viewer / inline 3D view, USDZ for iOS AR Quick Look) for
-each Apex model, used by the configurator's "View in Your Space (AR)"
+each HBOT City Tech model, used by the configurator's "View in Your Space (AR)"
 button.
 
 IMPORTANT — what this is and isn't:

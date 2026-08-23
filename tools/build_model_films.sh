@@ -60,18 +60,18 @@ REAL="$ROOT/site/assets/img/models/real"
 MODELS="$ROOT/video-production/models"
 
 build_film "oslo" "OSLO" "PRIVATE HORIZONTAL COMFORT" "DESIGNED FOR PERSONAL WELLNESS" "ONE-PERSON HORIZONTAL CHAMBER" \
-  "$REAL/apex-lounge-real.webp" "$REAL/lounge-antrasit.webp" "$REAL/lounge-bronz.webp" "$REAL/lounge-sampanya.webp" "$REAL/apex-lounge-ic.webp"
+  "$REAL/oslo-real.webp" "$REAL/lounge-antrasit.webp" "$REAL/lounge-bronz.webp" "$REAL/lounge-sampanya.webp" "$REAL/oslo-lounge-interior.webp"
 
 build_film "tokyo" "TOKYO" "A COMFORTABLE SHARED EXPERIENCE" "DESIGNED FOR TWO" "TWO-PERSON SEATED CHAMBER" \
-  "$REAL/apex-duo-real.webp" "$REAL/duo-antrasit.webp" "$REAL/duo-bronz.webp" "$REAL/duo-sampanya.webp" "$REAL/duo-interior.webp"
+  "$REAL/tokyo-real.webp" "$REAL/duo-antrasit.webp" "$REAL/duo-bronz.webp" "$REAL/duo-sampanya.webp" "$REAL/duo-interior.webp"
 
 build_film "tokyo-plus" "TOKYO PLUS" "SCALABLE FOR PROFESSIONAL SETTINGS" "CLINICS · HOSPITALS · WELLNESS CENTRES" "TWO TO FOUR SEATS" \
   "$MODELS/tokyo-plus.jpeg" "$MODELS/tokyo-plus.webp" "$REAL/duo-antrasit.webp" "$REAL/duo-gece-laciverti.webp" "$REAL/duo-interior.webp"
 
 build_film "milano" "MILANO" "SPACIOUS PREMIUM WELLNESS" "DESIGNED FOR PROFESSIONAL CENTRES" "FOUR-PERSON INTERIOR" \
-  "$REAL/milan-cream.webp" "$REAL/milan-antrasit.webp" "$REAL/milan-bronz.webp" "$REAL/milan-sage.webp" "$REAL/apex-quad-cube-ic.webp"
+  "$REAL/milan-cream.webp" "$REAL/milan-antrasit.webp" "$REAL/milan-bronz.webp" "$REAL/milan-sage.webp" "$REAL/milano-interior.webp"
 
 build_film "geneva" "GENEVA" "DEVELOPED FOR HOSPITALS AND MEDICAL CENTRES" "MODULAR CLINICAL WORKFLOW" "SIX OR MORE PEOPLE" \
-  "$REAL/apex-nexus.webp" "$REAL/nexus-antrasit.webp" "$REAL/nexus-bronz.webp" "$REAL/nexus-sampanya.webp" "$REAL/apex-nexus-ic.webp"
+  "$REAL/geneva-real.webp" "$REAL/nexus-antrasit.webp" "$REAL/nexus-bronz.webp" "$REAL/nexus-sampanya.webp" "$REAL/geneva-interior.webp"
 
 echo "All model films rendered."

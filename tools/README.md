@@ -73,10 +73,5 @@ find site -name "*.html" ! -name "tint_preview.html" -exec sed -i '' -E \
   pricing tool itself (model/pressure/addon/color pickers, summary,
   pricing) stays 100% client-JS-driven, same as it must be for an
   interactive tool. Not a gap — a deliberate scope boundary.
-- The old `model-apex-*.html` URLs (and the even-older `model-apex-quad.html`
-  double-alias) are excluded from language-subfolder generation and from
-  hreflang — they're now redirect-only stubs (see
-  `build_legacy_redirects.py`) pointing at the current `model-{city}.html`
-  URLs, with their own canonical/meta-refresh handling.
 - `404.html` is excluded from language-subfolder generation and hreflang
   (it already has its own canonical/`noindex` handling).

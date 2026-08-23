@@ -17,7 +17,7 @@ LOGO="$ROOT/site/assets/img/logo-full.png"
 FACTORY="/Users/murselalkan/Desktop/İHRACAT CRM/HBOT CHAMBER TECH/Hbot Chamber Tech video.mp4"
 OUTPUT="$ROOT/site/assets/video/geneva-model-film-en.mp4"
 
-for file in "$PRESENTER" "$NARRATION" "$REAL/apex-nexus.webp" "$REAL/apex-nexus-ic.webp" \
+for file in "$PRESENTER" "$NARRATION" "$REAL/geneva-real.webp" "$REAL/geneva-interior.webp" \
   "$REAL/nexus-bronz.webp" "$CITY_SCREEN" "$CONFIG_SCREEN" "$LOGO" "$FACTORY"; do
   [[ -f "$file" ]] || { echo "Missing source: $file" >&2; exit 1; }
 done
@@ -50,8 +50,8 @@ filter="[0:v]trim=duration=5,setpts=PTS-STARTPTS,scale=1280:720,setsar=1,fps=30,
 
 "$FFMPEG" -hide_banner -loglevel warning -y \
   -i "$PRESENTER" \
-  -loop 1 -i "$REAL/apex-nexus.webp" \
-  -loop 1 -i "$REAL/apex-nexus-ic.webp" \
+  -loop 1 -i "$REAL/geneva-real.webp" \
+  -loop 1 -i "$REAL/geneva-interior.webp" \
   -loop 1 -i "$CITY_SCREEN" \
   -loop 1 -i "$REAL/nexus-bronz.webp" \
   -loop 1 -i "$CONFIG_SCREEN" \

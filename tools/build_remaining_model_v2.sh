@@ -51,11 +51,11 @@ V2="$ROOT/video-production/model-films-v2"
 MODELS="$ROOT/video-production/models"
 
 build_model "oslo" "OSLO" "PRIVATE HORIZONTAL COMFORT" "ONE-PERSON LOUNGE · PERSONAL WELLNESS" \
-  "$REAL/apex-lounge-real.webp" "$REAL/apex-lounge-ic.webp" "$REAL/lounge-bronz.webp" \
+  "$REAL/oslo-real.webp" "$REAL/oslo-lounge-interior.webp" "$REAL/lounge-bronz.webp" \
   "$V2/oslo-config-en.png" "$ROOT/video-production/model-films/oslo-model-film-en.mp3" "1.0"
 
 build_model "tokyo" "TOKYO" "A COMFORTABLE SHARED EXPERIENCE" "TWO-PERSON SEATED CHAMBER" \
-  "$REAL/apex-duo-real.webp" "$REAL/duo-interior.webp" "$REAL/duo-bronz.webp" \
+  "$REAL/tokyo-real.webp" "$REAL/duo-interior.webp" "$REAL/duo-bronz.webp" \
   "$V2/tokyo-config-en.png" "$ROOT/video-production/model-films/tokyo-model-film-en.mp3" "1.0"
 
 build_model "tokyo-plus" "TOKYO PLUS" "SCALABLE FOR PROFESSIONAL SETTINGS" "TWO TO FOUR SEATS · CLINICS · WELLNESS CENTRES" \
@@ -63,7 +63,7 @@ build_model "tokyo-plus" "TOKYO PLUS" "SCALABLE FOR PROFESSIONAL SETTINGS" "TWO 
   "$V2/tokyo-plus-config-en.png" "$ROOT/video-production/model-films/tokyo-plus-model-film-en.mp3" "1.0"
 
 build_model "milano" "MILANO" "PREMIUM MULTI-PERSON WELLNESS" "FOUR-PERSON INTERIOR · PROFESSIONAL CENTRES" \
-  "$REAL/milan-cream.webp" "$REAL/apex-quad-cube-ic.webp" "$REAL/milan-bronz.webp" \
+  "$REAL/milan-cream.webp" "$REAL/milano-interior.webp" "$REAL/milan-bronz.webp" \
   "$V2/milano-config-en.png" "$ROOT/video-production/model-films/milano-model-film-en.mp3" "1.0"
 
 build_model "dubai" "DUBAI" "PRIVATE WELLNESS, DESIGNED AROUND YOU" "PREMIUM SOFA · TV · PERSONALISED FINISHES" \

@@ -68,7 +68,12 @@
   const PROFILES = {
     "plain":      { lLo: 0.25, lHi: 0.35, satLo: 0.20, satHi: 0.32, cool: 1.0, seat: null },
     "ledlit-duo": { lLo: 0.30, lHi: 0.42, satLo: 0.45, satHi: 0.75, cool: 0.25, seat: [0.34, 0.55] },
-    "ledlit-qc":  { lLo: 0.38, lHi: 0.46, satLo: 0.50, satHi: 0.80, cool: 1.0, seat: null },
+    // lLo eskiden 0.38'di: Milano'nun sağ panelindeki doğal ışık gradyanı, bu dar
+    // eşiğin altına/üstüne dalgalanarak boyanan/boyanmayan piksel karışımı (lekeli,
+    // "amatörce" leke/sıyrık görünümü) yaratıyordu (bkz. kullanıcı raporu). 0.26'ya
+    // düşürmek paneli düzgün ve bütün boyuyor; LED şeridi ve iç mekanın yüksek
+    // doygunluklu turuncu döşemesi satLo/satHi bandı sayesinde yine korunuyor.
+    "ledlit-qc":  { lLo: 0.26, lHi: 0.46, satLo: 0.50, satHi: 0.80, cool: 1.0, seat: null },
     "masked":     { lLo: 0.25, lHi: 0.33, satLo: 0.45, satHi: 0.75, cool: 0.25, seat: null }
   };
 

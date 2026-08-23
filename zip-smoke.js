@@ -21,8 +21,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const pages = [
     ["/", "ana sayfa"],
     ["/konfigurator.html?model=quad-cube", "konfigurator quad-cube"],
-    ["/model-apex-quad-cube.html", "model quad-cube"],
-    ["/model-apex-nexus.html", "model nexus"],
+    ["/model-milano.html", "model Milano"],
+    ["/model-geneva.html", "model Geneva"],
   ];
   for (const [path, label] of pages) {
     const p = await browser.newPage();

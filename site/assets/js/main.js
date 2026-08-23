@@ -466,13 +466,13 @@
     if (!c || !dict.technology) return;
     const cmp = dict.technology.comparison;
     if (head) {
-      head.innerHTML = `<tr><th>${cmp.col_feature}</th><th>${cmp.col_competitor}</th><th>${cmp.col_apex}</th></tr>`;
+      head.innerHTML = `<tr><th>${cmp.col_feature}</th><th>${cmp.col_competitor}</th><th>${cmp.col_city}</th></tr>`;
     }
     c.innerHTML = cmp.rows.map((row) => `
       <tr>
         <td>${row.feature}</td>
         <td><span class="compare-cell-no">${row.competitor}</span></td>
-        <td><span class="compare-cell-yes">${row.apex}</span></td>
+        <td><span class="compare-cell-yes">${row.city}</span></td>
       </tr>
     `).join("");
   }
