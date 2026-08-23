@@ -12,7 +12,7 @@ from build_i18n_pages import ROOT_PAGES, ALL_LANGS, resolve_url, BASE_URL
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_DIR = os.path.join(REPO_ROOT, "site")
 
-LASTMOD = "2026-08-12"
+LASTMOD = "2026-08-23"
 
 PRIORITY = {
     "index.html": "1.0",
@@ -28,6 +28,7 @@ PRIORITY = {
     "hbot-nedir.html": "0.7",
     "blog.html": "0.6",
     "iletisim.html": "0.6",
+    "guvenlik-uygunluk.html": "0.8",
 }
 CHANGEFREQ = {
     "index.html": "weekly", "modeller.html": "weekly", "konfigurator.html": "weekly",

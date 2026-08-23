@@ -1447,3 +1447,52 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   .brand-film-badge { inset-inline-start: 12px; top: 12px; }
   .brand-film-actions .btn { width: 100%; justify-content: center; }
 }
+
+/* Heritage story: factual chronology, not a claimed HBOT founding date. */
+.section--heritage {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(24, 198, 216, 0.12), transparent 34%),
+    linear-gradient(145deg, #f7fbfc 0%, #eef5f6 100%);
+  color: #10202a;
+}
+.heritage-layout { display: grid; gap: 34px; }
+.heritage-intro { max-width: 850px; }
+.heritage-intro h2 { margin: 10px 0 18px; font-size: clamp(34px, 5vw, 58px); line-height: 1.04; letter-spacing: -0.04em; }
+.heritage-intro p { max-width: 760px; color: #4d626d; font-size: 17px; line-height: 1.75; }
+.heritage-timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.heritage-step {
+  position: relative;
+  min-height: 260px;
+  padding: 28px;
+  border: 1px solid rgba(13, 51, 67, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 45px rgba(24, 57, 70, 0.08);
+}
+.heritage-step::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; border-radius: 24px 0 0 24px; background: linear-gradient(#14bfd3, #1471d3); }
+.heritage-year { display: inline-block; margin-bottom: 32px; color: #0b8095; font-size: 13px; font-weight: 900; letter-spacing: 0.16em; }
+.heritage-step h3 { margin: 0 0 12px; font-size: 21px; }
+.heritage-step p { margin: 0; color: #566b75; line-height: 1.65; }
+.heritage-proof { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 28px 30px; border: 1px solid rgba(12, 94, 112, 0.16); border-radius: 22px; background: #fff; }
+.heritage-proof p { margin: 8px 0 0; max-width: 760px; color: #526872; }
+.heritage-partner { display: grid; grid-template-columns: minmax(190px, 0.32fr) 1fr; gap: 24px; padding: 22px 26px; border-radius: 18px; background: #102530; color: rgba(255,255,255,.82); }
+.heritage-partner span { color: #66dbe7; font-size: 11px; font-weight: 900; letter-spacing: .14em; }
+.heritage-partner p { margin: 0; line-height: 1.65; }
+
+/* Trust centre */
+.trust-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.trust-card { padding: 28px; border: 1px solid rgba(255,255,255,.1); border-radius: 22px; background: rgba(255,255,255,.045); }
+.trust-card h2, .trust-card h3 { margin-top: 0; color: #fff; }
+.trust-card p, .trust-card li { color: rgba(255,255,255,.72); line-height: 1.7; }
+.trust-card ul { margin: 18px 0 0; padding-inline-start: 20px; }
+.trust-card--wide { grid-column: 1 / -1; }
+.trust-models { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.trust-models span { padding: 9px 13px; border: 1px solid rgba(102,219,231,.3); border-radius: 999px; color: #dffcff; background: rgba(44,171,190,.09); font-weight: 700; }
+.trust-source { font-size: 13px; }
+.trust-source a { color: #66dbe7; text-decoration: underline; }
+@media (max-width: 860px) {
+  .heritage-timeline, .trust-grid { grid-template-columns: 1fr; }
+  .trust-card--wide { grid-column: auto; }
+  .heritage-proof { align-items: flex-start; flex-direction: column; }
+  .heritage-partner { grid-template-columns: 1fr; }
+}

@@ -19,11 +19,11 @@
   function realRender(model, color) {
     var family = { "solo-lounge": "lounge", solo: "oslo", duo: "duo", "duo-plus": "duo", "quad-cube": "milan", nexus: "nexus" }[model];
     var approved = ["mat-siyah", "sampanya", "bronz", "grafit", "antrasit", "gece-laciverti", "bordo", "zumrut"];
-    if (model === "solo" && color === "bej") return "/assets/img/models/real/oslo-beige.webp";
+    if (model === "solo" && color === "bej") return "/assets/img/models/real/dubai-real.webp";
     if (model === "solo" && color === "adacayi-yesili") return "/assets/img/models/real/oslo-green.webp";
     if (model === "quad-cube") { var special = { turkuaz: "milan-teal", "nane-yesili": "milan-mint", "tas-grisi": "milan-sage", fildisi: "milan-cream" }; if (special[color]) return "/assets/img/models/real/" + special[color] + ".webp"; }
     if (family && approved.indexOf(color) !== -1) return "/assets/img/models/real/" + family + "-" + color + ".webp";
-    var fallback = { "solo-lounge": "apex-lounge-real", solo: "oslo-beige", duo: "apex-duo-real", "duo-plus": "apex-duo-real", "quad-cube": "apex-quad-cube", nexus: "apex-nexus" };
+    var fallback = { "solo-lounge": "oslo-real", solo: "dubai-real", duo: "tokyo-real", "duo-plus": "tokyo-plus-real", "quad-cube": "milano-config", nexus: "geneva-real" };
     return "/assets/img/models/real/" + fallback[model] + ".webp";
   }
 

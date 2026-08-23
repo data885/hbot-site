@@ -4,7 +4,7 @@
   // Ürün fotoğrafları (assets/img/models/**) değiştiğinde bump edilir — tarayıcı
   // eski görseli sonsuza dek cache'lemesin diye (bkz. kullanıcı raporu: yeni Dubai
   // fotoğrafı ve watermark temizliği canlıda "değişmemiş" görünüyordu, sebep buydu).
-  const IMG_V = "4";
+  const IMG_V = "5";
   const LANG_KEY = "hbot_lang";
   const SUPPORTED = ["en", "tr", "ar", "ru", "es", "pt", "de"];
   const PDF_DATE_LOCALE = { tr: "tr-TR", en: "en-GB", ru: "ru-RU", ar: "ar", es: "es-ES", pt: "pt-PT", de: "de-DE" };
@@ -65,14 +65,13 @@
     whatsapp: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.96 9.96 0 0 0 4.79 1.22h.01c5.52 0 10-4.48 10-10s-4.48-9.84-10.01-9.84Zm0 18.16h-.01a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.28 8.28 0 0 1-1.27-4.4c0-4.59 3.74-8.32 8.33-8.32 2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 0 1 2.44 5.89c0 4.59-3.75 8.26-8.34 8.26Zm4.56-6.2c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.78.98-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23a7.5 7.5 0 0 1-1.38-1.72c-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29Z"/></svg>'
   };
 
-  const MODEL_ICON = { "solo-lounge": "lying", solo: "oneSeat", duo: "twoSeat", "quad-cube": "fourSeat", nexus: "nexus" };
+  const MODEL_ICON = { "solo-lounge": "lying", solo: "oneSeat", duo: "twoSeat", "duo-plus": "fourSeat", "quad-cube": "fourSeat", nexus: "nexus" };
   const ADDON_ICON = { massage: "massage", leather: "leather", entertainment: "entertainment", finish: "finish", uvc: "uvc", "backup-o2": "backupO2", warranty: "warranty", install: "install" };
   const PILLAR_ICON = { connect: "connect", os: "os", ai: "ai", sync: "sync", guard: "guard", battery: "battery", pulseOx: "pulseOx" };
 
-  /* Apex Duo Plus konfigüratöre özel kurumsal varyanttır — kendi tanıtım
-     sayfası/nav girişi yok, bu yüzden site geneli MODEL_ORDER'a dahil değil. */
-  const MODEL_ORDER = ["solo-lounge", "solo", "duo", "quad-cube", "nexus"];
-  const MODEL_KEY_MAP = { "solo-lounge": "soloLounge", solo: "solo", duo: "duo", "quad-cube": "quadCube", nexus: "nexus" };
+  /* Tokyo Plus ayrı ürün sayfası, teknik kapsamı ve filmi olan altıncı modeldir. */
+  const MODEL_ORDER = ["solo-lounge", "solo", "duo", "duo-plus", "quad-cube", "nexus"];
+  const MODEL_KEY_MAP = { "solo-lounge": "soloLounge", solo: "solo", duo: "duo", "duo-plus": "duoPlus", "quad-cube": "quadCube", nexus: "nexus" };
   const MODEL_PAGES = {
     "solo-lounge": "model-oslo.html",
     solo: "model-dubai.html",
@@ -85,7 +84,7 @@
   /* ---------------- Pricing data (EUR bazlı — illustrative, update with real figures) ---------------- */
   /* v13 fiyat revizyonu: Ev tipi modellerde basınç sadece 1.5/2.0 ATA (ücretsiz);
      kurumsal modellerde 2.5/3.0/6.0 ATA (ücretsiz) — basınç kademelerine artık fiyat
-     eklenmiyor. Apex Quad kaldırıldı (Quad-Cube tek 4 kişilik model). */
+     eklenmiyor. Eski Quad varyantı kaldırıldı (Quad-Cube tek 4 kişilik model). */
   const MODEL_PRICING = {
     "solo-lounge": { base: 29900, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
     solo: { base: 69900, tiers: [{ ata: "1.5 ATA", price: 0 }, { ata: "2.0 ATA", price: 0 }] },
@@ -235,7 +234,7 @@
     const map = {
       home: "home", technology: "technology", "models-overview": "models",
       "model-solo-lounge": "soloLounge", "model-solo": "solo", "model-duo": "duo", "model-duo-plus": "duoPlus", "model-quad": "quad", "model-quad-cube": "quadCube", "model-nexus": "nexus",
-      "hbot-info": "hbotInfo", blog: "blog", configurator: "configurator", contact: "contact"
+      "hbot-info": "hbotInfo", "trust-safety": "trustSafety", blog: "blog", configurator: "configurator", contact: "contact"
     };
     return map[page] || "home";
   }
@@ -248,7 +247,7 @@
       container.innerHTML = MODEL_ORDER.map((key) => {
         const label = menu[MODEL_KEY_MAP[key]];
         const media = isNavPanel
-          ? `<img class="nav-model-thumb" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp?v=${IMG_V}" alt="" loading="lazy">`
+          ? `<img class="nav-model-thumb" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/oslo-real"}.webp?v=${IMG_V}" alt="" loading="lazy">`
           : `<span class="dropdown-link-icon">${ICONS[MODEL_ICON[key]]}</span>`;
         return `<a href="${MODEL_PAGES[key]}" class="dropdown-link" data-model-key="${key}">
           ${media}
@@ -274,7 +273,7 @@
       const s = short[mKey];
       return `
         <article class="sector-card">
-          <img class="sector-card-img" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/apex-lounge-real"}.webp?v=${IMG_V}" alt="${s.title}" loading="lazy">
+          <img class="sector-card-img" src="/assets/img/models/${MODEL_CARD_IMG[key] || "real/oslo-real"}.webp?v=${IMG_V}" alt="${s.title}" loading="lazy">
           <h3>${s.title}</h3>
           <span class="sector-tagline">${s.tagline}</span>
           <p>${s.desc}</p>
@@ -580,7 +579,7 @@
   }
 
   /* ---------------- Configurator ---------------- */
-  const REF_CODES = ["HBOT-REF-2026", "APEX-REF-2026", "ALMITA-2026"];
+  const REF_CODES = ["HBOT-REF-2026", "CITYTECH-2026", "ALMITA-2026"];
   const REF_DISCOUNT_PCT = 5;
   const CRM_ENDPOINT = "https://crmalmita.com/api/leads"; // public lead API yoksa sessiz fallback
   const configState = { usageType: "home", model: "solo-lounge", tierIndex: 0, addons: new Set(), nexusSeats: NEXUS_BASE_SEATS, color: "pearl-white", chamberStyle: "solid", interiorColor: "cream", seatColor: "konyak", seatTouched: false, stageView: "exterior", spinIdx: 0, discountPct: 0, refCode: "" };
@@ -596,28 +595,28 @@
      Renk seçimi: maskeli tint katmanı (STAGE_TINT_MASKS + multiply blend) kabin/döşeme/koltuk
      bölgesine uygulanır — sahne ve arka plan renklenmez; renk adı ayrıca özet panelinde gösterilir. */
   const REAL_STAGE = {
-    "solo-lounge": "real/apex-lounge-real",
-    solo: "real/oslo-beige",             // Artık tüm renkler icin REAL_STAGE_BY_COLOR altinda gercek fotograf var
-    duo: "real/apex-duo-real",
-    "duo-plus": "real/apex-duo-real",    // Duo Plus için ayrı fotoğraf yok — Duo görseli paylaşılır
-    "quad-cube": "real/apex-quad-cube",
-    nexus: "real/apex-nexus"
+    "solo-lounge": "real/oslo-real",
+    solo: "real/dubai-real",             // Artık tüm renkler icin REAL_STAGE_BY_COLOR altinda gercek fotograf var
+    duo: "real/tokyo-real",
+    "duo-plus": "real/tokyo-plus-real",
+    "quad-cube": "real/milano-config",
+    nexus: "real/geneva-real"
   };
   /* İç mekân: her modelin artık kendi gerçek iç fotoğrafı var. Duo/Duo Plus
      için ayrı bir iç çekim hiç yapılmamıştı — kod bu ikisini Milano'nun
      (Quad-Cube) 4 kişilik küp kabinine düşürüyordu, ki bu Duo'nun kendi 2
      kişilik pod gövdesiyle hiç uyuşmuyordu (dış görünüm sekmesinde doğru
-     pod'u, iç görünümde bambaşka bir kabini gösteriyordu). apex-duo-real.webp
+     pod'u, iç görünümde bambaşka bir kabini gösteriyordu). Tokyo dış fotoğrafının
      (dış görünüm fotoğrafı) aslında pencereden koltuğu net gösteriyor —
      o bölgeyi kırpıp Duo'nun kendi iç fotoğrafı (duo-interior.webp) olarak
      kullanıyoruz. */
   const REAL_INTERIOR = {
-    "solo-lounge": "real/apex-lounge-ic",
+    "solo-lounge": "real/oslo-lounge-interior",
     solo: "real/oslo-interior",
     duo: "real/duo-interior",
     "duo-plus": "real/duo-interior",
-    "quad-cube": "real/apex-quad-cube-ic",
-    nexus: "real/apex-nexus-ic"
+    "quad-cube": "real/milano-interior",
+    nexus: "real/geneva-interior"
   };
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
@@ -644,7 +643,7 @@
      Flip kararı asla img.src'den çıkarımlanmaz — spin momentum'u (setFrame, rAF) src'yi
      sürekli yeniden yazar; src karşılaştırmalı eski heuristic sahte flip'ler üretip
      iki katmanı üst üste bindiriyor / opacity'yi ters gösteriyordu. */
-  let stageCurrentKey = "real/apex-lounge-real";
+  let stageCurrentKey = "real/oslo-real";
   let stageCurrentSrc = "";
   /* Spin momentum'unu dışarıdan durdurma kancası — initSpin içinde atanır.
      Görsel hedefi değişirken (model/görünüm geçişi) yarım frame yazılmasını önler. */
@@ -664,14 +663,14 @@
   }
   const REAL_STAGE_BY_COLOR = {
     "solo-lounge": paintedStageMap("lounge"),
-    solo: Object.assign({ bej: "real/oslo-beige", "adacayi-yesili": "real/oslo-green" }, paintedStageMap("oslo")),
+    solo: Object.assign({ bej: "real/dubai-real", "adacayi-yesili": "real/oslo-green" }, paintedStageMap("oslo")),
     duo: paintedStageMap("duo"),
     "duo-plus": paintedStageMap("duo"),
     "quad-cube": Object.assign({
       turkuaz: "real/milan-teal",
       "nane-yesili": "real/milan-mint",
       "tas-grisi": "real/milan-sage",
-      fildisi: "real/milan-cream"
+      fildisi: "real/milano-real"
     }, paintedStageMap("milan")),
     nexus: paintedStageMap("nexus")
   };
@@ -725,7 +724,7 @@
     const realExt = REAL_STAGE[configState.model];
     if (realExt) return { key: realExt, filter: "none", interior: false, photo: true };
     /* Hiç görseli olmayan model kalmamalı — güvenlik ağı: Lounge gerçek fotoğrafı */
-    return { key: "real/apex-lounge-real", filter: "none", interior: false, photo: true };
+    return { key: "real/oslo-real", filter: "none", interior: false, photo: true };
   }
 
   function updateConfigStage(dict) {
@@ -1240,33 +1239,33 @@
     "spin:duo": { profile: "ledlit-duo" },
     "spin:quad-cube": { profile: "ledlit-qc" },
     "spin:nexus": { profile: "plain" },
-    "real/apex-lounge-real": { profile: "masked", mask: "masks/ext-lounge" },
-    "real/apex-quad-cube-2": { profile: "masked", mask: "masks/ext-quadcube2" },
+    "real/oslo-real": { profile: "masked", mask: "masks/ext-lounge" },
+    "real/milano-hero-alt": { profile: "masked", mask: "masks/ext-quadcube2" },
     // Dubai (solo) ve Tokyo Plus (duo-plus) spin seti olmayan, tek statik dış
     // fotoğraf gösteren modeller — genişletilmiş palet renklerinin bu modellerde
     // de canvas boyama ile uygulanabilmesi (ve seçiciden gizlenmemesi) için profil.
     // Dubai gövdesi bej/inci; Tokyo Plus, Duo ile aynı LED'li kabin.
-    "real/oslo-beige": { profile: "masked", mask: "masks/ext-oslo" },
+    "real/dubai-real": { profile: "masked", mask: "masks/ext-oslo" },
     // Eskiden maskesiz "ledlit-duo" (salt L/S eşiği) kullanıyordu — koltuk/ekran
     // görseldeki gövdeyle benzer ton aralığına düştüğü için dış renk değiştirince
     // koltuk/ekran da boyanıyordu (bkz. kullanıcı bug raporu). Artık koltuk+ekranı
     // açıkça dışlayan maskeyle (masks/ext-duo) sınırlı — Tokyo ve Tokyo Plus ikisi
     // de bu fotoğrafı paylaşıyor.
-    "real/apex-duo-real": { profile: "masked", mask: "masks/ext-duo" }
+    "real/tokyo-real": { profile: "masked", mask: "masks/ext-duo" }
   };
 
   /* Interior + koltuk renklendirmesi (maske-tabanlı v10 yolu) */
   const STAGE_TINT_MASKS = {
-    "real/apex-lounge-ic": "masks/int-lounge",
-    "real/apex-quad-cube-ic": "masks/int-quadcube",
-    "real/apex-nexus-ic": "masks/int-nexus",
+    "real/oslo-lounge-interior": "masks/int-lounge",
+    "real/milano-interior": "masks/int-quadcube",
+    "real/geneva-interior": "masks/int-nexus",
     "real/oslo-interior": "masks/int-oslo",
     "real/duo-interior": "masks/int-duo"
   };
   const STAGE_SEAT_MASKS = {
-    "real/apex-lounge-ic": "masks/seat-lounge",
-    "real/apex-quad-cube-ic": "masks/seat-quadcube",
-    "real/apex-nexus-ic": "masks/seat-nexus",
+    "real/oslo-lounge-interior": "masks/seat-lounge",
+    "real/milano-interior": "masks/seat-quadcube",
+    "real/geneva-interior": "masks/seat-nexus",
     "real/oslo-interior": "masks/seat-oslo",
     "real/duo-interior": "masks/seat-duo"
   };
@@ -1419,14 +1418,14 @@
     }
   }
 
-  /* Kart görselleri: model -> gerçek fotoğraf (Duo Plus'ın kendi fotosu yok — Duo görseli paylaşılır) */
+  /* Kart görselleri: model -> gerçek fotoğraf. Eski iç ürün kodları dış URL'lerde kullanılmaz. */
   const MODEL_CARD_IMG = {
-    "solo-lounge": "real/apex-lounge-real",
-    solo: "real/oslo-beige",
-    duo: "real/apex-duo-real",
-    "duo-plus": "real/apex-duo-real",
-    "quad-cube": "real/milan-cream",
-    nexus: "real/apex-nexus"
+    "solo-lounge": "real/oslo-real",
+    solo: "real/dubai-real",
+    duo: "real/tokyo-real",
+    "duo-plus": "real/tokyo-plus-real",
+    "quad-cube": "real/milano-real",
+    nexus: "real/geneva-real"
   };
 
   /* Koltuk rengi: fiyatsız görsel tercih — sahneyi değiştirmez, özette adıyla listelenir */
@@ -1474,7 +1473,7 @@
       return `
         <button type="button" class="config-model-card${selected}" data-model-id="${m.id}">
           <span class="config-check">${ICONS.check}</span>
-          <img class="model-card-img" src="/assets/img/models/${MODEL_CARD_IMG[m.id] || "real/apex-lounge-real"}.webp?v=${IMG_V}" alt="${m.name}" loading="lazy">
+          <img class="model-card-img" src="/assets/img/models/${MODEL_CARD_IMG[m.id] || "real/oslo-real"}.webp?v=${IMG_V}" alt="${m.name}" loading="lazy">
           <h4>${m.name}</h4>
           <div class="model-tagline">${m.tagline}</div>
           <div class="model-price">${priceLabel}</div>
@@ -2081,7 +2080,7 @@
   /* Yapılandırılan modelin gercek urun fotografi (dis gorunum) — proformada gosterilir.
      JPEG + kucultme: PDF/e-posta boyutunu makul tutmak icin (PNG ile 10+ MB'a cikiyordu). */
   function loadProductPhotoForPdf() {
-    const key = REAL_STAGE[configState.model] || "real/apex-lounge-real";
+    const key = REAL_STAGE[configState.model] || "real/oslo-real";
     return loadImageForPdf(`/assets/img/models/${key}.webp?v=${IMG_V}`, { format: "jpeg", maxDim: 900 });
   }
 

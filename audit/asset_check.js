@@ -10,7 +10,8 @@ const problems = [];
 const ok = [];
 
 function exists(rel) {
-  return fs.existsSync(path.join(siteDir, rel));
+  const clean = rel.split("#")[0].split("?")[0].replace(/^\//, "");
+  return fs.existsSync(path.join(siteDir, clean));
 }
 
 // --- 1) HTML references ---

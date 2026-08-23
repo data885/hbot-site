@@ -40,7 +40,7 @@ class Renderers:
         for key in self.model_order:
             label = menu[self.model_key_map[key]]
             if is_nav_panel:
-                img = self.model_card_img.get(key, "real/apex-lounge-real")
+                img = self.model_card_img.get(key, "real/oslo-real")
                 media = f'<img class="nav-model-thumb" src="/assets/img/models/{img}.webp" alt="" loading="lazy">'
             else:
                 media = f'<span class="dropdown-link-icon">{self.icon(self.model_icon[key])}</span>'
@@ -68,7 +68,7 @@ class Renderers:
         for key in self.model_order:
             m_key = self.model_key_map[key]
             s = short[m_key]
-            img = self.model_card_img.get(key, "real/apex-lounge-real")
+            img = self.model_card_img.get(key, "real/oslo-real")
             parts.append(f'''
         <article class="sector-card">
           <img class="sector-card-img" src="/assets/img/models/{img}.webp" alt="{esc_attr(s["title"])}" loading="lazy">

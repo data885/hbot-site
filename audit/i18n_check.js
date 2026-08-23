@@ -12,9 +12,10 @@ function flatKeys(obj, prefix, out) {
     const p = prefix ? prefix + "." + k : k;
     if (Array.isArray(v)) {
       out[p + "[]"] = "len:" + v.length;
-      // recurse into array objects for structure (ids)
+      // Recurse into object items and expose scalar indexes used by data-i18n.
       v.forEach((item, i) => {
         if (item && typeof item === "object") flatKeys(item, p + "." + i, out);
+        else out[p + "." + i] = typeof item;
       });
     } else if (v && typeof v === "object") {
       flatKeys(v, p, out);
@@ -49,7 +50,7 @@ if (!missingCount) console.log("\nAll languages have full key parity with TR.");
 // meta keys coverage
 langs.forEach((l) => {
   const meta = TRANSLATIONS[l].meta || {};
-  const need = ["home","technology","models","soloLounge","solo","duo","quad","quadCube","nexus","hbotInfo","blog","configurator","contact"];
+  const need = ["home","technology","models","soloLounge","solo","duo","duoPlus","quadCube","nexus","hbotInfo","trustSafety","blog","configurator","contact"];
   const miss = need.filter((k) => !meta[k]);
   if (miss.length) console.log(`[${l}] meta missing: ${miss.join(", ")}`);
 });
