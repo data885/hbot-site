@@ -784,6 +784,11 @@ body.indication-modal-open { overflow: hidden; }
   box-shadow: inset 0 0 0 3px rgba(255,255,255,0.5);
 }
 .config-color-swatch .swatch-name { font-size: 11.5px; font-weight: 700; color: var(--gray-700); text-align: center; line-height: 1.3; }
+.config-color-preview-note {
+  flex-basis: 100%; margin: 2px 0 0; padding: 10px 12px; border-radius: var(--radius-md);
+  background: rgba(0, 128, 208, .06); border: 1px solid rgba(0, 128, 208, .16);
+  color: var(--gray-600); font-size: 12px; line-height: 1.55;
+}
 .config-color-locked {
   display: flex; align-items: center; gap: 16px; background: var(--gray-050, #f6f8f9);
   border: 1px solid var(--gray-100); border-radius: var(--radius-md); padding: 16px 18px;
@@ -999,9 +1004,26 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   background: radial-gradient(ellipse 50% 100% at 50% 100%, rgba(31, 216, 198, 0.18), rgba(255, 255, 255, 0.04) 55%, transparent 75%);
 }
 .stage-model-name {
-  position: absolute; bottom: 12px; inset-inline: 0; text-align: center; pointer-events: none;
-  font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  position: absolute; bottom: 12px; inset-inline: 12px; pointer-events: none;
+  display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap;
+  color: rgba(255, 255, 255, .86);
+}
+.stage-model-label,
+.stage-finish-label {
+  display: inline-flex; align-items: center; min-height: 28px; padding: 5px 10px;
+  border: 1px solid rgba(255,255,255,.16); border-radius: 999px;
+  background: rgba(4, 11, 17, .68); backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0,0,0,.22);
+}
+.stage-model-label {
+  font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+}
+.stage-finish-label {
+  gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: .02em;
+}
+.stage-finish-dot {
+  width: 12px; height: 12px; flex: none; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.58); box-shadow: 0 0 0 2px rgba(0,0,0,.16);
 }
 /* İç mekan fotoğrafları tam kare: blend yok, cover */
 .stage-img--interior {

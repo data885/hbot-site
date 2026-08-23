@@ -7,6 +7,7 @@ function makeEl(id) {
   const classes = new Set();
   return {
     id, src: "", style: {}, hidden: false, textContent: "", innerHTML: "",
+    children: [], className: "", appendChild(child) { this.children.push(child); return child; },
     classList: {
       add: (...xs) => xs.forEach((x) => classes.add(x)),
       remove: (...xs) => xs.forEach((x) => classes.delete(x)),
@@ -31,7 +32,7 @@ const ids = {
 global.document = {
   getElementById: (id) => ids[id] || null,
   querySelectorAll: () => [], querySelector: () => null, addEventListener() {},
-  createElement: () => makeEl("canvas"),
+  createElement: () => makeEl("generated"), createTextNode: (text) => ({ textContent: text }),
   body: { getAttribute: () => "configurator", appendChild() {} },
   documentElement: { getAttribute: () => "tr" }
 };
@@ -101,6 +102,18 @@ console.log("\n== 3. Aynı hedefte gereksiz istek yok ==");
 const before = pending.length;
 M.updateConfigStage(dict);
 check("aynı src tekrar yüklenmez", pending.length === before, `${before} -> ${pending.length}`);
+
+console.log("\n== 4. Renk seçimi kanonik ürün fotoğrafını korur ==");
+M.configState.model = "solo";
+M.configState.stageView = "exterior";
+M.configState.color = "bordo";
+M.updateConfigStage(dict);
+pending.at(-1).resolve();
+const colorBefore = pending.length;
+M.configState.color = "zumrut";
+M.updateConfigStage(dict);
+check("renk değişimi yeni görsel isteği başlatmaz", pending.length === colorBefore, `${colorBefore} -> ${pending.length}`);
+check("Dubai kanonik fotoğrafı korunur", activeImage().src.includes("real/dubai-real.webp"), activeImage().src);
 
 if (failures) { console.log(`\n${failures} STAGE TESTİ BAŞARISIZ`); process.exit(1); }
 console.log("\nTüm stage yarış testleri geçti. ✔");

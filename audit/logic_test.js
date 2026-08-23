@@ -32,8 +32,8 @@ let src = fs.readFileSync(path.join(siteDir, "assets/js/main.js"), "utf8");
 src = src.replace(/\}\)\(\);\s*$/, `
   return { configState, MODEL_PRICING, SEAT_TIERS, ensureTierCompatible,
            currentStageTarget, normalizeConfigStageView, computeSubtotal, computeTotal,
-           SPIN_MODELS, STAGE_RENDER_MANIFEST, EXT_PAINT_MODE, INT_PAINT_MODE,
-           SEAT_PAINT_MODE, REAL_STAGE, REAL_INTERIOR, MODEL_CARD_IMG, REF_CODES,
+           SPIN_MODELS, STAGE_RENDER_MANIFEST, EXT_PAINT_MODE,
+           REAL_STAGE, REAL_INTERIOR, MODEL_CARD_IMG, REF_CODES,
            colorWorksFor };
 })();`);
 const M = new Function("return " + src)();
@@ -88,13 +88,17 @@ console.log("\n== 3. Renk paleti ve maske kapsamı ==");
 const tr = TRANSLATIONS.tr.configurator;
 const validMode = (v) => v === null || v === "paint" || v === "metal";
 check("15 dış rengin tamamı tanımlı", tr.colors.length === 15 && tr.colors.every((c) => validMode(M.EXT_PAINT_MODE[c.id])));
-check("İnci Beyazı görünür bir boya üretir", M.EXT_PAINT_MODE["pearl-white"] === "paint");
+check("İnci Beyazı tarayıcı boyaması kullanmaz", M.EXT_PAINT_MODE["pearl-white"] === null);
 check("Fildişi gerçek ivory tonunda", tr.colors.find((c) => c.id === "fildisi").hex === "#E3D5BD");
 check("tüm renk hex değerleri geçerli", [...tr.colors, ...tr.interior_colors, ...tr.seat_colors].every((c) => RC.hexToHsl(c.hex)));
 modelIds.filter((id) => id !== "nexus").forEach((id) => {
   check(`${id}: 15 dış rengin tamamı çalışır`, tr.colors.every((c) => M.colorWorksFor(id, c.id)));
 });
 check("Geneva yalnız İnci Beyazı", tr.colors.filter((c) => M.colorWorksFor("nexus", c.id)).map((c) => c.id).join(",") === "pearl-white");
+M.configState.model = "solo"; M.configState.stageView = "exterior";
+M.configState.color = "bordo"; const bordoTarget = M.currentStageTarget().key;
+M.configState.color = "zumrut"; const greenTarget = M.currentStageTarget().key;
+check("dış renk değişimi model fotoğrafını değiştirmez", bordoTarget === "real/dubai-real" && greenTarget === bordoTarget, `${bordoTarget} -> ${greenTarget}`);
 
 console.log("\n== 4. Renk motoru saf fonksiyonları ==");
 const blue = RC.hexToHsl("#172B4D");

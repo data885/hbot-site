@@ -124,6 +124,7 @@ for (const [model, [baseRel, interiorMaskRel, seatMaskRel]] of Object.entries(in
 
 const mainSource = await (await import("node:fs/promises")).readFile(path.join(root, "site/assets/js/main.js"), "utf8");
 assert(!mainSource.includes("REAL_STAGE_BY_COLOR"), "legacy cross-model REAL_STAGE_BY_COLOR is still present");
+assert(!mainSource.includes("startRecolorJob"), "runtime canvas recolor job is still present");
 assert(mainSource.includes('"duo-plus": { exterior: "real/tokyo-plus-real", exteriorMask: "masks/ext-duo"'), "Tokyo Plus manifest is missing");
 assert(mainSource.includes('const SPIN_MODELS = Object.freeze({});'), "configurator spin recolor is not disabled");
 

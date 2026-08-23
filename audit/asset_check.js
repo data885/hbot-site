@@ -68,6 +68,9 @@ Object.entries(manifestExpectations).forEach(([model, [image, mask]]) => {
   if (mask && !mainSrc.includes(`exteriorMask: "${mask}"`)) problems.push(`[MANIFEST] ${model}: exterior mask is missing`);
 });
 if (!mainSrc.includes("const SPIN_MODELS = Object.freeze({});")) problems.push("[CONFIG] configurator spin recolor must remain disabled");
+if (mainSrc.includes("REAL_STAGE_BY_COLOR") || mainSrc.includes("startRecolorJob")) {
+  problems.push("[CONFIG] runtime/cross-render color switching must remain disabled until approved CAD renders exist");
+}
 
 // other assets in JS: logo-full.png, logo-header.png
 ["assets/img/logo-full.png", "assets/img/logo-header.png", "assets/img/logo-icon.png",

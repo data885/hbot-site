@@ -804,36 +804,10 @@
   const REAL_STAGE = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.exterior]));
   const REAL_INTERIOR = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.interior]));
 
-  /* v13: Gerçek renk fotoğrafları geri bağlandı. v12 TÜM renkleri (hazır profesyonel
-     render'ı olanlar dahil) tek baz fotoğraf üzerine canvas ile boyuyordu — koyu baz
-     fotoğraflı modellerde (Oslo, Tokyo) boya cam/pencereye taşıyor, İnci Beyazı
-     tebeşir gibi görünüyordu (bkz. kullanıcı raporu: "boyama mahvoldu"). Kural:
-     seçilen renk için profesyonel ürün fotoğrafı varsa HER ZAMAN o gösterilir;
-     canvas boyama yalnızca fotoğrafı olmayan renklerde ve boyanın iyi sonuç verdiği
-     doğrulanmış açık-zeminli modellerde (EXT_PAINTABLE_MODELS) devrededir.
-     Kusurlu fotoğraflar bilinçli olarak liste DIŞI: milan-teal (hayalet/çift
-     görüntü artefaktı), duo gece-laciverti/bordo/zumrut (yarı saydam camsı render). */
-  const PAINTED_COLOR_KEYS = ["mat-siyah", "sampanya", "bronz", "grafit", "antrasit", "gece-laciverti", "bordo", "zumrut"];
-  function paintedStageMap(prefix, excluded) {
-    const out = {};
-    PAINTED_COLOR_KEYS.forEach((id) => { if (!excluded || !excluded.includes(id)) out[id] = `real/${prefix}-${id}`; });
-    return out;
-  }
-  const REAL_STAGE_BY_COLOR = {
-    "solo-lounge": paintedStageMap("lounge"),
-    solo: Object.assign({ bej: "real/dubai-real", "adacayi-yesili": "real/oslo-green" }, paintedStageMap("oslo")),
-    duo: paintedStageMap("duo", ["gece-laciverti", "bordo", "zumrut"]),
-    "duo-plus": paintedStageMap("duo", ["gece-laciverti", "bordo", "zumrut"]),
-    "quad-cube": Object.assign({
-      "nane-yesili": "real/milan-mint",
-      "tas-grisi": "real/milan-sage",
-      fildisi: "real/milano-real"
-    }, paintedStageMap("milan")),
-    nexus: {}
-  };
-  function realStageForColor(modelId, colorId) {
-    return (REAL_STAGE_BY_COLOR[modelId] || {})[colorId] || null;
-  }
+  /* Üretim CAD'lerinden alınmış, aynı kamera/ışıkta onaylı render seti gelene
+     kadar sahne yalnız modelin kanonik gerçek fotoğrafını gösterir. Renk seçimi
+     malzeme rozeti + özet + teklif verisi olarak tutulur; fotoğraf üzerinde
+     tarayıcı boyaması veya birbirinden farklı yapay renderlar kullanılmaz. */
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
   const SPIN_FRAME_COUNT = 24;
@@ -882,10 +856,6 @@
     if (configState.stageView === "interior") {
       return { key: manifest.interior, filter: "none", interior: true, photo: true };
     }
-    // v13: seçilen rengin profesyonel ürün fotoğrafı varsa her zaman o gösterilir;
-    // canvas boyama yalnızca fotoğrafsız renklerin fallback'i (bkz. stagePaintSpec).
-    const realColor = realStageForColor(configState.model, configState.color);
-    if (realColor) return { key: realColor, filter: "none", interior: false, photo: true, realColor: true };
     return { key: manifest.exterior, filter: "none", interior: false, photo: true };
   }
 
@@ -967,8 +937,25 @@
     if (nameEl && dict && dict.configurator) {
       const modelInfo = dict.configurator.models.find((m) => m.id === configState.model);
       const base = modelInfo ? modelInfo.name : "";
+      const colorList = configState.stageView === "interior" ? dict.configurator.interior_colors : dict.configurator.colors;
+      const colorId = configState.stageView === "interior" ? configState.interiorColor : configState.color;
+      const colorInfo = (colorList || []).find((c) => c.id === colorId);
       const viewLabel = configState.stageView === "interior" && dict.configurator.stage ? ` · ${dict.configurator.stage.view_interior}` : "";
-      nameEl.textContent = base + viewLabel;
+      nameEl.textContent = "";
+      const modelLabel = document.createElement("span");
+      modelLabel.className = "stage-model-label";
+      modelLabel.textContent = base + viewLabel;
+      nameEl.appendChild(modelLabel);
+      if (colorInfo) {
+        const finishLabel = document.createElement("span");
+        finishLabel.className = "stage-finish-label";
+        const dot = document.createElement("span");
+        dot.className = "stage-finish-dot";
+        dot.style.backgroundColor = colorInfo.hex;
+        finishLabel.appendChild(dot);
+        finishLabel.appendChild(document.createTextNode(colorInfo.name));
+        nameEl.appendChild(finishLabel);
+      }
     }
 
     // Oslo (solo-lounge): iç mekan fotoğrafı (aşırı geniş, mor LED'li soyut yakın
@@ -999,8 +986,6 @@
     const canSpin = spinAvailableFor() && configState.stageView === "exterior";
     stage.classList.toggle("spinnable", canSpin);
 
-    // Boya aktifse ve spin modeli gösteriliyorsa kalan kareleri boşta önceden işle
-    prewalkRecolor(target);
   }
 
   function initStageViewToggle() {
@@ -1342,6 +1327,12 @@
         updateConfigStage(dict);
       });
     });
+    if (dict.configurator.ext_color_preview_note) {
+      const note = document.createElement("p");
+      note.className = "config-color-preview-note";
+      note.textContent = dict.configurator.ext_color_preview_note;
+      c.appendChild(note);
+    }
   }
 
   function renderConfigInteriorColors(dict) {
@@ -1381,16 +1372,9 @@
     });
   }
 
-  /* v12: kesin maske tabanlı boya (canvas recolor, assets/js/recolor.js).
-     CSS tint ve HSL-eşik tahmini terk edildi. Hangi pikselin boyanacağı her
-     modelin kendi maskesinde açıkça tanımlıdır; cam, ekran, koltuk ve arka plan
-     renk seçiminden etkilenmez. Boya MODU tabloları:
-     "paint" = hue+sat uygula | "metal" = düşük sat + lightness ölçekle
-     null = varsayılan renk, ham kare gösterilir. */
+  /* Dış renk kimlikleri. Bunlar kabin fotoğrafına tarayıcıda uygulanmaz;
+     malzeme rozeti, özet, paylaşım linki ve teklif kaydında kullanılır. */
   const EXT_PAINT_MODE = {
-    // pearl-white = null: varsayılan renk asla boyanmaz, modelin kendi ham baz
-    // fotoğrafı gösterilir (v12 pearl'ü de boyuyordu — koyu fotoğraflarda tebeşir
-    // gibi bir hayalet üretiyordu).
     "pearl-white": null,
     "sampanya": "paint", "bronz": "paint",
     "grafit": "metal", "antrasit": "metal", "mat-siyah": "metal",
@@ -1399,167 +1383,16 @@
     "nane-yesili": "paint", "fildisi": "paint", "tas-grisi": "metal"
   };
 
-  /* Canvas boyamanın profesyonel sonuç verdiği DOĞRULANMIŞ modeller: yalnızca
-     açık/nötr baz fotoğraflılar (Dubai; 4 boyalı rengi tek tek görsel doğrulandı).
-     Koyu baz fotoğraflar (Oslo, Tokyo) boyayı tutmuyor; Milano'nun maskesi ise
-     baz fotoğrafına (milano-config) oturmuyor — o modellerde fotoğrafı olmayan
-     renkler seçiciden gizlenir, palet %100 gerçek fotoğraftan oluşur. */
-  const EXT_PAINTABLE_MODELS = { solo: true };
-
-  /* Bir renk, seçili modelde gerçekten profesyonel bir görselle sonuçlanıyor mu?
-     Evet ise seçicide gösterilir: ya gerçek ürün fotoğrafı vardır ya da model,
-     boyaması doğrulanmış (EXT_PAINTABLE_MODELS) bir modeldir. */
+  /* Beş özelleştirilebilir model bütün 15 finish seçeneğini kabul eder. Geneva
+     mevcut iş kuralı gereği İnci Beyazı'nda sabit kalır. */
   function colorWorksFor(modelId, colorId) {
     if (!(colorId in EXT_PAINT_MODE)) return false;
-    if (colorId === "pearl-white") return true;
-    if (modelId === "nexus") return false; // Geneva pearl'e kilitli (medikal standart)
-    if (realStageForColor(modelId, colorId)) return true;
-    if (!EXT_PAINT_MODE[colorId]) return false;
-    const manifest = STAGE_RENDER_MANIFEST[modelId];
-    return !!(manifest && manifest.exteriorMask && EXT_PAINTABLE_MODELS[modelId]);
+    if (modelId === "nexus") return colorId === "pearl-white";
+    return !!STAGE_RENDER_MANIFEST[modelId];
   }
-  const INT_PAINT_MODE = {
-    "cream": null,
-    "kum-beji": "paint", "konyak": "paint", "anthracite": "metal",
-    "burgundy": "paint", "navy": "paint"
-  };
-  const SEAT_PAINT_MODE = {
-    "konyak": "paint", "siyah": "metal", "lacivert": "paint",
-    "krem": "paint", "bordo": "paint", "gri": "metal"
-  };
-
-  /* v12: recolor motor tutkalı — işlenmiş kare cache'i + async üretim.
-     İşlenmiş kareler data: URL olarak cache'lenir (CSP blob: engeller, data: izinli). */
-  const recolorCache = new Map(); // ck -> dataUrl | "pending"
-  const RECOLOR_CACHE_MAX = 12;
-  let recolorOK = null;
-
-  function recolorSupported() {
-    if (recolorOK !== null) return recolorOK;
-    try {
-      const c = document.createElement("canvas");
-      recolorOK = !!(window.HBOTRecolor && c && c.getContext && c.getContext("2d"));
-    } catch (e) { recolorOK = false; }
-    return recolorOK;
-  }
-
-  function paintSpecFor(modeMap, colorId, colorsList) {
-    const mode = modeMap[colorId];
-    if (!mode || !colorsList) return null;
-    const col = colorsList.find((c) => c.id === colorId);
-    if (!col) return null;
-    const hsl = window.HBOTRecolor.hexToHsl(col.hex);
-    if (!hsl) return null;
-    return { h: hsl[0], s: hsl[1], l: hsl[2], metal: mode === "metal" };
-  }
-
-  /* Aktif sahne hedefi için boya spec'i: null = ham görsel (işlem yok).
-     Dış, iç ve koltuk aynı kesin maske motorundan geçer. */
-  function stagePaintSpec(target) {
-    if (!recolorSupported()) return null;
-    const dict = TRANSLATIONS[currentLang];
-    if (!dict || !dict.configurator) return null;
-    const manifest = STAGE_RENDER_MANIFEST[configState.model];
-    if (!manifest) return null;
-    if (!target.interior) {
-      // v13: gerçek ürün fotoğrafı gösteriliyorsa ASLA boyama yapılmaz; boya sadece
-      // fotoğrafsız renklerde ve doğrulanmış modellerde (EXT_PAINTABLE_MODELS) çalışır.
-      if (target.realColor) return null;
-      if (!EXT_PAINTABLE_MODELS[configState.model]) return null;
-      const p = paintSpecFor(EXT_PAINT_MODE, configState.color, dict.configurator.colors);
-      if (!p) return null;
-      if (!manifest.exteriorMask) return null;
-      p.body = true;
-      return { passes: [{ mask: manifest.exteriorMask, paint: p, id: `ext-${configState.color}` }], tag: `v13-${configState.model}-${configState.color}` };
-    }
-    const passes = [];
-    const p = paintSpecFor(INT_PAINT_MODE, configState.interiorColor, dict.configurator.interior_colors);
-    if (p && manifest.interiorMask) passes.push({ mask: manifest.interiorMask, paint: p, id: configState.interiorColor });
-    if (configState.seatTouched) {
-      const sp = paintSpecFor(SEAT_PAINT_MODE, configState.seatColor, dict.configurator.seat_colors);
-      if (sp && manifest.seatMask) passes.push({ mask: manifest.seatMask, paint: sp, id: "seat-" + configState.seatColor });
-    }
-    if (!passes.length) return null;
-    return { passes, tag: passes.map((x) => x.id).join("+") };
-  }
-
-  function loadRecolorImg(src) {
-    return new Promise((res, rej) => {
-      const im = new Image();
-      im.onload = () => res(im);
-      im.onerror = () => rej(new Error("img load: " + src));
-      im.src = src;
-    });
-  }
-
-  async function startRecolorJob(ck, imgKey, spec) {
-    try {
-      const base = await loadRecolorImg(`/assets/img/models/${imgKey}.webp?v=${IMG_V}`);
-      const w = base.naturalWidth, h = base.naturalHeight;
-      if (!w || !h) throw new Error("empty frame");
-      const c = document.createElement("canvas");
-      c.width = w; c.height = h;
-      const ctx = c.getContext("2d", { willReadFrequently: true });
-      ctx.drawImage(base, 0, 0);
-      const imgData = ctx.getImageData(0, 0, w, h);
-      const masks = await Promise.all(spec.passes.map((p) => loadRecolorImg(`/assets/img/models/${p.mask}.png?v=33`)));
-      const mc = document.createElement("canvas");
-      mc.width = w; mc.height = h;
-      const mctx = mc.getContext("2d", { willReadFrequently: true });
-      const passes = spec.passes.map((p, i) => {
-        mctx.clearRect(0, 0, w, h);
-        mctx.drawImage(masks[i], 0, 0, w, h);
-        return { data: mctx.getImageData(0, 0, w, h).data, paint: p.paint };
-      });
-      window.HBOTRecolor.recolorImageData(imgData.data, passes);
-      ctx.putImageData(imgData, 0, 0);
-      try {
-        const dataUrl = c.toDataURL("image/webp", 0.92);
-        if (!dataUrl || dataUrl.length < 100) { recolorCache.delete(ck); return; }
-        recolorCache.set(ck, dataUrl);
-        if (recolorCache.size > RECOLOR_CACHE_MAX) {
-          const k0 = recolorCache.keys().next().value;
-          recolorCache.delete(k0);
-        }
-        // İşlenmiş kare hazır — sahne hâlâ aynı spec'teyse cross-fade ile devreye girer
-        updateConfigStage(TRANSLATIONS[currentLang]);
-      } catch (e2) {
-        recolorCache.delete(ck);
-      }
-    } catch (e) {
-      recolorCache.delete(ck);
-      console.warn("HBOT configurator recolor failed", imgKey, e && e.message ? e.message : e);
-    }
-  }
-
-  /* Sahne src çözümü: boya aktifse işlenmiş kare (cache hit) döner; miss'te ham
-     kare gösterilir ve üretim arka planda başlar (bitince updateConfigStage tetiklenir). */
+  /* Görsel kaynağı daima modelin onaylı kanonik fotoğrafıdır. */
   function resolveStageSrc(target) {
-    const raw = `/assets/img/models/${target.key}.webp?v=${IMG_V}`;
-    const spec = stagePaintSpec(target);
-    if (!spec) return raw;
-    const ck = `${target.key}|${spec.tag}`;
-    const hit = recolorCache.get(ck);
-    if (hit && hit !== "pending") return hit;
-    if (!hit) {
-      recolorCache.set(ck, "pending");
-      startRecolorJob(ck, target.key, spec);
-    }
-    return raw;
-  }
-
-  /* Spin modelinde dış görünümde boya aktifse kalan 23 kareyi boşta önceden işle */
-  function prewalkRecolor(target) {
-    const spec = stagePaintSpec(target);
-    if (!spec || target.interior || !spinAvailableFor()) return;
-    for (let i = 0; i < SPIN_FRAME_COUNT; i++) {
-      const key = spinFrameKey(i);
-      const ck = `${key}|${spec.tag}`;
-      if (!recolorCache.has(ck)) {
-        recolorCache.set(ck, "pending");
-        setTimeout(() => startRecolorJob(ck, key, spec), 160 * i);
-      }
-    }
+    return `/assets/img/models/${target.key}.webp?v=${IMG_V}`;
   }
 
   /* Kart görselleri: model -> gerçek fotoğraf. Eski iç ürün kodları dış URL'lerde kullanılmaz. */
