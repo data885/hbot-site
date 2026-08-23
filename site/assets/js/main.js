@@ -846,7 +846,12 @@
     duo: paintedStageMap("duo"),
     "duo-plus": paintedStageMap("duo"),
     "quad-cube": Object.assign({
-      turkuaz: "real/milan-teal",
+      // turkuaz: "real/milan-teal" kaldırıldı — bu fotoğraf bozuktu (üstte havada
+      // asılı renk lekesi + sağda hayalet/çift görüntü, muhtemelen kötü bir AI
+      // yeniden-renklendirme kalıntısı, bkz. kullanıcı raporu "berbat olmuş").
+      // Artık diğer genişletilmiş palet renkleri (bej, adaçayı) gibi canvas
+      // boyama sistemine (STAGE_EXT_PROFILE["spin:quad-cube"]) düşüyor — temiz,
+      // artefaktsız sonuç veriyor.
       "nane-yesili": "real/milan-mint",
       "tas-grisi": "real/milan-sage",
       fildisi: "real/milano-real"
@@ -964,6 +969,15 @@
     if (interiorViewBtn) interiorViewBtn.hidden = hideInterior;
     const loungeNote = document.getElementById("lounge-decor-note");
     if (loungeNote) loungeNote.hidden = !hideInterior;
+
+    // Geneva (nexus): dış renk zaten İnci Beyazı'na kilitli (bkz. renderConfigColors) —
+    // "Dış Görünüm" sekmesinin bir anlamı kalmıyor, kabini içeriden gösteren tek bir
+    // gerçek fotoğraf (REAL_INTERIOR.nexus) yeterli. Görünüm sekmesini tamamen gizleyip
+    // sahneyi her zaman iç görünümde sabitliyoruz (bkz. kullanıcı talebi).
+    const lockToInterior = configState.model === "nexus";
+    if (lockToInterior && configState.stageView !== "interior") configState.stageView = "interior";
+    const viewToggleGroup = document.querySelector(".stage-view-toggle");
+    if (viewToggleGroup) viewToggleGroup.hidden = lockToInterior;
 
     // Görünüm toggle butonlarının durumu
     document.querySelectorAll(".stage-view-btn").forEach((btn) => {
@@ -2660,8 +2674,112 @@
       renderBlogPosts(dict);
     } else if (page === "contact") {
       renderFaq(dict);
+    } else if (page === "trust-safety") {
+      renderTrustModelDocs(lang, dict);
     } else if (page === "configurator") {
       initConfigurator(dict);
+    }
+  }
+
+  const TRUST_MODEL_DOCS = [
+    { slug: "oslo", dictKey: "modelSoloLounge" },
+    { slug: "dubai", dictKey: "modelSolo" },
+    { slug: "tokyo", dictKey: "modelDuo" },
+    { slug: "tokyo-plus", dictKey: "modelDuoPlus" },
+    { slug: "milano", dictKey: "modelQuadCube" },
+    { slug: "geneva", dictKey: "modelNexus" }
+  ];
+
+  const TRUST_DOC_COPY = {
+    tr: {
+      open: "PDF'yi Aç", review: "Modeli incele",
+      status: "Belge statüsü:",
+      disclaimer: "Bu PDF'ler satış ve proje öncesi teknik bilgilendirmedir. Nihai, seri numarasına özel kullanım talimatı; uygunluk, test, kurulum ve eğitim belgeleri teslimat projesinde ayrıca sağlanır."
+    },
+    en: {
+      open: "Open PDF", review: "Review model",
+      status: "Document status:",
+      disclaimer: "These PDFs provide pre-sales and pre-project technical information. Final serial-number-specific instructions for use and compliance, testing, installation and training documents are supplied separately for the delivery project."
+    },
+    ru: {
+      open: "Открыть PDF", review: "О модели",
+      status: "Статус документа:",
+      disclaimer: "Эти PDF-файлы содержат техническую информацию до продажи и начала проекта. Окончательные инструкции по эксплуатации для конкретного серийного номера, а также документы по соответствию, испытаниям, монтажу и обучению предоставляются отдельно в рамках проекта поставки."
+    },
+    ar: {
+      open: "فتح PDF", review: "استعرض الطراز",
+      status: "حالة الوثيقة:",
+      disclaimer: "تقدم ملفات PDF هذه معلومات تقنية لمرحلة ما قبل البيع والمشروع. وتُسلَّم تعليمات الاستخدام النهائية الخاصة بالرقم التسلسلي، ووثائق المطابقة والاختبار والتركيب والتدريب، بصورة منفصلة ضمن مشروع التوريد."
+    },
+    es: {
+      open: "Abrir PDF", review: "Ver modelo",
+      status: "Estado del documento:",
+      disclaimer: "Estos PDF ofrecen información técnica previa a la venta y al proyecto. Las instrucciones de uso finales específicas para el número de serie y los documentos de conformidad, pruebas, instalación y formación se entregan por separado con el proyecto."
+    },
+    pt: {
+      open: "Abrir PDF", review: "Ver modelo",
+      status: "Estado do documento:",
+      disclaimer: "Estes PDF fornecem informação técnica de pré-venda e pré-projeto. As instruções de utilização finais específicas do número de série e os documentos de conformidade, ensaios, instalação e formação são fornecidos separadamente no projeto de entrega."
+    },
+    de: {
+      open: "PDF öffnen", review: "Modell ansehen",
+      status: "Dokumentenstatus:",
+      disclaimer: "Diese PDF-Dateien enthalten technische Informationen für die Vorverkaufs- und Vorprojektphase. Die endgültige seriennummernspezifische Gebrauchsanweisung sowie Konformitäts-, Prüf-, Installations- und Schulungsunterlagen werden im Lieferprojekt separat bereitgestellt."
+    }
+  };
+
+  function renderTrustModelDocs(lang, dict) {
+    const container = document.getElementById("trust-model-docs");
+    if (!container) return;
+
+    const copy = TRUST_DOC_COPY[lang] || TRUST_DOC_COPY.en;
+    container.innerHTML = "";
+
+    TRUST_MODEL_DOCS.forEach((item) => {
+      const model = dict[item.dictKey];
+      if (!model) return;
+
+      const card = document.createElement("article");
+      card.className = "trust-model-doc";
+
+      const capacity = document.createElement("span");
+      capacity.className = "trust-model-doc__capacity";
+      capacity.textContent = model.specs && model.specs[0] ? model.specs[0].value : "";
+
+      const title = document.createElement("h3");
+      title.textContent = model.title;
+
+      const summary = document.createElement("p");
+      summary.textContent = model.overview_text;
+
+      const actions = document.createElement("div");
+      actions.className = "trust-model-doc__actions";
+
+      const pdf = document.createElement("a");
+      pdf.className = "btn btn-primary";
+      pdf.target = "_blank";
+      pdf.rel = "noopener";
+      pdf.textContent = copy.open;
+      pdf.href = lang === "tr"
+        ? `/assets/docs/models/hbot-${item.slug}-kullanim-guvenlik-teknik-dosya-tr.pdf`
+        : `/assets/docs/models/hbot-${item.slug}-usage-safety-technical-file-${lang}.pdf`;
+
+      const review = document.createElement("a");
+      review.className = "trust-model-doc__link";
+      review.href = `model-${item.slug}.html`;
+      review.textContent = `${copy.review} →`;
+
+      actions.append(pdf, review);
+      card.append(capacity, title, summary, actions);
+      container.appendChild(card);
+    });
+
+    const disclaimer = document.getElementById("trust-doc-disclaimer");
+    if (disclaimer) {
+      disclaimer.replaceChildren();
+      const label = document.createElement("strong");
+      label.textContent = copy.status;
+      disclaimer.append(label, document.createTextNode(` ${copy.disclaimer}`));
     }
   }
 
