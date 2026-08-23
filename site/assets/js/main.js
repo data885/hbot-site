@@ -113,12 +113,13 @@
   const NEXUS_MAX_SEATS = SEAT_TIERS.nexus[SEAT_TIERS.nexus.length - 1].seats;
 
   /* ---------------- Currency (live exchange rates, EUR base) ---------------- */
-  const CURRENCIES = ["EUR", "USD", "GBP", "AED", "RUB"];
-  const CURRENCY_SYMBOLS = { USD: "$", GBP: "£", EUR: "€", AED: "AED", RUB: "₽" };
+  const CURRENCIES = ["EUR", "USD", "GBP", "AED", "RUB", "TRY"];
+  const CURRENCY_SYMBOLS = { USD: "$", GBP: "£", EUR: "€", AED: "AED", RUB: "₽", TRY: "₺" };
+  const CURRENCY_LABELS = { TRY: "TL" };
   const FX_CACHE_KEY = "hbot_fx_rates_v3";
   const FX_CACHE_TTL = 6 * 60 * 60 * 1000;
   let currentCurrency = "EUR";
-  let exchangeRates = { EUR: 1, USD: 1.09, GBP: 0.85, AED: 4.0, RUB: 98 };
+  let exchangeRates = { EUR: 1, USD: 1.09, GBP: 0.85, AED: 4.0, RUB: 98, TRY: 40 };
 
   function loadCachedRates() {
     try {
@@ -154,7 +155,8 @@
             USD: data.rates.USD || exchangeRates.USD,
             GBP: data.rates.GBP || exchangeRates.GBP,
             AED: data.rates.AED || exchangeRates.AED,
-            RUB: data.rates.RUB || exchangeRates.RUB
+            RUB: data.rates.RUB || exchangeRates.RUB,
+            TRY: data.rates.TRY || exchangeRates.TRY
           };
           exchangeRates = Object.assign({}, exchangeRates, picked);
           saveCachedRates(picked);
@@ -1554,7 +1556,7 @@
   function initCurrencySwitch() {
     const el = document.getElementById("currency-switch");
     if (!el) return;
-    el.innerHTML = CURRENCIES.map((c) => `<button type="button" data-currency="${c}" class="${c === currentCurrency ? "is-active" : ""}">${c}</button>`).join("");
+    el.innerHTML = CURRENCIES.map((c) => `<button type="button" data-currency="${c}" class="${c === currentCurrency ? "is-active" : ""}">${CURRENCY_LABELS[c] || c}</button>`).join("");
     el.querySelectorAll("button").forEach((btn) => {
       btn.addEventListener("click", () => {
         currentCurrency = btn.getAttribute("data-currency");
@@ -2020,7 +2022,7 @@
     lines.push(`${s.addons_label}: ${addonNames}`);
     if (configState.discountPct > 0) lines.push(`${s.discount_label}: %${configState.discountPct} (−${formatPrice(computeDiscountAmount())})`);
     if (configState.refCode) lines.push(`Ref: ${configState.refCode}`);
-    lines.push(`${s.total_label}: ${formatPrice(computeTotal())} (${currentCurrency})`);
+    lines.push(`${s.total_label}: ${formatPrice(computeTotal())} (${CURRENCY_LABELS[currentCurrency] || currentCurrency})`);
     field.value = lines.join("\n");
   }
 
@@ -2246,7 +2248,7 @@
     doc.setTextColor(255, 255, 255);
     doc.setFont(FONT, "bold");
     doc.setFontSize(11);
-    doc.text(T((s.total_label || "Total") + ` (${currentCurrency})`).toUpperCase(), mL + 5, y + 3);
+    doc.text(T((s.total_label || "Total") + ` (${CURRENCY_LABELS[currentCurrency] || currentCurrency})`).toUpperCase(), mL + 5, y + 3);
     doc.setFontSize(16);
     doc.setTextColor(...GOLD);
     doc.text(T(formatPrice(computeTotal())), mR - 5, y + 3, { align: "right" });

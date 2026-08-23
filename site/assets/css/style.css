@@ -157,8 +157,10 @@ p { text-align: justify; text-align-last: left; }
 
 .header-actions { display: flex; align-items: center; gap: 12px; }
 
-/* v17: mobil header'da her zaman görünen kompakt dil seçici (hamburger'ı açmadan) */
-.lang-item--dropdown { position: relative; display: none; }
+/* v18: kompakt dil seçici artık tüm ekran genişliklerinde header'da görünüyor;
+   eski düz dil listesi (.lang-switch, header-actions altında) yerine bunu kullanıyoruz
+   çünkü 7 dilin tamamı tek satırda sığmayınca header düzenini bozuyordu. */
+.lang-item--dropdown { position: relative; display: flex; }
 .lang-compact-trigger {
   display: flex; align-items: center; gap: 5px; background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 999px; padding: 7px 11px;
@@ -171,6 +173,7 @@ p { text-align: justify; text-align-last: left; }
   opacity: 0; visibility: hidden; transform: translateY(8px); display: grid; gap: 2px;
   transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
 }
+.lang-item--dropdown:hover .lang-compact-panel,
 .lang-item--dropdown.is-open .lang-compact-panel { opacity: 1; visibility: visible; transform: translateY(0); }
 .lang-compact-panel a, .lang-compact-panel button {
   display: block; width: 100%; text-align: start; background: none; border: none; cursor: pointer;
@@ -191,6 +194,11 @@ p { text-align: justify; text-align-last: left; }
 }
 .lang-switch a.is-active, .lang-switch button.is-active { background: var(--cyan-500); color: var(--ink-950); }
 .lang-switch a:hover:not(.is-active), .lang-switch button:hover:not(.is-active) { color: var(--white); }
+
+/* Header'daki eski düz dil listesi artık her zaman gizli (kompakt dropdown onun yerini alıyor).
+   Not: para birimi seçici (#currency-switch) de aynı .lang-switch stilini kullanıyor ama
+   header-actions içinde değil, bu yüzden bu kural onu etkilemez. */
+.header-actions > .lang-switch { display: none; }
 
 .nav-cta {
   background: var(--cyan-500); color: var(--ink-950); font-weight: 700; font-size: 13.5px;
@@ -1212,9 +1220,7 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
   .nav-toggle { display: flex; }
   .header-actions { gap: 8px; }
-  .header-actions > .lang-switch { display: none; }
   .nav-cta { display: none; }
-  .lang-item--dropdown { display: flex; }
   .lang-compact-panel { inset-inline-end: -8px; }
 
   .nav-dropdown-panel {
