@@ -1494,11 +1494,26 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 .trust-card--wide { grid-column: 1 / -1; }
 .trust-models { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
 .trust-models span { padding: 9px 13px; border: 1px solid rgba(102,219,231,.3); border-radius: 999px; color: #dffcff; background: rgba(44,171,190,.09); font-weight: 700; }
+.trust-model-docs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 30px 0 24px; }
+.trust-model-doc { display: flex; min-height: 250px; flex-direction: column; padding: 24px; border: 1px solid rgba(87,211,218,.22); border-radius: 20px; background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(10,134,212,.035)); }
+.trust-model-doc__capacity { color: #74e1e4; font-size: 12px; font-weight: 800; letter-spacing: .08em; }
+.trust-model-doc h3 { margin: 12px 0 10px; color: #fff; font-size: 26px; }
+.trust-model-doc p { margin: 0; color: rgba(255,255,255,.72); line-height: 1.65; }
+.trust-model-doc__actions { display: flex; align-items: center; gap: 14px; margin-top: auto; padding-top: 22px; }
+.trust-model-doc__actions .btn { min-height: 46px; padding: 0 18px; }
+.trust-model-doc__link { color: #bfeff1; font-size: 14px; font-weight: 700; }
+.trust-doc-disclaimer { margin: 6px 0 24px; padding: 16px 18px; border-left: 3px solid #57d3da; background: rgba(87,211,218,.07); color: rgba(255,255,255,.76); line-height: 1.6; }
 .trust-source { font-size: 13px; }
 .trust-source a { color: #66dbe7; text-decoration: underline; }
 @media (max-width: 860px) {
   .heritage-timeline, .trust-grid { grid-template-columns: 1fr; }
   .trust-card--wide { grid-column: auto; }
+  .trust-model-docs { grid-template-columns: 1fr; }
+  .trust-model-doc { min-height: 230px; }
+  .trust-model-doc__actions { align-items: flex-start; flex-direction: column; }
   .heritage-proof { align-items: flex-start; flex-direction: column; }
   .heritage-partner { grid-template-columns: 1fr; }
+}
+@media (min-width: 861px) and (max-width: 1100px) {
+  .trust-model-docs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
