@@ -557,7 +557,7 @@
   function openIndicationModal(item, trigger) {
     const modal = ensureIndicationModal();
     const copy = INDICATION_MODAL_COPY[currentLang] || INDICATION_MODAL_COPY.en;
-    const localizedDetails = INDICATION_DETAILS[currentLang] || INDICATION_DETAILS.en;
+    const localizedDetails = INDICATION_DETAILS[currentLang] || {};
     const summary = localizedDetails[item.icon] || copy.fallback || INDICATION_DETAILS.en[item.icon] || copy.disclaimer;
     const statusKey = INDICATION_STATUS[item.icon] || "selected";
     lastIndicationTrigger = trigger;
