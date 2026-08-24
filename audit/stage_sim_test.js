@@ -80,7 +80,7 @@ check("üç yükleme isteği oluştu", pending.length === 3, String(pending.leng
 pending[2].resolve(); // latest first
 pending[1].resolve(); // stale Dubai afterwards
 pending[0].resolve(); // stale Oslo last
-check("en son seçim Tokyo olarak kalır", activeImage().src.includes("real/tokyo-real.webp"), activeImage().src);
+check("en son seçim Tokyo olarak kalır", activeImage().src.includes("colors/tokyo/pearl-white.webp"), activeImage().src);
 check("yalnız bir sahne katmanı aktif", imgA.classList.contains("is-active") !== imgB.classList.contains("is-active"));
 
 console.log("\n== 2. Görünüm normalizasyonu ==");
@@ -114,6 +114,21 @@ M.configState.color = "zumrut";
 M.updateConfigStage(dict);
 check("renk değişimi yeni görsel isteği başlatmaz", pending.length === colorBefore, `${colorBefore} -> ${pending.length}`);
 check("Dubai kanonik fotoğrafı korunur", activeImage().src.includes("real/dubai-real.webp"), activeImage().src);
+
+console.log("\n== 5. Tokyo onaylı statik renk renderları ==");
+M.configState.model = "duo";
+M.configState.color = "bordo";
+M.updateConfigStage(dict);
+pending.at(-1).resolve();
+check("Tokyo bordo renderı yüklenir", activeImage().src.includes("colors/tokyo/bordo.webp"), activeImage().src);
+M.configState.color = "zumrut";
+M.updateConfigStage(dict);
+pending.at(-1).resolve();
+check("Tokyo zümrüt renderı yüklenir", activeImage().src.includes("colors/tokyo/zumrut.webp"), activeImage().src);
+M.configState.color = "bej";
+M.updateConfigStage(dict);
+pending.at(-1).resolve();
+check("Tokyo renderı olmayan renkte kanonik fotoğrafa döner", activeImage().src.includes("real/tokyo-real.webp"), activeImage().src);
 
 if (failures) { console.log(`\n${failures} STAGE TESTİ BAŞARISIZ`); process.exit(1); }
 console.log("\nTüm stage yarış testleri geçti. ✔");

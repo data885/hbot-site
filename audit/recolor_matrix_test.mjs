@@ -127,6 +127,12 @@ assert(!mainSource.includes("REAL_STAGE_BY_COLOR"), "legacy cross-model REAL_STA
 assert(!mainSource.includes("startRecolorJob"), "runtime canvas recolor job is still present");
 assert(mainSource.includes('"duo-plus": { exterior: "real/tokyo-plus-real", exteriorMask: "masks/ext-duo"'), "Tokyo Plus manifest is missing");
 assert(mainSource.includes('const SPIN_MODELS = Object.freeze({});'), "configurator spin recolor is not disabled");
+const tokyoApprovedIds = ["pearl-white", "mat-siyah", "antrasit", "gece-laciverti", "bordo", "sampanya", "bronz", "zumrut"];
+for (const colorId of tokyoApprovedIds) {
+  const rel = `colors/tokyo/${colorId}.webp`;
+  assert(mainSource.includes(`"${colorId}": "colors/tokyo/${colorId}"`) || mainSource.includes(`${colorId}: "colors/tokyo/${colorId}"`), `Tokyo ${colorId}: approved manifest entry missing`);
+  assert(require("node:fs").existsSync(path.join(modelRoot, rel)), `Tokyo ${colorId}: approved render file missing`);
+}
 
 const sheetArg = process.argv.find((arg) => arg.startsWith("--contact-sheet="));
 if (sheetArg) {

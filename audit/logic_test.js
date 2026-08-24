@@ -32,7 +32,7 @@ let src = fs.readFileSync(path.join(siteDir, "assets/js/main.js"), "utf8");
 src = src.replace(/\}\)\(\);\s*$/, `
   return { configState, MODEL_PRICING, SEAT_TIERS, ensureTierCompatible,
            currentStageTarget, normalizeConfigStageView, computeSubtotal, computeTotal,
-           SPIN_MODELS, STAGE_RENDER_MANIFEST, EXT_PAINT_MODE,
+           SPIN_MODELS, STAGE_RENDER_MANIFEST, APPROVED_COLOR_RENDER_MANIFEST, EXT_PAINT_MODE,
            REAL_STAGE, REAL_INTERIOR, MODEL_CARD_IMG, REF_CODES,
            colorWorksFor };
 })();`);
@@ -80,7 +80,12 @@ modelIds.forEach((id) => {
   M.configState.model = id;
   M.configState.stageView = "exterior";
   M.normalizeConfigStageView();
-  check(`${id}: sahne hedefi manifest ile aynı`, M.currentStageTarget().key === (id === "nexus" ? item.interior : item.exterior), M.currentStageTarget().key);
+  const expectedStageKey = id === "nexus"
+    ? item.interior
+    : id === "duo"
+      ? M.APPROVED_COLOR_RENDER_MANIFEST.duo["pearl-white"]
+      : item.exterior;
+  check(`${id}: sahne hedefi onaylı manifest ile aynı`, M.currentStageTarget().key === expectedStageKey, M.currentStageTarget().key);
 });
 check("konfigüratör ağır spin boyamasını kullanmıyor", Object.keys(M.SPIN_MODELS).length === 0);
 
@@ -99,6 +104,14 @@ M.configState.model = "solo"; M.configState.stageView = "exterior";
 M.configState.color = "bordo"; const bordoTarget = M.currentStageTarget().key;
 M.configState.color = "zumrut"; const greenTarget = M.currentStageTarget().key;
 check("dış renk değişimi model fotoğrafını değiştirmez", bordoTarget === "real/dubai-real" && greenTarget === bordoTarget, `${bordoTarget} -> ${greenTarget}`);
+const tokyoApproved = ["pearl-white", "mat-siyah", "antrasit", "gece-laciverti", "bordo", "sampanya", "bronz", "zumrut"];
+check("Tokyo için sekiz onaylı statik renk renderı var", tokyoApproved.every((id) => M.APPROVED_COLOR_RENDER_MANIFEST.duo[id]));
+check("Tokyo onaylı render dosyaları mevcut", tokyoApproved.every((id) => fs.existsSync(path.join(siteDir, "assets/img/models", `${M.APPROVED_COLOR_RENDER_MANIFEST.duo[id]}.webp`))));
+M.configState.model = "duo"; M.configState.stageView = "exterior";
+M.configState.color = "bordo"; const tokyoBordoTarget = M.currentStageTarget().key;
+M.configState.color = "bej"; const tokyoFallbackTarget = M.currentStageTarget().key;
+check("Tokyo onaylı renk doğru statik renderı açar", tokyoBordoTarget === "colors/tokyo/bordo", tokyoBordoTarget);
+check("Tokyo renderı olmayan renkte kanonik fotoğrafa döner", tokyoFallbackTarget === "real/tokyo-real", tokyoFallbackTarget);
 
 console.log("\n== 4. Renk motoru saf fonksiyonları ==");
 const blue = RC.hexToHsl("#172B4D");

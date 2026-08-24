@@ -804,10 +804,24 @@
   const REAL_STAGE = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.exterior]));
   const REAL_INTERIOR = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.interior]));
 
-  /* Üretim CAD'lerinden alınmış, aynı kamera/ışıkta onaylı render seti gelene
-     kadar sahne yalnız modelin kanonik gerçek fotoğrafını gösterir. Renk seçimi
-     malzeme rozeti + özet + teklif verisi olarak tutulur; fotoğraf üzerinde
-     tarayıcı boyaması veya birbirinden farklı yapay renderlar kullanılmaz. */
+  /* Onaylanmış statik renk önizlemeleri. Yalnızca aynı ana referanstan,
+     aynı kadraj ve sahneyle üretilen dosyalar bu manifest'e alınır. Bir renk
+     burada yoksa modelin kanonik fotoğrafına güvenli biçimde geri dönülür. */
+  const APPROVED_COLOR_RENDER_MANIFEST = Object.freeze({
+    duo: Object.freeze({
+      "pearl-white": "colors/tokyo/pearl-white",
+      "mat-siyah": "colors/tokyo/mat-siyah",
+      antrasit: "colors/tokyo/antrasit",
+      "gece-laciverti": "colors/tokyo/gece-laciverti",
+      bordo: "colors/tokyo/bordo",
+      sampanya: "colors/tokyo/sampanya",
+      bronz: "colors/tokyo/bronz",
+      zumrut: "colors/tokyo/zumrut"
+    })
+  });
+
+  /* Tarayıcıda piksel boyama yapılmaz. Onaylı statik renk görseli varsa o,
+     yoksa modelin kanonik fotoğrafı gösterilir. */
   /* 360° spin: seti TAMAMLANMIŞ modeller (yarım sette spin AKTİF EDİLMEZ — galeri görünümü kalır).
      Frame adı: spin/<model>/frame-00.webp .. frame-23.webp (24 kare, 15° adım). */
   const SPIN_FRAME_COUNT = 24;
@@ -856,7 +870,9 @@
     if (configState.stageView === "interior") {
       return { key: manifest.interior, filter: "none", interior: true, photo: true };
     }
-    return { key: manifest.exterior, filter: "none", interior: false, photo: true };
+    const approvedByColor = APPROVED_COLOR_RENDER_MANIFEST[configState.model];
+    const approvedKey = approvedByColor && approvedByColor[configState.color];
+    return { key: approvedKey || manifest.exterior, filter: "none", interior: false, photo: true };
   }
 
   function updateConfigStage(dict) {
@@ -1372,8 +1388,8 @@
     });
   }
 
-  /* Dış renk kimlikleri. Bunlar kabin fotoğrafına tarayıcıda uygulanmaz;
-     malzeme rozeti, özet, paylaşım linki ve teklif kaydında kullanılır. */
+  /* Dış renk kimlikleri. Tarayıcıda piksel boyama yapılmaz; yalnız onaylanmış
+     statik renk renderı olan model/renk çiftleri görseli değiştirir. */
   const EXT_PAINT_MODE = {
     "pearl-white": null,
     "sampanya": "paint", "bronz": "paint",
@@ -1390,7 +1406,7 @@
     if (modelId === "nexus") return colorId === "pearl-white";
     return !!STAGE_RENDER_MANIFEST[modelId];
   }
-  /* Görsel kaynağı daima modelin onaylı kanonik fotoğrafıdır. */
+  /* Görsel kaynağı onaylı statik render veya modelin kanonik fotoğrafıdır. */
   function resolveStageSrc(target) {
     return `/assets/img/models/${target.key}.webp?v=${IMG_V}`;
   }
