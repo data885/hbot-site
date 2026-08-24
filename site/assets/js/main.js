@@ -772,7 +772,7 @@
   function resetModelVisualState() {
     if (!colorWorksFor(configState.model, configState.color)) configState.color = "pearl-white";
     configState.interiorColor = "cream";
-    configState.seatColor = "konyak";
+    configState.seatColor = configState.model === "solo" ? "cream" : "konyak";
     configState.seatTouched = false;
     configState.stageView = configState.model === "nexus" ? "interior" : "exterior";
   }
@@ -803,6 +803,40 @@
   });
   const REAL_STAGE = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.exterior]));
   const REAL_INTERIOR = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.interior]));
+
+  /* Dubai üç eksenli statik render sistemi. Bu veri dosyası üretim manifestinden
+     otomatik oluşturulur; tarayıcıda boya/tint yapılmaz. Her anahtar
+     dış|iç|koltuk sırasındadır ve yalnız doğrulanmış tam renderı gösterir. */
+  const DUBAI_RENDER_MANIFEST = window.HBOT_DUBAI_RENDER_MANIFEST || Object.freeze({ combinations: Object.freeze({}) });
+  const DUBAI_RENDER_COMBINATIONS = Object.freeze(DUBAI_RENDER_MANIFEST.combinations || {});
+  function dubaiCombinationKey(exteriorId, interiorId, seatId) {
+    return `${exteriorId}|${interiorId}|${seatId}`;
+  }
+  function dubaiRenderKey(exteriorId, interiorId, seatId) {
+    return DUBAI_RENDER_COMBINATIONS[dubaiCombinationKey(exteriorId, interiorId, seatId)] || "";
+  }
+  function dubaiExteriorIds() {
+    return new Set(Object.keys(DUBAI_RENDER_COMBINATIONS).map((key) => key.split("|")[0]));
+  }
+  function dubaiInteriorIds(exteriorId) {
+    return new Set(Object.keys(DUBAI_RENDER_COMBINATIONS)
+      .map((key) => key.split("|"))
+      .filter((parts) => parts[0] === exteriorId)
+      .map((parts) => parts[1]));
+  }
+  function dubaiSeatIds(exteriorId, interiorId) {
+    return new Set(Object.keys(DUBAI_RENDER_COMBINATIONS)
+      .map((key) => key.split("|"))
+      .filter((parts) => parts[0] === exteriorId && parts[1] === interiorId)
+      .map((parts) => parts[2]));
+  }
+  function normalizeDubaiSelection() {
+    if (configState.model !== "solo") return;
+    const interiors = dubaiInteriorIds(configState.color);
+    if (!interiors.has(configState.interiorColor)) configState.interiorColor = interiors.values().next().value || "cream";
+    const seats = dubaiSeatIds(configState.color, configState.interiorColor);
+    if (!seats.has(configState.seatColor)) configState.seatColor = seats.values().next().value || configState.interiorColor;
+  }
 
   /* Onaylanmış statik renk önizlemeleri. Yalnızca aynı ana referanstan,
      aynı kadraj ve sahneyle üretilen dosyalar bu manifest'e alınır. Bir renk
@@ -867,6 +901,13 @@
 
   function currentStageTarget() {
     const manifest = STAGE_RENDER_MANIFEST[configState.model] || STAGE_RENDER_MANIFEST["solo-lounge"];
+    if (configState.model === "solo") {
+      normalizeDubaiSelection();
+      const exactKey = dubaiRenderKey(configState.color, configState.interiorColor, configState.seatColor);
+      if (exactKey) {
+        return { key: exactKey, filter: "none", interior: configState.stageView === "interior", photo: true };
+      }
+    }
     if (configState.stageView === "interior") {
       return { key: manifest.interior, filter: "none", interior: true, photo: true };
     }
@@ -1337,8 +1378,11 @@
     c.querySelectorAll(".config-color-swatch").forEach((btn) => {
       btn.addEventListener("click", () => {
         configState.color = btn.getAttribute("data-color-id");
+        normalizeDubaiSelection();
         const dict = TRANSLATIONS[currentLang];
         renderConfigColors(dict);
+        renderConfigInteriorColors(dict);
+        renderConfigSeatColors(dict);
         renderConfigSummary(dict);
         updateConfigStage(dict);
       });
@@ -1359,7 +1403,11 @@
     if (interiorSection) interiorSection.hidden = !interiorColorCustomizable(configState.model);
     const c = document.getElementById("config-interior-color-grid");
     if (!c || !dict.configurator.interior_colors) return;
-    const visibleInteriorColors = visibleColorList(dict.configurator.interior_colors, INTERIOR_COLOR_ALLOWLIST);
+    let visibleInteriorColors = visibleColorList(dict.configurator.interior_colors, INTERIOR_COLOR_ALLOWLIST);
+    if (configState.model === "solo") {
+      const available = dubaiInteriorIds(configState.color);
+      visibleInteriorColors = visibleInteriorColors.filter((color) => available.has(color.id));
+    }
     // Model değişince (ör. Milano'nun kısıtlı paletine geçince) state'te kalan
     // artık-gösterilmeyen bir renk varsa sessizce ilk seçeneğe düş — aksi halde
     // sahne, swatch grid'de "seçili" görünmeyen bir renkle boyanmaya devam eder.
@@ -1379,9 +1427,11 @@
     c.querySelectorAll(".config-color-swatch").forEach((btn) => {
       btn.addEventListener("click", () => {
         configState.interiorColor = btn.getAttribute("data-interior-id");
+        normalizeDubaiSelection();
         if (configState.stageView !== "interior") configState.stageView = "interior";
         const dict = TRANSLATIONS[currentLang];
         renderConfigInteriorColors(dict);
+        renderConfigSeatColors(dict);
         renderConfigSummary(dict);
         updateConfigStage(dict);
       });
@@ -1404,6 +1454,7 @@
   function colorWorksFor(modelId, colorId) {
     if (!(colorId in EXT_PAINT_MODE)) return false;
     if (modelId === "nexus") return colorId === "pearl-white";
+    if (modelId === "solo") return dubaiExteriorIds().has(colorId);
     return !!STAGE_RENDER_MANIFEST[modelId];
   }
   /* Görsel kaynağı onaylı statik render veya modelin kanonik fotoğrafıdır. */
@@ -1421,13 +1472,20 @@
     nexus: "real/geneva-real"
   };
 
-  /* Koltuk rengi: fiyatsız görsel tercih — sahneyi değiştirmez, özette adıyla listelenir */
+  /* Dubai'de koltuk rengi üç eksenli statik renderı değiştirir. Diğer modellerde
+     mevcut fiyatsız görsel tercih davranışı korunur. */
   function renderConfigSeatColors(dict) {
     const seatColorSection = document.getElementById("seat-color-step-section");
     if (seatColorSection) seatColorSection.hidden = !interiorColorCustomizable(configState.model);
     const c = document.getElementById("config-seat-color-grid");
     if (!c || !dict.configurator.seat_colors) return;
-    const visibleSeatColors = visibleColorList(dict.configurator.seat_colors, SEAT_COLOR_ALLOWLIST);
+    const seatPalette = configState.model === "solo" ? dict.configurator.interior_colors : dict.configurator.seat_colors;
+    const seatAllowlist = configState.model === "solo" ? INTERIOR_COLOR_ALLOWLIST : SEAT_COLOR_ALLOWLIST;
+    let visibleSeatColors = visibleColorList(seatPalette, seatAllowlist);
+    if (configState.model === "solo") {
+      const available = dubaiSeatIds(configState.color, configState.interiorColor);
+      visibleSeatColors = visibleSeatColors.filter((color) => available.has(color.id));
+    }
     if (visibleSeatColors.length && !visibleSeatColors.some((c2) => c2.id === configState.seatColor)) {
       configState.seatColor = visibleSeatColors[0].id;
     }
