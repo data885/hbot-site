@@ -12,7 +12,7 @@ from build_i18n_pages import ROOT_PAGES, ALL_LANGS, resolve_url, BASE_URL
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_DIR = os.path.join(REPO_ROOT, "site")
 
-LASTMOD = "2026-08-23"
+LASTMOD = "2026-08-25"
 
 PRIORITY = {
     "index.html": "1.0",
