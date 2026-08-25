@@ -259,9 +259,15 @@ def fix_lang_switch_links(html, lang, filename):
         active = ' class="is-active"' if code == lang else ""
         return f'<a href="{href}"{active} data-lang="{code}">{label}</a>'
 
-    return re.sub(
+    html = re.sub(
         r'<(?:button[^>]*|a[^>]*)\bdata-lang="(\w+)"[^>]*>([^<]*)</(?:button|a)>',
         repl, html,
+    )
+    return re.sub(
+        r'(<span class="lang-compact-current">)[^<]*(</span>)',
+        rf'\g<1>{lang.upper()}\g<2>',
+        html,
+        count=1,
     )
 
 

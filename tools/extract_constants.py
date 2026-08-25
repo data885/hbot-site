@@ -26,6 +26,11 @@ def extract_block(source, name):
     if not m:
         raise ValueError(f"const {name} not found")
     start = m.end()
+    # Some constants are immutable literal maps declared as
+    # `const NAME = Object.freeze({ ... })`. For extraction purposes their
+    # object body is still the expression we need to evaluate.
+    if source.startswith("Object.freeze(", start):
+        start += len("Object.freeze(")
     opener = source[start]
     assert opener in "{[", f"{name}: expected {{ or [ after 'const {name} ='"
     closer = "}" if opener == "{" else "]"
@@ -65,6 +70,19 @@ def extract_constants():
 
     js_lines = []
     for name in WANTED:
+        # REAL_STAGE is derived from the render manifest in main.js rather
+        # than declared as an object literal. Recreate that one expression in
+        # the isolated evaluation context, while preserving the extractor's
+        # literal-only handling for every other constant.
+        if name == "REAL_STAGE":
+            manifest = extract_block(source, "STAGE_RENDER_MANIFEST")
+            js_lines.append(f"const STAGE_RENDER_MANIFEST = {manifest};")
+            js_lines.append(
+                "const REAL_STAGE = Object.fromEntries("
+                "Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.exterior])"
+                ");"
+            )
+            continue
         block = extract_block(source, name)
         js_lines.append(f"const {name} = {block};")
 
