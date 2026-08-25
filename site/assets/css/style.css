@@ -779,11 +779,19 @@ body.indication-modal-open { overflow: hidden; }
 }
 .config-color-swatch:hover { border-color: var(--gray-300); }
 .config-color-swatch.is-selected { border-color: var(--cyan-500); box-shadow: 0 0 0 3px rgba(0, 128, 208,0.15); }
+.config-color-swatch.is-unavailable {
+  opacity: .48; cursor: not-allowed; border-color: var(--gray-100); box-shadow: none;
+}
+.config-color-swatch.is-unavailable:hover { border-color: var(--gray-100); }
 .config-color-swatch .swatch-dot {
   width: 44px; height: 44px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.1);
   box-shadow: inset 0 0 0 3px rgba(255,255,255,0.5);
 }
 .config-color-swatch .swatch-name { font-size: 11.5px; font-weight: 700; color: var(--gray-700); text-align: center; line-height: 1.3; }
+.config-color-swatch .swatch-status {
+  min-height: 14px; margin-top: -6px; color: var(--gray-500); font-size: 9.5px;
+  font-weight: 700; line-height: 1.2; text-align: center;
+}
 .config-color-preview-note {
   flex-basis: 100%; margin: 2px 0 0; padding: 10px 12px; border-radius: var(--radius-md);
   background: rgba(0, 128, 208, .06); border: 1px solid rgba(0, 128, 208, .16);

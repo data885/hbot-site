@@ -1482,19 +1482,29 @@
     const seatPalette = configState.model === "solo" ? dict.configurator.interior_colors : dict.configurator.seat_colors;
     const seatAllowlist = configState.model === "solo" ? INTERIOR_COLOR_ALLOWLIST : SEAT_COLOR_ALLOWLIST;
     let visibleSeatColors = visibleColorList(seatPalette, seatAllowlist);
+    let availableDubaiSeats = null;
     if (configState.model === "solo") {
-      const available = dubaiSeatIds(configState.color, configState.interiorColor);
-      visibleSeatColors = visibleSeatColors.filter((color) => available.has(color.id));
+      /* Bütün standart koltuk renklerini görünür tut. Önceki filtre yalnız hazır
+         renderları gösterdiği için tamamlanmakta olan gruplarda kullanıcı tek bir
+         renk var sanıyordu. Hazır olmayan seçenek görünür fakat seçilemez; render
+         manifest'e eklendiği anda aynı kontrol otomatik olarak etkinleşir. */
+      normalizeDubaiSelection();
+      availableDubaiSeats = dubaiSeatIds(configState.color, configState.interiorColor);
     }
     if (visibleSeatColors.length && !visibleSeatColors.some((c2) => c2.id === configState.seatColor)) {
       configState.seatColor = visibleSeatColors[0].id;
     }
     c.innerHTML = visibleSeatColors.map((col) => {
+      const renderReady = !availableDubaiSeats || availableDubaiSeats.has(col.id);
       const selected = configState.seatColor === col.id ? " is-selected" : "";
+      const unavailable = renderReady ? "" : " is-unavailable";
+      const disabled = renderReady ? "" : " disabled aria-disabled=\"true\"";
+      const preparingLabel = dict.configurator.render_preparing_label || "Render preparing";
       return `
-        <button type="button" class="config-color-swatch${selected}" data-seat-id="${col.id}" title="${col.name}">
+        <button type="button" class="config-color-swatch${selected}${unavailable}" data-seat-id="${col.id}" title="${col.name}${renderReady ? "" : ` · ${preparingLabel}`}"${disabled}>
           <span class="swatch-dot" style="background:${col.hex}"></span>
           <span class="swatch-name">${col.name}</span>
+          ${renderReady ? "" : `<span class="swatch-status">${preparingLabel}</span>`}
         </button>
       `;
     }).join("");
@@ -1904,7 +1914,8 @@
     const interiorRow = interiorInfo && interiorColorCustomizable(configState.model)
       ? `<div class="config-summary-row"><span class="label">${s.interior_color_label}</span><span class="value"><span class="summary-swatch" style="background:${interiorInfo.hex}"></span>${interiorInfo.name}</span></div>`
       : "";
-    const seatColorInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
+    const seatColorInfo = ((configState.model === "solo" ? dict.configurator.interior_colors : dict.configurator.seat_colors) || [])
+      .find((col) => col.id === configState.seatColor);
     const seatColorRow = seatColorInfo && s.seat_color_label && interiorColorCustomizable(configState.model)
       ? `<div class="config-summary-row"><span class="label">${s.seat_color_label}</span><span class="value"><span class="summary-swatch" style="background:${seatColorInfo.hex}"></span>${seatColorInfo.name}</span></div>`
       : "";
@@ -2049,7 +2060,8 @@
     const addonNames = dict.configurator.addons.filter((a) => configState.addons.has(a.id)).map((a) => a.name).join(", ") || s.none_selected;
     const colorInfo = (dict.configurator.colors || []).find((col) => col.id === configState.color);
     const interiorInfo = (dict.configurator.interior_colors || []).find((col) => col.id === configState.interiorColor);
-    const seatColorInfo = (dict.configurator.seat_colors || []).find((col) => col.id === configState.seatColor);
+    const seatColorInfo = ((configState.model === "solo" ? dict.configurator.interior_colors : dict.configurator.seat_colors) || [])
+      .find((col) => col.id === configState.seatColor);
     const styleInfo = (dict.configurator.styles || []).find((st) => st.id === configState.chamberStyle);
     const lines = [`${s.model_label}: ${modelInfo ? modelInfo.name : ""}`];
     if (SEAT_TIERS[configState.model]) lines.push(`${s.seats_label}: ${configState.nexusSeats}`);
@@ -2249,7 +2261,8 @@
     const styleInfo = (cfg.styles || []).find((st) => st.id === configState.chamberStyle);
     const colInfo = (cfg.colors || []).find((c2) => c2.id === configState.color);
     const intInfo = (cfg.interior_colors || []).find((c2) => c2.id === configState.interiorColor);
-    const seatInfo = (cfg.seat_colors || []).find((c2) => c2.id === configState.seatColor);
+    const seatInfo = ((configState.model === "solo" ? cfg.interior_colors : cfg.seat_colors) || [])
+      .find((c2) => c2.id === configState.seatColor);
     const addonNames = cfg.addons.filter((a) => configState.addons.has(a.id))
       .map((a) => `${a.name} (+${formatPrice(addonPriceFor(a.id))})`);
     const confRows = [
@@ -2402,7 +2415,10 @@
       if (preInterior && (TRANSLATIONS.tr.configurator.interior_colors || []).some((col) => col.id === preInterior)) configState.interiorColor = preInterior;
 
       const preSeat = params.get("seat");
-      if (preSeat && (TRANSLATIONS.tr.configurator.seat_colors || []).some((col) => col.id === preSeat)) {
+      const preSeatPalette = configState.model === "solo"
+        ? TRANSLATIONS.tr.configurator.interior_colors
+        : TRANSLATIONS.tr.configurator.seat_colors;
+      if (preSeat && (preSeatPalette || []).some((col) => col.id === preSeat)) {
         configState.seatColor = preSeat;
         // Paylaşılan / QR ile açılan konfigürasyonlarda koltuk rengi de
         // iç sahneye uygulanmalı; aksi halde özet doğru olsa bile sahne
