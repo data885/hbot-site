@@ -40,6 +40,8 @@ CHANGEFREQ = {
 # should remain discoverable whenever the shared sitemap is regenerated.
 EXTRA_URLS = [
     ("https://hbotchambertech.com/en/hyperbaric-chamber-manufacturer.html", "2026-08-25", "weekly", "0.9"),
+    ("https://hbotchambertech.com/en/multiplace-hyperbaric-chamber.html", "2026-08-25", "weekly", "0.8"),
+    ("https://hbotchambertech.com/en/hyperbaric-chamber-for-clinics.html", "2026-08-25", "weekly", "0.8"),
 ]
 
 
