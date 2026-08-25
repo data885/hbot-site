@@ -2773,6 +2773,15 @@
     document.querySelectorAll(`.site-nav > a[data-nav="${navKey}"], .nav-dropdown-trigger[data-nav="${navKey}"]`).forEach((a) => a.classList.add("is-active"));
   }
 
+  function trackGoogleAdsLead() {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", "conversion", {
+      send_to: "AW-1841038370/ZuOMCNTC5OccEMLw3cpE",
+      value: 1.0,
+      currency: "TRY"
+    });
+  }
+
   function initForm(formId, successId, errorId, submitKey, sendingKey) {
     const form = document.getElementById(formId);
     if (!form) return;
@@ -2875,6 +2884,7 @@
         .then((res) => res.json().catch(() => ({ success: res.ok })))
         .then((data) => {
           if (data && (data.ok || data.success)) {
+            trackGoogleAdsLead();
             form.reset();
             if (successEl) {
               successEl.hidden = false;
