@@ -11,7 +11,8 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SITE_DIR = REPO_ROOT / "site"
 MEASUREMENT_ID = "G-C4BP4KX9FC"
-GOOGLE_ADS_ID = "AW-1841038370"
+GOOGLE_ADS_ID = "AW-18410338370"
+LEGACY_GOOGLE_ADS_ID = "AW-1841038370"
 
 TAG = f'''<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={MEASUREMENT_ID}"></script>
@@ -30,8 +31,14 @@ def install() -> None:
     already_present = 0
     ads_destination_added = 0
     ads_config = f"gtag('config', '{GOOGLE_ADS_ID}');"
+    legacy_ads_config = f"gtag('config', '{LEGACY_GOOGLE_ADS_ID}');"
     for page in sorted(SITE_DIR.rglob("*.html")):
         html = page.read_text(encoding="utf-8")
+        if legacy_ads_config in html:
+            html = html.replace(legacy_ads_config, ads_config)
+            page.write_text(html, encoding="utf-8")
+            ads_destination_added += 1
+            continue
         if MEASUREMENT_ID in html and ads_config in html:
             already_present += 1
             continue

@@ -2776,7 +2776,7 @@
   function trackGoogleAdsLead() {
     if (typeof window.gtag !== "function") return;
     window.gtag("event", "conversion", {
-      send_to: "AW-1841038370/ZuOMCNTC5OccEMLw3cpE",
+      send_to: "AW-18410338370/ZJoMCNTC5OccEMLw3cpE",
       value: 1.0,
       currency: "TRY"
     });
