@@ -35,6 +35,13 @@ CHANGEFREQ = {
     "blog.html": "weekly",
 }
 
+# English-language commercial landing pages that are intentionally outside
+# the shared 7-language page set. They have self-referencing canonicals and
+# should remain discoverable whenever the shared sitemap is regenerated.
+EXTRA_URLS = [
+    ("https://hbotchambertech.com/en/hyperbaric-chamber-manufacturer.html", "2026-08-25", "weekly", "0.9"),
+]
+
 
 def build_sitemap():
     lines = [
@@ -60,13 +67,20 @@ def build_sitemap():
             lines.append(f"    <changefreq>{changefreq}</changefreq>")
             lines.append(f"    <priority>{priority}</priority>")
             lines.append("  </url>")
+    for loc, lastmod, changefreq, priority in EXTRA_URLS:
+        lines.append("  <url>")
+        lines.append(f"    <loc>{loc}</loc>")
+        lines.append(f"    <lastmod>{lastmod}</lastmod>")
+        lines.append(f"    <changefreq>{changefreq}</changefreq>")
+        lines.append(f"    <priority>{priority}</priority>")
+        lines.append("  </url>")
     lines.append("</urlset>")
     lines.append("")
 
     out_path = os.path.join(SITE_DIR, "sitemap.xml")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
-    n_urls = len(ROOT_PAGES) * len(ALL_LANGS)
+    n_urls = len(ROOT_PAGES) * len(ALL_LANGS) + len(EXTRA_URLS)
     print(f"sitemap.xml written with {n_urls} URLs ({len(ROOT_PAGES)} pages x {len(ALL_LANGS)} languages).")
 
 
