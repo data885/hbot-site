@@ -851,6 +851,23 @@
       sampanya: "colors/tokyo/sampanya",
       bronz: "colors/tokyo/bronz",
       zumrut: "colors/tokyo/zumrut"
+    }),
+    "solo-lounge": Object.freeze({
+      "pearl-white": "colors/oslo/pearl-white",
+      "mat-siyah": "colors/oslo/mat-siyah",
+      antrasit: "colors/oslo/antrasit",
+      "gece-laciverti": "colors/oslo/gece-laciverti",
+      bordo: "colors/oslo/bordo",
+      sampanya: "colors/oslo/sampanya",
+      grafit: "colors/oslo/grafit",
+      bronz: "colors/oslo/bronz",
+      zumrut: "colors/oslo/zumrut",
+      bej: "colors/oslo/bej",
+      "adacayi-yesili": "colors/oslo/adacayi-yesili",
+      turkuaz: "colors/oslo/turkuaz",
+      "nane-yesili": "colors/oslo/nane-yesili",
+      "tas-grisi": "colors/oslo/tas-grisi",
+      fildisi: "colors/oslo/fildisi"
     })
   });
 
