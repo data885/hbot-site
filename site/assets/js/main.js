@@ -2875,11 +2875,35 @@
         ts: new Date().toISOString()
       });
 
-      // Apps Script web app'i de (Formspree gibi) normal CORS + JSON yaniti
-      // destekliyor (dogru "Who has access: Anyone" ile deploy edildiginde) —
-      // asagidaki genel yol ikisi icin de gecerli, yanit gercekten okunup
-      // dogrulaniyor (eskiden no-cors ile korlemesine "basarili" sayiliyordu,
-      // bu da backend kopse bile kullaniciya sahte basari mesaji gosteriyordu).
+      // Google Apps Script Web App yanitina tarayicidan CORS ile erisilemiyor.
+      // Teklif istegini normal bir form gonderimi gibi no-cors ile ilet; Formspree
+      // ise CORS + JSON destegi verdigi icin asagidaki dogrulanmis yoldan devam eder.
+      const isAppsScript = form.action.indexOf("script.google.com") !== -1;
+      if (isAppsScript) {
+        fetch(form.action, { method: "POST", body: formData, mode: "no-cors" })
+          .then(() => {
+            trackGoogleAdsLead();
+            form.reset();
+            if (successEl) {
+              successEl.hidden = false;
+              setTimeout(() => (successEl.hidden = true), 8000);
+            }
+          })
+          .catch(() => {
+            if (errorEl) {
+              errorEl.hidden = false;
+              setTimeout(() => (errorEl.hidden = true), 8000);
+            }
+          })
+          .finally(() => {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = getByPath(dict, submitKey) || "Send";
+            }
+          });
+        return;
+      }
+
       fetch(form.action, { method: "POST", body: formData, headers: { Accept: "application/json" } })
         .then((res) => res.json().catch(() => ({ success: res.ok })))
         .then((data) => {
