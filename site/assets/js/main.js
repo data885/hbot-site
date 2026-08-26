@@ -798,7 +798,7 @@
     solo: { exterior: "real/dubai-real", exteriorMask: "masks/ext-oslo", interior: "real/oslo-interior", interiorMask: "masks/int-oslo", seatMask: "masks/seat-oslo" },
     duo: { exterior: "real/tokyo-real", exteriorMask: "masks/ext-duo", interior: "real/duo-interior", interiorMask: "masks/int-duo", seatMask: "masks/seat-duo" },
     "duo-plus": { exterior: "real/tokyo-plus-real", exteriorMask: "masks/ext-duo", interior: "real/duo-interior", interiorMask: "masks/int-duo", seatMask: "masks/seat-duo" },
-    "quad-cube": { exterior: "real/milano-config", exteriorMask: "masks/ext-quadcube2", interior: "real/milano-interior", interiorMask: "masks/int-quadcube", seatMask: "masks/seat-quadcube" },
+    "quad-cube": { exterior: "real/milano-config", exteriorMask: "masks/ext-quadcube2", interior: "real/milano-config", interiorMask: "masks/int-quadcube", seatMask: "masks/seat-quadcube" },
     nexus: { exterior: "real/geneva-real", exteriorMask: null, interior: "real/geneva-interior", interiorMask: "masks/int-nexus", seatMask: "masks/seat-nexus" }
   });
   const REAL_STAGE = Object.fromEntries(Object.entries(STAGE_RENDER_MANIFEST).map(([id, item]) => [id, item.exterior]));
@@ -836,6 +836,36 @@
     if (!interiors.has(configState.interiorColor)) configState.interiorColor = interiors.values().next().value || "cream";
     const seats = dubaiSeatIds(configState.color, configState.interiorColor);
     if (!seats.has(configState.seatColor)) configState.seatColor = seats.values().next().value || configState.interiorColor;
+  }
+
+  /* Milano üç eksenli statik render sistemi — Dubai ile aynı desen.
+     135 kombinasyon (15 dış x 3 iç duvar x 3 koltuk) tam matristir. */
+  const MILANO_RENDER_MANIFEST = window.HBOT_MILANO_RENDER_MANIFEST || Object.freeze({ combinations: Object.freeze({}) });
+  const MILANO_RENDER_COMBINATIONS = Object.freeze(MILANO_RENDER_MANIFEST.combinations || {});
+  function milanoRenderKey(exteriorId, interiorId, seatId) {
+    return MILANO_RENDER_COMBINATIONS[`${exteriorId}|${interiorId}|${seatId}`] || "";
+  }
+  function milanoExteriorIds() {
+    return new Set(Object.keys(MILANO_RENDER_COMBINATIONS).map((key) => key.split("|")[0]));
+  }
+  function milanoInteriorIds(exteriorId) {
+    return new Set(Object.keys(MILANO_RENDER_COMBINATIONS)
+      .map((key) => key.split("|"))
+      .filter((parts) => parts[0] === exteriorId)
+      .map((parts) => parts[1]));
+  }
+  function milanoSeatIds(exteriorId, interiorId) {
+    return new Set(Object.keys(MILANO_RENDER_COMBINATIONS)
+      .map((key) => key.split("|"))
+      .filter((parts) => parts[0] === exteriorId && parts[1] === interiorId)
+      .map((parts) => parts[2]));
+  }
+  function normalizeMilanoSelection() {
+    if (configState.model !== "quad-cube") return;
+    const interiors = milanoInteriorIds(configState.color);
+    if (!interiors.has(configState.interiorColor)) configState.interiorColor = interiors.values().next().value || "cream";
+    const seats = milanoSeatIds(configState.color, configState.interiorColor);
+    if (!seats.has(configState.seatColor)) configState.seatColor = seats.values().next().value || "krem";
   }
 
   /* Onaylanmış statik renk önizlemeleri. Yalnızca aynı ana referanstan,
@@ -921,6 +951,13 @@
     if (configState.model === "solo") {
       normalizeDubaiSelection();
       const exactKey = dubaiRenderKey(configState.color, configState.interiorColor, configState.seatColor);
+      if (exactKey) {
+        return { key: exactKey, filter: "none", interior: configState.stageView === "interior", photo: true };
+      }
+    }
+    if (configState.model === "quad-cube") {
+      normalizeMilanoSelection();
+      const exactKey = milanoRenderKey(configState.color, configState.interiorColor, configState.seatColor);
       if (exactKey) {
         return { key: exactKey, filter: "none", interior: configState.stageView === "interior", photo: true };
       }
@@ -1472,6 +1509,10 @@
     if (!(colorId in EXT_PAINT_MODE)) return false;
     if (modelId === "nexus") return colorId === "pearl-white";
     if (modelId === "solo") return dubaiExteriorIds().has(colorId);
+    if (modelId === "quad-cube") {
+      const ids = milanoExteriorIds();
+      if (ids.size) return ids.has(colorId);
+    }
     return !!STAGE_RENDER_MANIFEST[modelId];
   }
   /* Görsel kaynağı onaylı statik render veya modelin kanonik fotoğrafıdır. */
