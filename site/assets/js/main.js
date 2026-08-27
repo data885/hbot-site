@@ -1287,14 +1287,8 @@
         const usageId = btn.getAttribute("data-usage-id");
         if (usageId === configState.usageType) return;
         configState.usageType = usageId;
-        const allowedIds = USAGE_MODELS[usageId] || USAGE_MODELS.home;
-        if (!allowedIds.includes(configState.model)) {
-          configState.model = allowedIds[0];
-          configState.tierIndex = 0;
-          const seatTiers0 = SEAT_TIERS[configState.model];
-          configState.nexusSeats = seatTiers0 ? seatTiers0[0].seats : NEXUS_BASE_SEATS;
-          resetModelVisualState();
-        }
+        /* Kullanım alanı bir öneri filtresidir; model kataloğunu veya kullanıcının
+           seçtiği kabini gizlememeli/değiştirmemelidir. */
         if (!styleAllowedFor(configState.model, configState.chamberStyle)) configState.chamberStyle = "solid";
         const dict2 = TRANSLATIONS[currentLang];
         renderAllConfigControls(dict2);
@@ -1587,8 +1581,8 @@
   function renderConfigModels(dict) {
     const c = document.getElementById("config-model-grid");
     if (!c) return;
-    const allowedIds = USAGE_MODELS[configState.usageType] || USAGE_MODELS.home;
-    const visibleModels = dict.configurator.models.filter((m) => allowedIds.includes(m.id));
+    /* Oslo dahil altı model her kullanım alanında görünür kalır. */
+    const visibleModels = dict.configurator.models;
     c.innerHTML = visibleModels.map((m) => {
       const selected = configState.model === m.id ? " is-selected" : "";
       const priceLabel = SEAT_TIERS[m.id] ? formatPrice(MODEL_PRICING[m.id].base) + "+" : formatPrice(MODEL_PRICING[m.id].base);
