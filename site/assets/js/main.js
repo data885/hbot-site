@@ -872,14 +872,26 @@
      burada yoksa modelin kanonik fotoğrafına güvenli biçimde geri dönülür. */
   const APPROVED_COLOR_RENDER_MANIFEST = Object.freeze({
     duo: Object.freeze({
-      "pearl-white": "colors/tokyo/pearl-white",
-      "mat-siyah": "colors/tokyo/mat-siyah",
-      antrasit: "colors/tokyo/antrasit",
-      "gece-laciverti": "colors/tokyo/gece-laciverti",
-      bordo: "colors/tokyo/bordo",
-      sampanya: "colors/tokyo/sampanya",
-      bronz: "colors/tokyo/bronz",
-      zumrut: "colors/tokyo/zumrut"
+      "pearl-white": "colors/tokyo/pearl-white-wall-logo-v2",
+      "mat-siyah": "colors/tokyo/mat-siyah-wall-logo-v2",
+      antrasit: "colors/tokyo/antrasit-wall-logo-v2",
+      "gece-laciverti": "colors/tokyo/gece-laciverti-wall-logo-v2",
+      bordo: "colors/tokyo/bordo-wall-logo-v2",
+      sampanya: "colors/tokyo/sampanya-wall-logo-v2",
+      grafit: "colors/tokyo/grafit-wall-logo-v2",
+      bronz: "colors/tokyo/bronz-wall-logo-v2",
+      zumrut: "colors/tokyo/zumrut-wall-logo-v2"
+    }),
+    "duo-plus": Object.freeze({
+      "pearl-white": "colors/tokyo/pearl-white-wall-logo-v2",
+      "mat-siyah": "colors/tokyo/mat-siyah-wall-logo-v2",
+      antrasit: "colors/tokyo/antrasit-wall-logo-v2",
+      "gece-laciverti": "colors/tokyo/gece-laciverti-wall-logo-v2",
+      bordo: "colors/tokyo/bordo-wall-logo-v2",
+      sampanya: "colors/tokyo/sampanya-wall-logo-v2",
+      grafit: "colors/tokyo/grafit-wall-logo-v2",
+      bronz: "colors/tokyo/bronz-wall-logo-v2",
+      zumrut: "colors/tokyo/zumrut-wall-logo-v2"
     }),
     "solo-lounge": Object.freeze({
       "pearl-white": "colors/oslo/pearl-white",
@@ -1510,7 +1522,10 @@
     if (!(colorId in EXT_PAINT_MODE)) return false;
     if (modelId === "nexus") return colorId === "pearl-white";
     if (modelId === "solo") return dubaiExteriorIds().has(colorId);
-    if (modelId === "duo") return !!(APPROVED_COLOR_RENDER_MANIFEST.duo && APPROVED_COLOR_RENDER_MANIFEST.duo[colorId]);
+    if (modelId === "duo" || modelId === "duo-plus") {
+      const preparedRenders = APPROVED_COLOR_RENDER_MANIFEST[modelId];
+      return !!(preparedRenders && preparedRenders[colorId]);
+    }
     if (modelId === "quad-cube") return milanoExteriorIds().has(colorId);
     return !!STAGE_RENDER_MANIFEST[modelId];
   }
