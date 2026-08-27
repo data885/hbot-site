@@ -980,11 +980,11 @@
        dış görünüm, Oslo ise bir kare iç görünüm gösterebiliyordu. */
     normalizeConfigStageView();
     const target = currentStageTarget();
-    /* Dubai renderları kendi stüdyo duvarındaki marka alanını taşır. Sahne
-       üstündeki ikinci katman, görselde iki logo üst üste göründüğü için
-       kullanıma kapalıdır. */
+    /* Dubai renderları gerçek HBOT kilitli logosunu görselin stüdyo duvarına
+       taşır. Yalnız Dubai'de ikinci HTML katmanını kapat; diğer modellerde
+       sahne logosu görünür kalmalıdır. */
     const brandLockup = document.getElementById("stage-brand-lockup");
-    if (brandLockup) brandLockup.hidden = true;
+    if (brandLockup) brandLockup.hidden = configState.model === "solo";
     const desiredVariant = target.interior
       ? `${target.key}|${configState.interiorColor}|${configState.seatTouched ? configState.seatColor : "seat-default"}`
       : `${target.key}|${configState.color}`;
