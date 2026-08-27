@@ -997,6 +997,17 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(ellipse 75% 55% at 50% 18%, rgba(31, 216, 198, 0.14), rgba(255, 255, 255, 0.05) 45%, transparent 72%);
 }
+/* Dubai renderlarında üretken modelin yazı üretimine güvenmiyoruz: marka işareti
+   daima siteye ait kayıpsız logo varlığından geliyor. Koyu plaka, görsele gömülü
+   hatalı/tekrarlı metni örter; ürün görüntüsünün geometrisine müdahale etmez. */
+.stage-brand-lockup {
+  position: absolute; z-index: 5; top: 12%; left: 14%; width: min(47%, 330px);
+  padding: 5px 8px; border-radius: 7px; pointer-events: none;
+  background: linear-gradient(90deg, rgba(3, 8, 14, .98), rgba(3, 8, 14, .90) 82%, rgba(3, 8, 14, 0));
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .42);
+}
+.stage-brand-lockup img { display: block; width: 100%; height: auto; }
+.stage-brand-lockup[hidden] { display: none; }
 .stage-tilt {
   position: absolute; inset: 8% 6% 16%; display: flex; align-items: center; justify-content: center;
   transform-style: preserve-3d; will-change: transform;
@@ -1119,6 +1130,7 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   .config-stage .stage-model-name { font-size: 11px; padding: 4px 10px; }
   .config-stage .stage-spin-hint { display: none; }
   .config-stage .stage-view-toggle { transform: scale(0.82); transform-origin: top right; }
+  .stage-brand-lockup { top: 8px; left: 12px; width: min(54%, 260px); padding: 3px 5px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .stage-img { transition: none; }

@@ -976,6 +976,10 @@
     const imgA = document.getElementById("stage-img-a");
     const imgB = document.getElementById("stage-img-b");
     if (!imgA || !imgB) return;
+    /* Dubai görsellerindeki marka katmanı deterministtir: yapay üretimin metin
+       hatalarını kullanıcıya göstermeden gerçek HBOT varlığını kullanır. */
+    const brandLockup = document.getElementById("stage-brand-lockup");
+    if (brandLockup) brandLockup.hidden = configState.model !== "solo";
 
     /* Görünümü hedef çözülmeden ÖNCE normalleştir. Eski sırada Geneva bir kare
        dış görünüm, Oslo ise bir kare iç görünüm gösterebiliyordu. */
