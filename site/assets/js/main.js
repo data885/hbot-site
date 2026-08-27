@@ -762,8 +762,8 @@
   const REF_DISCOUNT_PCT = 5;
   const CRM_ENDPOINT = "https://crmalmita.com/api/leads"; // public lead API yoksa sessiz fallback
   const configState = { usageType: "home", model: "solo-lounge", tierIndex: 0, addons: new Set(), nexusSeats: NEXUS_BASE_SEATS, color: "pearl-white", chamberStyle: "solid", interiorColor: "cream", seatColor: "konyak", seatTouched: false, stageView: "exterior", spinIdx: 0, discountPct: 0, refCode: "" };
-  /* Kullanım alanı -> izinli model id'leri. Yüksek basınç (3.0/6.0 ATA) yalnızca
-     Nexus'ta mevcut olduğu için kurumsal kategori tek modelle sınırlı. */
+  /* Kullanım alanı -> izinli model id'leri. Ev tipi ve kurumsal modeller
+     konfigüratörde birbirinden kesin olarak ayrılır. */
   const USAGE_MODELS = {
     home: ["solo-lounge", "solo", "duo"],
     institutional: ["duo-plus", "quad-cube", "nexus"]
@@ -1247,7 +1247,14 @@
         const usageId = btn.getAttribute("data-usage-id");
         if (usageId === configState.usageType) return;
         configState.usageType = usageId;
-        /* Kullanım alanı yalnız öneri bilgisidir; seçili modeli değiştirmez. */
+        const allowedIds = USAGE_MODELS[usageId] || USAGE_MODELS.home;
+        if (!allowedIds.includes(configState.model)) {
+          configState.model = allowedIds[0];
+          configState.tierIndex = 0;
+          const seatTiers0 = SEAT_TIERS[configState.model];
+          configState.nexusSeats = seatTiers0 ? seatTiers0[0].seats : NEXUS_BASE_SEATS;
+          resetModelVisualState();
+        }
         if (!styleAllowedFor(configState.model, configState.chamberStyle)) configState.chamberStyle = "solid";
         const dict2 = TRANSLATIONS[currentLang];
         renderAllConfigControls(dict2);
@@ -1536,8 +1543,8 @@
   function renderConfigModels(dict) {
     const c = document.getElementById("config-model-grid");
     if (!c) return;
-    /* Katalogdaki altı model her kullanım alanında görünür kalır. */
-    const visibleModels = dict.configurator.models;
+    const allowedIds = USAGE_MODELS[configState.usageType] || USAGE_MODELS.home;
+    const visibleModels = dict.configurator.models.filter((m) => allowedIds.includes(m.id));
     c.innerHTML = visibleModels.map((m) => {
       const selected = configState.model === m.id ? " is-selected" : "";
       const priceLabel = SEAT_TIERS[m.id] ? formatPrice(MODEL_PRICING[m.id].base) + "+" : formatPrice(MODEL_PRICING[m.id].base);
