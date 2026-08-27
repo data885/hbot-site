@@ -772,9 +772,11 @@
   function resetModelVisualState() {
     if (!colorWorksFor(configState.model, configState.color)) configState.color = "pearl-white";
     configState.interiorColor = "cream";
-    configState.seatColor = configState.model === "solo" ? "cream" : "konyak";
+    configState.seatColor = configState.model === "solo"
+      ? "cream"
+      : (configState.model === "duo" || configState.model === "duo-plus" || configState.model === "quad-cube" ? "krem" : "konyak");
     configState.seatTouched = false;
-    configState.stageView = configState.model === "nexus" ? "interior" : "exterior";
+    configState.stageView = "exterior";
   }
 
   function renderAllConfigControls(dict) {
@@ -880,7 +882,8 @@
       sampanya: "colors/tokyo/sampanya-wall-logo-v2",
       grafit: "colors/tokyo/grafit-wall-logo-v2",
       bronz: "colors/tokyo/bronz-wall-logo-v2",
-      zumrut: "colors/tokyo/zumrut-wall-logo-v2"
+      zumrut: "colors/tokyo/zumrut-wall-logo-v2",
+      bej: "colors/tokyo/bej-wall-logo-v2"
     }),
     "duo-plus": Object.freeze({
       "pearl-white": "colors/tokyo/pearl-white-wall-logo-v2",
@@ -891,7 +894,8 @@
       sampanya: "colors/tokyo/sampanya-wall-logo-v2",
       grafit: "colors/tokyo/grafit-wall-logo-v2",
       bronz: "colors/tokyo/bronz-wall-logo-v2",
-      zumrut: "colors/tokyo/zumrut-wall-logo-v2"
+      zumrut: "colors/tokyo/zumrut-wall-logo-v2",
+      bej: "colors/tokyo/bej-wall-logo-v2"
     }),
     "solo-lounge": Object.freeze({
       "pearl-white": "colors/oslo/pearl-white",
@@ -910,6 +914,21 @@
       "tas-grisi": "colors/oslo/tas-grisi",
       fildisi: "colors/oslo/fildisi"
     })
+  });
+
+  /* Tokyo ve Tokyo Plus aynı onaylı kabin içi renk ailesini paylaşır.
+     Bu dokuz dosya tarayıcıda boyanmaz; Tokyo iç fotoğrafına oturan ayrı
+     iç döşeme ve koltuk maskeleriyle önceden hazırlanmıştır. */
+  const TOKYO_INTERIOR_RENDER_MANIFEST = Object.freeze({
+    "cream|krem": "colors/tokyo-interior/tokyo__int-cream__seat-krem__wall-logo-v1",
+    "cream|lacivert": "colors/tokyo-interior/tokyo__int-cream__seat-lacivert__wall-logo-v1",
+    "cream|bordo": "colors/tokyo-interior/tokyo__int-cream__seat-bordo__wall-logo-v1",
+    "navy|krem": "colors/tokyo-interior/tokyo__int-navy__seat-krem__wall-logo-v1",
+    "navy|lacivert": "colors/tokyo-interior/tokyo__int-navy__seat-lacivert__wall-logo-v1",
+    "navy|bordo": "colors/tokyo-interior/tokyo__int-navy__seat-bordo__wall-logo-v1",
+    "burgundy|krem": "colors/tokyo-interior/tokyo__int-burgundy__seat-krem__wall-logo-v1",
+    "burgundy|lacivert": "colors/tokyo-interior/tokyo__int-burgundy__seat-lacivert__wall-logo-v1",
+    "burgundy|bordo": "colors/tokyo-interior/tokyo__int-burgundy__seat-bordo__wall-logo-v1"
   });
 
   /* Tarayıcıda piksel boyama yapılmaz. Onaylı statik renk görseli varsa o,
@@ -954,7 +973,6 @@
 
   function normalizeConfigStageView() {
     if (configState.model === "solo-lounge") configState.stageView = "exterior";
-    if (configState.model === "nexus") configState.stageView = "interior";
   }
 
   function currentStageTarget() {
@@ -972,6 +990,10 @@
       if (exactKey) {
         return { key: exactKey, filter: "none", interior: configState.stageView === "interior", photo: true };
       }
+    }
+    if ((configState.model === "duo" || configState.model === "duo-plus") && configState.stageView === "interior") {
+      const exactKey = TOKYO_INTERIOR_RENDER_MANIFEST[`${configState.interiorColor}|${configState.seatColor}`];
+      if (exactKey) return { key: exactKey, filter: "none", interior: true, photo: true };
     }
     if (configState.stageView === "interior") {
       return { key: manifest.interior, filter: "none", interior: true, photo: true };
@@ -1090,13 +1112,9 @@
     const loungeNote = document.getElementById("lounge-decor-note");
     if (loungeNote) loungeNote.hidden = !hideInterior;
 
-    // Geneva (nexus): dış renk zaten İnci Beyazı'na kilitli (bkz. renderConfigColors) —
-    // "Dış Görünüm" sekmesinin bir anlamı kalmıyor, kabini içeriden gösteren tek bir
-    // gerçek fotoğraf (REAL_INTERIOR.nexus) yeterli. Görünüm sekmesini tamamen gizleyip
-    // sahneyi her zaman iç görünümde sabitliyoruz (bkz. kullanıcı talebi).
-    const lockToInterior = configState.model === "nexus";
+    // Geneva/Nexus için dış ve iç gerçek fotoğraflar arasında geçiş açıktır.
     const viewToggleGroup = document.querySelector(".stage-view-toggle");
-    if (viewToggleGroup) viewToggleGroup.hidden = lockToInterior;
+    if (viewToggleGroup) viewToggleGroup.hidden = false;
 
     // Görünüm toggle butonlarının durumu
     document.querySelectorAll(".stage-view-btn").forEach((btn) => {
@@ -1445,7 +1463,7 @@
         configState.color = btn.getAttribute("data-color-id");
         normalizeDubaiSelection();
         normalizeMilanoSelection();
-        if (configState.model === "duo") configState.stageView = "exterior";
+        if (configState.model === "duo" || configState.model === "duo-plus") configState.stageView = "exterior";
         const dict = TRANSLATIONS[currentLang];
         renderConfigColors(dict);
         renderConfigInteriorColors(dict);
@@ -1757,8 +1775,16 @@
      renk seçeneği gereksizdi (kullanıcı talebi). Krem (varsayılan/güvenli) +
      Lacivert + Bordo bırakıldı — bu ikisi yeni maskelerle test edilip iyi
      sonuç verdiği doğrulanan renkler. */
-  const INTERIOR_COLOR_ALLOWLIST = { "quad-cube": ["cream", "navy", "burgundy"] };
-  const SEAT_COLOR_ALLOWLIST = { "quad-cube": ["krem", "lacivert", "bordo"] };
+  const INTERIOR_COLOR_ALLOWLIST = {
+    duo: ["cream", "navy", "burgundy"],
+    "duo-plus": ["cream", "navy", "burgundy"],
+    "quad-cube": ["cream", "navy", "burgundy"]
+  };
+  const SEAT_COLOR_ALLOWLIST = {
+    duo: ["krem", "lacivert", "bordo"],
+    "duo-plus": ["krem", "lacivert", "bordo"],
+    "quad-cube": ["krem", "lacivert", "bordo"]
+  };
   function visibleColorList(list, allowlistMap) {
     const allow = allowlistMap[configState.model];
     return allow ? list.filter((c) => allow.includes(c.id)) : list;
