@@ -1,0 +1,38 @@
+# Bu dosya YALNIZCA takip edilmeyen dosyalari etkiler.
+# Halihazirda commit'lenmis her sey (site/, tools/, mevcut video-production
+# kaynaklari) takip edilmeye devam eder — .gitignore onlari repodan cikarmaz.
+
+# --- macOS ---
+.DS_Store
+
+# --- Gecici / uretim ciktilari ---
+tmp/
+output/
+social-seed-assets/
+
+# --- Video produksiyon ham kaynaklari ---
+# Script'ler (.mjs, .py, .sh, .txt, .vtt) commit'lenebilsin diye yalnizca
+# agir binary'ler haric tutuluyor.
+video-production/**/*.mp4
+video-production/**/*.mov
+video-production/**/*.mp3
+video-production/**/*.wav
+video-production/**/*.blend
+video-production/**/*.blend1
+video-production/**/*.png
+video-production/**/*.jpg
+video-production/**/*.jpeg
+video-production/**/*.webp
+
+# --- QA / denetim ekran goruntuleri ---
+audit/*.jpg
+audit/*.jpeg
+audit/*.png
+
+# --- Yerel arsivler ---
+*.zip
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
