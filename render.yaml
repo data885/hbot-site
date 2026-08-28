@@ -39,14 +39,18 @@ services:
       # HTML icin kural YOK: Render varsayilani (max-age=0, s-maxage=300)
       # korunur, boylece icerik degisikligi aninda yayina girer.
       #
-      # JS/CSS/font: URL'lerde ?v=NN cache-bust'i var (AGENTS.md kural 5),
-      # bu yuzden bir yil + immutable guvenli.
+      # JS/CSS: URL'lerde ?v=NN cache-bust'i var (AGENTS.md kural 5), bu yuzden
+      # bir yil guvenli. "immutable" BILEREK YOK: biri ?v'yi bumplamadan
+      # main.js'i guncellerse immutable ile geri gelen ziyaretci bir yil eski
+      # konfiguratorde kalir ve reload bile kurtarmaz. immutable'siz uzun cache
+      # ayni performansi verir, ama hatali deploy'dan reload ile cikilabilir.
       - path: /assets/js/*
         name: Cache-Control
-        value: "public, max-age=31536000, immutable"
+        value: "public, max-age=31536000"
       - path: /assets/css/*
         name: Cache-Control
-        value: "public, max-age=31536000, immutable"
+        value: "public, max-age=31536000"
+      # Fontlar hicbir zaman degismiyor — burada immutable guvenli.
       - path: /assets/fonts/*
         name: Cache-Control
         value: "public, max-age=31536000, immutable"
