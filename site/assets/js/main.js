@@ -981,14 +981,17 @@
       normalizeDubaiSelection();
       const exactKey = dubaiRenderKey(configState.color, configState.interiorColor, configState.seatColor);
       if (exactKey) {
-        return { key: exactKey, filter: "none", interior: configState.stageView === "interior", photo: true };
+        /* Dubai exact kombinasyonları tam kabin ürün renderlarıdır. İç renk
+           seçildiğinde bunları yakın plan iç mekân fotoğrafı gibi `cover`
+           ile kırpmak duvar logosunu ve kabinin dış çerçevesini kesiyordu. */
+        return { key: exactKey, filter: "none", interior: false, photo: true };
       }
     }
     if (configState.model === "quad-cube") {
       normalizeMilanoSelection();
       const exactKey = milanoRenderKey(configState.color, configState.interiorColor, configState.seatColor);
       if (exactKey) {
-        return { key: exactKey, filter: "none", interior: configState.stageView === "interior", photo: true };
+        return { key: exactKey, filter: "none", interior: false, photo: true };
       }
     }
     if ((configState.model === "duo" || configState.model === "duo-plus") && configState.stageView === "interior") {

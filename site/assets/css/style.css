@@ -1038,8 +1038,14 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   inset: 0; width: 100%; height: 100%; max-width: none; max-height: none;
   object-fit: cover; mix-blend-mode: normal; border-radius: 10px;
 }
-/* v3 gerçek renk render'ları: alpha'lı cutout — normal blend */
-.stage-img--photo { mix-blend-mode: normal; }
+/* Gerçek ürün renderları tam kadraj gösterilir. width/height tanımlanmayan eski
+   kural dar ekranlarda görseli küçültüyor; iç görünüm sınıfı da `cover` ile
+   üstteki duvar logosunu kesiyordu. Tam kabin renderında daima contain kullan. */
+.stage-img--photo:not(.stage-img--interior) {
+  inset: 0; width: 100%; height: 100%; max-width: none; max-height: none;
+  object-fit: contain; object-position: center; mix-blend-mode: normal;
+}
+.stage-img--photo.stage-img--interior { mix-blend-mode: normal; }
 /* v11: renk tint katmanı — maskeli bölgeye yarı saydam blend-mode: color uygulanır,
    orijinal ışık/doku her zaman görünür kalır (bkz. main.js updateConfigStage). */
 .stage-tint {
@@ -1104,9 +1110,10 @@ body[data-page="configurator"] .vip-card { display: none !important; }
    ekranın yarısını kaplıyordu. */
 @media (max-width: 900px) {
   .configurator-layout > .config-stage-col, .config-stage-sticky-inner { display: contents; }
-  .config-stage { order: -2; position: sticky; top: 64px; z-index: 32; aspect-ratio: auto; height: 150px; min-height: 0; }
+  .config-stage { order: -2; position: sticky; top: 64px; z-index: 32; aspect-ratio: auto; height: clamp(220px, 38vw, 300px); min-height: 0; }
+  .config-stage .stage-tilt { inset: 4% 3% 14%; }
   .mobile-config-status {
-    order: -1; position: sticky; top: 214px; z-index: 31; display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    order: -1; position: sticky; top: calc(64px + clamp(220px, 38vw, 300px)); z-index: 31; display: flex; align-items: center; justify-content: space-between; gap: 14px;
     padding: 11px 16px; background: var(--ink-950); color: var(--white); border-bottom: 1px solid rgba(255,255,255,.13);
     box-shadow: 0 8px 18px rgba(5, 8, 12, .18); font-size: 13px;
   }
