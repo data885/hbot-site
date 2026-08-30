@@ -3229,6 +3229,21 @@
     });
   }
 
+  /* ---------------- Microsoft Clarity (davranış analizi / ısı haritası) ---------------- */
+  const CLARITY_PROJECT_ID = "yamafw1sq8";
+  function initClarity() {
+    if (isLikelyBot() || document.getElementById("ms-clarity-script")) return;
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r);
+      t.id = "ms-clarity-script";
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", CLARITY_PROJECT_ID);
+  }
+
   /* ---------------- Product Assistant (rule-based FAQ chat) ----------------
      Kural-tabanlı, API anahtarı gerektirmeyen bir "ürün güçlü yanları" asistanı.
      Tam içerik TR ve EN'de; diğer diller (ar/ru/es/pt/de) şimdilik EN metnine
@@ -3434,5 +3449,6 @@
     applyLang(currentPageLang());
     initLangSuggestion();
     initProductAssistant();
+    initClarity();
   });
 })();
