@@ -9,9 +9,11 @@
   const SUPPORTED = ["en", "tr", "ar", "ru", "es", "pt", "de"];
   const PDF_DATE_LOCALE = { tr: "tr-TR", en: "en-GB", ru: "ru-RU", ar: "ar", es: "es-ES", pt: "pt-PT", de: "de-DE" };
 
-  /* İletişim ve WhatsApp hattı */
-  const WHATSAPP_NUMBER = "905326279998";
-  const CONTACT_PHONE_TEL = "+905326279998";
+  /* İletişim ve WhatsApp hattı — numara ham metin olarak JS kaynağında durmasın diye
+     ters çevrilmiş halde tutulup kullanılırken çözülüyor (basit kazıma botlarına karşı) */
+  const _PHONE_DIGITS = "899972623509".split("").reverse().join("");
+  const WHATSAPP_NUMBER = _PHONE_DIGITS;
+  const CONTACT_PHONE_TEL = "+" + _PHONE_DIGITS;
   const CONTACT_PHONE_DISPLAY = "+90 532 627 9998";
 
   /* ---------------- Icon library ---------------- */
@@ -337,7 +339,12 @@
       "model-solo-lounge": "soloLounge", "model-solo": "solo", "model-duo": "duo", "model-duo-plus": "duoPlus", "model-quad": "quad", "model-quad-cube": "quadCube", "model-nexus": "nexus",
       "hbot-info": "hbotInfo", "trust-safety": "trustSafety", blog: "blog", configurator: "configurator", contact: "contact"
     };
-    return map[page] || "home";
+    /* Eskiden bilinmeyen data-page değerleri sessizce "home" a düşüyordu —
+       bu da yeni/tekil SEO sayfalarının (manufacturer, legal, vb.) kendi
+       <title>/description'ını çalışma zamanında ana sayfanınkiyle
+       eziyordu. Eşleşme yoksa null dön: applyStaticLang o durumda sayfanın
+       kendi statik meta etiketlerine dokunmadan bırakır. */
+    return map[page] || null;
   }
 
   /* ---------------- Shared: models nav dropdown ---------------- */
@@ -2822,7 +2829,7 @@
   function updateWhatsAppLink(dict) {
     const link = document.getElementById("whatsapp-float-btn");
     if (!link || !dict.common) return;
-    if (WHATSAPP_NUMBER) {
+    if (WHATSAPP_NUMBER && !isLikelyBot()) {
       const message = encodeURIComponent(dict.common.whatsapp_message || "");
       link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
       link.target = "_blank";
@@ -3222,6 +3229,191 @@
     });
   }
 
+  /* ---------------- Product Assistant (rule-based FAQ chat) ----------------
+     Kural-tabanlı, API anahtarı gerektirmeyen bir "ürün güçlü yanları" asistanı.
+     Tam içerik TR ve EN'de; diğer diller (ar/ru/es/pt/de) şimdilik EN metnine
+     düşer ama linkler her zaman ziyaretçinin bulunduğu dil klasörüne gider. */
+  const ASSISTANT_I18N = {
+    tr: {
+      launcher: "Selin'e soru sor", title: "Selin",
+      subtitle: "HBOT Chamber Tech Asistanı",
+      greeting: "Merhaba, ben Selin! Modellerimiz, teknolojimiz ya da fiyat teklifi hakkında sorularınızı buradan sorabilirsiniz.",
+      placeholder: "Sorunuzu yazın…", send: "Gönder", close: "Kapat",
+      fallback: "Bu konuda hazır bir yanıtım yok. Ekibimizle doğrudan görüşmek ister misiniz?", fallbackCta: "İletişime Geç →",
+      topics: [
+        { label: "Hangi modeller var?", keywords: ["model", "hangi model", "kaç kişilik", "oslo", "dubai", "tokyo", "milano", "geneva", "kapasite", "boyut"],
+          answer: "Altı farklı model sunuyoruz. Ev/bireysel kullanım için: Oslo (1 kişi, yatarak) ve Dubai (1 kişi, oturarak, kompakt ve tam donanımlı). Kurumsal/klinik kullanım için: Tokyo (2 kişi, panoramik pencere, 1.5–2.0 ATA çalışma aralığı, çift kontrol sistemi), Tokyo Plus (2-4 kişi), Milano (4 kişi, geniş iç hacim) ve Geneva (hastane sınıfı, 6+ kişi, en yüksek basınç seçenekleri yalnızca bu modelde). Her model kendi kullanım senaryosuna göre tasarlandı; ev tipi ve kurumsal modeller konfigüratörde birbirinden ayrı listelenir. Doğru modeli bulmak için kapasiteyi, kurulum alanınızı ve kullanım amacınızı (ev/klinik/hastane) birlikte değerlendirmek en sağlıklısı.",
+          cta: "Modelleri Karşılaştır", slug: "modeller.html" },
+        { label: "Teknolojiniz nedir?", keywords: ["teknoloji", "cityai", "city ai", "cityos", "cityconnect", "cityguard", "citysync", "yapay zeka", "iot", "akıllı", "uzaktan izleme"],
+          answer: "Her HBOT City Tech modeli beş bileşenle birlikte gelir: CityConnect™ basınç, oksijen seviyesi, sıcaklık ve nem verilerini gerçek zamanlı uzaktan izler ve birden fazla kabini tek dashboard'dan yönetmenizi sağlar; CityOS™ kabinin işletim sistemidir; CityAI™ operasyonel verileri analiz ederek yetkili operatöre görünürlük ve raporlama desteği sunar (klinik kararın ya da operatörün yerine geçmez); CitySync™ hastane/işletme sistemleriyle entegrasyonu projeye özel kurar; CityGuard™ ise durum takibi, kayıtlı uyarılar ve planlı servis çalışmalarını destekler — örneğin bir basınç valfinde sapma olduğunda otomatik olarak servis talebi açılır. Somut rakamlarla: kabinlerimiz %94 oksijen saflığı, <60dB gürültü seviyesi (CitySilent™) ve 7/24 uzaktan izleme sunar.",
+          cta: "Teknolojiyi İncele", slug: "teknoloji.html" },
+        { label: "Güvenlik & uygunluk belgeleri", keywords: ["güvenlik", "sertifika", "uygunluk", "belge", "doküman", "standart", "ce", "iso"],
+          answer: "Güvenlik & Uygunluk sayfamız; model ve hedef pazarınıza göre değişen ürün güvenliği, operatör eğitimi, bakım planı, kurulum gereksinimleri ve uygunluk dokümanlarının şeffaf bir özetini sunar. Tek bir genel sertifika iddiası yerine, tam olarak sizin modelinize, konfigürasyonunuza, kullanım amacınıza ve teslim edileceği ülkeye özgü belgeleri proje bazında netleştiriyoruz — çünkü gereklilikler ülkeden ülkeye ve kullanım ortamından (ev/klinik/hastane) kullanım ortamına değişir.",
+          cta: "Güvenlik & Uygunluk", slug: "guvenlik-uygunluk.html" },
+        { label: "Fiyat / teklif nasıl alırım?", keywords: ["fiyat", "teklif", "ücret", "ne kadar", "maliyet", "ödeme", "indirim", "referans"],
+          answer: "Fiyat; seçtiğiniz model, çalışma basıncı seviyesi ve eklediğiniz opsiyonlara göre değişir. Online konfigüratörde model, kullanım amacı (ev/kurumsal), basınç ve ek özellikleri seçerek saniyeler içinde tahmini fiyatı görebilirsiniz — hiçbir kayıt gerekmez. Bir referans/indirim kodunuz varsa konfigüratörde uygulayabilirsiniz. Bu tahmini fiyat bağlayıcı değildir; nihai ve resmi teklif, projenizin detayları netleştikten sonra ekibimiz tarafından yazılı olarak hazırlanır.",
+          cta: "Konfigüratörü Aç", slug: "konfigurator.html" },
+        { label: "Şirket hakkında", keywords: ["kim", "şirket", "biz kimiz", "almita", "hakkında", "güven", "deneyim", "kaç yıl", "geçmiş", "tarihçe"],
+          answer: "Almita Group kurucularının ticari yolculuğu 1999'da katı atık yönetimi alanında gerçek saha problemlerine çözüm üretmekle başladı. Bugün HBOT Chamber Tech'i geliştiren ekibin tasarım, üretim, otomasyon ve proje yönetimi deneyimi 2007'ye uzanıyor. Bu birikimi CityOS™, CityGuard™, CityConnect™, CityAI™, online konfigüratör + artırılmış gerçeklik (AR) önizleme ve model bazlı mühendislikle yeni nesil hiperbarik oksijen sistemlerine taşıyoruz. Marka yapılanmamızın bu döneminde Almita Group'un ticari ve operasyonel ekosistemi tarafından destekleniyoruz — yani arkamızda hem saha deneyimi hem kurumsal güç var. Genel vaatler yerine; her projede kapsamı, kurulum planını, eğitimi, bakımı ve hedef pazara göre uygunluk dokümanlarını yazılı olarak netleştiriyoruz.",
+          cta: "İletişime Geç", slug: "iletisim.html" },
+        { label: "Teslimat & uluslararası gönderim", keywords: ["teslimat", "kargo", "gönderim", "uluslararası", "ülke", "ihracat", "lojistik"],
+          answer: "Teslimat süreci; hedef ülke, proje kapsamı ve seçilen modele göre proje bazında planlanır: önce kurulum alanı ve ön koşullar (elektrik, zemin, erişim) değerlendirilir, ardından lojistik ve gümrük süreci netleştirilir, teslimatla birlikte operatör eğitimi ve devreye alma (commissioning) planı uygulanır. Kesin süre ve lojistik detayları ülkeye göre değiştiği için, projenizin özelinde ekibimizle görüşmenizi öneririz.",
+          cta: "İletişime Geç", slug: "iletisim.html" },
+        { label: "İletişim / randevu", keywords: ["iletişim", "telefon", "email", "e-posta", "randevu", "görüşmek", "whatsapp", "ara"],
+          answer: "Bize dört şekilde ulaşabilirsiniz: iletişim sayfasındaki formu doldurarak, WhatsApp'tan yazarak, info@hbotchambertech.com adresine e-posta göndererek ya da 0850 888 1679 numarasını arayarak. Proje danışmanlığı için ülke, kullanım amacı ve tahmini kapasiteyi belirtmeniz süreci hızlandırır.",
+          cta: "İletişim Sayfası", slug: "iletisim.html" }
+      ]
+    },
+    en: {
+      launcher: "Ask Selin", title: "Selin",
+      subtitle: "HBOT Chamber Tech Assistant",
+      greeting: "Hi, I'm Selin! Ask me anything about our models, technology or getting a price estimate.",
+      placeholder: "Type your question…", send: "Send", close: "Close",
+      fallback: "I don't have a ready answer for that. Would you like to talk to our team directly?", fallbackCta: "Contact Us →",
+      topics: [
+        { label: "Which models do you offer?", keywords: ["model", "which model", "capacity", "people", "oslo", "dubai", "tokyo", "milano", "geneva", "size"],
+          answer: "We offer six models. For home/individual use: Oslo (1 person, lying) and Dubai (1 person, seated, compact and fully equipped). For institutional/clinical use: Tokyo (2 person, panoramic window, 1.5–2.0 ATA operating range, dual control system), Tokyo Plus (2-4 person), Milano (4 person, spacious interior) and Geneva (hospital-grade, 6+ person, the only model offering the highest pressure options). Each model is built for a specific use case; home and institutional models are listed separately in the configurator. The right choice depends on capacity, installation space and intended use (home/clinic/hospital) together.",
+          cta: "Compare Models", slug: "modeller.html" },
+        { label: "What technology is included?", keywords: ["technology", "cityai", "city ai", "cityos", "cityconnect", "cityguard", "citysync", "ai", "iot", "smart", "remote monitoring"],
+          answer: "Every HBOT City Tech model includes five platforms: CityConnect™ monitors pressure, oxygen level, temperature and humidity in real time and lets you manage multiple chambers from one dashboard; CityOS™ is the chamber's operating system; CityAI™ analyzes operational data to give the authorized operator visibility and reporting support (it does not replace clinical judgment or the operator); CitySync™ handles project-specific integration with hospital/business systems; CityGuard™ supports status tracking, logged alerts and scheduled service — for example, a service ticket opens automatically when a pressure valve deviates. In concrete numbers: our chambers deliver 94% oxygen purity, under 60dB noise (CitySilent™), and 24/7 remote monitoring.",
+          cta: "Explore the Technology", slug: "teknoloji.html" },
+        { label: "Safety & compliance documents", keywords: ["safety", "certificate", "certification", "compliance", "document", "standard", "ce", "iso"],
+          answer: "Our Safety & Compliance page gives a transparent summary of product safety, operator training, maintenance planning, installation requirements and compliance documentation, all of which vary by model and target market. Rather than one blanket certification claim, we confirm the documentation specific to your exact model, configuration, intended use and destination country on a project basis — requirements genuinely differ by country and by setting (home/clinic/hospital).",
+          cta: "Safety & Compliance", slug: "guvenlik-uygunluk.html" },
+        { label: "How do I get pricing?", keywords: ["price", "pricing", "cost", "quote", "how much", "payment", "discount", "referral"],
+          answer: "Price depends on the model you choose, the operating pressure level and any options you add. In the online configurator you pick a model, intended use (home/institutional), pressure and add-ons, and see an instant estimate within seconds — no sign-up required. If you have a referral/discount code you can apply it in the configurator. This estimate isn't binding; a final, official quotation is prepared in writing by our team once your project's details are confirmed.",
+          cta: "Open the Configurator", slug: "konfigurator.html" },
+        { label: "About the company", keywords: ["who are you", "company", "almita", "about", "history", "experience", "years", "trust", "background"],
+          answer: "Almita Group's founders began their commercial journey in 1999, solving real field problems in solid waste management. The team behind HBOT Chamber Tech today carries design, manufacturing, automation and project-management experience dating back to 2007. We bring that experience into next-generation hyperbaric oxygen systems through CityOS™, CityGuard™, CityConnect™, CityAI™, an online configurator with AR preview, and model-based engineering. During this phase of building the brand, we are backed by Almita Group's commercial and operational ecosystem — real field experience combined with corporate strength. Rather than general promises, every project gets its scope, installation plan, training, maintenance and market-specific compliance documentation confirmed in writing.",
+          cta: "Contact Us", slug: "iletisim.html" },
+        { label: "Shipping & international delivery", keywords: ["shipping", "delivery", "logistics", "international", "export", "country"],
+          answer: "Delivery is planned on a project basis around the destination country, project scope and selected model: first we assess the installation site and prerequisites (power, flooring, access), then logistics and customs are confirmed, and delivery is followed by operator training and a commissioning plan. Since exact timelines and logistics details vary by country, we recommend discussing the specifics of your project directly with our team.",
+          cta: "Contact Us", slug: "iletisim.html" },
+        { label: "Contact / book a call", keywords: ["contact", "phone", "email", "appointment", "talk", "whatsapp", "call"],
+          answer: "You can reach us four ways: the contact form on our contact page, WhatsApp, emailing info@hbotchambertech.com, or calling +90 850 888 1679. Mentioning your country, intended use and expected capacity up front speeds up the process.",
+          cta: "Contact Page", slug: "iletisim.html" }
+      ]
+    }
+  };
+  function getAssistantLangPrefix() {
+    const m = /^\/(en|ru|ar|de|es|pt)\//.exec(window.location.pathname);
+    return m ? "/" + m[1] + "/" : "/";
+  }
+  function getAssistantLocale() {
+    const prefix = getAssistantLangPrefix();
+    const code = prefix === "/" ? "tr" : prefix.replace(/\//g, "");
+    return ASSISTANT_I18N[code] ? code : "en";
+  }
+  function matchAssistantTopic(dict, query) {
+    const q = query.toLowerCase();
+    let best = null, bestScore = 0;
+    dict.topics.forEach((t) => {
+      let score = 0;
+      t.keywords.forEach((k) => { if (q.includes(k)) score += k.length; });
+      if (score > bestScore) { bestScore = score; best = t; }
+    });
+    return bestScore > 0 ? best : null;
+  }
+  function initProductAssistant() {
+    if (document.querySelector(".hbot-assistant-launcher")) return;
+    const dict = ASSISTANT_I18N[getAssistantLocale()];
+    const langPrefix = getAssistantLangPrefix();
+
+    const style = document.createElement("style");
+    style.textContent = ".hbot-assistant-launcher{position:fixed;z-index:150;bottom:24px;inset-inline-start:24px;display:flex;align-items:center;gap:8px;padding:12px 18px 12px 14px;border-radius:999px;border:none;cursor:pointer;background:linear-gradient(135deg,#1c2b38,#0a0f14);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.35);font-family:inherit;font-size:14px;font-weight:600;animation:hbotAssistantPulse 2.2s ease 3}" +
+      ".hbot-assistant-launcher:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.45)}.hbot-assistant-launcher svg{width:20px;height:20px;flex-shrink:0}" +
+      "@media (max-width:640px){.hbot-assistant-launcher{padding:12px;bottom:16px;inset-inline-start:16px}.hbot-assistant-launcher-label{display:none}}" +
+      "@keyframes hbotAssistantPulse{0%,100%{box-shadow:0 8px 24px rgba(0,0,0,.35)}50%{box-shadow:0 8px 24px rgba(201,164,92,.55)}}" +
+      ".hbot-assistant-panel{position:fixed;z-index:151;bottom:88px;inset-inline-start:24px;width:340px;max-width:calc(100vw - 32px);max-height:min(520px,70vh);display:flex;flex-direction:column;background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden;font-family:inherit}.hbot-assistant-panel[hidden]{display:none}" +
+      "@media (max-width:640px){.hbot-assistant-panel{inset-inline-start:16px;bottom:76px;width:calc(100vw - 32px)}}" +
+      ".hbot-assistant-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#0a0f14;color:#fff}.hbot-assistant-header strong{display:block;font-size:14px}.hbot-assistant-header span{display:block;font-size:12px;color:#9aa5ad;margin-top:2px}" +
+      ".hbot-assistant-close{background:none;border:none;color:#fff;font-size:20px;cursor:pointer;line-height:1;padding:4px}" +
+      ".hbot-assistant-body{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px;background:#f6f7f8}" +
+      ".hbot-assistant-msg{max-width:85%;padding:9px 13px;border-radius:12px;font-size:13.5px;line-height:1.45}" +
+      ".hbot-assistant-msg--bot{align-self:flex-start;background:#fff;color:#1c2b38;border:1px solid #e5e7eb}" +
+      ".hbot-assistant-msg--user{align-self:flex-end;background:#c9a45c;color:#0a0f14;font-weight:600}" +
+      ".hbot-assistant-cta{align-self:flex-start;font-size:13px;font-weight:700;color:#a9853f;text-decoration:none;padding:0 2px 6px}.hbot-assistant-cta:hover{text-decoration:underline}" +
+      ".hbot-assistant-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}" +
+      ".hbot-assistant-chip{border:1px solid #d8dce0;background:#fff;color:#1c2b38;border-radius:999px;padding:6px 12px;font-size:12.5px;cursor:pointer}.hbot-assistant-chip:hover{background:#f0f1f3}" +
+      ".hbot-assistant-input-row{display:flex;gap:8px;padding:10px;border-top:1px solid #e5e7eb;background:#fff}" +
+      ".hbot-assistant-input-row input{flex:1;border:1px solid #d8dce0;border-radius:999px;padding:9px 14px;font-size:13.5px;font-family:inherit;outline:none;min-width:0}.hbot-assistant-input-row input:focus{border-color:#a9853f}" +
+      ".hbot-assistant-input-row button{border:none;background:#0a0f14;color:#fff;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer}";
+    document.head.appendChild(style);
+
+    const launcher = document.createElement("button");
+    launcher.type = "button";
+    launcher.className = "hbot-assistant-launcher";
+    launcher.setAttribute("aria-label", dict.launcher);
+    launcher.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.4A8.5 8.5 0 0 1 3 11.5a8.38 8.38 0 0 1 8.5-8.4A8.38 8.38 0 0 1 21 11.5Z"/></svg><span class="hbot-assistant-launcher-label">' + dict.launcher + "</span>";
+
+    const panel = document.createElement("div");
+    panel.className = "hbot-assistant-panel";
+    panel.hidden = true;
+    panel.innerHTML =
+      '<div class="hbot-assistant-header"><div><strong>' + dict.title + "</strong><span>" + dict.subtitle + '</span></div><button type="button" class="hbot-assistant-close" aria-label="' + dict.close + '">&times;</button></div>' +
+      '<div class="hbot-assistant-body"><div class="hbot-assistant-msg hbot-assistant-msg--bot">' + dict.greeting + '</div><div class="hbot-assistant-quick"></div></div>' +
+      '<form class="hbot-assistant-input-row"><input type="text" autocomplete="off" placeholder="' + dict.placeholder + '" /><button type="submit">' + dict.send + "</button></form>";
+
+    document.body.appendChild(launcher);
+    document.body.appendChild(panel);
+
+    const body = panel.querySelector(".hbot-assistant-body");
+    const quick = panel.querySelector(".hbot-assistant-quick");
+
+    function addMessage(text, who) {
+      const div = document.createElement("div");
+      div.className = "hbot-assistant-msg hbot-assistant-msg--" + who;
+      div.textContent = text;
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+    }
+    function addCta(label, slug) {
+      const a = document.createElement("a");
+      a.className = "hbot-assistant-cta";
+      a.href = langPrefix + slug;
+      a.textContent = label;
+      body.appendChild(a);
+      body.scrollTop = body.scrollHeight;
+    }
+    function ask(userText, forcedTopic) {
+      addMessage(userText, "user");
+      const topic = forcedTopic || matchAssistantTopic(dict, userText);
+      if (topic) {
+        addMessage(topic.answer, "bot");
+        if (topic.cta && topic.slug) addCta(topic.cta, topic.slug);
+      } else {
+        addMessage(dict.fallback, "bot");
+        addCta(dict.fallbackCta, "iletisim.html");
+      }
+    }
+
+    dict.topics.forEach((t) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "hbot-assistant-chip";
+      btn.textContent = t.label;
+      btn.addEventListener("click", () => ask(t.label, t));
+      quick.appendChild(btn);
+    });
+
+    launcher.addEventListener("click", () => {
+      panel.hidden = !panel.hidden;
+      launcher.classList.toggle("is-open", !panel.hidden);
+    });
+    panel.querySelector(".hbot-assistant-close").addEventListener("click", () => {
+      panel.hidden = true;
+      launcher.classList.remove("is-open");
+    });
+    panel.querySelector("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = panel.querySelector("input");
+      const val = input.value.trim();
+      if (!val) return;
+      ask(val, null);
+      input.value = "";
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     initGeoRedirect();
     initLangSwitch();
@@ -3241,5 +3433,6 @@
     initReveal();
     applyLang(currentPageLang());
     initLangSuggestion();
+    initProductAssistant();
   });
 })();
