@@ -27,6 +27,7 @@ BASE_URL = "https://hbotchambertech.com"
 ROOT_PAGES = [
     "index.html", "teknoloji.html", "modeller.html", "hbot-nedir.html",
     "blog.html", "konfigurator.html", "iletisim.html", "guvenlik-uygunluk.html",
+    "distributorluk.html",
     "model-oslo.html", "model-dubai.html", "model-tokyo.html",
     "model-tokyo-plus.html", "model-milano.html", "model-geneva.html",
 ]
@@ -38,7 +39,7 @@ PAGE_META_KEY = {
     "home": "home", "technology": "technology", "models-overview": "models",
     "model-solo-lounge": "soloLounge", "model-solo": "solo", "model-duo": "duo", "model-duo-plus": "duoPlus",
     "model-quad": "quad", "model-quad-cube": "quadCube", "model-nexus": "nexus",
-    "hbot-info": "hbotInfo", "trust-safety": "trustSafety", "blog": "blog", "configurator": "configurator", "contact": "contact",
+    "hbot-info": "hbotInfo", "trust-safety": "trustSafety", "blog": "blog", "configurator": "configurator", "contact": "contact", "distributor": "distributor",
 }
 
 

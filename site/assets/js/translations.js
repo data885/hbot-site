@@ -835,6 +835,83 @@ const TRANSLATIONS = {
         }
       ]
     },
+    distributor: {
+      eyebrow: "DİSTRİBÜTÖRLÜK",
+      title: "HBOT City Tech'i Temsil Etmek İçin",
+      subtitle: "Altı modellik hiperbarik oksijen odası serisini kendi tesisimizde üretiyoruz. Distribütörlüğümüzü, pazarında kalıcı olmayı hedefleyen sınırlı sayıda firmayla yürütüyoruz. Aşağıdaki çerçeve size uyuyorsa başvurunuzu bekliyoruz.",
+      cta_apply: "Başvuru Yapın",
+      cta_models: "Modelleri İncele",
+      why: {
+        eyebrow: "FARKIMIZ",
+        title: "Neden Uzak Doğu Yerine Biz?",
+        subtitle: "Bu pazarda fiyat kırarak değil, distribütörünü kazandırarak çalışıyoruz. Aradaki farkı somut maddelerle ortaya koyduk.",
+        c1_title: "Uzak Doğu'dan 25-40 Gün, Bizden 4-5 Gün",
+        c1_text: "İstanbul'dan Körfez'e, Türki Cumhuriyetler'e ve Avrupa'ya sevkiyat gün hesabıyla yapılır; konteyner beklemez. Yedek parça aynı hızla gider. Distribütör için bu, stoka para bağlamadan satış yapabilmek demektir.",
+        c2_title: "Muhatabınız Üreticinin Kendisi",
+        c2_text: "Arada ihracat şirketi ya da acente yok. Teknik soruda doğrudan kabini tasarlayan mühendisle, ticari konuda karar veren kişiyle konuşursunuz — üstelik aynı saat diliminde.",
+        c3_title: "Konfigüratör: Satış Kapatma Aracınız",
+        c3_text: "Müşterinizin karşısında kabini onun renginde ve döşemesinde kurar, aynı görüşmede fiyatlı teklifi verirsiniz. Rakiplerin PDF katalog gösterip \"fiyatı sorup döneyim\" dediği yerde siz satışı kapatırsınız.",
+        c4_title: "Altı Model, Büyüyen Portföy",
+        c4_text: "Tek kişilikten hastane sınıfına altı model; ev, klinik, otel ve hastane bütçelerinin tamamı tek katalogdan. Yeni modeller ve sistem güncellemeleri sürekli geliştirmede — kataloğunuz tedarikçi değiştirmeden büyür.",
+        c5_title: "Belgelendirmede Yalnız Değilsiniz",
+        c5_text: "Belgelendirme gereklilikleri ülkeye göre değişir. Teknik dosyayı, mühendislik verilerini ve test dokümantasyonunu biz sağlarız; pazarınızdaki tescil ve yetkili temsilci sürecini birlikte planlarız.",
+        c6_title: "Pazarlama Altyapısı Hazır",
+        c6_text: "Yedi dilde web sitesi, model teknik dosyaları, tanıtım filmleri ve görsel arşiv kullanımınıza açılır. Pazara girerken sıfırdan içerik üretmekle vakit kaybetmezsiniz."
+      },
+      offer: {
+        eyebrow: "ÇALIŞMA MODELİMİZ",
+        title: "Distribütörümüzün Arkasında Durma Şeklimiz",
+        subtitle: "Ürünü gönderip kenara çekilmiyoruz. Kapsam ve ticari koşullar pazarın büyüklüğüne göre görüşmede netleşir.",
+        c1_title: "Bölgesel Temsil",
+        c1_text: "Performans hedefleri üzerinde anlaşılan distribütörler için bölgesel öncelik ve münhasırlık görüşmeye açıktır.",
+        c2_title: "Teknik Eğitim",
+        c2_text: "Kurulum, devreye alma, kullanıcı eğitimi ve periyodik bakım için ekibinize uygulamalı eğitim veririz.",
+        c3_title: "Pazarlama Materyali",
+        c3_text: "Ürün görselleri, tanıtım videoları, teknik dosyalar ve dijital kampanya materyalleri kendi dilinizde kullanımınıza açılır.",
+        c4_title: "Satış Sonrası Destek",
+        c4_text: "Yedek parça tedariki, uzaktan teknik destek ve arıza çözümünde doğrudan üretim ekibiyle iletişim kurarsınız.",
+        c5_title: "Showroom Koşulları",
+        c5_text: "Kendi showroomunuzda sergileyeceğiniz demo kabin için özel ticari koşullar görüşmeye açıktır.",
+        c6_title: "İhracat Operasyonu",
+        c6_text: "Sevkiyat, paketleme, gümrük dokümantasyonu ve teslim koşullarında (Incoterms) ihracat ekibimizle birlikte çalışırsınız."
+      },
+      profile: {
+        eyebrow: "BEKLENTİMİZ",
+        title: "Kimlerle Çalışıyoruz",
+        subtitle: "Her pazarda sınırlı sayıda firmayla çalışıyoruz. Maddelerin tamamını karşılamak şart değil, ancak temsil ciddiyeti aradığımız asıl niteliktir.",
+        i1: "Medikal cihaz, wellness ekipmanı veya lüks yaşam ürünleri alanında satış deneyimi",
+        i2: "Hedef pazarda ithalat ve gümrük süreçlerini yürütebilecek yapı",
+        i3: "Kurulum ve bakım yapabilecek teknik ekip ya da bu ekibi kurma isteği",
+        i4: "Klinik, spa, otel, spor kulübü veya hastane segmentinde mevcut müşteri ilişkileri",
+        i5: "Ürünü sergileyebileceğiniz bir showroom ya da gösterim alanı",
+        i6: "Uzun vadeli, tek markaya odaklı çalışma isteği"
+      },
+      process: {
+        eyebrow: "SÜREÇ",
+        title: "Değerlendirme Süreci",
+        s1_title: "1. Başvuru",
+        s1_text: "Formu doldurun. Şirketiniz, pazarınız ve deneyiminiz hakkındaki bilgiler ilk değerlendirme için yeterlidir.",
+        s2_title: "2. Görüşme",
+        s2_text: "Uygun bulunan başvurularla online görüşme yapar, pazar potansiyelini ve karşılıklı beklentileri netleştiririz.",
+        s3_title: "3. Pilot Sipariş",
+        s3_text: "İlk sipariş ve showroom kabini ile başlarız. Bu aşamada fiyatlandırma, teslim ve destek koşulları yazılı hale gelir.",
+        s4_title: "4. Distribütörlük Sözleşmesi",
+        s4_text: "Pilot aşamanın ardından bölge, hedefler ve süre üzerinde anlaşarak resmi distribütörlük sözleşmesini imzalarız."
+      },
+      form: {
+        eyebrow: "BAŞVURU",
+        title: "Distribütörlük Başvuru Formu",
+        subtitle: "Başvurunuz ihracat ekibimiz tarafından değerlendirilir. Uygun bulunan firmalarla iletişime geçilir.",
+        name: "Ad Soyad", company: "Şirket Adı", email: "E-posta", phone: "Telefon",
+        country: "Ülke / Bölge", website: "Web Sitesi (opsiyonel)", sector: "Faaliyet Alanınız",
+        sector_o1: "Medikal cihaz distribütörlüğü", sector_o2: "Wellness / spa ekipmanları",
+        sector_o3: "Klinik / hastane tedarik", sector_o4: "Otel ve turizm yatırımları",
+        sector_o5: "Spor ve performans merkezleri", sector_o6: "Diğer",
+        message: "Deneyiminiz ve Hedefleriniz", submit: "Başvuruyu Gönder",
+        success: "Teşekkürler! Başvurunuz alındı, ihracat ekibimiz en kısa sürede sizinle iletişime geçecek.",
+        error: "Bir şeyler ters gitti. Lütfen tekrar deneyin ya da info@hbotchambertech.com adresine yazın."
+      }
+    },
     contact: {
       header: { eyebrow: "İLETİŞİM", title: "Bize Ulaşın", subtitle: "Sorularınız ve teklif talepleriniz için formu doldurun." },
       address_label: "Adres",
@@ -1835,6 +1912,52 @@ const TRANSLATIONS = {
           source_url: "https://www.nfpa.org"
         }
       ]
+    },
+    distributor: {
+      eyebrow: "DISTRIBUTION",
+      title: "To Represent HBOT City Tech",
+      subtitle: "We manufacture our six-model hyperbaric chamber range in our own facility. We work with a limited number of partners per market — companies that intend to stay in this business. If the framework below fits you, we welcome your application.",
+      cta_apply: "Apply Now",
+      cta_models: "View Models",
+      why: {
+        eyebrow: "WHAT SETS US APART", title: "Why Us Instead of the Far East?", subtitle: "We don't compete by cutting price — we compete by making our distributor profitable. Here is the difference, in concrete terms.",
+        c1_title: "25–40 Days From the Far East. 4–5 From Us.", c1_text: "Shipments from Istanbul to the Gulf, the Turkic Republics and Europe are counted in days, not container schedules. Spare parts move just as fast. For a distributor that means selling without tying up capital in stock.",
+        c2_title: "You Deal With the Manufacturer", c2_text: "No export agency or middleman in between. On a technical question you speak to the engineer who designed the cabin; on commercial terms, to the person who decides — and in the same time zone.",
+        c3_title: "The Configurator Is Your Closing Tool", c3_text: "Sitting with your client, you build the cabin in their colour and interior and hand them a priced quote in the same meeting. Where competitors show a PDF catalogue and say \"let me check the price,\" you close the sale.",
+        c4_title: "Six Models, A Growing Range", c4_text: "From single-person cabins to a hospital-class chamber — home, clinic, hotel and hospital budgets from one catalogue. New models and system upgrades are in continuous development: your range grows without changing supplier.",
+        c5_title: "You Are Not Alone on Certification", c5_text: "Certification requirements differ by country. We provide the technical file, engineering data and test documentation; registration and authorised-representative steps in your market are planned together.",
+        c6_title: "Marketing Infrastructure Is Ready", c6_text: "A website in seven languages, model technical files, product films and a visual archive are made available to you. You won't lose months producing content from scratch."
+      },
+      offer: {
+        eyebrow: "HOW WE WORK", title: "How We Stand Behind Our Distributor", subtitle: "We don't ship the product and step aside. Scope and commercial terms are settled in discussion, according to the size of the market.",
+        c1_title: "Territorial Representation", c1_text: "For distributors who agree on performance targets, territorial priority and exclusivity are open to discussion.",
+        c2_title: "Technical Training", c2_text: "Hands-on training for your team on installation, commissioning, user instruction and periodic maintenance.",
+        c3_title: "Marketing Materials", c3_text: "Product imagery, films, technical files and digital campaign assets are made available in your language.",
+        c4_title: "After-Sales Support", c4_text: "For spare parts, remote technical support and fault resolution you deal directly with the production team.",
+        c5_title: "Showroom Terms", c5_text: "Special commercial terms for the demo cabin you display in your own showroom are open to discussion.",
+        c6_title: "Export Operations", c6_text: "You work with our export team on shipping, packaging, customs documentation and delivery terms (Incoterms)."
+      },
+      profile: {
+        eyebrow: "WHAT WE EXPECT", title: "Who We Work With", subtitle: "We work with a limited number of companies per market. You don't need to meet every point below — but seriousness about representation is the quality we actually look for.",
+        i1: "Sales experience in medical devices, wellness equipment or premium lifestyle products", i2: "The structure to handle import and customs processes in your market", i3: "A technical team for installation and maintenance, or the intent to build one",
+        i4: "Existing customer relationships in clinics, spas, hotels, sports clubs or hospitals", i5: "A showroom or display area where the product can be presented", i6: "Willingness to work long-term with a focused, single-brand commitment"
+      },
+      process: {
+        eyebrow: "PROCESS", title: "Evaluation Process",
+        s1_title: "1. Application", s1_text: "Complete the form. Information about your company, your market and your experience is enough for the first assessment.",
+        s2_title: "2. Meeting", s2_text: "With applications we find suitable, we hold an online meeting to clarify market potential and mutual expectations.",
+        s3_title: "3. Pilot Order", s3_text: "We begin with a first order and a showroom cabin. At this stage pricing, delivery and support terms are put in writing.",
+        s4_title: "4. Distribution Agreement", s4_text: "After the pilot stage, we agree on territory, targets and term, and sign the formal distribution agreement."
+      },
+      form: {
+        eyebrow: "APPLICATION", title: "Distributor Application Form", subtitle: "Your application is reviewed by our export team. We contact the companies we find suitable.",
+        name: "Full Name", company: "Company Name", email: "Email", phone: "Phone",
+        country: "Country / Region", website: "Website (optional)", sector: "Your Field of Business",
+        sector_o1: "Medical device distribution", sector_o2: "Wellness / spa equipment", sector_o3: "Clinic / hospital supply",
+        sector_o4: "Hotel and tourism investments", sector_o5: "Sports and performance centres", sector_o6: "Other",
+        message: "Your Experience and Goals", submit: "Submit Application",
+        success: "Thank you. Your application has been received; our export team will be in touch shortly.", error: "Something went wrong. Please try again or write to info@hbotchambertech.com."
+      }
     },
     contact: {
       header: { eyebrow: "CONTACT", title: "Get in Touch", subtitle: "Fill out the form for your questions and quote requests." },
@@ -2837,6 +2960,52 @@ const TRANSLATIONS = {
         }
       ]
     },
+    distributor: {
+      eyebrow: "ДИСТРИБЬЮЦИЯ",
+      title: "Чтобы представлять HBOT City Tech",
+      subtitle: "Мы производим линейку из шести моделей гипербарических камер на собственном предприятии. В каждом рынке работаем с ограниченным числом партнёров — с теми, кто настроен работать всерьёз и долго. Если условия ниже вам подходят, ждём вашу заявку.",
+      cta_apply: "Подать заявку",
+      cta_models: "Смотреть модели",
+      why: {
+        eyebrow: "НАШЕ ОТЛИЧИЕ", title: "Почему мы, а не Дальний Восток?", subtitle: "Мы конкурируем не снижением цены, а прибылью нашего дистрибьютора. Ниже — конкретная разница.",
+        c1_title: "25–40 дней с Дальнего Востока. От нас — 4–5.", c1_text: "Поставки из Стамбула в страны Залива, тюркские республики и Европу считаются днями, а не графиком контейнеров. Запчасти идут так же быстро. Для дистрибьютора это возможность продавать, не замораживая деньги в складе.",
+        c2_title: "Ваш собеседник — сам производитель", c2_text: "Никаких экспортных посредников. По техническому вопросу вы говорите с инженером, который проектировал камеру; по коммерческому — с тем, кто принимает решение. И в одном часовом поясе.",
+        c3_title: "Конфигуратор — ваш инструмент закрытия сделки", c3_text: "Рядом с клиентом вы собираете камеру в его цвете и отделке и передаёте расчёт в той же встрече. Там, где конкуренты показывают PDF-каталог и обещают «уточнить цену», вы закрываете продажу.",
+        c4_title: "Шесть моделей и растущая линейка", c4_text: "От одноместной капсулы до камеры больничного класса — дом, клиника, отель и стационар в одном каталоге. Новые модели и обновления систем в постоянной разработке: ваш ассортимент растёт без смены поставщика.",
+        c5_title: "В сертификации вы не одни", c5_text: "Требования к сертификации различаются по странам. Мы предоставляем технический файл, инженерные данные и документацию по испытаниям; регистрацию и вопрос уполномоченного представителя планируем вместе.",
+        c6_title: "Маркетинговая база готова", c6_text: "Сайт на семи языках, технические файлы моделей, презентационные фильмы и фотоархив передаются вам. Не придётся месяцами создавать контент с нуля."
+      },
+      offer: {
+        eyebrow: "КАК МЫ РАБОТАЕМ", title: "Как мы поддерживаем дистрибьютора", subtitle: "Мы не отправляем товар и не исчезаем. Объём поддержки и коммерческие условия определяются в переговорах — в зависимости от масштаба рынка.",
+        c1_title: "Территориальное представительство", c1_text: "Для дистрибьюторов, согласовавших целевые показатели, приоритет по территории и эксклюзивность обсуждаются.",
+        c2_title: "Техническое обучение", c2_text: "Практическое обучение вашей команды: монтаж, ввод в эксплуатацию, инструктаж пользователей и регулярное обслуживание.",
+        c3_title: "Маркетинговые материалы", c3_text: "Изображения продукта, видео, технические файлы и материалы для цифровых кампаний — на вашем языке.",
+        c4_title: "Поддержка после продажи", c4_text: "По запчастям, удалённой технической поддержке и устранению неисправностей вы связываетесь напрямую с производством.",
+        c5_title: "Условия для шоурума", c5_text: "Особые коммерческие условия на демонстрационную камеру для вашего шоурума обсуждаются отдельно.",
+        c6_title: "Экспортные операции", c6_text: "Отгрузка, упаковка, таможенная документация и условия поставки (Incoterms) — совместно с нашим экспортным отделом."
+      },
+      profile: {
+        eyebrow: "НАШИ ОЖИДАНИЯ", title: "С кем мы работаем", subtitle: "В каждом рынке мы работаем с ограниченным числом компаний. Соответствовать всем пунктам не обязательно, но серьёзное отношение к представительству — то качество, которое мы действительно ищем.",
+        i1: "Опыт продаж медицинского оборудования, wellness-техники или продуктов премиального сегмента", i2: "Возможность вести импорт и таможенное оформление на своём рынке", i3: "Техническая команда для монтажа и обслуживания либо готовность её сформировать",
+        i4: "Действующие связи с клиниками, спа, отелями, спортивными клубами или больницами", i5: "Шоурум или площадка, где продукт можно показать", i6: "Готовность к долгосрочной работе с фокусом на один бренд"
+      },
+      process: {
+        eyebrow: "ПРОЦЕСС", title: "Процесс рассмотрения",
+        s1_title: "1. Заявка", s1_text: "Заполните форму. Информации о компании, рынке и вашем опыте достаточно для первичной оценки.",
+        s2_title: "2. Встреча", s2_text: "С подходящими кандидатами проводим онлайн-встречу и уточняем потенциал рынка и взаимные ожидания.",
+        s3_title: "3. Пилотный заказ", s3_text: "Начинаем с первого заказа и камеры для шоурума. На этом этапе цены, поставка и условия поддержки фиксируются письменно.",
+        s4_title: "4. Дистрибьюторский договор", s4_text: "После пилотного этапа согласуем территорию, цели и срок и подписываем официальный договор."
+      },
+      form: {
+        eyebrow: "ЗАЯВКА", title: "Форма заявки на дистрибьюторство", subtitle: "Заявку рассматривает наш экспортный отдел. Мы связываемся с подходящими компаниями.",
+        name: "Имя и фамилия", company: "Название компании", email: "Эл. почта", phone: "Телефон",
+        country: "Страна / регион", website: "Сайт (необязательно)", sector: "Сфера деятельности",
+        sector_o1: "Дистрибуция медицинского оборудования", sector_o2: "Wellness / спа-оборудование", sector_o3: "Снабжение клиник и больниц",
+        sector_o4: "Отели и туристические инвестиции", sector_o5: "Спортивные центры", sector_o6: "Другое",
+        message: "Ваш опыт и цели", submit: "Отправить заявку",
+        success: "Спасибо! Заявка получена, наш экспортный отдел свяжется с вами в ближайшее время.", error: "Что-то пошло не так. Попробуйте ещё раз или напишите на info@hbotchambertech.com."
+      }
+    },
     contact: {
       header: { eyebrow: "КОНТАКТЫ", title: "Свяжитесь с нами", subtitle: "Заполните форму для вопросов и запросов на предложение." },
       address_label: "Адрес",
@@ -3827,6 +3996,52 @@ const TRANSLATIONS = {
           source_url: "https://www.nfpa.org"
         }
       ]
+    },
+    distributor: {
+      eyebrow: "التوزيع",
+      title: "لتمثيل HBOT City Tech",
+      subtitle: "نُصنّع تشكيلتنا المكوّنة من ستة موديلات من غرف الأكسجين المضغوط في منشأتنا الخاصة. نعمل مع عدد محدود من الشركاء في كل سوق — شركات تنوي البقاء في هذا المجال. إن كان الإطار أدناه يناسبكم، نرحّب بطلبكم.",
+      cta_apply: "قدّم طلبك",
+      cta_models: "استعرض الموديلات",
+      why: {
+        eyebrow: "ما يميّزنا", title: "لماذا نحن بدلًا من الشرق الأقصى؟", subtitle: "لا ننافس بخفض السعر، بل بجعل موزّعنا رابحًا. إليكم الفرق بصورة ملموسة.",
+        c1_title: "٢٥–٤٠ يومًا من الشرق الأقصى. من عندنا ٤–٥.", c1_text: "الشحن من إسطنبول إلى الخليج والجمهوريات التركية وأوروبا يُحسب بالأيام لا بجداول الحاويات. وقطع الغيار بالسرعة نفسها. هذا يعني للموزّع البيع دون تجميد رأس المال في المخزون.",
+        c2_title: "تتعامل مع المُصنِّع مباشرة", c2_text: "لا وكالة تصدير ولا وسيط. في السؤال الفني تتحدث مع المهندس الذي صمّم الكبينة، وفي الشأن التجاري مع صاحب القرار — وفي المنطقة الزمنية نفسها.",
+        c3_title: "المُهيّئ الإلكتروني أداتكم لإتمام البيع", c3_text: "أمام عميلكم تبنون الكبينة بلونه وتصميمه الداخلي وتسلّمونه عرض سعر في الاجتماع نفسه. وحيث يعرض المنافسون كتالوج PDF ويقولون \"سأستعلم عن السعر\"، تُتمّون أنتم الصفقة.",
+        c4_title: "ستة موديلات وتشكيلة تنمو", c4_text: "من كبينة لشخص واحد إلى غرفة بمواصفات المستشفيات — المنزل والعيادة والفندق والمستشفى من كتالوج واحد. موديلات جديدة وتحديثات للأنظمة قيد التطوير المستمر: تشكيلتكم تنمو دون تغيير المورّد.",
+        c5_title: "لستم وحدكم في التوثيق", c5_text: "متطلبات التوثيق تختلف من بلد لآخر. نوفّر الملف الفني والبيانات الهندسية ووثائق الاختبار؛ ونخطّط معًا لخطوات التسجيل والممثل المعتمد في سوقكم.",
+        c6_title: "البنية التسويقية جاهزة", c6_text: "موقع بسبع لغات، وملفات فنية للموديلات، وأفلام تعريفية وأرشيف بصري — كلها تحت تصرفكم. لن تضيّعوا شهورًا في إنتاج المحتوى من الصفر."
+      },
+      offer: {
+        eyebrow: "أسلوب عملنا", title: "كيف نقف خلف موزّعنا", subtitle: "لا نشحن المنتج ثم ننسحب. النطاق والشروط التجارية تُحدَّد بالتفاوض، وفق حجم السوق.",
+        c1_title: "التمثيل الإقليمي", c1_text: "للموزّعين الذين يتفقون على أهداف الأداء، الأولوية الإقليمية والحصرية قابلتان للنقاش.",
+        c2_title: "التدريب الفني", c2_text: "تدريب عملي لفريقكم على التركيب والتشغيل وتعليم المستخدمين والصيانة الدورية.",
+        c3_title: "المواد التسويقية", c3_text: "صور المنتج والأفلام والملفات الفنية ومواد الحملات الرقمية متاحة بلغتكم.",
+        c4_title: "دعم ما بعد البيع", c4_text: "لقطع الغيار والدعم الفني عن بُعد وحل الأعطال تتواصلون مباشرة مع فريق الإنتاج.",
+        c5_title: "شروط صالة العرض", c5_text: "شروط تجارية خاصة للكبينة التجريبية التي تعرضونها في صالتكم، قابلة للنقاش.",
+        c6_title: "العمليات التصديرية", c6_text: "تعملون مع فريق التصدير لدينا في الشحن والتغليف والمستندات الجمركية وشروط التسليم (إنكوترمز)."
+      },
+      profile: {
+        eyebrow: "ما نتوقعه", title: "مع من نعمل", subtitle: "نعمل مع عدد محدود من الشركات في كل سوق. ليس شرطًا استيفاء كل البنود، لكن الجدية في التمثيل هي الصفة التي نبحث عنها فعلًا.",
+        i1: "خبرة في بيع الأجهزة الطبية أو معدات العافية أو منتجات نمط الحياة الفاخرة", i2: "القدرة على إدارة الاستيراد والتخليص الجمركي في سوقكم", i3: "فريق فني للتركيب والصيانة أو الرغبة في تكوينه",
+        i4: "علاقات قائمة مع العيادات أو المنتجعات أو الفنادق أو الأندية الرياضية أو المستشفيات", i5: "صالة عرض أو مساحة يمكن عرض المنتج فيها", i6: "استعداد للعمل طويل الأمد مع التركيز على علامة واحدة"
+      },
+      process: {
+        eyebrow: "الإجراء", title: "مراحل التقييم",
+        s1_title: "١. التقديم", s1_text: "املأ النموذج. المعلومات عن شركتكم وسوقكم وخبرتكم كافية للتقييم الأولي.",
+        s2_title: "٢. الاجتماع", s2_text: "مع الطلبات المناسبة نعقد اجتماعًا عبر الإنترنت لتوضيح إمكانات السوق والتوقعات المتبادلة.",
+        s3_title: "٣. الطلب التجريبي", s3_text: "نبدأ بطلب أول وكبينة لصالة العرض. في هذه المرحلة تُوثَّق الأسعار وشروط التسليم والدعم كتابيًا.",
+        s4_title: "٤. اتفاقية التوزيع", s4_text: "بعد المرحلة التجريبية نتفق على المنطقة والأهداف والمدة ونوقّع اتفاقية التوزيع الرسمية."
+      },
+      form: {
+        eyebrow: "الطلب", title: "نموذج طلب التوزيع", subtitle: "يراجع فريق التصدير لدينا طلبكم، ونتواصل مع الشركات المناسبة.",
+        name: "الاسم الكامل", company: "اسم الشركة", email: "البريد الإلكتروني", phone: "الهاتف",
+        country: "الدولة / المنطقة", website: "الموقع الإلكتروني (اختياري)", sector: "مجال نشاطكم",
+        sector_o1: "توزيع الأجهزة الطبية", sector_o2: "معدات العافية والمنتجعات", sector_o3: "تجهيز العيادات والمستشفيات",
+        sector_o4: "استثمارات الفنادق والسياحة", sector_o5: "مراكز رياضية وأداء بدني", sector_o6: "أخرى",
+        message: "خبرتكم وأهدافكم", submit: "إرسال الطلب",
+        success: "شكرًا لكم. تم استلام طلبكم وسيتواصل معكم فريق التصدير قريبًا.", error: "حدث خطأ ما. يرجى المحاولة مجددًا أو المراسلة على info@hbotchambertech.com."
+      }
     },
     contact: {
       header: { eyebrow: "اتصل بنا", title: "تواصل معنا", subtitle: "املأ النموذج لأسئلتك وطلبات عروض الأسعار." },
@@ -4828,6 +5043,52 @@ const TRANSLATIONS = {
         }
       ]
     },
+    distributor: {
+      eyebrow: "DISTRIBUCIÓN",
+      title: "Para representar a HBOT City Tech",
+      subtitle: "Fabricamos nuestra gama de seis modelos de cámaras hiperbáricas en nuestras propias instalaciones. Trabajamos con un número limitado de socios por mercado: empresas que quieren permanecer en este negocio. Si el marco siguiente encaja con usted, esperamos su solicitud.",
+      cta_apply: "Enviar solicitud",
+      cta_models: "Ver modelos",
+      why: {
+        eyebrow: "NUESTRA DIFERENCIA", title: "¿Por qué nosotros y no Extremo Oriente?", subtitle: "No competimos bajando el precio, sino haciendo rentable a nuestro distribuidor. Esta es la diferencia, en términos concretos.",
+        c1_title: "25–40 días desde Extremo Oriente. Desde aquí, 4–5.", c1_text: "Los envíos desde Estambul al Golfo, las Repúblicas Túrcicas y Europa se cuentan en días, no en calendarios de contenedores. Los repuestos viajan igual de rápido. Para el distribuidor eso significa vender sin inmovilizar capital en stock.",
+        c2_title: "Trata directamente con el fabricante", c2_text: "Sin agencias de exportación ni intermediarios. En una cuestión técnica habla con el ingeniero que diseñó la cabina; en lo comercial, con quien decide. Y en la misma franja horaria.",
+        c3_title: "El configurador es su herramienta de cierre", c3_text: "Frente a su cliente construye la cabina en su color y tapicería y le entrega un presupuesto en la misma reunión. Donde la competencia enseña un PDF y dice «consulto el precio», usted cierra la venta.",
+        c4_title: "Seis modelos y una gama en crecimiento", c4_text: "De cabinas individuales a una cámara de clase hospitalaria: hogar, clínica, hotel y hospital desde un solo catálogo. Hay nuevos modelos y mejoras en desarrollo continuo: su gama crece sin cambiar de proveedor.",
+        c5_title: "No está solo en la certificación", c5_text: "Los requisitos de certificación varían según el país. Aportamos el expediente técnico, los datos de ingeniería y la documentación de ensayos; el registro y el representante autorizado en su mercado se planifican conjuntamente.",
+        c6_title: "La infraestructura de marketing está lista", c6_text: "Web en siete idiomas, fichas técnicas de los modelos, vídeos de producto y archivo visual a su disposición. No perderá meses creando contenido desde cero."
+      },
+      offer: {
+        eyebrow: "CÓMO TRABAJAMOS", title: "Cómo respaldamos a nuestro distribuidor", subtitle: "No enviamos el producto y desaparecemos. El alcance y las condiciones comerciales se acuerdan en la negociación, según el tamaño del mercado.",
+        c1_title: "Representación territorial", c1_text: "Para distribuidores que acuerden objetivos de desempeño, la prioridad territorial y la exclusividad están abiertas a negociación.",
+        c2_title: "Formación técnica", c2_text: "Formación práctica para su equipo en instalación, puesta en marcha, instrucción al usuario y mantenimiento periódico.",
+        c3_title: "Material de marketing", c3_text: "Imágenes de producto, vídeos, fichas técnicas y materiales de campaña digital, disponibles en su idioma.",
+        c4_title: "Soporte posventa", c4_text: "Para repuestos, soporte técnico remoto y resolución de averías trata directamente con el equipo de producción.",
+        c5_title: "Condiciones de showroom", c5_text: "Condiciones comerciales especiales para la cabina de demostración de su showroom, abiertas a negociación.",
+        c6_title: "Operaciones de exportación", c6_text: "Trabaja con nuestro equipo de exportación en envío, embalaje, documentación aduanera y condiciones de entrega (Incoterms)."
+      },
+      profile: {
+        eyebrow: "LO QUE ESPERAMOS", title: "Con quién trabajamos", subtitle: "Trabajamos con un número limitado de empresas por mercado. No hace falta cumplir todos los puntos, pero la seriedad en la representación es la cualidad que realmente buscamos.",
+        i1: "Experiencia comercial en dispositivos médicos, equipamiento wellness o productos de alta gama", i2: "Capacidad para gestionar importación y aduanas en su mercado", i3: "Equipo técnico para instalación y mantenimiento, o la intención de formarlo",
+        i4: "Relaciones existentes con clínicas, spas, hoteles, clubes deportivos u hospitales", i5: "Un showroom o espacio donde exponer el producto", i6: "Disposición a trabajar a largo plazo con foco en una sola marca"
+      },
+      process: {
+        eyebrow: "PROCESO", title: "Proceso de evaluación",
+        s1_title: "1. Solicitud", s1_text: "Complete el formulario. La información sobre su empresa, su mercado y su experiencia basta para la primera evaluación.",
+        s2_title: "2. Reunión", s2_text: "Con las solicitudes que consideramos adecuadas mantenemos una reunión online para concretar el potencial del mercado y las expectativas mutuas.",
+        s3_title: "3. Pedido piloto", s3_text: "Empezamos con un primer pedido y una cabina de showroom. En esta fase se fijan por escrito precios, entrega y condiciones de soporte.",
+        s4_title: "4. Contrato de distribución", s4_text: "Tras la fase piloto acordamos territorio, objetivos y plazo, y firmamos el contrato formal de distribución."
+      },
+      form: {
+        eyebrow: "SOLICITUD", title: "Formulario de solicitud de distribución", subtitle: "Su solicitud es revisada por nuestro equipo de exportación. Contactamos con las empresas que consideramos adecuadas.",
+        name: "Nombre y apellidos", company: "Empresa", email: "Correo electrónico", phone: "Teléfono",
+        country: "País / región", website: "Sitio web (opcional)", sector: "Su sector de actividad",
+        sector_o1: "Distribución de dispositivos médicos", sector_o2: "Equipamiento wellness / spa", sector_o3: "Suministro a clínicas y hospitales",
+        sector_o4: "Inversiones hoteleras y turísticas", sector_o5: "Centros deportivos y de rendimiento", sector_o6: "Otro",
+        message: "Su experiencia y objetivos", submit: "Enviar solicitud",
+        success: "Gracias. Hemos recibido su solicitud; nuestro equipo de exportación se pondrá en contacto en breve.", error: "Algo ha fallado. Inténtelo de nuevo o escriba a info@hbotchambertech.com."
+      }
+    },
     contact: {
       header: { eyebrow: "CONTACTO", title: "Ponte en Contacto", subtitle: "Completa el formulario para tus preguntas y solicitudes de presupuesto." },
       address_label: "Dirección",
@@ -5828,6 +6089,52 @@ const TRANSLATIONS = {
         }
       ]
     },
+    distributor: {
+      eyebrow: "DISTRIBUIÇÃO",
+      title: "Para representar a HBOT City Tech",
+      subtitle: "Fabricamos a nossa gama de seis modelos de câmaras hiperbáricas nas nossas próprias instalações. Trabalhamos com um número limitado de parceiros por mercado — empresas que pretendem permanecer neste negócio. Se o enquadramento abaixo lhe serve, aguardamos a sua candidatura.",
+      cta_apply: "Enviar candidatura",
+      cta_models: "Ver modelos",
+      why: {
+        eyebrow: "A NOSSA DIFERENÇA", title: "Porquê nós em vez do Extremo Oriente?", subtitle: "Não competimos baixando o preço, mas tornando o nosso distribuidor rentável. Esta é a diferença, em termos concretos.",
+        c1_title: "25–40 dias do Extremo Oriente. Daqui, 4–5.", c1_text: "Os envios de Istambul para o Golfo, as Repúblicas Túrquicas e a Europa contam-se em dias, não em calendários de contentores. As peças seguem à mesma velocidade. Para o distribuidor, isso significa vender sem imobilizar capital em stock.",
+        c2_title: "Fala diretamente com o fabricante", c2_text: "Sem agências de exportação nem intermediários. Numa questão técnica fala com o engenheiro que desenhou a cabina; no comercial, com quem decide. E no mesmo fuso horário.",
+        c3_title: "O configurador é a sua ferramenta de fecho", c3_text: "Diante do cliente monta a cabina na cor e no estofo dele e entrega uma proposta com preço na mesma reunião. Onde a concorrência mostra um PDF e diz «vou consultar o preço», você fecha a venda.",
+        c4_title: "Seis modelos e uma gama em crescimento", c4_text: "De cabinas individuais a uma câmara de classe hospitalar: casa, clínica, hotel e hospital num só catálogo. Novos modelos e atualizações estão em desenvolvimento contínuo: a sua gama cresce sem mudar de fornecedor.",
+        c5_title: "Não está sozinho na certificação", c5_text: "Os requisitos de certificação variam consoante o país. Fornecemos o processo técnico, os dados de engenharia e a documentação de ensaios; o registo e o representante autorizado no seu mercado são planeados em conjunto.",
+        c6_title: "Infraestrutura de marketing pronta", c6_text: "Site em sete idiomas, fichas técnicas dos modelos, filmes de produto e arquivo visual à sua disposição. Não perderá meses a criar conteúdo de raiz."
+      },
+      offer: {
+        eyebrow: "COMO TRABALHAMOS", title: "Como apoiamos o nosso distribuidor", subtitle: "Não enviamos o produto e desaparecemos. O âmbito e as condições comerciais são definidos em negociação, conforme a dimensão do mercado.",
+        c1_title: "Representação territorial", c1_text: "Para distribuidores que acordem metas de desempenho, a prioridade territorial e a exclusividade estão abertas a negociação.",
+        c2_title: "Formação técnica", c2_text: "Formação prática para a sua equipa em instalação, arranque, instrução do utilizador e manutenção periódica.",
+        c3_title: "Materiais de marketing", c3_text: "Imagens de produto, vídeos, fichas técnicas e materiais de campanha digital disponíveis no seu idioma.",
+        c4_title: "Apoio pós-venda", c4_text: "Para peças, apoio técnico remoto e resolução de avarias contacta diretamente a equipa de produção.",
+        c5_title: "Condições de showroom", c5_text: "Condições comerciais especiais para a cabina de demonstração do seu showroom, abertas a negociação.",
+        c6_title: "Operações de exportação", c6_text: "Trabalha com a nossa equipa de exportação em expedição, embalagem, documentação aduaneira e condições de entrega (Incoterms)."
+      },
+      profile: {
+        eyebrow: "O QUE ESPERAMOS", title: "Com quem trabalhamos", subtitle: "Trabalhamos com um número limitado de empresas por mercado. Não é obrigatório cumprir todos os pontos, mas a seriedade na representação é a qualidade que realmente procuramos.",
+        i1: "Experiência comercial em dispositivos médicos, equipamento wellness ou produtos premium", i2: "Capacidade para gerir importação e desalfandegamento no seu mercado", i3: "Equipa técnica para instalação e manutenção, ou vontade de a constituir",
+        i4: "Relações existentes com clínicas, spas, hotéis, clubes desportivos ou hospitais", i5: "Um showroom ou espaço onde o produto possa ser exposto", i6: "Disponibilidade para trabalhar a longo prazo com foco numa só marca"
+      },
+      process: {
+        eyebrow: "PROCESSO", title: "Processo de avaliação",
+        s1_title: "1. Candidatura", s1_text: "Preencha o formulário. As informações sobre a sua empresa, o seu mercado e a sua experiência bastam para a primeira avaliação.",
+        s2_title: "2. Reunião", s2_text: "Com as candidaturas que consideramos adequadas realizamos uma reunião online para clarificar o potencial do mercado e as expectativas mútuas.",
+        s3_title: "3. Encomenda piloto", s3_text: "Começamos com uma primeira encomenda e uma cabina de showroom. Nesta fase, preços, entrega e condições de apoio ficam por escrito.",
+        s4_title: "4. Contrato de distribuição", s4_text: "Após a fase piloto acordamos território, objetivos e prazo, e assinamos o contrato formal de distribuição."
+      },
+      form: {
+        eyebrow: "CANDIDATURA", title: "Formulário de candidatura a distribuidor", subtitle: "A sua candidatura é analisada pela nossa equipa de exportação. Contactamos as empresas que consideramos adequadas.",
+        name: "Nome completo", company: "Empresa", email: "E-mail", phone: "Telefone",
+        country: "País / região", website: "Website (opcional)", sector: "A sua área de atividade",
+        sector_o1: "Distribuição de dispositivos médicos", sector_o2: "Equipamento wellness / spa", sector_o3: "Fornecimento a clínicas e hospitais",
+        sector_o4: "Investimentos hoteleiros e turísticos", sector_o5: "Centros desportivos e de desempenho", sector_o6: "Outro",
+        message: "A sua experiência e objetivos", submit: "Enviar candidatura",
+        success: "Obrigado. Recebemos a sua candidatura; a nossa equipa de exportação entrará em contacto em breve.", error: "Ocorreu um erro. Tente novamente ou escreva para info@hbotchambertech.com."
+      }
+    },
     contact: {
       header: { eyebrow: "CONTATO", title: "Entre em Contato", subtitle: "Preencha o formulário para suas dúvidas e solicitações de orçamento." },
       address_label: "Endereço",
@@ -6827,6 +7134,52 @@ const TRANSLATIONS = {
           source_url: "https://www.nfpa.org"
         }
       ]
+    },
+    distributor: {
+      eyebrow: "VERTRIEB",
+      title: "Um HBOT City Tech zu vertreten",
+      subtitle: "Wir fertigen unsere Baureihe aus sechs Modellen hyperbarer Kammern in der eigenen Produktion. Pro Markt arbeiten wir mit einer begrenzten Zahl von Partnern — Unternehmen, die in diesem Geschäft bleiben wollen. Wenn der folgende Rahmen zu Ihnen passt, freuen wir uns über Ihre Bewerbung.",
+      cta_apply: "Jetzt bewerben",
+      cta_models: "Modelle ansehen",
+      why: {
+        eyebrow: "UNSER UNTERSCHIED", title: "Warum wir statt Fernost?", subtitle: "Wir konkurrieren nicht über den Preis, sondern darüber, dass unser Vertriebspartner verdient. Hier ist der Unterschied, konkret.",
+        c1_title: "25–40 Tage aus Fernost. Von uns 4–5.", c1_text: "Lieferungen von Istanbul in den Golf, die Turkstaaten und nach Europa rechnen sich in Tagen, nicht in Containerfahrplänen. Ersatzteile ebenso schnell. Für den Vertriebspartner heißt das: verkaufen, ohne Kapital im Lager zu binden.",
+        c2_title: "Ihr Ansprechpartner ist der Hersteller", c2_text: "Keine Exportagentur, kein Zwischenhändler. Bei technischen Fragen sprechen Sie mit dem Ingenieur, der die Kabine konstruiert hat; kommerziell mit dem Entscheider. Und in derselben Zeitzone.",
+        c3_title: "Der Konfigurator ist Ihr Abschluss-Werkzeug", c3_text: "Vor Ihrem Kunden bauen Sie die Kabine in seiner Farbe und Ausstattung und übergeben im selben Termin ein Angebot mit Preis. Wo der Wettbewerb einen PDF-Katalog zeigt und „ich frage den Preis nach\" sagt, schließen Sie ab.",
+        c4_title: "Sechs Modelle, wachsendes Portfolio", c4_text: "Von der Einzelkabine bis zur Kammer in Klinikausführung — Privat, Praxis, Hotel und Klinik aus einem Katalog. Neue Modelle und System-Updates sind laufend in Entwicklung: Ihr Sortiment wächst ohne Lieferantenwechsel.",
+        c5_title: "Bei der Zertifizierung nicht allein", c5_text: "Zertifizierungsanforderungen unterscheiden sich je Land. Wir liefern technische Dokumentation, Konstruktionsdaten und Prüfunterlagen; Registrierung und Bevollmächtigter in Ihrem Markt werden gemeinsam geplant.",
+        c6_title: "Marketing-Infrastruktur steht bereit", c6_text: "Website in sieben Sprachen, technische Modelldateien, Produktfilme und Bildarchiv stehen Ihnen zur Verfügung. Sie verlieren keine Monate mit dem Aufbau eigener Inhalte."
+      },
+      offer: {
+        eyebrow: "UNSERE ARBEITSWEISE", title: "Wie wir hinter unserem Vertriebspartner stehen", subtitle: "Wir liefern nicht und ziehen uns dann zurück. Umfang und kommerzielle Konditionen werden im Gespräch festgelegt — je nach Marktgröße.",
+        c1_title: "Gebietsvertretung", c1_text: "Für Partner, die Leistungsziele vereinbaren, sind Gebietsvorrang und Exklusivität verhandelbar.",
+        c2_title: "Technische Schulung", c2_text: "Praxisschulung Ihres Teams zu Installation, Inbetriebnahme, Anwendereinweisung und regelmäßiger Wartung.",
+        c3_title: "Marketingmaterial", c3_text: "Produktbilder, Filme, technische Unterlagen und digitale Kampagnenmittel in Ihrer Sprache.",
+        c4_title: "After-Sales-Support", c4_text: "Bei Ersatzteilen, Fernwartung und Störungsbehebung sprechen Sie direkt mit der Produktion.",
+        c5_title: "Showroom-Konditionen", c5_text: "Besondere Konditionen für die Vorführkabine in Ihrem Showroom sind verhandelbar.",
+        c6_title: "Exportabwicklung", c6_text: "Versand, Verpackung, Zolldokumente und Lieferbedingungen (Incoterms) gemeinsam mit unserem Exportteam."
+      },
+      profile: {
+        eyebrow: "UNSERE ERWARTUNG", title: "Mit wem wir arbeiten", subtitle: "Pro Markt arbeiten wir mit einer begrenzten Zahl von Unternehmen. Sie müssen nicht jeden Punkt erfüllen — entscheidend ist, wie ernst Sie die Vertretung nehmen.",
+        i1: "Vertriebserfahrung mit Medizinprodukten, Wellness-Ausstattung oder Premium-Lifestyle-Produkten", i2: "Struktur für Import und Zollabwicklung in Ihrem Markt", i3: "Technisches Team für Installation und Wartung oder die Absicht, eines aufzubauen",
+        i4: "Bestehende Kundenbeziehungen zu Kliniken, Spas, Hotels, Sportvereinen oder Krankenhäusern", i5: "Ein Showroom oder eine Fläche, auf der das Produkt gezeigt werden kann", i6: "Bereitschaft zu langfristiger Zusammenarbeit mit Fokus auf eine Marke"
+      },
+      process: {
+        eyebrow: "ABLAUF", title: "Auswahlverfahren",
+        s1_title: "1. Bewerbung", s1_text: "Füllen Sie das Formular aus. Angaben zu Unternehmen, Markt und Erfahrung genügen für die erste Bewertung.",
+        s2_title: "2. Gespräch", s2_text: "Mit passenden Bewerbern führen wir ein Online-Gespräch und klären Marktpotenzial und beiderseitige Erwartungen.",
+        s3_title: "3. Pilotauftrag", s3_text: "Wir starten mit einem ersten Auftrag und einer Showroom-Kabine. In dieser Phase werden Preise, Lieferung und Supportkonditionen schriftlich fixiert.",
+        s4_title: "4. Vertriebsvertrag", s4_text: "Nach der Pilotphase einigen wir uns auf Gebiet, Ziele und Laufzeit und unterzeichnen den formellen Vertriebsvertrag."
+      },
+      form: {
+        eyebrow: "BEWERBUNG", title: "Bewerbungsformular Vertriebspartner", subtitle: "Ihre Bewerbung wird von unserem Exportteam geprüft. Wir melden uns bei den Unternehmen, die wir als passend einstufen.",
+        name: "Name", company: "Firma", email: "E-Mail", phone: "Telefon",
+        country: "Land / Region", website: "Website (optional)", sector: "Ihr Tätigkeitsfeld",
+        sector_o1: "Medizintechnik-Vertrieb", sector_o2: "Wellness- / Spa-Ausstattung", sector_o3: "Klinik- und Krankenhausbelieferung",
+        sector_o4: "Hotel- und Tourismusinvestitionen", sector_o5: "Sport- und Leistungszentren", sector_o6: "Sonstiges",
+        message: "Ihre Erfahrung und Ziele", submit: "Bewerbung senden",
+        success: "Vielen Dank. Ihre Bewerbung ist eingegangen; unser Exportteam meldet sich in Kürze.", error: "Etwas ist schiefgelaufen. Bitte erneut versuchen oder an info@hbotchambertech.com schreiben."
+      }
     },
     contact: {
       header: { eyebrow: "KONTAKT", title: "Kontaktieren Sie uns", subtitle: "Füllen Sie das Formular für Ihre Fragen und Angebotsanfragen aus." },
