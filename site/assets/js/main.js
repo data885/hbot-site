@@ -2241,9 +2241,37 @@
   }
   /* Yapılandırılan modelin gercek urun fotografi (dis gorunum) — proformada gosterilir.
      JPEG + kucultme: PDF/e-posta boyutunu makul tutmak icin (PNG ile 10+ MB'a cikiyordu). */
-  function loadProductPhotoForPdf() {
-    const key = REAL_STAGE[configState.model] || "real/oslo-real";
-    return loadImageForPdf(`/assets/img/models/${key}.webp?v=${IMG_V}`, { format: "jpeg", maxDim: 900 });
+  /* Proformaya girecek görsel(ler)i seçer. ÖNEMLİ: burada sabit model fotoğrafı
+     (REAL_STAGE) kullanılmamalı — müşteri iç mekân ve koltuk rengini seçtiği hâlde
+     PDF'te jenerik kabin fotoğrafı görüyordu. Konfigüratör sahnesiyle aynı
+     çözümlemeyi kullanıyoruz; Dubai/Milano'da tek kare zaten dış+iç+koltuğu
+     birlikte gösterir, Tokyo'da iç mekân ayrı bir render olduğu için ikinci
+     görsel olarak eklenir. */
+  function pdfPhotoKeys() {
+    const model = configState.model;
+    if (model === "solo") {
+      normalizeDubaiSelection();
+      const exact = dubaiRenderKey(configState.color, configState.interiorColor, configState.seatColor);
+      if (exact) return [exact];
+    }
+    if (model === "quad-cube") {
+      normalizeMilanoSelection();
+      const exact = milanoRenderKey(configState.color, configState.interiorColor, configState.seatColor);
+      if (exact) return [exact];
+    }
+    const approvedByColor = APPROVED_COLOR_RENDER_MANIFEST[model];
+    const exterior = (approvedByColor && approvedByColor[configState.color]) || REAL_STAGE[model] || "real/oslo-real";
+    if (model === "duo" || model === "duo-plus") {
+      const interior = TOKYO_INTERIOR_RENDER_MANIFEST[`${configState.interiorColor}|${configState.seatColor}`];
+      if (interior) return [exterior, interior];
+    }
+    return [exterior];
+  }
+
+  function loadProductPhotosForPdf() {
+    return Promise.all(pdfPhotoKeys().map((key) =>
+      loadImageForPdf(`/assets/img/models/${key}.webp?v=${IMG_V}`, { format: "jpeg", maxDim: 900 })
+    )).then((list) => list.filter(Boolean));
   }
 
   /* Unicode PDF fontu (Turkce + Kiril destekli, subset NotoSans) — jsPDF'e bir kez kaydedilir. */
@@ -2323,16 +2351,29 @@
     doc.setLineWidth(1.1);
     doc.line(mL, 36, mR, 36);
 
-    // Secilen urunun gercek fotografi
+    // Secilen yapilandirmanin gercek renderlari (tek kare, ya da dis + ic ikilisi)
     let y = 46;
-    const productPhoto = await loadProductPhotoForPdf();
-    if (productPhoto) {
+    const productPhotos = await loadProductPhotosForPdf();
+    if (productPhotos.length === 1) {
+      const photo = productPhotos[0];
       const maxW = mR - mL, maxH = 62;
-      let pw = maxW, ph = pw * productPhoto.ratio;
-      if (ph > maxH) { ph = maxH; pw = ph / productPhoto.ratio; }
+      let pw = maxW, ph = pw * photo.ratio;
+      if (ph > maxH) { ph = maxH; pw = ph / photo.ratio; }
       const px = mL + (maxW - pw) / 2;
-      doc.addImage(productPhoto.dataUrl, productPhoto.format || "JPEG", px, y, pw, ph, undefined, "FAST");
+      doc.addImage(photo.dataUrl, photo.format || "JPEG", px, y, pw, ph, undefined, "FAST");
       y += ph + 10;
+    } else if (productPhotos.length > 1) {
+      const gap = 6, maxH = 52;
+      const cellW = (mR - mL - gap) / 2;
+      let rowH = 0;
+      productPhotos.slice(0, 2).forEach((photo, i) => {
+        let pw = cellW, ph = pw * photo.ratio;
+        if (ph > maxH) { ph = maxH; pw = ph / photo.ratio; }
+        const cellX = mL + i * (cellW + gap);
+        doc.addImage(photo.dataUrl, photo.format || "JPEG", cellX + (cellW - pw) / 2, y, pw, ph, undefined, "FAST");
+        rowH = Math.max(rowH, ph);
+      });
+      y += rowH + 10;
     }
 
     // Musteri blogu
@@ -2413,6 +2454,31 @@
     doc.setFontSize(16);
     doc.setTextColor(...GOLD);
     doc.text(T(formatPrice(computeTotal())), mR - 5, y + 3, { align: "right" });
+
+    // Musterinin formda yazdigi not — proformada hic gorunmuyordu (kullanici bildirimi).
+    const customerNote = String(formData.get("message") || "").trim();
+    if (customerNote) {
+      y += 18;
+      doc.setFont(FONT, "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(...NAVY);
+      doc.text(T(qf.message || "Additional Notes"), mL, y);
+      doc.setFont(FONT, "normal");
+      doc.setFontSize(9.5);
+      doc.setTextColor(40, 40, 40);
+      /* Cok uzun notun footer cizgisini (y=282) asmasini onle: sigmayan kismi
+         yeni sayfaya tasi. */
+      const noteLines = doc.splitTextToSize(T(customerNote), mR - mL - 6);
+      doc.setFillColor(245, 246, 249);
+      let ny = y + 5;
+      const lineH = 4.6;
+      noteLines.forEach((line) => {
+        if (ny > 268) { doc.addPage(); ny = 24; }
+        doc.text(line, mL + 3, ny);
+        ny += lineH;
+      });
+      y = ny + 2;
+    }
 
     // Not + tesekkur + footer
     y += 20;
@@ -2767,6 +2833,45 @@
   const LANG_MANUAL_KEY = "hbot_lang_manual";
   function markLangManual() {
     try { localStorage.setItem(LANG_MANUAL_KEY, "1"); } catch (e) {}
+  }
+
+  /* Ürün filmlerine kendi tam ekran düğmemiz.
+     Neden: tarayıcının kendi kontrol çubuğundaki tam ekran düğmesi videonun SAĞ
+     ALTINDA duruyor ve sayfanın sabit WhatsApp / "Ücretsiz Teklif Al" düğmeleri
+     de ekranın sağ altında sabit; mobilde video ekranın altına geldiğinde
+     bunlar üst üste biniyor ve tam ekrana geçilemiyor. Ayrıca iPhone Safari'de
+     inline oynatılan videoda Element.requestFullscreen desteklenmez —
+     video.webkitEnterFullscreen gerekir. Düğmeyi sağ ÜSTE koyuyoruz. */
+  function initVideoFullscreen() {
+    const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.tr;
+    const label = (dict.common && dict.common.fullscreen) || "Tam ekran";
+    document.querySelectorAll(".brand-film-media").forEach((wrap) => {
+      const video = wrap.querySelector("video");
+      if (!video) return;
+      let btn = wrap.querySelector(".video-fs-btn");
+      if (btn) { btn.setAttribute("aria-label", label); btn.title = label; return; }
+      btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "video-fs-btn";
+      btn.setAttribute("aria-label", label);
+      btn.title = label;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>';
+      btn.addEventListener("click", () => {
+        const active = document.fullscreenElement || document.webkitFullscreenElement;
+        if (active) {
+          const exit = document.exitFullscreen || document.webkitExitFullscreen;
+          if (exit) exit.call(document);
+          return;
+        }
+        // iPhone Safari: yalnız video elemanı tam ekrana alınabilir
+        if (typeof video.webkitEnterFullscreen === "function") {
+          try { video.webkitEnterFullscreen(); return; } catch (e) { /* aşağıdaki yola düş */ }
+        }
+        const req = wrap.requestFullscreen || wrap.webkitRequestFullscreen;
+        if (req) { try { req.call(wrap); } catch (e) { /* yoksay */ } }
+      });
+      wrap.appendChild(btn);
+    });
   }
 
   function initLangSwitch() {
@@ -3450,5 +3555,6 @@
     initLangSuggestion();
     initProductAssistant();
     initClarity();
+    initVideoFullscreen();
   });
 })();
