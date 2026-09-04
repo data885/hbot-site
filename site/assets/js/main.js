@@ -11,10 +11,10 @@
 
   /* İletişim ve WhatsApp hattı — numara ham metin olarak JS kaynağında durmasın diye
      ters çevrilmiş halde tutulup kullanılırken çözülüyor (basit kazıma botlarına karşı) */
-  const _PHONE_DIGITS = "899972623509".split("").reverse().join("");
+  const _PHONE_DIGITS = "300705910509".split("").reverse().join("");
   const WHATSAPP_NUMBER = _PHONE_DIGITS;
   const CONTACT_PHONE_TEL = "+" + _PHONE_DIGITS;
-  const CONTACT_PHONE_DISPLAY = "+90 532 627 9998";
+  const CONTACT_PHONE_DISPLAY = "+90 501 950 7003";
 
   /* ---------------- Icon library ---------------- */
   const ICONS = {
@@ -2528,7 +2528,7 @@
   <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #c9a45c;padding-bottom:18px;margin-bottom:24px;">
     <div>
       <div style="font-size:22px;font-weight:800;letter-spacing:.02em;">HBOT CHAMBER TECH</div>
-      <div style="color:#777;font-size:13px;margin-top:4px;">info@hbotchambertech.com · +90 532 627 9998 · hbotchambertech.com</div>
+      <div style="color:#777;font-size:13px;margin-top:4px;">info@hbotchambertech.com · +90 501 950 7003 · hbotchambertech.com</div>
     </div>
     <div style="text-align:right;">
       <div style="font-size:18px;font-weight:700;">${s.pdf_title}</div>
