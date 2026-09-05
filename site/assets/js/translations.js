@@ -107,7 +107,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "KİMLER KULLANIYOR?",
         title: "Dünyanın En İyileri Hiperbarik Oksijeni Seçiyor",
-        subtitle: "Toparlanma, performans ve uzun yaşam için hiperbarik oksijen terapisini tercih ettiği basında yer alan isimler, bu teknolojiye duyulan güvenin bir göstergesi. HBOT Chamber Tech olarak aynı teknolojiyi mühendislik hassasiyetiyle üretiyoruz.",
+        subtitle: "Toparlanma, performans ve uzun yaşam için hiperbarik oksijen terapisini tercih ettiği basında yer alan isimler, bu teknolojiye duyulan güvenin bir göstergesi. HBOT Chamber Tech olarak aynı teknolojiyi mühendislik hassasiyetiyle geliştiriyoruz.",
         source_label: "Kaynak",
         disclaimer: "Bu bölümdeki isimler, haber kaynaklarında HBOT kullandığı bildirilen kişilerdir; HBOT Chamber Tech marka elçisi veya müşterisi değildir.",
         items: [
@@ -131,7 +131,7 @@ const TRANSLATIONS = {
       targetMarkets: {
         eyebrow: "GENİŞLEME HEDEFİMİZ",
         title: "Sıradaki Hedef Pazarlarımız",
-        subtitle: "Bugün Türkiye merkezli mühendislik ve üretimle çalışıyoruz; önümüzdeki dönemde büyümeyi hedeflediğimiz pazarlardan bazıları:",
+        subtitle: "Bugün Türkiye merkezli mühendislik ve tasarımla çalışıyoruz; önümüzdeki dönemde büyümeyi hedeflediğimiz pazarlardan bazıları:",
         badge: "Hedef Pazar",
         items: [
           { flag: "🇬🇧", name: "İngiltere" },
@@ -172,7 +172,7 @@ const TRANSLATIONS = {
       intro: "HBOT City Tech platformu; CityConnect™, CityOS™, CityAI™, CitySync™ ve CityGuard™ bileşenlerini model ve doğrulanmış yazılım kapsamına göre birlikte çalışacak şekilde tasarlar. Özelliklerin kapsamı teklif ve teknik dosyada açıkça belirtilir.",
       steps: [
         { year: "1999", title: "Sahada Başlayan Ticari Yolculuk", desc: "Almita kurucularının ticari yolculuğu, katı atık yönetimi alanında gerçek saha problemlerine çözüm üretme sorumluluğuyla başladı." },
-        { year: "2007", title: "Yüksek Mühendislik Birikimi", desc: "Bugün HBOT Chamber Tech'i geliştiren ekibin tasarım, üretim, otomasyon ve proje yönetimi deneyimi 2007'ye uzanıyor." },
+        { year: "2007", title: "Yüksek Mühendislik Birikimi", desc: "Bugün HBOT Chamber Tech'i geliştiren ekibin tasarım, mühendislik, otomasyon ve proje yönetimi deneyimi 2007'ye uzanıyor." },
         { year: "BUGÜN", title: "Hiperbarik Teknolojiye Odaklı Yeni Marka", desc: "Bu birikimi CityOS, CityGuard, CityConnect, CityAI, konfigüratör + AR ve model bazlı mühendislikle yeni nesil HBOT sistemlerine taşıyoruz." }
       ],
       proof_title: "Söylediğimizi proje dosyasında gösteriyoruz", proof_text: "Her projede ürün kapsamını, kurulum planını, eğitimi, bakımı ve hedef pazara göre uygunluk dokümanlarını yazılı olarak netleştiriyoruz.",
@@ -683,7 +683,7 @@ const TRANSLATIONS = {
           icon: "care",
           title: "Neden Kendim de Hiperbarik Oksijen Kullanıyorum",
           paragraphs: [
-            "Almita Group çatısı altında altı farklı sektörü bir arada yürütüyoruz; yoğun bir tempo ve sürekli seyahat kaçınılmaz oluyor. HBOT Chamber Tech'i kurarken üretmeye başlamadan önce kendi kabinlerimizi düzenli olarak kullanmayı tercih ettim — bir ürünü, arkasında durmadan önce bizzat denemek gerektiğine inanıyorum.",
+            "Almita Group çatısı altında altı farklı sektörü bir arada yürütüyoruz; yoğun bir tempo ve sürekli seyahat kaçınılmaz oluyor. HBOT Chamber Tech'i kurarken satışa başlamadan önce kendi kabinlerimizi düzenli olarak kullanmayı tercih ettim — bir ürünü, arkasında durmadan önce bizzat denemek gerektiğine inanıyorum.",
             "Seanslar sonrasında kendimi daha dinç ve odaklanmış hissettiğimi söyleyebilirim; bu tamamen kişisel bir gözlem ve herkes için aynı sonucu vaat etmiyorum. Hiperbarik oksijen terapisi bir tıbbi terapi yerine geçmez; kullanım kararlarınızı mutlaka bir sağlık profesyoneliyle değerlendirin."
           ],
           source_name: "Almita Group – Kurucu Notu",
@@ -839,7 +839,7 @@ const TRANSLATIONS = {
     distributor: {
       eyebrow: "DİSTRİBÜTÖRLÜK",
       title: "HBOT City Tech'i Temsil Etmek İçin",
-      subtitle: "Altı modellik hiperbarik oksijen odası serisini kendi tesisimizde üretiyoruz. Distribütörlüğümüzü, pazarında kalıcı olmayı hedefleyen sınırlı sayıda firmayla yürütüyoruz. Aşağıdaki çerçeve size uyuyorsa başvurunuzu bekliyoruz.",
+      subtitle: "Altı modellik hiperbarik oksijen odası serisinin tasarımı, mühendisliği ve marka sahipliği bize aittir. Distribütörlüğümüzü, pazarında kalıcı olmayı hedefleyen sınırlı sayıda firmayla yürütüyoruz. Aşağıdaki çerçeve size uyuyorsa başvurunuzu bekliyoruz.",
       cta_apply: "Başvuru Yapın",
       cta_models: "Modelleri İncele",
       why: {
@@ -848,7 +848,7 @@ const TRANSLATIONS = {
         subtitle: "Bu pazarda fiyat kırarak değil, distribütörünü kazandırarak çalışıyoruz. Aradaki farkı somut maddelerle ortaya koyduk.",
         c1_title: "Uzak Doğu'dan 25-40 Gün, Bizden 4-5 Gün",
         c1_text: "İstanbul'dan Körfez'e, Türki Cumhuriyetler'e ve Avrupa'ya sevkiyat gün hesabıyla yapılır; konteyner beklemez. Yedek parça aynı hızla gider. Distribütör için bu, stoka para bağlamadan satış yapabilmek demektir.",
-        c2_title: "Muhatabınız Üreticinin Kendisi",
+        c2_title: "Muhatabınız Markanın Kendisi",
         c2_text: "Arada ihracat şirketi ya da acente yok. Teknik soruda doğrudan kabini tasarlayan mühendisle, ticari konuda karar veren kişiyle konuşursunuz — üstelik aynı saat diliminde.",
         c3_title: "Konfigüratör: Satış Kapatma Aracınız",
         c3_text: "Müşterinizin karşısında kabini onun renginde ve döşemesinde kurar, aynı görüşmede fiyatlı teklifi verirsiniz. Rakiplerin PDF katalog gösterip \"fiyatı sorup döneyim\" dediği yerde siz satışı kapatırsınız.",
@@ -1081,7 +1081,7 @@ const TRANSLATIONS = {
   en: {
     dir: "ltr",
     meta: {
-      home: { title: "Hyperbaric Chamber Manufacturer | HBOT Chamber Tech", desc: "Explore single-person and multiplace hyperbaric oxygen chambers for clinics, hospitals and wellness facilities, built in Türkiye with connected technology." },
+      home: { title: "Hyperbaric Oxygen Chamber Technology | HBOT Chamber Tech", desc: "Explore single-person and multiplace hyperbaric oxygen chambers for clinics, hospitals and wellness facilities, designed in Türkiye with connected technology." },
       technology: { title: "Technology | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync and CityGuard — the connected, intelligent technology platform of the HBOT City Tech Series." },
       models: { title: "Hyperbaric Oxygen Chamber Models | HBOT Chamber Tech", desc: "Compare six hyperbaric oxygen chamber models for personal, clinic, wellness and hospital settings—from 1-person to multiplace configurations." },
       soloLounge: { title: "Oslo | 1-Person Lying Hyperbaric Chamber", desc: "A 1-person lying hyperbaric oxygen chamber with a medical orthopedic bed, 1.5–2.0 ATA operating range and CitySilent™ design." },
@@ -1210,7 +1210,7 @@ const TRANSLATIONS = {
       targetMarkets: {
         eyebrow: "OUR EXPANSION GOAL",
         title: "Markets We're Targeting Next",
-        subtitle: "Today we operate with engineering and manufacturing based in Turkey; here are some of the markets we're aiming to grow into next:",
+        subtitle: "Today we operate with engineering and design based in Türkiye; here are some of the markets we're aiming to grow into next:",
         badge: "Target Market",
         items: [
           { flag: "🇬🇧", name: "United Kingdom" },
@@ -1251,7 +1251,7 @@ const TRANSLATIONS = {
       intro: "The HBOT City Tech platform is designed to bring CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ together according to the model and verified software scope. Included functionality is stated clearly in the proposal and technical file.",
       steps: [
         { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
-        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, manufacturing, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
+        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
         { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
       ],
       proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
@@ -1918,13 +1918,13 @@ const TRANSLATIONS = {
     distributor: {
       eyebrow: "DISTRIBUTION",
       title: "To Represent HBOT City Tech",
-      subtitle: "We manufacture our six-model hyperbaric chamber range in our own facility. We work with a limited number of partners per market — companies that intend to stay in this business. If the framework below fits you, we welcome your application.",
+      subtitle: "We own the design, engineering and brand of our six-model hyperbaric chamber range. We work with a limited number of partners per market — companies that intend to stay in this business. If the framework below fits you, we welcome your application.",
       cta_apply: "Apply Now",
       cta_models: "View Models",
       why: {
         eyebrow: "WHAT SETS US APART", title: "Why Us Instead of the Far East?", subtitle: "We don't compete by cutting price — we compete by making our distributor profitable. Here is the difference, in concrete terms.",
         c1_title: "25–40 Days From the Far East. 4–5 From Us.", c1_text: "Shipments from Istanbul to the Gulf, the Turkic Republics and Europe are counted in days, not container schedules. Spare parts move just as fast. For a distributor that means selling without tying up capital in stock.",
-        c2_title: "You Deal With the Manufacturer", c2_text: "No export agency or middleman in between. On a technical question you speak to the engineer who designed the cabin; on commercial terms, to the person who decides — and in the same time zone.",
+        c2_title: "You Deal With the Brand Owner", c2_text: "No export agency or middleman in between. On a technical question you speak to the engineer who designed the cabin; on commercial terms, to the person who decides — and in the same time zone.",
         c3_title: "The Configurator Is Your Closing Tool", c3_text: "Sitting with your client, you build the cabin in their colour and interior and hand them a priced quote in the same meeting. Where competitors show a PDF catalogue and say \"let me check the price,\" you close the sale.",
         c4_title: "Six Models, A Growing Range", c4_text: "From single-person cabins to a hospital-class chamber — home, clinic, hotel and hospital budgets from one catalogue. New models and system upgrades are in continuous development: your range grows without changing supplier.",
         c5_title: "You Are Not Alone on Certification", c5_text: "Certification requirements differ by country. We provide the technical file, engineering data and test documentation; registration and authorised-representative steps in your market are planned together.",
@@ -2258,7 +2258,7 @@ const TRANSLATIONS = {
       targetMarkets: {
         eyebrow: "НАША ЦЕЛЬ РАЗВИТИЯ",
         title: "Следующие целевые рынки",
-        subtitle: "Сегодня наша инженерия и производство базируются в Турции; вот некоторые рынки, на которые мы стремимся выйти в ближайшее время:",
+        subtitle: "Сегодня наши инженерия и проектирование базируются в Турции; вот некоторые рынки, на которые мы стремимся выйти в ближайшее время:",
         badge: "Целевой рынок",
         items: [
           { flag: "🇬🇧", name: "Великобритания" },
@@ -2299,7 +2299,7 @@ const TRANSLATIONS = {
       intro: "The HBOT City Tech platform is designed to bring CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ together according to the model and verified software scope. Included functionality is stated clearly in the proposal and technical file.",
       steps: [
         { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
-        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, manufacturing, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
+        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
         { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
       ],
       proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
@@ -2966,13 +2966,13 @@ const TRANSLATIONS = {
     distributor: {
       eyebrow: "ДИСТРИБЬЮЦИЯ",
       title: "Чтобы представлять HBOT City Tech",
-      subtitle: "Мы производим линейку из шести моделей гипербарических камер на собственном предприятии. В каждом рынке работаем с ограниченным числом партнёров — с теми, кто настроен работать всерьёз и долго. Если условия ниже вам подходят, ждём вашу заявку.",
+      subtitle: "Нам принадлежат проектирование, инженерия и бренд линейки из шести моделей гипербарических камер. В каждом рынке работаем с ограниченным числом партнёров — с теми, кто настроен работать всерьёз и долго. Если условия ниже вам подходят, ждём вашу заявку.",
       cta_apply: "Подать заявку",
       cta_models: "Смотреть модели",
       why: {
         eyebrow: "НАШЕ ОТЛИЧИЕ", title: "Почему мы, а не Дальний Восток?", subtitle: "Мы конкурируем не снижением цены, а прибылью нашего дистрибьютора. Ниже — конкретная разница.",
         c1_title: "25–40 дней с Дальнего Востока. От нас — 4–5.", c1_text: "Поставки из Стамбула в страны Залива, тюркские республики и Европу считаются днями, а не графиком контейнеров. Запчасти идут так же быстро. Для дистрибьютора это возможность продавать, не замораживая деньги в складе.",
-        c2_title: "Ваш собеседник — сам производитель", c2_text: "Никаких экспортных посредников. По техническому вопросу вы говорите с инженером, который проектировал камеру; по коммерческому — с тем, кто принимает решение. И в одном часовом поясе.",
+        c2_title: "Ваш собеседник — сам владелец бренда", c2_text: "Никаких экспортных посредников. По техническому вопросу вы говорите с инженером, который проектировал камеру; по коммерческому — с тем, кто принимает решение. И в одном часовом поясе.",
         c3_title: "Конфигуратор — ваш инструмент закрытия сделки", c3_text: "Рядом с клиентом вы собираете камеру в его цвете и отделке и передаёте расчёт в той же встрече. Там, где конкуренты показывают PDF-каталог и обещают «уточнить цену», вы закрываете продажу.",
         c4_title: "Шесть моделей и растущая линейка", c4_text: "От одноместной капсулы до камеры больничного класса — дом, клиника, отель и стационар в одном каталоге. Новые модели и обновления систем в постоянной разработке: ваш ассортимент растёт без смены поставщика.",
         c5_title: "В сертификации вы не одни", c5_text: "Требования к сертификации различаются по странам. Мы предоставляем технический файл, инженерные данные и документацию по испытаниям; регистрацию и вопрос уполномоченного представителя планируем вместе.",
@@ -3282,7 +3282,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "من يستخدمها؟",
         title: "نخبة العالم يختارون الأكسجين عالي الضغط",
-        subtitle: "الأسماء التي ورد في الصحافة أنها تستخدم العلاج بالأكسجين عالي الضغط من أجل التعافي والأداء وطول العمر تعكس الثقة بهذه التقنية. تقوم HBOT Chamber Tech بتصنيع التقنية ذاتها بأعلى معايير الهندسة.",
+        subtitle: "الأسماء التي ورد في الصحافة أنها تستخدم العلاج بالأكسجين عالي الضغط من أجل التعافي والأداء وطول العمر تعكس الثقة بهذه التقنية. تطوّر HBOT Chamber Tech التقنية ذاتها بأعلى معايير الهندسة.",
         source_label: "المصدر",
         disclaimer: "الأسماء المذكورة هنا ورد في مصادر إخبارية أنها تستخدم العلاج بالأكسجين عالي الضغط؛ وليسوا سفراء للعلامة التجارية أو عملاء HBOT Chamber Tech.",
         items: [
@@ -3306,7 +3306,7 @@ const TRANSLATIONS = {
       targetMarkets: {
         eyebrow: "هدفنا في التوسع",
         title: "الأسواق المستهدفة القادمة",
-        subtitle: "نعمل اليوم بهندسة وتصنيع مقرهما تركيا؛ وفيما يلي بعض الأسواق التي نهدف إلى التوسع فيها مستقبلاً:",
+        subtitle: "نعمل اليوم بهندسة وتصميم مقرهما تركيا؛ وفيما يلي بعض الأسواق التي نهدف إلى التوسع فيها مستقبلاً:",
         badge: "سوق مستهدف",
         items: [
           { flag: "🇬🇧", name: "المملكة المتحدة" },
@@ -3344,7 +3344,7 @@ const TRANSLATIONS = {
     },
     heritage: {
       eyebrow: "جذورنا وتركيزنا الجديد", title: "علامة جديدة. ذاكرة تجارية تتجاوز ربع قرن.", intro: "HBOT Chamber Tech علامة حديثة التأسيس ومتخصصة في تقنيات الأكسجين عالي الضغط، لكن الانضباط الميداني والخبرة الهندسية خلفها ليسا جديدين.",
-      steps: [{ year: "1999", title: "بداية ميدانية", desc: "بدأ مؤسسو Almita رحلتهم التجارية بحل مشكلات تشغيلية حقيقية في إدارة النفايات الصلبة." }, { year: "2007", title: "خبرة هندسية متقدمة", desc: "تمتد خبرة فريق HBOT Chamber Tech في التصميم والتصنيع والأتمتة وإدارة المشاريع إلى عام 2007." }, { year: "اليوم", title: "تركيز جديد على تقنيات HBOT", desc: "ننقل هذه الخبرة إلى أنظمة HBOT عبر CityOS وCityGuard وCityConnect وCityAI والمكوّن + AR والهندسة الخاصة بكل طراز." }],
+      steps: [{ year: "1999", title: "بداية ميدانية", desc: "بدأ مؤسسو Almita رحلتهم التجارية بحل مشكلات تشغيلية حقيقية في إدارة النفايات الصلبة." }, { year: "2007", title: "خبرة هندسية متقدمة", desc: "تمتد خبرة فريق HBOT Chamber Tech في التصميم والهندسة والأتمتة وإدارة المشاريع إلى عام 2007." }, { year: "اليوم", title: "تركيز جديد على تقنيات HBOT", desc: "ننقل هذه الخبرة إلى أنظمة HBOT عبر CityOS وCityGuard وCityConnect وCityAI والمكوّن + AR والهندسة الخاصة بكل طراز." }],
       proof_title: "نوثق ما نعد به", proof_text: "نحدد كتابياً نطاق المنتج والتركيب والتدريب والصيانة ووثائق السوق المستهدف لكل مشروع.", partner_label: "دعم مؤسسي في المرحلة الانتقالية", partner_text: "تحظى HBOT Chamber Tech حالياً بدعم المنظومة التجارية والتشغيلية لمجموعة Almita."
     },
     trustSafety: {
@@ -4004,13 +4004,13 @@ const TRANSLATIONS = {
     distributor: {
       eyebrow: "التوزيع",
       title: "لتمثيل HBOT City Tech",
-      subtitle: "نُصنّع تشكيلتنا المكوّنة من ستة موديلات من غرف الأكسجين المضغوط في منشأتنا الخاصة. نعمل مع عدد محدود من الشركاء في كل سوق — شركات تنوي البقاء في هذا المجال. إن كان الإطار أدناه يناسبكم، نرحّب بطلبكم.",
+      subtitle: "نملك تصميم وهندسة وعلامة تشكيلتنا المكوّنة من ستة موديلات من غرف الأكسجين المضغوط. نعمل مع عدد محدود من الشركاء في كل سوق — شركات تنوي البقاء في هذا المجال. إن كان الإطار أدناه يناسبكم، نرحّب بطلبكم.",
       cta_apply: "قدّم طلبك",
       cta_models: "استعرض الموديلات",
       why: {
         eyebrow: "ما يميّزنا", title: "لماذا نحن بدلًا من الشرق الأقصى؟", subtitle: "لا ننافس بخفض السعر، بل بجعل موزّعنا رابحًا. إليكم الفرق بصورة ملموسة.",
         c1_title: "٢٥–٤٠ يومًا من الشرق الأقصى. من عندنا ٤–٥.", c1_text: "الشحن من إسطنبول إلى الخليج والجمهوريات التركية وأوروبا يُحسب بالأيام لا بجداول الحاويات. وقطع الغيار بالسرعة نفسها. هذا يعني للموزّع البيع دون تجميد رأس المال في المخزون.",
-        c2_title: "تتعامل مع المُصنِّع مباشرة", c2_text: "لا وكالة تصدير ولا وسيط. في السؤال الفني تتحدث مع المهندس الذي صمّم الكبينة، وفي الشأن التجاري مع صاحب القرار — وفي المنطقة الزمنية نفسها.",
+        c2_title: "تتعامل مع مالك العلامة مباشرة", c2_text: "لا وكالة تصدير ولا وسيط. في السؤال الفني تتحدث مع المهندس الذي صمّم الكبينة، وفي الشأن التجاري مع صاحب القرار — وفي المنطقة الزمنية نفسها.",
         c3_title: "المُهيّئ الإلكتروني أداتكم لإتمام البيع", c3_text: "أمام عميلكم تبنون الكبينة بلونه وتصميمه الداخلي وتسلّمونه عرض سعر في الاجتماع نفسه. وحيث يعرض المنافسون كتالوج PDF ويقولون \"سأستعلم عن السعر\"، تُتمّون أنتم الصفقة.",
         c4_title: "ستة موديلات وتشكيلة تنمو", c4_text: "من كبينة لشخص واحد إلى غرفة بمواصفات المستشفيات — المنزل والعيادة والفندق والمستشفى من كتالوج واحد. موديلات جديدة وتحديثات للأنظمة قيد التطوير المستمر: تشكيلتكم تنمو دون تغيير المورّد.",
         c5_title: "لستم وحدكم في التوثيق", c5_text: "متطلبات التوثيق تختلف من بلد لآخر. نوفّر الملف الفني والبيانات الهندسية ووثائق الاختبار؛ ونخطّط معًا لخطوات التسجيل والممثل المعتمد في سوقكم.",
@@ -4319,7 +4319,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "¿QUIÉN LA USA?",
         title: "Los Mejores del Mundo Eligen el Oxígeno Hiperbárico",
-        subtitle: "Los nombres mencionados en la prensa por su uso de la oxigenoterapia hiperbárica para la recuperación, el rendimiento y la longevidad reflejan la confianza en esta tecnología. HBOT Chamber Tech fabrica esa misma tecnología.",
+        subtitle: "Los nombres mencionados en la prensa por su uso de la oxigenoterapia hiperbárica para la recuperación, el rendimiento y la longevidad reflejan la confianza en esta tecnología. HBOT Chamber Tech desarrolla esa misma tecnología.",
         source_label: "Fuente",
         disclaimer: "Las personas mencionadas aquí han sido señaladas por medios de comunicación como usuarias de HBOT; no son embajadores de marca ni clientes de HBOT Chamber Tech.",
         items: [
@@ -4343,7 +4343,7 @@ const TRANSLATIONS = {
       targetMarkets: {
         eyebrow: "NUESTRO OBJETIVO DE EXPANSIÓN",
         title: "Los Próximos Mercados que Buscamos",
-        subtitle: "Hoy operamos con ingeniería y fabricación con base en Turquía; estos son algunos de los mercados hacia los que buscamos expandirnos próximamente:",
+        subtitle: "Hoy operamos con ingeniería y diseño con base en Turquía; estos son algunos de los mercados hacia los que buscamos expandirnos próximamente:",
         badge: "Mercado Objetivo",
         items: [
           { flag: "🇬🇧", name: "Reino Unido" },
@@ -4384,7 +4384,7 @@ const TRANSLATIONS = {
       intro: "The HBOT City Tech platform is designed to bring CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ together according to the model and verified software scope. Included functionality is stated clearly in the proposal and technical file.",
       steps: [
         { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
-        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, manufacturing, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
+        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
         { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
       ],
       proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
@@ -5051,13 +5051,13 @@ const TRANSLATIONS = {
     distributor: {
       eyebrow: "DISTRIBUCIÓN",
       title: "Para representar a HBOT City Tech",
-      subtitle: "Fabricamos nuestra gama de seis modelos de cámaras hiperbáricas en nuestras propias instalaciones. Trabajamos con un número limitado de socios por mercado: empresas que quieren permanecer en este negocio. Si el marco siguiente encaja con usted, esperamos su solicitud.",
+      subtitle: "El diseño, la ingeniería y la marca de nuestra gama de seis modelos de cámaras hiperbáricas son nuestros. Trabajamos con un número limitado de socios por mercado: empresas que quieren permanecer en este negocio. Si el marco siguiente encaja con usted, esperamos su solicitud.",
       cta_apply: "Enviar solicitud",
       cta_models: "Ver modelos",
       why: {
         eyebrow: "NUESTRA DIFERENCIA", title: "¿Por qué nosotros y no Extremo Oriente?", subtitle: "No competimos bajando el precio, sino haciendo rentable a nuestro distribuidor. Esta es la diferencia, en términos concretos.",
         c1_title: "25–40 días desde Extremo Oriente. Desde aquí, 4–5.", c1_text: "Los envíos desde Estambul al Golfo, las Repúblicas Túrcicas y Europa se cuentan en días, no en calendarios de contenedores. Los repuestos viajan igual de rápido. Para el distribuidor eso significa vender sin inmovilizar capital en stock.",
-        c2_title: "Trata directamente con el fabricante", c2_text: "Sin agencias de exportación ni intermediarios. En una cuestión técnica habla con el ingeniero que diseñó la cabina; en lo comercial, con quien decide. Y en la misma franja horaria.",
+        c2_title: "Trata directamente con el titular de la marca", c2_text: "Sin agencias de exportación ni intermediarios. En una cuestión técnica habla con el ingeniero que diseñó la cabina; en lo comercial, con quien decide. Y en la misma franja horaria.",
         c3_title: "El configurador es su herramienta de cierre", c3_text: "Frente a su cliente construye la cabina en su color y tapicería y le entrega un presupuesto en la misma reunión. Donde la competencia enseña un PDF y dice «consulto el precio», usted cierra la venta.",
         c4_title: "Seis modelos y una gama en crecimiento", c4_text: "De cabinas individuales a una cámara de clase hospitalaria: hogar, clínica, hotel y hospital desde un solo catálogo. Hay nuevos modelos y mejoras en desarrollo continuo: su gama crece sin cambiar de proveedor.",
         c5_title: "No está solo en la certificación", c5_text: "Los requisitos de certificación varían según el país. Aportamos el expediente técnico, los datos de ingeniería y la documentación de ensayos; el registro y el representante autorizado en su mercado se planifican conjuntamente.",
@@ -5366,7 +5366,7 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "QUEM USA?",
         title: "Os Melhores do Mundo Escolhem o Oxigênio Hiperbárico",
-        subtitle: "Os nomes citados pela imprensa pelo uso da oxigenoterapia hiperbárica para recuperação, desempenho e longevidade refletem a confiança nessa tecnologia. A HBOT Chamber Tech fabrica essa mesma tecnologia.",
+        subtitle: "Os nomes citados pela imprensa pelo uso da oxigenoterapia hiperbárica para recuperação, desempenho e longevidade refletem a confiança nessa tecnologia. A HBOT Chamber Tech desenvolve essa mesma tecnologia.",
         source_label: "Fonte",
         disclaimer: "As pessoas listadas aqui foram citadas por fontes jornalísticas como usuárias de OHB; elas não são embaixadoras de marca nem clientes da HBOT Chamber Tech.",
         items: [
@@ -5390,7 +5390,7 @@ const TRANSLATIONS = {
       targetMarkets: {
         eyebrow: "NOSSO OBJETIVO DE EXPANSÃO",
         title: "Os Próximos Mercados-Alvo",
-        subtitle: "Hoje operamos com engenharia e fabricação baseadas na Turquia; estes são alguns dos mercados para os quais buscamos expandir em breve:",
+        subtitle: "Hoje operamos com engenharia e design baseados na Turquia; estes são alguns dos mercados para os quais buscamos expandir em breve:",
         badge: "Mercado-Alvo",
         items: [
           { flag: "🇬🇧", name: "Reino Unido" },
@@ -5431,7 +5431,7 @@ const TRANSLATIONS = {
       intro: "The HBOT City Tech platform is designed to bring CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ together according to the model and verified software scope. Included functionality is stated clearly in the proposal and technical file.",
       steps: [
         { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
-        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, manufacturing, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
+        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
         { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
       ],
       proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
@@ -6098,13 +6098,13 @@ const TRANSLATIONS = {
     distributor: {
       eyebrow: "DISTRIBUIÇÃO",
       title: "Para representar a HBOT City Tech",
-      subtitle: "Fabricamos a nossa gama de seis modelos de câmaras hiperbáricas nas nossas próprias instalações. Trabalhamos com um número limitado de parceiros por mercado — empresas que pretendem permanecer neste negócio. Se o enquadramento abaixo lhe serve, aguardamos a sua candidatura.",
+      subtitle: "O design, a engenharia e a marca da nossa gama de seis modelos de câmaras hiperbáricas são nossos. Trabalhamos com um número limitado de parceiros por mercado — empresas que pretendem permanecer neste negócio. Se o enquadramento abaixo lhe serve, aguardamos a sua candidatura.",
       cta_apply: "Enviar candidatura",
       cta_models: "Ver modelos",
       why: {
         eyebrow: "A NOSSA DIFERENÇA", title: "Porquê nós em vez do Extremo Oriente?", subtitle: "Não competimos baixando o preço, mas tornando o nosso distribuidor rentável. Esta é a diferença, em termos concretos.",
         c1_title: "25–40 dias do Extremo Oriente. Daqui, 4–5.", c1_text: "Os envios de Istambul para o Golfo, as Repúblicas Túrquicas e a Europa contam-se em dias, não em calendários de contentores. As peças seguem à mesma velocidade. Para o distribuidor, isso significa vender sem imobilizar capital em stock.",
-        c2_title: "Fala diretamente com o fabricante", c2_text: "Sem agências de exportação nem intermediários. Numa questão técnica fala com o engenheiro que desenhou a cabina; no comercial, com quem decide. E no mesmo fuso horário.",
+        c2_title: "Fala diretamente com o detentor da marca", c2_text: "Sem agências de exportação nem intermediários. Numa questão técnica fala com o engenheiro que desenhou a cabina; no comercial, com quem decide. E no mesmo fuso horário.",
         c3_title: "O configurador é a sua ferramenta de fecho", c3_text: "Diante do cliente monta a cabina na cor e no estofo dele e entrega uma proposta com preço na mesma reunião. Onde a concorrência mostra um PDF e diz «vou consultar o preço», você fecha a venda.",
         c4_title: "Seis modelos e uma gama em crescimento", c4_text: "De cabinas individuais a uma câmara de classe hospitalar: casa, clínica, hotel e hospital num só catálogo. Novos modelos e atualizações estão em desenvolvimento contínuo: a sua gama cresce sem mudar de fornecedor.",
         c5_title: "Não está sozinho na certificação", c5_text: "Os requisitos de certificação variam consoante o país. Fornecemos o processo técnico, os dados de engenharia e a documentação de ensaios; o registo e o representante autorizado no seu mercado são planeados em conjunto.",
@@ -6437,7 +6437,7 @@ const TRANSLATIONS = {
       targetMarkets: {
         eyebrow: "UNSER EXPANSIONSZIEL",
         title: "Unsere nächsten Zielmärkte",
-        subtitle: "Heute arbeiten wir mit Entwicklung und Fertigung mit Sitz in der Türkei; hier einige der Märkte, in die wir als Nächstes expandieren möchten:",
+        subtitle: "Heute arbeiten wir mit Entwicklung und Konstruktion mit Sitz in der Türkei; hier einige der Märkte, in die wir als Nächstes expandieren möchten:",
         badge: "Zielmarkt",
         items: [
           { flag: "🇬🇧", name: "Vereinigtes Königreich" },
@@ -6478,7 +6478,7 @@ const TRANSLATIONS = {
       intro: "The HBOT City Tech platform is designed to bring CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ together according to the model and verified software scope. Included functionality is stated clearly in the proposal and technical file.",
       steps: [
         { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
-        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, manufacturing, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
+        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
         { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
       ],
       proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
@@ -7145,13 +7145,13 @@ const TRANSLATIONS = {
     distributor: {
       eyebrow: "VERTRIEB",
       title: "Um HBOT City Tech zu vertreten",
-      subtitle: "Wir fertigen unsere Baureihe aus sechs Modellen hyperbarer Kammern in der eigenen Produktion. Pro Markt arbeiten wir mit einer begrenzten Zahl von Partnern — Unternehmen, die in diesem Geschäft bleiben wollen. Wenn der folgende Rahmen zu Ihnen passt, freuen wir uns über Ihre Bewerbung.",
+      subtitle: "Design, Konstruktion und Marke unserer Baureihe aus sechs Modellen hyperbarer Kammern liegen bei uns. Pro Markt arbeiten wir mit einer begrenzten Zahl von Partnern — Unternehmen, die in diesem Geschäft bleiben wollen. Wenn der folgende Rahmen zu Ihnen passt, freuen wir uns über Ihre Bewerbung.",
       cta_apply: "Jetzt bewerben",
       cta_models: "Modelle ansehen",
       why: {
         eyebrow: "UNSER UNTERSCHIED", title: "Warum wir statt Fernost?", subtitle: "Wir konkurrieren nicht über den Preis, sondern darüber, dass unser Vertriebspartner verdient. Hier ist der Unterschied, konkret.",
         c1_title: "25–40 Tage aus Fernost. Von uns 4–5.", c1_text: "Lieferungen von Istanbul in den Golf, die Turkstaaten und nach Europa rechnen sich in Tagen, nicht in Containerfahrplänen. Ersatzteile ebenso schnell. Für den Vertriebspartner heißt das: verkaufen, ohne Kapital im Lager zu binden.",
-        c2_title: "Ihr Ansprechpartner ist der Hersteller", c2_text: "Keine Exportagentur, kein Zwischenhändler. Bei technischen Fragen sprechen Sie mit dem Ingenieur, der die Kabine konstruiert hat; kommerziell mit dem Entscheider. Und in derselben Zeitzone.",
+        c2_title: "Ihr Ansprechpartner ist der Markeninhaber", c2_text: "Keine Exportagentur, kein Zwischenhändler. Bei technischen Fragen sprechen Sie mit dem Ingenieur, der die Kabine konstruiert hat; kommerziell mit dem Entscheider. Und in derselben Zeitzone.",
         c3_title: "Der Konfigurator ist Ihr Abschluss-Werkzeug", c3_text: "Vor Ihrem Kunden bauen Sie die Kabine in seiner Farbe und Ausstattung und übergeben im selben Termin ein Angebot mit Preis. Wo der Wettbewerb einen PDF-Katalog zeigt und „ich frage den Preis nach\" sagt, schließen Sie ab.",
         c4_title: "Sechs Modelle, wachsendes Portfolio", c4_text: "Von der Einzelkabine bis zur Kammer in Klinikausführung — Privat, Praxis, Hotel und Klinik aus einem Katalog. Neue Modelle und System-Updates sind laufend in Entwicklung: Ihr Sortiment wächst ohne Lieferantenwechsel.",
         c5_title: "Bei der Zertifizierung nicht allein", c5_text: "Zertifizierungsanforderungen unterscheiden sich je Land. Wir liefern technische Dokumentation, Konstruktionsdaten und Prüfunterlagen; Registrierung und Bevollmächtigter in Ihrem Markt werden gemeinsam geplant.",
