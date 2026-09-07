@@ -2878,12 +2878,22 @@
     const t = (dict && dict.configurator && dict.configurator.intro) || null;
     if (!t) return;
 
+    /* Her girişte farklı bir kabin birleşsin — Tokyo, Dubai ya da Milano.
+       Film yüklenemezse (yavaş bağlantı, veri tasarrufu, eski tarayıcı) hiçbir
+       şey bozulmaz: altındaki statik render görünür kalır. */
+    const INTRO_MODELS = ["tokyo", "dubai", "milano"];
+    const pick = INTRO_MODELS[Math.floor(Math.random() * INTRO_MODELS.length)];
+
     const el = document.createElement("div");
     el.className = "config-intro";
     el.setAttribute("role", "dialog");
     el.setAttribute("aria-label", t.title);
     el.innerHTML = `
-      <div class="config-intro-bg" style="background-image:url('/assets/img/models/real/milano-real.webp?v=${IMG_V}')"></div>
+      <div class="config-intro-bg" style="background-image:url('/assets/img/models/real/${pick}-real.webp?v=${IMG_V}')"></div>
+      <video class="config-intro-film" muted playsinline autoplay preload="auto" aria-hidden="true"
+             poster="/assets/img/models/real/${pick}-real.webp?v=${IMG_V}">
+        <source src="/assets/video/intro/${pick}-assemble.mp4?v=1" type="video/mp4">
+      </video>
       <div class="config-intro-inner">
         <img class="config-intro-logo" src="/assets/img/logo-full.png" alt="HBOT Chamber Tech" />
         <span class="config-intro-rule"></span>
@@ -2916,6 +2926,19 @@
     el.addEventListener("click", close);
     document.addEventListener("keydown", onKey);
     setTimeout(close, 3000);
+
+    /* Veri tasarrufu açık ya da bağlantı çok yavaşsa filmi hiç indirme —
+       statik render zaten yeterli. Kullanıcının verisi bizim gösterimimizden
+       önemli. */
+    const conn = navigator.connection || {};
+    const dataSaver = conn.saveData === true || /^(slow-2g|2g)$/.test(conn.effectiveType || "");
+    const film = el.querySelector(".config-intro-film");
+    if (film && dataSaver) { film.remove(); }
+    else if (film) {
+      film.addEventListener("playing", () => el.setAttribute("data-film", "1"), { once: true });
+      const p = film.play();
+      if (p && p.catch) p.catch(() => { /* otomatik oynatma engellendi: statik kalır */ });
+    }
 
     document.documentElement.style.overflow = "hidden";
     document.body.appendChild(el);
