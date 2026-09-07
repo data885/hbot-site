@@ -12,7 +12,8 @@ const TRANSLATIONS = {
       quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Dört kişilik, geniş iç hacimli küp tasarım hiperbarik oksijen odası." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Hastane sınıfı, altı ve üzeri kişilik büyük kapasiteli hiperbarik oksijen odası." },
       hbotInfo: { title: "HBOT Nedir? | HBOT Chamber Tech", desc: "Hiperbarik oksijen terapisi (HBOT) nedir, ne için kullanılır ve hangi durumlarda uygulanır." },
-      configurator: { title: "Konfigüratör | HBOT Chamber Tech", desc: "Kendi HBOT City Tech kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." },
+      configurator: {
+        title: "Konfigüratör | HBOT Chamber Tech", desc: "Kendi HBOT City Tech kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Hiperbarik oksijen terapisi hakkında güncel araştırmalar, haberler ve gelişmeler." },
       contact: { title: "İletişim | HBOT Chamber Tech", desc: "HBOT Chamber Tech ile iletişime geçin: adres, telefon, e-posta ve iletişim formu." },
       trustSafety: { title: "Güvenlik ve Uygunluk | HBOT Chamber Tech", desc: "Model ve hedef pazara göre ürün güvenliği, eğitim, bakım, kurulum ve uygunluk dokümanlarının şeffaf özeti." },
@@ -506,6 +507,12 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      intro: {
+        eyebrow: "HBOT CITY TECH",
+        title: "Kendi kabininizi tasarlayın",
+        sub: "Model, basınç, renk ve donanımı seçin — anında görün.",
+        skip: "Atla"
+      },
       header: { eyebrow: "KONFİGÜRATÖR", title: "Kendi HBOT City Tech Kabininizi Tasarlayın", subtitle: "Modeli, basınç seviyesini ve ek özellikleri seçin — anında fiyat tahmini alın." },
       ar: {
         button: "📱 Mekânınızda Görün (3D / AR)",
@@ -1101,7 +1108,8 @@ const TRANSLATIONS = {
       nexus: { title: "Geneva | Multiplace Hyperbaric Chamber for Hospitals", desc: "A hospital-grade, 6+ person multiplace hyperbaric oxygen chamber with 2.0–6.0 ATA configuration and modular expansion readiness." },
       hbotInfo: { title: "What Is HBOT? | HBOT Chamber Tech", desc: "What is hyperbaric oxygen therapy (HBOT), what is it used for, and in which conditions is it applied." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Recent research, news and developments on hyperbaric oxygen therapy." },
-      configurator: { title: "Configurator | HBOT Chamber Tech", desc: "Configure your own HBOT City Tech chamber: choose a model, pressure level and add-ons to get an instant price estimate." },
+      configurator: {
+        title: "Configurator | HBOT Chamber Tech", desc: "Configure your own HBOT City Tech chamber: choose a model, pressure level and add-ons to get an instant price estimate." },
       contact: { title: "Contact | HBOT Chamber Tech", desc: "Get in touch with HBOT Chamber Tech: address, phone, email and contact form." },
       trustSafety: { title: "Safety & Compliance | HBOT Chamber Tech", desc: "A transparent overview of model- and market-specific safety, training, maintenance, installation and compliance documentation." },
     },
@@ -1594,6 +1602,12 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      intro: {
+        eyebrow: "HBOT CITY TECH",
+        title: "Design your own chamber",
+        sub: "Choose the model, pressure, colour and equipment — see it instantly.",
+        skip: "Skip"
+      },
       header: { eyebrow: "CONFIGURATOR", title: "Design Your Own HBOT City Tech Chamber", subtitle: "Choose the model, pressure level and add-ons — get an instant price estimate." },
       ar: {
         button: "📱 View in Your Space (3D / AR)",
@@ -2158,7 +2172,8 @@ const TRANSLATIONS = {
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Гипербарическая камера госпитального класса большой вместимости на 6 и более человек." },
       hbotInfo: { title: "Что такое ГБО? | HBOT Chamber Tech", desc: "Что такое гипербарическая оксигенотерапия (ГБО), для чего она применяется и при каких состояниях." },
       blog: { title: "Блог | HBOT Chamber Tech", desc: "Актуальные исследования, новости и разработки в области гипербарической оксигенотерапии." },
-      configurator: { title: "Конфигуратор | HBOT Chamber Tech", desc: "Настройте собственную камеру HBOT City Tech: выберите модель, уровень давления и опции, чтобы мгновенно получить оценку стоимости." },
+      configurator: {
+        title: "Конфигуратор | HBOT Chamber Tech", desc: "Настройте собственную камеру HBOT City Tech: выберите модель, уровень давления и опции, чтобы мгновенно получить оценку стоимости." },
       contact: { title: "Контакты | HBOT Chamber Tech", desc: "Свяжитесь с HBOT Chamber Tech: адрес, телефон, эл. почта и форма обратной связи." },
       trustSafety: { title: "Safety & Compliance | HBOT Chamber Tech", desc: "A transparent overview of model- and market-specific safety, training, maintenance, installation and compliance documentation." },
     },
@@ -2651,6 +2666,12 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      intro: {
+        eyebrow: "HBOT CITY TECH",
+        title: "Спроектируйте свою камеру",
+        sub: "Выберите модель, давление, цвет и оснащение — и сразу увидите результат.",
+        skip: "Пропустить"
+      },
       header: { eyebrow: "КОНФИГУРАТОР", title: "Создайте свою камеру HBOT City Tech", subtitle: "Выберите модель, уровень давления и опции — получите мгновенную оценку стоимости." },
       ar: {
         button: "📱 Посмотреть в вашем помещении (3D / AR)",
@@ -3215,7 +3236,8 @@ const TRANSLATIONS = {
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط بمستوى المستشفيات وسعة كبيرة لستة أشخاص أو أكثر." },
       hbotInfo: { title: "ما هو العلاج بالأكسجين عالي الضغط؟ | HBOT Chamber Tech", desc: "ما هو العلاج بالأكسجين عالي الضغط (HBOT)، ولماذا يُستخدم، وفي أي الحالات يُطبّق." },
       blog: { title: "المدونة | HBOT Chamber Tech", desc: "أحدث الأبحاث والأخبار والتطورات في مجال العلاج بالأكسجين عالي الضغط." },
-      configurator: { title: "أداة التكوين | HBOT Chamber Tech", desc: "صمّم غرفة HBOT City Tech الخاصة بك: اختر الموديل ومستوى الضغط والإضافات للحصول على تقدير فوري للسعر." },
+      configurator: {
+        title: "أداة التكوين | HBOT Chamber Tech", desc: "صمّم غرفة HBOT City Tech الخاصة بك: اختر الموديل ومستوى الضغط والإضافات للحصول على تقدير فوري للسعر." },
       contact: { title: "اتصل بنا | HBOT Chamber Tech", desc: "تواصل مع HBOT Chamber Tech: العنوان والهاتف والبريد الإلكتروني ونموذج التواصل." },
       trustSafety: { title: "السلامة والامتثال | HBOT Chamber Tech", desc: "ملخص شفاف لوثائق السلامة والتدريب والصيانة والتركيب والامتثال الخاصة بكل طراز وسوق." },
     },
@@ -3698,6 +3720,12 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      intro: {
+        eyebrow: "HBOT CITY TECH",
+        title: "صمّم غرفتك الخاصة",
+        sub: "اختر الموديل والضغط واللون والتجهيزات — وشاهد النتيجة فورًا.",
+        skip: "تخطٍّ"
+      },
       header: { eyebrow: "أداة التكوين", title: "صمّم غرفة HBOT City Tech الخاصة بك", subtitle: "اختر الموديل ومستوى الضغط والإضافات — واحصل على تقدير فوري للسعر." },
       ar: {
         button: "📱 عاين الكبسولة في مساحتك الخاصة (3D / AR)",
@@ -4261,7 +4289,8 @@ const TRANSLATIONS = {
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno de nivel hospitalario y gran capacidad para seis o más personas." },
       hbotInfo: { title: "¿Qué es la HBOT? | HBOT Chamber Tech", desc: "Qué es la oxigenoterapia hiperbárica (HBOT), para qué se utiliza y en qué afecciones se aplica." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Investigaciones, noticias y novedades recientes sobre la oxigenoterapia hiperbárica." },
-      configurator: { title: "Configurador | HBOT Chamber Tech", desc: "Configura tu propia cámara HBOT City Tech: elige un modelo, nivel de presión y complementos para obtener una estimación de precio instantánea." },
+      configurator: {
+        title: "Configurador | HBOT Chamber Tech", desc: "Configura tu propia cámara HBOT City Tech: elige un modelo, nivel de presión y complementos para obtener una estimación de precio instantánea." },
       contact: { title: "Contacto | HBOT Chamber Tech", desc: "Ponte en contacto con HBOT Chamber Tech: dirección, teléfono, correo electrónico y formulario de contacto." },
       trustSafety: { title: "Safety & Compliance | HBOT Chamber Tech", desc: "A transparent overview of model- and market-specific safety, training, maintenance, installation and compliance documentation." },
     },
@@ -4754,6 +4783,12 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      intro: {
+        eyebrow: "HBOT CITY TECH",
+        title: "Diseñe su propia cámara",
+        sub: "Elija modelo, presión, color y equipamiento — y véalo al instante.",
+        skip: "Saltar"
+      },
       header: { eyebrow: "CONFIGURADOR", title: "Diseña Tu Propia Cámara HBOT City Tech", subtitle: "Elige el modelo, el nivel de presión y los complementos — obtén una estimación de precio instantánea." },
       ar: {
         button: "📱 Ver en su Espacio (3D / AR)",
@@ -5317,7 +5352,8 @@ const TRANSLATIONS = {
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico de grande capacidade e nível hospitalar para seis ou mais pessoas." },
       hbotInfo: { title: "O Que É a OHB? | HBOT Chamber Tech", desc: "O que é a oxigenoterapia hiperbárica (OHB), para que serve e em quais condições é aplicada." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Pesquisas, notícias e novidades recentes sobre a oxigenoterapia hiperbárica." },
-      configurator: { title: "Configurador | HBOT Chamber Tech", desc: "Configure sua própria câmara HBOT City Tech: escolha um modelo, nível de pressão e opcionais para obter uma estimativa de preço instantânea." },
+      configurator: {
+        title: "Configurador | HBOT Chamber Tech", desc: "Configure sua própria câmara HBOT City Tech: escolha um modelo, nível de pressão e opcionais para obter uma estimativa de preço instantânea." },
       contact: { title: "Contato | HBOT Chamber Tech", desc: "Entre em contato com a HBOT Chamber Tech: endereço, telefone, e-mail e formulário de contato." },
       trustSafety: { title: "Safety & Compliance | HBOT Chamber Tech", desc: "A transparent overview of model- and market-specific safety, training, maintenance, installation and compliance documentation." },
     },
@@ -5810,6 +5846,12 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      intro: {
+        eyebrow: "HBOT CITY TECH",
+        title: "Desenhe a sua própria câmara",
+        sub: "Escolha o modelo, a pressão, a cor e o equipamento — e veja de imediato.",
+        skip: "Saltar"
+      },
       header: { eyebrow: "CONFIGURADOR", title: "Monte Sua Própria Câmara HBOT City Tech", subtitle: "Escolha o modelo, o nível de pressão e os opcionais — obtenha uma estimativa de preço instantânea." },
       ar: {
         button: "📱 Ver no seu Espaço (3D / AR)",
@@ -6373,7 +6415,8 @@ const TRANSLATIONS = {
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer in Krankenhausqualität mit großer Kapazität für sechs oder mehr Personen." },
       hbotInfo: { title: "Was ist HBOT? | HBOT Chamber Tech", desc: "Was ist die hyperbare Sauerstofftherapie (HBOT), wofür wird sie eingesetzt und bei welchen Indikationen kommt sie zur Anwendung." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Aktuelle Forschung, Neuigkeiten und Entwicklungen rund um die hyperbare Sauerstofftherapie." },
-      configurator: { title: "Konfigurator | HBOT Chamber Tech", desc: "Konfigurieren Sie Ihre eigene HBOT City Tech-Kammer: Wählen Sie Modell, Druckstufe und Zusatzausstattung für eine sofortige Preisschätzung." },
+      configurator: {
+        title: "Konfigurator | HBOT Chamber Tech", desc: "Konfigurieren Sie Ihre eigene HBOT City Tech-Kammer: Wählen Sie Modell, Druckstufe und Zusatzausstattung für eine sofortige Preisschätzung." },
       contact: { title: "Kontakt | HBOT Chamber Tech", desc: "Kontaktieren Sie HBOT Chamber Tech: Adresse, Telefon, E-Mail und Kontaktformular." },
       trustSafety: { title: "Safety & Compliance | HBOT Chamber Tech", desc: "A transparent overview of model- and market-specific safety, training, maintenance, installation and compliance documentation." },
     },
@@ -6866,6 +6909,12 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      intro: {
+        eyebrow: "HBOT CITY TECH",
+        title: "Gestalten Sie Ihre eigene Kammer",
+        sub: "Modell, Druck, Farbe und Ausstattung wählen — sofort sehen.",
+        skip: "Überspringen"
+      },
       header: { eyebrow: "KONFIGURATOR", title: "Gestalten Sie Ihre eigene HBOT City Tech-Kammer", subtitle: "Wählen Sie Modell, Druckstufe und Zusatzausstattung — erhalten Sie sofort eine Preisschätzung." },
       ar: {
         button: "📱 In Ihrem Raum ansehen (3D / AR)",

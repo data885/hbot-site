@@ -2858,6 +2858,70 @@
      bunlar üst üste biniyor ve tam ekrana geçilemiyor. Ayrıca iPhone Safari'de
      inline oynatılan videoda Element.requestFullscreen desteklenmez —
      video.webkitEnterFullscreen gerekir. Düğmeyi sağ ÜSTE koyuyoruz. */
+  /* Konfigüratör açılış perdesi.
+     Amaç: konfigüratöre girişte kısa, markalı bir karşılama hissi vermek.
+     Bilinçli kısıtlar — bu bir reklam değil, bir geçiş: (1) oturumda yalnız bir
+     kez gösterilir, ikinci girişte hiç çıkmaz; (2) her an atlanabilir (düğme,
+     Esc, tıklama); (3) 3 sn sonra kendi kapanır; (4) sayfa arkada zaten yüklü,
+     perde hiçbir şeyi geciktirmez; (5) hareket hassasiyeti (prefers-reduced-motion)
+     olan kullanıcıya hiç gösterilmez. */
+  const CONFIG_INTRO_KEY = "hbotConfigIntroSeen";
+  function initConfigIntro(dict) {
+    if (document.body.getAttribute("data-page") !== "configurator") return;
+    /* ?intro=1 ile perde tekrar izlenebilir (önizleme/QA için); bu durumda
+       oturum kaydı ve hareket tercihi atlanır. */
+    const force = new URLSearchParams(window.location.search).get("intro") === "1";
+    if (!force) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      try { if (sessionStorage.getItem(CONFIG_INTRO_KEY)) return; } catch (e) { /* gizli sekme: yine göster */ }
+    }
+    const t = (dict && dict.configurator && dict.configurator.intro) || null;
+    if (!t) return;
+
+    const el = document.createElement("div");
+    el.className = "config-intro";
+    el.setAttribute("role", "dialog");
+    el.setAttribute("aria-label", t.title);
+    el.innerHTML = `
+      <div class="config-intro-bg" style="background-image:url('/assets/img/models/real/milano-real.webp?v=${IMG_V}')"></div>
+      <div class="config-intro-inner">
+        <img class="config-intro-logo" src="/assets/img/logo-full.png" alt="HBOT Chamber Tech" />
+        <span class="config-intro-rule"></span>
+        <span class="config-intro-eyebrow">${t.eyebrow}</span>
+        <h2 class="config-intro-title">${t.title}</h2>
+        <p class="config-intro-sub">${t.sub}</p>
+      </div>
+      <button type="button" class="config-intro-skip">
+        <svg class="config-intro-ring" viewBox="0 0 16 16" aria-hidden="true">
+          <circle class="t" cx="8" cy="8" r="6"></circle>
+          <circle class="p" cx="8" cy="8" r="6"></circle>
+        </svg>
+        <span>${t.skip}</span>
+      </button>
+    `;
+
+    let done = false;
+    const close = () => {
+      if (done) return;
+      done = true;
+      if (!force) { try { sessionStorage.setItem(CONFIG_INTRO_KEY, "1"); } catch (e) { /* yoksay */ } }
+      el.setAttribute("data-closing", "1");
+      document.removeEventListener("keydown", onKey);
+      setTimeout(() => el.remove(), 560);
+      document.documentElement.style.overflow = "";
+    };
+    const onKey = (ev) => { if (ev.key === "Escape" || ev.key === "Enter" || ev.key === " ") close(); };
+
+    el.querySelector(".config-intro-skip").addEventListener("click", close);
+    el.addEventListener("click", close);
+    document.addEventListener("keydown", onKey);
+    setTimeout(close, 3000);
+
+    document.documentElement.style.overflow = "hidden";
+    document.body.appendChild(el);
+    el.querySelector(".config-intro-skip").focus({ preventScroll: true });
+  }
+
   function initVideoFullscreen() {
     const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.tr;
     const label = (dict.common && dict.common.fullscreen) || "Tam ekran";
@@ -3572,5 +3636,6 @@
     initProductAssistant();
     initClarity();
     initVideoFullscreen();
+    initConfigIntro(TRANSLATIONS[currentLang] || TRANSLATIONS.tr);
   });
 })();
