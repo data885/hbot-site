@@ -152,6 +152,21 @@ class Renderers:
     ''')
         return "".join(parts)
 
+    def series_grid(self, dict_):
+        home = dict_.get("home") or {}
+        series = home.get("series")
+        if not series:
+            return ""
+        parts = []
+        for item in series["items"]:
+            parts.append(f'''
+      <div class="indication-card">
+        <div class="indication-icon">{self.icon(item["icon"])}</div>
+        <span>{item["label"]}</span>
+      </div>
+    ''')
+        return "".join(parts)
+
     def indications_grid(self, dict_, limit=None):
         hbot_info = dict_.get("hbotInfo")
         if not hbot_info:
