@@ -1884,3 +1884,81 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 }
 /* halka artık 6 saniyeyi sayıyor */
 .config-intro-ring .p { animation-duration: 6s; }
+
+/* ---------- Üst menü simetrisi ----------
+   Sorun: menü bağlantılarında white-space tanımlı değildi; dar ekranda
+   "Ana Sayfa", "HBOT Nedir?" ve "Güvenlik & Uygunluk" alt satıra kayıp
+   öğeleri 23 / 46 / 70 px gibi üç farklı yüksekliğe sokuyor, hizayı bozuyordu.
+   Çözüm iki parçalı, çünkü tek satıra zorlamak tek başına yetmiyor:
+   ölçtüm — tüm menü tek satırda 901px istiyor, 1100px ekranda kullanılabilir
+   alan 690px. Bu yüzden (a) satır kırılması engellendi, (b) orta genişliklerde
+   boşluk/punto kısıldı, (c) menünün sığmadığı genişliklerde bozuk yatay menü
+   yerine mobil menüye geçiliyor. */
+.site-nav > a, .nav-dropdown-trigger { white-space: nowrap; }
+.site-nav { align-items: center; }
+
+/* orta genişlikler: sığdırmak için boşluk ve punto kademeli kısılır */
+@media (max-width: 1440px) {
+  .site-nav { gap: 22px; }
+  .site-nav > a, .nav-dropdown-trigger { font-size: 14px; }
+}
+@media (max-width: 1320px) {
+  .site-nav { gap: 17px; }
+  .site-nav > a, .nav-dropdown-trigger { font-size: 13.5px; }
+}
+
+/* Menü 1200px altında tek satıra sığmıyor (ölçüldü: gereken ~774px,
+   1100px ekranda kullanılabilir 690px). Bozuk sarmalı yatay menü yerine
+   bu genişliklerde de hamburger menüye geçiliyor. 760px altındaki mobil
+   bloğunun diğer kuralları (CTA gizleme vb.) değişmedi — yalnız menünün
+   kendisi bu aralıkta katlanıyor. */
+@media (min-width: 761px) and (max-width: 1200px) {
+  .site-nav {
+    position: absolute; top: 100%; inset-inline: 0;
+    background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
+    flex-direction: column; align-items: flex-start; gap: 0; padding: 0;
+    max-height: 0; overflow: hidden; transition: max-height var(--transition);
+  }
+  .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
+  .site-nav > a { padding: 14px 24px; width: 100%; font-size: 15px; }
+  .nav-item--dropdown { width: 100%; }
+  .nav-dropdown-trigger { padding: 14px 24px; flex: 1; font-size: 15px; }
+  .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
+  .nav-toggle { display: flex; }
+  .nav-dropdown-panel {
+    position: static; width: 100%; box-shadow: none;
+    background: rgba(255, 255, 255, 0.03); border-radius: 0;
+    opacity: 1; visibility: visible; transform: none;
+    max-height: 0; overflow: hidden; padding: 0 12px;
+    transition: max-height var(--transition);
+  }
+  .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
+  .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
+  .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }
+  .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
+}
+
+/* "Konfigüratöre hoş geldiniz" — parçalar birleşip kabin tamamlandığı anda
+   (4.9 sn) belirir; altın çizgi gibi ince bir kapanış vurgusu. */
+.config-intro-welcome {
+  margin: 18px 0 0;
+  font-size: clamp(14px, 2.4vw, 17px); font-weight: 700; letter-spacing: .02em;
+  color: #c9a45c; text-align: center;
+  opacity: 0; animation: ciWelcome 1100ms cubic-bezier(.22,.61,.36,1) 4900ms both;
+}
+@keyframes ciWelcome {
+  from { opacity: 0; transform: translateY(10px); letter-spacing: .12em; }
+  to   { opacity: 1; transform: none; letter-spacing: .02em; }
+}
+@media (max-height: 460px) { .config-intro-welcome { margin-top: 10px; font-size: 13px; } }
+
+/* Film oynarken kabin tam ortada ve parlak; logo/metin onun üstüne binince
+   okunurluk düşüyordu. Metin bloğunun arkasına yalnızca onu saran yumuşak bir
+   koyuluk koyduk — filmi tümden karartmadan kontrastı geri veriyor. */
+.config-intro[data-film="1"] .config-intro-inner::before {
+  content: "";
+  position: absolute; inset: -12% -18%;
+  background: radial-gradient(ellipse at center, rgba(5,7,10,.72) 0%, rgba(5,7,10,.45) 48%, rgba(5,7,10,0) 76%);
+  z-index: -1; pointer-events: none;
+}
+.config-intro-inner { position: relative; isolation: isolate; }

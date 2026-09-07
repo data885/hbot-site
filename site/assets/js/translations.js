@@ -513,7 +513,8 @@ const TRANSLATIONS = {
         sub: "Model, basınç, renk ve donanımı seçin — anında görün.",
         skip: "Atla",
         sound_on: "Sesi aç",
-        sound_off: "Sesi kapat"
+        sound_off: "Sesi kapat",
+        welcome: "Konfigüratöre hoş geldiniz"
       },
       header: { eyebrow: "KONFİGÜRATÖR", title: "Kendi HBOT City Tech Kabininizi Tasarlayın", subtitle: "Modeli, basınç seviyesini ve ek özellikleri seçin — anında fiyat tahmini alın." },
       ar: {
@@ -1610,7 +1611,8 @@ const TRANSLATIONS = {
         sub: "Choose the model, pressure, colour and equipment — see it instantly.",
         skip: "Skip",
         sound_on: "Turn sound on",
-        sound_off: "Turn sound off"
+        sound_off: "Turn sound off",
+        welcome: "Welcome to the configurator"
       },
       header: { eyebrow: "CONFIGURATOR", title: "Design Your Own HBOT City Tech Chamber", subtitle: "Choose the model, pressure level and add-ons — get an instant price estimate." },
       ar: {
@@ -2676,7 +2678,8 @@ const TRANSLATIONS = {
         sub: "Выберите модель, давление, цвет и оснащение — и сразу увидите результат.",
         skip: "Пропустить",
         sound_on: "Включить звук",
-        sound_off: "Выключить звук"
+        sound_off: "Выключить звук",
+        welcome: "Добро пожаловать в конфигуратор"
       },
       header: { eyebrow: "КОНФИГУРАТОР", title: "Создайте свою камеру HBOT City Tech", subtitle: "Выберите модель, уровень давления и опции — получите мгновенную оценку стоимости." },
       ar: {
@@ -3732,7 +3735,8 @@ const TRANSLATIONS = {
         sub: "اختر الموديل والضغط واللون والتجهيزات — وشاهد النتيجة فورًا.",
         skip: "تخطٍّ",
         sound_on: "تشغيل الصوت",
-        sound_off: "كتم الصوت"
+        sound_off: "كتم الصوت",
+        welcome: "مرحبًا بك في أداة التكوين"
       },
       header: { eyebrow: "أداة التكوين", title: "صمّم غرفة HBOT City Tech الخاصة بك", subtitle: "اختر الموديل ومستوى الضغط والإضافات — واحصل على تقدير فوري للسعر." },
       ar: {
@@ -4797,7 +4801,8 @@ const TRANSLATIONS = {
         sub: "Elija modelo, presión, color y equipamiento — y véalo al instante.",
         skip: "Saltar",
         sound_on: "Activar sonido",
-        sound_off: "Silenciar"
+        sound_off: "Silenciar",
+        welcome: "Bienvenido al configurador"
       },
       header: { eyebrow: "CONFIGURADOR", title: "Diseña Tu Propia Cámara HBOT City Tech", subtitle: "Elige el modelo, el nivel de presión y los complementos — obtén una estimación de precio instantánea." },
       ar: {
@@ -5862,7 +5867,8 @@ const TRANSLATIONS = {
         sub: "Escolha o modelo, a pressão, a cor e o equipamento — e veja de imediato.",
         skip: "Saltar",
         sound_on: "Ativar som",
-        sound_off: "Silenciar"
+        sound_off: "Silenciar",
+        welcome: "Bem-vindo ao configurador"
       },
       header: { eyebrow: "CONFIGURADOR", title: "Monte Sua Própria Câmara HBOT City Tech", subtitle: "Escolha o modelo, o nível de pressão e os opcionais — obtenha uma estimativa de preço instantânea." },
       ar: {
@@ -6927,7 +6933,8 @@ const TRANSLATIONS = {
         sub: "Modell, Druck, Farbe und Ausstattung wählen — sofort sehen.",
         skip: "Überspringen",
         sound_on: "Ton einschalten",
-        sound_off: "Ton ausschalten"
+        sound_off: "Ton ausschalten",
+        welcome: "Willkommen im Konfigurator"
       },
       header: { eyebrow: "KONFIGURATOR", title: "Gestalten Sie Ihre eigene HBOT City Tech-Kammer", subtitle: "Wählen Sie Modell, Druckstufe und Zusatzausstattung — erhalten Sie sofort eine Preisschätzung." },
       ar: {

@@ -2903,6 +2903,7 @@
         <span class="config-intro-eyebrow">${t.eyebrow}</span>
         <h2 class="config-intro-title">${t.title}</h2>
         <p class="config-intro-sub">${t.sub}</p>
+        <p class="config-intro-welcome">${t.welcome}</p>
       </div>
       <button type="button" class="config-intro-sound" data-on="0" aria-label="${t.sound_on}" title="${t.sound_on}">
         <svg class="ci-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
