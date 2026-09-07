@@ -184,15 +184,15 @@
 
   /* ---------------- Pricing data (EUR bazlı — illustrative, update with real figures) ---------------- */
   /* v13 fiyat revizyonu: Ev tipi modellerde basınç sadece 1.5/2.0 ATA (ücretsiz);
-     kurumsal modellerde 2.5/3.0/6.0 ATA (ücretsiz) — basınç kademelerine artık fiyat
+     kurumsal modellerde 2.0/2.5/3.0/6.0 ATA (ücretsiz) — basınç kademelerine artık fiyat
      eklenmiyor. Eski Quad varyantı kaldırıldı (Quad-Cube tek 4 kişilik model). */
   const MODEL_PRICING = {
     "solo-lounge": { base: 29900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 0 }] },
     solo: { base: 69900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 0 }] },
     duo: { base: 119900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 0 }] },
-    "duo-plus": { base: 119900, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
-    "quad-cube": { base: 224900, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
-    nexus: { base: 259900, tiers: [{ ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] }
+    "duo-plus": { base: 119900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
+    "quad-cube": { base: 224900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
+    nexus: { base: 259900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] }
   };
   const ADDON_PRICING = { massage: 2900, leather: 2100, entertainment: 1650, finish: 900, warranty: 2500, playstation: 1900 };
   const STYLE_PRICING = { solid: 0, glass: 3500, premium: 7500 };
@@ -202,7 +202,7 @@
   function styleAllowedFor(modelId, styleId) {
     return styleId !== "glass" || GLASS_STYLE_MODELS.includes(modelId);
   }
-  const PRESSURE_RANGE = { "solo-lounge": "1.3 – 1.5 ATA", solo: "1.3 – 1.5 ATA", duo: "1.3 – 1.5 ATA", "duo-plus": "2.5 – 6.0 ATA", "quad-cube": "2.5 – 6.0 ATA", nexus: "2.5 – 6.0 ATA" };
+  const PRESSURE_RANGE = { "solo-lounge": "1.3 – 1.5 ATA", solo: "1.3 – 1.5 ATA", duo: "1.3 – 1.5 ATA", "duo-plus": "2.0 – 6.0 ATA", "quad-cube": "2.0 – 6.0 ATA", nexus: "2.0 – 6.0 ATA" };
 
   /* Kademeli koltuk fiyatlaması: Nexus ve Duo Plus için taban fiyat koltuk sayısına göre
      değişir (eklenen her koltuk için ayrı ücret yerine sabit fiyat kademeleri). */
