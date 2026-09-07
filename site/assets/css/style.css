@@ -1846,3 +1846,41 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   background: linear-gradient(180deg, rgba(5,7,10,.58) 0%, rgba(5,7,10,.34) 45%, rgba(5,7,10,.80) 100%);
 }
 @media (prefers-reduced-motion: reduce) { .config-intro-film { display: none; } }
+
+/* Ses düğmesi — film sessiz başlamak ZORUNDA (tarayıcılar sesli otomatik
+   oynatmayı engelliyor), bu düğme kullanıcıya tek dokunuşla açma imkânı verir.
+   Atla düğmesinin solunda, aynı hizada. */
+.config-intro-sound {
+  position: absolute; z-index: 3;
+  bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+  inset-inline-end: calc(126px + env(safe-area-inset-right, 0px));
+  width: 40px; height: 40px; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,.26); border-radius: 999px;
+  background: rgba(255,255,255,.06); color: rgba(255,255,255,.86);
+  cursor: pointer; backdrop-filter: blur(8px);
+  opacity: 0; animation: ciUp 600ms ease 700ms both;
+  transition: background var(--transition), border-color var(--transition);
+}
+.config-intro-sound:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.5); }
+.config-intro-sound:focus-visible { outline: 2px solid var(--cyan-400); outline-offset: 3px; }
+.config-intro-sound svg { width: 18px; height: 18px; }
+.config-intro-sound .ci-unmute { display: none; }
+.config-intro-sound[data-on="1"] .ci-mute { display: none; }
+.config-intro-sound[data-on="1"] .ci-unmute { display: block; }
+.config-intro-sound[data-on="1"] { border-color: rgba(201,164,92,.6); color: #c9a45c; }
+/* film yoksa (veri tasarrufu / reduced-motion) ses düğmesi de anlamsız */
+.config-intro:not([data-film="1"]) .config-intro-sound { display: none; }
+
+@media (max-width: 760px) {
+  .config-intro-sound {
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    inset-inline-end: calc(106px + env(safe-area-inset-right, 0px));
+    width: 38px; height: 38px;
+  }
+}
+@media (max-height: 460px) {
+  .config-intro-sound { bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+}
+/* halka artık 6 saniyeyi sayıyor */
+.config-intro-ring .p { animation-duration: 6s; }

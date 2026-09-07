@@ -2866,6 +2866,7 @@
      perde hiçbir şeyi geciktirmez; (5) hareket hassasiyeti (prefers-reduced-motion)
      olan kullanıcıya hiç gösterilmez. */
   const CONFIG_INTRO_KEY = "hbotConfigIntroSeen";
+  const CONFIG_INTRO_SOUND = "hbotConfigIntroSound";
   function initConfigIntro(dict) {
     if (document.body.getAttribute("data-page") !== "configurator") return;
     /* ?intro=1 ile perde tekrar izlenebilir (önizleme/QA için); bu durumda
@@ -2881,7 +2882,9 @@
     /* Her girişte farklı bir kabin birleşsin — Tokyo, Dubai ya da Milano.
        Film yüklenemezse (yavaş bağlantı, veri tasarrufu, eski tarayıcı) hiçbir
        şey bozulmaz: altındaki statik render görünür kalır. */
-    const INTRO_MODELS = ["tokyo", "dubai", "milano"];
+    /* Rotasyondaki her filmin bitiş karesi, o modelin sitede kullanılan gerçek
+       render'ıyla karşılaştırılarak doğrulandı (ürün kimliği korunuyor). */
+    const INTRO_MODELS = ["oslo", "dubai", "tokyo", "tokyo-plus", "milano", "geneva"];
     const pick = INTRO_MODELS[Math.floor(Math.random() * INTRO_MODELS.length)];
 
     const el = document.createElement("div");
@@ -2901,6 +2904,10 @@
         <h2 class="config-intro-title">${t.title}</h2>
         <p class="config-intro-sub">${t.sub}</p>
       </div>
+      <button type="button" class="config-intro-sound" data-on="0" aria-label="${t.sound_on}" title="${t.sound_on}">
+        <svg class="ci-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+        <svg class="ci-unmute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7M19 5.5a8.5 8.5 0 0 1 0 13"/></svg>
+      </button>
       <button type="button" class="config-intro-skip">
         <svg class="config-intro-ring" viewBox="0 0 16 16" aria-hidden="true">
           <circle class="t" cx="8" cy="8" r="6"></circle>
@@ -2925,7 +2932,7 @@
     el.querySelector(".config-intro-skip").addEventListener("click", close);
     el.addEventListener("click", close);
     document.addEventListener("keydown", onKey);
-    setTimeout(close, 3000);
+    setTimeout(close, 6000);
 
     /* Veri tasarrufu açık ya da bağlantı çok yavaşsa filmi hiç indirme —
        statik render zaten yeterli. Kullanıcının verisi bizim gösterimimizden
@@ -2936,8 +2943,33 @@
     if (film && dataSaver) { film.remove(); }
     else if (film) {
       film.addEventListener("playing", () => el.setAttribute("data-film", "1"), { once: true });
+      /* Ses: tarayıcılar sesli otomatik oynatmayı engeller, o yüzden film daima
+         SESSİZ başlar. Kullanıcı bu oturumda sesi bir kez açtıysa tercihi
+         hatırlanır ve denenir; tarayıcı yine reddederse sessize düşer. */
+      let wantSound = false;
+      try { wantSound = sessionStorage.getItem(CONFIG_INTRO_SOUND) === "1"; } catch (e) { /* yoksay */ }
+      film.muted = true;
       const p = film.play();
-      if (p && p.catch) p.catch(() => { /* otomatik oynatma engellendi: statik kalır */ });
+      if (p && p.catch) p.catch(() => { /* engellendi: statik render kalır */ });
+      if (wantSound) {
+        film.muted = false;
+        const p2 = film.play();
+        if (p2 && p2.catch) p2.catch(() => { film.muted = true; film.play().catch(() => {}); });
+      }
+      const soundBtn = el.querySelector(".config-intro-sound");
+      const syncBtn = () => {
+        soundBtn.setAttribute("data-on", film.muted ? "0" : "1");
+        soundBtn.setAttribute("aria-label", film.muted ? t.sound_on : t.sound_off);
+        soundBtn.title = film.muted ? t.sound_on : t.sound_off;
+      };
+      soundBtn.addEventListener("click", (ev) => {
+        ev.stopPropagation();          // perdeyi kapatmasın
+        film.muted = !film.muted;
+        if (!film.muted) film.play().catch(() => { film.muted = true; syncBtn(); });
+        try { sessionStorage.setItem(CONFIG_INTRO_SOUND, film.muted ? "0" : "1"); } catch (e) { /* yoksay */ }
+        syncBtn();
+      });
+      syncBtn();
     }
 
     document.documentElement.style.overflow = "hidden";
