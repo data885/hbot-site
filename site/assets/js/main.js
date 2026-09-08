@@ -2867,6 +2867,7 @@
      olan kullanıcıya hiç gösterilmez. */
   const CONFIG_INTRO_KEY = "hbotConfigIntroSeen";
   const CONFIG_INTRO_SOUND = "hbotConfigIntroSound";
+  const CONFIG_INTRO_LAST = "hbotConfigIntroLast";
   function initConfigIntro(dict) {
     if (document.body.getAttribute("data-page") !== "configurator") return;
     /* ?intro=1 ile perde tekrar izlenebilir (önizleme/QA için); bu durumda
@@ -2885,7 +2886,15 @@
     /* Rotasyondaki her filmin bitiş karesi, o modelin sitede kullanılan gerçek
        render'ıyla karşılaştırılarak doğrulandı (ürün kimliği korunuyor). */
     const INTRO_MODELS = ["oslo", "dubai", "tokyo", "tokyo-plus", "milano", "geneva"];
-    const pick = INTRO_MODELS[Math.floor(Math.random() * INTRO_MODELS.length)];
+    /* Site "canlı" hissettirsin diye kabin her seferinde değişir — ve son
+       gösterilen model havuzdan çıkarılır, böylece aynı kabini iki kez üst üste
+       görmek imkânsız. Tercih localStorage'da tutulur (oturumlar arası da
+       geçerli); okunamazsa sadece rastgele seçime düşer, hiçbir şey kırılmaz. */
+    let last = "";
+    try { last = localStorage.getItem(CONFIG_INTRO_LAST) || ""; } catch (e) { /* yoksay */ }
+    const pool = INTRO_MODELS.filter((m) => m !== last);
+    const pick = pool[Math.floor(Math.random() * pool.length)] || INTRO_MODELS[0];
+    try { localStorage.setItem(CONFIG_INTRO_LAST, pick); } catch (e) { /* yoksay */ }
 
     const el = document.createElement("div");
     el.className = "config-intro";

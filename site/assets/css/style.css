@@ -1944,7 +1944,7 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   margin: 18px 0 0;
   font-size: clamp(14px, 2.4vw, 17px); font-weight: 700; letter-spacing: .02em;
   color: #c9a45c; text-align: center;
-  opacity: 0; animation: ciWelcome 1100ms cubic-bezier(.22,.61,.36,1) 4900ms both;
+  opacity: 0; animation: ciWelcome 1000ms cubic-bezier(.22,.61,.36,1) 2900ms both;
 }
 @keyframes ciWelcome {
   from { opacity: 0; transform: translateY(10px); letter-spacing: .12em; }
