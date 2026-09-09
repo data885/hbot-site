@@ -2181,7 +2181,7 @@ const TRANSLATIONS = {
       configurator: {
         title: "Конфигуратор | HBOT Chamber Tech", desc: "Настройте собственную камеру HBOT City Tech: выберите модель, уровень давления и опции, чтобы мгновенно получить оценку стоимости." },
       contact: { title: "Контакты | HBOT Chamber Tech", desc: "Свяжитесь с HBOT Chamber Tech: адрес, телефон, эл. почта и форма обратной связи." },
-      trustSafety: { title: "Safety & Compliance | HBOT Chamber Tech", desc: "A transparent overview of model- and market-specific safety, training, maintenance, installation and compliance documentation." },
+      trustSafety: { title: "Безопасность и соответствие | HBOT Chamber Tech", desc: "Прозрачный обзор документации по безопасности, обучению, обслуживанию, монтажу и соответствию — по каждой модели и целевому рынку." },
     },
     common: {
       brand: "HBOT Chamber Tech",
@@ -2202,7 +2202,7 @@ const TRANSLATIONS = {
         all_link: "Все модели"
       },
       footer: {
-        about_text: "HBOT Chamber Tech is a newly established, focused hyperbaric technology brand. Its team's advanced engineering experience reaches back to 2007, and its founders' commercial journey to 1999.",
+        about_text: "HBOT Chamber Tech — молодой и узкоспециализированный бренд гипербарических технологий. Инженерный опыт команды восходит к 2007 году, а коммерческий путь основателей — к 1999 году.",
         models_title: "Модели",
         company_title: "Компания",
         contact_title: "Контакты",
@@ -2265,10 +2265,10 @@ const TRANSLATIONS = {
         eyebrow: "ПОЧЕМУ HBOT CHAMBER TECH",
         title: "Пионер в области подключённых камер",
         items: [
-          { title: "Connected Product Architecture", desc: "CityConnect™ supports remote visibility of chamber and operational data in compatible configurations." },
-          { title: "CityAI™ Decision Support", desc: "CityAI™ helps interpret and report operational data without replacing an authorized operator." },
-          { title: "Project-Specific Integration", desc: "CitySync™ interfaces are designed and verified to the agreed hospital or business-system integration scope." },
-          { title: "Maintenance & Service Visibility", desc: "CityGuard™ supports condition monitoring, recorded alerts and planned service work." }
+          { title: "Connected Product Architecture", desc: "CityConnect™ обеспечивает удалённый доступ к данным камеры и эксплуатации в совместимых конфигурациях." },
+          { title: "CityAI™ Decision Support", desc: "CityAI™ помогает интерпретировать и представлять эксплуатационные данные, не заменяя уполномоченного оператора." },
+          { title: "Project-Specific Integration", desc: "Интерфейсы CitySync™ проектируются и проверяются в согласованном объёме интеграции с больничными или бизнес-системами." },
+          { title: "Maintenance & Service Visibility", desc: "CityGuard™ поддерживает контроль состояния, регистрацию оповещений и плановые сервисные работы." }
         ]
       },
       celebs: {
@@ -2345,25 +2345,25 @@ const TRANSLATIONS = {
       }
     },
     heritage: {
-      eyebrow: "OUR ROOTS, OUR NEW FOCUS", title: "A New Brand. More Than a Quarter-Century of Commercial Memory.",
-      intro: "The HBOT City Tech platform is designed to bring CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ together according to the model and verified software scope. Included functionality is stated clearly in the proposal and technical file.",
+      eyebrow: "НАШИ КОРНИ, НАШ НОВЫЙ ФОКУС", title: "Новый бренд. Более четверти века коммерческой памяти.",
+      intro: "Платформа HBOT City Tech создана для того, чтобы объединить CityConnect™, CityOS™, CityAI™, CitySync™ и CityGuard™ в объёме, соответствующем модели и проверенной версии программного обеспечения. Входящий в поставку функционал прямо указывается в коммерческом предложении и техническом файле.",
       steps: [
-        { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
-        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
-        { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
+        { year: "1999", title: "Коммерческий путь, начатый в поле", desc: "Основатели Almita начали с решения реальных операционных задач в сфере управления твёрдыми отходами." },
+        { year: "2007", title: "Advanced Engineering Experience", desc: "Опыт проектирования, инжиниринга, автоматизации и управления проектами команды, стоящей за HBOT Chamber Tech, восходит к 2007 году." },
+        { year: "TODAY", title: "Новый бренд, сфокусированный на гипербарических технологиях", desc: "Мы переносим этот опыт в HBOT-системы нового поколения через CityOS, CityGuard, CityConnect, CityAI, конфигуратор с AR и инженерные решения под конкретную модель." }
       ],
-      proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
-      partner_label: "TRANSITION-PERIOD CORPORATE SUPPORT", partner_text: "During this stage of brand development, HBOT Chamber Tech is supported by Almita Group's commercial and operational ecosystem."
+      proof_title: "Мы документируем то, что обещаем", proof_text: "По каждому проекту мы письменно фиксируем объём поставки, монтаж, обучение, техническое обслуживание и документацию для целевого рынка.",
+      partner_label: "TRANSITION-PERIOD CORPORATE SUPPORT", partner_text: "На этом этапе развития бренда HBOT Chamber Tech опирается на коммерческую и операционную экосистему Almita Group."
     },
     trustSafety: {
-      eyebrow: "SAFETY & COMPLIANCE", title: "Trust Built with Documentation, Not Slogans", subtitle: "Safety, intended use, training, maintenance and target-market compliance are assessed separately for every model.",
-      policy_title: "Our safe-use approach", policy_intro: "Installation and operation bring together manufacturer instructions, trained operators, monitoring, fire prevention, grounding, cleaning and scheduled maintenance.",
-      policy_items: ["Follow the instructions for use and defined intended use", "Fire prevention and material control for oxygen-rich environments", "Grounding, static-electricity and electrical-safety checks", "Authorized staff training, monitoring and emergency procedures", "Cleaning, consumables, service intervals and recorded safety checks"],
-      docs_title: "Project documentation package", docs_intro: "Scope is confirmed by model, configuration, intended use and destination market.",
-      docs: ["Product identity and intended use", "Model- and country-specific compliance package", "Instructions for use and operator training", "Maintenance, cleaning and service plan", "Factory/acceptance tests, installation and commissioning", "Fire-safety and emergency procedures"],
-      disclosure_title: "Regulatory disclosure", disclosure_text: "Regulatory status, classification and market availability vary by model, configuration, intended use and country. HBOT Chamber Tech makes compliance claims only for a verified model and market scope and does not make a blanket FDA-approval claim.",
-      matrix_title: "Six models, six separate files", matrix_text: "Request the current technical and compliance package for Oslo, Dubai, Tokyo, Tokyo Plus, Milano and Geneva.",
-      cta: "Request a Model File", updated: "Last reviewed: August 2026"
+      eyebrow: "БЕЗОПАСНОСТЬ И СООТВЕТСТВИЕ", title: "Доверие строится на документах, а не на лозунгах", subtitle: "Безопасность, назначение, обучение, обслуживание и соответствие требованиям целевого рынка оцениваются отдельно для каждой модели.",
+      policy_title: "Наш подход к безопасной эксплуатации", policy_intro: "Монтаж и эксплуатация объединяют инструкции производителя, обученных операторов, контроль, пожарную профилактику, заземление, очистку и плановое обслуживание.",
+      policy_items: ["Соблюдение инструкции по эксплуатации и определённого назначения", "Пожарная профилактика и контроль материалов для сред, обогащённых кислородом", "Проверки заземления, статического электричества и электробезопасности", "Обучение уполномоченного персонала, контроль и аварийные процедуры", "Очистка, расходные материалы, интервалы обслуживания и регистрируемые проверки безопасности"],
+      docs_title: "Project documentation package", docs_intro: "Объём подтверждается моделью, конфигурацией, назначением и рынком назначения.",
+      docs: ["Идентификация продукта и назначение", "Пакет соответствия по модели и стране", "Инструкция по эксплуатации и обучение операторов", "План обслуживания, очистки и сервиса", "Заводские/приёмочные испытания, монтаж и ввод в эксплуатацию", "Пожарная безопасность и аварийные процедуры"],
+      disclosure_title: "Regulatory disclosure", disclosure_text: "Регуляторный статус, классификация и доступность на рынке различаются в зависимости от модели, конфигурации, назначения и страны. HBOT Chamber Tech заявляет о соответствии только для проверенной модели и рыночного объёма и не делает общего заявления об одобрении FDA.",
+      matrix_title: "Six models, six separate files", matrix_text: "Запросите актуальный технический пакет и пакет соответствия для Oslo, Dubai, Tokyo, Tokyo Plus, Milano и Geneva.",
+      cta: "Запросить файл модели", updated: "Last reviewed: August 2026"
     },
     technology: {
       header: { eyebrow: "ТЕХНОЛОГИЧЕСКАЯ ПЛАТФОРМА", title: "Технологическая экосистема HBOT City Tech", subtitle: "Не просто панель управления — постоянно развивающаяся, подключённая и интеллектуальная система." },
@@ -2394,32 +2394,32 @@ const TRANSLATIONS = {
         ai: {
           title: "CityAI™",
           subtitle: "Оптимизация лечения с помощью ИИ",
-          desc: "Analyzes operational data to support authorized operators with visibility and reporting; it does not replace clinical judgment or the operator.",
+          desc: "Анализирует эксплуатационные данные, помогая уполномоченным операторам с наблюдением и отчётностью; не заменяет клиническое суждение или оператора.",
           features: [
-            "Operational-data visibility and summaries",
-            "Decision support for authorized operators; no autonomous clinical decisions",
-            "Support for session and system reporting",
-            "Scope confirmed by model and verified software release"
+            "Наблюдение и сводки по эксплуатационным данным",
+            "Поддержка решений для уполномоченных операторов; без автономных клинических решений",
+            "Поддержка отчётности по сеансам и системе",
+            "Объём подтверждается моделью и проверенной версией ПО"
           ]
         },
         sync: {
           title: "CitySync™",
           subtitle: "Интеграция с больничными информационными системами в один клик",
-          desc: "Data exchange with hospital or business systems is planned to the approved project scope and verified interfaces.",
+          desc: "Обмен данными с больничными или бизнес-системами планируется в утверждённом объёме проекта и с проверенными интерфейсами.",
           features: [
             "Project-specific data-interface planning",
-            "Written definition of integration scope and data fields",
-            "Interface and data-flow verification before commissioning"
+            "Письменное определение объёма интеграции и полей данных",
+            "Проверка интерфейсов и потоков данных до ввода в эксплуатацию"
           ]
         },
         guard: {
           title: "CityGuard™",
           subtitle: "Connected Condition & Maintenance Support",
-          desc: "A connected maintenance layer supporting condition visibility, recorded alerts and planned service work.",
+          desc: "Подключённый слой обслуживания, поддерживающий контроль состояния, регистрацию оповещений и плановые сервисные работы.",
           features: [
-            "Visibility of system condition and recorded alerts",
-            "Usage-hour-based maintenance and consumables planning",
-            "Service history for authorized technical teams"
+            "Наблюдение за состоянием системы и зарегистрированные оповещения",
+            "Планирование обслуживания и расходных материалов по моточасам",
+            "История обслуживания для уполномоченных технических команд"
           ]
         }
       },
@@ -2489,16 +2489,16 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 человек · Положение лёжа", desc: "Полностью укомплектованная камера, разработанная специально для пользователей, нуждающихся в лечении в положении лёжа." },
       solo: { title: "Dubai", tagline: "1 человек · Положение сидя", desc: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарической оксигенотерапии." },
       duo: { title: "Tokyo", tagline: "2 человека · Положение сидя", desc: "Двухместная камера с панорамным окном — для пар, партнёров или пациента с сопровождающим." },
-      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "A configurable multi-user chamber for clinics, hospitals and professional facilities." },
+      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "Конфигурируемая многоместная камера для клиник, больниц и профессиональных объектов." },
       quadCube: { title: "Milano", tagline: "4 человека · Просторная кабина", desc: "Четырёхместная премиум-кабина с просторным кубическим интерьером — стёганая кожа и LED-подсветка." },
       nexus: { title: "Geneva", tagline: "6+ человек · Положение сидя", desc: "Камера госпитального класса большой вместимости с модульным расширением для медицинских учреждений." }
     },
     includedItems: [
       { icon: "connect", title: "CityConnect™ включён", desc: "Подключение к интернету в стандартной комплектации. Удалённый мониторинг, мгновенные оповещения и облачное резервное копирование." },
       { icon: "os", title: "Обновления CityOS™", desc: "Ваше устройство ежемесячно получает новые функции. OTA-обновления поддерживают протоколы актуальными." },
-      { icon: "ai", title: "Оптимизация CityAI™", desc: "Decision support for operational visibility and reporting; it does not replace an authorized operator." },
-      { icon: "sync", title: "Интеграция CitySync™", desc: "Integration scope is defined per project and verified before commissioning." },
-      { icon: "guard", title: "Безопасность CityGuard™", desc: "Supports condition visibility, recorded alerts and planned service work." },
+      { icon: "ai", title: "Оптимизация CityAI™", desc: "Поддержка принятия решений для контроля эксплуатации и отчётности; не заменяет уполномоченного оператора." },
+      { icon: "sync", title: "Интеграция CitySync™", desc: "Объём интеграции определяется по каждому проекту и проверяется до ввода в эксплуатацию." },
+      { icon: "guard", title: "Безопасность CityGuard™", desc: "Поддерживает контроль состояния, регистрацию оповещений и плановые сервисные работы." },
       { icon: "battery", title: "Встроенный резервный источник питания", desc: "Каждая модель оснащена встроенным резервным источником питания на случай отключения электричества — это стандарт." },
       { icon: "pulseOx", title: "Датчик сатурации кислорода", desc: "Монитор насыщения крови кислородом является стандартным оснащением каждой камеры и отслеживает показатели на протяжении сеанса." }
     ],
@@ -3546,7 +3546,7 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "شخص واحد · وضعية الاستلقاء", desc: "غرفة كاملة التجهيز طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء." },
       solo: { title: "Dubai", tagline: "شخص واحد · وضعية الجلوس", desc: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للعلاج الفردي بالأكسجين عالي الضغط." },
       duo: { title: "Tokyo", tagline: "شخصان · وضعية الجلوس", desc: "غرفة بمقعدين ونافذة بانورامية — للأزواج أو الشركاء أو استخدام المريض مع مرافق." },
-      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "A configurable multi-user chamber for clinics, hospitals and professional facilities." },
+      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "غرفة متعددة المستخدمين قابلة للتهيئة للعيادات والمستشفيات والمنشآت المهنية." },
       quadCube: { title: "Milano", tagline: "4 أشخاص · مقصورة واسعة", desc: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب — جلد مبطّن وإضاءة LED محيطية." },
       nexus: { title: "Geneva", tagline: "6+ أشخاص · وضعية الجلوس", desc: "غرفة بمستوى المستشفيات وسعة كبيرة قابلة للتوسع المعياري، مصممة للمؤسسات الطبية." }
     },
@@ -4304,7 +4304,7 @@ const TRANSLATIONS = {
       configurator: {
         title: "Configurador | HBOT Chamber Tech", desc: "Configura tu propia cámara HBOT City Tech: elige un modelo, nivel de presión y complementos para obtener una estimación de precio instantánea." },
       contact: { title: "Contacto | HBOT Chamber Tech", desc: "Ponte en contacto con HBOT Chamber Tech: dirección, teléfono, correo electrónico y formulario de contacto." },
-      trustSafety: { title: "Safety & Compliance | HBOT Chamber Tech", desc: "A transparent overview of model- and market-specific safety, training, maintenance, installation and compliance documentation." },
+      trustSafety: { title: "Seguridad y conformidad | HBOT Chamber Tech", desc: "Un resumen transparente de la documentación de seguridad, formación, mantenimiento, instalación y conformidad según el modelo y el mercado." },
     },
     common: {
       brand: "HBOT Chamber Tech",
@@ -4325,7 +4325,7 @@ const TRANSLATIONS = {
         all_link: "Todos los Modelos"
       },
       footer: {
-        about_text: "HBOT Chamber Tech is a newly established, focused hyperbaric technology brand. Its team's advanced engineering experience reaches back to 2007, and its founders' commercial journey to 1999.",
+        about_text: "HBOT Chamber Tech es una marca de tecnología hiperbárica de reciente creación y enfoque especializado. La experiencia avanzada en ingeniería de su equipo se remonta a 2007 y la trayectoria comercial de sus fundadores a 1999.",
         models_title: "Modelos",
         company_title: "Empresa",
         contact_title: "Contacto",
@@ -4388,10 +4388,10 @@ const TRANSLATIONS = {
         eyebrow: "POR QUÉ HBOT CHAMBER TECH",
         title: "Pioneros en Tecnología de Cámaras Conectadas",
         items: [
-          { title: "Connected Product Architecture", desc: "CityConnect™ supports remote visibility of chamber and operational data in compatible configurations." },
-          { title: "CityAI™ Decision Support", desc: "CityAI™ helps interpret and report operational data without replacing an authorized operator." },
-          { title: "Project-Specific Integration", desc: "CitySync™ interfaces are designed and verified to the agreed hospital or business-system integration scope." },
-          { title: "Maintenance & Service Visibility", desc: "CityGuard™ supports condition monitoring, recorded alerts and planned service work." }
+          { title: "Connected Product Architecture", desc: "CityConnect™ permite la visibilidad remota de los datos de la cámara y de operación en configuraciones compatibles." },
+          { title: "CityAI™ Decision Support", desc: "CityAI™ ayuda a interpretar y reportar datos operativos sin sustituir al operador autorizado." },
+          { title: "Project-Specific Integration", desc: "Las interfaces CitySync™ se diseñan y verifican según el alcance de integración acordado con el sistema hospitalario o de gestión." },
+          { title: "Maintenance & Service Visibility", desc: "CityGuard™ apoya el seguimiento del estado, las alertas registradas y los trabajos de servicio planificados." }
         ]
       },
       celebs: {
@@ -4468,25 +4468,25 @@ const TRANSLATIONS = {
       }
     },
     heritage: {
-      eyebrow: "OUR ROOTS, OUR NEW FOCUS", title: "A New Brand. More Than a Quarter-Century of Commercial Memory.",
-      intro: "The HBOT City Tech platform is designed to bring CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ together according to the model and verified software scope. Included functionality is stated clearly in the proposal and technical file.",
+      eyebrow: "NUESTRAS RAÍCES, NUESTRO NUEVO ENFOQUE", title: "Una marca nueva. Más de un cuarto de siglo de memoria comercial.",
+      intro: "La plataforma HBOT City Tech está diseñada para integrar CityConnect™, CityOS™, CityAI™, CitySync™ y CityGuard™ según el modelo y el alcance de software verificado. Las funciones incluidas se indican con claridad en la propuesta y en el expediente técnico.",
       steps: [
-        { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
-        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
-        { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
+        { year: "1999", title: "Una trayectoria comercial que empezó en el campo", desc: "Los fundadores de Almita comenzaron resolviendo problemas operativos reales en la gestión de residuos sólidos." },
+        { year: "2007", title: "Advanced Engineering Experience", desc: "La experiencia en diseño, ingeniería, automatización y gestión de proyectos del equipo detrás de HBOT Chamber Tech se remonta a 2007." },
+        { year: "TODAY", title: "Una nueva marca centrada en la tecnología hiperbárica", desc: "Llevamos esa experiencia a los sistemas HBOT de nueva generación a través de CityOS, CityGuard, CityConnect, CityAI, el configurador con RA e ingeniería específica por modelo." }
       ],
-      proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
-      partner_label: "TRANSITION-PERIOD CORPORATE SUPPORT", partner_text: "During this stage of brand development, HBOT Chamber Tech is supported by Almita Group's commercial and operational ecosystem."
+      proof_title: "Documentamos lo que prometemos", proof_text: "En cada proyecto definimos por escrito el alcance del producto, la instalación, la formación, el mantenimiento y la documentación del mercado de destino.",
+      partner_label: "TRANSITION-PERIOD CORPORATE SUPPORT", partner_text: "En esta etapa de desarrollo de marca, HBOT Chamber Tech cuenta con el respaldo del ecosistema comercial y operativo de Almita Group."
     },
     trustSafety: {
-      eyebrow: "SAFETY & COMPLIANCE", title: "Trust Built with Documentation, Not Slogans", subtitle: "Safety, intended use, training, maintenance and target-market compliance are assessed separately for every model.",
-      policy_title: "Our safe-use approach", policy_intro: "Installation and operation bring together manufacturer instructions, trained operators, monitoring, fire prevention, grounding, cleaning and scheduled maintenance.",
-      policy_items: ["Follow the instructions for use and defined intended use", "Fire prevention and material control for oxygen-rich environments", "Grounding, static-electricity and electrical-safety checks", "Authorized staff training, monitoring and emergency procedures", "Cleaning, consumables, service intervals and recorded safety checks"],
-      docs_title: "Project documentation package", docs_intro: "Scope is confirmed by model, configuration, intended use and destination market.",
-      docs: ["Product identity and intended use", "Model- and country-specific compliance package", "Instructions for use and operator training", "Maintenance, cleaning and service plan", "Factory/acceptance tests, installation and commissioning", "Fire-safety and emergency procedures"],
-      disclosure_title: "Regulatory disclosure", disclosure_text: "Regulatory status, classification and market availability vary by model, configuration, intended use and country. HBOT Chamber Tech makes compliance claims only for a verified model and market scope and does not make a blanket FDA-approval claim.",
-      matrix_title: "Six models, six separate files", matrix_text: "Request the current technical and compliance package for Oslo, Dubai, Tokyo, Tokyo Plus, Milano and Geneva.",
-      cta: "Request a Model File", updated: "Last reviewed: August 2026"
+      eyebrow: "SEGURIDAD Y CONFORMIDAD", title: "La confianza se construye con documentación, no con eslóganes", subtitle: "La seguridad, el uso previsto, la formación, el mantenimiento y la conformidad con el mercado de destino se evalúan por separado para cada modelo.",
+      policy_title: "Nuestro enfoque de uso seguro", policy_intro: "La instalación y la operación combinan las instrucciones del fabricante, operadores formados, supervisión, prevención de incendios, puesta a tierra, limpieza y mantenimiento programado.",
+      policy_items: ["Seguir las instrucciones de uso y el uso previsto definido", "Prevención de incendios y control de materiales en entornos ricos en oxígeno", "Comprobaciones de puesta a tierra, electricidad estática y seguridad eléctrica", "Formación del personal autorizado, supervisión y procedimientos de emergencia", "Limpieza, consumibles, intervalos de servicio y controles de seguridad registrados"],
+      docs_title: "Project documentation package", docs_intro: "El alcance se confirma según el modelo, la configuración, el uso previsto y el mercado de destino.",
+      docs: ["Identidad del producto y uso previsto", "Paquete de conformidad específico por modelo y país", "Instrucciones de uso y formación del operador", "Plan de mantenimiento, limpieza y servicio", "Ensayos de fábrica/aceptación, instalación y puesta en marcha", "Seguridad contra incendios y procedimientos de emergencia"],
+      disclosure_title: "Regulatory disclosure", disclosure_text: "El estatus regulatorio, la clasificación y la disponibilidad en el mercado varían según el modelo, la configuración, el uso previsto y el país. HBOT Chamber Tech realiza declaraciones de conformidad únicamente para un modelo y un ámbito de mercado verificados, y no formula una declaración general de aprobación por la FDA.",
+      matrix_title: "Six models, six separate files", matrix_text: "Solicite el paquete técnico y de conformidad actualizado para Oslo, Dubai, Tokyo, Tokyo Plus, Milano y Geneva.",
+      cta: "Solicitar el expediente del modelo", updated: "Last reviewed: August 2026"
     },
     technology: {
       header: { eyebrow: "PLATAFORMA TECNOLÓGICA", title: "El Ecosistema Tecnológico HBOT City Tech", subtitle: "No es solo un panel de control — es un sistema conectado e inteligente en constante evolución." },
@@ -4517,32 +4517,32 @@ const TRANSLATIONS = {
         ai: {
           title: "CityAI™",
           subtitle: "Optimización del Tratamiento Impulsada por IA",
-          desc: "Analyzes operational data to support authorized operators with visibility and reporting; it does not replace clinical judgment or the operator.",
+          desc: "Analiza los datos operativos para apoyar a los operadores autorizados con visibilidad e informes; no sustituye el criterio clínico ni al operador.",
           features: [
-            "Operational-data visibility and summaries",
-            "Decision support for authorized operators; no autonomous clinical decisions",
-            "Support for session and system reporting",
-            "Scope confirmed by model and verified software release"
+            "Visibilidad y resúmenes de datos operativos",
+            "Soporte a la decisión para operadores autorizados; sin decisiones clínicas autónomas",
+            "Apoyo a los informes de sesión y de sistema",
+            "Alcance confirmado por modelo y versión de software verificada"
           ]
         },
         sync: {
           title: "CitySync™",
           subtitle: "Integración con un Solo Clic con los Sistemas de Información Hospitalaria",
-          desc: "Data exchange with hospital or business systems is planned to the approved project scope and verified interfaces.",
+          desc: "El intercambio de datos con sistemas hospitalarios o de gestión se planifica conforme al alcance aprobado del proyecto y a interfaces verificadas.",
           features: [
             "Project-specific data-interface planning",
-            "Written definition of integration scope and data fields",
-            "Interface and data-flow verification before commissioning"
+            "Definición por escrito del alcance de integración y de los campos de datos",
+            "Verificación de interfaces y flujos de datos antes de la puesta en marcha"
           ]
         },
         guard: {
           title: "CityGuard™",
           subtitle: "Connected Condition & Maintenance Support",
-          desc: "A connected maintenance layer supporting condition visibility, recorded alerts and planned service work.",
+          desc: "Una capa de mantenimiento conectada que da soporte a la visibilidad del estado, las alertas registradas y los trabajos de servicio planificados.",
           features: [
-            "Visibility of system condition and recorded alerts",
-            "Usage-hour-based maintenance and consumables planning",
-            "Service history for authorized technical teams"
+            "Visibilidad del estado del sistema y alertas registradas",
+            "Planificación de mantenimiento y consumibles según horas de uso",
+            "Historial de servicio para equipos técnicos autorizados"
           ]
         }
       },
@@ -4612,16 +4612,16 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 Persona · Posición Tumbada", desc: "Una cámara totalmente equipada, desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada." },
       solo: { title: "Dubai", tagline: "1 Persona · Posición Sentada", desc: "Una cámara compacta, elegante y totalmente equipada, diseñada para la oxigenoterapia hiperbárica individual." },
       duo: { title: "Tokyo", tagline: "2 Personas · Posición Sentada", desc: "Una cámara de doble asiento con ventana panorámica — para parejas, acompañantes o uso paciente-acompañante." },
-      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "A configurable multi-user chamber for clinics, hospitals and professional facilities." },
+      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "Cámara multiusuario configurable para clínicas, hospitales e instalaciones profesionales." },
       quadCube: { title: "Milano", tagline: "4 Personas · Cabina Espaciosa", desc: "Una cabina premium para cuatro personas con un interior espacioso de diseño cúbico — tapicería de cuero acolchado e iluminación ambiental LED." },
       nexus: { title: "Geneva", tagline: "6+ Personas · Posición Sentada", desc: "Una cámara de nivel hospitalario y gran capacidad, con expansión modular, diseñada para instituciones médicas." }
     },
     includedItems: [
       { icon: "connect", title: "CityConnect™ Incluido", desc: "Conectividad a internet de serie. Monitorización remota, alertas instantáneas y copia de seguridad en la nube." },
       { icon: "os", title: "Actualizaciones CityOS™", desc: "Tu dispositivo gana nuevas funciones cada mes. Las actualizaciones OTA mantienen los protocolos al día." },
-      { icon: "ai", title: "Optimización CityAI™", desc: "Decision support for operational visibility and reporting; it does not replace an authorized operator." },
-      { icon: "sync", title: "Integración CitySync™", desc: "Integration scope is defined per project and verified before commissioning." },
-      { icon: "guard", title: "Seguridad CityGuard™", desc: "Supports condition visibility, recorded alerts and planned service work." },
+      { icon: "ai", title: "Optimización CityAI™", desc: "Soporte a la decisión para la visibilidad operativa y los informes; no sustituye al operador autorizado." },
+      { icon: "sync", title: "Integración CitySync™", desc: "El alcance de la integración se define por proyecto y se verifica antes de la puesta en marcha." },
+      { icon: "guard", title: "Seguridad CityGuard™", desc: "Permite la visibilidad del estado, las alertas registradas y los trabajos de servicio planificados." },
       { icon: "battery", title: "Alimentación de Respaldo Integrada de Serie", desc: "Cada modelo incluye de serie una fuente de alimentación de respaldo integrada para protegerse frente a cortes de energía." },
       { icon: "pulseOx", title: "Medidor de Saturación de Oxígeno", desc: "Un monitor de saturación de oxígeno en sangre viene de serie en cada cámara, controlando los niveles durante toda la sesión." }
     ],
@@ -5370,7 +5370,7 @@ const TRANSLATIONS = {
       configurator: {
         title: "Configurador | HBOT Chamber Tech", desc: "Configure sua própria câmara HBOT City Tech: escolha um modelo, nível de pressão e opcionais para obter uma estimativa de preço instantânea." },
       contact: { title: "Contato | HBOT Chamber Tech", desc: "Entre em contato com a HBOT Chamber Tech: endereço, telefone, e-mail e formulário de contato." },
-      trustSafety: { title: "Safety & Compliance | HBOT Chamber Tech", desc: "A transparent overview of model- and market-specific safety, training, maintenance, installation and compliance documentation." },
+      trustSafety: { title: "Segurança e conformidade | HBOT Chamber Tech", desc: "Um panorama transparente da documentação de segurança, treinamento, manutenção, instalação e conformidade conforme o modelo e o mercado." },
     },
     common: {
       brand: "HBOT Chamber Tech",
@@ -5391,7 +5391,7 @@ const TRANSLATIONS = {
         all_link: "Todos os Modelos"
       },
       footer: {
-        about_text: "HBOT Chamber Tech is a newly established, focused hyperbaric technology brand. Its team's advanced engineering experience reaches back to 2007, and its founders' commercial journey to 1999.",
+        about_text: "A HBOT Chamber Tech é uma marca de tecnologia hiperbárica recém-criada e focada. A experiência avançada de engenharia da sua equipe remonta a 2007 e a trajetória comercial dos seus fundadores a 1999.",
         models_title: "Modelos",
         company_title: "Empresa",
         contact_title: "Contato",
@@ -5454,10 +5454,10 @@ const TRANSLATIONS = {
         eyebrow: "POR QUE A HBOT CHAMBER TECH",
         title: "Pioneiros em Tecnologia de Câmaras Conectadas",
         items: [
-          { title: "Connected Product Architecture", desc: "CityConnect™ supports remote visibility of chamber and operational data in compatible configurations." },
-          { title: "CityAI™ Decision Support", desc: "CityAI™ helps interpret and report operational data without replacing an authorized operator." },
-          { title: "Project-Specific Integration", desc: "CitySync™ interfaces are designed and verified to the agreed hospital or business-system integration scope." },
-          { title: "Maintenance & Service Visibility", desc: "CityGuard™ supports condition monitoring, recorded alerts and planned service work." }
+          { title: "Connected Product Architecture", desc: "O CityConnect™ permite a visibilidade remota dos dados da câmara e da operação em configurações compatíveis." },
+          { title: "CityAI™ Decision Support", desc: "O CityAI™ ajuda a interpretar e reportar dados operacionais sem substituir o operador autorizado." },
+          { title: "Project-Specific Integration", desc: "As interfaces CitySync™ são projetadas e verificadas conforme o escopo de integração acordado com o sistema hospitalar ou de gestão." },
+          { title: "Maintenance & Service Visibility", desc: "O CityGuard™ apoia o monitoramento de condição, os alertas registrados e os trabalhos de serviço planejados." }
         ]
       },
       celebs: {
@@ -5534,25 +5534,25 @@ const TRANSLATIONS = {
       }
     },
     heritage: {
-      eyebrow: "OUR ROOTS, OUR NEW FOCUS", title: "A New Brand. More Than a Quarter-Century of Commercial Memory.",
-      intro: "The HBOT City Tech platform is designed to bring CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ together according to the model and verified software scope. Included functionality is stated clearly in the proposal and technical file.",
+      eyebrow: "NOSSAS RAÍZES, NOSSO NOVO FOCO", title: "Uma marca nova. Mais de um quarto de século de memória comercial.",
+      intro: "A plataforma HBOT City Tech foi projetada para reunir CityConnect™, CityOS™, CityAI™, CitySync™ e CityGuard™ conforme o modelo e o escopo de software verificado. As funcionalidades incluídas são indicadas com clareza na proposta e no arquivo técnico.",
       steps: [
-        { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
-        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
-        { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
+        { year: "1999", title: "Uma trajetória comercial que começou em campo", desc: "Os fundadores da Almita começaram resolvendo problemas operacionais reais na gestão de resíduos sólidos." },
+        { year: "2007", title: "Advanced Engineering Experience", desc: "A experiência em design, engenharia, automação e gestão de projetos da equipe por trás da HBOT Chamber Tech remonta a 2007." },
+        { year: "TODAY", title: "Uma nova marca focada em tecnologia hiperbárica", desc: "Levamos essa experiência aos sistemas HBOT de nova geração por meio de CityOS, CityGuard, CityConnect, CityAI, configurador com RA e engenharia específica por modelo." }
       ],
-      proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
-      partner_label: "TRANSITION-PERIOD CORPORATE SUPPORT", partner_text: "During this stage of brand development, HBOT Chamber Tech is supported by Almita Group's commercial and operational ecosystem."
+      proof_title: "Documentamos o que prometemos", proof_text: "Em cada projeto definimos por escrito o escopo do produto, a instalação, o treinamento, a manutenção e a documentação do mercado de destino.",
+      partner_label: "TRANSITION-PERIOD CORPORATE SUPPORT", partner_text: "Nesta etapa de desenvolvimento da marca, a HBOT Chamber Tech conta com o apoio do ecossistema comercial e operacional do Almita Group."
     },
     trustSafety: {
-      eyebrow: "SAFETY & COMPLIANCE", title: "Trust Built with Documentation, Not Slogans", subtitle: "Safety, intended use, training, maintenance and target-market compliance are assessed separately for every model.",
-      policy_title: "Our safe-use approach", policy_intro: "Installation and operation bring together manufacturer instructions, trained operators, monitoring, fire prevention, grounding, cleaning and scheduled maintenance.",
-      policy_items: ["Follow the instructions for use and defined intended use", "Fire prevention and material control for oxygen-rich environments", "Grounding, static-electricity and electrical-safety checks", "Authorized staff training, monitoring and emergency procedures", "Cleaning, consumables, service intervals and recorded safety checks"],
-      docs_title: "Project documentation package", docs_intro: "Scope is confirmed by model, configuration, intended use and destination market.",
-      docs: ["Product identity and intended use", "Model- and country-specific compliance package", "Instructions for use and operator training", "Maintenance, cleaning and service plan", "Factory/acceptance tests, installation and commissioning", "Fire-safety and emergency procedures"],
-      disclosure_title: "Regulatory disclosure", disclosure_text: "Regulatory status, classification and market availability vary by model, configuration, intended use and country. HBOT Chamber Tech makes compliance claims only for a verified model and market scope and does not make a blanket FDA-approval claim.",
-      matrix_title: "Six models, six separate files", matrix_text: "Request the current technical and compliance package for Oslo, Dubai, Tokyo, Tokyo Plus, Milano and Geneva.",
-      cta: "Request a Model File", updated: "Last reviewed: August 2026"
+      eyebrow: "SEGURANÇA E CONFORMIDADE", title: "Confiança construída com documentação, não com slogans", subtitle: "Segurança, uso pretendido, treinamento, manutenção e conformidade com o mercado de destino são avaliados separadamente para cada modelo.",
+      policy_title: "Nossa abordagem de uso seguro", policy_intro: "A instalação e a operação reúnem as instruções do fabricante, operadores treinados, monitoramento, prevenção de incêndio, aterramento, limpeza e manutenção programada.",
+      policy_items: ["Seguir as instruções de uso e o uso pretendido definido", "Prevenção de incêndio e controle de materiais em ambientes ricos em oxigênio", "Verificações de aterramento, eletricidade estática e segurança elétrica", "Treinamento de pessoal autorizado, monitoramento e procedimentos de emergência", "Limpeza, consumíveis, intervalos de serviço e verificações de segurança registradas"],
+      docs_title: "Project documentation package", docs_intro: "O escopo é confirmado conforme o modelo, a configuração, o uso pretendido e o mercado de destino.",
+      docs: ["Identidade do produto e uso pretendido", "Pacote de conformidade específico por modelo e país", "Instruções de uso e treinamento do operador", "Plano de manutenção, limpeza e serviço", "Testes de fábrica/aceitação, instalação e comissionamento", "Segurança contra incêndio e procedimentos de emergência"],
+      disclosure_title: "Regulatory disclosure", disclosure_text: "O status regulatório, a classificação e a disponibilidade no mercado variam conforme o modelo, a configuração, o uso pretendido e o país. A HBOT Chamber Tech faz declarações de conformidade apenas para um modelo e um escopo de mercado verificados e não faz uma alegação genérica de aprovação pela FDA.",
+      matrix_title: "Six models, six separate files", matrix_text: "Solicite o pacote técnico e de conformidade atualizado para Oslo, Dubai, Tokyo, Tokyo Plus, Milano e Geneva.",
+      cta: "Solicitar o arquivo do modelo", updated: "Last reviewed: August 2026"
     },
     technology: {
       header: { eyebrow: "PLATAFORMA TECNOLÓGICA", title: "O Ecossistema Tecnológico HBOT City Tech", subtitle: "Não é apenas um painel de controle — é um sistema conectado, inteligente e em constante evolução." },
@@ -5583,32 +5583,32 @@ const TRANSLATIONS = {
         ai: {
           title: "CityAI™",
           subtitle: "Otimização de Tratamento Potencializada por IA",
-          desc: "Analyzes operational data to support authorized operators with visibility and reporting; it does not replace clinical judgment or the operator.",
+          desc: "Analisa dados operacionais para apoiar operadores autorizados com visibilidade e relatórios; não substitui o julgamento clínico nem o operador.",
           features: [
-            "Operational-data visibility and summaries",
-            "Decision support for authorized operators; no autonomous clinical decisions",
-            "Support for session and system reporting",
-            "Scope confirmed by model and verified software release"
+            "Visibilidade e resumos de dados operacionais",
+            "Suporte à decisão para operadores autorizados; sem decisões clínicas autônomas",
+            "Apoio aos relatórios de sessão e de sistema",
+            "Escopo confirmado pelo modelo e pela versão de software verificada"
           ]
         },
         sync: {
           title: "CitySync™",
           subtitle: "Integração com Sistemas de Informação Hospitalar em Um Clique",
-          desc: "Data exchange with hospital or business systems is planned to the approved project scope and verified interfaces.",
+          desc: "A troca de dados com sistemas hospitalares ou de gestão é planejada conforme o escopo aprovado do projeto e interfaces verificadas.",
           features: [
             "Project-specific data-interface planning",
-            "Written definition of integration scope and data fields",
-            "Interface and data-flow verification before commissioning"
+            "Definição por escrito do escopo de integração e dos campos de dados",
+            "Verificação de interfaces e fluxos de dados antes do comissionamento"
           ]
         },
         guard: {
           title: "CityGuard™",
           subtitle: "Connected Condition & Maintenance Support",
-          desc: "A connected maintenance layer supporting condition visibility, recorded alerts and planned service work.",
+          desc: "Uma camada de manutenção conectada que apoia a visibilidade de condição, os alertas registrados e os trabalhos de serviço planejados.",
           features: [
-            "Visibility of system condition and recorded alerts",
-            "Usage-hour-based maintenance and consumables planning",
-            "Service history for authorized technical teams"
+            "Visibilidade da condição do sistema e alertas registrados",
+            "Planejamento de manutenção e consumíveis por horas de uso",
+            "Histórico de serviço para equipes técnicas autorizadas"
           ]
         }
       },
@@ -5678,16 +5678,16 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 Pessoa · Posição Deitada", desc: "Uma câmara totalmente equipada, desenvolvida especificamente para usuários que precisam de tratamento na posição deitada." },
       solo: { title: "Dubai", tagline: "1 Pessoa · Posição Sentada", desc: "Uma câmara compacta, elegante e totalmente equipada, projetada para oxigenoterapia hiperbárica individual." },
       duo: { title: "Tokyo", tagline: "2 Pessoas · Posição Sentada", desc: "Uma câmara com dois assentos e janela panorâmica — para casais, parceiros ou uso paciente-acompanhante." },
-      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "A configurable multi-user chamber for clinics, hospitals and professional facilities." },
+      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "Câmara multiusuário configurável para clínicas, hospitais e instalações profissionais." },
       quadCube: { title: "Milano", tagline: "4 Pessoas · Cabine Espaçosa", desc: "Uma cabine premium para quatro pessoas com interior espaçoso em design cubo — estofamento em couro acolchoado e iluminação ambiente em LED." },
       nexus: { title: "Geneva", tagline: "6+ Pessoas · Posição Sentada", desc: "Uma câmara de grande capacidade e nível hospitalar, com expansão modular, construída para instituições médicas." }
     },
     includedItems: [
       { icon: "connect", title: "CityConnect™ Incluído", desc: "Conectividade à internet de série. Monitoramento remoto, alertas instantâneos e backup na nuvem." },
       { icon: "os", title: "Atualizações CityOS™", desc: "Seu equipamento ganha novos recursos todo mês. As atualizações OTA mantêm os protocolos sempre atualizados." },
-      { icon: "ai", title: "Otimização CityAI™", desc: "Decision support for operational visibility and reporting; it does not replace an authorized operator." },
-      { icon: "sync", title: "Integração CitySync™", desc: "Integration scope is defined per project and verified before commissioning." },
-      { icon: "guard", title: "Segurança CityGuard™", desc: "Supports condition visibility, recorded alerts and planned service work." },
+      { icon: "ai", title: "Otimização CityAI™", desc: "Suporte à decisão para visibilidade operacional e relatórios; não substitui o operador autorizado." },
+      { icon: "sync", title: "Integração CitySync™", desc: "O escopo da integração é definido por projeto e verificado antes do comissionamento." },
+      { icon: "guard", title: "Segurança CityGuard™", desc: "Permite a visibilidade de condição, os alertas registrados e os trabalhos de serviço planejados." },
       { icon: "battery", title: "Energia de Backup Integrada de Série", desc: "Todo modelo vem de série com uma fonte de energia de backup integrada para proteção contra quedas de energia." },
       { icon: "pulseOx", title: "Medidor de Saturação de Oxigênio", desc: "Um monitor de saturação de oxigênio no sangue é de série em toda câmara, acompanhando os níveis durante toda a sessão." }
     ],
@@ -6258,7 +6258,7 @@ const TRANSLATIONS = {
     contact: {
       header: { eyebrow: "CONTATO", title: "Entre em Contato", subtitle: "Preencha o formulário para suas dúvidas e solicitações de orçamento." },
       address_label: "Endereço",
-      address_value: "Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29, Tuzla / Istanbul, Türkiye",
+      address_value: "Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29, Tuzla / Istambul, Turquia",
       phone_label: "Telefone",
       phone_value: "+90 501 950 7003",
       email_label: "E-mail",
@@ -6436,7 +6436,7 @@ const TRANSLATIONS = {
       configurator: {
         title: "Konfigurator | HBOT Chamber Tech", desc: "Konfigurieren Sie Ihre eigene HBOT City Tech-Kammer: Wählen Sie Modell, Druckstufe und Zusatzausstattung für eine sofortige Preisschätzung." },
       contact: { title: "Kontakt | HBOT Chamber Tech", desc: "Kontaktieren Sie HBOT Chamber Tech: Adresse, Telefon, E-Mail und Kontaktformular." },
-      trustSafety: { title: "Safety & Compliance | HBOT Chamber Tech", desc: "A transparent overview of model- and market-specific safety, training, maintenance, installation and compliance documentation." },
+      trustSafety: { title: "Sicherheit und Konformität | HBOT Chamber Tech", desc: "Ein transparenter Überblick über die modell- und marktspezifische Dokumentation zu Sicherheit, Schulung, Wartung, Installation und Konformität." },
     },
     common: {
       brand: "HBOT Chamber Tech",
@@ -6457,7 +6457,7 @@ const TRANSLATIONS = {
         all_link: "Alle Modelle"
       },
       footer: {
-        about_text: "HBOT Chamber Tech is a newly established, focused hyperbaric technology brand. Its team's advanced engineering experience reaches back to 2007, and its founders' commercial journey to 1999.",
+        about_text: "HBOT Chamber Tech ist eine neu gegründete, fokussierte Marke für Hyperbartechnologie. Die fortgeschrittene Ingenieurserfahrung des Teams reicht bis 2007 zurück, der unternehmerische Weg der Gründer bis 1999.",
         models_title: "Modelle",
         company_title: "Unternehmen",
         contact_title: "Kontakt",
@@ -6520,10 +6520,10 @@ const TRANSLATIONS = {
         eyebrow: "WARUM HBOT CHAMBER TECH",
         title: "Pionier bei vernetzten Kammern",
         items: [
-          { title: "Connected Product Architecture", desc: "CityConnect™ supports remote visibility of chamber and operational data in compatible configurations." },
-          { title: "CityAI™ Decision Support", desc: "CityAI™ helps interpret and report operational data without replacing an authorized operator." },
-          { title: "Project-Specific Integration", desc: "CitySync™ interfaces are designed and verified to the agreed hospital or business-system integration scope." },
-          { title: "Maintenance & Service Visibility", desc: "CityGuard™ supports condition monitoring, recorded alerts and planned service work." }
+          { title: "Connected Product Architecture", desc: "CityConnect™ ermöglicht in kompatiblen Konfigurationen die Ferneinsicht in Kammer- und Betriebsdaten." },
+          { title: "CityAI™ Decision Support", desc: "CityAI™ hilft, Betriebsdaten auszuwerten und zu berichten, ohne den autorisierten Bediener zu ersetzen." },
+          { title: "Project-Specific Integration", desc: "CitySync™-Schnittstellen werden im vereinbarten Integrationsumfang für Krankenhaus- oder Unternehmenssysteme ausgelegt und verifiziert." },
+          { title: "Maintenance & Service Visibility", desc: "CityGuard™ unterstützt Zustandsüberwachung, protokollierte Alarme und geplante Servicearbeiten." }
         ]
       },
       celebs: {
@@ -6600,25 +6600,25 @@ const TRANSLATIONS = {
       }
     },
     heritage: {
-      eyebrow: "OUR ROOTS, OUR NEW FOCUS", title: "A New Brand. More Than a Quarter-Century of Commercial Memory.",
-      intro: "The HBOT City Tech platform is designed to bring CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ together according to the model and verified software scope. Included functionality is stated clearly in the proposal and technical file.",
+      eyebrow: "UNSERE WURZELN, UNSER NEUER FOKUS", title: "Eine neue Marke. Mehr als ein Vierteljahrhundert kommerzielles Gedächtnis.",
+      intro: "Die HBOT City Tech-Plattform ist darauf ausgelegt, CityConnect™, CityOS™, CityAI™, CitySync™ und CityGuard™ entsprechend dem Modell und dem verifizierten Softwareumfang zusammenzuführen. Der enthaltene Funktionsumfang wird im Angebot und in der technischen Dokumentation eindeutig angegeben.",
       steps: [
-        { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
-        { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
-        { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
+        { year: "1999", title: "Ein unternehmerischer Weg, der im Feld begann", desc: "Die Gründer von Almita begannen damit, reale betriebliche Probleme in der Abfallwirtschaft zu lösen." },
+        { year: "2007", title: "Advanced Engineering Experience", desc: "Die Erfahrung in Design, Engineering, Automatisierung und Projektmanagement des Teams hinter HBOT Chamber Tech reicht bis 2007 zurück." },
+        { year: "TODAY", title: "Eine neue Marke mit Fokus auf Hyperbartechnologie", desc: "Diese Erfahrung bringen wir über CityOS, CityGuard, CityConnect, CityAI, den Konfigurator mit AR und modellspezifisches Engineering in HBOT-Systeme der nächsten Generation ein." }
       ],
-      proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
-      partner_label: "TRANSITION-PERIOD CORPORATE SUPPORT", partner_text: "During this stage of brand development, HBOT Chamber Tech is supported by Almita Group's commercial and operational ecosystem."
+      proof_title: "Wir dokumentieren, was wir versprechen", proof_text: "Für jedes Projekt legen wir Produktumfang, Installation, Schulung, Wartung und die Dokumentation für den Zielmarkt schriftlich fest.",
+      partner_label: "TRANSITION-PERIOD CORPORATE SUPPORT", partner_text: "In dieser Phase der Markenentwicklung wird HBOT Chamber Tech durch das kommerzielle und operative Ökosystem der Almita Group unterstützt."
     },
     trustSafety: {
-      eyebrow: "SAFETY & COMPLIANCE", title: "Trust Built with Documentation, Not Slogans", subtitle: "Safety, intended use, training, maintenance and target-market compliance are assessed separately for every model.",
-      policy_title: "Our safe-use approach", policy_intro: "Installation and operation bring together manufacturer instructions, trained operators, monitoring, fire prevention, grounding, cleaning and scheduled maintenance.",
-      policy_items: ["Follow the instructions for use and defined intended use", "Fire prevention and material control for oxygen-rich environments", "Grounding, static-electricity and electrical-safety checks", "Authorized staff training, monitoring and emergency procedures", "Cleaning, consumables, service intervals and recorded safety checks"],
-      docs_title: "Project documentation package", docs_intro: "Scope is confirmed by model, configuration, intended use and destination market.",
-      docs: ["Product identity and intended use", "Model- and country-specific compliance package", "Instructions for use and operator training", "Maintenance, cleaning and service plan", "Factory/acceptance tests, installation and commissioning", "Fire-safety and emergency procedures"],
-      disclosure_title: "Regulatory disclosure", disclosure_text: "Regulatory status, classification and market availability vary by model, configuration, intended use and country. HBOT Chamber Tech makes compliance claims only for a verified model and market scope and does not make a blanket FDA-approval claim.",
-      matrix_title: "Six models, six separate files", matrix_text: "Request the current technical and compliance package for Oslo, Dubai, Tokyo, Tokyo Plus, Milano and Geneva.",
-      cta: "Request a Model File", updated: "Last reviewed: August 2026"
+      eyebrow: "SICHERHEIT UND KONFORMITÄT", title: "Vertrauen entsteht durch Dokumentation, nicht durch Slogans", subtitle: "Sicherheit, Zweckbestimmung, Schulung, Wartung und Zielmarktkonformität werden für jedes Modell gesondert bewertet.",
+      policy_title: "Unser Ansatz für den sicheren Gebrauch", policy_intro: "Installation und Betrieb vereinen Herstelleranweisungen, geschulte Bediener, Überwachung, Brandschutz, Erdung, Reinigung und planmäßige Wartung.",
+      policy_items: ["Gebrauchsanweisung und definierte Zweckbestimmung befolgen", "Brandschutz und Materialkontrolle für sauerstoffangereicherte Umgebungen", "Prüfungen von Erdung, statischer Elektrizität und elektrischer Sicherheit", "Schulung des autorisierten Personals, Überwachung und Notfallverfahren", "Reinigung, Verbrauchsmaterialien, Serviceintervalle und protokollierte Sicherheitsprüfungen"],
+      docs_title: "Project documentation package", docs_intro: "Der Umfang wird durch Modell, Konfiguration, Zweckbestimmung und Zielmarkt bestätigt.",
+      docs: ["Produktidentität und Zweckbestimmung", "Modell- und länderspezifisches Konformitätspaket", "Gebrauchsanweisung und Bedienerschulung", "Wartungs-, Reinigungs- und Serviceplan", "Werks-/Abnahmeprüfungen, Installation und Inbetriebnahme", "Brandschutz- und Notfallverfahren"],
+      disclosure_title: "Regulatory disclosure", disclosure_text: "Regulatorischer Status, Klassifizierung und Marktverfügbarkeit unterscheiden sich je nach Modell, Konfiguration, Zweckbestimmung und Land. HBOT Chamber Tech macht Konformitätsangaben ausschließlich für ein verifiziertes Modell und einen verifizierten Marktumfang und erhebt keinen pauschalen Anspruch auf eine FDA-Zulassung.",
+      matrix_title: "Six models, six separate files", matrix_text: "Fordern Sie das aktuelle Technik- und Konformitätspaket für Oslo, Dubai, Tokyo, Tokyo Plus, Milano und Geneva an.",
+      cta: "Modelldokumentation anfordern", updated: "Last reviewed: August 2026"
     },
     technology: {
       header: { eyebrow: "TECHNOLOGIEPLATTFORM", title: "Das HBOT City Tech-Technologie-Ökosystem", subtitle: "Nicht nur ein Bedienfeld — ein sich ständig weiterentwickelndes, vernetztes und intelligentes System." },
@@ -6649,32 +6649,32 @@ const TRANSLATIONS = {
         ai: {
           title: "CityAI™",
           subtitle: "KI-gestützte Behandlungsoptimierung",
-          desc: "Analyzes operational data to support authorized operators with visibility and reporting; it does not replace clinical judgment or the operator.",
+          desc: "Analysiert Betriebsdaten, um autorisierte Bediener mit Transparenz und Berichten zu unterstützen; ersetzt weder die klinische Beurteilung noch den Bediener.",
           features: [
-            "Operational-data visibility and summaries",
-            "Decision support for authorized operators; no autonomous clinical decisions",
-            "Support for session and system reporting",
-            "Scope confirmed by model and verified software release"
+            "Transparenz und Zusammenfassungen von Betriebsdaten",
+            "Entscheidungsunterstützung für autorisierte Bediener; keine autonomen klinischen Entscheidungen",
+            "Unterstützung der Sitzungs- und Systemberichte",
+            "Umfang bestätigt durch Modell und verifizierten Software-Release"
           ]
         },
         sync: {
           title: "CitySync™",
           subtitle: "Integration in Krankenhausinformationssysteme mit einem Klick",
-          desc: "Data exchange with hospital or business systems is planned to the approved project scope and verified interfaces.",
+          desc: "Der Datenaustausch mit Krankenhaus- oder Unternehmenssystemen wird im freigegebenen Projektumfang und mit verifizierten Schnittstellen geplant.",
           features: [
             "Project-specific data-interface planning",
-            "Written definition of integration scope and data fields",
-            "Interface and data-flow verification before commissioning"
+            "Schriftliche Festlegung von Integrationsumfang und Datenfeldern",
+            "Verifizierung von Schnittstellen und Datenflüssen vor der Inbetriebnahme"
           ]
         },
         guard: {
           title: "CityGuard™",
           subtitle: "Connected Condition & Maintenance Support",
-          desc: "A connected maintenance layer supporting condition visibility, recorded alerts and planned service work.",
+          desc: "Eine vernetzte Wartungsebene, die Zustandstransparenz, protokollierte Alarme und geplante Servicearbeiten unterstützt.",
           features: [
-            "Visibility of system condition and recorded alerts",
-            "Usage-hour-based maintenance and consumables planning",
-            "Service history for authorized technical teams"
+            "Transparenz über den Systemzustand und protokollierte Alarme",
+            "Wartungs- und Verbrauchsmaterialplanung nach Betriebsstunden",
+            "Servicehistorie für autorisierte technische Teams"
           ]
         }
       },
@@ -6744,16 +6744,16 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo", tagline: "1 Person · Liegende Position", desc: "Eine voll ausgestattete Kammer, die speziell für Nutzer entwickelt wurde, die eine Behandlung in liegender Position benötigen." },
       solo: { title: "Dubai", tagline: "1 Person · Sitzende Position", desc: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstofftherapie." },
       duo: { title: "Tokyo", tagline: "2 Personen · Sitzende Position", desc: "Eine Zweiplatz-Kammer mit Panoramafenster — für Paare, Partner oder die Nutzung mit Begleitperson." },
-      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "A configurable multi-user chamber for clinics, hospitals and professional facilities." },
+      duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "Eine konfigurierbare Mehrpersonenkammer für Kliniken, Krankenhäuser und professionelle Einrichtungen." },
       quadCube: { title: "Milano", tagline: "4 Personen · Geräumige Kabine", desc: "Eine Premium-Kabine für vier Personen mit geräumigem Cube-Design-Innenraum — gesteppte Lederpolsterung und LED-Ambientebeleuchtung." },
       nexus: { title: "Geneva", tagline: "6+ Personen · Sitzende Position", desc: "Eine großvolumige Kammer in Krankenhausqualität mit modularer Erweiterung, konzipiert für medizinische Einrichtungen." }
     },
     includedItems: [
       { icon: "connect", title: "CityConnect™ inklusive", desc: "Internetkonnektivität serienmäßig. Fernüberwachung, Sofortbenachrichtigungen und Cloud-Backup." },
       { icon: "os", title: "CityOS™-Updates", desc: "Ihr Gerät erhält jeden Monat neue Funktionen. OTA-Updates halten die Protokolle aktuell." },
-      { icon: "ai", title: "CityAI™-Optimierung", desc: "Decision support for operational visibility and reporting; it does not replace an authorized operator." },
-      { icon: "sync", title: "CitySync™-Integration", desc: "Integration scope is defined per project and verified before commissioning." },
-      { icon: "guard", title: "CityGuard™-Sicherheit", desc: "Supports condition visibility, recorded alerts and planned service work." },
+      { icon: "ai", title: "CityAI™-Optimierung", desc: "Entscheidungsunterstützung für betriebliche Transparenz und Berichte; ersetzt keinen autorisierten Bediener." },
+      { icon: "sync", title: "CitySync™-Integration", desc: "Der Integrationsumfang wird je Projekt festgelegt und vor der Inbetriebnahme verifiziert." },
+      { icon: "guard", title: "CityGuard™-Sicherheit", desc: "Unterstützt Zustandstransparenz, protokollierte Alarme und geplante Servicearbeiten." },
       { icon: "battery", title: "Serienmäßige integrierte Notstromversorgung", desc: "Jedes Modell verfügt serienmäßig über eine integrierte Notstromversorgung zum Schutz vor Stromausfällen." },
       { icon: "pulseOx", title: "Sauerstoffsättigungsmesser", desc: "Ein Blutsauerstoffsättigungsmonitor ist in jeder Kammer Standard und überwacht die Werte während der gesamten Sitzung." }
     ],
@@ -7324,7 +7324,7 @@ const TRANSLATIONS = {
     contact: {
       header: { eyebrow: "KONTAKT", title: "Kontaktieren Sie uns", subtitle: "Füllen Sie das Formular für Ihre Fragen und Angebotsanfragen aus." },
       address_label: "Adresse",
-      address_value: "Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29, Tuzla / Istanbul, Türkiye",
+      address_value: "Postane Mh. Rauf Orbay Cd. Kemal Sunal Sk. No: 29, Tuzla / Istanbul, Türkei",
       phone_label: "Telefon",
       phone_value: "+90 501 950 7003",
       email_label: "E-Mail",

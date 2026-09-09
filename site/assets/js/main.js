@@ -2868,17 +2868,13 @@
   const CONFIG_INTRO_KEY = "hbotConfigIntroSeen";
   const CONFIG_INTRO_SOUND = "hbotConfigIntroSound";
   const CONFIG_INTRO_LAST = "hbotConfigIntroLast";
-  function initConfigIntro(dict) {
-    if (document.body.getAttribute("data-page") !== "configurator") return;
-    /* ?intro=1 ile perde tekrar izlenebilir (önizleme/QA için); bu durumda
-       oturum kaydı ve hareket tercihi atlanır. */
-    const force = new URLSearchParams(window.location.search).get("intro") === "1";
-    if (!force) {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      try { if (sessionStorage.getItem(CONFIG_INTRO_KEY)) return; } catch (e) { /* gizli sekme: yine göster */ }
-    }
+  /* Perdenin kendisi. Hem konfigüratör sayfasında (doğrudan giriş: yer imi,
+     arama sonucu) hem de menüden tıklandığında SAYFA AÇILMADAN ÖNCE ara sahne
+     olarak kullanılır. opts.onDone(sebep) perde bittiğinde çağrılır. */
+  function buildConfigIntro(dict, opts) {
+    opts = opts || {};
     const t = (dict && dict.configurator && dict.configurator.intro) || null;
-    if (!t) return;
+    if (!t) return null;
 
     /* Her girişte farklı bir kabin birleşsin — Tokyo, Dubai ya da Milano.
        Film yüklenemezse (yavaş bağlantı, veri tasarrufu, eski tarayıcı) hiçbir
@@ -2928,21 +2924,30 @@
     `;
 
     let done = false;
-    const close = () => {
+    let timer = 0;
+    const close = (reason) => {
       if (done) return;
       done = true;
-      if (!force) { try { sessionStorage.setItem(CONFIG_INTRO_KEY, "1"); } catch (e) { /* yoksay */ } }
-      el.setAttribute("data-closing", "1");
+      clearTimeout(timer);
+      if (!opts.force) { try { sessionStorage.setItem(CONFIG_INTRO_KEY, "1"); } catch (e) { /* yoksay */ } }
       document.removeEventListener("keydown", onKey);
+      if (opts.keepOpen) {
+        /* Ara sahne: perde kapanmasın — sayfa geçişi onun altında olsun,
+           böylece beyaz bir flaş görünmez. */
+        if (typeof opts.onDone === "function") opts.onDone(reason);
+        return;
+      }
+      el.setAttribute("data-closing", "1");
       setTimeout(() => el.remove(), 560);
       document.documentElement.style.overflow = "";
+      if (typeof opts.onDone === "function") opts.onDone(reason);
     };
-    const onKey = (ev) => { if (ev.key === "Escape" || ev.key === "Enter" || ev.key === " ") close(); };
+    const onKey = (ev) => { if (ev.key === "Escape" || ev.key === "Enter" || ev.key === " ") close("key"); };
 
-    el.querySelector(".config-intro-skip").addEventListener("click", close);
-    el.addEventListener("click", close);
+    el.querySelector(".config-intro-skip").addEventListener("click", () => close("skip"));
+    el.addEventListener("click", () => close("click"));
     document.addEventListener("keydown", onKey);
-    setTimeout(close, 6000);
+    timer = setTimeout(() => close("timeout"), opts.holdMs || 6000);
 
     /* Veri tasarrufu açık ya da bağlantı çok yavaşsa filmi hiç indirme —
        statik render zaten yeterli. Kullanıcının verisi bizim gösterimimizden
@@ -2953,6 +2958,14 @@
     if (film && dataSaver) { film.remove(); }
     else if (film) {
       film.addEventListener("playing", () => el.setAttribute("data-film", "1"), { once: true });
+      /* Ara sahnede film bitince sayfa açılsın; perde asla filmden uzun
+         beklemesin. Film hiç başlayamazsa (kod çözücü yok, ağ tıkandı)
+         kullanıcıyı boş perdede tutmayalım — kısa bir gözcü ile geçelim. */
+      if (opts.advanceOnEnd) {
+        film.addEventListener("ended", () => close("ended"), { once: true });
+        film.addEventListener("error", () => close("error"), { once: true });
+        setTimeout(() => { if (film.readyState < 2 || film.paused) close("stalled"); }, 1800);
+      }
       /* Ses: tarayıcılar sesli otomatik oynatmayı engeller, o yüzden film daima
          SESSİZ başlar. Kullanıcı bu oturumda sesi bir kez açtıysa tercihi
          hatırlanır ve denenir; tarayıcı yine reddederse sessize düşer. */
@@ -2980,11 +2993,88 @@
         syncBtn();
       });
       syncBtn();
+    } else if (opts.advanceOnEnd) {
+      /* Film yok (veri tasarrufu): kullanıcıyı bekletmeden geç. */
+      close("nofilm");
     }
 
     document.documentElement.style.overflow = "hidden";
     document.body.appendChild(el);
     el.querySelector(".config-intro-skip").focus({ preventScroll: true });
+    return { el: el, close: close };
+  }
+
+  /* Doğrudan konfigüratör sayfasına gelen ziyaretçi (yer imi, arama sonucu,
+     yenileme) için perde. Menüden tıklayanlar buraya hiç düşmez: ara sahne
+     zaten oturum bayrağını koymuş olur. */
+  function initConfigIntro(dict) {
+    if (document.body.getAttribute("data-page") !== "configurator") return;
+    /* ?intro=1 ile perde tekrar izlenebilir (önizleme/QA için); bu durumda
+       oturum kaydı ve hareket tercihi atlanır. */
+    const force = new URLSearchParams(window.location.search).get("intro") === "1";
+    if (!force) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      try { if (sessionStorage.getItem(CONFIG_INTRO_KEY)) return; } catch (e) { /* gizli sekme: yine göster */ }
+    }
+    buildConfigIntro(dict, { force: force, holdMs: 6000 });
+  }
+
+  /* ---- Ara sahne: konfigüratöre tıklayınca sayfa AÇILMADAN önce klip ----
+     Kullanıcı menüden/CTA'dan konfigüratöre tıkladığında perdeyi bulunduğu
+     sayfada açıyoruz, film bitince hedefe gidiyoruz. Böylece klip "araya"
+     giriyor; konfigüratör sayfası zaten arka planda önceden çekiliyor, yani
+     bekleme film süresinden uzun sürmüyor.
+     Devralmıyoruz (link normal çalışır) şu hallerde: yeni sekme niyeti
+     (Ctrl/Cmd/Shift/orta tık, target=_blank), hareket hassasiyeti, veri
+     tasarrufu, perde bu oturumda zaten gösterilmiş, ya da zaten
+     konfigüratördeyiz. */
+  function isConfiguratorHref(a) {
+    if (!a || a.target === "_blank" || a.hasAttribute("download")) return false;
+    let url;
+    try { url = new URL(a.href, window.location.href); } catch (e) { return false; }
+    if (url.origin !== window.location.origin) return false;
+    return /(^|\/)konfigurator\.html$/.test(url.pathname);
+  }
+  function initConfigIntroLinks(dict) {
+    if (document.body.getAttribute("data-page") === "configurator") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const conn = navigator.connection || {};
+    if (conn.saveData === true || /^(slow-2g|2g)$/.test(conn.effectiveType || "")) return;
+
+    /* Fareyle üstüne gelindiğinde hedefi önceden çek — film oynarken sayfa
+       çoktan hazır olsun. */
+    let prefetched = false;
+    const prefetch = (href) => {
+      if (prefetched) return;
+      prefetched = true;
+      const link = document.createElement("link");
+      link.rel = "prefetch";
+      link.href = href;
+      document.head.appendChild(link);
+    };
+    document.addEventListener("pointerenter", (ev) => {
+      const a = ev.target && ev.target.closest ? ev.target.closest("a[href]") : null;
+      if (isConfiguratorHref(a)) prefetch(a.href);
+    }, true);
+
+    document.addEventListener("click", (ev) => {
+      if (ev.defaultPrevented || ev.button !== 0) return;
+      if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+      const a = ev.target && ev.target.closest ? ev.target.closest("a[href]") : null;
+      if (!isConfiguratorHref(a)) return;
+      try { if (sessionStorage.getItem(CONFIG_INTRO_KEY)) return; } catch (e) { /* gizli sekme: yine göster */ }
+      const href = a.href;
+      ev.preventDefault();
+      prefetch(href);
+      const intro = buildConfigIntro(dict, {
+        holdMs: 6400,
+        advanceOnEnd: true,
+        keepOpen: true,
+        onDone: () => { window.location.href = href; }
+      });
+      /* Perde kurulamadıysa (çeviri eksik vb.) kullanıcıyı bekletme. */
+      if (!intro) window.location.href = href;
+    });
   }
 
   function initVideoFullscreen() {
@@ -3558,6 +3648,156 @@
           answer: "You can reach us four ways: the contact form on our contact page, WhatsApp, emailing info@hbotchambertech.com, or calling +90 850 888 1679. Mentioning your country, intended use and expected capacity up front speeds up the process.",
           cta: "Contact Page", slug: "iletisim.html" }
       ]
+    },
+    ru: {
+      launcher: "Спросить Селин", title: "Селин",
+      subtitle: "Ассистент HBOT Chamber Tech",
+      greeting: "Здравствуйте, я Селин! Задайте вопрос о наших моделях, технологиях или о том, как получить расчёт стоимости.",
+      placeholder: "Введите вопрос…", send: "Отправить", close: "Закрыть",
+      fallback: "У меня нет готового ответа на этот вопрос. Хотите связаться с нашей командой напрямую?", fallbackCta: "Связаться с нами →",
+      topics: [
+        { label: "Какие модели вы предлагаете?", keywords: ["модел", "вместимост", "человек", "мест", "oslo", "dubai", "tokyo", "milano", "geneva", "размер", "габарит"],
+          answer: "Мы предлагаем шесть моделей. Для дома и индивидуального использования: Oslo (1 человек, лёжа) и Dubai (1 человек, сидя, компактная и полностью оснащённая). Для клиник и организаций: Tokyo (2 человека, панорамное окно, рабочий диапазон 1.5–2.0 ATA, двойная система управления), Tokyo Plus (2–4 человека), Milano (4 человека, просторный интерьер) и Geneva (больничного класса, 6+ человек, единственная модель с самыми высокими значениями давления). Каждая модель создана под свой сценарий использования; домашние и профессиональные модели перечислены в конфигураторе отдельно. Правильный выбор зависит от вместимости, места установки и назначения (дом / клиника / больница).",
+          cta: "Сравнить модели", slug: "modeller.html" },
+        { label: "Какие технологии входят?", keywords: ["технолог", "cityai", "cityos", "cityconnect", "cityguard", "citysync", "искусственный интеллект", "интернет вещей", "iot", "умн", "удалённ", "мониторинг"],
+          answer: "Каждая модель HBOT City Tech включает пять платформ: CityConnect™ в реальном времени отслеживает давление, уровень кислорода, температуру и влажность и позволяет управлять несколькими камерами с одной панели; CityOS™ — операционная система камеры; CityAI™ анализирует эксплуатационные данные и даёт уполномоченному оператору наблюдение и отчётность (не заменяя клиническое суждение или оператора); CitySync™ обеспечивает интеграцию с больничными или бизнес-системами в объёме проекта; CityGuard™ поддерживает контроль состояния, регистрацию оповещений и плановый сервис — например, при отклонении в клапане давления заявка на обслуживание открывается автоматически. В цифрах: чистота кислорода 94%, уровень шума менее 60 дБ (CitySilent™) и удалённый мониторинг 24/7.",
+          cta: "Изучить технологии", slug: "teknoloji.html" },
+        { label: "Документы по безопасности и соответствию", keywords: ["безопасн", "сертификат", "соответств", "документ", "стандарт", "ce", "iso"],
+          answer: "Страница «Безопасность и соответствие» даёт прозрачный обзор безопасности продукта, обучения операторов, плана обслуживания, требований к монтажу и документации соответствия — всё это различается по модели и целевому рынку. Вместо одного общего заявления о сертификации мы подтверждаем документы именно для вашей модели, конфигурации, назначения и страны поставки — требования действительно отличаются от страны к стране и от условий эксплуатации (дом / клиника / больница).",
+          cta: "Безопасность и соответствие", slug: "guvenlik-uygunluk.html" },
+        { label: "Как получить цену?", keywords: ["цена", "стоимост", "сколько стоит", "расчёт", "расчет", "коммерческое предложение", "оплат", "скидк", "промокод"],
+          answer: "Цена зависит от выбранной модели, рабочего уровня давления и дополнительных опций. В онлайн-конфигураторе вы выбираете модель, назначение (дом / организация), давление и опции и за секунды получаете ориентировочную цену — без регистрации. Если у вас есть реферальный код или код скидки, его можно применить прямо в конфигураторе. Эта оценка не является офертой; окончательное официальное предложение наша команда готовит письменно после уточнения деталей проекта.",
+          cta: "Открыть конфигуратор", slug: "konfigurator.html" },
+        { label: "О компании", keywords: ["кто вы", "компан", "almita", "алмита", "о нас", "истор", "опыт", "доверие"],
+          answer: "Коммерческий путь основателей Almita Group начался в 1999 году с решения реальных производственных задач в сфере управления твёрдыми отходами. Опыт команды, которая сегодня развивает HBOT Chamber Tech, в проектировании, производстве, автоматизации и управлении проектами восходит к 2007 году. Этот опыт мы переносим в гипербарические системы нового поколения через CityOS™, CityGuard™, CityConnect™, CityAI™, онлайн-конфигуратор с AR-предпросмотром и инженерные решения под конкретную модель. На этом этапе развития бренда нас поддерживает коммерческая и операционная экосистема Almita Group. Вместо общих обещаний мы письменно фиксируем по каждому проекту объём поставки, план монтажа, обучение, обслуживание и документацию для целевого рынка.",
+          cta: "Связаться с нами", slug: "iletisim.html" },
+        { label: "Доставка и международная отгрузка", keywords: ["доставк", "отгрузк", "логистик", "международн", "экспорт", "страна", "таможн"],
+          answer: "Поставка планируется по каждому проекту с учётом страны назначения, объёма проекта и выбранной модели: сначала оцениваются площадка монтажа и предпосылки (электропитание, пол, доступ), затем подтверждаются логистика и таможня, а после доставки выполняются обучение операторов и ввод в эксплуатацию. Поскольку точные сроки и детали логистики зависят от страны, рекомендуем обсудить специфику вашего проекта напрямую с нашей командой.",
+          cta: "Связаться с нами", slug: "iletisim.html" },
+        { label: "Контакты и запись на звонок", keywords: ["контакт", "телефон", "почт", "email", "встреч", "звонок", "whatsapp", "связат"],
+          answer: "С нами можно связаться четырьмя способами: через форму на странице контактов, в WhatsApp, по электронной почте info@hbotchambertech.com или по телефону +90 850 888 1679. Если сразу укажете страну, назначение и предполагаемую вместимость, процесс пойдёт быстрее.",
+          cta: "Страница контактов", slug: "iletisim.html" }
+      ]
+    },
+    de: {
+      launcher: "Selin fragen", title: "Selin",
+      subtitle: "HBOT Chamber Tech Assistentin",
+      greeting: "Hallo, ich bin Selin! Fragen Sie mich alles zu unseren Modellen, zur Technologie oder zur Preisschätzung.",
+      placeholder: "Ihre Frage eingeben…", send: "Senden", close: "Schließen",
+      fallback: "Darauf habe ich keine fertige Antwort. Möchten Sie direkt mit unserem Team sprechen?", fallbackCta: "Kontakt aufnehmen →",
+      topics: [
+        { label: "Welche Modelle bieten Sie an?", keywords: ["modell", "welches modell", "kapazität", "personen", "oslo", "dubai", "tokyo", "milano", "geneva", "größe", "abmessung"],
+          answer: "Wir bieten sechs Modelle an. Für den privaten Gebrauch: Oslo (1 Person, liegend) und Dubai (1 Person, sitzend, kompakt und voll ausgestattet). Für Kliniken und Einrichtungen: Tokyo (2 Personen, Panoramafenster, Arbeitsbereich 1,5–2,0 ATA, doppeltes Steuersystem), Tokyo Plus (2–4 Personen), Milano (4 Personen, großzügiger Innenraum) und Geneva (Krankenhausklasse, 6+ Personen, das einzige Modell mit den höchsten Druckoptionen). Jedes Modell ist für einen bestimmten Anwendungsfall ausgelegt; private und professionelle Modelle sind im Konfigurator getrennt aufgeführt. Die richtige Wahl ergibt sich aus Kapazität, Aufstellfläche und Zweckbestimmung (privat / Klinik / Krankenhaus) zusammen.",
+          cta: "Modelle vergleichen", slug: "modeller.html" },
+        { label: "Welche Technologie ist enthalten?", keywords: ["technologie", "cityai", "cityos", "cityconnect", "cityguard", "citysync", "ki", "künstliche intelligenz", "iot", "smart", "fernüberwachung"],
+          answer: "Jedes HBOT City Tech-Modell enthält fünf Plattformen: CityConnect™ überwacht Druck, Sauerstoffgehalt, Temperatur und Feuchtigkeit in Echtzeit und erlaubt die Verwaltung mehrerer Kammern über ein Dashboard; CityOS™ ist das Betriebssystem der Kammer; CityAI™ wertet Betriebsdaten aus und unterstützt den autorisierten Bediener mit Transparenz und Berichten (ersetzt weder die klinische Beurteilung noch den Bediener); CitySync™ übernimmt die projektspezifische Integration mit Krankenhaus- oder Unternehmenssystemen; CityGuard™ unterstützt Zustandsüberwachung, protokollierte Alarme und planmäßigen Service — weicht etwa ein Druckventil ab, wird automatisch ein Serviceauftrag geöffnet. In Zahlen: 94 % Sauerstoffreinheit, unter 60 dB Geräuschpegel (CitySilent™) und Fernüberwachung rund um die Uhr.",
+          cta: "Technologie ansehen", slug: "teknoloji.html" },
+        { label: "Sicherheits- und Konformitätsunterlagen", keywords: ["sicherheit", "zertifikat", "zertifizierung", "konformität", "dokument", "unterlagen", "norm", "ce", "iso"],
+          answer: "Unsere Seite Sicherheit und Konformität gibt einen transparenten Überblick über Produktsicherheit, Bedienerschulung, Wartungsplanung, Installationsanforderungen und Konformitätsdokumentation — all das unterscheidet sich je nach Modell und Zielmarkt. Statt einer pauschalen Zertifizierungsaussage bestätigen wir die Unterlagen projektbezogen für genau Ihr Modell, Ihre Konfiguration, die Zweckbestimmung und das Bestimmungsland — die Anforderungen unterscheiden sich tatsächlich von Land zu Land und je nach Umgebung (privat / Klinik / Krankenhaus).",
+          cta: "Sicherheit und Konformität", slug: "guvenlik-uygunluk.html" },
+        { label: "Wie bekomme ich einen Preis?", keywords: ["preis", "kosten", "angebot", "wie viel", "zahlung", "rabatt", "gutschein", "kalkulation"],
+          answer: "Der Preis hängt vom gewählten Modell, vom Betriebsdruck und von den Zusatzoptionen ab. Im Online-Konfigurator wählen Sie Modell, Zweckbestimmung (privat / professionell), Druck und Zusatzausstattung und sehen in Sekunden eine Schätzung — ganz ohne Registrierung. Einen Empfehlungs- oder Rabattcode können Sie direkt im Konfigurator einlösen. Diese Schätzung ist nicht bindend; ein finales, offizielles Angebot erstellt unser Team schriftlich, sobald die Projektdetails geklärt sind.",
+          cta: "Konfigurator öffnen", slug: "konfigurator.html" },
+        { label: "Über das Unternehmen", keywords: ["wer sind sie", "unternehmen", "firma", "almita", "über uns", "geschichte", "erfahrung", "vertrauen"],
+          answer: "Der unternehmerische Weg der Gründer der Almita Group begann 1999 mit der Lösung realer Betriebsprobleme in der Abfallwirtschaft. Das Team hinter HBOT Chamber Tech bringt heute Erfahrung in Design, Fertigung, Automatisierung und Projektmanagement mit, die bis 2007 zurückreicht. Diese Erfahrung führen wir über CityOS™, CityGuard™, CityConnect™, CityAI™, einen Online-Konfigurator mit AR-Vorschau und modellbezogenes Engineering in hyperbare Sauerstoffsysteme der nächsten Generation. In dieser Phase des Markenaufbaus werden wir vom kommerziellen und operativen Ökosystem der Almita Group unterstützt. Statt allgemeiner Versprechen halten wir in jedem Projekt Umfang, Installationsplan, Schulung, Wartung und marktspezifische Konformitätsunterlagen schriftlich fest.",
+          cta: "Kontakt aufnehmen", slug: "iletisim.html" },
+        { label: "Versand und internationale Lieferung", keywords: ["versand", "lieferung", "logistik", "international", "export", "land", "zoll"],
+          answer: "Die Lieferung wird projektbezogen nach Bestimmungsland, Projektumfang und gewähltem Modell geplant: Zuerst prüfen wir den Aufstellort und die Voraussetzungen (Strom, Boden, Zugang), danach werden Logistik und Zoll geklärt, und auf die Lieferung folgen Bedienerschulung und ein Inbetriebnahmeplan. Da genaue Zeitpläne und Logistikdetails je nach Land variieren, empfehlen wir, die Besonderheiten Ihres Projekts direkt mit unserem Team zu besprechen.",
+          cta: "Kontakt aufnehmen", slug: "iletisim.html" },
+        { label: "Kontakt / Termin vereinbaren", keywords: ["kontakt", "telefon", "e-mail", "email", "termin", "anruf", "whatsapp", "erreichen"],
+          answer: "Sie erreichen uns auf vier Wegen: über das Formular auf unserer Kontaktseite, per WhatsApp, per E-Mail an info@hbotchambertech.com oder telefonisch unter +90 850 888 1679. Wenn Sie Land, Zweckbestimmung und die erwartete Kapazität gleich mit angeben, geht es schneller.",
+          cta: "Kontaktseite", slug: "iletisim.html" }
+      ]
+    },
+    es: {
+      launcher: "Preguntar a Selin", title: "Selin",
+      subtitle: "Asistente de HBOT Chamber Tech",
+      greeting: "¡Hola, soy Selin! Pregúntame lo que quieras sobre nuestros modelos, la tecnología o cómo obtener una estimación de precio.",
+      placeholder: "Escriba su pregunta…", send: "Enviar", close: "Cerrar",
+      fallback: "No tengo una respuesta preparada para eso. ¿Quiere hablar directamente con nuestro equipo?", fallbackCta: "Contactar →",
+      topics: [
+        { label: "¿Qué modelos ofrecen?", keywords: ["modelo", "qué modelo", "capacidad", "personas", "oslo", "dubai", "tokyo", "milano", "geneva", "tamaño", "medidas"],
+          answer: "Ofrecemos seis modelos. Para uso doméstico o individual: Oslo (1 persona, tumbada) y Dubai (1 persona, sentada, compacta y totalmente equipada). Para uso clínico o institucional: Tokyo (2 personas, ventana panorámica, rango de trabajo de 1,5–2,0 ATA, sistema de control doble), Tokyo Plus (2–4 personas), Milano (4 personas, interior amplio) y Geneva (grado hospitalario, 6+ personas, el único modelo con las opciones de presión más altas). Cada modelo está pensado para un caso de uso concreto; los modelos domésticos y los profesionales se listan por separado en el configurador. La elección correcta depende de la capacidad, del espacio de instalación y del uso previsto (hogar / clínica / hospital).",
+          cta: "Comparar modelos", slug: "modeller.html" },
+        { label: "¿Qué tecnología incluye?", keywords: ["tecnología", "cityai", "cityos", "cityconnect", "cityguard", "citysync", "inteligencia artificial", "ia", "iot", "inteligente", "monitorización remota"],
+          answer: "Cada modelo HBOT City Tech incluye cinco plataformas: CityConnect™ monitoriza presión, nivel de oxígeno, temperatura y humedad en tiempo real y permite gestionar varias cámaras desde un único panel; CityOS™ es el sistema operativo de la cámara; CityAI™ analiza los datos operativos para dar al operador autorizado visibilidad e informes (no sustituye el criterio clínico ni al operador); CitySync™ gestiona la integración específica del proyecto con sistemas hospitalarios o de gestión; CityGuard™ da soporte al seguimiento del estado, las alertas registradas y el servicio programado: por ejemplo, se abre un aviso de servicio automáticamente cuando una válvula de presión se desvía. En cifras concretas: 94 % de pureza de oxígeno, menos de 60 dB de ruido (CitySilent™) y monitorización remota 24/7.",
+          cta: "Ver la tecnología", slug: "teknoloji.html" },
+        { label: "Documentos de seguridad y conformidad", keywords: ["seguridad", "certificado", "certificación", "conformidad", "documento", "norma", "ce", "iso"],
+          answer: "Nuestra página de Seguridad y conformidad ofrece un resumen transparente de la seguridad del producto, la formación del operador, la planificación del mantenimiento, los requisitos de instalación y la documentación de conformidad, que varían según el modelo y el mercado de destino. En lugar de una única declaración genérica de certificación, confirmamos por proyecto la documentación específica de su modelo exacto, su configuración, el uso previsto y el país de destino: los requisitos difieren realmente según el país y el entorno (hogar / clínica / hospital).",
+          cta: "Seguridad y conformidad", slug: "guvenlik-uygunluk.html" },
+        { label: "¿Cómo obtengo un precio?", keywords: ["precio", "coste", "costo", "presupuesto", "cuánto", "pago", "descuento", "código"],
+          answer: "El precio depende del modelo elegido, del nivel de presión de trabajo y de las opciones que añada. En el configurador en línea elige modelo, uso previsto (hogar / institucional), presión y extras, y ve una estimación en segundos, sin necesidad de registrarse. Si tiene un código de referencia o descuento, puede aplicarlo en el configurador. Esta estimación no es vinculante; la oferta final y oficial la prepara nuestro equipo por escrito una vez confirmados los detalles del proyecto.",
+          cta: "Abrir el configurador", slug: "konfigurator.html" },
+        { label: "Sobre la empresa", keywords: ["quiénes son", "empresa", "compañía", "almita", "sobre", "historia", "experiencia", "confianza"],
+          answer: "La trayectoria comercial de los fundadores de Almita Group comenzó en 1999 resolviendo problemas reales de campo en la gestión de residuos sólidos. El equipo que hoy está detrás de HBOT Chamber Tech acumula experiencia en diseño, fabricación, automatización y gestión de proyectos que se remonta a 2007. Llevamos esa experiencia a los sistemas hiperbáricos de nueva generación mediante CityOS™, CityGuard™, CityConnect™, CityAI™, un configurador en línea con vista previa en RA e ingeniería específica por modelo. En esta fase de construcción de la marca contamos con el respaldo del ecosistema comercial y operativo de Almita Group. En lugar de promesas generales, en cada proyecto dejamos por escrito el alcance, el plan de instalación, la formación, el mantenimiento y la documentación de conformidad del mercado de destino.",
+          cta: "Contactar", slug: "iletisim.html" },
+        { label: "Envío y entrega internacional", keywords: ["envío", "entrega", "logística", "internacional", "exportación", "país", "aduana"],
+          answer: "La entrega se planifica por proyecto según el país de destino, el alcance del proyecto y el modelo elegido: primero evaluamos el emplazamiento y los requisitos previos (electricidad, suelo, acceso), después se confirman la logística y la aduana, y tras la entrega se realizan la formación del operador y el plan de puesta en marcha. Como los plazos exactos y los detalles logísticos varían según el país, recomendamos comentar las particularidades de su proyecto directamente con nuestro equipo.",
+          cta: "Contactar", slug: "iletisim.html" },
+        { label: "Contacto / concertar una llamada", keywords: ["contacto", "teléfono", "correo", "email", "cita", "llamada", "whatsapp", "hablar"],
+          answer: "Puede contactarnos de cuatro formas: el formulario de nuestra página de contacto, WhatsApp, un correo a info@hbotchambertech.com o una llamada al +90 850 888 1679. Si indica desde el principio su país, el uso previsto y la capacidad estimada, el proceso será más rápido.",
+          cta: "Página de contacto", slug: "iletisim.html" }
+      ]
+    },
+    pt: {
+      launcher: "Perguntar à Selin", title: "Selin",
+      subtitle: "Assistente da HBOT Chamber Tech",
+      greeting: "Olá, sou a Selin! Pergunte-me o que quiser sobre os nossos modelos, a tecnologia ou como obter uma estimativa de preço.",
+      placeholder: "Escreva a sua pergunta…", send: "Enviar", close: "Fechar",
+      fallback: "Não tenho uma resposta pronta para isso. Quer falar diretamente com a nossa equipe?", fallbackCta: "Fale conosco →",
+      topics: [
+        { label: "Quais modelos vocês oferecem?", keywords: ["modelo", "qual modelo", "capacidade", "pessoas", "oslo", "dubai", "tokyo", "milano", "geneva", "tamanho", "medidas"],
+          answer: "Oferecemos seis modelos. Para uso doméstico ou individual: Oslo (1 pessoa, deitada) e Dubai (1 pessoa, sentada, compacta e totalmente equipada). Para uso clínico ou institucional: Tokyo (2 pessoas, janela panorâmica, faixa de trabalho de 1,5–2,0 ATA, sistema de controle duplo), Tokyo Plus (2–4 pessoas), Milano (4 pessoas, interior amplo) e Geneva (grau hospitalar, 6+ pessoas, o único modelo com as opções de pressão mais altas). Cada modelo foi projetado para um cenário específico; os modelos domésticos e os profissionais são listados separadamente no configurador. A escolha certa depende da capacidade, do espaço de instalação e do uso pretendido (casa / clínica / hospital).",
+          cta: "Comparar modelos", slug: "modeller.html" },
+        { label: "Que tecnologia está incluída?", keywords: ["tecnologia", "cityai", "cityos", "cityconnect", "cityguard", "citysync", "inteligência artificial", "ia", "iot", "inteligente", "monitoramento remoto"],
+          answer: "Cada modelo HBOT City Tech inclui cinco plataformas: o CityConnect™ monitora pressão, nível de oxigênio, temperatura e umidade em tempo real e permite gerenciar várias câmaras a partir de um único painel; o CityOS™ é o sistema operacional da câmara; o CityAI™ analisa dados operacionais para dar ao operador autorizado visibilidade e relatórios (não substitui o julgamento clínico nem o operador); o CitySync™ cuida da integração específica do projeto com sistemas hospitalares ou de gestão; o CityGuard™ apoia o acompanhamento de condição, os alertas registrados e o serviço programado — por exemplo, um chamado de serviço é aberto automaticamente quando uma válvula de pressão apresenta desvio. Em números: 94% de pureza de oxigênio, menos de 60 dB de ruído (CitySilent™) e monitoramento remoto 24/7.",
+          cta: "Conhecer a tecnologia", slug: "teknoloji.html" },
+        { label: "Documentos de segurança e conformidade", keywords: ["segurança", "certificado", "certificação", "conformidade", "documento", "norma", "ce", "iso"],
+          answer: "A nossa página de Segurança e conformidade apresenta um resumo transparente da segurança do produto, do treinamento do operador, do plano de manutenção, dos requisitos de instalação e da documentação de conformidade — tudo isso varia conforme o modelo e o mercado de destino. Em vez de uma única alegação genérica de certificação, confirmamos por projeto a documentação específica do seu modelo, da sua configuração, do uso pretendido e do país de destino: os requisitos realmente diferem de país para país e conforme o ambiente (casa / clínica / hospital).",
+          cta: "Segurança e conformidade", slug: "guvenlik-uygunluk.html" },
+        { label: "Como obtenho um preço?", keywords: ["preço", "custo", "orçamento", "quanto", "pagamento", "desconto", "cupom", "código"],
+          answer: "O preço depende do modelo escolhido, do nível de pressão de trabalho e das opções adicionadas. No configurador on-line você escolhe o modelo, o uso pretendido (casa / institucional), a pressão e os opcionais e vê uma estimativa em segundos — sem cadastro. Se tiver um código de indicação ou desconto, pode aplicá-lo no configurador. Essa estimativa não é vinculante; a proposta final e oficial é preparada por escrito pela nossa equipe assim que os detalhes do projeto forem confirmados.",
+          cta: "Abrir o configurador", slug: "konfigurator.html" },
+        { label: "Sobre a empresa", keywords: ["quem são", "empresa", "companhia", "almita", "sobre", "história", "experiência", "confiança"],
+          answer: "A trajetória comercial dos fundadores do Almita Group começou em 1999, resolvendo problemas reais de campo na gestão de resíduos sólidos. A equipe que hoje está por trás da HBOT Chamber Tech reúne experiência em design, fabricação, automação e gestão de projetos que remonta a 2007. Levamos essa experiência para sistemas hiperbáricos de nova geração por meio de CityOS™, CityGuard™, CityConnect™, CityAI™, um configurador on-line com pré-visualização em RA e engenharia específica por modelo. Nesta fase de construção da marca, contamos com o apoio do ecossistema comercial e operacional do Almita Group. Em vez de promessas genéricas, em cada projeto registramos por escrito o escopo, o plano de instalação, o treinamento, a manutenção e a documentação de conformidade do mercado de destino.",
+          cta: "Fale conosco", slug: "iletisim.html" },
+        { label: "Envio e entrega internacional", keywords: ["envio", "entrega", "logística", "internacional", "exportação", "país", "alfândega"],
+          answer: "A entrega é planejada por projeto conforme o país de destino, o escopo do projeto e o modelo escolhido: primeiro avaliamos o local de instalação e os pré-requisitos (energia, piso, acesso), depois logística e alfândega são confirmadas e, após a entrega, são realizados o treinamento do operador e o plano de comissionamento. Como prazos e detalhes logísticos variam conforme o país, recomendamos discutir as especificidades do seu projeto diretamente com a nossa equipe.",
+          cta: "Fale conosco", slug: "iletisim.html" },
+        { label: "Contato / agendar uma conversa", keywords: ["contato", "telefone", "e-mail", "email", "agendar", "ligação", "whatsapp", "falar"],
+          answer: "Você pode falar conosco de quatro formas: pelo formulário da nossa página de contato, pelo WhatsApp, por e-mail para info@hbotchambertech.com ou ligando para +90 850 888 1679. Informar já de início o seu país, o uso pretendido e a capacidade estimada acelera o processo.",
+          cta: "Página de contato", slug: "iletisim.html" }
+      ]
+    },
+    ar: {
+      launcher: "اسأل سيلين", title: "سيلين",
+      subtitle: "مساعدة HBOT Chamber Tech",
+      greeting: "مرحبًا، أنا سيلين! اسألني عن نماذجنا أو تقنياتنا أو كيفية الحصول على تقدير للسعر.",
+      placeholder: "اكتب سؤالك…", send: "إرسال", close: "إغلاق",
+      fallback: "ليس لديّ إجابة جاهزة عن ذلك. هل ترغب في التحدث مباشرة مع فريقنا؟", fallbackCta: "تواصل معنا ←",
+      topics: [
+        { label: "ما النماذج التي تقدمونها؟", keywords: ["نموذج", "موديل", "سعة", "أشخاص", "oslo", "dubai", "tokyo", "milano", "geneva", "حجم", "مقاس"],
+          answer: "نقدم ستة نماذج. للاستخدام المنزلي أو الفردي: Oslo (شخص واحد، بوضعية الاستلقاء) وDubai (شخص واحد، بوضعية الجلوس، مدمجة ومجهزة بالكامل). للاستخدام المؤسسي أو العيادي: Tokyo (شخصان، نافذة بانورامية، نطاق تشغيل 1.5–2.0 ATA، نظام تحكم مزدوج)، وTokyo Plus (2–4 أشخاص)، وMilano (4 أشخاص، حيز داخلي واسع)، وGeneva (بمستوى المستشفيات، 6 أشخاص فأكثر، وهي النموذج الوحيد الذي يوفر أعلى خيارات الضغط). كل نموذج مصمم لسيناريو استخدام محدد، والنماذج المنزلية والمؤسسية مدرجة بشكل منفصل في المُهيّئ. يعتمد الاختيار الصحيح على السعة ومساحة التركيب والغرض من الاستخدام (منزل / عيادة / مستشفى) معًا.",
+          cta: "قارن النماذج", slug: "modeller.html" },
+        { label: "ما التقنيات المتضمنة؟", keywords: ["تقنية", "تكنولوجيا", "cityai", "cityos", "cityconnect", "cityguard", "citysync", "ذكاء اصطناعي", "إنترنت الأشياء", "مراقبة عن بعد"],
+          answer: "يشتمل كل نموذج من HBOT City Tech على خمس منصات: يراقب CityConnect™ الضغط ومستوى الأكسجين ودرجة الحرارة والرطوبة في الوقت الفعلي ويتيح إدارة عدة غرف من لوحة واحدة؛ وCityOS™ هو نظام تشغيل الغرفة؛ ويحلل CityAI™ بيانات التشغيل لتزويد المشغل المعتمد بالرؤية والتقارير (دون أن يحل محل الحكم السريري أو المشغل)؛ ويتولى CitySync™ التكامل الخاص بالمشروع مع أنظمة المستشفى أو المؤسسة؛ ويدعم CityGuard™ متابعة الحالة والتنبيهات المسجلة وأعمال الخدمة المخططة — على سبيل المثال يُفتح طلب صيانة تلقائيًا عند انحراف صمام ضغط. وبالأرقام: نقاء أكسجين 94%، ومستوى ضوضاء أقل من 60 ديسيبل (CitySilent™)، ومراقبة عن بُعد على مدار الساعة.",
+          cta: "استكشف التقنية", slug: "teknoloji.html" },
+        { label: "وثائق السلامة والامتثال", keywords: ["سلامة", "شهادة", "امتثال", "مطابقة", "وثيقة", "معيار", "ce", "iso"],
+          answer: "تقدم صفحة السلامة والامتثال ملخصًا شفافًا لسلامة المنتج وتدريب المشغل وخطة الصيانة ومتطلبات التركيب ووثائق المطابقة، وكلها تختلف حسب النموذج والسوق المستهدف. وبدلًا من ادعاء شهادة عامة واحدة، نؤكد على أساس كل مشروع الوثائق الخاصة بنموذجك وتهيئتك والغرض من الاستخدام وبلد الوجهة — فالمتطلبات تختلف فعليًا من بلد إلى آخر وحسب بيئة الاستخدام (منزل / عيادة / مستشفى).",
+          cta: "السلامة والامتثال", slug: "guvenlik-uygunluk.html" },
+        { label: "كيف أحصل على السعر؟", keywords: ["سعر", "تكلفة", "عرض سعر", "كم", "دفع", "خصم", "كود"],
+          answer: "يعتمد السعر على النموذج الذي تختاره ومستوى ضغط التشغيل والخيارات التي تضيفها. في المُهيّئ الإلكتروني تختار النموذج والغرض من الاستخدام (منزلي / مؤسسي) والضغط والإضافات، وترى تقديرًا فوريًا خلال ثوانٍ ودون تسجيل. وإذا كان لديك رمز إحالة أو خصم يمكنك تطبيقه داخل المُهيّئ. هذا التقدير غير ملزم؛ أما العرض النهائي والرسمي فيعده فريقنا كتابيًا بعد تأكيد تفاصيل مشروعك.",
+          cta: "افتح المُهيّئ", slug: "konfigurator.html" },
+        { label: "عن الشركة", keywords: ["من أنتم", "شركة", "almita", "ألميتا", "عن", "تاريخ", "خبرة", "ثقة"],
+          answer: "بدأت الرحلة التجارية لمؤسسي Almita Group عام 1999 بحل مشكلات تشغيلية حقيقية في مجال إدارة النفايات الصلبة. ويمتد اليوم رصيد الفريق الذي يطور HBOT Chamber Tech في التصميم والتصنيع والأتمتة وإدارة المشاريع إلى عام 2007. ننقل هذه الخبرة إلى أنظمة الأكسجين عالي الضغط من الجيل الجديد عبر CityOS™ وCityGuard™ وCityConnect™ وCityAI™ ومُهيّئ إلكتروني مع معاينة بالواقع المعزز وهندسة خاصة بكل نموذج. وفي هذه المرحلة من بناء العلامة، ندعم بمنظومة Almita Group التجارية والتشغيلية. وبدلًا من الوعود العامة، نحدد كتابيًا في كل مشروع النطاق وخطة التركيب والتدريب والصيانة ووثائق المطابقة الخاصة بالسوق المستهدف.",
+          cta: "تواصل معنا", slug: "iletisim.html" },
+        { label: "الشحن والتسليم الدولي", keywords: ["شحن", "تسليم", "لوجستيات", "دولي", "تصدير", "بلد", "جمارك"],
+          answer: "يُخطط التسليم على أساس كل مشروع وفق بلد الوجهة ونطاق المشروع والنموذج المختار: نقيّم أولًا موقع التركيب والمتطلبات المسبقة (الكهرباء والأرضية والوصول)، ثم تُحدد اللوجستيات والإجراءات الجمركية، ويلي التسليم تدريب المشغلين وخطة التشغيل التجريبي. ولأن المدد الزمنية وتفاصيل الشحن تختلف حسب البلد، ننصح بمناقشة خصوصية مشروعك مباشرة مع فريقنا.",
+          cta: "تواصل معنا", slug: "iletisim.html" },
+        { label: "التواصل وحجز مكالمة", keywords: ["تواصل", "اتصال", "هاتف", "بريد", "email", "موعد", "مكالمة", "whatsapp"],
+          answer: "يمكنك الوصول إلينا بأربع طرق: نموذج التواصل في صفحة الاتصال، أو واتساب، أو البريد الإلكتروني info@hbotchambertech.com، أو الاتصال على ‎+90 850 888 1679. وذكر بلدك والغرض من الاستخدام والسعة المتوقعة منذ البداية يسرّع العملية.",
+          cta: "صفحة التواصل", slug: "iletisim.html" }
+      ]
     }
   };
   function getAssistantLangPrefix() {
@@ -3702,5 +3942,6 @@
     initClarity();
     initVideoFullscreen();
     initConfigIntro(TRANSLATIONS[currentLang] || TRANSLATIONS.tr);
+    initConfigIntroLinks(TRANSLATIONS[currentLang] || TRANSLATIONS.tr);
   });
 })();
