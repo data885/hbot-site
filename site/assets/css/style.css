@@ -45,6 +45,12 @@ h1, h2, h3, h4, p { margin: 0; }
 /* v16: içerik metinlerinin sağ-sol kenarları hep hizalı (iki yana yaslı) dursun */
 p { text-align: justify; text-align-last: left; }
 [dir="rtl"] p { text-align-last: right; }
+/* v96: dar ekranda iki yana yaslama kelime aralarını açıp "nehir" yapıyor —
+   satıra sığan kelime sayısı azaldıkça sorun büyüyor. Mobilde sola yasla.
+   `start` kullanıyoruz ki Arapça'da (RTL) doğal olarak sağa yaslansın. */
+@media (max-width: 760px) {
+  p { text-align: start; text-align-last: auto; }
+}
 .btn, .eyebrow, label, th, td, .faq-question, input, textarea, select { text-align: initial; text-align-last: auto; }
 
 .container {
