@@ -237,6 +237,17 @@ p { text-align: justify; text-align-last: left; }
   opacity: 0; transition: opacity 1400ms ease;
 }
 .hero-slide.is-active { opacity: 1; }
+/* v97: banner filmi — konfigüratör girişindeki birleşme klibi statik render'ın
+   ÜSTÜNDE, aynı çerçevelemeyle oynar. Film oynamaya başlayana kadar saydam
+   kalır (statik görsel görünür), böylece yüklenirken siyah kare olmaz; film
+   biterse son karesinde durur ve altındaki render'la aynı kabin kalır. */
+.hero-film {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  opacity: 0; transition: opacity 600ms ease;
+  pointer-events: none;
+}
+.hero-slide[data-film-on="1"] .hero-film { opacity: 1; }
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(120deg, rgba(5,7,10,0.72) 0%, rgba(5,7,10,0.42) 100%);
@@ -1631,6 +1642,9 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   .hero-slide {
     background-position: center 42%;
   }
+  /* Film de statik görselle aynı noktadan kadrajlansın, yoksa slayt
+     değişiminde kabin yukarı aşağı zıplar. */
+  .hero-film { object-position: center 42%; }
   /* Yatay karartma yerine dikey gradyan: üst açık (ürün görünür), alt koyu (yazı okunur).
      Overlay artık tüm bölümü değil, yalnız görsel bandını kaplar. */
   .hero-overlay {

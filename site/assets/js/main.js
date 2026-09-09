@@ -2900,7 +2900,7 @@
       <div class="config-intro-bg" style="background-image:url('/assets/img/models/real/${pick}-real.webp?v=${IMG_V}')"></div>
       <video class="config-intro-film" muted playsinline autoplay preload="auto" aria-hidden="true"
              poster="/assets/img/models/real/${pick}-real.webp?v=${IMG_V}">
-        <source src="/assets/video/intro/${pick}-assemble.mp4?v=1" type="video/mp4">
+        <source src="/assets/video/intro/${pick}-assemble.mp4?v=2" type="video/mp4">
       </video>
       <div class="config-intro-inner">
         <img class="config-intro-logo" src="/assets/img/logo-full.png" alt="HBOT Chamber Tech" />
@@ -3418,18 +3418,94 @@
     if (value !== undefined && value !== null) captionEl.textContent = value;
   }
 
+  /* Banner filmleri: konfigüratör girişindeki birleşme klipleri hero'da da oynar.
+     Kısıtlar bilinçli:
+     (1) LCP'yi bozmamak için sayfa yüklenirken HİÇBİR film indirilmez — filmler
+         ancak tarayıcı boşa çıkınca devreye girer, ilk slayt statik render'ıyla
+         açılır ve ilk izlenim hızlı kalır;
+     (2) her an yalnız gösterilen slaydın filmi + bir sonraki slaydınki tutulur,
+         dördü birden indirilmez;
+     (3) ses YOK — banner'da otomatik ses hem tarayıcıların engellediği hem de
+         rahatsız edici bir şey; ses yalnız konfigüratör perdesinde var;
+     (4) film bir kez oynar ve son karesinde (birleşmiş kabin) durur; altındaki
+         statik render zaten aynı ürün, yani film yüklenemezse hiçbir şey bozulmaz;
+     (5) hareket hassasiyeti, veri tasarrufu ya da yavaş bağlantıda hiç açılmaz;
+     (6) banner ekrandan çıkınca film durur — kullanıcı aşağıda okurken boşuna
+         video çözülmesin. */
+  let heroFilmsOn = false;
+  const HERO_FILM_HOLD = 1800;   // film bittikten sonra birleşmiş kabini seyretme payı
+  const HERO_FILM_MAX = 8000;    // film takılırsa slayt burada kadar bekler, sonra geçer
+
+  function heroFilmAllowed() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+    const conn = navigator.connection || {};
+    if (conn.saveData === true) return false;
+    if (/^(slow-2g|2g|3g)$/.test(conn.effectiveType || "")) return false;
+    return true;
+  }
+
+  function ensureHeroFilm(slide) {
+    if (!heroFilmsOn || !slide) return null;
+    const model = slide.getAttribute("data-film");
+    if (!model) return null;
+    const has = slide.querySelector(".hero-film");
+    if (has) return has;
+    const v = document.createElement("video");
+    v.className = "hero-film";
+    v.muted = true;
+    v.defaultMuted = true;
+    v.playsInline = true;
+    v.setAttribute("muted", "");
+    v.setAttribute("playsinline", "");
+    v.setAttribute("aria-hidden", "true");
+    v.preload = "auto";
+    v.src = "/assets/video/intro/" + model + "-assemble.mp4?v=2";
+    /* Film gerçekten oynamaya başlayınca görünür olsun; o ana kadar statik
+       render duruyor, böylece siyah bir kare ya da atlama görünmez. */
+    v.addEventListener("playing", () => slide.setAttribute("data-film-on", "1"));
+    v.addEventListener("ended", () => {
+      if (heroSlides[heroSlideIndex] === slide) scheduleHeroAdvance(HERO_FILM_HOLD);
+    });
+    v.addEventListener("error", () => { slide.removeAttribute("data-film-on"); v.remove(); });
+    slide.appendChild(v);
+    return v;
+  }
+
+  function scheduleHeroAdvance(ms) {
+    if (heroTimer) clearTimeout(heroTimer);
+    heroTimer = setTimeout(() => goToHeroSlide(heroSlideIndex + 1), ms);
+  }
+
   function goToHeroSlide(index) {
     if (!heroSlides.length) return;
     heroSlideIndex = (index + heroSlides.length) % heroSlides.length;
-    heroSlides.forEach((slide, i) => slide.classList.toggle("is-active", i === heroSlideIndex));
+    heroSlides.forEach((slide, i) => {
+      slide.classList.toggle("is-active", i === heroSlideIndex);
+      if (i !== heroSlideIndex) {
+        const other = slide.querySelector(".hero-film");
+        /* Durdur ama başa SARMA: slayt yavaşça solarken kare birleşmiş kabinde
+           kalsın, sökülmüş parçalara dönmesin. */
+        if (other) other.pause();
+      }
+    });
     heroDotEls.forEach((dot, i) => dot.classList.toggle("is-active", i === heroSlideIndex));
     updateHeroCaption();
+    playHeroFilm(heroSlides[heroSlideIndex]);
+    /* Sıradaki slaydın filmi şimdiden gelsin ki geçişte takılma olmasın. */
+    ensureHeroFilm(heroSlides[(heroSlideIndex + 1) % heroSlides.length]);
   }
 
-  function restartHeroTimer() {
-    if (heroTimer) clearInterval(heroTimer);
-    heroTimer = setInterval(() => goToHeroSlide(heroSlideIndex + 1), HERO_INTERVAL);
+  function playHeroFilm(slide) {
+    const v = ensureHeroFilm(slide);
+    if (!v) { scheduleHeroAdvance(HERO_INTERVAL); return; }
+    slide.removeAttribute("data-film-on");
+    try { v.currentTime = 0; } catch (e) { /* yoksay */ }
+    const p = v.play();
+    if (p && p.catch) p.catch(() => { slide.removeAttribute("data-film-on"); });
+    /* Emniyet: film bitiş olayı gelmezse slayt burada takılı kalmasın. */
+    scheduleHeroAdvance(HERO_FILM_MAX);
   }
+
 
   function initHeroSlider() {
     const container = document.getElementById("hero-slides");
@@ -3441,14 +3517,12 @@
     dotsContainer.innerHTML = heroSlides.map((_, i) => `<button type="button" aria-label="Slide ${i + 1}"></button>`).join("");
     heroDotEls = Array.from(dotsContainer.querySelectorAll("button"));
     heroDotEls.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        goToHeroSlide(i);
-        restartHeroTimer();
-      });
+      /* goToHeroSlide zamanlayıcıyı kendisi kuruyor (filmli slaytta film
+         süresince, filmsizde normal aralıkla) — ayrıca sıfırlamaya gerek yok. */
+      dot.addEventListener("click", () => goToHeroSlide(i));
     });
 
     goToHeroSlide(0);
-    restartHeroTimer();
 
     const deferredLoad = () => {
       heroSlides.forEach((slide) => {
@@ -3461,6 +3535,47 @@
     };
     if ("requestIdleCallback" in window) requestIdleCallback(deferredLoad, { timeout: 3000 });
     else setTimeout(deferredLoad, 1500);
+
+    /* Filmler en son devreye girer: önce sayfa TAM yüklensin (load), sonra
+       tarayıcı boşa çıksın. Yalnız requestIdleCallback yetmiyor — hızlı bir
+       makinede sayfa daha yüklenirken de boşluk bulup filmi indirmeye
+       başlayabiliyor; ölçtük, 330 ms'de iniyordu. Banner'ın ilk karesi statik
+       render, kritik yolda video yok. */
+    const enableHeroFilms = () => {
+      if (!heroFilmAllowed()) return;
+      heroFilmsOn = true;
+      ensureHeroFilm(heroSlides[(heroSlideIndex + 1) % heroSlides.length]);
+    };
+    const afterLoad = (fn) => {
+      if (document.readyState === "complete") fn();
+      else window.addEventListener("load", fn, { once: true });
+    };
+    afterLoad(() => {
+      if ("requestIdleCallback" in window) requestIdleCallback(enableHeroFilms, { timeout: 4000 });
+      else setTimeout(enableHeroFilms, 2000);
+    });
+
+    /* Banner ekrandan çıkınca ya da sekme arkaya alınınca film dursun; geri
+       gelince kaldığı yerden devam etsin. Aşağıda okuyan kullanıcı için boşuna
+       video çözmek pil ve işlemci israfı. */
+    const activeFilm = () => {
+      const slide = heroSlides[heroSlideIndex];
+      return slide ? slide.querySelector(".hero-film") : null;
+    };
+    const setPaused = (paused) => {
+      const v = activeFilm();
+      if (!v) return;
+      if (paused) { v.pause(); if (heroTimer) { clearTimeout(heroTimer); heroTimer = null; } }
+      else if (v.ended) { scheduleHeroAdvance(HERO_FILM_HOLD); }
+      else { v.play().catch(() => {}); scheduleHeroAdvance(HERO_FILM_MAX); }
+    };
+    document.addEventListener("visibilitychange", () => setPaused(document.hidden));
+    if ("IntersectionObserver" in window) {
+      const hero = container.closest(".hero") || container;
+      new IntersectionObserver((entries) => {
+        entries.forEach((e) => setPaused(!e.isIntersecting));
+      }, { threshold: 0 }).observe(hero);
+    }
   }
 
   /* v6: sticky "Ücretsiz Teklif Al" CTA — WhatsApp butonunun üstünde */
