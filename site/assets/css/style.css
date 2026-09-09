@@ -1642,9 +1642,22 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   .hero-slide {
     background-position: center 42%;
   }
-  /* Film de statik görselle aynı noktadan kadrajlansın, yoksa slayt
-     değişiminde kabin yukarı aşağı zıplar. */
-  .hero-film { object-position: center 42%; }
+  /* v98: film 16:9, banner bandı ise dikeye yakın (390x460). cover ile kabinin
+     yalnız yarısı kadraja giriyordu — ölçtük: 390 px'lik telefonda filmin %48'i
+     görünüyor, Milano'nun küpü ya da Geneva'nın uzun gövdesi tanınmıyordu.
+     Mobilde filmi KIRPMIYORUZ: tam sığdırıp (contain) boşluğu aynı kabinin
+     bulanıklaştırılmış fotoğrafıyla dolduruyoruz. Fotoğraf zaten slaytın kendi
+     arka planı, yani ek dosya yok. */
+  .hero-slides { overflow: hidden; }
+  .hero-slide::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: inherit; background-size: cover; background-position: center 42%;
+    filter: blur(20px) brightness(.5) saturate(.85);
+    transform: scale(1.15);
+    opacity: 0; transition: opacity 500ms ease;
+  }
+  .hero-slide[data-film-on="1"]::before { opacity: 1; }
+  .hero-film { object-fit: contain; object-position: center; }
   /* Yatay karartma yerine dikey gradyan: üst açık (ürün görünür), alt koyu (yazı okunur).
      Overlay artık tüm bölümü değil, yalnız görsel bandını kaplar. */
   .hero-overlay {
@@ -1866,6 +1879,15 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   background: linear-gradient(180deg, rgba(5,7,10,.58) 0%, rgba(5,7,10,.34) 45%, rgba(5,7,10,.80) 100%);
 }
 @media (prefers-reduced-motion: reduce) { .config-intro-film { display: none; } }
+/* v98: perde tam ekran ve dikey (390x844); film 16:9. cover ile kabinin yalnız
+   %26'sı görünüyordu — ürün tanınmıyordu. Mobilde film tam sığıyor, üstünde ve
+   altında kalan alanı zaten var olan bulanık kabin fotoğrafı dolduruyor; o
+   yüzden film oynarken fotoğrafı .12'ye değil daha görünür bir seviyeye
+   çekiyoruz. */
+@media (max-width: 760px) {
+  .config-intro-film { object-fit: contain; }
+  .config-intro[data-film="1"] .config-intro-bg { opacity: .40 !important; }
+}
 
 /* Ses düğmesi — film sessiz başlamak ZORUNDA (tarayıcılar sesli otomatik
    oynatmayı engelliyor), bu düğme kullanıcıya tek dokunuşla açma imkânı verir.
