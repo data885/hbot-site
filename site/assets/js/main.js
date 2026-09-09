@@ -2966,29 +2966,44 @@
         film.addEventListener("error", () => close("error"), { once: true });
         setTimeout(() => { if (film.readyState < 2 || film.paused) close("stalled"); }, 1800);
       }
-      /* Ses: tarayıcılar sesli otomatik oynatmayı engeller, o yüzden film daima
-         SESSİZ başlar. Kullanıcı bu oturumda sesi bir kez açtıysa tercihi
-         hatırlanır ve denenir; tarayıcı yine reddederse sessize düşer. */
-      let wantSound = false;
-      try { wantSound = sessionStorage.getItem(CONFIG_INTRO_SOUND) === "1"; } catch (e) { /* yoksay */ }
-      film.muted = true;
-      const p = film.play();
-      if (p && p.catch) p.catch(() => { /* engellendi: statik render kalır */ });
-      if (wantSound) {
-        film.muted = false;
-        const p2 = film.play();
-        if (p2 && p2.catch) p2.catch(() => { film.muted = true; film.play().catch(() => {}); });
-      }
       const soundBtn = el.querySelector(".config-intro-sound");
       const syncBtn = () => {
         soundBtn.setAttribute("data-on", film.muted ? "0" : "1");
         soundBtn.setAttribute("aria-label", film.muted ? t.sound_on : t.sound_off);
         soundBtn.title = film.muted ? t.sound_on : t.sound_off;
       };
+      /* Görkemli müzik kulağa çarpmasın: yarım saniyede açılsın. */
+      const fadeIn = () => {
+        film.volume = 0.3;
+        const t0 = Date.now();
+        const step = () => {
+          if (film.muted) return;
+          const k = Math.min(1, (Date.now() - t0) / 450);
+          film.volume = 0.3 + 0.7 * k;
+          if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      /* Ses AÇIK başlar. Perdenin asıl geliş yolu menüden tıklamaktır; tarayıcı
+         bunu kullanıcı etkileşimi sayar ve sesli oynatmaya izin verir. Doğrudan
+         açılışta (yer imi, yenileme, arama sonucu) etkileşim yoktur, tarayıcı
+         sesi reddeder — o zaman sessize düşer, hoparlör düğmesi kullanıcıyı
+         bekler. Kullanıcı sesi bir kez kapatırsa tercihi oturum boyunca korunur. */
+      let wantSound = true;
+      try { wantSound = sessionStorage.getItem(CONFIG_INTRO_SOUND) !== "0"; } catch (e) { /* yoksay */ }
+      film.muted = !wantSound;
+      if (wantSound) fadeIn();
+      const p = film.play();
+      if (p && p.catch) p.catch(() => {
+        if (film.muted) return;        // sessizken de engellendi: statik render kalır
+        film.muted = true;             // tarayıcı sesi reddetti, sessiz devam et
+        syncBtn();
+        film.play().catch(() => {});
+      });
       soundBtn.addEventListener("click", (ev) => {
         ev.stopPropagation();          // perdeyi kapatmasın
         film.muted = !film.muted;
-        if (!film.muted) film.play().catch(() => { film.muted = true; syncBtn(); });
+        if (!film.muted) { fadeIn(); film.play().catch(() => { film.muted = true; syncBtn(); }); }
         try { sessionStorage.setItem(CONFIG_INTRO_SOUND, film.muted ? "0" : "1"); } catch (e) { /* yoksay */ }
         syncBtn();
       });
