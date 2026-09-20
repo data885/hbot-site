@@ -190,7 +190,7 @@
     "solo-lounge": { base: 29900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 0 }] },
     solo: { base: 69900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 0 }] },
     duo: { base: 119900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 0 }] },
-    "duo-plus": { base: 119900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
+    "duo-plus": { base: 149900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
     "quad-cube": { base: 224900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
     nexus: { base: 259900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] }
   };
@@ -208,7 +208,7 @@
      değişir (eklenen her koltuk için ayrı ücret yerine sabit fiyat kademeleri). */
   const SEAT_TIERS = {
     nexus: [{ seats: 6, price: 259900 }, { seats: 8, price: 280000 }, { seats: 10, price: 300000 }, { seats: 12, price: 330000 }],
-    "duo-plus": [{ seats: 2, price: 119900 }, { seats: 4, price: 170000 }]
+    "duo-plus": [{ seats: 2, price: 149900 }, { seats: 4, price: 170000 }]
   };
   const NEXUS_BASE_SEATS = SEAT_TIERS.nexus[0].seats;
   const NEXUS_MAX_SEATS = SEAT_TIERS.nexus[SEAT_TIERS.nexus.length - 1].seats;
@@ -2625,6 +2625,7 @@
       ensureTierCompatible(); // paylaşım linki geçersiz kademe içeriyorsa sessizce 0'a düş
 
       if (SEAT_TIERS[configState.model]) {
+        configState.nexusSeats = SEAT_TIERS[configState.model][0].seats;
         const preSeats = params.get("seats");
         if (preSeats !== null) {
           const seats = parseInt(preSeats, 10);
