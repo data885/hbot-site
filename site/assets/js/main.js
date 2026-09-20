@@ -3299,6 +3299,12 @@
         return;
       }
 
+      // Preserve the request in the existing message field used by email and CRM.
+      if (formData.get("meeting_request")) {
+        const meetingNote = dict.contact.meeting_request;
+        formData.set("message", [formData.get("message"), meetingNote].filter(Boolean).join("\n\n"));
+      }
+
       // Konfigurator: marka kimlikli proforma PDF uret + gercek urun fotografiyle
       // birlikte base64 olarak gonder (Google Apps Script backend'i cozup e-posta
       // ekine cevirir). Formspree dosya eki kabul etmedigi icin bu form artik
@@ -3578,13 +3584,12 @@
     }
   }
 
-  /* v6: sticky "Ücretsiz Teklif Al" CTA — WhatsApp butonunun üstünde */
+  /* Suitability call CTA above WhatsApp; preserve the current page language. */
   function initStickyCta() {
     if (document.querySelector(".sticky-quote-cta")) return;
-    const page = document.body.getAttribute("data-page");
     const a = document.createElement("a");
     a.className = "sticky-quote-cta";
-    a.href = page === "configurator" ? "#quote-form" : "konfigurator.html";
+    a.href = "iletisim.html#contact-form";
     a.setAttribute("data-i18n", "common.sticky_cta");
     const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.tr;
     a.textContent = getByPath(dict, "common.sticky_cta") || "Teklif Al";

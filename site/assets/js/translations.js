@@ -7486,3 +7486,146 @@ const TRANSLATIONS = {
     }
   }
 };
+
+// September 2026 content review: localized project guidance and model comparisons.
+(() => {
+  const updates = {
+  "tr": {
+    "common.sticky_cta": "Ücretsiz 15 dk görüşme",
+    "home.hero.cta_primary": "15 Dakikalık Uygunluk Görüşmesi Al",
+    "home.why.title": "Neden HBOT Chamber Tech?",
+    "home.why.items.1.title": "Akıllı İşletim Sistemi",
+    "home.why.items.2.title": "Model Bazlı Güvenlik",
+    "home.why.items.3.title": "Şeffaf Proje Yönetimi",
+    "home.why.items.1.desc": "CityOS™, kabin işletimi ve kullanıcı arayüzünü tek bir platformda birleştirir. Özellik kapsamı model ve konfigürasyona göre belirlenir.",
+    "home.why.items.2.desc": "Kullanım amacı, basınç aralığı ve uygunluk dosyası her model için ayrı değerlendirilir.",
+    "home.why.items.3.desc": "Cihaz, lojistik, kurulum, eğitim ve servis kapsamını proje teklifinde birlikte netleştirelim.",
+    "modelPage.specs_note": "Teknik özellikler ve uygunluk kapsamı model, konfigürasyon ve hedef ülkeye göre değişebilir. Detaylı teknik dosya için iletişime geçin.",
+    "modelPage.price_note": "Fiyat tahmini bağlayıcı değildir; kesin teklif proje kapsamına göre netleşir.",
+    "trustSafety.cta": "Model Dosyasını ve Teknik Uygunluk Paketini İste",
+    "contact.meeting_request": "Ücretsiz 15 dakikalık uygunluk görüşmesi talep ediyorum.",
+    "meta.home.title": "HBOT Chamber Tech | Hiperbarik Oksijen Kabinleri - City Tech Serisi",
+    "meta.home.desc": "2007’ye uzanan ekip mühendislik deneyimiyle geliştirilen bağlantılı HBOT kabinleri. Altı model, CityOS ve uzaktan izleme. Konfigüratörü deneyin.",
+    "meta.models.title": "HBOT City Tech Modelleri | Oslo, Dubai, Tokyo, Tokyo Plus, Milano, Geneva",
+    "meta.models.desc": "Tek kişilikten hastane ölçekli kabinlere kadar altı model. Model bazlı basınç aralıklarını, fiyatları ve teknik detayları karşılaştırın.",
+    "meta.technology.title": "CityConnect, CityOS, CityAI | HBOT Chamber Tech Teknoloji",
+    "meta.contact.title": "İletişim ve Teklif | HBOT Chamber Tech",
+    "meta.contact.desc": "15 dakikalık ücretsiz uygunluk görüşmesi talep edin. Model, basınç ve kurulum ihtiyacınıza göre proje kapsamını birlikte netleştirelim."
+  },
+  "en": {
+    "common.sticky_cta": "Free 15-min call",
+    "home.hero.cta_primary": "Request a 15-minute suitability call",
+    "home.why.title": "Why HBOT Chamber Tech?",
+    "home.why.items.1.title": "Smart Operating System",
+    "home.why.items.2.title": "Model-specific Safety",
+    "home.why.items.3.title": "Clear Project Scope",
+    "home.why.items.1.desc": "CityOS™ brings chamber operation and the user interface together. Features depend on the model and configuration.",
+    "home.why.items.2.desc": "Intended use, pressure range and conformity documentation are assessed for each model.",
+    "home.why.items.3.desc": "Clarify equipment, logistics, installation, training and service scope in your project quotation.",
+    "modelPage.specs_note": "Specifications and conformity scope may vary by model, configuration and destination country. Contact us for the detailed technical file.",
+    "modelPage.price_note": "The price estimate is non-binding; the final quotation depends on project scope.",
+    "trustSafety.cta": "Request the Model File and Technical Conformity Package",
+    "contact.meeting_request": "I would like a free 15-minute suitability call."
+  },
+  "ar": {
+    "common.sticky_cta": "مكالمة مجانية 15 دقيقة",
+    "home.hero.cta_primary": "اطلب مكالمة لتقييم الملاءمة لمدة 15 دقيقة",
+    "home.why.title": "لماذا HBOT Chamber Tech؟",
+    "home.why.items.1.title": "نظام تشغيل ذكي",
+    "home.why.items.2.title": "السلامة حسب الطراز",
+    "home.why.items.3.title": "نطاق مشروع واضح",
+    "home.why.items.1.desc": "يجمع CityOS™ تشغيل الغرفة وواجهة المستخدم في منصة واحدة. تختلف الميزات حسب الطراز والتكوين.",
+    "home.why.items.2.desc": "يتم تقييم الاستخدام المقصود ونطاق الضغط ووثائق المطابقة لكل طراز.",
+    "home.why.items.3.desc": "نوضح نطاق الجهاز والشحن والتركيب والتدريب والخدمة في عرض المشروع.",
+    "modelPage.specs_note": "قد تختلف المواصفات ونطاق المطابقة حسب الطراز والتكوين وبلد الوجهة. تواصل معنا للحصول على الملف الفني.",
+    "modelPage.price_note": "تقدير السعر غير ملزم؛ يعتمد العرض النهائي على نطاق المشروع.",
+    "trustSafety.cta": "اطلب ملف الطراز وحزمة المطابقة الفنية",
+    "contact.meeting_request": "أرغب في مكالمة مجانية لتقييم الملاءمة لمدة 15 دقيقة."
+  },
+  "de": {
+    "common.sticky_cta": "Kostenloses 15-Min.-Gespräch",
+    "home.hero.cta_primary": "15-minütiges Beratungsgespräch anfragen",
+    "home.why.title": "Warum HBOT Chamber Tech?",
+    "home.why.items.1.title": "Intelligentes Betriebssystem",
+    "home.why.items.2.title": "Modellspezifische Sicherheit",
+    "home.why.items.3.title": "Klarer Projektumfang",
+    "home.why.items.1.desc": "CityOS™ verbindet Kammerbetrieb und Benutzeroberfläche. Der Funktionsumfang hängt von Modell und Konfiguration ab.",
+    "home.why.items.2.desc": "Verwendungszweck, Druckbereich und Konformitätsunterlagen werden für jedes Modell geprüft.",
+    "home.why.items.3.desc": "Gerät, Logistik, Installation, Schulung und Service werden im Projektangebot geklärt.",
+    "modelPage.specs_note": "Technische Daten und Konformitätsumfang können je nach Modell, Konfiguration und Zielland variieren. Fordern Sie die technischen Unterlagen an.",
+    "modelPage.price_note": "Die Preisschätzung ist unverbindlich; das endgültige Angebot hängt vom Projektumfang ab.",
+    "trustSafety.cta": "Modellunterlagen und Konformitätspaket anfordern",
+    "contact.meeting_request": "Ich wünsche ein kostenloses 15-minütiges Beratungsgespräch."
+  },
+  "es": {
+    "common.sticky_cta": "Consulta gratis de 15 min",
+    "home.hero.cta_primary": "Solicitar una consulta de 15 minutos",
+    "home.why.title": "¿Por qué HBOT Chamber Tech?",
+    "home.why.items.1.title": "Sistema operativo inteligente",
+    "home.why.items.2.title": "Seguridad por modelo",
+    "home.why.items.3.title": "Alcance claro del proyecto",
+    "home.why.items.1.desc": "CityOS™ integra el funcionamiento de la cámara y la interfaz de usuario. Las funciones dependen del modelo y la configuración.",
+    "home.why.items.2.desc": "El uso previsto, el rango de presión y la documentación de conformidad se evalúan por modelo.",
+    "home.why.items.3.desc": "Definimos equipo, logística, instalación, formación y servicio en la oferta del proyecto.",
+    "modelPage.specs_note": "Las especificaciones y la conformidad pueden variar según modelo, configuración y país de destino. Solicite el expediente técnico.",
+    "modelPage.price_note": "La estimación de precio no es vinculante; la oferta final depende del alcance del proyecto.",
+    "trustSafety.cta": "Solicitar el expediente del modelo y la documentación de conformidad",
+    "contact.meeting_request": "Deseo una consulta gratuita de 15 minutos."
+  },
+  "pt": {
+    "common.sticky_cta": "Consulta grátis de 15 min",
+    "home.hero.cta_primary": "Solicitar uma consulta de 15 minutos",
+    "home.why.title": "Porquê HBOT Chamber Tech?",
+    "home.why.items.1.title": "Sistema operativo inteligente",
+    "home.why.items.2.title": "Segurança por modelo",
+    "home.why.items.3.title": "Âmbito claro do projeto",
+    "home.why.items.1.desc": "O CityOS™ reúne o funcionamento da câmara e a interface do utilizador. As funcionalidades dependem do modelo e da configuração.",
+    "home.why.items.2.desc": "A utilização prevista, a pressão e a documentação de conformidade são avaliadas por modelo.",
+    "home.why.items.3.desc": "Definimos equipamento, logística, instalação, formação e assistência na proposta do projeto.",
+    "modelPage.specs_note": "As especificações e a conformidade podem variar conforme o modelo, a configuração e o país de destino. Solicite o processo técnico.",
+    "modelPage.price_note": "A estimativa de preço não é vinculativa; a proposta final depende do âmbito do projeto.",
+    "trustSafety.cta": "Solicitar o processo do modelo e o pacote de conformidade",
+    "contact.meeting_request": "Pretendo uma consulta gratuita de 15 minutos."
+  },
+  "ru": {
+    "common.sticky_cta": "Бесплатная консультация 15 мин",
+    "home.hero.cta_primary": "Запросить 15-минутную консультацию",
+    "home.why.title": "Почему HBOT Chamber Tech?",
+    "home.why.items.1.title": "Умная операционная система",
+    "home.why.items.2.title": "Безопасность каждой модели",
+    "home.why.items.3.title": "Понятный объём проекта",
+    "home.why.items.1.desc": "CityOS™ объединяет управление камерой и интерфейс пользователя. Функции зависят от модели и комплектации.",
+    "home.why.items.2.desc": "Назначение, диапазон давления и документы соответствия оцениваются для каждой модели.",
+    "home.why.items.3.desc": "Оборудование, логистика, монтаж, обучение и сервис уточняются в предложении по проекту.",
+    "modelPage.specs_note": "Характеристики и соответствие могут зависеть от модели, комплектации и страны назначения. Запросите техническую документацию.",
+    "modelPage.price_note": "Оценка цены не является обязательным предложением; окончательная цена зависит от объёма проекта.",
+    "trustSafety.cta": "Запросить документацию модели и пакет соответствия",
+    "contact.meeting_request": "Хочу бесплатную 15-минутную консультацию."
+  }
+};
+  const labels = {"tr": ["Ücretsiz 15 dk görüşme", "15 Dakikalık Uygunluk Görüşmesi Al", "Neden HBOT Chamber Tech?", "Akıllı İşletim Sistemi", "Model Bazlı Güvenlik", "Şeffaf Proje Yönetimi", "CityOS™, kabin işletimi ve kullanıcı arayüzünü tek bir platformda birleştirir. Özellik kapsamı model ve konfigürasyona göre belirlenir.", "Kullanım amacı, basınç aralığı ve uygunluk dosyası her model için ayrı değerlendirilir.", "Cihaz, lojistik, kurulum, eğitim ve servis kapsamını proje teklifinde birlikte netleştirelim.", "Pozisyon", "Yatay", "Oturma", "Başlangıç fiyatı (EUR, FOB)", "Teknik özellikler ve uygunluk kapsamı model, konfigürasyon ve hedef ülkeye göre değişebilir. Detaylı teknik dosya için iletişime geçin.", "Fiyat tahmini bağlayıcı değildir; kesin teklif proje kapsamına göre netleşir.", "Model Dosyasını ve Teknik Uygunluk Paketini İste", "Ücretsiz 15 dakikalık uygunluk görüşmesi talep ediyorum.", "İşletim Sistemi", "Uzaktan İzleme", "Yedek Güç", "Oksijen Satürasyon Ölçümü", "Standart"], "en": ["Free 15-min call", "Request a 15-minute suitability call", "Why HBOT Chamber Tech?", "Smart Operating System", "Model-specific Safety", "Clear Project Scope", "CityOS™ brings chamber operation and the user interface together. Features depend on the model and configuration.", "Intended use, pressure range and conformity documentation are assessed for each model.", "Clarify equipment, logistics, installation, training and service scope in your project quotation.", "Position", "Lying down", "Seated", "Starting price (EUR, FOB)", "Specifications and conformity scope may vary by model, configuration and destination country. Contact us for the detailed technical file.", "The price estimate is non-binding; the final quotation depends on project scope.", "Request the Model File and Technical Conformity Package", "I would like a free 15-minute suitability call.", "Operating System", "Remote Monitoring", "Backup Power", "Oxygen Saturation Monitoring", "Standard"], "ar": ["مكالمة مجانية 15 دقيقة", "اطلب مكالمة لتقييم الملاءمة لمدة 15 دقيقة", "لماذا HBOT Chamber Tech؟", "نظام تشغيل ذكي", "السلامة حسب الطراز", "نطاق مشروع واضح", "يجمع CityOS™ تشغيل الغرفة وواجهة المستخدم في منصة واحدة. تختلف الميزات حسب الطراز والتكوين.", "يتم تقييم الاستخدام المقصود ونطاق الضغط ووثائق المطابقة لكل طراز.", "نوضح نطاق الجهاز والشحن والتركيب والتدريب والخدمة في عرض المشروع.", "الوضعية", "استلقاء", "جلوس", "السعر المبدئي (EUR، FOB)", "قد تختلف المواصفات ونطاق المطابقة حسب الطراز والتكوين وبلد الوجهة. تواصل معنا للحصول على الملف الفني.", "تقدير السعر غير ملزم؛ يعتمد العرض النهائي على نطاق المشروع.", "اطلب ملف الطراز وحزمة المطابقة الفنية", "أرغب في مكالمة مجانية لتقييم الملاءمة لمدة 15 دقيقة.", "نظام التشغيل", "المراقبة عن بعد", "الطاقة الاحتياطية", "قياس تشبع الأكسجين", "قياسي"], "de": ["Kostenloses 15-Min.-Gespräch", "15-minütiges Beratungsgespräch anfragen", "Warum HBOT Chamber Tech?", "Intelligentes Betriebssystem", "Modellspezifische Sicherheit", "Klarer Projektumfang", "CityOS™ verbindet Kammerbetrieb und Benutzeroberfläche. Der Funktionsumfang hängt von Modell und Konfiguration ab.", "Verwendungszweck, Druckbereich und Konformitätsunterlagen werden für jedes Modell geprüft.", "Gerät, Logistik, Installation, Schulung und Service werden im Projektangebot geklärt.", "Position", "Liegend", "Sitzend", "Startpreis (EUR, FOB)", "Technische Daten und Konformitätsumfang können je nach Modell, Konfiguration und Zielland variieren. Fordern Sie die technischen Unterlagen an.", "Die Preisschätzung ist unverbindlich; das endgültige Angebot hängt vom Projektumfang ab.", "Modellunterlagen und Konformitätspaket anfordern", "Ich wünsche ein kostenloses 15-minütiges Beratungsgespräch.", "Betriebssystem", "Fernüberwachung", "Notstromversorgung", "Sauerstoffsättigungsmessung", "Standard"], "es": ["Consulta gratis de 15 min", "Solicitar una consulta de 15 minutos", "¿Por qué HBOT Chamber Tech?", "Sistema operativo inteligente", "Seguridad por modelo", "Alcance claro del proyecto", "CityOS™ integra el funcionamiento de la cámara y la interfaz de usuario. Las funciones dependen del modelo y la configuración.", "El uso previsto, el rango de presión y la documentación de conformidad se evalúan por modelo.", "Definimos equipo, logística, instalación, formación y servicio en la oferta del proyecto.", "Posición", "Tumbado", "Sentado", "Precio inicial (EUR, FOB)", "Las especificaciones y la conformidad pueden variar según modelo, configuración y país de destino. Solicite el expediente técnico.", "La estimación de precio no es vinculante; la oferta final depende del alcance del proyecto.", "Solicitar el expediente del modelo y la documentación de conformidad", "Deseo una consulta gratuita de 15 minutos.", "Sistema operativo", "Monitorización remota", "Alimentación de respaldo", "Medición de saturación de oxígeno", "Estándar"], "pt": ["Consulta grátis de 15 min", "Solicitar uma consulta de 15 minutos", "Porquê HBOT Chamber Tech?", "Sistema operativo inteligente", "Segurança por modelo", "Âmbito claro do projeto", "O CityOS™ reúne o funcionamento da câmara e a interface do utilizador. As funcionalidades dependem do modelo e da configuração.", "A utilização prevista, a pressão e a documentação de conformidade são avaliadas por modelo.", "Definimos equipamento, logística, instalação, formação e assistência na proposta do projeto.", "Posição", "Deitado", "Sentado", "Preço inicial (EUR, FOB)", "As especificações e a conformidade podem variar conforme o modelo, a configuração e o país de destino. Solicite o processo técnico.", "A estimativa de preço não é vinculativa; a proposta final depende do âmbito do projeto.", "Solicitar o processo do modelo e o pacote de conformidade", "Pretendo uma consulta gratuita de 15 minutos.", "Sistema operativo", "Monitorização remota", "Alimentação de reserva", "Medição da saturação de oxigénio", "Padrão"], "ru": ["Бесплатная консультация 15 мин", "Запросить 15-минутную консультацию", "Почему HBOT Chamber Tech?", "Умная операционная система", "Безопасность каждой модели", "Понятный объём проекта", "CityOS™ объединяет управление камерой и интерфейс пользователя. Функции зависят от модели и комплектации.", "Назначение, диапазон давления и документы соответствия оцениваются для каждой модели.", "Оборудование, логистика, монтаж, обучение и сервис уточняются в предложении по проекту.", "Положение", "Лёжа", "Сидя", "Начальная цена (EUR, FOB)", "Характеристики и соответствие могут зависеть от модели, комплектации и страны назначения. Запросите техническую документацию.", "Оценка цены не является обязательным предложением; окончательная цена зависит от объёма проекта.", "Запросить документацию модели и пакет соответствия", "Хочу бесплатную 15-минутную консультацию.", "Операционная система", "Удалённый мониторинг", "Резервное питание", "Измерение сатурации кислорода", "Стандарт"]};
+  const models = ["modelSoloLounge", "modelSolo", "modelDuo", "modelDuoPlus", "modelQuadCube", "modelNexus"];
+  const basePricesEUR = [29900, 69900, 119900, 119900, 224900, 259900];
+  for (const [lang, changes] of Object.entries(updates)) {
+    const dict = TRANSLATIONS[lang];
+    for (const [path, value] of Object.entries(changes)) {
+      const parts = path.split('.');
+      const key = parts.pop();
+      let target = dict;
+      for (const part of parts) target = target[part];
+      target[key] = value;
+    }
+    const a = labels[lang];
+    models.forEach((model, index) => {
+      dict[model].specs.push(
+        { label: a[9], value: index === 0 ? a[10] : a[11] },
+        { label: a[17], value: 'CityOS™' },
+        { label: a[18], value: 'CityConnect™' },
+        { label: a[19], value: a[21] },
+        { label: a[20], value: a[21] },
+        { label: a[12], value: new Intl.NumberFormat(lang, {style: 'currency', currency: 'EUR', maximumFractionDigits: 0}).format(basePricesEUR[index]) + '+' }
+      );
+    });
+    dict.configurator.summary.disclaimer = a[14] + ' ' + dict.configurator.summary.disclaimer;
+  }
+})();
