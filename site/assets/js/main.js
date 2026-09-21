@@ -2882,7 +2882,14 @@
        şey bozulmaz: altındaki statik render görünür kalır. */
     /* Rotasyondaki her filmin bitiş karesi, o modelin sitede kullanılan gerçek
        render'ıyla karşılaştırılarak doğrulandı (ürün kimliği korunuyor). */
-    const INTRO_MODELS = ["oslo", "dubai", "tokyo", "tokyo-plus", "milano", "geneva"];
+    /* Geneva şimdilik rotasyonda YOK: 2026-09-20'de Geneva'nın ürün görseli yeni
+       modelle değiştirildi, ama birleşme filmi hâlâ ESKİ kabini gösteriyor — film
+       eski render'dan üretilmişti. Yanlış ürünü göstermektense filmi hiç
+       göstermiyoruz; slaytta/perdede yeni fotoğraf kalıyor.
+       Geri eklemek için: Veo kredisi yüklendikten sonra geneva-assemble.mp4'ü yeni
+       geneva-real.webp'ten üret, sonra "geneva"yı bu diziye ve index.html'deki
+       Geneva slaytına (data-film="geneva") geri koy. */
+    const INTRO_MODELS = ["oslo", "dubai", "tokyo", "tokyo-plus", "milano"];
     /* Site "canlı" hissettirsin diye kabin her seferinde değişir — ve son
        gösterilen model havuzdan çıkarılır, böylece aynı kabini iki kez üst üste
        görmek imkânsız. Tercih localStorage'da tutulur (oturumlar arası da
