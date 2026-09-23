@@ -131,7 +131,7 @@ const TRANSLATIONS = {
         items: [
           { icon: "care", label: "Wellness Serisi · Oslo, Dubai, Tokyo · 1.3–1.5 ATA · Ev, spa ve otel kullanımı" },
           { icon: "fourSeat", label: "Professional Serisi · Milano, Tokyo Plus · 2.0–6.0 ATA · Eğitimli operatör ve saha şartı" },
-          { icon: "nexus", label: "Clinical Serisi · Geneva · 2.0–6.0 ATA · Lisanslı sağlık tesisi" },
+          { icon: "nexus", label: "Clinical Serisi · Geneva · 3.0–6.0 ATA · Lisanslı sağlık tesisi" },
         ]
       },
       indications_teaser: {
@@ -389,7 +389,7 @@ const TRANSLATIONS = {
       overview_text: "Tokyo'nun yüksek basınçlı, çok kişilik kurumsal versiyonu. 2 ila 4 kişi arasında kademeli koltuk kapasitesiyle klinik, hastane ve wellness merkezleri için tasarlanmıştır.",
       specs: [
         { label: "Kapasite", value: "2–4 kişi (kademeli)" },
-        { label: "Basınç Aralığı", value: "2.0 – 6.0 ATA" },
+        { label: "Basınç Aralığı", value: "2.0 – 3.0 ATA" },
         { label: "Oksijen Saflığı", value: "%93–95" },
         { label: "Güvenlik", value: "Acil durum valf sistemi" },
         { label: "Kontrol", value: "Çift kontrol sistemi" },
@@ -417,7 +417,7 @@ const TRANSLATIONS = {
       overview_text: "Sağlık kurumları için profesyonel sınıf, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun terapi merkezlerinin ihtiyacını karşılar.",
       specs: [
         { label: "Kapasite", value: "6+ kişi (oturma)" },
-        { label: "Basınç Aralığı", value: "2.0 – 6.0 ATA" },
+        { label: "Basınç Aralığı", value: "3.0 – 6.0 ATA" },
         { label: "Oksijen Saflığı", value: "%93–95" },
         { label: "Güvenlik", value: "Acil durum valf sistemi" },
         { label: "Yapı", value: "Hastane sınıfı" },
@@ -487,7 +487,7 @@ const TRANSLATIONS = {
       "duo-plus": [
         { q: "Tokyo Plus'ın Tokyo'dan farkı nedir?", a: "Tokyo Plus, Tokyo'nun daha yüksek basınçlı ve kademeli koltuk kapasiteli kurumsal versiyonudur; 2 ile 4 kişi arasında ölçeklenir." },
         { q: "Tokyo Plus hangi kullanım alanları için uygundur?", a: "Klinik, hastane ve wellness merkezleri gibi kurumsal ortamlar için tasarlanmıştır." },
-        { q: "Tokyo Plus hangi basınç aralığında çalışır?", a: "2.0–6.0 ATA aralığında, kurumsal/yüksek basınçlı kullanım için uygundur." },
+        { q: "Tokyo Plus hangi basınç aralığında çalışır?", a: "2.0–3.0 ATA aralığında, kurumsal/yüksek basınçlı kullanım için uygundur." },
         { q: "Tokyo Plus'ın koltuk sayısı nasıl belirlenir?", a: "Konfigüratördeki koltuk sayısı adımından ihtiyacınıza göre 2 ile 4 arasında ayarlayabilirsiniz; fiyat buna göre güncellenir." },
         { q: "Tokyo Plus için nasıl teklif alabilirim?", a: "Konfigüratörden Tokyo Plus'ı seçip koltuk sayısı ve renklerinizi belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
       ],
@@ -501,7 +501,7 @@ const TRANSLATIONS = {
       "nexus": [
         { q: "Geneva kaç kişilik?", a: "Geneva, 6 kişiden başlayıp 6/8/10/12 kademeli olarak genişleyebilen, profesyonel sınıf büyük kapasiteli bir kabindir." },
         { q: "Geneva hangi tesisler için uygundur?", a: "Yoğun terapi hacmi olan hastaneler ve büyük sağlık merkezleri için tasarlanmıştır; modüler yapısı gelecekteki genişlemeye hazırdır." },
-        { q: "Geneva hangi basınç aralığında çalışır?", a: "2.0–6.0 ATA aralığında, %93–95 oksijen saflığıyla çalışır." },
+        { q: "Geneva hangi basınç aralığında çalışır?", a: "3.0–6.0 ATA aralığında, %93–95 oksijen saflığıyla çalışır." },
         { q: "Geneva'nın güvenlik donanımı nedir?", a: "Acil durum valf sistemi standarttır; profesyonel sınıf yapısı yoğun kullanıma göre mühendislik edilmiştir." },
         { q: "Geneva için nasıl teklif alabilirim?", a: "Kapasite ihtiyacınızı (6/8/10/12 kişi) belirterek bizimle iletişime geçin; kurumunuza özel teknik çizim ve teklif hazırlayalım." }
       ]
@@ -1106,9 +1106,9 @@ const TRANSLATIONS = {
       soloLounge: { title: "Oslo | 1-Person Lying Hyperbaric Chamber", desc: "A 1-person lying hyperbaric oxygen chamber with a medical orthopedic bed, 1.5–2.0 ATA operating range and CitySilent™ design." },
       solo: { title: "Dubai | 1-Person Seated Hyperbaric Chamber", desc: "A compact 1-person seated hyperbaric oxygen chamber for home, clinic and wellness settings; 1.5–2.0 ATA and touchscreen control." },
       duo: { title: "Tokyo | 2-Person Hyperbaric Oxygen Chamber", desc: "A 2-person seated hyperbaric oxygen chamber with a panoramic window, 1.5–2.0 ATA operating range and dual control system." },
-      duoPlus: { title: "Tokyo Plus | 2–4 Person Hyperbaric Chamber", desc: "A 2–4 person hyperbaric oxygen chamber for clinic, hospital and wellness projects, configurable for 2.0–6.0 ATA operation." },
+      duoPlus: { title: "Tokyo Plus | 2–4 Person Hyperbaric Chamber", desc: "A 2–4 person hyperbaric oxygen chamber for clinic, hospital and wellness projects, configurable for 2.0–3.0 ATA operation." },
       quadCube: { title: "Milano | 4-Person Hyperbaric Oxygen Chamber", desc: "A 4-person hyperbaric oxygen chamber with a spacious cube layout, 2.0–6.0 ATA operating range and independent controls." },
-      nexus: { title: "Geneva | Multiplace Hyperbaric Chamber for Hospitals", desc: "A hospital-grade, 6+ person multiplace hyperbaric oxygen chamber with 2.0–6.0 ATA configuration and modular expansion readiness." },
+      nexus: { title: "Geneva | Multiplace Hyperbaric Chamber for Hospitals", desc: "A hospital-grade, 6+ person multiplace hyperbaric oxygen chamber with 3.0–6.0 ATA configuration and modular expansion readiness." },
       hbotInfo: { title: "What Is HBOT? | HBOT Chamber Tech", desc: "What is hyperbaric oxygen therapy (HBOT), what is it used for, and in which conditions is it applied." },
       blog: { title: "Blog | HBOT Chamber Tech", desc: "Recent research, news and developments on hyperbaric oxygen therapy." },
       configurator: {
@@ -1229,7 +1229,7 @@ const TRANSLATIONS = {
         items: [
           { icon: "care", label: "Wellness Series · Oslo, Dubai, Tokyo · 1.3–1.5 ATA · Home, spa and hotel use" },
           { icon: "fourSeat", label: "Professional Series · Milano, Tokyo Plus · 2.0–6.0 ATA · Trained operator and site requirements" },
-          { icon: "nexus", label: "Clinical Series · Geneva · 2.0–6.0 ATA · Licensed healthcare facility" },
+          { icon: "nexus", label: "Clinical Series · Geneva · 3.0–6.0 ATA · Licensed healthcare facility" },
         ]
       },
       indications_teaser: {
@@ -1487,7 +1487,7 @@ const TRANSLATIONS = {
       overview_text: "The high-pressure, multi-person institutional version of Tokyo. Designed for clinics, hospitals and wellness centers with tiered seating capacity from 2 to 4 people.",
       specs: [
         { label: "Capacity", value: "2–4 people (tiered)" },
-        { label: "Pressure Range", value: "2.0 – 6.0 ATA" },
+        { label: "Pressure Range", value: "2.0 – 3.0 ATA" },
         { label: "Oxygen Purity", value: "93–95%" },
         { label: "Safety", value: "Emergency valve system" },
         { label: "Control", value: "Dual control system" },
@@ -1515,7 +1515,7 @@ const TRANSLATIONS = {
       overview_text: "A hospital-grade, large-capacity chamber for medical institutions. Its modular design and advanced monitoring systems meet the needs of the busiest treatment centers.",
       specs: [
         { label: "Capacity", value: "6+ people (sitting)" },
-        { label: "Pressure Range", value: "2.0 – 6.0 ATA" },
+        { label: "Pressure Range", value: "3.0 – 6.0 ATA" },
         { label: "Oxygen Purity", value: "93–95%" },
         { label: "Safety", value: "Emergency valve system" },
         { label: "Build", value: "Hospital-grade" },
@@ -1585,7 +1585,7 @@ const TRANSLATIONS = {
       "duo-plus": [
         { q: "How is the Tokyo Plus different from the Tokyo?", a: "The Tokyo Plus is the higher-pressure, institutional version of the Tokyo, with tiered seating that scales from 2 to 4 people." },
         { q: "What settings is the Tokyo Plus suited for?", a: "It's built for institutional environments — clinics, hospitals, and wellness centres." },
-        { q: "What pressure range does the Tokyo Plus operate at?", a: "2.0–6.0 ATA, suited to institutional, higher-pressure use." },
+        { q: "What pressure range does the Tokyo Plus operate at?", a: "2.0–3.0 ATA, suited to institutional, higher-pressure use." },
         { q: "How is the Tokyo Plus's seat count determined?", a: "Use the seat-count step in the configurator to set anywhere from 2 to 4 seats; the price updates accordingly." },
         { q: "How do I get a quote for the Tokyo Plus?", a: "Select the Tokyo Plus in the configurator, set your seat count and colours, and see an instant price estimate — then request a final quote through the form." }
       ],
@@ -1599,7 +1599,7 @@ const TRANSLATIONS = {
       "nexus": [
         { q: "How many people does the Geneva fit?", a: "The Geneva is a hospital-grade, large-capacity chamber that starts at 6 people and scales in tiers of 6/8/10/12." },
         { q: "What facilities is the Geneva suited for?", a: "It's designed for hospitals and large health centres with high therapy volume; its modular structure is ready for future expansion." },
-        { q: "What pressure range does the Geneva operate at?", a: "2.0–6.0 ATA, with 93–95% oxygen purity." },
+        { q: "What pressure range does the Geneva operate at?", a: "3.0–6.0 ATA, with 93–95% oxygen purity." },
         { q: "What safety equipment does the Geneva have?", a: "An emergency valve system comes standard; its hospital-grade construction is engineered for continuous, high-volume use." },
         { q: "How do I get a quote for the Geneva?", a: "Contact us with your capacity needs (6/8/10/12 people) and we'll prepare a technical drawing and quote tailored to your institution." }
       ]
@@ -2296,7 +2296,7 @@ const TRANSLATIONS = {
         items: [
           { icon: "care", label: "Серия Wellness · Oslo, Dubai, Tokyo · 1.3–1.5 ATA · Дом, спа и отели" },
           { icon: "fourSeat", label: "Серия Professional · Milano, Tokyo Plus · 2.0–6.0 ATA · Обученный оператор и требования к площадке" },
-          { icon: "nexus", label: "Серия Clinical · Geneva · 2.0–6.0 ATA · Лицензированное медицинское учреждение" },
+          { icon: "nexus", label: "Серия Clinical · Geneva · 3.0–6.0 ATA · Лицензированное медицинское учреждение" },
         ]
       },
       indications_teaser: {
@@ -2554,7 +2554,7 @@ const TRANSLATIONS = {
       overview_text: "Высоконапорная, многоместная институциональная версия Tokyo. Разработана для клиник, больниц и велнес-центров с поэтапной вместимостью от 2 до 4 человек.",
       specs: [
         { label: "Вместимость", value: "2–4 человека (поэтапно)" },
-        { label: "Диапазон давления", value: "2.0 – 6.0 ATA" },
+        { label: "Диапазон давления", value: "2.0 – 3.0 ATA" },
         { label: "Чистота кислорода", value: "93–95%" },
         { label: "Безопасность", value: "Система аварийных клапанов" },
         { label: "Управление", value: "Двойная система управления" },
@@ -2582,7 +2582,7 @@ const TRANSLATIONS = {
       overview_text: "Камера госпитального класса большой вместимости для медицинских учреждений. Модульная конструкция и продвинутые системы мониторинга отвечают потребностям самых загруженных лечебных центров.",
       specs: [
         { label: "Вместимость", value: "6+ человек (сидя)" },
-        { label: "Диапазон давления", value: "2.0 – 6.0 ATA" },
+        { label: "Диапазон давления", value: "3.0 – 6.0 ATA" },
         { label: "Чистота кислорода", value: "93–95%" },
         { label: "Безопасность", value: "Система аварийных клапанов" },
         { label: "Конструкция", value: "Госпитальный класс" },
@@ -2652,7 +2652,7 @@ const TRANSLATIONS = {
       "duo-plus": [
         { q: "Чем Tokyo Plus отличается от Tokyo?", a: "Tokyo Plus — это институциональная версия Tokyo с более высоким давлением и ступенчатой вместимостью от 2 до 4 человек." },
         { q: "Для каких учреждений подходит Tokyo Plus?", a: "Она разработана для институциональных пространств — клиник, больниц и велнес-центров." },
-        { q: "В каком диапазоне давления работает Tokyo Plus?", a: "2.0–6.0 ATA — подходит для институционального использования с более высоким давлением." },
+        { q: "В каком диапазоне давления работает Tokyo Plus?", a: "2.0–3.0 ATA — подходит для институционального использования с более высоким давлением." },
         { q: "Как определяется количество сидений в Tokyo Plus?", a: "На шаге выбора количества сидений в конфигураторе можно установить от 2 до 4 мест; цена обновляется соответственно." },
         { q: "Как получить расчёт стоимости на Tokyo Plus?", a: "Выберите Tokyo Plus в конфигураторе, укажите количество сидений и цвета, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
       ],
@@ -2666,7 +2666,7 @@ const TRANSLATIONS = {
       "nexus": [
         { q: "На сколько человек рассчитан Geneva?", a: "Geneva — капсула большой вместимости больничного класса, начиная от 6 человек с шагом 6/8/10/12." },
         { q: "Для каких учреждений подходит Geneva?", a: "Она разработана для больниц и крупных медицинских центров с высокой терапевтической нагрузкой; модульная конструкция готова к будущему расширению." },
-        { q: "В каком диапазоне давления работает Geneva?", a: "2.0–6.0 ATA, чистота кислорода 93–95%." },
+        { q: "В каком диапазоне давления работает Geneva?", a: "3.0–6.0 ATA, чистота кислорода 93–95%." },
         { q: "Какое оборудование безопасности установлено в Geneva?", a: "В стандартную комплектацию входит аварийная клапанная система; конструкция больничного класса рассчитана на непрерывную интенсивную эксплуатацию." },
         { q: "Как получить расчёт стоимости на Geneva?", a: "Свяжитесь с нами и укажите нужную вместимость (6/8/10/12 человек) — мы подготовим техническую документацию и предложение для вашего учреждения." }
       ]
@@ -3611,7 +3611,7 @@ const TRANSLATIONS = {
       overview_text: "النسخة المؤسسية عالية الضغط ومتعددة الأشخاص من Tokyo. صُمِّمت للعيادات والمستشفيات ومراكز العافية بسعة مقاعد متدرجة من 2 إلى 4 أشخاص.",
       specs: [
         { label: "السعة", value: "2–4 أشخاص (متدرجة)" },
-        { label: "نطاق الضغط", value: "2.0 – 6.0 ATA" },
+        { label: "نطاق الضغط", value: "2.0 – 3.0 ATA" },
         { label: "نقاء الأكسجين", value: "93–95%" },
         { label: "السلامة", value: "نظام صمام الطوارئ" },
         { label: "التحكم", value: "نظام تحكم مزدوج" },
@@ -3639,7 +3639,7 @@ const TRANSLATIONS = {
       overview_text: "غرفة بمستوى المستشفيات وسعة كبيرة للمؤسسات الطبية. يلبي تصميمها المعياري وأنظمة المراقبة المتقدمة احتياجات أكثر مراكز العلاج ازدحاماً.",
       specs: [
         { label: "السعة", value: "6+ أشخاص (جلوس)" },
-        { label: "نطاق الضغط", value: "2.0 – 6.0 ATA" },
+        { label: "نطاق الضغط", value: "3.0 – 6.0 ATA" },
         { label: "نقاء الأكسجين", value: "93–95%" },
         { label: "السلامة", value: "نظام صمامات الطوارئ" },
         { label: "البنية", value: "بمستوى المستشفيات" },
@@ -3709,7 +3709,7 @@ const TRANSLATIONS = {
       "duo-plus": [
         { q: "ما الفرق بين طوكيو بلس (Tokyo Plus) وطوكيو؟", a: "طوكيو بلس هي النسخة المؤسسية الأعلى ضغطًا من طوكيو، بسعة مقاعد متدرجة من 2 إلى 4 أشخاص." },
         { q: "لأي بيئات استخدام تناسب طوكيو بلس؟", a: "صُممت للبيئات المؤسسية مثل العيادات والمستشفيات ومراكز العافية." },
-        { q: "ما نطاق الضغط الذي تعمل به طوكيو بلس؟", a: "تعمل ضمن نطاق 2.0–6.0 ATA، مناسب للاستخدام المؤسسي عالي الضغط." },
+        { q: "ما نطاق الضغط الذي تعمل به طوكيو بلس؟", a: "تعمل ضمن نطاق 2.0–3.0 ATA، مناسب للاستخدام المؤسسي عالي الضغط." },
         { q: "كيف يُحدَّد عدد المقاعد في طوكيو بلس؟", a: "استخدم خطوة عدد المقاعد في أداة التكوين لضبط العدد بين 2 و4 مقاعد؛ يتحدث السعر تبعًا لذلك." },
         { q: "كيف أحصل على عرض سعر لطوكيو بلس؟", a: "اختر طوكيو بلس في أداة التكوين وحدد عدد المقاعد والألوان لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
       ],
@@ -3723,7 +3723,7 @@ const TRANSLATIONS = {
       "nexus": [
         { q: "كم شخصًا تتسع له جنيف (Geneva)؟", a: "جنيف غرفة كبيرة السعة بمعايير المستشفيات، تبدأ من 6 أشخاص وتتدرج بسعة 6/8/10/12." },
         { q: "لأي منشآت تناسب جنيف؟", a: "صُممت للمستشفيات والمراكز الصحية الكبيرة ذات الحجم العلاجي المرتفع؛ وبنيتها المعيارية جاهزة للتوسع المستقبلي." },
-        { q: "ما نطاق الضغط الذي تعمل به جنيف؟", a: "تعمل ضمن نطاق 2.0–6.0 ATA، بنقاء أكسجين 93–95%." },
+        { q: "ما نطاق الضغط الذي تعمل به جنيف؟", a: "تعمل ضمن نطاق 3.0–6.0 ATA، بنقاء أكسجين 93–95%." },
         { q: "ما تجهيزات السلامة في جنيف؟", a: "يأتي نظام صمام الطوارئ كمعيار قياسي؛ وبنيتها بمعايير المستشفيات مصممة هندسيًا للاستخدام المستمر والمكثف." },
         { q: "كيف أحصل على عرض سعر لجنيف؟", a: "تواصل معنا وحدد احتياجك من السعة (6/8/10/12 شخصًا)، وسنُعد لك مخططًا فنيًا وعرض سعر مخصصًا لمنشأتك." }
       ]
@@ -4419,7 +4419,7 @@ const TRANSLATIONS = {
         items: [
           { icon: "care", label: "Serie Wellness · Oslo, Dubai, Tokyo · 1,3–1,5 ATA · Uso doméstico, spa y hotel" },
           { icon: "fourSeat", label: "Serie Professional · Milano, Tokyo Plus · 2,0–6,0 ATA · Operador formado y requisitos de instalación" },
-          { icon: "nexus", label: "Serie Clinical · Geneva · 2,0–6,0 ATA · Centro sanitario autorizado" },
+          { icon: "nexus", label: "Serie Clinical · Geneva · 3,0–6,0 ATA · Centro sanitario autorizado" },
         ]
       },
       indications_teaser: {
@@ -4677,7 +4677,7 @@ const TRANSLATIONS = {
       overview_text: "La versión institucional de alta presión y multipersona de Tokyo. Diseñada para clínicas, hospitales y centros de bienestar, con capacidad de asientos escalonada de 2 a 4 personas.",
       specs: [
         { label: "Capacidad", value: "2–4 personas (escalonada)" },
-        { label: "Rango de Presión", value: "2.0 – 6.0 ATA" },
+        { label: "Rango de Presión", value: "2.0 – 3.0 ATA" },
         { label: "Pureza de Oxígeno", value: "93–95%" },
         { label: "Seguridad", value: "Sistema de válvula de emergencia" },
         { label: "Control", value: "Sistema de control dual" },
@@ -4705,7 +4705,7 @@ const TRANSLATIONS = {
       overview_text: "Una cámara de nivel hospitalario y gran capacidad para instituciones médicas. Su diseño modular y sus sistemas de monitorización avanzados cubren las necesidades de los centros de tratamiento con mayor actividad.",
       specs: [
         { label: "Capacidad", value: "6+ personas (sentadas)" },
-        { label: "Rango de Presión", value: "2.0 – 6.0 ATA" },
+        { label: "Rango de Presión", value: "3.0 – 6.0 ATA" },
         { label: "Pureza de Oxígeno", value: "93–95%" },
         { label: "Seguridad", value: "Sistema de válvula de emergencia" },
         { label: "Construcción", value: "Nivel hospitalario" },
@@ -4775,21 +4775,21 @@ const TRANSLATIONS = {
       "duo-plus": [
         { q: "¿En qué se diferencia el Tokyo Plus del Tokyo?", a: "El Tokyo Plus es la versión institucional de mayor presión del Tokyo, con capacidad de asientos escalonada de 2 a 4 personas." },
         { q: "¿Para qué entornos es adecuado el Tokyo Plus?", a: "Está diseñado para entornos institucionales como clínicas, hospitales y centros de bienestar." },
-        { q: "¿En qué rango de presión funciona el Tokyo Plus?", a: "Entre 2.5 y 6.0 ATA, adecuado para uso institucional de mayor presión." },
+        { q: "¿En qué rango de presión funciona el Tokyo Plus?", a: "Entre 2.0 y 3.0 ATA, adecuado para uso institucional de mayor presión." },
         { q: "¿Cómo se determina el número de asientos del Tokyo Plus?", a: "Usa el paso de número de asientos en el configurador para ajustar entre 2 y 4 plazas; el precio se actualiza en consecuencia." },
         { q: "¿Cómo obtengo un presupuesto para el Tokyo Plus?", a: "Selecciona el Tokyo Plus en el configurador, define el número de asientos y los colores, y ve una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
       ],
       "quad-cube": [
         { q: "¿Para cuántas personas es el Milano y cómo es su diseño?", a: "El Milano es una cámara premium para cuatro personas, sentado, con un amplio interior en forma de cubo." },
         { q: "¿Con qué materiales se acaba el interior del Milano?", a: "Incluye interior de cuero acolchado e iluminación LED ambiental; puedes elegir los colores de las paredes interiores y del asiento por separado de nuestra paleta estándar." },
-        { q: "¿En qué rango de presión funciona el Milano?", a: "Entre 2.5 y 6.0 ATA, adecuado para uso institucional." },
+        { q: "¿En qué rango de presión funciona el Milano?", a: "Entre 2.0 y 6.0 ATA, adecuado para uso institucional." },
         { q: "¿Cómo funciona el sistema de control del Milano?", a: "Incluye una unidad de control independiente, adecuada para el control por parte de un operador en clínicas y centros de bienestar." },
         { q: "¿Cómo obtengo un presupuesto para el Milano?", a: "Selecciona el Milano en el configurador, elige los colores interiores y exteriores, y ve una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
       ],
       "nexus": [
         { q: "¿Para cuántas personas es el Geneva?", a: "El Geneva es una cámara de gran capacidad de grado hospitalario que empieza en 6 personas y escala en niveles de 6/8/10/12." },
         { q: "¿Para qué instalaciones es adecuado el Geneva?", a: "Está diseñado para hospitales y grandes centros de salud con alto volumen terapéutico; su estructura modular está lista para futuras ampliaciones." },
-        { q: "¿En qué rango de presión funciona el Geneva?", a: "Entre 2.5 y 6.0 ATA, con una pureza de oxígeno del 93–95%." },
+        { q: "¿En qué rango de presión funciona el Geneva?", a: "Entre 3.0 y 6.0 ATA, con una pureza de oxígeno del 93–95%." },
         { q: "¿Qué equipamiento de seguridad tiene el Geneva?", a: "Incluye de serie un sistema de válvula de emergencia; su construcción de grado hospitalario está diseñada para un uso continuo y de alto volumen." },
         { q: "¿Cómo obtengo un presupuesto para el Geneva?", a: "Contáctanos indicando la capacidad que necesitas (6/8/10/12 personas) y prepararemos un plano técnico y un presupuesto a medida para tu institución." }
       ]
@@ -5485,7 +5485,7 @@ const TRANSLATIONS = {
         items: [
           { icon: "care", label: "Série Wellness · Oslo, Dubai, Tokyo · 1,3–1,5 ATA · Uso doméstico, spa e hotel" },
           { icon: "fourSeat", label: "Série Professional · Milano, Tokyo Plus · 2,0–6,0 ATA · Operador formado e requisitos de instalação" },
-          { icon: "nexus", label: "Série Clinical · Geneva · 2,0–6,0 ATA · Unidade de saúde licenciada" },
+          { icon: "nexus", label: "Série Clinical · Geneva · 3,0–6,0 ATA · Unidade de saúde licenciada" },
         ]
       },
       indications_teaser: {
@@ -5743,7 +5743,7 @@ const TRANSLATIONS = {
       overview_text: "A versão institucional de alta pressão e multipessoa do Tokyo. Projetada para clínicas, hospitais e centros de bem-estar, com capacidade de assentos escalonada de 2 a 4 pessoas.",
       specs: [
         { label: "Capacidade", value: "2–4 pessoas (escalonada)" },
-        { label: "Faixa de Pressão", value: "2.0 – 6.0 ATA" },
+        { label: "Faixa de Pressão", value: "2.0 – 3.0 ATA" },
         { label: "Pureza do Oxigênio", value: "93–95%" },
         { label: "Segurança", value: "Sistema de válvula de emergência" },
         { label: "Controle", value: "Sistema de controle duplo" },
@@ -5771,7 +5771,7 @@ const TRANSLATIONS = {
       overview_text: "Uma câmara de nível hospitalar e grande capacidade para instituições médicas. Seu design modular e sistemas avançados de monitoramento atendem às necessidades dos centros de tratamento mais movimentados.",
       specs: [
         { label: "Capacidade", value: "6+ pessoas (sentado)" },
-        { label: "Faixa de Pressão", value: "2.0 – 6.0 ATA" },
+        { label: "Faixa de Pressão", value: "3.0 – 6.0 ATA" },
         { label: "Pureza de Oxigênio", value: "93–95%" },
         { label: "Segurança", value: "Sistema de válvula de emergência" },
         { label: "Construção", value: "Nível hospitalar" },
@@ -5841,21 +5841,21 @@ const TRANSLATIONS = {
       "duo-plus": [
         { q: "Qual a diferença entre o Tokyo Plus e o Tokyo?", a: "O Tokyo Plus é a versão institucional de maior pressão do Tokyo, com capacidade de assentos escalonada de 2 a 4 pessoas." },
         { q: "Para quais ambientes o Tokyo Plus é adequado?", a: "Foi projetado para ambientes institucionais como clínicas, hospitais e centros de bem-estar." },
-        { q: "Em qual faixa de pressão o Tokyo Plus opera?", a: "Entre 2,5 e 6,0 ATA, adequado para uso institucional de maior pressão." },
+        { q: "Em qual faixa de pressão o Tokyo Plus opera?", a: "Entre 2,0 e 3,0 ATA, adequado para uso institucional de maior pressão." },
         { q: "Como é determinado o número de assentos do Tokyo Plus?", a: "Use a etapa de número de assentos no configurador para ajustar entre 2 e 4 lugares; o preço é atualizado de acordo." },
         { q: "Como faço para obter um orçamento para o Tokyo Plus?", a: "Selecione o Tokyo Plus no configurador, defina o número de assentos e as cores, e veja uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
       ],
       "quad-cube": [
         { q: "Para quantas pessoas é o Milano e como é seu design?", a: "O Milano é uma câmara premium para quatro pessoas, sentado, com um amplo interior em formato de cubo." },
         { q: "Com quais materiais o interior do Milano é acabado?", a: "Vem com interior em couro acolchoado e iluminação LED ambiente; você pode escolher as cores das paredes internas e do assento separadamente em nossa paleta padrão." },
-        { q: "Em qual faixa de pressão o Milano opera?", a: "Entre 2,5 e 6,0 ATA, adequado para uso institucional." },
+        { q: "Em qual faixa de pressão o Milano opera?", a: "Entre 2,0 e 6,0 ATA, adequado para uso institucional." },
         { q: "Como funciona o sistema de controle do Milano?", a: "Vem com uma unidade de controle independente, adequada para controle por operador em clínicas e centros de bem-estar." },
         { q: "Como faço para obter um orçamento para o Milano?", a: "Selecione o Milano no configurador, escolha as cores internas e externas, e veja uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
       ],
       "nexus": [
         { q: "Para quantas pessoas é o Geneva?", a: "O Geneva é uma câmara de grande capacidade e grau hospitalar, que começa em 6 pessoas e escala em níveis de 6/8/10/12." },
         { q: "Para quais instalações o Geneva é adequado?", a: "Foi projetado para hospitais e grandes centros de saúde com alto volume terapêutico; sua estrutura modular está pronta para expansão futura." },
-        { q: "Em qual faixa de pressão o Geneva opera?", a: "Entre 2,5 e 6,0 ATA, com pureza de oxigênio de 93–95%." },
+        { q: "Em qual faixa de pressão o Geneva opera?", a: "Entre 3,0 e 6,0 ATA, com pureza de oxigênio de 93–95%." },
         { q: "Que equipamento de segurança o Geneva possui?", a: "Um sistema de válvula de emergência vem de série; sua construção de grau hospitalar é projetada para uso contínuo e de alto volume." },
         { q: "Como faço para obter um orçamento para o Geneva?", a: "Entre em contato informando a capacidade necessária (6/8/10/12 pessoas) e prepararemos um desenho técnico e um orçamento sob medida para sua instituição." }
       ]
@@ -6551,7 +6551,7 @@ const TRANSLATIONS = {
         items: [
           { icon: "care", label: "Wellness-Serie · Oslo, Dubai, Tokyo · 1,3–1,5 ATA · Privat, Spa und Hotel" },
           { icon: "fourSeat", label: "Professional-Serie · Milano, Tokyo Plus · 2,0–6,0 ATA · Geschulter Bediener und Standortanforderungen" },
-          { icon: "nexus", label: "Clinical-Serie · Geneva · 2,0–6,0 ATA · Lizenzierte Gesundheitseinrichtung" },
+          { icon: "nexus", label: "Clinical-Serie · Geneva · 3,0–6,0 ATA · Lizenzierte Gesundheitseinrichtung" },
         ]
       },
       indications_teaser: {
@@ -6809,7 +6809,7 @@ const TRANSLATIONS = {
       overview_text: "Die druckstarke Mehrpersonen-Institutionsversion von Tokyo. Entwickelt für Kliniken, Krankenhäuser und Wellnesszentren mit gestaffelter Sitzkapazität von 2 bis 4 Personen.",
       specs: [
         { label: "Kapazität", value: "2–4 Personen (gestaffelt)" },
-        { label: "Druckbereich", value: "2,0 – 6,0 ATA" },
+        { label: "Druckbereich", value: "2,0 – 3,0 ATA" },
         { label: "Sauerstoffreinheit", value: "93–95%" },
         { label: "Sicherheit", value: "Notfall-Ventilsystem" },
         { label: "Steuerung", value: "Doppeltes Steuerungssystem" },
@@ -6837,7 +6837,7 @@ const TRANSLATIONS = {
       overview_text: "Eine großvolumige Kammer in Krankenhausqualität für medizinische Einrichtungen. Ihr modulares Design und fortschrittliche Überwachungssysteme erfüllen die Anforderungen der am stärksten frequentierten Behandlungszentren.",
       specs: [
         { label: "Kapazität", value: "6+ Personen (sitzend)" },
-        { label: "Druckbereich", value: "2.0 – 6.0 ATA" },
+        { label: "Druckbereich", value: "3.0 – 6.0 ATA" },
         { label: "Sauerstoffreinheit", value: "93–95%" },
         { label: "Sicherheit", value: "Notfallventilsystem" },
         { label: "Bauweise", value: "Krankenhausqualität" },
@@ -6907,21 +6907,21 @@ const TRANSLATIONS = {
       "duo-plus": [
         { q: "Worin unterscheidet sich der Tokyo Plus vom Tokyo?", a: "Der Tokyo Plus ist die institutionelle Version des Tokyo mit höherem Druck und gestufter Sitzkapazität von 2 bis 4 Personen." },
         { q: "Für welche Einsatzbereiche eignet sich der Tokyo Plus?", a: "Er ist für institutionelle Umgebungen wie Kliniken, Krankenhäuser und Wellnesszentren konzipiert." },
-        { q: "In welchem Druckbereich arbeitet der Tokyo Plus?", a: "Zwischen 2,5 und 6,0 ATA, geeignet für institutionellen Einsatz mit höherem Druck." },
+        { q: "In welchem Druckbereich arbeitet der Tokyo Plus?", a: "Zwischen 2,0 und 3,0 ATA, geeignet für institutionellen Einsatz mit höherem Druck." },
         { q: "Wie wird die Sitzanzahl beim Tokyo Plus festgelegt?", a: "Nutzen Sie den Schritt zur Sitzanzahl im Konfigurator, um zwischen 2 und 4 Plätzen einzustellen; der Preis aktualisiert sich entsprechend." },
         { q: "Wie erhalte ich ein Angebot für den Tokyo Plus?", a: "Wählen Sie den Tokyo Plus im Konfigurator, legen Sie Sitzanzahl und Farben fest und sehen Sie sofort eine Preisschätzung; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
       ],
       "quad-cube": [
         { q: "Für wie viele Personen ist der Milano ausgelegt und wie ist sein Design?", a: "Der Milano ist eine Premium-Kammer für vier Personen, sitzend, mit geräumigem würfelförmigem Innenraum." },
         { q: "Mit welchen Materialien ist der Innenraum des Milano ausgestattet?", a: "Er verfügt über gestepptes Lederinterieur und LED-Ambientebeleuchtung; Innenwand- und Sitzfarben können Sie separat aus unserer Standardpalette wählen." },
-        { q: "In welchem Druckbereich arbeitet der Milano?", a: "Zwischen 2,5 und 6,0 ATA, geeignet für institutionellen Einsatz." },
+        { q: "In welchem Druckbereich arbeitet der Milano?", a: "Zwischen 2,0 und 6,0 ATA, geeignet für institutionellen Einsatz." },
         { q: "Wie funktioniert das Bediensystem des Milano?", a: "Er verfügt über eine unabhängige Bedieneinheit, geeignet für die Bedienung durch Personal in Kliniken und Wellnesszentren." },
         { q: "Wie erhalte ich ein Angebot für den Milano?", a: "Wählen Sie den Milano im Konfigurator, legen Sie Innen- und Außenfarben fest und sehen Sie sofort eine Preisschätzung; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
       ],
       "nexus": [
         { q: "Für wie viele Personen ist der Geneva ausgelegt?", a: "Der Geneva ist eine großvolumige Kammer im Krankenhausstandard, die bei 6 Personen beginnt und in Stufen von 6/8/10/12 skaliert." },
         { q: "Für welche Einrichtungen eignet sich der Geneva?", a: "Er ist für Krankenhäuser und große Gesundheitszentren mit hohem Therapievolumen konzipiert; die modulare Struktur ist für künftige Erweiterungen vorbereitet." },
-        { q: "In welchem Druckbereich arbeitet der Geneva?", a: "Zwischen 2,5 und 6,0 ATA, bei 93–95 % Sauerstoffreinheit." },
+        { q: "In welchem Druckbereich arbeitet der Geneva?", a: "Zwischen 3,0 und 6,0 ATA, bei 93–95 % Sauerstoffreinheit." },
         { q: "Welche Sicherheitsausstattung hat der Geneva?", a: "Ein Notfall-Ventilsystem gehört zur Standardausstattung; die Konstruktion im Krankenhausstandard ist für den durchgehenden Intensivbetrieb ausgelegt." },
         { q: "Wie erhalte ich ein Angebot für den Geneva?", a: "Kontaktieren Sie uns mit Ihrem Kapazitätsbedarf (6/8/10/12 Personen) — wir erstellen eine technische Zeichnung und ein maßgeschneidertes Angebot für Ihre Einrichtung." }
       ]

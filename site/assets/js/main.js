@@ -186,13 +186,17 @@
   /* v13 fiyat revizyonu: Ev tipi modellerde basınç sadece 1.5/2.0 ATA (ücretsiz);
      kurumsal modellerde 2.0/2.5/3.0/6.0 ATA (ücretsiz) — basınç kademelerine artık fiyat
      eklenmiyor. Eski Quad varyantı kaldırıldı (Quad-Cube tek 4 kişilik model). */
+  /* Basınç kademeleri artık fiyat farkı taşıyor (2026-09-23 fiyat revizyonu).
+     Her modelin ilk kademesi STANDART, yani farkı 0; üstü fiyat ekler.
+     Sunulmayan kademeler listeden çıkarıldı: Tokyo Plus'ta 6.0 ATA, Geneva'da
+     2.0 ve 2.5 ATA yok — Geneva 3.0 ATA'dan başlıyor. */
   const MODEL_PRICING = {
     "solo-lounge": { base: 29900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 0 }] },
-    solo: { base: 69900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 0 }] },
-    duo: { base: 119900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 0 }] },
-    "duo-plus": { base: 149900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
-    "quad-cube": { base: 224900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] },
-    nexus: { base: 259900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 0 }, { ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 0 }] }
+    solo: { base: 69900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 4000 }] },
+    duo: { base: 119900, tiers: [{ ata: "1.3 ATA", price: 0 }, { ata: "1.5 ATA", price: 4000 }] },
+    "duo-plus": { base: 149900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 4000 }, { ata: "3.0 ATA", price: 8000 }] },
+    "quad-cube": { base: 224900, tiers: [{ ata: "2.0 ATA", price: 0 }, { ata: "2.5 ATA", price: 4000 }, { ata: "3.0 ATA", price: 12000 }, { ata: "6.0 ATA", price: 25000 }] },
+    nexus: { base: 259900, tiers: [{ ata: "3.0 ATA", price: 0 }, { ata: "6.0 ATA", price: 30000 }] }
   };
   const ADDON_PRICING = { massage: 2900, leather: 2100, entertainment: 1650, finish: 900, warranty: 2500, playstation: 1900 };
   const STYLE_PRICING = { solid: 0, glass: 3500, premium: 7500 };
@@ -202,7 +206,7 @@
   function styleAllowedFor(modelId, styleId) {
     return styleId !== "glass" || GLASS_STYLE_MODELS.includes(modelId);
   }
-  const PRESSURE_RANGE = { "solo-lounge": "1.3 – 1.5 ATA", solo: "1.3 – 1.5 ATA", duo: "1.3 – 1.5 ATA", "duo-plus": "2.0 – 6.0 ATA", "quad-cube": "2.0 – 6.0 ATA", nexus: "2.0 – 6.0 ATA" };
+  const PRESSURE_RANGE = { "solo-lounge": "1.3 – 1.5 ATA", solo: "1.3 – 1.5 ATA", duo: "1.3 – 1.5 ATA", "duo-plus": "2.0 – 3.0 ATA", "quad-cube": "2.0 – 6.0 ATA", nexus: "3.0 – 6.0 ATA" };
 
   /* Kademeli koltuk fiyatlaması: Nexus ve Duo Plus için taban fiyat koltuk sayısına göre
      değişir (eklenen her koltuk için ayrı ücret yerine sabit fiyat kademeleri). */
@@ -1848,9 +1852,16 @@
   function nexusEntertainmentPerSeatEur() {
     return NEXUS_ENTERTAINMENT_PER_SEAT_USD / (exchangeRates.USD || 1.09);
   }
+  /* Genişletilmiş garanti modele göre değişir: büyük klinik kabinlerde kapsam ve
+     servis yükü farklı (Milano 5.000 €, Geneva 7.500 €). Diğer modellerde
+     ADDON_PRICING'deki taban değer geçerli. */
+  const WARRANTY_BY_MODEL = { "quad-cube": 5000, nexus: 7500 };
   function addonPriceFor(id) {
     if (id === "entertainment" && configState.model === "nexus") {
       return nexusEntertainmentPerSeatEur() * configState.nexusSeats;
+    }
+    if (id === "warranty" && WARRANTY_BY_MODEL[configState.model] !== undefined) {
+      return WARRANTY_BY_MODEL[configState.model];
     }
     return ADDON_PRICING[id] || 0;
   }
@@ -3943,13 +3954,16 @@
       ]
     }
   };
+  /* Asistanın dili sayfanın KENDİ diline bağlı (html lang), klasör yoluna değil.
+     Neredeyse her sayfada ikisi aynı; ayrıştıkları tek yer kök dizindeki
+     catalog.html — İngilizce bir sayfa ama /en/ altında değil. Yol tabanlı
+     okumada orada Türkçe "Selin'e soru sor" çıkıyordu. */
   function getAssistantLangPrefix() {
-    const m = /^\/(en|ru|ar|de|es|pt)\//.exec(window.location.pathname);
-    return m ? "/" + m[1] + "/" : "/";
+    const lang = currentPageLang();
+    return lang && lang !== "tr" ? "/" + lang + "/" : "/";
   }
   function getAssistantLocale() {
-    const prefix = getAssistantLangPrefix();
-    const code = prefix === "/" ? "tr" : prefix.replace(/\//g, "");
+    const code = currentPageLang() || "tr";
     return ASSISTANT_I18N[code] ? code : "en";
   }
   function matchAssistantTopic(dict, query) {
