@@ -42,6 +42,8 @@ const TRANSLATIONS = {
         company_title: "Kurumsal",
         contact_title: "İletişim",
         rights: "Tüm hakları saklıdır.",
+        privacy: "Gizlilik Politikası",
+        terms: "Kullanım Şartları",
         wellness_disclaimer: "Wellness serisi kabinler tıbbi cihaz değildir; hastalık teşhis, tedavi veya önleme amaçlı kullanılmaz. Klinik uygulamalar lisanslı sağlık kuruluşlarında hekim gözetiminde yürütülür.",
         membership_note: "Almita Group iştirakidir."
       },
@@ -130,7 +132,7 @@ const TRANSLATIONS = {
         cta: "Serileri Karşılaştır",
         items: [
           { icon: "care", label: "Wellness Serisi · Oslo, Dubai, Tokyo · 1.3–1.5 ATA · Ev, spa ve otel kullanımı" },
-          { icon: "fourSeat", label: "Professional Serisi · Milano, Tokyo Plus · 2.0–6.0 ATA · Eğitimli operatör ve saha şartı" },
+          { icon: "fourSeat", label: "Professional Serisi · Tokyo Plus 2.0–3.0 ATA, Milano 2.0–6.0 ATA · Eğitimli operatör ve saha şartı" },
           { icon: "nexus", label: "Clinical Serisi · Geneva · 3.0–6.0 ATA · Lisanslı sağlık tesisi" },
         ]
       },
@@ -1140,6 +1142,8 @@ const TRANSLATIONS = {
         company_title: "Company",
         contact_title: "Contact",
         rights: "All rights reserved.",
+        privacy: "Privacy Policy",
+        terms: "Terms of Use",
         wellness_disclaimer: "Wellness Series chambers are not medical devices and are not intended to diagnose, treat, cure or prevent any disease. Clinical applications are delivered in licensed healthcare facilities under physician supervision.",
         membership_note: "is a member of Almita Group."
       },
@@ -1228,7 +1232,7 @@ const TRANSLATIONS = {
         cta: "Compare the Series",
         items: [
           { icon: "care", label: "Wellness Series · Oslo, Dubai, Tokyo · 1.3–1.5 ATA · Home, spa and hotel use" },
-          { icon: "fourSeat", label: "Professional Series · Milano, Tokyo Plus · 2.0–6.0 ATA · Trained operator and site requirements" },
+          { icon: "fourSeat", label: "Professional Series · Tokyo Plus 2.0–3.0 ATA, Milano 2.0–6.0 ATA · Trained operator and site requirements" },
           { icon: "nexus", label: "Clinical Series · Geneva · 3.0–6.0 ATA · Licensed healthcare facility" },
         ]
       },
@@ -2207,6 +2211,8 @@ const TRANSLATIONS = {
         company_title: "Компания",
         contact_title: "Контакты",
         rights: "Все права защищены.",
+        privacy: "Политика конфиденциальности",
+        terms: "Условия использования",
         wellness_disclaimer: "Камеры серии Wellness не являются медицинскими изделиями и не предназначены для диагностики, лечения или профилактики заболеваний. Клиническое применение осуществляется в лицензированных медицинских учреждениях под наблюдением врача.",
         membership_note: "входит в состав Almita Group."
       },
@@ -2295,7 +2301,7 @@ const TRANSLATIONS = {
         cta: "Сравнить серии",
         items: [
           { icon: "care", label: "Серия Wellness · Oslo, Dubai, Tokyo · 1.3–1.5 ATA · Дом, спа и отели" },
-          { icon: "fourSeat", label: "Серия Professional · Milano, Tokyo Plus · 2.0–6.0 ATA · Обученный оператор и требования к площадке" },
+          { icon: "fourSeat", label: "Серия Professional · Tokyo Plus 2.0–3.0 ATA, Milano 2.0–6.0 ATA · Обученный оператор и требования к площадке" },
           { icon: "nexus", label: "Серия Clinical · Geneva · 3.0–6.0 ATA · Лицензированное медицинское учреждение" },
         ]
       },
@@ -3274,6 +3280,8 @@ const TRANSLATIONS = {
         company_title: "الشركة",
         contact_title: "اتصل بنا",
         rights: "جميع الحقوق محفوظة.",
+        privacy: "سياسة الخصوصية",
+        terms: "شروط الاستخدام",
         wellness_disclaimer: "غرف سلسلة Wellness ليست أجهزة طبية ولا تُستخدم لتشخيص أي مرض أو علاجه أو الوقاية منه. أما التطبيقات السريرية فتُقدَّم في منشآت صحية مرخّصة تحت إشراف طبي.",
         membership_note: "عضو في Almita Group."
       },
@@ -3362,8 +3370,8 @@ const TRANSLATIONS = {
         cta: "قارن بين السلاسل",
         items: [
           { icon: "care", label: "سلسلة Wellness · Oslo وDubai وTokyo · ١٫٣–١٫٥ ATA · للمنزل والمنتجعات والفنادق" },
-          { icon: "fourSeat", label: "سلسلة Professional · Milano وTokyo Plus · ٢٫٠–٦٫٠ ATA · مشغّل مدرَّب ومتطلبات موقع" },
-          { icon: "nexus", label: "سلسلة Clinical · Geneva · ٢٫٠–٦٫٠ ATA · منشأة صحية مرخّصة" },
+          { icon: "fourSeat", label: "سلسلة Professional · Tokyo Plus ٢٫٠–٣٫٠ ATA وMilano ٢٫٠–٦٫٠ ATA · مشغّل مدرَّب ومتطلبات موقع" },
+          { icon: "nexus", label: "سلسلة Clinical · Geneva · ٣٫٠–٦٫٠ ATA · منشأة صحية مرخّصة" },
         ]
       },
       indications_teaser: {
@@ -4330,6 +4338,8 @@ const TRANSLATIONS = {
         company_title: "Empresa",
         contact_title: "Contacto",
         rights: "Todos los derechos reservados.",
+        privacy: "Política de Privacidad",
+        terms: "Términos de Uso",
         wellness_disclaimer: "Las cámaras de la Serie Wellness no son productos sanitarios y no están destinadas a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Las aplicaciones clínicas se realizan en centros sanitarios autorizados bajo supervisión médica.",
         membership_note: "es miembro de Almita Group."
       },
@@ -4418,7 +4428,7 @@ const TRANSLATIONS = {
         cta: "Comparar las Series",
         items: [
           { icon: "care", label: "Serie Wellness · Oslo, Dubai, Tokyo · 1,3–1,5 ATA · Uso doméstico, spa y hotel" },
-          { icon: "fourSeat", label: "Serie Professional · Milano, Tokyo Plus · 2,0–6,0 ATA · Operador formado y requisitos de instalación" },
+          { icon: "fourSeat", label: "Serie Professional · Tokyo Plus 2,0–3,0 ATA, Milano 2,0–6,0 ATA · Operador formado y requisitos de instalación" },
           { icon: "nexus", label: "Serie Clinical · Geneva · 3,0–6,0 ATA · Centro sanitario autorizado" },
         ]
       },
@@ -5396,6 +5406,8 @@ const TRANSLATIONS = {
         company_title: "Empresa",
         contact_title: "Contato",
         rights: "Todos os direitos reservados.",
+        privacy: "Política de Privacidade",
+        terms: "Termos de Uso",
         wellness_disclaimer: "As câmaras da Série Wellness não são dispositivos médicos e não se destinam a diagnosticar, tratar, curar ou prevenir qualquer doença. As aplicações clínicas são realizadas em unidades de saúde licenciadas sob supervisão médica.",
         membership_note: "é membro do Almita Group."
       },
@@ -5484,7 +5496,7 @@ const TRANSLATIONS = {
         cta: "Comparar as Séries",
         items: [
           { icon: "care", label: "Série Wellness · Oslo, Dubai, Tokyo · 1,3–1,5 ATA · Uso doméstico, spa e hotel" },
-          { icon: "fourSeat", label: "Série Professional · Milano, Tokyo Plus · 2,0–6,0 ATA · Operador formado e requisitos de instalação" },
+          { icon: "fourSeat", label: "Série Professional · Tokyo Plus 2,0–3,0 ATA, Milano 2,0–6,0 ATA · Operador formado e requisitos de instalação" },
           { icon: "nexus", label: "Série Clinical · Geneva · 3,0–6,0 ATA · Unidade de saúde licenciada" },
         ]
       },
@@ -6462,6 +6474,8 @@ const TRANSLATIONS = {
         company_title: "Unternehmen",
         contact_title: "Kontakt",
         rights: "Alle Rechte vorbehalten.",
+        privacy: "Datenschutzerklärung",
+        terms: "Nutzungsbedingungen",
         wellness_disclaimer: "Kammern der Wellness-Serie sind keine Medizinprodukte und nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder zu verhüten. Klinische Anwendungen erfolgen in lizenzierten Gesundheitseinrichtungen unter ärztlicher Aufsicht.",
         membership_note: "ist ein Mitglied der Almita Group."
       },
@@ -6550,7 +6564,7 @@ const TRANSLATIONS = {
         cta: "Serien vergleichen",
         items: [
           { icon: "care", label: "Wellness-Serie · Oslo, Dubai, Tokyo · 1,3–1,5 ATA · Privat, Spa und Hotel" },
-          { icon: "fourSeat", label: "Professional-Serie · Milano, Tokyo Plus · 2,0–6,0 ATA · Geschulter Bediener und Standortanforderungen" },
+          { icon: "fourSeat", label: "Professional-Serie · Tokyo Plus 2,0–3,0 ATA, Milano 2,0–6,0 ATA · Geschulter Bediener und Standortanforderungen" },
           { icon: "nexus", label: "Clinical-Serie · Geneva · 3,0–6,0 ATA · Lizenzierte Gesundheitseinrichtung" },
         ]
       },
