@@ -697,9 +697,11 @@ const TRANSLATIONS = {
       header: { eyebrow: "BLOG", title: "Araştırmalar & Haberler", subtitle: "Hiperbarik oksijen terapisi alanındaki güncel bilimsel gelişmeler ve haberler." },
       source_label: "Kaynak:",
       min_read: "dk okuma",
+      read_more: "Yazının tamamı",
       disclaimer: "Bu yazılar, halka açık bilimsel yayın ve haber kaynaklarından derlenen özet bilgilerdir; tıbbi tavsiye niteliği taşımaz. Terapi kararları için mutlaka bir sağlık profesyoneline danışın.",
       posts: [
         {
+          slug: "hbot-kurucu-notu.html",
           date: "2024",
           tag: "Kurucu Notu",
           icon: "care",
@@ -713,6 +715,7 @@ const TRANSLATIONS = {
           author: "Mürsel Alkan"
         },
         {
+          slug: "hbot-ve-longevity.html",
           date: "2024",
           tag: "Longevity",
           icon: "antiaging",
@@ -725,6 +728,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
+          slug: "elit-sporcular-hiperbarik-oksijen.html",
           date: "2023",
           tag: "Spor",
           icon: "healthSync",
@@ -737,6 +741,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
+          slug: "ev-tipi-hiperbarik-kabin-rehberi.html",
           date: "2024",
           tag: "Rehber",
           icon: "oneSeat",
@@ -749,6 +754,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
+          slug: "kronik-yara-iyilesmesi-hbot.html",
           date: "2025",
           tag: "Araştırma",
           icon: "wound",
@@ -761,6 +767,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
+          slug: "sporcular-hiperbarik-oda.html",
           date: "2023",
           tag: "Spor Sağlığı",
           icon: "burn",
@@ -773,6 +780,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
+          slug: "diyabetik-ayak-ulseri-hbot.html",
           date: "2024",
           tag: "Klinik Kanıt",
           icon: "wound",
@@ -785,6 +793,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
+          slug: "ani-isitme-kaybi-hbot.html",
           date: "2024",
           tag: "Klinik Kanıt",
           icon: "ear",
@@ -797,6 +806,7 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
+          slug: "saglikta-iot-uzaktan-izleme.html",
           date: "2024",
           tag: "Teknoloji",
           icon: "connect",
@@ -809,6 +819,7 @@ const TRANSLATIONS = {
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
+          slug: "cok-kisilik-kabin-basinc-yonetimi.html",
           date: "2023",
           tag: "Klinik",
           icon: "guard",
@@ -821,6 +832,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
+          slug: "spor-kulupleri-hiperbarik-destek.html",
           date: "2024",
           tag: "Spor",
           icon: "healthSync",
@@ -833,6 +845,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
+          slug: "otel-hiperbarik-wellness-suit.html",
           date: "2025",
           tag: "Wellness",
           icon: "premium",
@@ -845,6 +858,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
+          slug: "yuksek-basinc-guvenlik-standartlari.html",
           date: "2024",
           tag: "Güvenlik",
           icon: "care",
@@ -868,8 +882,8 @@ const TRANSLATIONS = {
         eyebrow: "FARKIMIZ",
         title: "Neden Uzak Doğu Yerine Biz?",
         subtitle: "Bu pazarda fiyat kırarak değil, distribütörünü kazandırarak çalışıyoruz. Aradaki farkı somut maddelerle ortaya koyduk.",
-        c1_title: "Uzak Doğu'dan 25-40 Gün, Bizden 4-5 Gün",
-        c1_text: "İstanbul'dan Körfez'e, Türki Cumhuriyetler'e ve Avrupa'ya sevkiyat gün hesabıyla yapılır; konteyner beklemez. Yedek parça aynı hızla gider. Distribütör için bu, stoka para bağlamadan satış yapabilmek demektir.",
+        c1_title: "Uzak Doğu'dan 25-40 Gün, Bizden En Fazla 10 Gün",
+        c1_text: "Hazır cihaz tesisimizden çıktıktan sonra Körfez'e, Türki Cumhuriyetler'e ve Avrupa'ya teslim, ülke mesafesine göre en fazla 10 gün sürer; konteyner takvimi beklenmez. Yedek parça aynı hızla gider. Distribütör için bu, stoka para bağlamadan satış yapabilmek demektir.",
         c2_title: "Muhatabınız Markanın Kendisi",
         c2_text: "Arada ihracat şirketi ya da acente yok. Teknik soruda doğrudan kabini tasarlayan mühendisle, ticari konuda karar veren kişiyle konuşursunuz — üstelik aynı saat diliminde.",
         c3_title: "Konfigüratör: Satış Kapatma Aracınız",
@@ -1798,9 +1812,11 @@ const TRANSLATIONS = {
       header: { eyebrow: "BLOG", title: "Research & News", subtitle: "Recent scientific developments and news in hyperbaric oxygen therapy." },
       source_label: "Source:",
       min_read: "min read",
+      read_more: "Read the full article",
       disclaimer: "These posts are summaries compiled from publicly available scientific publications and news sources; they do not constitute medical advice. Always consult a healthcare professional for treatment decisions.",
       posts: [
         {
+          slug: "hbot-kurucu-notu.html",
           date: "2024",
           tag: "Founder's Note",
           icon: "care",
@@ -1814,6 +1830,7 @@ const TRANSLATIONS = {
           author: "Mürsel Alkan"
         },
         {
+          slug: "hbot-ve-longevity.html",
           date: "2024",
           tag: "Longevity",
           icon: "antiaging",
@@ -1826,6 +1843,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
+          slug: "elit-sporcular-hiperbarik-oksijen.html",
           date: "2023",
           tag: "Sports",
           icon: "healthSync",
@@ -1838,6 +1856,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
+          slug: "ev-tipi-hiperbarik-kabin-rehberi.html",
           date: "2024",
           tag: "Guide",
           icon: "oneSeat",
@@ -1850,6 +1869,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
+          slug: "kronik-yara-iyilesmesi-hbot.html",
           date: "2025",
           tag: "Research",
           icon: "wound",
@@ -1862,6 +1882,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
+          slug: "sporcular-hiperbarik-oda.html",
           date: "2023",
           tag: "Sports Health",
           icon: "burn",
@@ -1874,6 +1895,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
+          slug: "diyabetik-ayak-ulseri-hbot.html",
           date: "2024",
           tag: "Clinical Evidence",
           icon: "wound",
@@ -1886,6 +1908,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
+          slug: "ani-isitme-kaybi-hbot.html",
           date: "2024",
           tag: "Clinical Evidence",
           icon: "ear",
@@ -1898,6 +1921,7 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
+          slug: "saglikta-iot-uzaktan-izleme.html",
           date: "2024",
           tag: "Technology",
           icon: "connect",
@@ -1910,6 +1934,7 @@ const TRANSLATIONS = {
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
+          slug: "cok-kisilik-kabin-basinc-yonetimi.html",
           date: "2023",
           tag: "Clinical",
           icon: "guard",
@@ -1922,6 +1947,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
+          slug: "spor-kulupleri-hiperbarik-destek.html",
           date: "2024",
           tag: "Sports",
           icon: "healthSync",
@@ -1934,6 +1960,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
+          slug: "otel-hiperbarik-wellness-suit.html",
           date: "2025",
           tag: "Wellness",
           icon: "premium",
@@ -1946,6 +1973,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
+          slug: "yuksek-basinc-guvenlik-standartlari.html",
           date: "2024",
           tag: "Safety",
           icon: "care",
@@ -1967,7 +1995,7 @@ const TRANSLATIONS = {
       cta_models: "View Models",
       why: {
         eyebrow: "WHAT SETS US APART", title: "Why Us Instead of the Far East?", subtitle: "We don't compete by cutting price — we compete by making our distributor profitable. Here is the difference, in concrete terms.",
-        c1_title: "25–40 Days From the Far East. 4–5 From Us.", c1_text: "Shipments from Istanbul to the Gulf, the Turkic Republics and Europe are counted in days, not container schedules. Spare parts move just as fast. For a distributor that means selling without tying up capital in stock.",
+        c1_title: "25–40 Days From the Far East. Up to 10 From Us.", c1_text: "Once a ready unit leaves our facility, delivery to the Gulf, the Turkic Republics and Europe takes at most 10 days depending on distance — no waiting on container schedules. Spare parts move just as fast. For a distributor that means selling without tying up capital in stock.",
         c2_title: "You Deal With the Brand Owner", c2_text: "No export agency or middleman in between. On a technical question you speak to the engineer who designed the cabin; on commercial terms, to the person who decides — and in the same time zone.",
         c3_title: "The Configurator Is Your Closing Tool", c3_text: "Sitting with your client, you build the cabin in their colour and interior and hand them a priced quote in the same meeting. Where competitors show a PDF catalogue and say \"let me check the price,\" you close the sale.",
         c4_title: "Six Models, A Growing Range", c4_text: "From single-person cabins to a professional-class chamber — home, clinic, hotel and hospital budgets from one catalogue. New models and system upgrades are in continuous development: your range grows without changing supplier.",
@@ -2868,9 +2896,11 @@ const TRANSLATIONS = {
       header: { eyebrow: "БЛОГ", title: "Исследования и новости", subtitle: "Актуальные научные разработки и новости в области гипербарической оксигенотерапии." },
       source_label: "Источник:",
       min_read: "мин чтения",
+      read_more: "Читать статью целиком",
       disclaimer: "Эти материалы представляют собой краткие сведения, составленные на основе общедоступных научных публикаций и новостных источников; они не являются медицинской рекомендацией. Для принятия решений о лечении обязательно проконсультируйтесь со специалистом-медиком.",
       posts: [
         {
+          slug: "hbot-kurucu-notu.html",
           date: "2024",
           tag: "Слово основателя",
           icon: "care",
@@ -2884,6 +2914,7 @@ const TRANSLATIONS = {
           author: "Мюрсель Алкан"
         },
         {
+          slug: "hbot-ve-longevity.html",
           date: "2024",
           tag: "Долголетие",
           icon: "antiaging",
@@ -2896,6 +2927,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
+          slug: "elit-sporcular-hiperbarik-oksijen.html",
           date: "2023",
           tag: "Спорт",
           icon: "healthSync",
@@ -2908,6 +2940,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
+          slug: "ev-tipi-hiperbarik-kabin-rehberi.html",
           date: "2024",
           tag: "Гид",
           icon: "oneSeat",
@@ -2920,6 +2953,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
+          slug: "kronik-yara-iyilesmesi-hbot.html",
           date: "2025",
           tag: "Исследование",
           icon: "wound",
@@ -2932,6 +2966,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
+          slug: "sporcular-hiperbarik-oda.html",
           date: "2023",
           tag: "Спортивное здоровье",
           icon: "burn",
@@ -2944,6 +2979,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
+          slug: "diyabetik-ayak-ulseri-hbot.html",
           date: "2024",
           tag: "Клинические данные",
           icon: "wound",
@@ -2956,6 +2992,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
+          slug: "ani-isitme-kaybi-hbot.html",
           date: "2024",
           tag: "Клинические данные",
           icon: "ear",
@@ -2968,6 +3005,7 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
+          slug: "saglikta-iot-uzaktan-izleme.html",
           date: "2024",
           tag: "Технологии",
           icon: "connect",
@@ -2980,6 +3018,7 @@ const TRANSLATIONS = {
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
+          slug: "cok-kisilik-kabin-basinc-yonetimi.html",
           date: "2023",
           tag: "Клиника",
           icon: "guard",
@@ -2992,6 +3031,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
+          slug: "spor-kulupleri-hiperbarik-destek.html",
           date: "2024",
           tag: "Спорт",
           icon: "healthSync",
@@ -3004,6 +3044,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
+          slug: "otel-hiperbarik-wellness-suit.html",
           date: "2025",
           tag: "Wellness",
           icon: "premium",
@@ -3016,6 +3057,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
+          slug: "yuksek-basinc-guvenlik-standartlari.html",
           date: "2024",
           tag: "Безопасность",
           icon: "care",
@@ -3037,7 +3079,7 @@ const TRANSLATIONS = {
       cta_models: "Смотреть модели",
       why: {
         eyebrow: "НАШЕ ОТЛИЧИЕ", title: "Почему мы, а не Дальний Восток?", subtitle: "Мы конкурируем не снижением цены, а прибылью нашего дистрибьютора. Ниже — конкретная разница.",
-        c1_title: "25–40 дней с Дальнего Востока. От нас — 4–5.", c1_text: "Поставки из Стамбула в страны Залива, тюркские республики и Европу считаются днями, а не графиком контейнеров. Запчасти идут так же быстро. Для дистрибьютора это возможность продавать, не замораживая деньги в складе.",
+        c1_title: "25–40 дней с Дальнего Востока. От нас — максимум 10.", c1_text: "После отгрузки готового аппарата с нашего производства доставка в страны Залива, тюркские республики и Европу занимает максимум 10 дней в зависимости от расстояния — без ожидания графика контейнеров. Запчасти идут так же быстро. Для дистрибьютора это возможность продавать, не замораживая деньги в складе.",
         c2_title: "Ваш собеседник — сам владелец бренда", c2_text: "Никаких экспортных посредников. По техническому вопросу вы говорите с инженером, который проектировал камеру; по коммерческому — с тем, кто принимает решение. И в одном часовом поясе.",
         c3_title: "Конфигуратор — ваш инструмент закрытия сделки", c3_text: "Рядом с клиентом вы собираете камеру в его цвете и отделке и передаёте расчёт в той же встрече. Там, где конкуренты показывают PDF-каталог и обещают «уточнить цену», вы закрываете продажу.",
         c4_title: "Шесть моделей и растущая линейка", c4_text: "От одноместной капсулы до камеры больничного класса — дом, клиника, отель и стационар в одном каталоге. Новые модели и обновления систем в постоянной разработке: ваш ассортимент растёт без смены поставщика.",
@@ -3927,9 +3969,11 @@ const TRANSLATIONS = {
       header: { eyebrow: "المدونة", title: "الأبحاث والأخبار", subtitle: "أحدث التطورات العلمية والأخبار في مجال العلاج بالأكسجين عالي الضغط." },
       source_label: "المصدر:",
       min_read: "دقائق قراءة",
+      read_more: "اقرأ المقال كاملًا",
       disclaimer: "هذه المقالات عبارة عن ملخصات مُجمَّعة من منشورات علمية ومصادر إخبارية متاحة للعموم؛ ولا تُعد بمثابة استشارة طبية. يُرجى دائماً استشارة أخصائي رعاية صحية لاتخاذ قرارات العلاج.",
       posts: [
         {
+          slug: "hbot-kurucu-notu.html",
           date: "2024",
           tag: "كلمة المؤسس",
           icon: "care",
@@ -3943,6 +3987,7 @@ const TRANSLATIONS = {
           author: "مورسيل ألكان"
         },
         {
+          slug: "hbot-ve-longevity.html",
           date: "2024",
           tag: "طول العمر",
           icon: "antiaging",
@@ -3955,6 +4000,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
+          slug: "elit-sporcular-hiperbarik-oksijen.html",
           date: "2023",
           tag: "رياضة",
           icon: "healthSync",
@@ -3967,6 +4013,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
+          slug: "ev-tipi-hiperbarik-kabin-rehberi.html",
           date: "2024",
           tag: "دليل",
           icon: "oneSeat",
@@ -3979,6 +4026,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
+          slug: "kronik-yara-iyilesmesi-hbot.html",
           date: "2025",
           tag: "بحث",
           icon: "wound",
@@ -3991,6 +4039,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
+          slug: "sporcular-hiperbarik-oda.html",
           date: "2023",
           tag: "صحة رياضية",
           icon: "burn",
@@ -4003,6 +4052,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
+          slug: "diyabetik-ayak-ulseri-hbot.html",
           date: "2024",
           tag: "دليل سريري",
           icon: "wound",
@@ -4015,6 +4065,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
+          slug: "ani-isitme-kaybi-hbot.html",
           date: "2024",
           tag: "دليل سريري",
           icon: "ear",
@@ -4027,6 +4078,7 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
+          slug: "saglikta-iot-uzaktan-izleme.html",
           date: "2024",
           tag: "تقنية",
           icon: "connect",
@@ -4039,6 +4091,7 @@ const TRANSLATIONS = {
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
+          slug: "cok-kisilik-kabin-basinc-yonetimi.html",
           date: "2023",
           tag: "سريري",
           icon: "guard",
@@ -4051,6 +4104,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
+          slug: "spor-kulupleri-hiperbarik-destek.html",
           date: "2024",
           tag: "رياضة",
           icon: "healthSync",
@@ -4063,6 +4117,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
+          slug: "otel-hiperbarik-wellness-suit.html",
           date: "2025",
           tag: "العافية",
           icon: "premium",
@@ -4075,6 +4130,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
+          slug: "yuksek-basinc-guvenlik-standartlari.html",
           date: "2024",
           tag: "السلامة",
           icon: "care",
@@ -4096,7 +4152,7 @@ const TRANSLATIONS = {
       cta_models: "استعرض الموديلات",
       why: {
         eyebrow: "ما يميّزنا", title: "لماذا نحن بدلًا من الشرق الأقصى؟", subtitle: "لا ننافس بخفض السعر، بل بجعل موزّعنا رابحًا. إليكم الفرق بصورة ملموسة.",
-        c1_title: "٢٥–٤٠ يومًا من الشرق الأقصى. من عندنا ٤–٥.", c1_text: "الشحن من إسطنبول إلى الخليج والجمهوريات التركية وأوروبا يُحسب بالأيام لا بجداول الحاويات. وقطع الغيار بالسرعة نفسها. هذا يعني للموزّع البيع دون تجميد رأس المال في المخزون.",
+        c1_title: "٢٥–٤٠ يومًا من الشرق الأقصى. من عندنا ١٠ كحدٍّ أقصى.", c1_text: "بعد خروج الجهاز الجاهز من منشأتنا، يستغرق التسليم إلى الخليج والجمهوريات التركية وأوروبا ١٠ أيام كحدٍّ أقصى حسب المسافة، دون انتظار جداول الحاويات. وقطع الغيار بالسرعة نفسها. هذا يعني للموزّع البيع دون تجميد رأس المال في المخزون.",
         c2_title: "تتعامل مع مالك العلامة مباشرة", c2_text: "لا وكالة تصدير ولا وسيط. في السؤال الفني تتحدث مع المهندس الذي صمّم الكبينة، وفي الشأن التجاري مع صاحب القرار — وفي المنطقة الزمنية نفسها.",
         c3_title: "المُهيّئ الإلكتروني أداتكم لإتمام البيع", c3_text: "أمام عميلكم تبنون الكبينة بلونه وتصميمه الداخلي وتسلّمونه عرض سعر في الاجتماع نفسه. وحيث يعرض المنافسون كتالوج PDF ويقولون \"سأستعلم عن السعر\"، تُتمّون أنتم الصفقة.",
         c4_title: "ستة موديلات وتشكيلة تنمو", c4_text: "من كبينة لشخص واحد إلى غرفة بمواصفات المستشفيات — المنزل والعيادة والفندق والمستشفى من كتالوج واحد. موديلات جديدة وتحديثات للأنظمة قيد التطوير المستمر: تشكيلتكم تنمو دون تغيير المورّد.",
@@ -4996,9 +5052,11 @@ const TRANSLATIONS = {
       header: { eyebrow: "BLOG", title: "Investigación y Noticias", subtitle: "Novedades científicas y noticias recientes sobre la oxigenoterapia hiperbárica." },
       source_label: "Fuente:",
       min_read: "min de lectura",
+      read_more: "Leer el artículo completo",
       disclaimer: "Estas publicaciones son resúmenes elaborados a partir de publicaciones científicas y fuentes de noticias de acceso público; no constituyen asesoramiento médico. Consulta siempre a un profesional sanitario para decisiones de tratamiento.",
       posts: [
         {
+          slug: "hbot-kurucu-notu.html",
           date: "2024",
           tag: "Nota del Fundador",
           icon: "care",
@@ -5012,6 +5070,7 @@ const TRANSLATIONS = {
           author: "Mürsel Alkan"
         },
         {
+          slug: "hbot-ve-longevity.html",
           date: "2024",
           tag: "Longevidad",
           icon: "antiaging",
@@ -5024,6 +5083,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
+          slug: "elit-sporcular-hiperbarik-oksijen.html",
           date: "2023",
           tag: "Deporte",
           icon: "healthSync",
@@ -5036,6 +5096,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
+          slug: "ev-tipi-hiperbarik-kabin-rehberi.html",
           date: "2024",
           tag: "Guía",
           icon: "oneSeat",
@@ -5048,6 +5109,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
+          slug: "kronik-yara-iyilesmesi-hbot.html",
           date: "2025",
           tag: "Investigación",
           icon: "wound",
@@ -5060,6 +5122,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
+          slug: "sporcular-hiperbarik-oda.html",
           date: "2023",
           tag: "Salud Deportiva",
           icon: "burn",
@@ -5072,6 +5135,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
+          slug: "diyabetik-ayak-ulseri-hbot.html",
           date: "2024",
           tag: "Evidencia Clínica",
           icon: "wound",
@@ -5084,6 +5148,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
+          slug: "ani-isitme-kaybi-hbot.html",
           date: "2024",
           tag: "Evidencia Clínica",
           icon: "ear",
@@ -5096,6 +5161,7 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
+          slug: "saglikta-iot-uzaktan-izleme.html",
           date: "2024",
           tag: "Tecnología",
           icon: "connect",
@@ -5108,6 +5174,7 @@ const TRANSLATIONS = {
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
+          slug: "cok-kisilik-kabin-basinc-yonetimi.html",
           date: "2023",
           tag: "Clínico",
           icon: "guard",
@@ -5120,6 +5187,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
+          slug: "spor-kulupleri-hiperbarik-destek.html",
           date: "2024",
           tag: "Deporte",
           icon: "healthSync",
@@ -5132,6 +5200,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
+          slug: "otel-hiperbarik-wellness-suit.html",
           date: "2025",
           tag: "Bienestar",
           icon: "premium",
@@ -5144,6 +5213,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
+          slug: "yuksek-basinc-guvenlik-standartlari.html",
           date: "2024",
           tag: "Seguridad",
           icon: "care",
@@ -5165,7 +5235,7 @@ const TRANSLATIONS = {
       cta_models: "Ver modelos",
       why: {
         eyebrow: "NUESTRA DIFERENCIA", title: "¿Por qué nosotros y no Extremo Oriente?", subtitle: "No competimos bajando el precio, sino haciendo rentable a nuestro distribuidor. Esta es la diferencia, en términos concretos.",
-        c1_title: "25–40 días desde Extremo Oriente. Desde aquí, 4–5.", c1_text: "Los envíos desde Estambul al Golfo, las Repúblicas Túrcicas y Europa se cuentan en días, no en calendarios de contenedores. Los repuestos viajan igual de rápido. Para el distribuidor eso significa vender sin inmovilizar capital en stock.",
+        c1_title: "25–40 días desde Extremo Oriente. Desde aquí, 10 como máximo.", c1_text: "Una vez que el equipo listo sale de nuestras instalaciones, la entrega al Golfo, las Repúblicas Túrcicas y Europa tarda como máximo 10 días según la distancia, sin esperar calendarios de contenedores. Los repuestos viajan igual de rápido. Para el distribuidor eso significa vender sin inmovilizar capital en stock.",
         c2_title: "Trata directamente con el titular de la marca", c2_text: "Sin agencias de exportación ni intermediarios. En una cuestión técnica habla con el ingeniero que diseñó la cabina; en lo comercial, con quien decide. Y en la misma franja horaria.",
         c3_title: "El configurador es su herramienta de cierre", c3_text: "Frente a su cliente construye la cabina en su color y tapicería y le entrega un presupuesto en la misma reunión. Donde la competencia enseña un PDF y dice «consulto el precio», usted cierra la venta.",
         c4_title: "Seis modelos y una gama en crecimiento", c4_text: "De cabinas individuales a una cámara de clase hospitalaria: hogar, clínica, hotel y hospital desde un solo catálogo. Hay nuevos modelos y mejoras en desarrollo continuo: su gama crece sin cambiar de proveedor.",
@@ -6065,9 +6135,11 @@ const TRANSLATIONS = {
       header: { eyebrow: "BLOG", title: "Pesquisas e Notícias", subtitle: "Desenvolvimentos científicos e notícias recentes sobre a oxigenoterapia hiperbárica." },
       source_label: "Fonte:",
       min_read: "min de leitura",
+      read_more: "Ler o artigo completo",
       disclaimer: "Estas publicações são resumos elaborados a partir de publicações científicas e fontes jornalísticas disponíveis publicamente; não constituem aconselhamento médico. Consulte sempre um profissional de saúde para decisões de tratamento.",
       posts: [
         {
+          slug: "hbot-kurucu-notu.html",
           date: "2024",
           tag: "Nota do Fundador",
           icon: "care",
@@ -6081,6 +6153,7 @@ const TRANSLATIONS = {
           author: "Mürsel Alkan"
         },
         {
+          slug: "hbot-ve-longevity.html",
           date: "2024",
           tag: "Longevidade",
           icon: "antiaging",
@@ -6093,6 +6166,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
+          slug: "elit-sporcular-hiperbarik-oksijen.html",
           date: "2023",
           tag: "Esportes",
           icon: "healthSync",
@@ -6105,6 +6179,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
+          slug: "ev-tipi-hiperbarik-kabin-rehberi.html",
           date: "2024",
           tag: "Guia",
           icon: "oneSeat",
@@ -6117,6 +6192,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
+          slug: "kronik-yara-iyilesmesi-hbot.html",
           date: "2025",
           tag: "Pesquisa",
           icon: "wound",
@@ -6129,6 +6205,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
+          slug: "sporcular-hiperbarik-oda.html",
           date: "2023",
           tag: "Saúde Esportiva",
           icon: "burn",
@@ -6141,6 +6218,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
+          slug: "diyabetik-ayak-ulseri-hbot.html",
           date: "2024",
           tag: "Evidência Clínica",
           icon: "wound",
@@ -6153,6 +6231,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
+          slug: "ani-isitme-kaybi-hbot.html",
           date: "2024",
           tag: "Evidência Clínica",
           icon: "ear",
@@ -6165,6 +6244,7 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
+          slug: "saglikta-iot-uzaktan-izleme.html",
           date: "2024",
           tag: "Tecnologia",
           icon: "connect",
@@ -6177,6 +6257,7 @@ const TRANSLATIONS = {
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
+          slug: "cok-kisilik-kabin-basinc-yonetimi.html",
           date: "2023",
           tag: "Clínico",
           icon: "guard",
@@ -6189,6 +6270,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
+          slug: "spor-kulupleri-hiperbarik-destek.html",
           date: "2024",
           tag: "Esportes",
           icon: "healthSync",
@@ -6201,6 +6283,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
+          slug: "otel-hiperbarik-wellness-suit.html",
           date: "2025",
           tag: "Bem-Estar",
           icon: "premium",
@@ -6213,6 +6296,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
+          slug: "yuksek-basinc-guvenlik-standartlari.html",
           date: "2024",
           tag: "Segurança",
           icon: "care",
@@ -6234,7 +6318,7 @@ const TRANSLATIONS = {
       cta_models: "Ver modelos",
       why: {
         eyebrow: "A NOSSA DIFERENÇA", title: "Porquê nós em vez do Extremo Oriente?", subtitle: "Não competimos baixando o preço, mas tornando o nosso distribuidor rentável. Esta é a diferença, em termos concretos.",
-        c1_title: "25–40 dias do Extremo Oriente. Daqui, 4–5.", c1_text: "Os envios de Istambul para o Golfo, as Repúblicas Túrquicas e a Europa contam-se em dias, não em calendários de contentores. As peças seguem à mesma velocidade. Para o distribuidor, isso significa vender sem imobilizar capital em stock.",
+        c1_title: "25–40 dias do Extremo Oriente. Daqui, no máximo 10.", c1_text: "Depois de o equipamento pronto sair das nossas instalações, a entrega ao Golfo, às Repúblicas Túrquicas e à Europa demora no máximo 10 dias consoante a distância, sem esperar por calendários de contentores. As peças seguem à mesma velocidade. Para o distribuidor, isso significa vender sem imobilizar capital em stock.",
         c2_title: "Fala diretamente com o detentor da marca", c2_text: "Sem agências de exportação nem intermediários. Numa questão técnica fala com o engenheiro que desenhou a cabina; no comercial, com quem decide. E no mesmo fuso horário.",
         c3_title: "O configurador é a sua ferramenta de fecho", c3_text: "Diante do cliente monta a cabina na cor e no estofo dele e entrega uma proposta com preço na mesma reunião. Onde a concorrência mostra um PDF e diz «vou consultar o preço», você fecha a venda.",
         c4_title: "Seis modelos e uma gama em crescimento", c4_text: "De cabinas individuais a uma câmara de classe hospitalar: casa, clínica, hotel e hospital num só catálogo. Novos modelos e atualizações estão em desenvolvimento contínuo: a sua gama cresce sem mudar de fornecedor.",
@@ -7134,9 +7218,11 @@ const TRANSLATIONS = {
       header: { eyebrow: "BLOG", title: "Forschung & Neuigkeiten", subtitle: "Aktuelle wissenschaftliche Entwicklungen und Neuigkeiten zur hyperbaren Sauerstofftherapie." },
       source_label: "Quelle:",
       min_read: "Min. Lesezeit",
+      read_more: "Ganzen Artikel lesen",
       disclaimer: "Diese Beiträge sind Zusammenfassungen aus öffentlich zugänglichen wissenschaftlichen Publikationen und Nachrichtenquellen; sie stellen keine medizinische Beratung dar. Konsultieren Sie für Behandlungsentscheidungen stets eine medizinische Fachkraft.",
       posts: [
         {
+          slug: "hbot-kurucu-notu.html",
           date: "2024",
           tag: "Vom Gründer",
           icon: "care",
@@ -7150,6 +7236,7 @@ const TRANSLATIONS = {
           author: "Mürsel Alkan"
         },
         {
+          slug: "hbot-ve-longevity.html",
           date: "2024",
           tag: "Langlebigkeit",
           icon: "antiaging",
@@ -7162,6 +7249,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
+          slug: "elit-sporcular-hiperbarik-oksijen.html",
           date: "2023",
           tag: "Sport",
           icon: "healthSync",
@@ -7174,6 +7262,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
+          slug: "ev-tipi-hiperbarik-kabin-rehberi.html",
           date: "2024",
           tag: "Ratgeber",
           icon: "oneSeat",
@@ -7186,6 +7275,7 @@ const TRANSLATIONS = {
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
+          slug: "kronik-yara-iyilesmesi-hbot.html",
           date: "2025",
           tag: "Forschung",
           icon: "wound",
@@ -7198,6 +7288,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
+          slug: "sporcular-hiperbarik-oda.html",
           date: "2023",
           tag: "Sportgesundheit",
           icon: "burn",
@@ -7210,6 +7301,7 @@ const TRANSLATIONS = {
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
         },
         {
+          slug: "diyabetik-ayak-ulseri-hbot.html",
           date: "2024",
           tag: "Klinische Evidenz",
           icon: "wound",
@@ -7222,6 +7314,7 @@ const TRANSLATIONS = {
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
         },
         {
+          slug: "ani-isitme-kaybi-hbot.html",
           date: "2024",
           tag: "Klinische Evidenz",
           icon: "ear",
@@ -7234,6 +7327,7 @@ const TRANSLATIONS = {
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
         },
         {
+          slug: "saglikta-iot-uzaktan-izleme.html",
           date: "2024",
           tag: "Technologie",
           icon: "connect",
@@ -7246,6 +7340,7 @@ const TRANSLATIONS = {
           source_url: "https://iotbusinessnews.com/2026/04/14/connected-healthcare-iot-remote-monitoring-medical-devices-and-data-challenges/"
         },
         {
+          slug: "cok-kisilik-kabin-basinc-yonetimi.html",
           date: "2023",
           tag: "Klinisch",
           icon: "guard",
@@ -7258,6 +7353,7 @@ const TRANSLATIONS = {
           source_url: "https://www.uhms.org"
         },
         {
+          slug: "spor-kulupleri-hiperbarik-destek.html",
           date: "2024",
           tag: "Sport",
           icon: "healthSync",
@@ -7270,6 +7366,7 @@ const TRANSLATIONS = {
           source_url: "https://www.frontiersin.org/journals/physiology"
         },
         {
+          slug: "otel-hiperbarik-wellness-suit.html",
           date: "2025",
           tag: "Wellness",
           icon: "premium",
@@ -7282,6 +7379,7 @@ const TRANSLATIONS = {
           source_url: "https://globalwellnessinstitute.org"
         },
         {
+          slug: "yuksek-basinc-guvenlik-standartlari.html",
           date: "2024",
           tag: "Sicherheit",
           icon: "care",
@@ -7303,7 +7401,7 @@ const TRANSLATIONS = {
       cta_models: "Modelle ansehen",
       why: {
         eyebrow: "UNSER UNTERSCHIED", title: "Warum wir statt Fernost?", subtitle: "Wir konkurrieren nicht über den Preis, sondern darüber, dass unser Vertriebspartner verdient. Hier ist der Unterschied, konkret.",
-        c1_title: "25–40 Tage aus Fernost. Von uns 4–5.", c1_text: "Lieferungen von Istanbul in den Golf, die Turkstaaten und nach Europa rechnen sich in Tagen, nicht in Containerfahrplänen. Ersatzteile ebenso schnell. Für den Vertriebspartner heißt das: verkaufen, ohne Kapital im Lager zu binden.",
+        c1_title: "25–40 Tage aus Fernost. Von uns höchstens 10.", c1_text: "Sobald ein fertiges Gerät unser Werk verlässt, dauert die Lieferung in den Golf, die Turkstaaten und nach Europa je nach Entfernung höchstens 10 Tage — ohne Wartezeit auf Containerfahrpläne. Ersatzteile ebenso schnell. Für den Vertriebspartner heißt das: verkaufen, ohne Kapital im Lager zu binden.",
         c2_title: "Ihr Ansprechpartner ist der Markeninhaber", c2_text: "Keine Exportagentur, kein Zwischenhändler. Bei technischen Fragen sprechen Sie mit dem Ingenieur, der die Kabine konstruiert hat; kommerziell mit dem Entscheider. Und in derselben Zeitzone.",
         c3_title: "Der Konfigurator ist Ihr Abschluss-Werkzeug", c3_text: "Vor Ihrem Kunden bauen Sie die Kabine in seiner Farbe und Ausstattung und übergeben im selben Termin ein Angebot mit Preis. Wo der Wettbewerb einen PDF-Katalog zeigt und „ich frage den Preis nach\" sagt, schließen Sie ab.",
         c4_title: "Sechs Modelle, wachsendes Portfolio", c4_text: "Von der Einzelkabine bis zur Kammer in Klinikausführung — Privat, Praxis, Hotel und Klinik aus einem Katalog. Neue Modelle und System-Updates sind laufend in Entwicklung: Ihr Sortiment wächst ohne Lieferantenwechsel.",

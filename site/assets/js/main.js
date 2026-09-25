@@ -681,6 +681,11 @@
     });
   }
 
+  /* Her yazının kendi sayfası var (ör. hbot-ve-longevity.html) ama blog listesi
+     onlara link vermiyordu: sayfalar ne iç linkle ne de sitemap'le erişilebiliyordu.
+     Başlık ve "yazının tamamı" bağlantısı slug üzerinden o sayfaya gidiyor. Bağlantı
+     GÖRELİ — blog.html ile yazı sayfaları aynı klasörde, yani /de/blog.html'den
+     /de/... açılır, dil klasörü kendiliğinden korunur. */
   function renderBlogPosts(dict) {
     const c = document.getElementById("blog-post-list");
     if (!c || !dict.blog) return;
@@ -697,13 +702,14 @@
             <span class="blog-post-date">${post.date}</span>
             ${readtime}
           </div>
-          <h2>${post.title}</h2>
+          <h2>${post.slug ? `<a class="blog-post-link" href="${post.slug}">${post.title}</a>` : post.title}</h2>
           ${post.author ? `<p class="blog-post-author">${post.author}</p>` : ""}
           ${post.paragraphs.map((p) => `<p>${p}</p>`).join("")}
           <div class="blog-post-source">
             <span>${dict.blog.source_label}</span>
             <a href="${post.source_url}" target="_blank" rel="noopener noreferrer">${post.source_name}</a>
           </div>
+          ${post.slug && dict.blog.read_more ? `<a class="blog-post-more" href="${post.slug}">${dict.blog.read_more} →</a>` : ""}
         </div>
       </article>
     `;
