@@ -45,6 +45,35 @@ EXTRA_URLS = [
     ("https://hbotchambertech.com/en/hyperbaric-chamber-for-clinics.html", "2026-08-25", "weekly", "0.8"),
 ]
 
+# Sitemap'e girmeyen yardimci sayfalar: yasal metinler, hata sayfasi, ic araclar.
+SITEMAP_EXCLUDE = {
+    "404.html", "gizlilik-politikasi.html", "kullanim-sartlari.html",
+    "ar-view.html", "tint_preview.html",
+}
+
+
+def discover_extra_pages():
+    """ROOT_PAGES disinda kalan gercek sayfalari otomatik bulur.
+
+    Blog yazilari ve SEO acilis sayfalari ROOT_PAGES'te degil; elle
+    EXTRA_URLS'e eklenmedikleri surece sitemap'ten dusuyorlardi — 2026-09'da
+    13 yazi x 7 dil bu yuzden disarida kalmisti. Artik dosya sisteminden
+    kesfediliyorlar, yeni yazi eklenince sitemap kendiliginden kapsiyor."""
+    elde = {u[0] for u in EXTRA_URLS}
+    bulunan = []
+    for lang in ALL_LANGS:
+        klasor = SITE_DIR if lang == "tr" else os.path.join(SITE_DIR, lang)
+        if not os.path.isdir(klasor):
+            continue
+        for ad in sorted(os.listdir(klasor)):
+            if not ad.endswith(".html") or ad in ROOT_PAGES or ad in SITEMAP_EXCLUDE:
+                continue
+            loc = BASE_URL + ("/" if lang == "tr" else f"/{lang}/") + ad
+            if loc in elde:
+                continue
+            bulunan.append((loc, LASTMOD, "monthly", "0.6"))
+    return bulunan
+
 
 def build_sitemap():
     lines = [
@@ -70,7 +99,7 @@ def build_sitemap():
             lines.append(f"    <changefreq>{changefreq}</changefreq>")
             lines.append(f"    <priority>{priority}</priority>")
             lines.append("  </url>")
-    for loc, lastmod, changefreq, priority in EXTRA_URLS:
+    for loc, lastmod, changefreq, priority in list(EXTRA_URLS) + discover_extra_pages():
         lines.append("  <url>")
         lines.append(f"    <loc>{loc}</loc>")
         lines.append(f"    <lastmod>{lastmod}</lastmod>")
@@ -83,8 +112,10 @@ def build_sitemap():
     out_path = os.path.join(SITE_DIR, "sitemap.xml")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
-    n_urls = len(ROOT_PAGES) * len(ALL_LANGS) + len(EXTRA_URLS)
-    print(f"sitemap.xml written with {n_urls} URLs ({len(ROOT_PAGES)} pages x {len(ALL_LANGS)} languages).")
+    n_urls = len("\n".join(lines).split("<loc>")) - 1
+    print(f"sitemap.xml written with {n_urls} URLs "
+          f"({len(ROOT_PAGES)} shared pages x {len(ALL_LANGS)} languages "
+          f"+ {len(EXTRA_URLS) + len(discover_extra_pages())} standalone).")
 
 
 if __name__ == "__main__":

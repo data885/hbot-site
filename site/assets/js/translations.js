@@ -224,7 +224,7 @@ const TRANSLATIONS = {
           desc: "Android tabanlı, dokunmatik ekranlı ve sürekli gelişen bir işletim sistemi.",
           features: [
             "Sürekli yazılım güncellemesi (OTA): yeni protokoller ve güvenlik güncellemeleri otomatik indirilir",
-            "50+ hazır terapi protokolü: yanık, diyabetik ayak, sporcu iyileşmesi, anti-aging, post-COVID rehabilitasyonu",
+            "50+ hazır seans profili: basınç seviyesi, süre, kademeli basınçlanma ve tekrar planı şablon olarak kayıtlı",
             "Çoklu dil desteği: yazılım güncellemesiyle yeni diller eklenir",
             "Kullanıcı profilleri: her hasta için ayrı profil, geçmiş seanslar otomatik yüklenir"
           ]
@@ -1325,7 +1325,7 @@ const TRANSLATIONS = {
           desc: "An Android-based, touchscreen-controlled operating system that keeps evolving.",
           features: [
             "Continuous software updates (OTA): new protocols and security updates download automatically",
-            "50+ ready-made treatment protocols: burns, diabetic foot, athletic recovery, anti-aging, post-COVID rehabilitation",
+            "50+ ready-made session profiles: pressure level, duration, staged compression and repeat schedule saved as templates",
             "Multi-language support: new languages are added with software updates",
             "User profiles: a separate profile for each patient, with past sessions loaded automatically"
           ]
@@ -2395,7 +2395,7 @@ const TRANSLATIONS = {
           desc: "Операционная система на базе Android с сенсорным экраном, которая постоянно развивается.",
           features: [
             "Постоянные обновления ПО (OTA): новые протоколы и обновления безопасности загружаются автоматически",
-            "50+ готовых протоколов лечения: ожоги, диабетическая стопа, восстановление спортсменов, антивозрастная терапия, реабилитация после COVID",
+            "50+ готовых профилей сеанса: уровень давления, длительность, ступенчатая компрессия и график повторов в виде шаблонов",
             "Поддержка нескольких языков: новые языки добавляются с обновлениями ПО",
             "Профили пользователей: отдельный профиль для каждого пациента с автоматической загрузкой прошлых сеансов"
           ]
@@ -3454,7 +3454,7 @@ const TRANSLATIONS = {
           desc: "نظام تشغيل يعمل بنظام أندرويد بشاشة لمس، ويتطور باستمرار.",
           features: [
             "تحديثات برمجية مستمرة (OTA): يتم تنزيل البروتوكولات الجديدة وتحديثات الأمان تلقائياً",
-            "أكثر من 50 بروتوكول علاج جاهز: الحروق، القدم السكرية، تعافي الرياضيين، مكافحة الشيخوخة، إعادة التأهيل بعد كوفيد",
+            "أكثر من 50 ملف جلسة جاهز: مستوى الضغط، المدة، الضغط التدريجي وخطة التكرار محفوظة كقوالب",
             "دعم متعدد اللغات: تُضاف لغات جديدة مع تحديثات البرمجيات",
             "ملفات تعريف المستخدمين: ملف تعريف منفصل لكل مريض مع تحميل الجلسات السابقة تلقائياً"
           ]
@@ -4523,7 +4523,7 @@ const TRANSLATIONS = {
           desc: "Un sistema operativo basado en Android, controlado por pantalla táctil, en constante evolución.",
           features: [
             "Actualizaciones de software continuas (OTA): nuevos protocolos y actualizaciones de seguridad se descargan automáticamente",
-            "Más de 50 protocolos de tratamiento listos para usar: quemaduras, pie diabético, recuperación deportiva, antienvejecimiento, rehabilitación post-COVID",
+            "Más de 50 perfiles de sesión listos: nivel de presión, duración, compresión escalonada y plan de repetición guardados como plantillas",
             "Compatibilidad multiidioma: se añaden nuevos idiomas con cada actualización de software",
             "Perfiles de usuario: un perfil independiente para cada paciente, con sus sesiones anteriores cargadas automáticamente"
           ]
@@ -5592,7 +5592,7 @@ const TRANSLATIONS = {
           desc: "Um sistema operacional baseado em Android, com controle por tela touchscreen, que está em constante evolução.",
           features: [
             "Atualizações contínuas de software (OTA): novos protocolos e atualizações de segurança são baixados automaticamente",
-            "Mais de 50 protocolos de tratamento prontos: queimaduras, pé diabético, recuperação atlética, antienvelhecimento, reabilitação pós-COVID",
+            "Mais de 50 perfis de sessão prontos: nível de pressão, duração, compressão escalonada e plano de repetição guardados como modelos",
             "Suporte a múltiplos idiomas: novos idiomas são adicionados a cada atualização de software",
             "Perfis de usuário: um perfil individual para cada paciente, com sessões anteriores carregadas automaticamente"
           ]
@@ -6661,7 +6661,7 @@ const TRANSLATIONS = {
           desc: "Ein Android-basiertes, per Touchscreen gesteuertes Betriebssystem, das sich stetig weiterentwickelt.",
           features: [
             "Fortlaufende Software-Updates (OTA): Neue Protokolle und Sicherheitsupdates werden automatisch heruntergeladen",
-            "Über 50 fertige Behandlungsprotokolle: Verbrennungen, diabetischer Fuß, sportliche Erholung, Anti-Aging, Post-COVID-Rehabilitation",
+            "Über 50 fertige Sitzungsprofile: Druckstufe, Dauer, stufenweise Kompression und Wiederholungsplan als Vorlagen gespeichert",
             "Mehrsprachige Unterstützung: Neue Sprachen werden mit Software-Updates hinzugefügt",
             "Benutzerprofile: Ein eigenes Profil für jeden Patienten, vergangene Sitzungen werden automatisch geladen"
           ]
