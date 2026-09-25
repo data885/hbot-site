@@ -84,7 +84,7 @@ const TRANSLATIONS = {
         { value: "93–95%", label: "Oksijen Konsantrasyonu" },
         { value: "<60dB", label: "CitySilent™ Gürültü Seviyesi" },
         { value: "7/24", label: "Uzaktan İzleme" },
-        { value: "2007", label: "Yılından Beri Mühendislik" }
+        { value: "2007", label: "Ekibin Mühendislik Deneyimi" }
       ],
       tech_teaser: {
         eyebrow: "TEKNOLOJİ PLATFORMU",
@@ -187,6 +187,7 @@ const TRANSLATIONS = {
       steps: [
         { year: "1999", title: "Sahada Başlayan Ticari Yolculuk", desc: "Almita kurucularının ticari yolculuğu, katı atık yönetimi alanında gerçek saha problemlerine çözüm üretme sorumluluğuyla başladı." },
         { year: "2007", title: "Yüksek Mühendislik Birikimi", desc: "Bugün HBOT Chamber Tech'i geliştiren ekibin tasarım, mühendislik, otomasyon ve proje yönetimi deneyimi 2007'ye uzanıyor." },
+        { year: "2010", title: "Almita Group Çatısı", desc: "Bugün HBOT Chamber Tech'i destekleyen ticari ve operasyonel ekosistem Almita Group, 2010'dan bu yana faaliyette." },
         { year: "BUGÜN", title: "Hiperbarik Teknolojiye Odaklı Yeni Marka", desc: "Bu birikimi CityOS, CityGuard, CityConnect, CityAI, konfigüratör + AR ve model bazlı mühendislikle yeni nesil HBOT sistemlerine taşıyoruz." }
       ],
       proof_title: "Söylediğimizi proje dosyasında gösteriyoruz", proof_text: "Her projede ürün kapsamını, kurulum planını, eğitimi, bakımı ve hedef pazara göre uygunluk dokümanlarını yazılı olarak netleştiriyoruz.",
@@ -1184,7 +1185,7 @@ const TRANSLATIONS = {
         { value: "93–95%", label: "Oxygen Concentration" },
         { value: "<60dB", label: "CitySilent™ Noise Level" },
         { value: "24/7", label: "Remote Monitoring" },
-        { value: "2007", label: "Engineering Since" }
+        { value: "2007", label: "Team Engineering Experience" }
       ],
       tech_teaser: {
         eyebrow: "TECHNOLOGY PLATFORM",
@@ -1287,6 +1288,7 @@ const TRANSLATIONS = {
       steps: [
         { year: "1999", title: "A Commercial Journey Started in the Field", desc: "The founders of Almita began by solving real operational problems in solid-waste management." },
         { year: "2007", title: "Advanced Engineering Experience", desc: "The design, engineering, automation and project-management experience of the team behind HBOT Chamber Tech reaches back to 2007." },
+        { year: "2010", title: "The Almita Group Umbrella", desc: "Almita Group — the commercial and operational ecosystem behind HBOT Chamber Tech — has been active since 2010." },
         { year: "TODAY", title: "A New Brand Focused on Hyperbaric Technology", desc: "We bring that experience to next-generation HBOT systems through CityOS, CityGuard, CityConnect, CityAI, configurator + AR and model-specific engineering." }
       ],
       proof_title: "We document what we promise", proof_text: "For every project, we define product scope, installation, training, maintenance and target-market documentation in writing.",
@@ -2253,7 +2255,7 @@ const TRANSLATIONS = {
         { value: "93–95%", label: "Концентрация кислорода" },
         { value: "<55дБ", label: "Уровень шума CitySilent™" },
         { value: "24/7", label: "Удалённый мониторинг" },
-        { value: "2007", label: "Инженерный опыт с" }
+        { value: "2007", label: "Инженерный опыт команды" }
       ],
       tech_teaser: {
         eyebrow: "ТЕХНОЛОГИЧЕСКАЯ ПЛАТФОРМА",
@@ -2356,6 +2358,7 @@ const TRANSLATIONS = {
       steps: [
         { year: "1999", title: "Коммерческий путь, начатый в поле", desc: "Основатели Almita начали с решения реальных операционных задач в сфере управления твёрдыми отходами." },
         { year: "2007", title: "Advanced Engineering Experience", desc: "Опыт проектирования, инжиниринга, автоматизации и управления проектами команды, стоящей за HBOT Chamber Tech, восходит к 2007 году." },
+        { year: "2010", title: "Под крылом Almita Group", desc: "Almita Group — коммерческая и операционная экосистема, поддерживающая HBOT Chamber Tech, — работает с 2010 года." },
         { year: "TODAY", title: "Новый бренд, сфокусированный на гипербарических технологиях", desc: "Мы переносим этот опыт в HBOT-системы нового поколения через CityOS, CityGuard, CityConnect, CityAI, конфигуратор с AR и инженерные решения под конкретную модель." }
       ],
       proof_title: "Мы документируем то, что обещаем", proof_text: "По каждому проекту мы письменно фиксируем объём поставки, монтаж, обучение, техническое обслуживание и документацию для целевого рынка.",
@@ -3322,7 +3325,7 @@ const TRANSLATIONS = {
         { value: "93–95%", label: "تركيز الأكسجين" },
         { value: "<60 ديسيبل", label: "مستوى الضجيج CitySilent™" },
         { value: "24/7", label: "مراقبة عن بُعد" },
-        { value: "2007", label: "خبرة هندسية منذ" }
+        { value: "2007", label: "خبرة الفريق الهندسية" }
       ],
       tech_teaser: {
         eyebrow: "منصة التقنية",
@@ -3421,7 +3424,7 @@ const TRANSLATIONS = {
     },
     heritage: {
       eyebrow: "جذورنا وتركيزنا الجديد", title: "علامة جديدة. ذاكرة تجارية تتجاوز ربع قرن.", intro: "HBOT Chamber Tech علامة حديثة التأسيس ومتخصصة في تقنيات الأكسجين عالي الضغط، لكن الانضباط الميداني والخبرة الهندسية خلفها ليسا جديدين.",
-      steps: [{ year: "1999", title: "بداية ميدانية", desc: "بدأ مؤسسو Almita رحلتهم التجارية بحل مشكلات تشغيلية حقيقية في إدارة النفايات الصلبة." }, { year: "2007", title: "خبرة هندسية متقدمة", desc: "تمتد خبرة فريق HBOT Chamber Tech في التصميم والهندسة والأتمتة وإدارة المشاريع إلى عام 2007." }, { year: "اليوم", title: "تركيز جديد على تقنيات HBOT", desc: "ننقل هذه الخبرة إلى أنظمة HBOT عبر CityOS وCityGuard وCityConnect وCityAI والمكوّن + AR والهندسة الخاصة بكل طراز." }],
+      steps: [{ year: "1999", title: "بداية ميدانية", desc: "بدأ مؤسسو Almita رحلتهم التجارية بحل مشكلات تشغيلية حقيقية في إدارة النفايات الصلبة." }, { year: "2007", title: "خبرة هندسية متقدمة", desc: "تمتد خبرة فريق HBOT Chamber Tech في التصميم والهندسة والأتمتة وإدارة المشاريع إلى عام 2007." }, { year: "2010", title: "مظلة Almita Group", desc: "مجموعة Almita — المنظومة التجارية والتشغيلية التي تدعم HBOT Chamber Tech — تعمل منذ 2010." }, { year: "اليوم", title: "تركيز جديد على تقنيات HBOT", desc: "ننقل هذه الخبرة إلى أنظمة HBOT عبر CityOS وCityGuard وCityConnect وCityAI والمكوّن + AR والهندسة الخاصة بكل طراز." }],
       proof_title: "نوثق ما نعد به", proof_text: "نحدد كتابياً نطاق المنتج والتركيب والتدريب والصيانة ووثائق السوق المستهدف لكل مشروع.", partner_label: "دعم مؤسسي في المرحلة الانتقالية", partner_text: "تحظى HBOT Chamber Tech حالياً بدعم المنظومة التجارية والتشغيلية لمجموعة Almita."
     },
     trustSafety: {
@@ -4380,7 +4383,7 @@ const TRANSLATIONS = {
         { value: "93–95%", label: "Concentración de Oxígeno" },
         { value: "<60dB", label: "Nivel de Ruido CitySilent™" },
         { value: "24/7", label: "Monitorización Remota" },
-        { value: "2007", label: "Ingeniería Desde" }
+        { value: "2007", label: "Experiencia de Ingeniería del Equipo" }
       ],
       tech_teaser: {
         eyebrow: "PLATAFORMA TECNOLÓGICA",
@@ -4483,6 +4486,7 @@ const TRANSLATIONS = {
       steps: [
         { year: "1999", title: "Una trayectoria comercial que empezó en el campo", desc: "Los fundadores de Almita comenzaron resolviendo problemas operativos reales en la gestión de residuos sólidos." },
         { year: "2007", title: "Advanced Engineering Experience", desc: "La experiencia en diseño, ingeniería, automatización y gestión de proyectos del equipo detrás de HBOT Chamber Tech se remonta a 2007." },
+        { year: "2010", title: "El paraguas de Almita Group", desc: "Almita Group —el ecosistema comercial y operativo que respalda a HBOT Chamber Tech— opera desde 2010." },
         { year: "TODAY", title: "Una nueva marca centrada en la tecnología hiperbárica", desc: "Llevamos esa experiencia a los sistemas HBOT de nueva generación a través de CityOS, CityGuard, CityConnect, CityAI, el configurador con RA e ingeniería específica por modelo." }
       ],
       proof_title: "Documentamos lo que prometemos", proof_text: "En cada proyecto definimos por escrito el alcance del producto, la instalación, la formación, el mantenimiento y la documentación del mercado de destino.",
@@ -5448,7 +5452,7 @@ const TRANSLATIONS = {
         { value: "93–95%", label: "Concentração de Oxigênio" },
         { value: "<60dB", label: "Nível de Ruído CitySilent™" },
         { value: "24/7", label: "Monitoramento Remoto" },
-        { value: "2007", label: "Engenharia Desde" }
+        { value: "2007", label: "Experiência de Engenharia da Equipe" }
       ],
       tech_teaser: {
         eyebrow: "PLATAFORMA TECNOLÓGICA",
@@ -5551,6 +5555,7 @@ const TRANSLATIONS = {
       steps: [
         { year: "1999", title: "Uma trajetória comercial que começou em campo", desc: "Os fundadores da Almita começaram resolvendo problemas operacionais reais na gestão de resíduos sólidos." },
         { year: "2007", title: "Advanced Engineering Experience", desc: "A experiência em design, engenharia, automação e gestão de projetos da equipe por trás da HBOT Chamber Tech remonta a 2007." },
+        { year: "2010", title: "O guarda-chuva do Almita Group", desc: "O Almita Group — o ecossistema comercial e operacional que apoia a HBOT Chamber Tech — opera desde 2010." },
         { year: "TODAY", title: "Uma nova marca focada em tecnologia hiperbárica", desc: "Levamos essa experiência aos sistemas HBOT de nova geração por meio de CityOS, CityGuard, CityConnect, CityAI, configurador com RA e engenharia específica por modelo." }
       ],
       proof_title: "Documentamos o que prometemos", proof_text: "Em cada projeto definimos por escrito o escopo do produto, a instalação, o treinamento, a manutenção e a documentação do mercado de destino.",
@@ -6516,7 +6521,7 @@ const TRANSLATIONS = {
         { value: "93–95%", label: "Sauerstoffkonzentration" },
         { value: "<60dB", label: "CitySilent™ Geräuschpegel" },
         { value: "24/7", label: "Fernüberwachung" },
-        { value: "2007", label: "Ingenieurserfahrung seit" }
+        { value: "2007", label: "Ingenieurserfahrung des Teams" }
       ],
       tech_teaser: {
         eyebrow: "TECHNOLOGIEPLATTFORM",
@@ -6619,6 +6624,7 @@ const TRANSLATIONS = {
       steps: [
         { year: "1999", title: "Ein unternehmerischer Weg, der im Feld begann", desc: "Die Gründer von Almita begannen damit, reale betriebliche Probleme in der Abfallwirtschaft zu lösen." },
         { year: "2007", title: "Advanced Engineering Experience", desc: "Die Erfahrung in Design, Engineering, Automatisierung und Projektmanagement des Teams hinter HBOT Chamber Tech reicht bis 2007 zurück." },
+        { year: "2010", title: "Das Dach der Almita Group", desc: "Die Almita Group — das kommerzielle und operative Ökosystem hinter HBOT Chamber Tech — ist seit 2010 aktiv." },
         { year: "TODAY", title: "Eine neue Marke mit Fokus auf Hyperbartechnologie", desc: "Diese Erfahrung bringen wir über CityOS, CityGuard, CityConnect, CityAI, den Konfigurator mit AR und modellspezifisches Engineering in HBOT-Systeme der nächsten Generation ein." }
       ],
       proof_title: "Wir dokumentieren, was wir versprechen", proof_text: "Für jedes Projekt legen wir Produktumfang, Installation, Schulung, Wartung und die Dokumentation für den Zielmarkt schriftlich fest.",

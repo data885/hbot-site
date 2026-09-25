@@ -3421,9 +3421,12 @@
     });
   }
 
+  /* Telif yılı iki farklı biçimde işaretlenmiş (id ve data-* ); ikisini de güncelle.
+     Yalnız id güncelleniyordu, data-current-year kullanan sayfalarda yıl elle yazılı
+     kalıyordu — pişmiş HTML'de uzun süre "© 2020" görünmesinin sebebi buydu. */
   function initYear() {
     const year = new Date().getFullYear();
-    document.querySelectorAll("#current-year").forEach((elm) => (elm.textContent = year));
+    document.querySelectorAll("#current-year, [data-current-year]").forEach((elm) => (elm.textContent = year));
   }
 
   /* ---------------- Hero banner slider ---------------- */
