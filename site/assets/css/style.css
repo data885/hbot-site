@@ -1927,6 +1927,14 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 /* halka artık 6 saniyeyi sayıyor */
 .config-intro-ring .p { animation-duration: 6s; }
 
+/* Başlık çubuğu, içerik sütunundan (1180px) daha geniş olabilmeli.
+   Ölçüldü: dokuz menü öğesi + marka + sağ aksiyonlar 14px kademede
+   ar 1026 · pt 1252 · es 1263 · tr 1284 · de 1316 · en 1351 · ru 1383 px
+   ekran genişliği istiyor. İçerik sütununun kullanılabilir genişliği 1132 px,
+   yani menü HİÇBİR dilde oraya sığmıyordu; geniş ekranda taşma kenar boşluğuna
+   akıyordu, 1440 ve altında ise dil seçici ekranın dışına çıkıyordu. */
+.site-header .container { max-width: 1480px; }
+
 /* ---------- Üst menü simetrisi ----------
    Sorun: menü bağlantılarında white-space tanımlı değildi; dar ekranda
    "Ana Sayfa", "HBOT Nedir?" ve "Güvenlik & Uygunluk" alt satıra kayıp
@@ -1940,7 +1948,7 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 .site-nav { align-items: center; }
 
 /* orta genişlikler: sığdırmak için boşluk ve punto kademeli kısılır */
-@media (max-width: 1440px) {
+@media (max-width: 1460px) {
   .site-nav { gap: 22px; }
   .site-nav > a, .nav-dropdown-trigger { font-size: 14px; }
 }
@@ -1949,12 +1957,15 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   .site-nav > a, .nav-dropdown-trigger { font-size: 13.5px; }
 }
 
-/* Menü 1200px altında tek satıra sığmıyor (ölçüldü: gereken ~774px,
-   1100px ekranda kullanılabilir 690px). Bozuk sarmalı yatay menü yerine
-   bu genişliklerde de hamburger menüye geçiliyor. 760px altındaki mobil
-   bloğunun diğer kuralları (CTA gizleme vb.) değişmedi — yalnız menünün
-   kendisi bu aralıkta katlanıyor. */
-@media (min-width: 761px) and (max-width: 1200px) {
+/* Eşik 1200'den 1300'e çekildi. Ölçüldü (başlık 1480px'e genişletildikten
+   sonra, menünün kapsayıcıdan taşmayı bıraktığı en dar ekran):
+     ru ~1295 · en ~1255 · de ~1235 · tr/es/pt/ar daha dar
+   Rusça en geniş dil olduğu için eşik ona göre tek ve ortak belirlendi;
+   böylece hiçbir dilde dil seçici ekran dışına taşmıyor ve diller arasında
+   davranış farkı kalmıyor. Altındaki genişliklerde yatay menü yerine
+   hamburger açılıyor. 760px altındaki mobil bloğunun diğer kuralları
+   (CTA gizleme vb.) değişmedi. */
+@media (min-width: 761px) and (max-width: 1299px) {
   .site-nav {
     position: absolute; top: 100%; inset-inline: 0;
     background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
