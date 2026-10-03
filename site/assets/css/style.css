@@ -1781,21 +1781,27 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 @keyframes ciOut { to { opacity: 0; transform: scale(1.04); } }
 
 /* arka planda çok hafif, yavaşça yaklaşan kabin görseli */
+/* v103 — giris titremesi: eskiden ciBg hem opakligi hem zoom'u suruyordu ve
+   film basladigi anda opaklik .46'dan .12'ye ANINDA dusuyordu (animasyonu
+   !important ezdigi icin gecis calismiyordu). Ustune ::after gradyani da ayni
+   karede koyulasinca arka arkaya iki parlaklik sicramasi oluyordu.
+   Artik ciBg yalniz zoom yapiyor; opaklik normal bir gecisle degisiyor. */
 .config-intro-bg {
   position: absolute; inset: -4%;
   background-position: center; background-size: cover;
-  opacity: 0; filter: blur(26px) saturate(.72);
-  animation: ciBg 3s cubic-bezier(.22,.61,.36,1) both;
+  opacity: .42; filter: blur(26px) saturate(.72);
+  animation: ciBgZoom 3s cubic-bezier(.22,.61,.36,1) both;
+  transition: opacity 620ms cubic-bezier(.4,0,.2,1);
 }
-@keyframes ciBg {
-  0%   { opacity: 0;    transform: scale(1.16); }
-  28%  { opacity: .46;  }
-  78%  { opacity: .46;  }
-  100% { opacity: .26;  transform: scale(1.0); }
+@keyframes ciBgZoom {
+  from { transform: scale(1.16); }
+  to   { transform: scale(1.0); }
 }
 .config-intro::after {   /* okunurluk için üstten karartma */
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(5,7,10,.45) 0%, rgba(5,7,10,.20) 45%, rgba(5,7,10,.72) 100%);
+  /* v103: film basladiginda gradyan degismiyor — tek bir deger kullaniliyor,
+     boylece o karede parlaklik sicramasi olmuyor. */
+  background: linear-gradient(180deg, rgba(5,7,10,.56) 0%, rgba(5,7,10,.32) 45%, rgba(5,7,10,.78) 100%);
   pointer-events: none;
 }
 
@@ -1882,17 +1888,14 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 .config-intro-film {
   position: absolute; inset: 0; z-index: 1;
   width: 100%; height: 100%; object-fit: cover;
-  opacity: 0; transition: opacity 420ms ease;
+  opacity: 0; transition: opacity 620ms cubic-bezier(.4,0,.2,1);
   filter: saturate(.9) contrast(1.04);
   pointer-events: none;
 }
 .config-intro[data-film="1"] .config-intro-film { opacity: .62; }
 /* film oynarken statik görsel geri çekilsin (çift görüntü olmasın) */
-.config-intro[data-film="1"] .config-intro-bg { opacity: .12 !important; }
-/* metin okunurluğu filmin üstünde de korunmalı */
-.config-intro[data-film="1"]::after {
-  background: linear-gradient(180deg, rgba(5,7,10,.58) 0%, rgba(5,7,10,.34) 45%, rgba(5,7,10,.80) 100%);
-}
+.config-intro[data-film="1"] .config-intro-bg { opacity: .12; }
+/* v103: filmli/filmsiz ::after artik ayni — anlik gradyan degisimi kaldirildi. */
 @media (prefers-reduced-motion: reduce) { .config-intro-film { display: none; } }
 /* v98: perde tam ekran ve dikey (390x844); film 16:9. cover ile kabinin yalnız
    %26'sı görünüyordu — ürün tanınmıyordu. Mobilde film tam sığıyor, üstünde ve
@@ -1901,7 +1904,7 @@ body[data-page="configurator"] .vip-card { display: none !important; }
    çekiyoruz. */
 @media (max-width: 760px) {
   .config-intro-film { object-fit: contain; }
-  .config-intro[data-film="1"] .config-intro-bg { opacity: .40 !important; }
+  .config-intro[data-film="1"] .config-intro-bg { opacity: .40; }
 }
 
 /* Ses düğmesi — film sessiz başlamak ZORUNDA (tarayıcılar sesli otomatik
@@ -2177,11 +2180,6 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   html[lang="ru"] .site-nav { gap: 17px; }
   html[lang="ru"] .site-nav > a,
   html[lang="ru"] .nav-dropdown-trigger { font-size: 13.5px; }
-}
-  .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
-  .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
-  .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }
-  .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
 }
 
 /* "Konfigüratöre hoş geldiniz" — parçalar birleşip kabin tamamlandığı anda

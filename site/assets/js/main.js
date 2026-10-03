@@ -2994,7 +2994,13 @@
     const film = el.querySelector(".config-intro-film");
     if (film && dataSaver) { film.remove(); }
     else if (film) {
-      film.addEventListener("playing", () => el.setAttribute("data-film", "1"), { once: true });
+      /* v103: data-film doğrudan set edilince tarayıcının geçişi başlatacak
+         "önceki kare"si olmuyordu; opaklık tek karede 0.42→0.12 ve 0→0.62
+         atlıyor, girişte bir parlaklık çakması oluyordu. Çift rAF ile önce bir
+         kare çizdiriyoruz, geçiş ondan sonra başlıyor. */
+      film.addEventListener("playing", () => {
+        requestAnimationFrame(() => requestAnimationFrame(() => el.setAttribute("data-film", "1")));
+      }, { once: true });
       /* Ara sahnede film bitince sayfa açılsın; perde asla filmden uzun
          beklemesin. Film hiç başlayamazsa (kod çözücü yok, ağ tıkandı)
          kullanıcıyı boş perdede tutmayalım — kısa bir gözcü ile geçelim. */
@@ -3508,7 +3514,10 @@
     v.src = "/assets/video/intro/" + model + "-assemble.mp4?v=2";
     /* Film gerçekten oynamaya başlayınca görünür olsun; o ana kadar statik
        render duruyor, böylece siyah bir kare ya da atlama görünmez. */
-    v.addEventListener("playing", () => slide.setAttribute("data-film-on", "1"));
+    /* Banner filmi de aynı sebeple sert giriyordu (bkz. config-intro). */
+    v.addEventListener("playing", () => {
+      requestAnimationFrame(() => requestAnimationFrame(() => slide.setAttribute("data-film-on", "1")));
+    });
     v.addEventListener("ended", () => {
       if (heroSlides[heroSlideIndex] === slide) scheduleHeroAdvance(HERO_FILM_HOLD);
     });
