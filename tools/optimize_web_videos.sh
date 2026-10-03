@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-FFMPEG="/private/tmp/hbot-video-tools/node_modules/ffmpeg-static/ffmpeg"
+FFMPEG="${FFMPEG:-/private/tmp/hbot-video-tools/node_modules/ffmpeg-static/ffmpeg}"
 VIDEO_DIR="$ROOT/site/assets/video"
 WORK_DIR="$(mktemp -d /private/tmp/hbot-web-video.XXXXXX)"
 

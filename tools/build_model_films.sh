@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-FFMPEG="/private/tmp/hbot-video-tools/node_modules/ffmpeg-static/ffmpeg"
+FFMPEG="${FFMPEG:-/private/tmp/hbot-video-tools/node_modules/ffmpeg-static/ffmpeg}"
 PRESENTER="$ROOT/video-production/presenter-opening-en.mp4"
 LOGO="$ROOT/site/assets/img/logo-full.png"
 FONT_BOLD="$ROOT/site/assets/fonts/NotoSans-Bold.ttf"
@@ -28,7 +28,7 @@ build_film() {
   local output="$ROOT/site/assets/video/${slug}-model-film-en.mp4"
 
   local filter
-  filter="[0:v]trim=duration=8,setpts=PTS-STARTPTS,scale=1280:720,setsar=1,fps=30,format=yuv420p,drawtext=fontfile=${FONT_BOLD}:text='HBOT CHAMBER TECH  ·  SINCE 2007':fontcolor=white:fontsize=24:x=48:y=h-58:box=1:boxcolor=0x061018@0.58:boxborderw=11[presenter];
+  filter="[0:v]trim=duration=8,setpts=PTS-STARTPTS,scale=1280:720,setsar=1,fps=30,format=yuv420p,drawtext=fontfile=${FONT_BOLD}:text='HBOT CHAMBER TECH':fontcolor=white:fontsize=24:x=48:y=h-58:box=1:boxcolor=0x061018@0.58:boxborderw=11[presenter];
 [1:v]trim=start_frame=0:end_frame=1,setpts=PTS-STARTPTS,scale=1408:792:force_original_aspect_ratio=increase,crop=1280:720,zoompan=z='min(zoom+0.00040,1.05)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=120:s=1280x720:fps=30,setsar=1,format=yuv420p,drawtext=fontfile=${FONT_BOLD}:text='${model}':fontcolor=white:fontsize=54:x=58:y=54:box=1:boxcolor=0x061018@0.70:boxborderw=17,drawtext=fontfile=${FONT_REGULAR}:text='${promise}':fontcolor=white:fontsize=25:x=60:y=145:box=1:boxcolor=0x061018@0.56:boxborderw=12[s1];
 [2:v]trim=start_frame=0:end_frame=1,setpts=PTS-STARTPTS,scale=1408:792:force_original_aspect_ratio=increase,crop=1280:720,zoompan=z='min(zoom+0.00045,1.055)':x='iw-(iw/zoom)':y='ih/2-(ih/zoom/2)':d=120:s=1280x720:fps=30,setsar=1,format=yuv420p,drawtext=fontfile=${FONT_BOLD}:text='${scene_two}':fontcolor=white:fontsize=31:x=54:y=h-118:box=1:boxcolor=0x061018@0.72:boxborderw=15[s2];
 [3:v]trim=start_frame=0:end_frame=1,setpts=PTS-STARTPTS,scale=1408:792:force_original_aspect_ratio=increase,crop=1280:720,zoompan=z='min(zoom+0.00042,1.052)':x='iw*0.54-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=120:s=1280x720:fps=30,setsar=1,format=yuv420p,drawtext=fontfile=${FONT_BOLD}:text='${capacity}':fontcolor=white:fontsize=31:x=54:y=54:box=1:boxcolor=0x061018@0.72:boxborderw=15,drawtext=fontfile=${FONT_REGULAR}:text='ENGINEERED COMFORT · DISTINCTIVE FINISHES':fontcolor=white:fontsize=23:x=56:y=124:box=1:boxcolor=0x061018@0.56:boxborderw=11[s3];

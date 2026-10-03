@@ -232,11 +232,15 @@ p { text-align: justify; text-align-last: left; }
   pointer-events: none;
 }
 .hero-slides { position: absolute; inset: 0; z-index: 0; }
+/* Banner geçişi de aynı sebeple titriyordu: iki slayt birlikte solunca ortada
+   sayfa zemini görünüp kadraj kararıyordu. Giren slayt üstte açılır, çıkan
+   slayt o bitene kadar opak durur. Geçişin kendi süresi (1400ms) aynı. */
 .hero-slide {
   position: absolute; inset: 0; background-size: cover; background-position: center;
-  opacity: 0; transition: opacity 1400ms ease;
+  opacity: 0; z-index: 0;
+  transition: opacity 420ms ease 1400ms;
 }
-.hero-slide.is-active { opacity: 1; }
+.hero-slide.is-active { opacity: 1; z-index: 1; transition: opacity 1400ms ease; }
 /* v97: banner filmi — konfigüratör girişindeki birleşme klibi statik render'ın
    ÜSTÜNDE, aynı çerçevelemeyle oynar. Film oynamaya başlayana kadar saydam
    kalır (statik görsel görünür), böylece yüklenirken siyah kare olmaz; film
@@ -1020,12 +1024,23 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   position: absolute; inset: 8% 6% 16%; display: flex; align-items: center; justify-content: center;
   transform-style: preserve-3d; will-change: transform;
 }
+/* Çapraz geçiş titremesi (v102): eski kuralda iki katman AYNI anda soluyordu.
+   Geçişin ortasında ikisi de ~%50 saydam olduğu için aradan sahne arka planı
+   sızıyor, her renk tıklamasında bir kararma çakması oluyordu. Ayrıca giren
+   görsel scale(0.98)->scale(1) ile hafifçe zıplıyordu.
+   Yeni davranış: giren katman ÜSTE alınır ve yumuşakça açılır; çıkan katman
+   giren tamamen oturana kadar opak kalır, sonra sessizce kapanır. Böylece
+   kadrajın örtüsü hiçbir anda %100'ün altına düşmez — büyük geçişlerdeki
+   yumuşak çapraz geçiş korunur, titreme kalkar. */
 .stage-img {
   position: absolute; max-width: 100%; max-height: 100%; mix-blend-mode: screen;
-  opacity: 0; transform: scale(0.98);
-  transition: filter 0.6s ease, opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0; z-index: 1;
+  transition: filter 0.6s ease, opacity 0.22s ease 0.45s;
 }
-.stage-img.is-active { opacity: 1; transform: scale(1); }
+.stage-img.is-active {
+  opacity: 1; z-index: 2;
+  transition: filter 0.6s ease, opacity 0.45s ease;
+}
 .stage-floor {
   position: absolute; left: 12%; right: 12%; bottom: 9%; height: 12%; pointer-events: none;
   background: radial-gradient(ellipse 50% 100% at 50% 100%, rgba(31, 216, 198, 0.18), rgba(255, 255, 255, 0.04) 55%, transparent 75%);
@@ -1957,34 +1972,212 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   .site-nav > a, .nav-dropdown-trigger { font-size: 13.5px; }
 }
 
-/* Eşik 1200'den 1300'e çekildi. Ölçüldü (başlık 1480px'e genişletildikten
-   sonra, menünün kapsayıcıdan taşmayı bıraktığı en dar ekran):
-     ru ~1295 · en ~1255 · de ~1235 · tr/es/pt/ar daha dar
-   Rusça en geniş dil olduğu için eşik ona göre tek ve ortak belirlendi;
-   böylece hiçbir dilde dil seçici ekran dışına taşmıyor ve diller arasında
-   davranış farkı kalmıyor. Altındaki genişliklerde yatay menü yerine
-   hamburger açılıyor. 760px altındaki mobil bloğunun diğer kuralları
-   (CTA gizleme vb.) değişmedi. */
-@media (min-width: 761px) and (max-width: 1299px) {
-  .site-nav {
+/* ---------- Hamburger eşiği: dil başına ----------
+   Menü etiketlerinin uzunluğu dile göre değişiyor, bu yüzden yatay menünün
+   sığdığı en dar ekran da dile göre değişiyor. Tek ortak eşik (1299px) en geniş
+   dile göre konulduğu için kısa menülü diller gereksiz yere hamburgere
+   düşüyordu — Arapça menü 972px'te rahat sığarken 1299px'te kapanıyordu.
+
+   Ölçüldü (13.5px kademesi, başlık kapsayıcısı 1480px; menünün kapsayıcıya
+   taşmadan sığdığı en dar ekran genişliği):
+     ru 1321 · en 1290 · de 1256 · tr 1224 · es 1205 · pt 1194 · ar 972
+
+   Beş gruba toplandı; pt/es/tr aralarında 30px'ten az fark olduğu için birlikte
+   ele alındı. Aynı blok dil sayısı kadar değil grup sayısı kadar tekrarlanıyor
+   (bu dosyada iki asistan çalışıyor; tekrar ne kadar azsa o kadar güvenli).
+   Eşiğin ALTINDA yatay menü yerine hamburger açılıyor. 760px altındaki mobil
+   bloğun diğer kuralları (CTA gizleme vb.) değişmedi. */
+
+/* ar 972 */
+@media (min-width: 761px) and (max-width: 971px) {
+  html[lang="ar"] .site-nav {
     position: absolute; top: 100%; inset-inline: 0;
     background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
     flex-direction: column; align-items: flex-start; gap: 0; padding: 0;
     max-height: 0; overflow: hidden; transition: max-height var(--transition);
   }
-  .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
-  .site-nav > a { padding: 14px 24px; width: 100%; font-size: 15px; }
-  .nav-item--dropdown { width: 100%; }
-  .nav-dropdown-trigger { padding: 14px 24px; flex: 1; font-size: 15px; }
-  .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
-  .nav-toggle { display: flex; }
-  .nav-dropdown-panel {
+  html[lang="ar"] .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
+  html[lang="ar"] .site-nav > a { padding: 14px 24px; width: 100%; font-size: 15px; }
+  html[lang="ar"] .nav-item--dropdown { width: 100%; }
+  html[lang="ar"] .nav-dropdown-trigger { padding: 14px 24px; flex: 1; font-size: 15px; }
+  html[lang="ar"] .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
+  html[lang="ar"] .nav-toggle { display: flex; }
+  html[lang="ar"] .nav-dropdown-panel {
     position: static; width: 100%; box-shadow: none;
     background: rgba(255, 255, 255, 0.03); border-radius: 0;
     opacity: 1; visibility: visible; transform: none;
     max-height: 0; overflow: hidden; padding: 0 12px;
     transition: max-height var(--transition);
   }
+  html[lang="ar"] .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
+  html[lang="ar"] .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
+  html[lang="ar"] .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }
+  html[lang="ar"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
+}
+
+/* pt 1194 · es 1205 · tr 1224 */
+@media (min-width: 761px) and (max-width: 1223px) {
+  html[lang="pt"] .site-nav {
+    position: absolute; top: 100%; inset-inline: 0;
+    background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
+    flex-direction: column; align-items: flex-start; gap: 0; padding: 0;
+    max-height: 0; overflow: hidden; transition: max-height var(--transition);
+  }
+  html[lang="pt"] .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
+  html[lang="pt"] .site-nav > a { padding: 14px 24px; width: 100%; font-size: 15px; }
+  html[lang="pt"] .nav-item--dropdown { width: 100%; }
+  html[lang="pt"] .nav-dropdown-trigger { padding: 14px 24px; flex: 1; font-size: 15px; }
+  html[lang="pt"] .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
+  html[lang="pt"] .nav-toggle { display: flex; }
+  html[lang="pt"] .nav-dropdown-panel {
+    position: static; width: 100%; box-shadow: none;
+    background: rgba(255, 255, 255, 0.03); border-radius: 0;
+    opacity: 1; visibility: visible; transform: none;
+    max-height: 0; overflow: hidden; padding: 0 12px;
+    transition: max-height var(--transition);
+  }
+  html[lang="pt"] .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
+  html[lang="pt"] .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
+  html[lang="pt"] .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }
+  html[lang="pt"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
+  html[lang="es"] .site-nav {
+    position: absolute; top: 100%; inset-inline: 0;
+    background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
+    flex-direction: column; align-items: flex-start; gap: 0; padding: 0;
+    max-height: 0; overflow: hidden; transition: max-height var(--transition);
+  }
+  html[lang="es"] .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
+  html[lang="es"] .site-nav > a { padding: 14px 24px; width: 100%; font-size: 15px; }
+  html[lang="es"] .nav-item--dropdown { width: 100%; }
+  html[lang="es"] .nav-dropdown-trigger { padding: 14px 24px; flex: 1; font-size: 15px; }
+  html[lang="es"] .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
+  html[lang="es"] .nav-toggle { display: flex; }
+  html[lang="es"] .nav-dropdown-panel {
+    position: static; width: 100%; box-shadow: none;
+    background: rgba(255, 255, 255, 0.03); border-radius: 0;
+    opacity: 1; visibility: visible; transform: none;
+    max-height: 0; overflow: hidden; padding: 0 12px;
+    transition: max-height var(--transition);
+  }
+  html[lang="es"] .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
+  html[lang="es"] .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
+  html[lang="es"] .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }
+  html[lang="es"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
+  html[lang="tr"] .site-nav {
+    position: absolute; top: 100%; inset-inline: 0;
+    background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
+    flex-direction: column; align-items: flex-start; gap: 0; padding: 0;
+    max-height: 0; overflow: hidden; transition: max-height var(--transition);
+  }
+  html[lang="tr"] .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
+  html[lang="tr"] .site-nav > a { padding: 14px 24px; width: 100%; font-size: 15px; }
+  html[lang="tr"] .nav-item--dropdown { width: 100%; }
+  html[lang="tr"] .nav-dropdown-trigger { padding: 14px 24px; flex: 1; font-size: 15px; }
+  html[lang="tr"] .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
+  html[lang="tr"] .nav-toggle { display: flex; }
+  html[lang="tr"] .nav-dropdown-panel {
+    position: static; width: 100%; box-shadow: none;
+    background: rgba(255, 255, 255, 0.03); border-radius: 0;
+    opacity: 1; visibility: visible; transform: none;
+    max-height: 0; overflow: hidden; padding: 0 12px;
+    transition: max-height var(--transition);
+  }
+  html[lang="tr"] .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
+  html[lang="tr"] .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
+  html[lang="tr"] .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }
+  html[lang="tr"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
+}
+
+/* de 1256 */
+@media (min-width: 761px) and (max-width: 1255px) {
+  html[lang="de"] .site-nav {
+    position: absolute; top: 100%; inset-inline: 0;
+    background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
+    flex-direction: column; align-items: flex-start; gap: 0; padding: 0;
+    max-height: 0; overflow: hidden; transition: max-height var(--transition);
+  }
+  html[lang="de"] .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
+  html[lang="de"] .site-nav > a { padding: 14px 24px; width: 100%; font-size: 15px; }
+  html[lang="de"] .nav-item--dropdown { width: 100%; }
+  html[lang="de"] .nav-dropdown-trigger { padding: 14px 24px; flex: 1; font-size: 15px; }
+  html[lang="de"] .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
+  html[lang="de"] .nav-toggle { display: flex; }
+  html[lang="de"] .nav-dropdown-panel {
+    position: static; width: 100%; box-shadow: none;
+    background: rgba(255, 255, 255, 0.03); border-radius: 0;
+    opacity: 1; visibility: visible; transform: none;
+    max-height: 0; overflow: hidden; padding: 0 12px;
+    transition: max-height var(--transition);
+  }
+  html[lang="de"] .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
+  html[lang="de"] .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
+  html[lang="de"] .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }
+  html[lang="de"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
+}
+
+/* en 1290 */
+@media (min-width: 761px) and (max-width: 1289px) {
+  html[lang="en"] .site-nav {
+    position: absolute; top: 100%; inset-inline: 0;
+    background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
+    flex-direction: column; align-items: flex-start; gap: 0; padding: 0;
+    max-height: 0; overflow: hidden; transition: max-height var(--transition);
+  }
+  html[lang="en"] .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
+  html[lang="en"] .site-nav > a { padding: 14px 24px; width: 100%; font-size: 15px; }
+  html[lang="en"] .nav-item--dropdown { width: 100%; }
+  html[lang="en"] .nav-dropdown-trigger { padding: 14px 24px; flex: 1; font-size: 15px; }
+  html[lang="en"] .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
+  html[lang="en"] .nav-toggle { display: flex; }
+  html[lang="en"] .nav-dropdown-panel {
+    position: static; width: 100%; box-shadow: none;
+    background: rgba(255, 255, 255, 0.03); border-radius: 0;
+    opacity: 1; visibility: visible; transform: none;
+    max-height: 0; overflow: hidden; padding: 0 12px;
+    transition: max-height var(--transition);
+  }
+  html[lang="en"] .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
+  html[lang="en"] .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
+  html[lang="en"] .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }
+  html[lang="en"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
+}
+
+/* ru 1321 · tanımsız dil */
+@media (min-width: 761px) and (max-width: 1320px) {
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .site-nav {
+    position: absolute; top: 100%; inset-inline: 0;
+    background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
+    flex-direction: column; align-items: flex-start; gap: 0; padding: 0;
+    max-height: 0; overflow: hidden; transition: max-height var(--transition);
+  }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .site-nav.is-open { max-height: 640px; padding: 12px 0; overflow-y: auto; }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .site-nav > a { padding: 14px 24px; width: 100%; font-size: 15px; }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .nav-item--dropdown { width: 100%; }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .nav-dropdown-trigger { padding: 14px 24px; flex: 1; font-size: 15px; }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .nav-dropdown-toggle { padding: 14px 24px 14px 8px; }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .nav-toggle { display: flex; }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .nav-dropdown-panel {
+    position: static; width: 100%; box-shadow: none;
+    background: rgba(255, 255, 255, 0.03); border-radius: 0;
+    opacity: 1; visibility: visible; transform: none;
+    max-height: 0; overflow: hidden; padding: 0 12px;
+    transition: max-height var(--transition);
+  }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }
+  html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
+}
+
+/* Rusça menü 13.5px kademesinde 1321px, 14px kademesinde 1384px istiyor.
+   Genel kademe sınırı 1320px olduğu için Rusça 1321–1383 arasında büyük puntoya
+   geçip taşıyordu. Bu aralıkta yalnız Rusça küçük kademede tutuluyor; diğer
+   dillerin tipografisi değişmiyor. */
+@media (min-width: 1321px) and (max-width: 1383px) {
+  html[lang="ru"] .site-nav { gap: 17px; }
+  html[lang="ru"] .site-nav > a,
+  html[lang="ru"] .nav-dropdown-trigger { font-size: 13.5px; }
+}
   .nav-item--dropdown.is-open .nav-dropdown-panel { max-height: 480px; padding: 6px 12px 10px; }
   .dropdown-link { color: rgba(255, 255, 255, 0.85) !important; }
   .dropdown-link:hover { background: rgba(255, 255, 255, 0.06); }

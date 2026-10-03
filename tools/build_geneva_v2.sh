@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-FFMPEG="/private/tmp/hbot-video-tools/node_modules/ffmpeg-static/ffmpeg"
+FFMPEG="${FFMPEG:-/private/tmp/hbot-video-tools/node_modules/ffmpeg-static/ffmpeg}"
 FONT_BOLD="$ROOT/site/assets/fonts/NotoSans-Bold.ttf"
 FONT_REGULAR="$ROOT/site/assets/fonts/NotoSans-Regular.ttf"
 PRESENTER="$ROOT/video-production/presenter-opening-en.mp4"
@@ -22,7 +22,7 @@ for file in "$PRESENTER" "$NARRATION" "$REAL/geneva-real.webp" "$REAL/geneva-int
   [[ -f "$file" ]] || { echo "Missing source: $file" >&2; exit 1; }
 done
 
-filter="[0:v]trim=duration=5,setpts=PTS-STARTPTS,scale=1280:720,setsar=1,fps=30,format=yuv420p,drawtext=fontfile=${FONT_BOLD}:text='HBOT CHAMBER TECH  ·  SINCE 2007':fontcolor=white:fontsize=24:x=48:y=h-58:box=1:boxcolor=0x061018@0.58:boxborderw=11[presenter];
+filter="[0:v]trim=duration=5,setpts=PTS-STARTPTS,scale=1280:720,setsar=1,fps=30,format=yuv420p,drawtext=fontfile=${FONT_BOLD}:text='HBOT CHAMBER TECH':fontcolor=white:fontsize=24:x=48:y=h-58:box=1:boxcolor=0x061018@0.58:boxborderw=11[presenter];
 [1:v]trim=start_frame=0:end_frame=1,setpts=PTS-STARTPTS,scale=1408:792:force_original_aspect_ratio=increase,crop=1280:720,zoompan=z='min(zoom+0.00045,1.055)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=120:s=1280x720:fps=30,setsar=1,format=yuv420p,vignette=PI/5,drawtext=fontfile=${FONT_BOLD}:text='GENEVA':fontcolor=white:fontsize=52:x=54:y=52:box=1:boxcolor=0x061018@0.72:boxborderw=17,drawtext=fontfile=${FONT_REGULAR}:text='DEVELOPED FOR HOSPITALS AND MEDICAL CENTRES':fontcolor=white:fontsize=25:x=56:y=143:box=1:boxcolor=0x061018@0.58:boxborderw=12[hero_bg];
 [0:v]trim=start=5:end=8,setpts=PTS-STARTPTS,scale=304:171,pad=310:177:3:3:color=white,fps=30,format=yuv420p[pip];
 [hero_bg][pip]overlay=x=main_w-overlay_w-42:y=main_h-overlay_h-38:eof_action=pass:shortest=0[hero];
@@ -35,7 +35,7 @@ filter="[0:v]trim=duration=5,setpts=PTS-STARTPTS,scale=1280:720,setsar=1,fps=30,
 [fv1]trim=start=3:end=5.5,setpts=PTS-STARTPTS,fps=30,scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,setsar=1,format=yuv420p[f1];
 [fv2]trim=start=9:end=11.5,setpts=PTS-STARTPTS,fps=30,scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,setsar=1,format=yuv420p[f2];
 [fv3]trim=start=15:end=17.5,setpts=PTS-STARTPTS,fps=30,scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,setsar=1,format=yuv420p[f3];
-[f0][f1][f2][f3]concat=n=4:v=1:a=0,drawtext=fontfile=${FONT_BOLD}:text='ENGINEERING & MANUFACTURING  ·  SINCE 2007':fontcolor=white:fontsize=30:x=54:y=h-104:box=1:boxcolor=0x061018@0.74:boxborderw=15[factory];
+[f0][f1][f2][f3]concat=n=4:v=1:a=0,drawtext=fontfile=${FONT_BOLD}:text='ENGINEERING & MANUFACTURING':fontcolor=white:fontsize=30:x=54:y=h-104:box=1:boxcolor=0x061018@0.74:boxborderw=15[factory];
 [6:v]trim=start_frame=0:end_frame=1,setpts=PTS-STARTPTS,scale=720:-1,pad=1280:720:(ow-iw)/2:92:color=0x020817,tpad=stop_mode=clone:stop_duration=5,fps=30,trim=duration=5,setsar=1,format=yuv420p,drawtext=fontfile=${FONT_BOLD}:text='HBOT CHAMBER TECH':fontcolor=white:fontsize=35:x=(w-text_w)/2:y=410,drawtext=fontfile=${FONT_REGULAR}:text='INTELLIGENT ENGINEERING. CONNECTED CONFIDENCE.':fontcolor=white:fontsize=27:x=(w-text_w)/2:y=478,drawtext=fontfile=${FONT_BOLD}:text='www.hbotchambertech.com':fontcolor=0x2bbfe8:fontsize=28:x=(w-text_w)/2:y=558,fade=t=out:st=4.5:d=0.5[end];
 [presenter][hero][interior][city][connected][config][factory][end]concat=n=8:v=1:a=0,format=yuv420p[v];
 [0:a]atrim=start=0:end=5,asetpts=PTS-STARTPTS,aresample=48000,volume=1.0[presenter_audio];

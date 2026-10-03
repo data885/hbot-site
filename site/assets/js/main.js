@@ -1087,9 +1087,21 @@
           const liveActive = stageActiveImg === "a" ? imgA : imgB;
           const livePassive = stageActiveImg === "a" ? imgB : imgA;
           if (target.key !== stageCurrentKey) stopSpinMomentum();
+          /* v102: giren katman her zaman sıfır saydamlıktan başlamalı.
+             Çıkan katman artık geçiş bitene kadar opak kaldığı için (bkz.
+             style.css .stage-img), hızlı art arda tıklamalarda sıradaki giren
+             katman hâlâ opak olabiliyor; src'yi öyle atayınca bir kare eski
+             görsel görünüp titreme yapıyordu. Geçişi kapatıp sıfırlıyor,
+             reflow'u zorluyor, sonra normal çapraz geçişi başlatıyoruz. */
+          livePassive.classList.remove("is-active");
+          livePassive.style.transition = "none";
+          livePassive.style.opacity = "0";
           livePassive.src = src;
           livePassive.style.filter = target.filter;
           applyMode(livePassive);
+          void livePassive.offsetWidth;
+          livePassive.style.transition = "";
+          livePassive.style.opacity = "";
           livePassive.classList.add("is-active");
           liveActive.classList.remove("is-active");
           stageActiveImg = stageActiveImg === "a" ? "b" : "a";
