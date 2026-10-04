@@ -36,3 +36,6 @@ audit/*.png
 __pycache__/
 *.pyc
 .venv/
+video-production/motion-backups/
+audit/motion-fix/*.jpg
+audit/motion-fix/*.mp4

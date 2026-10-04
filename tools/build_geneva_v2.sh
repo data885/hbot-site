@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-FFMPEG="${FFMPEG:-/private/tmp/hbot-video-tools/node_modules/ffmpeg-static/ffmpeg}"
+FFMPEG="${FFMPEG:-$ROOT/tools/render_smooth_video.py}"
 FONT_BOLD="$ROOT/site/assets/fonts/NotoSans-Bold.ttf"
 FONT_REGULAR="$ROOT/site/assets/fonts/NotoSans-Regular.ttf"
 PRESENTER="$ROOT/video-production/presenter-opening-en.mp4"
@@ -48,7 +48,7 @@ filter="[0:v]trim=duration=5,setpts=PTS-STARTPTS,scale=1280:720,setsar=1,fps=30,
 [aa0][aa1][aa2][aa3]concat=n=4:v=0:a=1,volume=0.54,afade=t=in:st=0:d=0.35,afade=t=out:st=9.4:d=0.6,adelay=25000|25000[factory_audio];
 [presenter_audio][narration][factory_audio]amix=inputs=3:duration=longest:dropout_transition=0,loudnorm=I=-16:LRA=7:TP=-1.5,alimiter=limit=0.95,apad=pad_dur=6,atrim=duration=40[a]"
 
-"$FFMPEG" -hide_banner -loglevel warning -y \
+HBOT_SCENE_DURATIONS='[5,4,4,4,4,4,10,5]' "$FFMPEG" -hide_banner -loglevel warning -y \
   -i "$PRESENTER" \
   -loop 1 -i "$REAL/geneva-real.webp" \
   -loop 1 -i "$REAL/geneva-interior.webp" \

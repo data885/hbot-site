@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-FFMPEG="${FFMPEG:-/private/tmp/hbot-video-tools/node_modules/ffmpeg-static/ffmpeg}"
+FFMPEG="${FFMPEG:-$ROOT/tools/render_smooth_video.py}"
 PRESENTER="$ROOT/video-production/presenter-opening-en.mp4"
 LOGO="$ROOT/site/assets/img/logo-full.png"
 FONT_BOLD="$ROOT/site/assets/fonts/NotoSans-Bold.ttf"
@@ -41,7 +41,7 @@ build_film() {
 [presenter_audio][narration]amix=inputs=2:duration=longest:dropout_transition=0,alimiter=limit=0.95,apad=pad_dur=4,atrim=duration=30.2[a]"
 
   echo "Rendering ${model}..."
-  "$FFMPEG" -hide_banner -loglevel warning -y \
+  HBOT_SCENE_DURATIONS='[8,4,4,4,4,4,2.2]' "$FFMPEG" -hide_banner -loglevel warning -y \
     -i "$PRESENTER" \
     -loop 1 -i "$image_one" \
     -loop 1 -i "$image_two" \

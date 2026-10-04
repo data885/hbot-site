@@ -1,0 +1,96 @@
+{
+  "videos": [
+    {
+      "file": "site/assets/video/dubai-model-film-en.mp4",
+      "duration": "40.017000",
+      "size_mb": 7.56,
+      "fps": 30,
+      "audio_unchanged": true,
+      "faststart": true,
+      "decode_errors": 0
+    },
+    {
+      "file": "site/assets/video/dubai-model-film-v2-en.web.mp4",
+      "duration": "55.033333",
+      "size_mb": 7.93,
+      "fps": 30,
+      "audio_unchanged": true,
+      "faststart": true,
+      "decode_errors": 0
+    },
+    {
+      "file": "site/assets/video/geneva-model-film-en.mp4",
+      "duration": "40.004000",
+      "size_mb": 6.69,
+      "fps": 30,
+      "audio_unchanged": true,
+      "faststart": true,
+      "decode_errors": 0
+    },
+    {
+      "file": "site/assets/video/hbot-chamber-tech.mp4",
+      "duration": "49.733333",
+      "size_mb": 5.94,
+      "fps": 30,
+      "audio_unchanged": true,
+      "faststart": true,
+      "decode_errors": 0
+    },
+    {
+      "file": "site/assets/video/milano-model-film-en.mp4",
+      "duration": "40.000000",
+      "size_mb": 7.31,
+      "fps": 30,
+      "audio_unchanged": true,
+      "faststart": true,
+      "decode_errors": 0
+    },
+    {
+      "file": "site/assets/video/oslo-model-film-en.mp4",
+      "duration": "40.000000",
+      "size_mb": 7.21,
+      "fps": 30,
+      "audio_unchanged": true,
+      "faststart": true,
+      "decode_errors": 0
+    },
+    {
+      "file": "site/assets/video/tokyo-model-film-en.mp4",
+      "duration": "40.000000",
+      "size_mb": 7.15,
+      "fps": 30,
+      "audio_unchanged": true,
+      "faststart": true,
+      "decode_errors": 0
+    },
+    {
+      "file": "site/assets/video/tokyo-plus-model-film-en.mp4",
+      "duration": "40.000000",
+      "size_mb": 7.23,
+      "fps": 30,
+      "audio_unchanged": true,
+      "faststart": true,
+      "decode_errors": 0
+    },
+    {
+      "file": "video-production/dubai/dubai-tech-cut-en-ar-35s.mp4",
+      "duration": "34.505011",
+      "size_mb": 5.15,
+      "fps": 30,
+      "audio_unchanged": true,
+      "faststart": true,
+      "decode_errors": 0
+    }
+  ],
+  "language_pages": 49,
+  "cache_versions": {
+    "tokyo-model-film-en.mp4": "6",
+    "milano-model-film-en.mp4": "6",
+    "hbot-chamber-tech.mp4": "6",
+    "geneva-model-film-en.mp4": "6",
+    "dubai-model-film-v2-en.web.mp4": "2",
+    "dubai-model-film-en.mp4": "6",
+    "tokyo-plus-model-film-en.mp4": "6",
+    "oslo-model-film-en.mp4": "6"
+  }
+}

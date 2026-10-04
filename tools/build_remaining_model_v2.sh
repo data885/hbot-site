@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-FFMPEG="${FFMPEG:-/private/tmp/hbot-video-tools/node_modules/ffmpeg-static/ffmpeg}"
+FFMPEG="${FFMPEG:-$ROOT/tools/render_smooth_video.py}"
 FONT_BOLD="$ROOT/site/assets/fonts/NotoSans-Bold.ttf"
 FONT_REGULAR="$ROOT/site/assets/fonts/NotoSans-Regular.ttf"
 PRESENTER="$ROOT/video-production/presenter-opening-en.mp4"
@@ -12,6 +12,9 @@ FACTORY="/Users/murselalkan/Desktop/İHRACAT CRM/HBOT CHAMBER TECH/Hbot Chamber
 
 build_model() {
   local slug="$1" model="$2" promise="$3" capacity="$4"
+  if [[ -n "${HBOT_MODELS:-}" && ",${HBOT_MODELS}," != *",${slug},"* ]]; then
+    return
+  fi
   local hero="$5" interior="$6" connected="$7" config="$8" narration="$9" narration_speed="${10}"
   local output="$ROOT/site/assets/video/${slug}-model-film-en.mp4"
 
@@ -37,7 +40,7 @@ build_model() {
 [presenter_audio][narration_audio][factory_audio]amix=inputs=3:duration=longest:dropout_transition=0,loudnorm=I=-16:LRA=7:TP=-1.5,alimiter=limit=0.95,apad=pad_dur=6,atrim=duration=40[a]"
 
   echo "Rendering ${model} V2..."
-  "$FFMPEG" -hide_banner -loglevel warning -y \
+  HBOT_SCENE_DURATIONS='[5,4,4,4,4,4,10,5]' "$FFMPEG" -hide_banner -loglevel warning -y \
     -i "$PRESENTER" -loop 1 -i "$hero" -loop 1 -i "$interior" \
     -loop 1 -i "$CITY_SCREEN" -loop 1 -i "$connected" -loop 1 -i "$config" \
     -loop 1 -i "$LOGO" -i "$narration" -i "$FACTORY" \
@@ -49,6 +52,7 @@ build_model() {
 REAL="$ROOT/site/assets/img/models/real"
 V2="$ROOT/video-production/model-films-v2"
 MODELS="$ROOT/video-production/models"
+python3 "$ROOT/tools/recover_model_film_sources.py"
 
 build_model "oslo" "OSLO" "PRIVATE HORIZONTAL COMFORT" "ONE-PERSON LOUNGE · PERSONAL WELLNESS" \
   "$REAL/oslo-real.webp" "$REAL/oslo-lounge-interior.webp" "$REAL/lounge-bronz.webp" \
@@ -63,7 +67,7 @@ build_model "tokyo-plus" "TOKYO PLUS" "SCALABLE FOR PROFESSIONAL SETTINGS" "TWO 
   "$V2/tokyo-plus-config-en.png" "$ROOT/video-production/model-films/tokyo-plus-model-film-en.mp3" "1.0"
 
 build_model "milano" "MILANO" "PREMIUM MULTI-PERSON WELLNESS" "FOUR-PERSON INTERIOR · PROFESSIONAL CENTRES" \
-  "$REAL/milan-cream.webp" "$REAL/milano-interior.webp" "$REAL/milan-bronz.webp" \
+  "$ROOT/video-production/motion-sources/milano-hero.png" "$ROOT/video-production/motion-sources/milano-interior.png" "$ROOT/video-production/motion-sources/milano-bronze.png" \
   "$V2/milano-config-en.png" "$ROOT/video-production/model-films/milano-model-film-en.mp3" "1.0"
 
 build_model "dubai" "DUBAI" "PRIVATE WELLNESS, DESIGNED AROUND YOU" "PREMIUM SOFA · TV · PERSONALISED FINISHES" \
