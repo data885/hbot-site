@@ -58,3 +58,13 @@ Original production MP4s are backed up locally before replacement. The unrelated
 local cookie/legal commit and untracked experiments are not included in this
 release. The release uses the existing Render auto-deploy on a normal, non-force
 push to `main`.
+
+## Homepage film colour revision — 2026-10-04
+
+The Tokyo Plus shot around 13 seconds (10.8–14.8 s) uses the site's existing,
+clean champagne/cream `tokyo-plus-real.webp`, replacing the blue production image.
+The 4-second scene, fixed City Tech captions, subpixel zoom and centred dissolves
+keep their timing. Clean presenter/manufacturing inserts come from the saved
+pre-dissolve source to avoid compounding the previously rendered transitions;
+the manufacturing tail stops before the old source's first blue frame.
+Homepage film references are v7 in all seven root/language index pages.

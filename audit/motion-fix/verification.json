@@ -30,7 +30,7 @@
     {
       "file": "site/assets/video/hbot-chamber-tech.mp4",
       "duration": "49.733333",
-      "size_mb": 5.94,
+      "size_mb": 5.95,
       "fps": 30,
       "audio_unchanged": true,
       "faststart": true,
@@ -86,7 +86,7 @@
   "cache_versions": {
     "tokyo-model-film-en.mp4": "6",
     "milano-model-film-en.mp4": "6",
-    "hbot-chamber-tech.mp4": "6",
+    "hbot-chamber-tech.mp4": "7",
     "geneva-model-film-en.mp4": "6",
     "dubai-model-film-v2-en.web.mp4": "2",
     "dubai-model-film-en.mp4": "6",

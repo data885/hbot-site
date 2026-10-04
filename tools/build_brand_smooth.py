@@ -35,8 +35,10 @@ def main():
         still(1, 144, 'DUBAI  ·  PRIVATE WELLNESS', '', 'dubai_bg'),
         '[0:v]trim=start=3.2:end=8,setpts=PTS-STARTPTS,crop=400:232:840:448,fps=30,setsar=1[pip]',
         '[dubai_bg][pip]overlay=x=840:y=448:shortest=1[pipscene]',
-        '[0:v]trim=start=8:end=10.8,setpts=PTS-STARTPTS,fps=30,setsar=1,format=yuv420p[factory]',
-        still(2, 120, 'TOKYO PLUS  ·  2-4 PERSON', 'CityOS  ·  CityAI  ·  CityGuard  ·  CityConnect', 'tokyo_blue'),
+        # Stop before the old source's first blue Tokyo Plus frame, then hold
+        # the factory tail to keep the original 10.8-second scene boundary.
+        '[0:v]trim=start=8:end=10.6,setpts=PTS-STARTPTS,fps=30,tpad=stop_mode=clone:stop_duration=0.2,setsar=1,format=yuv420p[factory]',
+        still(2, 120, 'TOKYO PLUS  ·  2-4 PERSON', 'CityOS  ·  CityAI  ·  CityGuard  ·  CityConnect', 'tokyo_champagne'),
         still(3, 99, 'OSLO  ·  SINGLE LOUNGE', 'CityAI  ·  DATA-DRIVEN ASSISTANCE', 'oslo'),
         still(1, 176, 'DUBAI  ·  PRIVATE WELLNESS', 'CityGuard  ·  SMART MONITORING', 'dubai'),
         still(4, 176, 'TOKYO  ·  TWO PERSON', 'CityConnect  ·  CONNECTED MANAGEMENT', 'tokyo'),
@@ -45,11 +47,14 @@ def main():
         still(7, 59, 'GENEVA  ·  MULTIPLACE', 'INTELLIGENT ENGINEERING  ·  CONNECTED CONFIDENCE', 'geneva'),
         '[0:v]trim=start=44:end_frame=1321,setpts=PTS-STARTPTS,loop=loop=-1:size=1:start=0,'
         'trim=end_frame=188,setpts=N/(30*TB),fps=30,setsar=1,format=yuv420p,fade=t=out:st=5.77:d=0.5[end]',
-        '[opening][pipscene][factory][tokyo_blue][oslo][dubai][tokyo][tokyo_plus][milano][geneva][end]'
+        '[opening][pipscene][factory][tokyo_champagne][oslo][dubai][tokyo][tokyo_plus][milano][geneva][end]'
         'concat=n=11:v=1:a=0,format=yuv420p[v]',
     ]
-    args = ['-i', str(OUTPUT)]
-    for source in [DUBAI / 'dubai-studio.jpeg', ROOT / 'video-production/models/tokyo-plus.webp',
+    # Read clean motion inserts from the saved pre-dissolve film, not from the
+    # last rendered output: otherwise rebuilding compounds its old transitions.
+    original = ROOT / 'video-production/motion-backups/2026-10-03/hbot-chamber-tech.mp4'
+    args = ['-i', str(original if original.exists() else OUTPUT)]
+    for source in [DUBAI / 'dubai-studio.jpeg', REAL / 'tokyo-plus-real.webp',
                    REAL / 'oslo-real.webp', REAL / 'tokyo-real.webp',
                    ROOT / 'video-production/models/tokyo-plus.jpeg',
                    ROOT / 'video-production/motion-sources/milano-hero.png', REAL / 'geneva-real.webp']:
