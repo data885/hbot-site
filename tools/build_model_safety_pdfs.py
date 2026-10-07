@@ -89,7 +89,7 @@ MODELS = [
         "image": "oslo-real.webp",
         "specs": [
             ("Kapasite", "1 kişi - yatay pozisyon"),
-            ("Basınç aralığı", "1.5-2.0 ATA"),
+            ("Basınç aralığı", "1.3-1.5 ATA"),
             ("Yatak", "Medikal ortopedik - 200 x 80 cm"),
             ("Ana gövde", "Havacılık sınıfı alüminyum"),
             ("Güvenlik", "Çift emniyet valfi"),
@@ -108,7 +108,7 @@ MODELS = [
         "image": "dubai-real.webp",
         "specs": [
             ("Kapasite", "1 kişi - oturma pozisyonu"),
-            ("Basınç aralığı", "1.5-2.0 ATA"),
+            ("Basınç aralığı", "1.3-1.5 ATA"),
             ("Kontrol", "Dokunmatik ekran"),
             ("Ana gövde", "Havacılık sınıfı alüminyum"),
             ("Güvenlik", "Çift emniyet valfi"),
@@ -128,7 +128,7 @@ MODELS = [
         "image": "tokyo-real.webp",
         "specs": [
             ("Kapasite", "2 kişi - oturma pozisyonu"),
-            ("Basınç aralığı", "1.5-2.0 ATA"),
+            ("Basınç aralığı", "1.3-1.5 ATA"),
             ("Oksijen saflığı", "%93-95"),
             ("Güvenlik", "Acil durum valf sistemi"),
             ("Kontrol", "Çift kontrol sistemi"),
@@ -147,7 +147,7 @@ MODELS = [
         "image": "tokyo-plus-real.webp",
         "specs": [
             ("Kapasite", "2-4 kişi - kademeli"),
-            ("Basınç aralığı", "2.5-6.0 ATA*"),
+            ("Basınç aralığı", "2.0-3.0 ATA*"),
             ("Oksijen saflığı", "%93-95"),
             ("Güvenlik", "Acil durum valf sistemi"),
             ("Kontrol", "Çift kontrol sistemi"),
@@ -166,7 +166,7 @@ MODELS = [
         "image": "milano-real.webp",
         "specs": [
             ("Kapasite", "4 kişi - oturma pozisyonu"),
-            ("Basınç aralığı", "2.5-6.0 ATA*"),
+            ("Basınç aralığı", "2.0-6.0 ATA*"),
             ("Oksijen saflığı", "%93-95"),
             ("İç mekan", "Kapitone yüzey - LED ambiyans"),
             ("Güvenlik", "Acil durum valf sistemi"),
@@ -185,7 +185,7 @@ MODELS = [
         "image": "geneva-real.webp",
         "specs": [
             ("Kapasite", "6+ kişi - oturma pozisyonu"),
-            ("Basınç aralığı", "2.5-6.0 ATA*"),
+            ("Basınç aralığı", "3.0-6.0 ATA*"),
             ("Oksijen saflığı", "%93-95"),
             ("Güvenlik", "Acil durum valf sistemi"),
             ("Yapı", "Hastane sınıfı"),
