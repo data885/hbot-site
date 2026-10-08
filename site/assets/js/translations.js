@@ -417,7 +417,7 @@ const TRANSLATIONS = {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
       faq_title: "Geneva hakkında merak edilenler",
       tagline: "Hastane sınıfı, büyük kapasiteli çözüm.",
-      overview_text: "Sağlık kurumları için profesyonel sınıf, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun terapi merkezlerinin ihtiyacını karşılar.",
+      overview_text: "Hastaneler ve sağlık kurumları için geliştirilen, hastane sınıfı, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun terapi merkezlerinin ihtiyacını karşılar.",
       specs: [
         { label: "Kapasite", value: "6+ kişi (oturma)" },
         { label: "Basınç Aralığı", value: "3.0 – 6.0 ATA" },
@@ -502,10 +502,10 @@ const TRANSLATIONS = {
         { q: "Milano için nasıl teklif alabilirim?", a: "Konfigüratörden Milano'yu seçip iç/dış renklerinizi belirleyerek anında tahmini fiyat görebilir, kesin teklif için formu doldurabilirsiniz." }
       ],
       "nexus": [
-        { q: "Geneva kaç kişilik?", a: "Geneva, 6 kişiden başlayıp 6/8/10/12 kademeli olarak genişleyebilen, profesyonel sınıf büyük kapasiteli bir kabindir." },
+        { q: "Geneva kaç kişilik?", a: "Geneva, 6 kişiden başlayıp 6/8/10/12 kademeli olarak genişleyebilen, hastaneler için geliştirilmiş hastane sınıfı büyük kapasiteli bir kabindir." },
         { q: "Geneva hangi tesisler için uygundur?", a: "Yoğun terapi hacmi olan hastaneler ve büyük sağlık merkezleri için tasarlanmıştır; modüler yapısı gelecekteki genişlemeye hazırdır." },
         { q: "Geneva hangi basınç aralığında çalışır?", a: "3.0–6.0 ATA aralığında, %93–95 oksijen saflığıyla çalışır." },
-        { q: "Geneva'nın güvenlik donanımı nedir?", a: "Acil durum valf sistemi standarttır; profesyonel sınıf yapısı yoğun kullanıma göre mühendislik edilmiştir." },
+        { q: "Geneva'nın güvenlik donanımı nedir?", a: "Acil durum valf sistemi standarttır; hastane sınıfı yapısı yoğun kullanıma göre mühendislik edilmiştir." },
         { q: "Geneva için nasıl teklif alabilirim?", a: "Kapasite ihtiyacınızı (6/8/10/12 kişi) belirterek bizimle iletişime geçin; kurumunuza özel teknik çizim ve teklif hazırlayalım." }
       ]
     },
@@ -637,7 +637,7 @@ const TRANSLATIONS = {
       nexus_entertainment_note: "8″ ekran; fiyat koltuk başına verilir — {perSeat} × {seats} koltuk = {total}.",
       pressure_note: "Basınç aralığı seçilen modele göre değişir.",
       pressure_nexus_only: "Sadece Nexus",
-      pressure_auto_note: "3.0 ve 6.0 ATA yalnızca Geneva modelinde sunulur — basınç seviyesi 2.5 ATA'ya ayarlandı.",
+      pressure_auto_note: "Seçili basınç bu modelin aralığında değil — basınç seviyesi modelin ilk kademesine ayarlandı. Basınç aralıkları: Oslo, Dubai, Tokyo 1.3–1.5 ATA · Tokyo Plus 2.0–3.0 ATA · Milano 2.0–6.0 ATA · Geneva 3.0–6.0 ATA.",
       pressure_auto_note_up: "Geneva medical kabindir ve yalnızca yüksek basınç sunar — basınç seviyesi 3.0 ATA'ya ayarlandı.",
       seat_step_title: "Koltuk Sayısı",
       seat_step_note: "İhtiyacınıza göre koltuk sayısını artırıp azaltabilirsiniz.",
@@ -1120,9 +1120,9 @@ const TRANSLATIONS = {
       home: { title: "Hyperbaric Oxygen Chamber Technology | HBOT Chamber Tech", desc: "Explore single-person and multiplace hyperbaric oxygen chambers for clinics, hospitals and wellness facilities, designed in Türkiye with connected technology." },
       technology: { title: "Technology | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync and CityGuard — the connected, intelligent technology platform of the HBOT City Tech Series." },
       models: { title: "Hyperbaric Oxygen Chamber Models | HBOT Chamber Tech", desc: "Compare six hyperbaric oxygen chamber models for personal, clinic, wellness and hospital settings—from 1-person to multiplace configurations." },
-      soloLounge: { title: "Oslo | 1-Person Lying Hyperbaric Chamber", desc: "A 1-person lying hyperbaric oxygen chamber with a medical orthopedic bed, 1.5–2.0 ATA operating range and CitySilent™ design." },
-      solo: { title: "Dubai | 1-Person Seated Hyperbaric Chamber", desc: "A compact 1-person seated hyperbaric oxygen chamber for home, clinic and wellness settings; 1.5–2.0 ATA and touchscreen control." },
-      duo: { title: "Tokyo | 2-Person Hyperbaric Oxygen Chamber", desc: "A 2-person seated hyperbaric oxygen chamber with a panoramic window, 1.5–2.0 ATA operating range and dual control system." },
+      soloLounge: { title: "Oslo | 1-Person Lying Hyperbaric Chamber", desc: "A 1-person lying hyperbaric oxygen chamber with a medical orthopedic bed, 1.3–1.5 ATA operating range and CitySilent™ design." },
+      solo: { title: "Dubai | 1-Person Seated Hyperbaric Chamber", desc: "A compact 1-person seated hyperbaric oxygen chamber for home, clinic and wellness settings; 1.3–1.5 ATA and touchscreen control." },
+      duo: { title: "Tokyo | 2-Person Hyperbaric Oxygen Chamber", desc: "A 2-person seated hyperbaric oxygen chamber with a panoramic window, 1.3–1.5 ATA operating range and dual control system." },
       duoPlus: { title: "Tokyo Plus | 2–4 Person Hyperbaric Chamber", desc: "A 2–4 person hyperbaric oxygen chamber for clinic, hospital and wellness projects, configurable for 2.0–3.0 ATA operation." },
       quadCube: { title: "Milano | 4-Person Hyperbaric Oxygen Chamber", desc: "A 4-person hyperbaric oxygen chamber with a spacious cube layout, 2.0–6.0 ATA operating range and independent controls." },
       nexus: { title: "Geneva | Multiplace Hyperbaric Chamber for Hospitals", desc: "A hospital-grade, 6+ person multiplace hyperbaric oxygen chamber with 3.0–6.0 ATA configuration and modular expansion readiness." },
@@ -1532,7 +1532,7 @@ const TRANSLATIONS = {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
       faq_title: "What people want to know about the Geneva",
       tagline: "A hospital-grade, large-capacity solution.",
-      overview_text: "A hospital-grade, large-capacity chamber for medical institutions. Its modular design and advanced monitoring systems meet the needs of the busiest treatment centers.",
+      overview_text: "A hospital-grade, large-capacity chamber developed for hospitals and medical institutions. Its modular design and advanced monitoring systems meet the needs of the busiest treatment centers.",
       specs: [
         { label: "Capacity", value: "6+ people (sitting)" },
         { label: "Pressure Range", value: "3.0 – 6.0 ATA" },
@@ -1584,21 +1584,21 @@ const TRANSLATIONS = {
       "solo-lounge": [
         { q: "How many people does the Oslo fit, and in what position?", a: "The Oslo is a single-person chamber used in a fully lying-down position. Its 200×80 cm medical orthopaedic mattress reduces back and lower-back pressure during long sessions." },
         { q: "Can I choose a seat or interior wall colour for the Oslo?", a: "No — the Oslo has no seat, and its interior view is fixed by design, so this step is deliberately removed from the configurator. You can still choose the exterior colour from our standard palette, or request a shade outside the list." },
-        { q: "What pressure range does the Oslo operate at?", a: "1.5–2.0 ATA — a low-pressure system suited to home use." },
+        { q: "What pressure range does the Oslo operate at?", a: "1.3–1.5 ATA — a low-pressure system suited to home use." },
         { q: "Is the Oslo noisy enough to disturb a home environment?", a: "It runs below 60 dB, close to the ambient noise of a quiet room." },
         { q: "How do I get a quote for the Oslo?", a: "Select the Oslo in the configurator and pick a colour to see an instant price estimate, then request a final quote through the form." }
       ],
       "solo": [
         { q: "How many people does the Dubai fit, and in what position?", a: "The Dubai is a compact, single-person chamber used seated, with touchscreen control suited to home or clinical use." },
         { q: "How does colour selection work for the Dubai?", a: "You can choose the exterior colour from our standard palette. The interior and seat colour also update instantly in the configurator to match your selection — you can still request a custom shade beyond the ones shown." },
-        { q: "What pressure range does the Dubai operate at?", a: "1.5–2.0 ATA, designed for home use." },
+        { q: "What pressure range does the Dubai operate at?", a: "1.3–1.5 ATA, designed for home use." },
         { q: "What are the Dubai's exterior dimensions — will it fit my space?", a: "120×110×180 cm — a compact footprint that fits comfortably into a standard room corner." },
         { q: "How do I get a quote for the Dubai?", a: "Select the Dubai in the configurator and pick a colour to see an instant price estimate, then request a final quote through the form." }
       ],
       "duo": [
         { q: "How many people does the Tokyo fit?", a: "The Tokyo is a two-seat chamber used seated — suited to couples, partners, or a patient with a companion." },
         { q: "Can I choose the interior and seat colour separately on the Tokyo?", a: "Yes. We offer separate standard palettes for the exterior shell, interior walls, and seat upholstery, each selectable independently." },
-        { q: "What pressure range and oxygen purity does the Tokyo run at?", a: "1.5–2.0 ATA, with 93–95% oxygen purity." },
+        { q: "What pressure range and oxygen purity does the Tokyo run at?", a: "1.3–1.5 ATA, with 93–95% oxygen purity." },
         { q: "How is safety handled on the Tokyo?", a: "An emergency valve system and dual control panel come standard, so both users can monitor the session independently." },
         { q: "How do I get a quote for the Tokyo?", a: "Select the Tokyo in the configurator, choose your colours, and see an instant price estimate — then request a final quote through the form." }
       ],
@@ -1659,7 +1659,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. Intended Use",
       usage_step_note: "High-pressure models are only offered for institutional use.",
       usage: {
-        home: { title: "Home Use", desc: "Low-pressure models for individual and couple use (1.5–2.0 ATA)." },
+        home: { title: "Home Use", desc: "Low-pressure models for individual and couple use (1.3–1.5 ATA)." },
         institutional: { title: "Institutional", desc: "Multi-seat, high-capacity models for clinics, wellness centers and hospitals." }
       },
       guide: {
@@ -1752,7 +1752,7 @@ const TRANSLATIONS = {
       nexus_entertainment_note: "8″ screen; price is given per seat — {perSeat} × {seats} seats = {total}.",
       pressure_note: "The pressure range depends on the model you select.",
       pressure_nexus_only: "Nexus only",
-      pressure_auto_note: "3.0 and 6.0 ATA are available on the Geneva only — pressure level has been reset to 2.5 ATA.",
+      pressure_auto_note: "The selected pressure is outside this model's range — the pressure level has been set to the model's first tier. Pressure ranges: Oslo, Dubai, Tokyo 1.3–1.5 ATA · Tokyo Plus 2.0–3.0 ATA · Milano 2.0–6.0 ATA · Geneva 3.0–6.0 ATA.",
       pressure_auto_note_up: "The Geneva is a medical chamber offering high pressure only — pressure level has been set to 3.0 ATA.",
       seat_step_title: "Seat Count",
       seat_step_note: "You can increase or decrease the seat count to match your needs.",
@@ -2668,21 +2668,21 @@ const TRANSLATIONS = {
       "solo-lounge": [
         { q: "На сколько человек рассчитан Oslo и в каком положении он используется?", a: "Oslo — одноместная капсула, используемая полностью лёжа. Медицинский ортопедический матрас 200×80 см снижает нагрузку на спину и поясницу во время долгих сеансов." },
         { q: "Можно ли выбрать цвет сиденья или внутренней стены в Oslo?", a: "Нет — у Oslo нет сиденья, а изображение интерьера фиксировано; этот шаг намеренно убран из конфигуратора. Цвет внешнего корпуса вы всё же можете выбрать из стандартной палитры или запросить оттенок, которого нет в списке." },
-        { q: "В каком диапазоне давления работает Oslo?", a: "1.5–2.0 ATA — система низкого давления, подходящая для домашнего использования." },
+        { q: "В каком диапазоне давления работает Oslo?", a: "1.3–1.5 ATA — система низкого давления, подходящая для домашнего использования." },
         { q: "Насколько шумно работает Oslo — не помешает ли дома?", a: "Уровень шума ниже 60 дБ — это близко к фоновому шуму тихой комнаты." },
         { q: "Как получить расчёт стоимости на Oslo?", a: "Выберите Oslo в конфигураторе и укажите цвет, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
       ],
       "solo": [
         { q: "На сколько человек рассчитан Dubai и в каком положении он используется?", a: "Dubai — компактная одноместная капсула, используемая сидя, с сенсорным управлением, подходящая для дома или клиники." },
         { q: "Как работает выбор цвета для Dubai?", a: "Цвет внешнего корпуса можно выбрать из стандартной палитры. Цвет интерьера и сиденья также мгновенно обновляется в конфигураторе в соответствии с выбором — оттенок, которого нет в списке, всё же можно запросить." },
-        { q: "В каком диапазоне давления работает Dubai?", a: "1.5–2.0 ATA — система, разработанная для домашнего использования." },
+        { q: "В каком диапазоне давления работает Dubai?", a: "1.3–1.5 ATA — система, разработанная для домашнего использования." },
         { q: "Каковы внешние размеры Dubai — поместится ли она в моём помещении?", a: "Внешние размеры 120×110×180 см — компактная площадь, которая удобно размещается в углу стандартной комнаты." },
         { q: "Как получить расчёт стоимости на Dubai?", a: "Выберите Dubai в конфигураторе и укажите цвет, чтобы мгновенно увидеть примерную стоимость, а для точного предложения заполните форму." }
       ],
       "duo": [
         { q: "На сколько человек рассчитан Tokyo?", a: "Tokyo — двухместная капсула с сиденьями, подходящая для пары, партнёров или пациента с сопровождающим." },
         { q: "Можно ли отдельно выбрать цвет интерьера и сидений в Tokyo?", a: "Да. У нас есть отдельные стандартные палитры для внешнего корпуса, внутренних стен и обивки сидений — каждую можно выбрать независимо." },
-        { q: "В каком диапазоне давления и чистоты кислорода работает Tokyo?", a: "Диапазон давления 1.5–2.0 ATA, чистота кислорода 93–95%." },
+        { q: "В каком диапазоне давления и чистоты кислорода работает Tokyo?", a: "Диапазон давления 1.3–1.5 ATA, чистота кислорода 93–95%." },
         { q: "Как обеспечивается безопасность в Tokyo?", a: "В стандартную комплектацию входят аварийная клапанная система и сдвоенная панель управления — каждый пользователь может независимо следить за сеансом." },
         { q: "Как получить расчёт стоимости на Tokyo?", a: "Выберите Tokyo в конфигураторе, укажите цвета и мгновенно увидьте примерную стоимость, а для точного предложения заполните форму." }
       ],
@@ -2743,7 +2743,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. Сфера применения",
       usage_step_note: "Камеры высокого давления предлагаются только для учрежденческого использования.",
       usage: {
-        home: { title: "Домашнее использование", desc: "Модели низкого давления для индивидуального использования и для пар (1,5–2,0 ATA)." },
+        home: { title: "Домашнее использование", desc: "Модели низкого давления для индивидуального использования и для пар (1,3–1,5 ATA)." },
         institutional: { title: "Учрежденческое", desc: "Многоместные модели повышенной вместимости для клиник, велнес-центров и больниц." }
       },
       guide: {
@@ -2836,7 +2836,7 @@ const TRANSLATIONS = {
       nexus_entertainment_note: "Экран 8″; цена указана за одно место — {perSeat} × {seats} мест = {total}.",
       pressure_note: "Диапазон давления зависит от выбранной модели.",
       pressure_nexus_only: "Только Nexus",
-      pressure_auto_note: "Уровни 3.0 и 6.0 ATA доступны только для Geneva — давление изменено на 2.5 ATA.",
+      pressure_auto_note: "Выбранное давление вне диапазона этой модели — установлен первый уровень давления модели. Диапазоны давления: Oslo, Dubai, Tokyo 1.3–1.5 ATA · Tokyo Plus 2.0–3.0 ATA · Milano 2.0–6.0 ATA · Geneva 3.0–6.0 ATA.",
       pressure_auto_note_up: "Geneva — медицинская барокамера только с высоким давлением — давление изменено на 3.0 ATA.",
       seat_step_title: "Количество мест",
       seat_step_note: "Вы можете увеличивать или уменьшать количество мест в соответствии с вашими потребностями.",
@@ -3741,21 +3741,21 @@ const TRANSLATIONS = {
       "solo-lounge": [
         { q: "كم شخصًا تتسع له غرفة أوسلو (Oslo) وبأي وضعية تُستخدم؟", a: "أوسلو غرفة لشخص واحد تُستخدم بوضعية الاستلقاء الكامل. يقلل مرتبتها الطبية التقويمية (200×80 سم) من الضغط على الظهر وأسفل الظهر خلال الجلسات الطويلة." },
         { q: "هل يمكنني اختيار لون المقعد أو الجدار الداخلي في أوسلو؟", a: "لا — لا يوجد مقعد في أوسلو وصورة الداخل ثابتة، لذلك تمت إزالة هذه الخطوة عمدًا من أداة التكوين. يمكنك مع ذلك اختيار لون الهيكل الخارجي من مجموعتنا القياسية، أو طلب لون غير مدرج في القائمة." },
-        { q: "ما نطاق الضغط الذي تعمل به أوسلو؟", a: "تعمل ضمن نطاق 1.5–2.0 ATA، وهو نظام منخفض الضغط مناسب للاستخدام المنزلي." },
+        { q: "ما نطاق الضغط الذي تعمل به أوسلو؟", a: "تعمل ضمن نطاق 1.3–1.5 ATA، وهو نظام منخفض الضغط مناسب للاستخدام المنزلي." },
         { q: "هل مستوى الضجيج في أوسلو مزعج للاستخدام المنزلي؟", a: "تعمل بأقل من 60 ديسيبل — قريب من الضجيج المحيط في غرفة هادئة." },
         { q: "كيف أحصل على عرض سعر لأوسلو؟", a: "اختر أوسلو في أداة التكوين وحدد اللون لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
       ],
       "solo": [
         { q: "كم شخصًا تتسع له غرفة دبي (Dubai) وبأي وضعية تُستخدم؟", a: "دبي غرفة مدمجة لشخص واحد تُستخدم بوضعية الجلوس، مزودة بتحكم بشاشة لمس، مناسبة للاستخدام المنزلي أو السريري." },
         { q: "كيف يعمل اختيار اللون في دبي؟", a: "يمكنك اختيار لون الهيكل الخارجي من مجموعتنا القياسية. نظرًا لعدم وجود صور داخلية/مقعد خاصة بدبي، تبقى صورة الداخل ثابتة — ويمكنك مع ذلك طلب لون مخصص خارج القائمة المعروضة." },
-        { q: "ما نطاق الضغط الذي تعمل به دبي؟", a: "تعمل ضمن نطاق 1.5–2.0 ATA، وهي مصممة للاستخدام المنزلي." },
+        { q: "ما نطاق الضغط الذي تعمل به دبي؟", a: "تعمل ضمن نطاق 1.3–1.5 ATA، وهي مصممة للاستخدام المنزلي." },
         { q: "ما الأبعاد الخارجية لدبي، وهل تناسب مساحتي؟", a: "أبعادها الخارجية 120×110×180 سم — مساحة أرضية مدمجة تتناسب بسهولة مع زاوية غرفة عادية." },
         { q: "كيف أحصل على عرض سعر لدبي؟", a: "اختر دبي في أداة التكوين وحدد اللون لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
       ],
       "duo": [
         { q: "كم شخصًا تتسع له طوكيو (Tokyo)؟", a: "طوكيو غرفة بمقعدين تُستخدم بوضعية الجلوس — مناسبة للأزواج أو الشركاء أو مريض برفقة مرافق." },
         { q: "هل يمكنني اختيار لون الداخل والمقعد بشكل منفصل في طوكيو؟", a: "نعم. لدينا مجموعات ألوان قياسية منفصلة للهيكل الخارجي والجدران الداخلية وتنجيد المقعد، ويمكن اختيار كل منها بشكل مستقل." },
-        { q: "ما نطاق الضغط ونقاء الأكسجين اللذان تعمل بهما طوكيو؟", a: "تعمل ضمن نطاق ضغط 1.5–2.0 ATA، بنقاء أكسجين 93–95%." },
+        { q: "ما نطاق الضغط ونقاء الأكسجين اللذان تعمل بهما طوكيو؟", a: "تعمل ضمن نطاق ضغط 1.3–1.5 ATA، بنقاء أكسجين 93–95%." },
         { q: "كيف تُضمن السلامة في طوكيو؟", a: "يأتي نظام صمام الطوارئ ولوحة تحكم مزدوجة كمعيار قياسي، بحيث يمكن لكل مستخدم مراقبة الجلسة بشكل مستقل." },
         { q: "كيف أحصل على عرض سعر لطوكيو؟", a: "اختر طوكيو في أداة التكوين وحدد ألوانك لرؤية تقدير سعر فوري، ثم اطلب عرض سعر نهائي عبر النموذج." }
       ],
@@ -3816,7 +3816,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. مجال الاستخدام",
       usage_step_note: "الموديلات عالية الضغط تُقدَّم فقط للاستخدام المؤسسي.",
       usage: {
-        home: { title: "استخدام منزلي", desc: "موديلات منخفضة الضغط للاستخدام الفردي وللأزواج (1.5–2.0 ATA)." },
+        home: { title: "استخدام منزلي", desc: "موديلات منخفضة الضغط للاستخدام الفردي وللأزواج (1.3–1.5 ATA)." },
         institutional: { title: "مؤسسي", desc: "موديلات متعددة المقاعد وعالية السعة للعيادات ومراكز العافية والمستشفيات." }
       },
       guide: {
@@ -3909,7 +3909,7 @@ const TRANSLATIONS = {
       nexus_entertainment_note: "شاشة 8 بوصة؛ يُحتسب السعر لكل مقعد — {perSeat} × {seats} مقاعد = {total}.",
       pressure_note: "يعتمد نطاق الضغط على الموديل المختار.",
       pressure_nexus_only: "Nexus فقط",
-      pressure_auto_note: "مستويا 3.0 و6.0 ATA متاحان فقط في طراز Geneva — تمت إعادة مستوى الضغط إلى 2.5 ATA.",
+      pressure_auto_note: "الضغط المحدد خارج نطاق هذا الطراز — تم ضبط مستوى الضغط على المستوى الأول للطراز. نطاقات الضغط: Oslo وDubai وTokyo ‎1.3–1.5 ATA · Tokyo Plus ‎2.0–3.0 ATA · Milano ‎2.0–6.0 ATA · Geneva ‎3.0–6.0 ATA.",
       pressure_auto_note_up: "طراز Geneva هو غرفة طبية بضغط عالٍ فقط — تم ضبط مستوى الضغط إلى 3.0 ATA.",
       seat_step_title: "عدد المقاعد",
       seat_step_note: "يمكنك زيادة عدد المقاعد أو إنقاصه حسب احتياجك.",
@@ -4824,21 +4824,21 @@ const TRANSLATIONS = {
       "solo-lounge": [
         { q: "¿Para cuántas personas es el Oslo y en qué posición se usa?", a: "El Oslo es una cámara individual que se usa completamente tumbado. Su colchón médico ortopédico de 200×80 cm reduce la presión en la espalda y la zona lumbar durante sesiones largas." },
         { q: "¿Puedo elegir el color del asiento o de la pared interior en el Oslo?", a: "No — el Oslo no tiene asiento y su vista interior es fija, por lo que este paso se ha eliminado deliberadamente del configurador. Aun así puedes elegir el color exterior de nuestra paleta estándar, o solicitar un tono que no esté en la lista." },
-        { q: "¿En qué rango de presión funciona el Oslo?", a: "Entre 1.5 y 2.0 ATA — un sistema de baja presión adecuado para uso doméstico." },
+        { q: "¿En qué rango de presión funciona el Oslo?", a: "Entre 1.3 y 1.5 ATA — un sistema de baja presión adecuado para uso doméstico." },
         { q: "¿El nivel de ruido del Oslo molesta en casa?", a: "Funciona por debajo de 60 dB, cercano al ruido ambiente de una habitación tranquila." },
         { q: "¿Cómo obtengo un presupuesto para el Oslo?", a: "Selecciona el Oslo en el configurador y elige un color para ver una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
       ],
       "solo": [
         { q: "¿Para cuántas personas es el Dubai y en qué posición se usa?", a: "El Dubai es una cámara individual compacta que se usa sentado, con control por pantalla táctil, adecuada para uso doméstico o clínico." },
         { q: "¿Cómo funciona la elección de color en el Dubai?", a: "Puedes elegir el color exterior de nuestra paleta estándar. El color del interior y del asiento también se actualiza al instante en el configurador según tu selección; aun así puedes solicitar un tono personalizado fuera de los mostrados." },
-        { q: "¿En qué rango de presión funciona el Dubai?", a: "Entre 1.5 y 2.0 ATA, diseñado para uso doméstico." },
+        { q: "¿En qué rango de presión funciona el Dubai?", a: "Entre 1.3 y 1.5 ATA, diseñado para uso doméstico." },
         { q: "¿Cuáles son las dimensiones exteriores del Dubai? ¿Cabrá en mi espacio?", a: "120×110×180 cm — una huella compacta que se ajusta cómodamente a la esquina de una habitación estándar." },
         { q: "¿Cómo obtengo un presupuesto para el Dubai?", a: "Selecciona el Dubai en el configurador y elige un color para ver una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
       ],
       "duo": [
         { q: "¿Para cuántas personas es el Tokyo?", a: "El Tokyo es una cámara de dos plazas, sentado, adecuada para parejas o para un paciente con acompañante." },
         { q: "¿Puedo elegir el color del interior y del asiento por separado en el Tokyo?", a: "Sí. Tenemos paletas estándar independientes para la carcasa exterior, las paredes interiores y la tapicería del asiento; cada una se puede elegir de forma independiente." },
-        { q: "¿En qué rango de presión y pureza de oxígeno funciona el Tokyo?", a: "Entre 1.5 y 2.0 ATA, con una pureza de oxígeno del 93–95%." },
+        { q: "¿En qué rango de presión y pureza de oxígeno funciona el Tokyo?", a: "Entre 1.3 y 1.5 ATA, con una pureza de oxígeno del 93–95%." },
         { q: "¿Cómo se garantiza la seguridad en el Tokyo?", a: "Incluye de serie un sistema de válvula de emergencia y un panel de control doble, para que ambos usuarios puedan supervisar la sesión de forma independiente." },
         { q: "¿Cómo obtengo un presupuesto para el Tokyo?", a: "Selecciona el Tokyo en el configurador, elige tus colores y ve una estimación de precio al instante; luego solicita un presupuesto final mediante el formulario." }
       ],
@@ -4899,7 +4899,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. Uso Previsto",
       usage_step_note: "Los modelos de alta presión solo se ofrecen para uso institucional.",
       usage: {
-        home: { title: "Uso Doméstico", desc: "Modelos de baja presión para uso individual y en pareja (1.5–2.0 ATA)." },
+        home: { title: "Uso Doméstico", desc: "Modelos de baja presión para uso individual y en pareja (1.3–1.5 ATA)." },
         institutional: { title: "Institucional", desc: "Modelos multipuesto de alta capacidad para clínicas, centros de bienestar y hospitales." }
       },
       guide: {
@@ -4992,7 +4992,7 @@ const TRANSLATIONS = {
       nexus_entertainment_note: "Pantalla de 8″; el precio se da por asiento — {perSeat} × {seats} asientos = {total}.",
       pressure_note: "El rango de presión depende del modelo que selecciones.",
       pressure_nexus_only: "Solo Nexus",
-      pressure_auto_note: "3.0 y 6.0 ATA solo están disponibles en el Geneva — el nivel de presión se ha restablecido a 2.5 ATA.",
+      pressure_auto_note: "La presión seleccionada está fuera del rango de este modelo — el nivel de presión se ha ajustado al primer nivel del modelo. Rangos de presión: Oslo, Dubai, Tokyo 1.3–1.5 ATA · Tokyo Plus 2.0–3.0 ATA · Milano 2.0–6.0 ATA · Geneva 3.0–6.0 ATA.",
       pressure_auto_note_up: "El Geneva es una cámara médica que solo ofrece alta presión — el nivel de presión se ha ajustado a 3.0 ATA.",
       seat_step_title: "Número de Asientos",
       seat_step_note: "Puedes aumentar o disminuir el número de asientos según tus necesidades.",
@@ -5907,21 +5907,21 @@ const TRANSLATIONS = {
       "solo-lounge": [
         { q: "Para quantas pessoas é o Oslo e em que posição é usado?", a: "O Oslo é uma câmara individual usada totalmente deitado. Seu colchão médico ortopédico de 200×80 cm reduz a pressão nas costas e na região lombar durante sessões longas." },
         { q: "Posso escolher a cor do assento ou da parede interna no Oslo?", a: "Não — o Oslo não tem assento e sua vista interna é fixa, por isso essa etapa foi deliberadamente removida do configurador. Você ainda pode escolher a cor externa em nossa paleta padrão, ou solicitar uma cor fora da lista." },
-        { q: "Em qual faixa de pressão o Oslo opera?", a: "Entre 1,5 e 2,0 ATA — um sistema de baixa pressão adequado para uso doméstico." },
+        { q: "Em qual faixa de pressão o Oslo opera?", a: "Entre 1,3 e 1,5 ATA — um sistema de baixa pressão adequado para uso doméstico." },
         { q: "O nível de ruído do Oslo incomoda em casa?", a: "Opera abaixo de 60 dB, próximo ao ruído ambiente de um quarto silencioso." },
         { q: "Como faço para obter um orçamento para o Oslo?", a: "Selecione o Oslo no configurador e escolha uma cor para ver uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
       ],
       "solo": [
         { q: "Para quantas pessoas é o Dubai e em que posição é usado?", a: "O Dubai é uma câmara individual compacta usada sentado, com controle por tela touch, adequada para uso doméstico ou clínico." },
         { q: "Como funciona a escolha de cor no Dubai?", a: "Você pode escolher a cor externa em nossa paleta padrão. A cor do interior e do assento também é atualizada instantaneamente no configurador conforme sua escolha; ainda assim você pode solicitar uma cor personalizada fora das mostradas." },
-        { q: "Em qual faixa de pressão o Dubai opera?", a: "Entre 1,5 e 2,0 ATA, projetado para uso doméstico." },
+        { q: "Em qual faixa de pressão o Dubai opera?", a: "Entre 1,3 e 1,5 ATA, projetado para uso doméstico." },
         { q: "Quais são as dimensões externas do Dubai — cabe no meu espaço?", a: "120×110×180 cm — uma área compacta que se encaixa confortavelmente no canto de um quarto padrão." },
         { q: "Como faço para obter um orçamento para o Dubai?", a: "Selecione o Dubai no configurador e escolha uma cor para ver uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
       ],
       "duo": [
         { q: "Para quantas pessoas é o Tokyo?", a: "O Tokyo é uma câmara de dois lugares, sentado, adequada para casais, parceiros ou um paciente com acompanhante." },
         { q: "Posso escolher a cor do interior e do assento separadamente no Tokyo?", a: "Sim. Temos paletas padrão separadas para a carcaça externa, as paredes internas e o estofamento do assento; cada uma pode ser escolhida de forma independente." },
-        { q: "Em qual faixa de pressão e pureza de oxigênio o Tokyo opera?", a: "Entre 1,5 e 2,0 ATA, com pureza de oxigênio de 93–95%." },
+        { q: "Em qual faixa de pressão e pureza de oxigênio o Tokyo opera?", a: "Entre 1,3 e 1,5 ATA, com pureza de oxigênio de 93–95%." },
         { q: "Como a segurança é garantida no Tokyo?", a: "Um sistema de válvula de emergência e um painel de controle duplo vêm de série, permitindo que ambos os usuários monitorem a sessão de forma independente." },
         { q: "Como faço para obter um orçamento para o Tokyo?", a: "Selecione o Tokyo no configurador, escolha suas cores e veja uma estimativa de preço instantânea; depois solicite um orçamento final pelo formulário." }
       ],
@@ -5982,7 +5982,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. Uso Pretendido",
       usage_step_note: "Os modelos de alta pressão são oferecidos apenas para uso institucional.",
       usage: {
-        home: { title: "Uso Doméstico", desc: "Modelos de baixa pressão para uso individual ou em casal (1.5–2.0 ATA)." },
+        home: { title: "Uso Doméstico", desc: "Modelos de baixa pressão para uso individual ou em casal (1.3–1.5 ATA)." },
         institutional: { title: "Institucional", desc: "Modelos multiassento de alta capacidade para clínicas, centros de bem-estar e hospitais." }
       },
       guide: {
@@ -6075,7 +6075,7 @@ const TRANSLATIONS = {
       nexus_entertainment_note: "Tela de 8″; o preço é por assento — {perSeat} × {seats} assentos = {total}.",
       pressure_note: "A faixa de pressão depende do modelo selecionado.",
       pressure_nexus_only: "Somente Nexus",
-      pressure_auto_note: "3.0 e 6.0 ATA estão disponíveis apenas no Geneva — o nível de pressão foi redefinido para 2.5 ATA.",
+      pressure_auto_note: "A pressão selecionada está fora da faixa deste modelo — o nível de pressão foi ajustado para o primeiro nível do modelo. Faixas de pressão: Oslo, Dubai, Tokyo 1.3–1.5 ATA · Tokyo Plus 2.0–3.0 ATA · Milano 2.0–6.0 ATA · Geneva 3.0–6.0 ATA.",
       pressure_auto_note_up: "O Geneva é uma câmara médica que oferece apenas alta pressão — o nível de pressão foi definido para 3.0 ATA.",
       seat_step_title: "Número de Assentos",
       seat_step_note: "Você pode aumentar ou diminuir o número de assentos conforme sua necessidade.",
@@ -6990,21 +6990,21 @@ const TRANSLATIONS = {
       "solo-lounge": [
         { q: "Für wie viele Personen ist der Oslo ausgelegt und in welcher Position wird er genutzt?", a: "Der Oslo ist eine Einzelkammer, die vollständig liegend genutzt wird. Die medizinische orthopädische Matratze (200×80 cm) reduziert den Druck auf Rücken und Lendenwirbelsäule bei langen Sitzungen." },
         { q: "Kann ich beim Oslo die Sitz- oder Innenwandfarbe wählen?", a: "Nein — der Oslo hat keinen Sitz, und die Innenansicht ist fest; dieser Schritt wurde daher bewusst aus dem Konfigurator entfernt. Die Außenfarbe können Sie dennoch aus unserer Standardpalette wählen oder einen Farbton außerhalb der Liste anfragen." },
-        { q: "In welchem Druckbereich arbeitet der Oslo?", a: "Zwischen 1,5 und 2,0 ATA — ein Niederdrucksystem für den Heimgebrauch." },
+        { q: "In welchem Druckbereich arbeitet der Oslo?", a: "Zwischen 1,3 und 1,5 ATA — ein Niederdrucksystem für den Heimgebrauch." },
         { q: "Ist der Oslo zu Hause störend laut?", a: "Er arbeitet unter 60 dB, nahe der Umgebungslautstärke eines ruhigen Zimmers." },
         { q: "Wie erhalte ich ein Angebot für den Oslo?", a: "Wählen Sie den Oslo im Konfigurator und eine Farbe, um sofort eine Preisschätzung zu sehen; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
       ],
       "solo": [
         { q: "Für wie viele Personen ist der Dubai ausgelegt und in welcher Position wird er genutzt?", a: "Der Dubai ist eine kompakte Einzelkammer, die sitzend genutzt wird, mit Touchscreen-Steuerung — geeignet für Zuhause oder Klinik." },
         { q: "Wie funktioniert die Farbwahl beim Dubai?", a: "Die Außenfarbe können Sie aus unserer Standardpalette wählen. Auch die Innen- und Sitzfarbe wird im Konfigurator sofort entsprechend Ihrer Auswahl aktualisiert — einen individuellen Farbton außerhalb der gezeigten Auswahl können Sie dennoch anfragen." },
-        { q: "In welchem Druckbereich arbeitet der Dubai?", a: "Zwischen 1,5 und 2,0 ATA, ausgelegt für den Heimgebrauch." },
+        { q: "In welchem Druckbereich arbeitet der Dubai?", a: "Zwischen 1,3 und 1,5 ATA, ausgelegt für den Heimgebrauch." },
         { q: "Wie groß sind die Außenmaße des Dubai — passt er in meinen Raum?", a: "120×110×180 cm — eine kompakte Stellfläche, die bequem in eine Standard-Zimmerecke passt." },
         { q: "Wie erhalte ich ein Angebot für den Dubai?", a: "Wählen Sie den Dubai im Konfigurator und eine Farbe, um sofort eine Preisschätzung zu sehen; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
       ],
       "duo": [
         { q: "Für wie viele Personen ist der Tokyo ausgelegt?", a: "Der Tokyo ist eine Zweiplatzkammer, sitzend genutzt — geeignet für Paare, Partner oder einen Patienten mit Begleitperson." },
         { q: "Kann ich beim Tokyo Innen- und Sitzfarbe getrennt wählen?", a: "Ja. Wir bieten separate Standardpaletten für die Außenhülle, die Innenwände und die Sitzpolsterung, jede unabhängig wählbar." },
-        { q: "In welchem Druckbereich und mit welcher Sauerstoffreinheit arbeitet der Tokyo?", a: "Druckbereich 1,5–2,0 ATA, bei 93–95 % Sauerstoffreinheit." },
+        { q: "In welchem Druckbereich und mit welcher Sauerstoffreinheit arbeitet der Tokyo?", a: "Druckbereich 1,3–1,5 ATA, bei 93–95 % Sauerstoffreinheit." },
         { q: "Wie ist die Sicherheit beim Tokyo gewährleistet?", a: "Ein Notfall-Ventilsystem und ein doppeltes Bedienfeld gehören zur Standardausstattung, sodass beide Nutzer die Sitzung unabhängig überwachen können." },
         { q: "Wie erhalte ich ein Angebot für den Tokyo?", a: "Wählen Sie den Tokyo im Konfigurator, legen Sie Ihre Farben fest und sehen Sie sofort eine Preisschätzung; fordern Sie anschließend über das Formular ein verbindliches Angebot an." }
       ],
@@ -7065,7 +7065,7 @@ const TRANSLATIONS = {
       usage_step_title: "1. Verwendungszweck",
       usage_step_note: "Hochdruckmodelle werden ausschließlich für institutionelle Nutzung angeboten.",
       usage: {
-        home: { title: "Heimgebrauch", desc: "Niedrigdruckmodelle für die individuelle Nutzung und Paare (1.5–2.0 ATA)." },
+        home: { title: "Heimgebrauch", desc: "Niedrigdruckmodelle für die individuelle Nutzung und Paare (1.3–1.5 ATA)." },
         institutional: { title: "Institutionell", desc: "Mehrplatz-Modelle mit hoher Kapazität für Kliniken, Wellnesszentren und Krankenhäuser." }
       },
       guide: {
@@ -7158,7 +7158,7 @@ const TRANSLATIONS = {
       nexus_entertainment_note: "8″-Bildschirm; der Preis gilt pro Sitz — {perSeat} × {seats} Sitze = {total}.",
       pressure_note: "Der Druckbereich hängt vom gewählten Modell ab.",
       pressure_nexus_only: "Nur Nexus",
-      pressure_auto_note: "3.0 und 6.0 ATA sind ausschließlich beim Geneva verfügbar — die Druckstufe wurde auf 2.5 ATA zurückgesetzt.",
+      pressure_auto_note: "Der gewählte Druck liegt außerhalb des Bereichs dieses Modells — die Druckstufe wurde auf die erste Stufe des Modells gesetzt. Druckbereiche: Oslo, Dubai, Tokyo 1.3–1.5 ATA · Tokyo Plus 2.0–3.0 ATA · Milano 2.0–6.0 ATA · Geneva 3.0–6.0 ATA.",
       pressure_auto_note_up: "Der Geneva ist eine medizinische Kammer, die ausschließlich hohen Druck bietet — die Druckstufe wurde auf 3.0 ATA gesetzt.",
       seat_step_title: "Sitzanzahl",
       seat_step_note: "Sie können die Sitzanzahl je nach Bedarf erhöhen oder verringern.",
