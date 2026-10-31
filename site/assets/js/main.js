@@ -3542,7 +3542,8 @@
   let heroFilmsOn = false;
   const HERO_FILM_HOLD = 1800;   // film bittikten sonra birleşmiş kabini seyretme payı
   const HERO_FILM_MAX = 8000;    // film takılırsa slayt burada kadar bekler, sonra geçer
-  const HERO_FILM_START_WAIT = 2600; // aktif slaytta film bu sürede başlamazsa fotoğrafa geçilir
+  const HERO_FILM_START_WAIT = 2600; // bu süreden sonra filmin inip inmediğine bakılır
+  const HERO_FILM_LOAD_MAX = 12000;  // film hâlâ iniyorsa en fazla bu kadar beklenir
 
   function heroFilmAllowed() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
@@ -3601,7 +3602,13 @@
     v.setAttribute("playsinline", "");
     v.preload = "auto";
     v.src = "/assets/video/intro/" + model + "-assemble.mp4?v=4";
-    v.addEventListener("playing", () => { slide.dataset.filmStarted = "1"; });
+    v.addEventListener("playing", () => {
+      const first = slide.dataset.filmStarted !== "1";
+      slide.dataset.filmStarted = "1";
+      /* Film geç başladıysa (yavaş bağlantıda ilk açılış) emniyet süresi
+         başlangıçtan sayılsın — yoksa film bitmeden slayt geçerdi. */
+      if (first && heroSlides[heroSlideIndex] === slide && slide.dataset.filmMode === "play") scheduleHeroAdvance(HERO_FILM_MAX);
+    });
     v.addEventListener("ended", () => {
       if (heroSlides[heroSlideIndex] === slide && slide.dataset.filmMode === "play") scheduleHeroAdvance(HERO_FILM_HOLD);
     });
@@ -3690,13 +3697,23 @@
     });
     /* Emniyet: film bitiş olayı gelmezse slayt burada takılı kalmasın. */
     scheduleHeroAdvance(HERO_FILM_MAX);
-    /* Film yüklenemiyorsa parçalar donuk kalmasın: birleşmiş fotoğrafa geç.
-       Sekme arka plandaysa tarayıcı videoyu bilerek başlatmıyor — o zaman
-       vazgeçme, sekme öne gelince film oynar. */
+    /* Film hiç başlayamıyorsa parçalar donuk kalmasın: birleşmiş fotoğrafa
+       geç. Ama hâlâ İNİYORSA bekle — canlıda ilk açılışta Oslo filmi 2,6 sn'de
+       inmeyip fotoğrafa düşüyordu; o arada ekranda zaten filmin ilk karesi
+       var, inince parçalar oradan birleşiyor. Sekme arka plandaysa tarayıcı
+       videoyu bilerek başlatmıyor — o zaman da vazgeçme. */
+    const t0 = Date.now();
     const watch = () => {
       if (heroSlides[heroSlideIndex] !== slide || slide.dataset.filmMode !== "play") return;
       if (slide.dataset.filmStarted === "1") return;
       if (document.hidden) { setTimeout(watch, 1000); return; }
+      const loading = v.networkState === 2 /* NETWORK_LOADING */ || v.readyState >= 1;
+      if (loading && !v.error && Date.now() - t0 < HERO_FILM_LOAD_MAX) {
+        if (v.paused) v.play().catch(() => {});
+        scheduleHeroAdvance(HERO_FILM_MAX);
+        setTimeout(watch, 500);
+        return;
+      }
       heroFilmFallback(slide);
       scheduleHeroAdvance(HERO_INTERVAL - HERO_FILM_START_WAIT);
     };
