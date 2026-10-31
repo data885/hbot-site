@@ -2937,7 +2937,7 @@
       <div class="config-intro-bg" style="background-image:url('/assets/img/models/real/${pick}-real.webp?v=${IMG_V}')"></div>
       <video class="config-intro-film" muted playsinline autoplay preload="auto" aria-hidden="true"
              poster="/assets/img/models/real/${pick}-real.webp?v=${IMG_V}">
-        <source src="/assets/video/intro/${pick}-assemble.mp4?v=2" type="video/mp4">
+        <source src="/assets/video/intro/${pick}-assemble.mp4?v=3" type="video/mp4">
       </video>
       <div class="config-intro-inner">
         <img class="config-intro-logo" src="/assets/img/logo-full.png" alt="HBOT Chamber Tech" />
@@ -3511,19 +3511,71 @@
     v.setAttribute("playsinline", "");
     v.setAttribute("aria-hidden", "true");
     v.preload = "auto";
-    v.src = "/assets/video/intro/" + model + "-assemble.mp4?v=2";
-    /* Film gerçekten oynamaya başlayınca görünür olsun; o ana kadar statik
-       render duruyor, böylece siyah bir kare ya da atlama görünmez. */
-    /* Banner filmi de aynı sebeple sert giriyordu (bkz. config-intro). */
-    v.addEventListener("playing", () => {
-      requestAnimationFrame(() => requestAnimationFrame(() => slide.setAttribute("data-film-on", "1")));
-    });
+    v.src = "/assets/video/intro/" + model + "-assemble.mp4?v=3";
+    /* Filmin ne zaman görüneceğine burada değil primeHeroFilm karar veriyor
+       (aşağıdaki açıklamaya bakın). */
     v.addEventListener("ended", () => {
       if (heroSlides[heroSlideIndex] === slide) scheduleHeroAdvance(HERO_FILM_HOLD);
     });
-    v.addEventListener("error", () => { slide.removeAttribute("data-film-on"); v.remove(); });
+    v.addEventListener("error", () => {
+      slide.removeAttribute("data-film-on");
+      slide.dataset.filmPrimed = "0";
+      v.remove();
+    });
     slide.appendChild(v);
     return v;
+  }
+
+  /* v104 — geçiş titremesi. Eskiden yeni slayt STATİK render'la (birleşmiş
+     kabin) belirmeye başlıyor, film geçişin ortasında oynamaya başlayınca
+     görüntü bir anda filmin ilk karesine — dağınık parçalara — dönüyordu:
+     kabin -> parçalar -> kabin. Ayrıca filmi görünürken başa sarmak bir kare
+     eski görüntü gösterebiliyordu.
+     Artık sıradaki slaydın filmi, slayt HENÜZ GİZLİYKEN ilk karesine sarılıp
+     görünür yapılıyor ("hazırlanıyor"). Slayt geldiğinde doğrudan o kareyle
+     beliriyor ve film aynı kareden akmaya başlıyor; ortada görüntü değişmiyor.
+     Film zamanında hazır olmazsa o tur hiç oynatılmıyor — slayt ne
+     gösteriyorsa (statik render) onu gösteriyor. Titreyen bir film yerine
+     sakin bir fotoğraf. */
+  function primeHeroFilm(slide, tries) {
+    const v = ensureHeroFilm(slide);
+    if (!v || slide.dataset.filmPrimed === "1") return;
+    tries = tries || 0;
+    /* Slayt ekrandayken (aktif ya da az önce çıkmış, hâlâ soluyor) başa
+       sarmak sökülmüş parçaları gösterir — tamamen gizlenene kadar bekle. */
+    const visible = slide.classList.contains("is-active") || parseFloat(getComputedStyle(slide).opacity) > 0.01;
+    if (visible) {
+      if (tries < 25) setTimeout(() => primeHeroFilm(slide, tries + 1), 400);
+      return;
+    }
+    /* Önceki turdan kalan kare (birleşmiş kabin) hazırlık yarım kalırsa donuk
+       kalmasın: hazır olana kadar filmi gizle, altındaki render görünsün.
+       Slayt zaten gizli, kullanıcı bu değişikliği görmüyor. */
+    slide.removeAttribute("data-film-on");
+    v.pause();
+    if (v.readyState >= 1 && v.currentTime > 0.04) {
+      try { v.currentTime = 0; } catch (e) { /* yoksay */ }
+    }
+    /* iPhone Safari play() çağrılmadan ilk kareyi çözmüyor; slayt gizliyken
+       bir an oynatıp durduruyoruz (sessiz video, kullanıcı görmüyor). */
+    if (v.readyState < 2) {
+      const p = v.play();
+      if (p && p.then) {
+        p.then(() => { v.pause(); try { v.currentTime = 0; } catch (e) { /* yoksay */ } }).catch(() => { /* yoksay */ });
+      }
+    }
+    let waited = 0;
+    const check = () => {
+      if (slide.classList.contains("is-active")) return; /* geç kaldı: bu tur statik */
+      if (v.readyState >= 2 && !v.seeking && v.currentTime < 0.04) {
+        slide.setAttribute("data-film-on", "1");
+        slide.dataset.filmPrimed = "1";
+        return;
+      }
+      waited += 100;
+      if (waited < 12000) setTimeout(check, 100);
+    };
+    check();
   }
 
   function scheduleHeroAdvance(ms) {
@@ -3546,19 +3598,27 @@
     heroDotEls.forEach((dot, i) => dot.classList.toggle("is-active", i === heroSlideIndex));
     updateHeroCaption();
     playHeroFilm(heroSlides[heroSlideIndex]);
-    /* Sıradaki slaydın filmi şimdiden gelsin ki geçişte takılma olmasın. */
-    ensureHeroFilm(heroSlides[(heroSlideIndex + 1) % heroSlides.length]);
+    /* Sıradaki slaydın filmi şimdiden gelsin VE ilk karesinde hazır beklesin. */
+    primeHeroFilm(heroSlides[(heroSlideIndex + 1) % heroSlides.length]);
   }
 
   function playHeroFilm(slide) {
-    const v = ensureHeroFilm(slide);
-    if (!v) { scheduleHeroAdvance(HERO_INTERVAL); return; }
-    slide.removeAttribute("data-film-on");
-    try { v.currentTime = 0; } catch (e) { /* yoksay */ }
-    const p = v.play();
-    if (p && p.catch) p.catch(() => { slide.removeAttribute("data-film-on"); });
-    /* Emniyet: film bitiş olayı gelmezse slayt burada takılı kalmasın. */
-    scheduleHeroAdvance(HERO_FILM_MAX);
+    const v = slide && slide.querySelector(".hero-film");
+    if (v && slide.dataset.filmPrimed === "1") {
+      /* Film zaten ilk karesinde görünür; buradan akması kesintisiz. Bir daha
+         oynatmadan önce yeniden hazırlanması gerekecek. */
+      slide.dataset.filmPrimed = "0";
+      slide.dataset.filmMode = "play";
+      const p = v.play();
+      if (p && p.catch) p.catch(() => { slide.dataset.filmMode = "static"; scheduleHeroAdvance(HERO_INTERVAL); });
+      /* Emniyet: film bitiş olayı gelmezse slayt burada takılı kalmasın. */
+      scheduleHeroAdvance(HERO_FILM_MAX);
+      return;
+    }
+    /* Hazır değil (ilk açılış, yavaş bağlantı, noktaya tıklayıp atlama): bu tur
+       film yok. Görünen şeye dokunmuyoruz — ortada görüntü değişmesin. */
+    if (slide) slide.dataset.filmMode = "static";
+    scheduleHeroAdvance(HERO_INTERVAL);
   }
 
 
@@ -3599,7 +3659,7 @@
     const enableHeroFilms = () => {
       if (!heroFilmAllowed()) return;
       heroFilmsOn = true;
-      ensureHeroFilm(heroSlides[(heroSlideIndex + 1) % heroSlides.length]);
+      primeHeroFilm(heroSlides[(heroSlideIndex + 1) % heroSlides.length]);
     };
     const afterLoad = (fn) => {
       if (document.readyState === "complete") fn();
@@ -3615,7 +3675,8 @@
        video çözmek pil ve işlemci israfı. */
     const activeFilm = () => {
       const slide = heroSlides[heroSlideIndex];
-      return slide ? slide.querySelector(".hero-film") : null;
+      if (!slide || slide.dataset.filmMode !== "play") return null;
+      return slide.querySelector(".hero-film");
     };
     const setPaused = (paused) => {
       const v = activeFilm();
