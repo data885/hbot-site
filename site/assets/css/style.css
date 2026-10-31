@@ -1892,9 +1892,11 @@ body[data-page="configurator"] .vip-card { display: none !important; }
   filter: saturate(.9) contrast(1.04);
   pointer-events: none;
 }
-.config-intro[data-film="1"] .config-intro-film { opacity: .62; }
-/* film oynarken statik görsel geri çekilsin (çift görüntü olmasın) */
-.config-intro[data-film="1"] .config-intro-bg { opacity: .12; }
+/* v105: film katmanı poster (= filmin ilk karesi) yüklenince açılır, oynamayı
+   beklemez; film başlayınca ekranda hiçbir şey değişmez. */
+.config-intro[data-poster="1"] .config-intro-film { opacity: .62; }
+/* film görünürken statik görsel geri çekilsin (çift görüntü olmasın) */
+.config-intro[data-poster="1"] .config-intro-bg { opacity: .12; }
 /* v103: filmli/filmsiz ::after artik ayni — anlik gradyan degisimi kaldirildi. */
 @media (prefers-reduced-motion: reduce) { .config-intro-film { display: none; } }
 /* v98: perde tam ekran ve dikey (390x844); film 16:9. cover ile kabinin yalnız
@@ -1904,8 +1906,29 @@ body[data-page="configurator"] .vip-card { display: none !important; }
    çekiyoruz. */
 @media (max-width: 760px) {
   .config-intro-film { object-fit: contain; }
-  .config-intro[data-film="1"] .config-intro-bg { opacity: .40; }
+  .config-intro[data-poster="1"] .config-intro-bg { opacity: .40; }
 }
+/* v105: ara sahne bitince perde koyu zemine solar, konfigüratör aynı koyu
+   zeminle açılır (html.ci-handoff) — sert kesme yok. */
+.config-intro[data-leaving="1"] .config-intro-film,
+.config-intro[data-leaving="1"] .config-intro-bg,
+.config-intro[data-leaving="1"] .config-intro-inner,
+.config-intro[data-leaving="1"] .config-intro-sound,
+.config-intro[data-leaving="1"] .config-intro-skip {
+  opacity: 0 !important;
+  transition: opacity 400ms cubic-bezier(.4,0,.2,1) !important;
+}
+html.ci-handoff::after {
+  content: ""; position: fixed; inset: 0; z-index: 9001; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5,7,10,.56) 0%, rgba(5,7,10,.32) 45%, rgba(5,7,10,.78) 100%),
+    radial-gradient(ellipse at 50% 40%, #0d1620 0%, #05070a 62%);
+  /* emniyet: JS hiç çalışmasa da örtü 2,4 sn'de kalkar */
+  animation: ciHandoffOut 600ms cubic-bezier(.4,0,.2,1) 2400ms both;
+}
+html.ci-handoff.ci-handoff-out::after { animation: ciHandoffOutNow 600ms cubic-bezier(.4,0,.2,1) both; }
+@keyframes ciHandoffOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes ciHandoffOutNow { from { opacity: 1; } to { opacity: 0; } }
 
 /* Ses düğmesi — film sessiz başlamak ZORUNDA (tarayıcılar sesli otomatik
    oynatmayı engelliyor), bu düğme kullanıcıya tek dokunuşla açma imkânı verir.
@@ -2199,12 +2222,16 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 /* Film oynarken kabin tam ortada ve parlak; logo/metin onun üstüne binince
    okunurluk düşüyordu. Metin bloğunun arkasına yalnızca onu saran yumuşak bir
    koyuluk koyduk — filmi tümden karartmadan kontrastı geri veriyor. */
-.config-intro[data-film="1"] .config-intro-inner::before {
+/* v105: eskiden film başladığı karede birden beliriyordu (metnin arkası bir
+   anda kararıyordu); artık film katmanıyla birlikte, aynı sürede solarak gelir. */
+.config-intro-inner::before {
   content: "";
   position: absolute; inset: -12% -18%;
   background: radial-gradient(ellipse at center, rgba(5,7,10,.72) 0%, rgba(5,7,10,.45) 48%, rgba(5,7,10,0) 76%);
   z-index: -1; pointer-events: none;
+  opacity: 0; transition: opacity 620ms cubic-bezier(.4,0,.2,1);
 }
+.config-intro[data-poster="1"] .config-intro-inner::before { opacity: 1; }
 .config-intro-inner { position: relative; isolation: isolate; }
 
 /* v99: blog listesinden yazının kendi sayfasına giden bağlantılar */

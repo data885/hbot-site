@@ -2897,6 +2897,7 @@
      olan kullanıcıya hiç gösterilmez. */
   const CONFIG_INTRO_KEY = "hbotConfigIntroSeen";
   const CONFIG_INTRO_SOUND = "hbotConfigIntroSound";
+  const CONFIG_INTRO_HANDOFF = "hbotConfigIntroHandoff";
   const CONFIG_INTRO_LAST = "hbotConfigIntroLast";
   /* Perdenin kendisi. Hem konfigüratör sayfasında (doğrudan giriş: yer imi,
      arama sonucu) hem de menüden tıklandığında SAYFA AÇILMADAN ÖNCE ara sahne
@@ -2934,10 +2935,10 @@
     el.setAttribute("role", "dialog");
     el.setAttribute("aria-label", t.title);
     el.innerHTML = `
-      <div class="config-intro-bg" style="background-image:url('/assets/img/models/real/${pick}-real.webp?v=${IMG_V}')"></div>
+      <div class="config-intro-bg" style="background-image:url('/assets/img/hero/${pick}-start.webp?v=1')"></div>
       <video class="config-intro-film" muted playsinline autoplay preload="auto" aria-hidden="true"
-             poster="/assets/img/models/real/${pick}-real.webp?v=${IMG_V}">
-        <source src="/assets/video/intro/${pick}-assemble.mp4?v=3" type="video/mp4">
+             poster="/assets/img/hero/${pick}-start.webp?v=1">
+        <source src="/assets/video/intro/${pick}-assemble.mp4?v=4" type="video/mp4">
       </video>
       <div class="config-intro-inner">
         <img class="config-intro-logo" src="/assets/img/logo-full.png" alt="HBOT Chamber Tech" />
@@ -2970,8 +2971,25 @@
       document.removeEventListener("keydown", onKey);
       if (opts.keepOpen) {
         /* Ara sahne: perde kapanmasın — sayfa geçişi onun altında olsun,
-           böylece beyaz bir flaş görünmez. */
-        if (typeof opts.onDone === "function") opts.onDone(reason);
+           böylece beyaz bir flaş görünmez.
+           v105: eskiden filmin son karesinden konfigüratöre SERT kesmeyle
+           geçiliyordu, ardından sahne görselleri tek tek beliriyordu — girişteki
+           titreme buydu. Artık perde önce koyu zemine soluyor, konfigüratör de
+           aynı koyu zeminle açılıyor (ci-handoff.js) ve sahne hazır olunca
+           o örtü kalkıyor: kabin -> koyu -> konfigüratör, kesintisiz. */
+        el.setAttribute("data-leaving", "1");
+        const f = el.querySelector(".config-intro-film");
+        if (f && !f.muted) {
+          const v0 = f.volume, t0 = Date.now();
+          const down = () => {
+            const k = Math.min(1, (Date.now() - t0) / 380);
+            f.volume = v0 * (1 - k);
+            if (k < 1) requestAnimationFrame(down);
+          };
+          requestAnimationFrame(down);
+        }
+        try { sessionStorage.setItem(CONFIG_INTRO_HANDOFF, "1"); } catch (e) { /* yoksay */ }
+        setTimeout(() => { if (typeof opts.onDone === "function") opts.onDone(reason); }, 420);
         return;
       }
       el.setAttribute("data-closing", "1");
@@ -2998,8 +3016,22 @@
          "önceki kare"si olmuyordu; opaklık tek karede 0.42→0.12 ve 0→0.62
          atlıyor, girişte bir parlaklık çakması oluyordu. Çift rAF ile önce bir
          kare çizdiriyoruz, geçiş ondan sonra başlıyor. */
+      /* v105: perdenin titremesi — bulanık arka plan BİRLEŞMİŞ kabini, film ise
+         DAĞINIK parçaları gösteriyordu; film açılırken ikisi üst üste binip
+         parlaklık oynuyordu. Artık arka plan da poster de filmin ilk karesi.
+         Görünürlüğü filmin oynaması değil poster'ın yüklenmesi açıyor; film
+         sonradan başladığında ekranda hiçbir şey sıçramıyor, parçalar aynı
+         kareden birleşmeye başlıyor. data-film yalnız ses düğmesi için. */
+      const showPoster = () => {
+        if (el.hasAttribute("data-poster")) return;
+        requestAnimationFrame(() => requestAnimationFrame(() => el.setAttribute("data-poster", "1")));
+      };
+      const posterImg = new Image();
+      posterImg.src = film.getAttribute("poster");
+      (posterImg.decode ? posterImg.decode() : Promise.resolve()).then(showPoster).catch(() => { /* poster yok: film başlayınca açılır */ });
       film.addEventListener("playing", () => {
-        requestAnimationFrame(() => requestAnimationFrame(() => el.setAttribute("data-film", "1")));
+        showPoster();
+        el.setAttribute("data-film", "1");
       }, { once: true });
       /* Ara sahnede film bitince sayfa açılsın; perde asla filmden uzun
          beklemesin. Film hiç başlayamazsa (kod çözücü yok, ağ tıkandı)
@@ -3065,6 +3097,29 @@
   /* Doğrudan konfigüratör sayfasına gelen ziyaretçi (yer imi, arama sonucu,
      yenileme) için perde. Menüden tıklayanlar buraya hiç düşmez: ara sahne
      zaten oturum bayrağını koymuş olur. */
+  /* Ara sahneden gelindiyse sayfa koyu örtüyle açıldı (ci-handoff.js). Sahne
+     görseli hazır olunca örtüyü yavaşça kaldır. CSS örtüyü 2,4 sn'de kendisi
+     de kaldırıyor; o başladıysa ikinci bir solma başlatmıyoruz (yoksa örtü bir
+     anda geri gelip tekrar solardı). */
+  function finishConfigHandoff() {
+    const root = document.documentElement;
+    if (!root.classList.contains("ci-handoff")) return;
+    let fired = false;
+    const go = () => {
+      if (fired) return;
+      fired = true;
+      if (performance.now() > 2250) return;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        root.classList.add("ci-handoff-out");
+        setTimeout(() => root.classList.remove("ci-handoff", "ci-handoff-out"), 700);
+      }));
+    };
+    const img = document.getElementById("stage-img-a");
+    if (img && img.decode) img.decode().then(() => setTimeout(go, 200), () => setTimeout(go, 200));
+    else setTimeout(go, 400);
+    setTimeout(go, 1500);
+  }
+
   function initConfigIntro(dict) {
     if (document.body.getAttribute("data-page") !== "configurator") return;
     /* ?intro=1 ile perde tekrar izlenebilir (önizleme/QA için); bu durumda
@@ -3487,56 +3542,81 @@
   let heroFilmsOn = false;
   const HERO_FILM_HOLD = 1800;   // film bittikten sonra birleşmiş kabini seyretme payı
   const HERO_FILM_MAX = 8000;    // film takılırsa slayt burada kadar bekler, sonra geçer
+  const HERO_FILM_START_WAIT = 2600; // aktif slaytta film bu sürede başlamazsa fotoğrafa geçilir
 
   function heroFilmAllowed() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
     const conn = navigator.connection || {};
     if (conn.saveData === true) return false;
-    if (/^(slow-2g|2g|3g)$/.test(conn.effectiveType || "")) return false;
+    /* "3g" burada engel değil: Chrome iyi bir mobil bağlantıyı da sık sık 3g
+       diye raporluyor ve telefonlarda filmler hiç açılmıyordu. Film yüklenene
+       kadar slayt zaten filmin ilk karesini (poster) gösteriyor. */
+    if (/^(slow-2g|2g)$/.test(conn.effectiveType || "")) return false;
     return true;
   }
 
+  /* v105 — banner'da filmler yerine çoğu zaman düz fotoğraf görünüyordu: v104
+     sıradaki slaydın filmini ancak video verisi tarayıcıda çözülmüşse
+     "hazır" sayıyordu, Safari'de ve yavaş bağlantıda bu çoğu tur olmuyor,
+     slayt fotoğrafla geçiyordu. İlk slayt (Oslo) ise hiç film oynatmıyordu.
+     Artık her filmin İLK KARESİ ayrı bir görsel (assets/img/hero/*-start.webp)
+     ve videonun poster'ı. Poster = ilk kare olduğu için slayt video verisini
+     beklemeden dağınık parçalarla açılıyor; film başladığında görüntü
+     değişmiyor, parçalar aynı kareden birleşmeye başlıyor. Video hiç
+     başlayamazsa (otomatik oynatma engeli, hata) parçalar donuk kalmasın diye
+     birleşmiş kabin fotoğrafına yumuşakça geçiliyor. */
+  function heroFilmPoster(model) {
+    return "/assets/img/hero/" + model + "-start.webp?v=1";
+  }
+
+  function heroFilmFallback(slide) {
+    const still = slide.getAttribute("data-still");
+    if (still) {
+      slide.style.backgroundImage = `url("${still}")`;
+      slide.removeAttribute("data-still");
+    }
+    slide.removeAttribute("data-film-on");
+    slide.dataset.filmPrimed = "0";
+    slide.dataset.filmMode = "static";
+  }
+
   function ensureHeroFilm(slide) {
-    if (!heroFilmsOn || !slide) return null;
+    if (!heroFilmsOn || !slide || slide.dataset.filmBroken === "1") return null;
     const model = slide.getAttribute("data-film");
     if (!model) return null;
-    const has = slide.querySelector(".hero-film");
-    if (has) return has;
-    const v = document.createElement("video");
-    v.className = "hero-film";
+    let v = slide.querySelector(".hero-film");
+    if (!v) {
+      v = document.createElement("video");
+      v.className = "hero-film";
+      v.setAttribute("aria-hidden", "true");
+      v.poster = heroFilmPoster(model);
+      slide.appendChild(v);
+    }
+    if (v.dataset.wired === "1") return v;
+    v.dataset.wired = "1";
     v.muted = true;
     v.defaultMuted = true;
     v.playsInline = true;
     v.setAttribute("muted", "");
     v.setAttribute("playsinline", "");
-    v.setAttribute("aria-hidden", "true");
     v.preload = "auto";
-    v.src = "/assets/video/intro/" + model + "-assemble.mp4?v=3";
-    /* Filmin ne zaman görüneceğine burada değil primeHeroFilm karar veriyor
-       (aşağıdaki açıklamaya bakın). */
+    v.src = "/assets/video/intro/" + model + "-assemble.mp4?v=4";
+    v.addEventListener("playing", () => { slide.dataset.filmStarted = "1"; });
     v.addEventListener("ended", () => {
-      if (heroSlides[heroSlideIndex] === slide) scheduleHeroAdvance(HERO_FILM_HOLD);
+      if (heroSlides[heroSlideIndex] === slide && slide.dataset.filmMode === "play") scheduleHeroAdvance(HERO_FILM_HOLD);
     });
     v.addEventListener("error", () => {
-      slide.removeAttribute("data-film-on");
-      slide.dataset.filmPrimed = "0";
-      v.remove();
+      slide.dataset.filmBroken = "1";
+      heroFilmFallback(slide);
+      if (heroSlides[heroSlideIndex] === slide) scheduleHeroAdvance(HERO_INTERVAL);
+      setTimeout(() => v.remove(), 700);
     });
-    slide.appendChild(v);
     return v;
   }
 
-  /* v104 — geçiş titremesi. Eskiden yeni slayt STATİK render'la (birleşmiş
-     kabin) belirmeye başlıyor, film geçişin ortasında oynamaya başlayınca
-     görüntü bir anda filmin ilk karesine — dağınık parçalara — dönüyordu:
-     kabin -> parçalar -> kabin. Ayrıca filmi görünürken başa sarmak bir kare
-     eski görüntü gösterebiliyordu.
-     Artık sıradaki slaydın filmi, slayt HENÜZ GİZLİYKEN ilk karesine sarılıp
-     görünür yapılıyor ("hazırlanıyor"). Slayt geldiğinde doğrudan o kareyle
-     beliriyor ve film aynı kareden akmaya başlıyor; ortada görüntü değişmiyor.
-     Film zamanında hazır olmazsa o tur hiç oynatılmıyor — slayt ne
-     gösteriyorsa (statik render) onu gösteriyor. Titreyen bir film yerine
-     sakin bir fotoğraf. */
+  /* Sıradaki slaydın filmini, slayt HENÜZ GİZLİYKEN ilk karesine hazırla.
+     Hiç oynamamış video poster'ı gösterir (= ilk kare); bir kez oynamışsa
+     başa sarılır. Slayt geldiğinde zaten o kareyi gösteriyor olur. */
   function primeHeroFilm(slide, tries) {
     const v = ensureHeroFilm(slide);
     if (!v || slide.dataset.filmPrimed === "1") return;
@@ -3548,30 +3628,27 @@
       if (tries < 25) setTimeout(() => primeHeroFilm(slide, tries + 1), 400);
       return;
     }
-    /* Önceki turdan kalan kare (birleşmiş kabin) hazırlık yarım kalırsa donuk
-       kalmasın: hazır olana kadar filmi gizle, altındaki render görünsün.
-       Slayt zaten gizli, kullanıcı bu değişikliği görmüyor. */
-    slide.removeAttribute("data-film-on");
     v.pause();
-    if (v.readyState >= 1 && v.currentTime > 0.04) {
-      try { v.currentTime = 0; } catch (e) { /* yoksay */ }
+    const ready = () => {
+      if (slide.classList.contains("is-active")) return; /* geç kaldı: bu tur fotoğraf */
+      slide.setAttribute("data-film-on", "1");
+      slide.dataset.filmPrimed = "1";
+    };
+    if (!v.played || v.played.length === 0) {
+      /* Hiç oynamadı: ekranda poster var. Poster görseli çözülünce göster. */
+      const img = new Image();
+      img.src = v.poster;
+      (img.decode ? img.decode() : Promise.resolve()).then(ready).catch(() => { /* poster yok: fotoğraf kalır */ });
+      return;
     }
-    /* iPhone Safari play() çağrılmadan ilk kareyi çözmüyor; slayt gizliyken
-       bir an oynatıp durduruyoruz (sessiz video, kullanıcı görmüyor). */
-    if (v.readyState < 2) {
-      const p = v.play();
-      if (p && p.then) {
-        p.then(() => { v.pause(); try { v.currentTime = 0; } catch (e) { /* yoksay */ } }).catch(() => { /* yoksay */ });
-      }
-    }
+    /* Oynamıştı: son karede (birleşmiş kabin) duruyor. Gizliyken başa sar;
+       sarma bitene kadar filmi saklı tut ki yarım kalırsa donuk kare görünmesin. */
+    slide.removeAttribute("data-film-on");
+    try { v.currentTime = 0; } catch (e) { /* yoksay */ }
     let waited = 0;
     const check = () => {
-      if (slide.classList.contains("is-active")) return; /* geç kaldı: bu tur statik */
-      if (v.readyState >= 2 && !v.seeking && v.currentTime < 0.04) {
-        slide.setAttribute("data-film-on", "1");
-        slide.dataset.filmPrimed = "1";
-        return;
-      }
+      if (slide.classList.contains("is-active")) return;
+      if (v.readyState >= 2 && !v.seeking && v.currentTime < 0.04) { ready(); return; }
       waited += 100;
       if (waited < 12000) setTimeout(check, 100);
     };
@@ -3602,21 +3679,45 @@
     primeHeroFilm(heroSlides[(heroSlideIndex + 1) % heroSlides.length]);
   }
 
+  function startHeroFilm(slide, v) {
+    slide.dataset.filmStarted = "0";
+    const p = v.play();
+    if (p && p.catch) p.catch(() => {
+      if (heroSlides[heroSlideIndex] !== slide || slide.dataset.filmMode !== "play") return;
+      if (!v.paused) return;
+      heroFilmFallback(slide);
+      scheduleHeroAdvance(HERO_INTERVAL);
+    });
+    /* Emniyet: film bitiş olayı gelmezse slayt burada takılı kalmasın. */
+    scheduleHeroAdvance(HERO_FILM_MAX);
+    /* Film yüklenemiyorsa parçalar donuk kalmasın: birleşmiş fotoğrafa geç.
+       Sekme arka plandaysa tarayıcı videoyu bilerek başlatmıyor — o zaman
+       vazgeçme, sekme öne gelince film oynar. */
+    const watch = () => {
+      if (heroSlides[heroSlideIndex] !== slide || slide.dataset.filmMode !== "play") return;
+      if (slide.dataset.filmStarted === "1") return;
+      if (document.hidden) { setTimeout(watch, 1000); return; }
+      heroFilmFallback(slide);
+      scheduleHeroAdvance(HERO_INTERVAL - HERO_FILM_START_WAIT);
+    };
+    setTimeout(watch, HERO_FILM_START_WAIT);
+  }
+
   function playHeroFilm(slide) {
     const v = slide && slide.querySelector(".hero-film");
-    if (v && slide.dataset.filmPrimed === "1") {
-      /* Film zaten ilk karesinde görünür; buradan akması kesintisiz. Bir daha
+    if (v && slide.dataset.filmPrimed === "1" && slide.dataset.filmBroken !== "1") {
+      /* Film ilk karesinde görünür; buradan akması kesintisiz. Bir daha
          oynatmadan önce yeniden hazırlanması gerekecek. */
       slide.dataset.filmPrimed = "0";
       slide.dataset.filmMode = "play";
-      const p = v.play();
-      if (p && p.catch) p.catch(() => { slide.dataset.filmMode = "static"; scheduleHeroAdvance(HERO_INTERVAL); });
-      /* Emniyet: film bitiş olayı gelmezse slayt burada takılı kalmasın. */
-      scheduleHeroAdvance(HERO_FILM_MAX);
+      /* İlk slayt: filmler sayfa yüklenince açılıyor (enableHeroFilms
+         başlatır). O ana kadar ilk kare görünür, slayt beklemede. */
+      if (!heroFilmsOn) { scheduleHeroAdvance(HERO_FILM_MAX + HERO_INTERVAL); return; }
+      startHeroFilm(slide, v);
       return;
     }
-    /* Hazır değil (ilk açılış, yavaş bağlantı, noktaya tıklayıp atlama): bu tur
-       film yok. Görünen şeye dokunmuyoruz — ortada görüntü değişmesin. */
+    /* Hazır değil (yavaş bağlantı, noktaya tıklayıp atlama): bu tur film yok.
+       Görünen şeye dokunmuyoruz — ortada görüntü değişmesin. */
     if (slide) slide.dataset.filmMode = "static";
     scheduleHeroAdvance(HERO_INTERVAL);
   }
@@ -3656,26 +3757,39 @@
        makinede sayfa daha yüklenirken de boşluk bulup filmi indirmeye
        başlayabiliyor; ölçtük, 330 ms'de iniyordu. Banner'ın ilk karesi statik
        render, kritik yolda video yok. */
+    /* İlk slayt HTML'de filmin ilk karesiyle (poster) geliyor. Film izni
+       yoksa (hareket hassasiyeti, veri tasarrufu) hemen birleşmiş fotoğrafa
+       dön — sayfa yeni açılıyor, geçiş animasyonu olmadan. */
+    if (!heroFilmAllowed()) {
+      heroSlides.forEach((slide) => {
+        const v = slide.querySelector(".hero-film");
+        if (v) { v.style.transition = "none"; v.remove(); }
+        if (slide.hasAttribute("data-still")) heroFilmFallback(slide);
+      });
+      scheduleHeroAdvance(HERO_INTERVAL);
+    }
     const enableHeroFilms = () => {
       if (!heroFilmAllowed()) return;
       heroFilmsOn = true;
+      const current = heroSlides[heroSlideIndex];
+      const v = ensureHeroFilm(current);
+      if (v && current.dataset.filmMode === "play") startHeroFilm(current, v);
       primeHeroFilm(heroSlides[(heroSlideIndex + 1) % heroSlides.length]);
     };
     const afterLoad = (fn) => {
       if (document.readyState === "complete") fn();
       else window.addEventListener("load", fn, { once: true });
     };
-    afterLoad(() => {
-      if ("requestIdleCallback" in window) requestIdleCallback(enableHeroFilms, { timeout: 4000 });
-      else setTimeout(enableHeroFilms, 2000);
-    });
+    /* Video sayfa TAM yüklendikten sonra iner (LCP'yi poster görseli taşır,
+       kritik yolda video yok); boşta bekleme yok ki ilk slayt donuk kalmasın. */
+    afterLoad(() => setTimeout(enableHeroFilms, 120));
 
     /* Banner ekrandan çıkınca ya da sekme arkaya alınınca film dursun; geri
        gelince kaldığı yerden devam etsin. Aşağıda okuyan kullanıcı için boşuna
        video çözmek pil ve işlemci israfı. */
     const activeFilm = () => {
       const slide = heroSlides[heroSlideIndex];
-      if (!slide || slide.dataset.filmMode !== "play") return null;
+      if (!heroFilmsOn || !slide || slide.dataset.filmMode !== "play") return null;
       return slide.querySelector(".hero-film");
     };
     const setPaused = (paused) => {
@@ -4189,7 +4303,18 @@
     initProductAssistant();
     initClarity();
     initVideoFullscreen();
+    finishConfigHandoff();
     initConfigIntro(TRANSLATIONS[currentLang] || TRANSLATIONS.tr);
     initConfigIntroLinks(TRANSLATIONS[currentLang] || TRANSLATIONS.tr);
+  });
+
+  /* Ara sahneden konfigüratöre gidip "geri" dönülünce tarayıcı sayfayı
+     önbellekten (bfcache) olduğu gibi geri getiriyor — kararmış perde de
+     dahil, üstelik artık tıklamaya kapalı. Perdeyi temizle. */
+  window.addEventListener("pageshow", (ev) => {
+    if (!ev.persisted) return;
+    document.querySelectorAll(".config-intro").forEach((n) => n.remove());
+    document.documentElement.style.overflow = "";
+    document.documentElement.classList.remove("ci-handoff", "ci-handoff-out");
   });
 })();
