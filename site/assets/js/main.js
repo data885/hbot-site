@@ -996,6 +996,10 @@
      iki katmanı üst üste bindiriyor / opacity'yi ters gösteriyordu. */
   let stageCurrentKey = "real/oslo-real";
   let stageCurrentSrc = "";
+  /* Sahnenin İLK görseli yerine oturunca çözülür. Banner perdesinden koyu
+     örtüyle gelindiğinde örtü bundan sonra kalkar (finishConfigHandoff). */
+  let stageFirstPaintDone;
+  const stageFirstPaint = new Promise((r) => { stageFirstPaintDone = r; });
   let stageRequestedKey = "";
   let stageRequestedSrc = "";
   let stageRequestToken = 0;
@@ -1087,6 +1091,27 @@
           const liveActive = stageActiveImg === "a" ? imgA : imgB;
           const livePassive = stageActiveImg === "a" ? imgB : imgA;
           if (target.key !== stageCurrentKey) stopSpinMomentum();
+          /* İlk görsel ve sayfa koyu örtünün altında: çapraz geçiş yapma,
+             görseli doğrudan aktif katmana koy. Yoksa örtü kalkarken kabin
+             bir görselden ötekine soluyor, girişte titreme gibi görünüyordu.
+             Görsel geç geldiyse (örtü kalkmaya başlamış olabilir) normal
+             çapraz geçiş — açıktayken ani değişim olmasın. */
+          if (!stageCurrentSrc && document.documentElement.classList.contains("ci-handoff") && performance.now() < 2200) {
+            const place = () => {
+              if (token !== stageRequestToken) return;
+              liveActive.style.filter = target.filter;
+              applyMode(liveActive);
+              liveActive.src = src;
+              liveActive.classList.add("is-active");
+              livePassive.classList.remove("is-active");
+              stageCurrentKey = target.key;
+              stageCurrentSrc = src;
+              const done = () => stageFirstPaintDone();
+              if (liveActive.decode) liveActive.decode().then(done, done); else done();
+            };
+            if (loader.decode) loader.decode().then(place, place); else place();
+            return;
+          }
           /* v102: giren katman her zaman sıfır saydamlıktan başlamalı.
              Çıkan katman artık geçiş bitene kadar opak kaldığı için (bkz.
              style.css .stage-img), hızlı art arda tıklamalarda sıradaki giren
@@ -1107,8 +1132,10 @@
           stageActiveImg = stageActiveImg === "a" ? "b" : "a";
           stageCurrentKey = target.key;
           stageCurrentSrc = src;
+          stageFirstPaintDone();
         };
         loader.onerror = () => {
+          stageFirstPaintDone();
           if (token === stageRequestToken) {
             stageRequestedKey = "";
             stageRequestedSrc = "";
@@ -2938,7 +2965,7 @@
       <div class="config-intro-bg" style="background-image:url('/assets/img/hero/${pick}-start.webp?v=1')"></div>
       <video class="config-intro-film" muted playsinline autoplay preload="auto" aria-hidden="true"
              poster="/assets/img/hero/${pick}-start.webp?v=1">
-        <source src="/assets/video/intro/${pick}-assemble.mp4?v=4" type="video/mp4">
+        <source src="/assets/video/intro/${pick}-assemble.mp4?v=5" type="video/mp4">
       </video>
       <div class="config-intro-inner">
         <img class="config-intro-logo" src="/assets/img/logo-full.png" alt="HBOT Chamber Tech" />
@@ -3114,10 +3141,10 @@
         setTimeout(() => root.classList.remove("ci-handoff", "ci-handoff-out"), 700);
       }));
     };
-    const img = document.getElementById("stage-img-a");
-    if (img && img.decode) img.decode().then(() => setTimeout(go, 200), () => setTimeout(go, 200));
-    else setTimeout(go, 400);
-    setTimeout(go, 1500);
+    /* Sahnenin ilk görseli yerine oturduktan sonra kaldır — örtü kalkarken
+       kabin değişmesin. */
+    stageFirstPaint.then(() => setTimeout(go, 120));
+    setTimeout(go, 1800);
   }
 
   function initConfigIntro(dict) {
@@ -3601,7 +3628,7 @@
     v.setAttribute("muted", "");
     v.setAttribute("playsinline", "");
     v.preload = "auto";
-    v.src = "/assets/video/intro/" + model + "-assemble.mp4?v=4";
+    v.src = "/assets/video/intro/" + model + "-assemble.mp4?v=5";
     v.addEventListener("playing", () => {
       const first = slide.dataset.filmStarted !== "1";
       slide.dataset.filmStarted = "1";
