@@ -3826,7 +3826,13 @@
     };
     /* Video sayfa TAM yüklendikten sonra iner (LCP'yi poster görseli taşır,
        kritik yolda video yok); boşta bekleme yok ki ilk slayt donuk kalmasın. */
-    afterLoad(() => setTimeout(enableHeroFilms, 120));
+    /* Site açılışı (site-splash.js) oynuyorsa banner filmi onun bitmesini
+       bekler — yoksa Oslo birleşmesi açılış filminin arkasında geçip giderdi. */
+    afterLoad(() => {
+      const splashOn = document.documentElement.classList.contains("hbot-splash") && !window.__hbotSplashDone;
+      if (splashOn) document.addEventListener("hbot:splash-done", () => setTimeout(enableHeroFilms, 120), { once: true });
+      else setTimeout(enableHeroFilms, 120);
+    });
 
     /* Banner ekrandan çıkınca ya da sekme arkaya alınınca film dursun; geri
        gelince kaldığı yerden devam etsin. Aşağıda okuyan kullanıcı için boşuna

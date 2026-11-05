@@ -1930,6 +1930,49 @@ html.ci-handoff.ci-handoff-out::after { animation: ciHandoffOutNow 600ms cubic-b
 @keyframes ciHandoffOut { from { opacity: 1; } to { opacity: 0; } }
 @keyframes ciHandoffOutNow { from { opacity: 1; } to { opacity: 0; } }
 
+/* Site açılışı (site-splash.js): ana sayfada oturum başına bir kez logo filmi.
+   html.hbot-splash ilk boyamadan itibaren filmin ilk karesiyle aynı koyu zemini
+   gösterir; film onun üstünde oynar, bitince ikisi birlikte solar. */
+html.hbot-splash { overflow: hidden; }
+html.hbot-splash::before {
+  content: ""; position: fixed; inset: 0; z-index: 100000; pointer-events: none;
+  background: #02080e url("/assets/img/splash/hbot-splash-start.webp?v=1") center / cover no-repeat;
+  /* emniyet: betik takılsa da zemin 10 sn'de kalkar */
+  animation: hbotSplashGone 600ms ease 10000ms both;
+}
+.site-splash {
+  position: fixed; inset: 0; z-index: 100001; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.site-splash video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.site-splash-skip {
+  position: absolute; inset-inline-end: 24px; bottom: 24px;
+  padding: 8px 16px; border-radius: 999px; cursor: pointer;
+  font-family: inherit; font-size: 13px; font-weight: 500; line-height: 1.2; letter-spacing: .04em; color: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.22);
+  transition: background 200ms ease, color 200ms ease;
+}
+.site-splash-skip:hover, .site-splash-skip:focus-visible { background: rgba(255,255,255,.14); color: #fff; }
+html.hbot-splash.hbot-splash-out::before,
+html.hbot-splash.hbot-splash-out .site-splash { animation: hbotSplashOut 600ms cubic-bezier(.4,0,.2,1) both; }
+/* İki ayrı ad şart: aynı ada farklı süre verince animasyon baştan başlamaz,
+   zaten bitmiş sayılıp anında kaybolurdu. */
+@keyframes hbotSplashGone { from { opacity: 1; } to { opacity: 0; } }
+@keyframes hbotSplashOut { from { opacity: 1; } to { opacity: 0; } }
+/* Dikey ekranda logo yazısı kırpılmasın: film tam görünür, kenarları zemine
+   yumuşakça karışır. */
+@media (max-aspect-ratio: 1/1) {
+  html.hbot-splash::before { background-image: none; }
+  /* Film ekrandan geniş tutulur: yanlardaki boşluk kırpılır, son logo
+     yazısı (karenin ~%18–%87'si) yine tam sığar ve daha büyük görünür. */
+  .site-splash { overflow: hidden; }
+  .site-splash video {
+    flex: none; width: 116vw; height: auto; object-fit: contain;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  }
+}
+
 /* Ses düğmesi — film sessiz başlamak ZORUNDA (tarayıcılar sesli otomatik
    oynatmayı engelliyor), bu düğme kullanıcıya tek dokunuşla açma imkânı verir.
    Atla düğmesinin solunda, aynı hizada. */
