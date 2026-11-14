@@ -11,13 +11,15 @@
   /* Dış ölçüler (cm): w = en, d = boy (kuşbakışı), h = yükseklik.
      Kaynak: model teknik tabloları (translations.js "Dış Ölçüler").
      w: null = ölçü henüz doğrulanmadı, seçilemez. */
+  // Dış ölçüler (cm), üretici ölçü föyleri 14.11.2026. Oslo: sitede yayımlanan 240×110×120 (taşıyıcı dahil, föyde gövde 93 cm).
+  // Milano föyü 3 hasta + 1 refakatçi; Geneva föyü 10+2 (ana + ön kamara) yapılandırması.
   var MODELS = [
     { id: "solo-lounge", name: "Oslo", cap: 1, w: 110, d: 240, h: 120 },
     { id: "solo", name: "Dubai", cap: 1, w: 110, d: 120, h: 180 },
-    { id: "duo", name: "Tokyo", cap: 2, w: null },
+    { id: "duo", name: "Tokyo", cap: 2, w: 195, d: 300, h: 200, big: true },
     { id: "duo-plus", name: "Tokyo Plus", cap: 4, w: null },
-    { id: "quad-cube", name: "Milano", cap: 4, w: null },
-    { id: "nexus", name: "Geneva", cap: 6, w: null }
+    { id: "quad-cube", name: "Milano", cap: 4, w: 225, d: 440, h: 240, big: true },
+    { id: "nexus", name: "Geneva", tag: "10+2", cap: 12, w: 222, d: 690, h: 235, big: true }
   ];
   var CLEAR = 60;   // varsayılan erişim payı (cm) — keşifte kesinleşir
   var SNAP = 5;     // sürüklemede cm adımı
@@ -58,7 +60,7 @@
       tight: "Sığıyor, ama dar", tightNote: "Kabin sığıyor; erişim payı bazı kenarlarda {c} cm'nin altına düşüyor. Kabini kaydırmayı ya da daha geniş bir alanı deneyin.",
       clash: "Mobilyayla çakışıyor", clashNote: "Kabini boş bir alana sürükleyin.",
       no: "Sığmıyor", noNote: "Kabin bu oda ölçülerine sığmıyor. Odayı büyütmeyi, kabini döndürmeyi ya da adedi azaltmayı deneyin.",
-      lowCeil: "Tavan, kabin yüksekliğinin ({h} m) altında.",
+      lowCeil: "Tavan, kabin yüksekliğinin ({h} m) altında.", bigNote: "Büyük gövdeli model: kapı/koridor geçişi ve zemin taşıma kapasitesi keşifte birlikte kontrol edilir.",
       roomArea: "Oda alanı", cabArea: "Kabin taban alanı", freeArea: "Kalan alan", people: "Aynı anda kullanıcı",
       access: "ERİŞİM", disclaimer: "Yaklaşık yerleşim: kabin çevresinde varsayılan {c} cm erişim payı ile. Kesin yerleşim, teslimat güzergâhı ve kapı geçişi keşifte teyit edilir.",
       ctaQuote: "Bu yerleşimle teklif iste", ctaConfig: "Konfigüratörde tasarla",
@@ -72,7 +74,7 @@
       tight: "Fits, but tight", tightNote: "The chamber fits, but the access space drops below {c} cm on some sides. Try moving it or a larger space.",
       clash: "Overlaps furniture", clashNote: "Drag the chamber to a free area.",
       no: "Does not fit", noNote: "The chamber does not fit these room dimensions. Try a larger room, rotating it or fewer chambers.",
-      lowCeil: "The ceiling is lower than the chamber height ({h} m).",
+      lowCeil: "The ceiling is lower than the chamber height ({h} m).", bigNote: "Large-format model: door/corridor access and floor load capacity are checked together in the site survey.",
       roomArea: "Room area", cabArea: "Chamber footprint", freeArea: "Remaining area", people: "Users at once",
       access: "ACCESS", disclaimer: "Approximate layout with a default {c} cm access space around each chamber. Final placement, delivery route and door clearance are confirmed in a site survey.",
       ctaQuote: "Request a quote for this layout", ctaConfig: "Design it in the configurator",
@@ -86,7 +88,7 @@
       tight: "Помещается, но тесно", tightNote: "Камера помещается, но зона доступа с некоторых сторон меньше {c} см. Сдвиньте камеру или выберите помещение больше.",
       clash: "Пересекается с мебелью", clashNote: "Перетащите камеру на свободное место.",
       no: "Не помещается", noNote: "Камера не помещается в эти размеры. Увеличьте помещение, поверните камеру или уменьшите количество.",
-      lowCeil: "Потолок ниже высоты камеры ({h} м).",
+      lowCeil: "Потолок ниже высоты камеры ({h} м).", bigNote: "Крупногабаритная модель: проход через двери и коридоры и несущая способность пола проверяются при выезде на объект.",
       roomArea: "Площадь помещения", cabArea: "Площадь камер", freeArea: "Остаётся", people: "Пользователей одновременно",
       access: "ДОСТУП", disclaimer: "Приблизительная расстановка с зоной доступа {c} см вокруг камеры. Точное размещение, маршрут доставки и проход через двери подтверждаются при выезде на объект.",
       ctaQuote: "Запросить предложение по этой расстановке", ctaConfig: "Собрать в конфигураторе",
@@ -100,7 +102,7 @@
       tight: "تتسع لكن بضيق", tightNote: "الغرفة تتسع، لكن مسافة الوصول أقل من {c} سم في بعض الجوانب. جرّب تحريكها أو مساحة أكبر.",
       clash: "تتداخل مع الأثاث", clashNote: "اسحب الغرفة إلى مساحة فارغة.",
       no: "لا تتسع", noNote: "الغرفة لا تتسع لهذه الأبعاد. جرّب مساحة أكبر أو تدويرها أو عددًا أقل.",
-      lowCeil: "السقف أقل من ارتفاع الغرفة ({h} م).",
+      lowCeil: "السقف أقل من ارتفاع الغرفة ({h} م).", bigNote: "طراز كبير الحجم: يُفحص مرور الأبواب والممرات وقدرة الأرضية على التحمل معًا خلال معاينة الموقع.",
       roomArea: "مساحة المكان", cabArea: "مساحة قاعدة الغرف", freeArea: "المساحة المتبقية", people: "مستخدمون في وقت واحد",
       access: "وصول", disclaimer: "توزيع تقريبي مع مسافة وصول افتراضية {c} سم حول كل غرفة. يُؤكَّد الموضع النهائي ومسار التسليم وعرض الباب خلال معاينة الموقع.",
       ctaQuote: "اطلب عرض سعر لهذا التوزيع", ctaConfig: "صمّمها في أداة التهيئة",
@@ -114,7 +116,7 @@
       tight: "Cabe, pero justo", tightNote: "La cámara cabe, pero el espacio de acceso baja de {c} cm en algunos lados. Pruebe a moverla o un espacio mayor.",
       clash: "Choca con el mobiliario", clashNote: "Arrastre la cámara a una zona libre.",
       no: "No cabe", noNote: "La cámara no cabe en estas medidas. Pruebe una sala mayor, girarla o menos cámaras.",
-      lowCeil: "El techo es más bajo que la cámara ({h} m).",
+      lowCeil: "El techo es más bajo que la cámara ({h} m).", bigNote: "Modelo de gran formato: el paso por puertas y pasillos y la capacidad de carga del suelo se comprueban en la visita técnica.",
       roomArea: "Superficie de la sala", cabArea: "Superficie de las cámaras", freeArea: "Superficie libre", people: "Usuarios a la vez",
       access: "ACCESO", disclaimer: "Distribución aproximada con {c} cm de acceso por defecto alrededor de cada cámara. La ubicación final, la ruta de entrega y el paso por puertas se confirman en una visita técnica.",
       ctaQuote: "Solicitar presupuesto para esta distribución", ctaConfig: "Diseñarla en el configurador",
@@ -128,7 +130,7 @@
       tight: "Cabe, mas apertado", tightNote: "A câmara cabe, mas o espaço de acesso fica abaixo de {c} cm em alguns lados. Tente movê-la ou um espaço maior.",
       clash: "Sobrepõe-se aos móveis", clashNote: "Arraste a câmara para uma área livre.",
       no: "Não cabe", noNote: "A câmara não cabe nestas medidas. Tente um ambiente maior, girá-la ou menos câmaras.",
-      lowCeil: "O pé-direito é menor que a altura da câmara ({h} m).",
+      lowCeil: "O pé-direito é menor que a altura da câmara ({h} m).", bigNote: "Modelo de grande porte: a passagem por portas e corredores e a capacidade de carga do piso são verificadas na visita técnica.",
       roomArea: "Área do ambiente", cabArea: "Área das câmaras", freeArea: "Área livre", people: "Usuários ao mesmo tempo",
       access: "ACESSO", disclaimer: "Layout aproximado com {c} cm de acesso padrão ao redor de cada câmara. Posição final, rota de entrega e passagem por portas são confirmadas em uma visita técnica.",
       ctaQuote: "Pedir orçamento para este layout", ctaConfig: "Projetar no configurador",
@@ -142,7 +144,7 @@
       tight: "Passt, aber eng", tightNote: "Die Kammer passt, doch die Zugangsfläche liegt an manchen Seiten unter {c} cm. Verschieben Sie sie oder wählen Sie mehr Fläche.",
       clash: "Überschneidet Möbel", clashNote: "Ziehen Sie die Kammer auf eine freie Fläche.",
       no: "Passt nicht", noNote: "Die Kammer passt nicht in diese Raummaße. Versuchen Sie einen größeren Raum, eine Drehung oder weniger Kammern.",
-      lowCeil: "Die Decke ist niedriger als die Kammer ({h} m).",
+      lowCeil: "Die Decke ist niedriger als die Kammer ({h} m).", bigNote: "Großformatiges Modell: Tür- und Flurdurchgang sowie die Bodentragfähigkeit werden bei der Vor-Ort-Begehung geprüft.",
       roomArea: "Raumfläche", cabArea: "Grundfläche Kammern", freeArea: "Freie Fläche", people: "Nutzer gleichzeitig",
       access: "ZUGANG", disclaimer: "Ungefähre Anordnung mit standardmäßig {c} cm Zugangsfläche um jede Kammer. Endgültige Position, Lieferweg und Türdurchgang werden bei einer Vor-Ort-Begehung bestätigt.",
       ctaQuote: "Angebot für diese Anordnung anfragen", ctaConfig: "Im Konfigurator gestalten",
@@ -202,7 +204,7 @@
     modelSel.id = "rf-model-" + uid;
     modelLabel.htmlFor = modelSel.id;
     MODELS.forEach(function (m) {
-      var o = h("option", null, modelSel, m.w ? m.name + " — " + m.w + "×" + m.d + " cm" : m.name + " (" + t.soon + ")");
+      var o = h("option", null, modelSel, m.w ? m.name + (m.tag ? " " + m.tag : "") + " — " + m.w + "×" + m.d + " cm" : m.name + " (" + t.soon + ")");
       o.value = m.id;
       if (!m.w) o.disabled = true;
     });
@@ -320,7 +322,17 @@
     }
     function layout(replace) {
       if (replace || state.cabs.length !== state.units) state.cabs = autoPlace();
-      else state.cabs.forEach(clampCab);
+      else {
+        state.cabs.forEach(clampCab);
+        /* Oda ölçüsü değişince dar ya da mobilyaya/birbirine binen yerleşim
+           kalmasın: daha iyi bir otomatik yerleşim varsa onu al. */
+        var lv = ["fit", "tight", "clash", "no"], cur = lv.indexOf(evaluate());
+        if (cur >= 1) {
+          var keep = state.cabs;
+          state.cabs = autoPlace();
+          if (lv.indexOf(evaluate()) >= cur) state.cabs = keep;
+        }
+      }
       state.sel = Math.max(0, Math.min(state.sel, state.cabs.length - 1));
       render();
     }
@@ -414,7 +426,7 @@
       var lowCeil = m.h && state.ceil && state.ceil < m.h;
       verdict.className = "rf-verdict rf-verdict--" + (lowCeil ? "no" : status);
       vTitle.textContent = lowCeil && status === "fit" ? t.no : titles[status];
-      vNote.textContent = notes[status] + (lowCeil ? " " + fmt(t.lowCeil, { h: num(m.h / 100) }) : "");
+      vNote.textContent = notes[status] + (lowCeil ? " " + fmt(t.lowCeil, { h: num(m.h / 100) }) : "") + (m.big ? " " + t.bigNote : "");
       var room = W * D, cab = state.cabs.length * m.w * m.d;
       sRoom.textContent = num(room / 10000) + " m²";
       sCab.textContent = num(cab / 10000) + " m²";

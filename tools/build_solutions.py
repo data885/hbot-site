@@ -379,7 +379,7 @@ def build(lang, t):
                f'\n  <script type="application/ld+json">\n  {crumbs}\n  </script>{ld_faq}\n'
                '  <link rel="stylesheet" href="/assets/css/room-fit.css?v=1" />\n</head>\n'
                f'<body data-page="solutions">{header}  <main>\n{page_header(key, page, t)}\n\n{body}\n  </main>{footer}')
-        doc = doc.replace("</body>", '  <script src="/assets/js/room-fit.js?v=1"></script>\n</body>', 1)
+        doc = doc.replace("</body>", '  <script src="/assets/js/room-fit.js?v=2"></script>\n</body>', 1)
         (out_dir / FILES[key]).write_text(doc)
         print("yazıldı:", (out_dir / FILES[key]).relative_to(ROOT.parent))
 
