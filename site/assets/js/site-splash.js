@@ -1,4 +1,5 @@
-/* Site açılışı — ana sayfada, oturum başına bir kez HBOT logo filmi.
+/* Site açılışı — ana sayfada HBOT logo filmi; aynı tarayıcıda en fazla 6 saatte bir
+   (oturumda bir kez), ?intro=1 ile her zaman.
    <head>'de senkron yüklenir: uygunsa html'e "hbot-splash" konur ve CSS ilk
    boyamadan itibaren koyu açılış zeminini gösterir (sayfa bir an görünüp sonra
    örtülmesin). <body> oluşur oluşmaz film eklenir; translations.js / main.js'i
@@ -11,18 +12,28 @@
   var START_WAIT = 2500; // film bu sürede oynamazsa açılış atlanır
   var MAX = 9000;        // ne olursa olsun bu sürede site açılır
 
+  var AGAIN_MS = 6 * 60 * 60 * 1000; // aynı tarayıcıda en erken 6 saat sonra yeniden
+  var FORCE = /[?&]intro=1(&|$)/.test(location.search); // test/sunum: her zaman oynat
+
+  function lastSeen() {
+    try { return parseInt(localStorage.getItem(KEY) || "0", 10) || 0; } catch (e) { return 0; }
+  }
   function eligible() {
+    if (/bot|crawl|spider|slurp|facebookexternalhit|whatsapp|telegram/i.test(navigator.userAgent)) return false;
+    if (FORCE) return true;
+    /* Oturum yerine zaman: mobil Safari sekmenin sessionStorage'ını günlerce
+       tuttuğu için "oturumda bir kez" pratikte "bir daha asla" oluyordu. */
     try { if (sessionStorage.getItem(KEY)) return false; } catch (e) { return false; }
+    if (Date.now() - lastSeen() < AGAIN_MS) return false;
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
     var conn = navigator.connection || {};
     if (conn.saveData === true || /^(slow-2g|2g)$/.test(conn.effectiveType || "")) return false;
-    if (/bot|crawl|spider|slurp|facebookexternalhit|whatsapp|telegram/i.test(navigator.userAgent)) return false;
     /* Arka planda açılan sekme ya da sayfa içi bağlantı (#bölüm): açılış yok. */
     if (document.visibilityState === "hidden" || location.hash) return false;
     return true;
   }
   if (!eligible()) return;
-  try { sessionStorage.setItem(KEY, "1"); } catch (e) { /* yoksay */ }
+  try { sessionStorage.setItem(KEY, "1"); localStorage.setItem(KEY, String(Date.now())); } catch (e) { /* yoksay */ }
   root.classList.add("hbot-splash");
 
   var SKIP = { tr: "Geç", en: "Skip", ru: "Пропустить", ar: "تخطي", es: "Saltar", pt: "Pular", de: "Überspringen" };
