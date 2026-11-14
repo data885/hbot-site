@@ -25,7 +25,7 @@ const TRANSLATIONS = {
       whatsapp_message: "Merhaba, HBOT Chamber Tech hakkında bilgi almak istiyorum.",
       thanks: "Bizi tercih ettiğiniz için teşekkür ederiz.",
       sticky_cta: "Ücretsiz Teklif Al",
-      nav: { home: "Ana Sayfa", technology: "Teknoloji", models: "Modeller", hbotInfo: "HBOT Nedir?", blog: "Blog", catalog: "Katalog", configurator: "Konfigüratör", contact: "İletişim" , distributor: "Distribütörlük" , trustSafety: "Güvenlik & Uygunluk" },
+      nav: { home: "Ana Sayfa", solutions: "Çözümler", technology: "Teknoloji", models: "Modeller", hbotInfo: "HBOT Nedir?", blog: "Blog", catalog: "Katalog", configurator: "Konfigüratör", contact: "İletişim" , distributor: "Distribütörlük" , trustSafety: "Güvenlik & Uygunluk" },
       fullscreen: "Tam ekran",
       models_menu: {
         soloLounge: "Oslo",
@@ -1140,7 +1140,7 @@ const TRANSLATIONS = {
       whatsapp_message: "Hello, I'd like to learn more about HBOT Chamber Tech.",
       thanks: "Thank you for choosing us.",
       sticky_cta: "Get a Free Quote",
-      nav: { home: "Home", technology: "Technology", models: "Models", hbotInfo: "What Is HBOT?", blog: "Blog", catalog: "Catalogue", configurator: "Configurator", contact: "Contact" , distributor: "Become a Distributor" , trustSafety: "Safety & Compliance" },
+      nav: { home: "Home", solutions: "Solutions", technology: "Technology", models: "Models", hbotInfo: "What Is HBOT?", blog: "Blog", catalog: "Catalogue", configurator: "Configurator", contact: "Contact" , distributor: "Become a Distributor" , trustSafety: "Safety & Compliance" },
       fullscreen: "Fullscreen",
       models_menu: {
         soloLounge: "Oslo",
@@ -2224,7 +2224,7 @@ const TRANSLATIONS = {
       whatsapp_message: "Здравствуйте, я хотел(а) бы узнать больше о HBOT Chamber Tech.",
       thanks: "Спасибо, что выбрали нас.",
       sticky_cta: "Получить предложение",
-      nav: { home: "Главная", technology: "Технологии", models: "Модели", hbotInfo: "Что такое ГБО?", blog: "Блог", catalog: "Каталог", configurator: "Конфигуратор", contact: "Контакты" , distributor: "Стать дистрибьютором" , trustSafety: "Безопасность" },
+      nav: { home: "Главная", solutions: "Решения", technology: "Технологии", models: "Модели", hbotInfo: "Что такое ГБО?", blog: "Блог", catalog: "Каталог", configurator: "Конфигуратор", contact: "Контакты" , distributor: "Стать дистрибьютором" , trustSafety: "Безопасность" },
       fullscreen: "Полноэкранный режим",
       models_menu: {
         soloLounge: "Oslo",
@@ -3308,7 +3308,7 @@ const TRANSLATIONS = {
       whatsapp_message: "مرحبًا، أرغب في معرفة المزيد عن HBOT Chamber Tech.",
       thanks: "شكرا لاختيارك لنا.",
       sticky_cta: "احصل على عرض سعر",
-      nav: { home: "الرئيسية", technology: "التقنية", models: "الموديلات", hbotInfo: "ما هو HBOT؟", blog: "المدونة", catalog: "الكتالوج", configurator: "أداة التكوين", contact: "اتصل بنا" , distributor: "كن موزعًا" , trustSafety: "السلامة والامتثال" },
+      nav: { home: "الرئيسية", solutions: "الحلول", technology: "التقنية", models: "الموديلات", hbotInfo: "ما هو HBOT؟", blog: "المدونة", catalog: "الكتالوج", configurator: "أداة التكوين", contact: "اتصل بنا" , distributor: "كن موزعًا" , trustSafety: "السلامة والامتثال" },
       fullscreen: "ملء الشاشة",
       models_menu: {
         soloLounge: "Oslo",
@@ -4380,7 +4380,7 @@ const TRANSLATIONS = {
       whatsapp_message: "Hola, me gustaría saber más sobre HBOT Chamber Tech.",
       thanks: "Gracias por elegirnos.",
       sticky_cta: "Solicitar Presupuesto Gratuito",
-      nav: { home: "Inicio", technology: "Tecnología", models: "Modelos", hbotInfo: "¿Qué es la HBOT?", blog: "Blog", catalog: "Catálogo", configurator: "Configurador", contact: "Contacto" , distributor: "Ser distribuidor" , trustSafety: "Seguridad" },
+      nav: { home: "Inicio", solutions: "Soluciones", technology: "Tecnología", models: "Modelos", hbotInfo: "¿Qué es la HBOT?", blog: "Blog", catalog: "Catálogo", configurator: "Configurador", contact: "Contacto" , distributor: "Ser distribuidor" , trustSafety: "Seguridad" },
       fullscreen: "Pantalla completa",
       models_menu: {
         soloLounge: "Oslo",
@@ -5463,7 +5463,7 @@ const TRANSLATIONS = {
       whatsapp_message: "Olá, gostaria de saber mais sobre a HBOT Chamber Tech.",
       thanks: "Obrigado por nos escolher.",
       sticky_cta: "Solicitar Orçamento Gratuito",
-      nav: { home: "Início", technology: "Tecnologia", models: "Modelos", hbotInfo: "O Que É a OHB?", blog: "Blog", catalog: "Catálogo", configurator: "Configurador", contact: "Contato" , distributor: "Seja distribuidor" , trustSafety: "Segurança" },
+      nav: { home: "Início", solutions: "Soluções", technology: "Tecnologia", models: "Modelos", hbotInfo: "O Que É a OHB?", blog: "Blog", catalog: "Catálogo", configurator: "Configurador", contact: "Contato" , distributor: "Seja distribuidor" , trustSafety: "Segurança" },
       fullscreen: "Ecrã inteiro",
       models_menu: {
         soloLounge: "Oslo",
@@ -6546,7 +6546,7 @@ const TRANSLATIONS = {
       whatsapp_message: "Hallo, ich möchte mehr über HBOT Chamber Tech erfahren.",
       thanks: "Vielen Dank, dass Sie sich für uns entschieden haben.",
       sticky_cta: "Kostenloses Angebot anfordern",
-      nav: { home: "Startseite", technology: "Technologie", models: "Modelle", hbotInfo: "Was ist HBOT?", blog: "Blog", catalog: "Katalog", configurator: "Konfigurator", contact: "Kontakt" , distributor: "Vertriebspartner werden" , trustSafety: "Sicherheit" },
+      nav: { home: "Startseite", solutions: "Lösungen", technology: "Technologie", models: "Modelle", hbotInfo: "Was ist HBOT?", blog: "Blog", catalog: "Katalog", configurator: "Konfigurator", contact: "Kontakt" , distributor: "Vertriebspartner werden" , trustSafety: "Sicherheit" },
       fullscreen: "Vollbild",
       models_menu: {
         soloLounge: "Oslo",

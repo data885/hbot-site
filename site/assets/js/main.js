@@ -3354,7 +3354,8 @@
     const navKeyMap = {
       home: "home", technology: "technology",
       "models-overview": "models", "model-solo-lounge": "models", "model-solo": "models", "model-duo": "models", "model-duo-plus": "models", "model-quad": "models", "model-quad-cube": "models", "model-nexus": "models",
-      "hbot-info": "hbotInfo", blog: "blog", configurator: "configurator", contact: "contact"
+      "hbot-info": "hbotInfo", blog: "blog", configurator: "configurator", contact: "contact",
+      solutions: "solutions"
     };
     const navKey = navKeyMap[page];
     if (!navKey) return;
