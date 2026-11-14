@@ -510,6 +510,7 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      fit: { eyebrow: "ODAMA SIĞAR MI?", title: "Seçtiğiniz kabini mekânınızda planlayın", lead: "Yukarıda seçtiğiniz model plana kendiliğinden gelir. Ortamı seçin, oda ölçülerinizi girin; plan, kabini erişim payıyla birlikte yerleştirir ve nasıl sığdığını söyler. Birden fazla kabin için adedi artırın.", link: "Odama sığar mı? Planla ↓" },
       intro: {
         eyebrow: "HBOT CITY TECH",
         title: "Kendi kabininizi tasarlayın",
@@ -1625,6 +1626,7 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      fit: { eyebrow: "WILL IT FIT IN MY ROOM?", title: "Plan your chosen chamber in your space", lead: "The model you choose above loads into the planner automatically. Choose the setting and enter your room dimensions; the planner places the chamber together with its access clearance and shows you how it fits. For more than one chamber, increase the quantity.", link: "Will it fit in my room? Plan it ↓" },
       intro: {
         eyebrow: "HBOT CITY TECH",
         title: "Design your own chamber",
@@ -2709,6 +2711,7 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      fit: { eyebrow: "ПОМЕСТИТСЯ ЛИ В МОЮ КОМНАТУ?", title: "Спланируйте выбранную камеру в вашем помещении", lead: "Модель, выбранная выше, автоматически переносится в планировщик. Выберите среду и введите размеры комнаты: планировщик разместит камеру с учётом зоны доступа и покажет, как она вписывается. Для нескольких камер увеличьте их количество.", link: "Поместится ли в мою комнату? ↓" },
       intro: {
         eyebrow: "HBOT CITY TECH",
         title: "Спроектируйте свою камеру",
@@ -3782,6 +3785,7 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      fit: { eyebrow: "هل تناسب غرفتي؟", title: "خطّط للغرفة التي اخترتها في مساحتك", lead: "الموديل الذي تختاره أعلاه ينتقل إلى المخطِّط تلقائياً. اختر البيئة وأدخل أبعاد الغرفة؛ يضع المخطِّط الغرفة مع هامش الوصول ويوضح كيف تتناسب مع المكان. للحصول على أكثر من غرفة، زد العدد.", link: "هل تناسب غرفتي؟ خطّط ↓" },
       intro: {
         eyebrow: "HBOT CITY TECH",
         title: "صمّم غرفتك الخاصة",
@@ -4865,6 +4869,7 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      fit: { eyebrow: "¿CABE EN MI ESPACIO?", title: "Planifique la cámara elegida en su espacio", lead: "El modelo que elija arriba se carga en el plano automáticamente. Elija el entorno e introduzca las medidas de la sala; el plano coloca la cámara con su margen de acceso y le indica cómo encaja. Para varias cámaras, aumente la cantidad.", link: "¿Cabe en mi espacio? Planifíquelo ↓" },
       intro: {
         eyebrow: "HBOT CITY TECH",
         title: "Diseñe su propia cámara",
@@ -5948,6 +5953,7 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      fit: { eyebrow: "CABE NO MEU ESPAÇO?", title: "Planeje a câmara escolhida no seu espaço", lead: "O modelo que você escolher acima é carregado no plano automaticamente. Escolha o ambiente e informe as medidas da sala; o plano posiciona a câmara com a sua folga de acesso e mostra como ela se encaixa. Para várias câmaras, aumente a quantidade.", link: "Cabe no meu espaço? Planeje ↓" },
       intro: {
         eyebrow: "HBOT CITY TECH",
         title: "Desenhe a sua própria câmara",
@@ -7031,6 +7037,7 @@ const TRANSLATIONS = {
       ]
     },
     configurator: {
+      fit: { eyebrow: "PASST ES IN MEINEN RAUM?", title: "Planen Sie die gewählte Kammer in Ihrem Raum", lead: "Das oben gewählte Modell wird automatisch in den Planer übernommen. Wählen Sie die Umgebung und geben Sie Ihre Raummaße ein; der Planer platziert die Kammer samt Zugangsabstand und zeigt Ihnen, wie sie passt. Für mehrere Kammern erhöhen Sie die Anzahl.", link: "Passt es in meinen Raum? Jetzt planen ↓" },
       intro: {
         eyebrow: "HBOT CITY TECH",
         title: "Gestalten Sie Ihre eigene Kammer",

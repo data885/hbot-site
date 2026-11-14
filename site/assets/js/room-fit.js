@@ -522,6 +522,41 @@
     modelSel.value = state.model;
     fU.set(1);
     setScene(state.scene);
+
+    /* Konfigüratör sayfası: main.js seçili modeli ve kullanım türünü yayınlar,
+       plan onu izler. Ziyaretçinin planda elle seçtiği ortam korunur. */
+    if (root.getAttribute("data-sync") === "config") {
+      aConfig.style.display = "none";
+      var syncNote = h("p", "rf-note", modelRow);
+      syncNote.hidden = true;
+      modelSel.addEventListener("change", function () { syncNote.hidden = true; });
+      var seen = { model: null, usage: null };
+      var applyConfig = function (d) {
+        if (!d) return;
+        if (d.usage && d.usage !== seen.usage) {
+          seen.usage = d.usage;
+          if (d.usage === "institutional" && state.scene !== "clinic") setScene("clinic");
+          else if (d.usage !== "institutional" && state.scene === "clinic") setScene("home");
+        }
+        if (d.model && d.model !== seen.model) {
+          seen.model = d.model;
+          var mm = MODELS.filter(function (m) { return m.id === d.model; })[0];
+          var next = d.model;
+          /* Ölçüsü henüz girilmemiş model (Tokyo Plus): bunu açıkça söyle, ortamın ilk ölçülü modelini göster. */
+          syncNote.hidden = !mm || !!mm.w;
+          if (mm && !mm.w) {
+            syncNote.textContent = mm.name + " — " + t.soon;
+            next = (RENDERS[state.scene] || []).filter(function (id) {
+              return MODELS.some(function (m) { return m.id === id && m.w; });
+            })[0] || state.model;
+          }
+          if (mm && next !== state.model) { state.model = next; modelSel.value = next; layout(true); }
+        }
+      };
+      var de = document.documentElement;
+      applyConfig({ model: de.getAttribute("data-cfg-model"), usage: de.getAttribute("data-cfg-usage") });
+      document.addEventListener("hbot:config-change", function (e) { applyConfig(e.detail); });
+    }
   }
 
   function init() { Array.prototype.forEach.call(document.querySelectorAll("[data-room-fit]"), RoomFit); }

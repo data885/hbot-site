@@ -2070,6 +2070,10 @@
   function renderConfigSummary(dict) {
     const c = document.getElementById("config-summary");
     if (!c || !dict.configurator) return;
+    /* Oda planlayıcısı (room-fit.js, data-sync="config") seçili modeli buradan izler. */
+    document.documentElement.setAttribute("data-cfg-model", configState.model);
+    document.documentElement.setAttribute("data-cfg-usage", configState.usageType);
+    document.dispatchEvent(new CustomEvent("hbot:config-change", { detail: { model: configState.model, usage: configState.usageType } }));
     const s = dict.configurator.summary;
     const modelInfo = dict.configurator.models.find((m) => m.id === configState.model);
     const tier = MODEL_PRICING[configState.model].tiers[configState.tierIndex];

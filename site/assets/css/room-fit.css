@@ -146,3 +146,17 @@ html[dir="rtl"] .rf-hint { margin: 0 0 0 auto; }
 /* Açık zeminde ikincil düğme (sitenin .btn-outline'ı koyu zemin için) */
 .btn-outline-dark { background: transparent; color: var(--ink-950, #05070a); border-color: rgba(5, 7, 10, 0.28); }
 .btn-outline-dark:hover { background: rgba(5, 7, 10, 0.05); border-color: var(--ink-950, #05070a); }
+
+/* Konfigüratör özetinin altındaki "Odama sığar mı?" kısayolu */
+.config-fit-link {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 12px; padding: 12px 16px; border-radius: var(--radius-md, 14px);
+  font-size: 15px; font-weight: 600; text-decoration: none;
+  color: var(--ink-950, #05070a); background: var(--white, #fff);
+  border: 1px solid rgba(5, 7, 10, 0.14);
+  transition: border-color var(--transition, 200ms ease), box-shadow var(--transition, 200ms ease);
+}
+.config-fit-link:hover { border-color: var(--cyan-500, #29a9e8); box-shadow: var(--shadow-md); }
+.config-fit-link:focus-visible { outline: 2px solid var(--cyan-500, #29a9e8); outline-offset: 2px; }
+#odama-sigar-mi { scroll-margin-top: 90px; }
+.rf-note { margin: 0; font-size: 12.5px; line-height: 1.45; color: var(--rf-warn); }
