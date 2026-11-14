@@ -1930,7 +1930,7 @@ html.ci-handoff.ci-handoff-out::after { animation: ciHandoffOutNow 600ms cubic-b
 @keyframes ciHandoffOut { from { opacity: 1; } to { opacity: 0; } }
 @keyframes ciHandoffOutNow { from { opacity: 1; } to { opacity: 0; } }
 
-/* Site açılışı (site-splash.js): ana sayfada oturum başına bir kez logo filmi.
+/* Site açılışı (site-splash.js): ana sayfaya dışarıdan her girişte ~4 sn logo filmi.
    html.hbot-splash ilk boyamadan itibaren filmin ilk karesiyle aynı koyu zemini
    gösterir; film onun üstünde oynar, bitince ikisi birlikte solar. */
 html.hbot-splash { overflow: hidden; }
@@ -1938,7 +1938,7 @@ html.hbot-splash::before {
   content: ""; position: fixed; inset: 0; z-index: 100000; pointer-events: none;
   background: #02080e url("/assets/img/splash/hbot-splash-start.webp?v=1") center / cover no-repeat;
   /* emniyet: betik takılsa da zemin 10 sn'de kalkar */
-  animation: hbotSplashGone 600ms ease 10000ms both;
+  animation: hbotSplashGone 600ms ease 7000ms both;
 }
 .site-splash {
   position: fixed; inset: 0; z-index: 100001; cursor: pointer;

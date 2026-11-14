@@ -1,5 +1,6 @@
-/* Site açılışı — ana sayfada HBOT logo filmi; aynı tarayıcıda en fazla 6 saatte bir
-   (oturumda bir kez), ?intro=1 ile her zaman.
+/* Site açılışı — ana sayfaya dışarıdan her girişte ~4 sn HBOT logo filmi
+   (doğrudan adres, arama, reklam, sosyal medya). Site içinden ana sayfaya
+   dönüşte oynamaz; ?intro=1 ile her zaman oynar.
    <head>'de senkron yüklenir: uygunsa html'e "hbot-splash" konur ve CSS ilk
    boyamadan itibaren koyu açılış zeminini gösterir (sayfa bir an görünüp sonra
    örtülmesin). <body> oluşur oluşmaz film eklenir; translations.js / main.js'i
@@ -8,23 +9,17 @@
    Film başlayamazsa kullanıcı koyu ekranda bekletilmez. */
 (function () {
   var root = document.documentElement;
-  var KEY = "hbotSplashSeen";
   var START_WAIT = 2500; // film bu sürede oynamazsa açılış atlanır
-  var MAX = 9000;        // ne olursa olsun bu sürede site açılır
+  var MAX = 6000;        // ne olursa olsun bu sürede site açılır (film ~3,8 sn)
+  var FORCE = /[?&]intro=1(&|$)/.test(location.search);
 
-  var AGAIN_MS = 6 * 60 * 60 * 1000; // aynı tarayıcıda en erken 6 saat sonra yeniden
-  var FORCE = /[?&]intro=1(&|$)/.test(location.search); // test/sunum: her zaman oynat
-
-  function lastSeen() {
-    try { return parseInt(localStorage.getItem(KEY) || "0", 10) || 0; } catch (e) { return 0; }
+  function internalNav() {
+    try { return !!document.referrer && new URL(document.referrer).host === location.host; } catch (e) { return false; }
   }
   function eligible() {
-    if (/bot|crawl|spider|slurp|facebookexternalhit|whatsapp|telegram/i.test(navigator.userAgent)) return false;
+    if (/bot|crawl|spider|slurp|facebookexternalhit|whatsapp|telegram|lighthouse/i.test(navigator.userAgent)) return false;
     if (FORCE) return true;
-    /* Oturum yerine zaman: mobil Safari sekmenin sessionStorage'ını günlerce
-       tuttuğu için "oturumda bir kez" pratikte "bir daha asla" oluyordu. */
-    try { if (sessionStorage.getItem(KEY)) return false; } catch (e) { return false; }
-    if (Date.now() - lastSeen() < AGAIN_MS) return false;
+    if (internalNav()) return false;
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
     var conn = navigator.connection || {};
     if (conn.saveData === true || /^(slow-2g|2g)$/.test(conn.effectiveType || "")) return false;
@@ -33,7 +28,6 @@
     return true;
   }
   if (!eligible()) return;
-  try { sessionStorage.setItem(KEY, "1"); localStorage.setItem(KEY, String(Date.now())); } catch (e) { /* yoksay */ }
   root.classList.add("hbot-splash");
 
   var SKIP = { tr: "Geç", en: "Skip", ru: "Пропустить", ar: "تخطي", es: "Saltar", pt: "Pular", de: "Überspringen" };
@@ -59,7 +53,7 @@
     v.preload = "auto";
     v.poster = "/assets/img/splash/hbot-splash-start.webp?v=1";
     var narrow = Math.min(window.innerWidth || 9999, (window.screen && window.screen.width) || 9999) < 768;
-    v.src = "/assets/video/splash/hbot-splash-" + (narrow ? "480" : "720") + ".mp4?v=1";
+    v.src = "/assets/video/splash/hbot-splash-" + (narrow ? "480" : "720") + ".mp4?v=2";
     var skip = document.createElement("button");
     skip.type = "button";
     skip.className = "site-splash-skip";
