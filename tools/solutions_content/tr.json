@@ -1,0 +1,357 @@
+{
+ "home_crumb": "Ana Sayfa",
+ "hub_crumb": "Çözümler",
+ "cards": {
+  "home": {
+   "title": "Ev ve kişisel kullanım",
+   "text": "Kendi programınıza göre, evinizde kişisel bir kabin. Kompakt tek kişilik modeller.",
+   "img": "oslo",
+   "models": "Oslo · Dubai"
+  },
+  "spa": {
+   "title": "Wellness ve spa",
+   "text": "Spa menünüze çift ya da grup seansı ekleyin; kabin adedini alanınıza göre planlayın.",
+   "img": "milano",
+   "models": "Tokyo · Milano · Dubai"
+  },
+  "hotel": {
+   "title": "Oteller",
+   "text": "Suit içinde ya da otel spa'sında misafirlere özel bir deneyim alanı.",
+   "img": "tokyo",
+   "models": "Oslo · Tokyo · Milano"
+  },
+  "gym": {
+   "title": "Spor salonu ve performans",
+   "text": "Kulüp, salon ve takım tesislerinde paylaşımlı kullanım için çok kişilik kabinler.",
+   "img": "tokyo-plus",
+   "models": "Tokyo Plus · Milano · Dubai"
+  },
+  "clinic": {
+   "title": "Klinik ve hastane",
+   "text": "Bireysel ve paylaşımlı tedavi odaları için proje planlaması.",
+   "img": "geneva",
+   "models": "Tokyo Plus · Geneva",
+   "href": "klinikler-icin-hiperbarik-oda.html"
+  }
+ },
+ "planner_eyebrow": "ODAMA SIĞAR MI?",
+ "planner_title": "Kabini mekânınızda planlayın",
+ "planner_text": "Ortamı ve modeli seçin, oda ölçülerinizi girin. Plan, kabini erişim payıyla birlikte yerleştirir ve nasıl sığdığını söyler. Birden fazla kabin için adedi artırın.",
+ "steps_eyebrow": "SÜREÇ",
+ "steps_title": "Keşiften ilk seansa, tek muhatap",
+ "steps": [
+  [
+   "Keşif ve plan",
+   "Kurulum alanı ölçülerini, fotoğrafları ve giriş güzergâhını birlikte değerlendiririz; uzaktan ya da yerinde."
+  ],
+  [
+   "Size özel üretim",
+   "Model, dış renk ve iç döşemeyi konfigüratörde belirler, siparişte birlikte netleştiririz."
+  ],
+  [
+   "Kurulum ve devreye alma",
+   "Kabini yerine kurar, testleri yapar ve kullanıma hazır teslim ederiz."
+  ],
+  [
+   "Eğitim ve destek",
+   "Kullanım eğitimi verilir; CityConnect™ ile uzaktan izleme ve planlı servis devreye girer."
+  ]
+ ],
+ "cta_title": "Mekânınızı bize anlatın",
+ "cta_text": "Oda ölçülerini, kullanım amacını ve beklenen kullanıcı sayısını iletin; uygun modeli ve yerleşimi birlikte belirleyelim.",
+ "cta_btn": "Teklif İste",
+ "cta_btn2": "Konfigüratöre Git",
+ "models_eyebrow": "BU ALAN İÇİN MODELLER",
+ "model_more": "Model detayları",
+ "faq_eyebrow": "SIK SORULANLAR",
+ "pages": {
+  "hub": {
+   "title": "Hiperbarik Kabin Çözümleri: Ev, Spa, Otel, Spor Salonu | HBOT Chamber Tech",
+   "desc": "Kullanım alanınıza göre hiperbarik kabin: ev, wellness ve spa, otel, spor salonu ve klinik. Kabinin mekânınıza sığıp sığmadığını plan üzerinde görün.",
+   "eyebrow": "ÇÖZÜMLER",
+   "h1": "Her mekâna uygun bir hiperbarik kabin",
+   "lead": "Evinizin bir odası, bir spa, otel suiti ya da spor salonu — alanınızı ve kullanım şeklinizi anlatın, uygun modeli ve yerleşimi birlikte planlayalım.",
+   "grid_eyebrow": "KULLANIM ALANLARI",
+   "grid_title": "Kabininizi nerede kullanacaksınız?"
+  },
+  "home": {
+   "title": "Ev Tipi Hiperbarik Kabin | Evde Kişisel Kullanım | HBOT Chamber Tech",
+   "desc": "Eviniz için tek kişilik hiperbarik kabin: Oslo (yatarak) ve Dubai (oturarak). Oda ölçünüzü girin, kabinin sığıp sığmadığını plan üzerinde görün.",
+   "eyebrow": "ÇÖZÜMLER / EV VE KİŞİSEL KULLANIM",
+   "h1": "Eviniz için kişisel bir hiperbarik kabin",
+   "lead": "Üyelik, randevu ve yol yok. Seansınızı kendi programınıza göre, evinizin sessizliğinde planlayın.",
+   "facts": [
+    [
+     "1,3–1,5 ATA",
+     "Çalışma basıncı"
+    ],
+    [
+     "<60 dB",
+     "CitySilent™ ses seviyesi"
+    ],
+    [
+     "~1,3 m²",
+     "Dubai taban alanı"
+    ],
+    [
+     "1 kişi",
+     "Yatarak ya da oturarak"
+    ]
+   ],
+   "intro_title": "Evin en kişisel odası",
+   "intro": [
+    "Ev tipi bir kabin, seansı günlük rutinin bir parçası yapar: sabah güne başlamadan ya da akşam ev sessizleştiğinde.",
+    "Oslo tek kişilik ve tamamen yatay kullanılır; 200×80 cm ortopedik yatağıyla uzun seanslarda rahat bir pozisyon sunar. Dubai oturarak kullanılan kompakt modeldir; 120×110 cm taban alanıyla bir oda köşesine yerleşebilir."
+   ],
+   "features": [
+    [
+     "Yaşam alanına uyum",
+     "Dış renk ve iç döşeme konfigüratörde seçilir; kabin bir tesise değil, evinize göre hazırlanır."
+    ],
+    [
+     "Kolay kullanım",
+     "Dokunmatik ekran kontrolüyle seansı başlatmak, izlemek ve bitirmek basittir."
+    ],
+    [
+     "Bağlı ve izlenebilir",
+     "CityConnect™ standarttır: uzaktan izleme, anlık uyarılar ve bulut yedekleme."
+    ],
+    [
+     "Mühendislikle güvenli",
+     "Havacılık sınıfı alüminyum gövde, çift emniyet valfi ve dahili yedek güç kaynağı."
+    ]
+   ],
+   "models": [
+    "oslo",
+    "dubai"
+   ],
+   "faq": [
+    [
+     "Evde ne kadar alana ihtiyacım var?",
+     "Kabinin dış ölçüsü ve çevresindeki erişim payı belirleyicidir. Dubai 120×110 cm, Oslo 240×110 cm dış ölçüye sahiptir. Yukarıdaki planlayıcıda oda ölçünüzü girerek yaklaşık yerleşimi görebilirsiniz; kesin yerleşim keşifte netleşir."
+    ],
+    [
+     "Kabin kapımdan geçer mi?",
+     "Giriş güzergâhı ve kapı genişliği keşifte kontrol edilir. Ölçüleri, fotoğrafları ve kat planını paylaşmanız değerlendirmeyi hızlandırır."
+    ],
+    [
+     "Çalışırken ne kadar ses çıkarır?",
+     "Oslo ve Dubai'de ses seviyesi 60 dB'nin altındadır (CitySilent™)."
+    ],
+    [
+     "Elektrik kesilirse ne olur?",
+     "Tüm modeller, elektrik kesintisine karşı dahili yedek güç kaynağıyla standart olarak gelir."
+    ],
+    [
+     "Ev için hangi model uygun?",
+     "Yatarak kullanım isteniyorsa Oslo, daha küçük bir taban alanı ve oturarak kullanım isteniyorsa Dubai öne çıkar. İki kişilik kullanım için Tokyo değerlendirilebilir."
+    ]
+   ]
+  },
+  "spa": {
+   "title": "Spa ve Wellness Merkezleri için Hiperbarik Kabin | HBOT Chamber Tech",
+   "desc": "Spa ve wellness merkezleri için tek, çift ve dört kişilik hiperbarik kabinler. Kaç kabinin alanınıza sığdığını plan üzerinde deneyin.",
+   "eyebrow": "ÇÖZÜMLER / WELLNESS VE SPA",
+   "h1": "Spa menünüze hiperbarik bir deneyim ekleyin",
+   "lead": "Tek kişilik kabinden dört kişilik premium kabine kadar; seans yoğunluğunuza ve alanınıza göre ölçeklendirin.",
+   "facts": [
+    [
+     "1–4 kişi",
+     "Kabin başına kapasite"
+    ],
+    [
+     "1,3–1,5 ATA",
+     "Çalışma basıncı"
+    ],
+    [
+     "<60 dB",
+     "Sessiz çalışma"
+    ],
+    [
+     "CityConnect™",
+     "Uzaktan izleme"
+    ]
+   ],
+   "intro_title": "Misafiriniz için yeni bir ritüel",
+   "intro": [
+    "Wellness merkezlerinde kabin, masaj ve dinlenme alanlarının yanında ayrı bir deneyim olarak konumlanır. Çift kabinler (Tokyo) eşler ve arkadaşlar için, dört kişilik Milano grup seansları için uygundur.",
+    "Kaç kabin gerektiği, günlük seans sayınıza ve alanınıza bağlıdır. Planlayıcıda kabin adedini artırarak aynı odaya kaç kabinin erişim payıyla sığdığını görebilirsiniz."
+   ],
+   "features": [
+    [
+     "Ölçeklenebilir",
+     "Tek kabinle başlayın, talep arttıkça aynı alana ya da yan odaya yeni kabin ekleyin."
+    ],
+    [
+     "Markanıza uygun",
+     "Dış renk, iç döşeme ve aydınlatma, spa'nızın tasarım diline göre seçilir."
+    ],
+    [
+     "Operasyon kolaylığı",
+     "Dokunmatik kontrol ve CityConnect™ ile seanslar izlenir, uyarılar anında görülür."
+    ],
+    [
+     "Sessiz ve kesintisiz",
+     "<60 dB ses seviyesi ve dahili yedek güç kaynağı standarttır."
+    ]
+   ],
+   "models": [
+    "tokyo",
+    "milano",
+    "dubai"
+   ],
+   "faq": [
+    [
+     "Spa'm için kaç kabin gerekir?",
+     "Günlük seans hedefinizi, seans süresini ve çalışma saatlerinizi paylaşın; kabin adedini ve yerleşimi birlikte hesaplayalım. Planlayıcı, alanınıza kaç kabinin sığdığını önceden görmenizi sağlar."
+    ],
+    [
+     "Çok kişilik kabin mi, birden fazla tek kişilik kabin mi?",
+     "Grup ve çift seansları öne çıkıyorsa Tokyo veya Milano, kişiye özel programlar öne çıkıyorsa birden fazla Dubai daha esnektir. Karma kurulum da mümkündür."
+    ],
+    [
+     "Kabin spa'nın tasarımına uyar mı?",
+     "Dış renk ve iç döşeme konfigüratörde seçilir; özel talepler siparişte birlikte belirlenir."
+    ]
+   ]
+  },
+  "hotel": {
+   "title": "Oteller için Hiperbarik Kabin | Wellness Suit ve Otel Spa | HBOT Chamber Tech",
+   "desc": "Otel suitleri ve otel spa'ları için hiperbarik kabin. Kabinin odanıza nasıl yerleştiğini plan üzerinde görün, misafirlerinize özel bir deneyim sunun.",
+   "eyebrow": "ÇÖZÜMLER / OTELLER",
+   "h1": "Otelinizde misafirlere özel bir hiperbarik deneyim",
+   "lead": "Bir wellness suitinin parçası olarak ya da otel spa'sında; kabin, misafir deneyiminizi farklılaştıran bir alan olur.",
+   "facts": [
+    [
+     "1–4 kişi",
+     "Kabin başına kapasite"
+    ],
+    [
+     "<60 dB",
+     "Sessiz çalışma"
+    ],
+    [
+     "Size özel",
+     "Renk ve döşeme"
+    ],
+    [
+     "CityConnect™",
+     "Uzaktan izleme"
+    ]
+   ],
+   "intro_title": "Suit içinde ya da spa'da",
+   "intro": [
+    "Wellness suitlerinde tek ya da çift kişilik kabin (Oslo, Tokyo) odanın bir parçası olarak tasarlanabilir. Otel spa'larında ise Milano gibi çok kişilik kabinler grup seanslarına imkân verir.",
+    "Planlayıcıda otel odası ortamını seçerek kabinin yatak ve oturma alanıyla birlikte nasıl yerleştiğini görebilirsiniz."
+   ],
+   "features": [
+    [
+     "İç mimariye uyum",
+     "Dış renk ve iç döşeme otelinizin konseptine göre seçilir."
+    ],
+    [
+     "Misafir dostu kullanım",
+     "Dokunmatik ekranla seans kolayca başlatılır; personel CityConnect™ ile uzaktan izler."
+    ],
+    [
+     "Sessiz çalışma",
+     "<60 dB ses seviyesi, oda ve spa ortamının sakinliğini korur."
+    ],
+    [
+     "Kesintisiz hizmet",
+     "Dahili yedek güç kaynağı standarttır; planlı servis programı sunulur."
+    ]
+   ],
+   "models": [
+    "oslo",
+    "tokyo",
+    "milano"
+   ],
+   "faq": [
+    [
+     "Kabin otel odasına sığar mı?",
+     "Planlayıcıda oda ölçünüzü girerek yaklaşık yerleşimi görebilirsiniz. Kesin yerleşim, taşıma güzergâhı ve kapı geçişi keşifte teyit edilir."
+    ],
+    [
+     "Suit için hangi model uygun?",
+     "Tek kişilik yatarak kullanım için Oslo, çiftler için Tokyo öne çıkar. Spa alanında grup seansları için Milano değerlendirilebilir."
+    ],
+    [
+     "Bakım ve servis nasıl işliyor?",
+     "Kurulum, devreye alma, personel eğitimi ve bakım kapsamı proje planında belgelenir."
+    ]
+   ]
+  },
+  "gym": {
+   "title": "Spor Salonları ve Kulüpler için Hiperbarik Kabin | HBOT Chamber Tech",
+   "desc": "Spor salonları, kulüpler ve takım tesisleri için tek ve çok kişilik hiperbarik kabinler. Salonunuza kaç kabin sığdığını plan üzerinde deneyin.",
+   "eyebrow": "ÇÖZÜMLER / SPOR SALONU VE PERFORMANS",
+   "h1": "Salonunuz ve takımınız için hiperbarik kabin",
+   "lead": "Üyelerinize ya da sporcularınıza sunacağınız seans alanını, salonunuzun yerleşimine göre planlayın.",
+   "facts": [
+    [
+     "1–4 kişi",
+     "Kabin başına kapasite"
+    ],
+    [
+     "1,3–1,5 ATA",
+     "Çalışma basıncı"
+    ],
+    [
+     "CityConnect™",
+     "Uzaktan izleme"
+    ],
+    [
+     "Yedek güç",
+     "Standart"
+    ]
+   ],
+   "intro_title": "Yoğun kullanım için planlanmış",
+   "intro": [
+    "Kulüp ve salonlarda kabin, aynı anda birden fazla kişinin kullanabileceği şekilde planlanır. Tokyo Plus ve Milano paylaşımlı seanslar, Dubai ise kişiye özel seanslar için uygundur.",
+    "Planlayıcıda spor salonu ortamını seçin, kabin adedini artırın ve koşu bantları ile ağırlık alanının yanında kaç kabinin erişim payıyla sığdığını görün."
+   ],
+   "features": [
+    [
+     "Paylaşımlı kapasite",
+     "Çok kişilik kabinlerle aynı seansta birden fazla kullanıcı."
+    ],
+    [
+     "Ölçeklenebilir kurulum",
+     "Üye sayınız arttıkça yeni kabin ekleyin; yerleşimi baştan planlayın."
+    ],
+    [
+     "İzlenebilir operasyon",
+     "CityConnect™ ile seanslar ve uyarılar uzaktan izlenir."
+    ],
+    [
+     "Dayanıklı yapı",
+     "Havacılık sınıfı alüminyum gövde ve çift emniyet valfi."
+    ]
+   ],
+   "models": [
+    "tokyo-plus",
+    "milano",
+    "dubai"
+   ],
+   "faq": [
+    [
+     "Salonuma kaç kabin sığar?",
+     "Planlayıcıda salon ölçünüzü girip kabin adedini artırarak görebilirsiniz. Kesin yerleşim ve teknik altyapı keşifte netleşir."
+    ],
+    [
+     "Takım tesisi için hangi model uygun?",
+     "Aynı anda birden fazla sporcu için Tokyo Plus veya Milano, bireysel programlar için Dubai öne çıkar."
+    ],
+    [
+     "Sporcular neden hiperbarik kabine yöneliyor?",
+     "Konuyu kaynaklarıyla ele aldığımız yazımızda okuyabilirsiniz: Sporcular neden hiperbarik odaya yöneliyor?"
+    ]
+   ],
+   "faq_link": [
+    "sporcular-hiperbarik-oda.html",
+    2
+   ]
+  }
+ }
+}

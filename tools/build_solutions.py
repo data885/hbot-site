@@ -178,27 +178,58 @@ TR = {
     },
 }
 
-LANGS = {"tr": TR}
+CONTENT = pathlib.Path(__file__).resolve().parent / "solutions_content"
+LANG_ORDER = ["tr", "en", "ru", "ar", "es", "pt", "de"]
+# Klinik kartı: yalnız TR'de klinik sayfası, EN'de ayrı İngilizce sayfa var; ötekiler Geneva'ya gider
+CLINIC_HREF = {"tr": "klinikler-icin-hiperbarik-oda.html", "en": "hyperbaric-chamber-for-clinics.html"}
+
+
+def load_langs():
+    langs = {"tr": TR}
+    for lang in LANG_ORDER[1:]:
+        f = CONTENT / f"{lang}.json"
+        if f.exists():
+            langs[lang] = json.loads(f.read_text())
+    for lang, t in langs.items():
+        t["cards"]["clinic"]["href"] = CLINIC_HREF.get(lang, "model-geneva.html")
+    return langs
+
+
+LANGS = load_langs()
 
 
 def esc(s):
     return html.escape(s, quote=True)
 
 
-def template():
-    src = (ROOT / "klinikler-icin-hiperbarik-oda.html").read_text()
-    main_start = src.index("  <main>")
-    main_end = src.index("  </main>") + len("  </main>")
+def page_url(lang, key):
+    return f"{BASE}/{FILES[key]}" if lang == "tr" else f"{BASE}/{lang}/{FILES[key]}"
+
+
+def template(lang):
+    """Aynı dildeki guvenlik-uygunluk.html: üst menü, dil seçici, alt bilgi ve
+    <head> ortak parçaları (gtag, ikonlar, stil, Organization) buradan alınır."""
+    src = ((ROOT if lang == "tr" else ROOT / lang) / "guvenlik-uygunluk.html").read_text()
+    head_start = src.index("<head>") + len("<head>")
+    head_end = src.index("</head>")
+    drop = re.compile(r'^\s*(<title>|<meta name="description"|<meta name="robots"|<meta property="og:|<meta name="twitter:|<link rel="canonical"|<link rel="alternate" hreflang)')
+    lines = src[head_start:head_end].split("\n")
+    at = next(i for i, l in enumerate(lines) if "<title>" in l)
+    kept_before = [l for l in lines[:at] if not drop.match(l)]
+    kept_after = [l for l in lines[at:] if not drop.match(l)]
     body_open = re.search(r"<body[^>]*>", src)
-    return src, src[body_open.end():main_start], src[main_end:]
+    header = src[body_open.end(): src.index("<main>")]
+    footer = src[src.index("</main>") + len("</main>"):]
+    return src[:head_start], "\n".join(kept_before), "\n".join(kept_after), header, footer
 
 
 def head(lang, key, page, t):
-    url = f"{BASE}/{FILES[key]}" if lang == "tr" else f"{BASE}/{lang}/{FILES[key]}"
+    url = page_url(lang, key)
+    home = BASE + "/" if lang == "tr" else f"{BASE}/{lang}/"
     img = f"{BASE}{IMG.format(t['cards'].get(key, {}).get('img', 'milano'))}"
-    crumbs = [{"@type": "ListItem", "position": 1, "name": t["home_crumb"], "item": BASE + "/"}]
+    crumbs = [{"@type": "ListItem", "position": 1, "name": t["home_crumb"], "item": home}]
     if key != "hub":
-        crumbs.append({"@type": "ListItem", "position": 2, "name": t["hub_crumb"], "item": f"{BASE}/{FILES['hub']}"})
+        crumbs.append({"@type": "ListItem", "position": 2, "name": t["hub_crumb"], "item": page_url(lang, "hub")})
     crumbs.append({"@type": "ListItem", "position": len(crumbs) + 1, "name": page["h1"], "item": url})
     ld_faq = ""
     if page.get("faq"):
@@ -206,12 +237,13 @@ def head(lang, key, page, t):
             "@context": "https://schema.org", "@type": "FAQPage",
             "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in page["faq"]]
         }, ensure_ascii=False) + "\n  </script>"
+    alternates = "\n".join(f'  <link rel="alternate" hreflang="{l}" href="{page_url(l, key)}" />' for l in LANG_ORDER if l in LANGS)
     meta = f"""  <title>{esc(page['title'])}</title>
   <meta name="description" content="{esc(page['desc'])}" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="{url}" />
-  <link rel="alternate" hreflang="{lang}" href="{url}" />
-  <link rel="alternate" hreflang="x-default" href="{BASE}/{FILES[key]}" />
+{alternates}
+  <link rel="alternate" hreflang="x-default" href="{page_url("tr", key)}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="HBOT Chamber Tech" />
   <meta property="og:title" content="{esc(page['title'])}" />
@@ -364,21 +396,18 @@ def hub(page, t):
 
 
 def build(lang, t):
-    src, header, footer = template()
+    head_open, pre, post, header, footer = template(lang)
     out_dir = ROOT if lang == "tr" else ROOT / lang
-    head_open = src[: src.index("<head>") + len("<head>")]
-    head_rest = src[src.index("<head>") + len("<head>"): src.index("</head>")]
-    pre = head_rest[: head_rest.index("  <title>")]
-    post = head_rest[head_rest.index('  <link rel="icon"'):]
-    # şablonun kendi Breadcrumb'ı atılır; Organization kalır
-    post = re.sub(r'  <script type="application/ld\+json">\s*\{"@context":"https://schema.org","@type":"BreadcrumbList".*?</script>\n', "", post, flags=re.S)
+    post = re.sub(r'<script type="application/ld\+json">\s*\{"@context":\s*"https://schema.org",\s*"@type":\s*"BreadcrumbList".*?</script>\n?', "", post, flags=re.S)
     for key, page in t["pages"].items():
         meta, crumbs, ld_faq = head(lang, key, page, t)
         body = hub(page, t) if key == "hub" else detail(key, page, t)
-        doc = (head_open + pre + meta + post.rstrip() +
+        # dil seçici bu sayfanın kendi dil karşılıklarına gitsin
+        hdr = re.sub(r'href="(/(?:[a-z]{2}/)?)guvenlik-uygunluk\.html"(?=[^>]*data-lang=)', lambda mm: f'href="{mm.group(1)}{FILES[key]}"', header)
+        doc = (head_open + pre.rstrip() + "\n" + meta + post.strip("\n") +
                f'\n  <script type="application/ld+json">\n  {crumbs}\n  </script>{ld_faq}\n'
                '  <link rel="stylesheet" href="/assets/css/room-fit.css?v=1" />\n</head>\n'
-               f'<body data-page="solutions">{header}  <main>\n{page_header(key, page, t)}\n\n{body}\n  </main>{footer}')
+               f'<body data-page="solutions">{hdr}<main>\n{page_header(key, page, t)}\n\n{body}\n</main>{footer}')
         doc = doc.replace("</body>", '  <script src="/assets/js/room-fit.js?v=2"></script>\n</body>', 1)
         (out_dir / FILES[key]).write_text(doc)
         print("yazıldı:", (out_dir / FILES[key]).relative_to(ROOT.parent))

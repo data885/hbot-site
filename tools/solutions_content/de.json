@@ -1,0 +1,357 @@
+{
+ "home_crumb": "Startseite",
+ "hub_crumb": "Lösungen",
+ "cards": {
+  "home": {
+   "title": "Zuhause und privat",
+   "text": "Eine persönliche Kammer bei Ihnen zu Hause, ganz nach Ihrem Zeitplan. Kompakte Einpersonenmodelle.",
+   "img": "oslo",
+   "models": "Oslo · Dubai"
+  },
+  "spa": {
+   "title": "Wellness und Spa",
+   "text": "Erweitern Sie Ihr Spa-Angebot um Paar- oder Gruppensitzungen; planen Sie die Anzahl der Kammern passend zu Ihrer Fläche.",
+   "img": "milano",
+   "models": "Tokyo · Milano · Dubai"
+  },
+  "hotel": {
+   "title": "Hotels",
+   "text": "Ein exklusiver Erlebnisbereich für Gäste, in der Suite oder im Hotel-Spa.",
+   "img": "tokyo",
+   "models": "Oslo · Tokyo · Milano"
+  },
+  "gym": {
+   "title": "Fitnessstudio und Performance",
+   "text": "Mehrpersonenkammern zur gemeinsamen Nutzung in Clubs, Studios und Teameinrichtungen.",
+   "img": "tokyo-plus",
+   "models": "Tokyo Plus · Milano · Dubai"
+  },
+  "clinic": {
+   "title": "Klinik und Krankenhaus",
+   "text": "Projektplanung für Einzel- und Gemeinschaftsbehandlungsräume.",
+   "img": "geneva",
+   "models": "Tokyo Plus · Geneva",
+   "href": "klinikler-icin-hiperbarik-oda.html"
+  }
+ },
+ "planner_eyebrow": "PASST ES IN MEINEN RAUM?",
+ "planner_title": "Planen Sie die Kammer in Ihrem Raum",
+ "planner_text": "Wählen Sie Umgebung und Modell und geben Sie Ihre Raummaße ein. Der Planer platziert die Kammer samt Zugangsabstand und zeigt Ihnen, wie sie passt. Für mehrere Kammern erhöhen Sie die Anzahl.",
+ "steps_eyebrow": "ABLAUF",
+ "steps_title": "Von der Erstberatung bis zur ersten Sitzung: ein Ansprechpartner",
+ "steps": [
+  [
+   "Beratung und Planung",
+   "Gemeinsam prüfen wir Maße der Aufstellfläche, Fotos und Zugangsweg, aus der Ferne oder vor Ort."
+  ],
+  [
+   "Individuelle Fertigung",
+   "Modell, Außenfarbe und Innenpolsterung legen Sie im Konfigurator fest; die Details klären wir gemeinsam bei der Bestellung."
+  ],
+  [
+   "Installation und Inbetriebnahme",
+   "Wir installieren die Kammer, führen die Tests durch und übergeben sie einsatzbereit."
+  ],
+  [
+   "Schulung und Support",
+   "Sie erhalten eine Einweisung; Fernüberwachung mit CityConnect™ und planmäßiger Service kommen hinzu."
+  ]
+ ],
+ "cta_title": "Erzählen Sie uns von Ihrem Raum",
+ "cta_text": "Senden Sie uns Raummaße, Nutzungszweck und die erwartete Nutzerzahl, dann legen wir gemeinsam das passende Modell und die Aufstellung fest.",
+ "cta_btn": "Angebot anfordern",
+ "cta_btn2": "Zum Konfigurator",
+ "models_eyebrow": "MODELLE FÜR DIESEN BEREICH",
+ "model_more": "Modelldetails",
+ "faq_eyebrow": "HÄUFIGE FRAGEN",
+ "pages": {
+  "hub": {
+   "title": "Hyperbare Kammern: Lösungen für Zuhause, Spa, Hotel, Fitness | HBOT Chamber Tech",
+   "desc": "Hyperbare Kammern für jeden Einsatzbereich: Zuhause, Wellness und Spa, Hotel, Fitnessstudio und Klinik. Prüfen Sie im Plan, ob die Kammer in Ihren Raum passt.",
+   "eyebrow": "LÖSUNGEN",
+   "h1": "Die passende hyperbare Kammer für jeden Raum",
+   "lead": "Ein Zimmer zu Hause, ein Spa, eine Hotelsuite oder ein Fitnessstudio: Schildern Sie uns Ihre Fläche und Nutzung, dann planen wir gemeinsam das passende Modell und die Aufstellung.",
+   "grid_eyebrow": "EINSATZBEREICHE",
+   "grid_title": "Wo werden Sie Ihre Kammer nutzen?"
+  },
+  "home": {
+   "title": "Hyperbare Kammer für Zuhause | Privat nutzen | HBOT Chamber Tech",
+   "desc": "Hyperbare Einpersonenkammer für Ihr Zuhause: Oslo (liegend) und Dubai (sitzend). Raummaße eingeben und im Plan prüfen, ob sie passt.",
+   "eyebrow": "LÖSUNGEN / ZUHAUSE UND PRIVAT",
+   "h1": "Eine persönliche hyperbare Kammer für Ihr Zuhause",
+   "lead": "Keine Mitgliedschaft, keine Termine, keine Anfahrt. Planen Sie Ihre Sitzung nach Ihrem eigenen Zeitplan, in der Ruhe Ihres Zuhauses.",
+   "facts": [
+    [
+     "1.3–1.5 ATA",
+     "Betriebsdruck"
+    ],
+    [
+     "<60 dB",
+     "CitySilent™-Geräuschpegel"
+    ],
+    [
+     "~1.3 m²",
+     "Grundfläche Dubai"
+    ],
+    [
+     "1 Person",
+     "Liegend oder sitzend"
+    ]
+   ],
+   "intro_title": "Der persönlichste Raum im Haus",
+   "intro": [
+    "Eine Kammer für zu Hause macht die Sitzung zum Teil Ihrer täglichen Routine: bevor der Tag beginnt oder wenn es abends im Haus ruhig wird.",
+    "Oslo ist eine Einpersonenkammer für rein liegende Nutzung; ihre orthopädische Liege von 200×80 cm bietet auch bei längeren Sitzungen eine bequeme Position. Dubai ist das kompakte Modell für sitzende Nutzung; mit 120×110 cm Grundfläche findet es in einer Zimmerecke Platz."
+   ],
+   "features": [
+    [
+     "Passt zu Ihrem Wohnraum",
+     "Außenfarbe und Innenpolsterung wählen Sie im Konfigurator; die Kammer wird für Ihr Zuhause gefertigt, nicht für eine Einrichtung."
+    ],
+    [
+     "Einfache Bedienung",
+     "Dank Touchscreen-Steuerung lässt sich eine Sitzung einfach starten, überwachen und beenden."
+    ],
+    [
+     "Vernetzt und überwacht",
+     "CityConnect™ ist Standard: Fernüberwachung, Echtzeit-Warnmeldungen und Cloud-Backup."
+    ],
+    [
+     "Sicher durch Technik",
+     "Gehäuse aus Flugzeugaluminium, doppeltes Sicherheitsventil und integrierte Notstromversorgung."
+    ]
+   ],
+   "models": [
+    "oslo",
+    "dubai"
+   ],
+   "faq": [
+    [
+     "Wie viel Platz brauche ich zu Hause?",
+     "Entscheidend sind die Außenmaße der Kammer und der Zugangsabstand rundherum. Dubai misst außen 120×110 cm, Oslo 240×110 cm. Im Planer oben können Sie Ihre Raummaße eingeben und die ungefähre Aufstellung sehen; die genaue Platzierung wird bei der Besichtigung geklärt."
+    ],
+    [
+     "Passt die Kammer durch meine Tür?",
+     "Zugangsweg und Türbreite werden bei der Besichtigung geprüft. Wenn Sie Maße, Fotos und den Grundriss mitschicken, geht die Einschätzung schneller."
+    ],
+    [
+     "Wie laut ist sie im Betrieb?",
+     "Bei Oslo und Dubai liegt der Geräuschpegel unter 60 dB (CitySilent™)."
+    ],
+    [
+     "Was passiert bei einem Stromausfall?",
+     "Alle Modelle sind serienmäßig mit einer integrierten Notstromversorgung für den Fall eines Stromausfalls ausgestattet."
+    ],
+    [
+     "Welches Modell eignet sich für zu Hause?",
+     "Für liegende Nutzung bietet sich Oslo an, für eine kleinere Grundfläche und sitzende Nutzung Dubai. Für zwei Personen kommt Tokyo infrage."
+    ]
+   ]
+  },
+  "spa": {
+   "title": "Hyperbare Kammern für Spa- und Wellnesszentren | HBOT Chamber Tech",
+   "desc": "Hyperbare Kammern für ein, zwei und vier Personen für Spa- und Wellnesszentren. Testen Sie im Plan, wie viele Kammern auf Ihre Fläche passen.",
+   "eyebrow": "LÖSUNGEN / WELLNESS UND SPA",
+   "h1": "Erweitern Sie Ihr Spa-Angebot um ein hyperbares Erlebnis",
+   "lead": "Von der Einpersonenkammer bis zur Premiumkammer für vier Personen: Skalieren Sie nach Sitzungsaufkommen und Fläche.",
+   "facts": [
+    [
+     "1–4 Personen",
+     "Kapazität pro Kammer"
+    ],
+    [
+     "1.3–1.5 ATA",
+     "Betriebsdruck"
+    ],
+    [
+     "<60 dB",
+     "Leiser Betrieb"
+    ],
+    [
+     "CityConnect™",
+     "Fernüberwachung"
+    ]
+   ],
+   "intro_title": "Ein neues Ritual für Ihre Gäste",
+   "intro": [
+    "In Wellnesszentren steht die Kammer als eigenes Erlebnis neben Massage- und Ruhebereichen. Doppelkammern (Tokyo) eignen sich für Paare und Freunde, die Vierpersonenkammer Milano für Gruppensitzungen.",
+    "Wie viele Kammern Sie brauchen, hängt von Ihrer täglichen Sitzungszahl und Ihrer Fläche ab. Im Planer sehen Sie, wie viele Kammern samt Zugangsabstand in denselben Raum passen, wenn Sie die Anzahl erhöhen."
+   ],
+   "features": [
+    [
+     "Skalierbar",
+     "Beginnen Sie mit einer Kammer und ergänzen Sie bei steigender Nachfrage weitere im selben oder im Nebenraum."
+    ],
+    [
+     "Passend zu Ihrer Marke",
+     "Außenfarbe, Innenpolsterung und Beleuchtung werden passend zur Designsprache Ihres Spas gewählt."
+    ],
+    [
+     "Einfacher Betrieb",
+     "Mit Touch-Steuerung und CityConnect™ überwachen Sie Sitzungen, Warnmeldungen sehen Sie sofort."
+    ],
+    [
+     "Leise und unterbrechungsfrei",
+     "Ein Geräuschpegel unter 60 dB und eine integrierte Notstromversorgung sind Standard."
+    ]
+   ],
+   "models": [
+    "tokyo",
+    "milano",
+    "dubai"
+   ],
+   "faq": [
+    [
+     "Wie viele Kammern braucht mein Spa?",
+     "Nennen Sie uns Ihr tägliches Sitzungsziel, die Sitzungsdauer und Ihre Öffnungszeiten; gemeinsam berechnen wir Anzahl und Aufstellung. Der Planer zeigt Ihnen vorab, wie viele Kammern auf Ihre Fläche passen."
+    ],
+    [
+     "Eine Mehrpersonenkammer oder mehrere Einpersonenkammern?",
+     "Stehen Gruppen- und Paarsitzungen im Vordergrund, bieten sich Tokyo oder Milano an; bei individuellen Programmen sind mehrere Dubai flexibler. Gemischte Installationen sind ebenfalls möglich."
+    ],
+    [
+     "Passt die Kammer zum Design meines Spas?",
+     "Außenfarbe und Innenpolsterung wählen Sie im Konfigurator; Sonderwünsche klären wir gemeinsam bei der Bestellung."
+    ]
+   ]
+  },
+  "hotel": {
+   "title": "Hyperbare Kammern für Hotels | Wellnesssuiten und Hotel-Spas | HBOT Chamber Tech",
+   "desc": "Hyperbare Kammern für Hotelsuiten und Hotel-Spas. Sehen Sie im Plan, wie die Kammer in Ihren Raum passt, und bieten Sie Gästen ein exklusives Erlebnis.",
+   "eyebrow": "LÖSUNGEN / HOTELS",
+   "h1": "Ein exklusives hyperbares Erlebnis für Ihre Hotelgäste",
+   "lead": "Als Teil einer Wellnesssuite oder im Hotel-Spa wird die Kammer zu einem Bereich, der Ihr Gästeerlebnis unterscheidbar macht.",
+   "facts": [
+    [
+     "1–4 Personen",
+     "Kapazität pro Kammer"
+    ],
+    [
+     "<60 dB",
+     "Leiser Betrieb"
+    ],
+    [
+     "Individuell",
+     "Farbe und Polsterung"
+    ],
+    [
+     "CityConnect™",
+     "Fernüberwachung"
+    ]
+   ],
+   "intro_title": "In der Suite oder im Spa",
+   "intro": [
+    "In Wellnesssuiten lässt sich eine Ein- oder Zweipersonenkammer (Oslo, Tokyo) als Teil des Raums gestalten. In Hotel-Spas ermöglichen Mehrpersonenkammern wie Milano Gruppensitzungen.",
+    "Wählen Sie im Planer die Umgebung Hotelzimmer, um zu sehen, wie die Kammer neben Bett und Sitzbereich platziert wird."
+   ],
+   "features": [
+    [
+     "Passt zur Innenarchitektur",
+     "Außenfarbe und Innenpolsterung werden passend zum Konzept Ihres Hotels gewählt."
+    ],
+    [
+     "Gästefreundliche Bedienung",
+     "Sitzungen starten einfach per Touchscreen; das Personal überwacht per CityConnect™ aus der Ferne."
+    ],
+    [
+     "Leiser Betrieb",
+     "Ein Geräuschpegel unter 60 dB bewahrt die Ruhe von Zimmer und Spa."
+    ],
+    [
+     "Unterbrechungsfreier Betrieb",
+     "Eine integrierte Notstromversorgung ist Standard; ein planmäßiges Serviceprogramm wird angeboten."
+    ]
+   ],
+   "models": [
+    "oslo",
+    "tokyo",
+    "milano"
+   ],
+   "faq": [
+    [
+     "Passt die Kammer in ein Hotelzimmer?",
+     "Im Planer können Sie Ihre Raummaße eingeben und die ungefähre Aufstellung sehen. Genaue Platzierung, Transportweg und Türdurchgang werden bei der Besichtigung bestätigt."
+    ],
+    [
+     "Welches Modell eignet sich für eine Suite?",
+     "Für liegende Einzelnutzung bietet sich Oslo an, für Paare Tokyo. Im Spa-Bereich kommt Milano für Gruppensitzungen infrage."
+    ],
+    [
+     "Wie funktionieren Wartung und Service?",
+     "Installation, Inbetriebnahme, Personalschulung und Wartungsumfang werden im Projektplan dokumentiert."
+    ]
+   ]
+  },
+  "gym": {
+   "title": "Hyperbare Kammern für Fitnessstudios und Sportclubs | HBOT Chamber Tech",
+   "desc": "Hyperbare Kammern für eine und mehrere Personen für Fitnessstudios, Clubs und Teameinrichtungen. Testen Sie im Plan, wie viele Kammern passen.",
+   "eyebrow": "LÖSUNGEN / FITNESSSTUDIO UND PERFORMANCE",
+   "h1": "Eine hyperbare Kammer für Ihr Studio und Ihr Team",
+   "lead": "Planen Sie den Sitzungsbereich für Ihre Mitglieder oder Athleten passend zum Grundriss Ihres Studios.",
+   "facts": [
+    [
+     "1–4 Personen",
+     "Kapazität pro Kammer"
+    ],
+    [
+     "1.3–1.5 ATA",
+     "Betriebsdruck"
+    ],
+    [
+     "CityConnect™",
+     "Fernüberwachung"
+    ],
+    [
+     "Notstrom",
+     "Standard"
+    ]
+   ],
+   "intro_title": "Für intensive Nutzung geplant",
+   "intro": [
+    "In Clubs und Studios wird die Kammer so geplant, dass mehrere Personen sie gleichzeitig nutzen können. Tokyo Plus und Milano eignen sich für gemeinsame Sitzungen, Dubai für individuelle Sitzungen.",
+    "Wählen Sie im Planer die Umgebung Fitnessstudio, erhöhen Sie die Anzahl und sehen Sie, wie viele Kammern samt Zugangsabstand neben Laufbändern und Gewichtsbereich Platz finden."
+   ],
+   "features": [
+    [
+     "Gemeinsame Kapazität",
+     "Mit Mehrpersonenkammern nutzen mehrere Personen dieselbe Sitzung."
+    ],
+    [
+     "Skalierbare Installation",
+     "Ergänzen Sie neue Kammern, wenn Ihre Mitgliederzahl wächst; planen Sie die Aufstellung von Anfang an."
+    ],
+    [
+     "Nachvollziehbarer Betrieb",
+     "Sitzungen und Warnmeldungen werden per CityConnect™ aus der Ferne überwacht."
+    ],
+    [
+     "Robuste Bauweise",
+     "Gehäuse aus Flugzeugaluminium und doppeltes Sicherheitsventil."
+    ]
+   ],
+   "models": [
+    "tokyo-plus",
+    "milano",
+    "dubai"
+   ],
+   "faq": [
+    [
+     "Wie viele Kammern passen in mein Studio?",
+     "Geben Sie die Maße Ihres Studios im Planer ein und erhöhen Sie die Anzahl. Genaue Aufstellung und technische Infrastruktur werden bei der Besichtigung geklärt."
+    ],
+    [
+     "Welches Modell eignet sich für eine Teameinrichtung?",
+     "Für mehrere Athleten gleichzeitig bieten sich Tokyo Plus oder Milano an, für individuelle Programme Dubai."
+    ],
+    [
+     "Warum greifen Athleten zu hyperbaren Kammern?",
+     "Das lesen Sie, mit Quellen, in unserem Beitrag: Warum Athleten zu hyperbaren Kammern greifen"
+    ]
+   ],
+   "faq_link": [
+    "sporcular-hiperbarik-oda.html",
+    2
+   ]
+  }
+ }
+}

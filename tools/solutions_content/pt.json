@@ -1,0 +1,357 @@
+{
+ "home_crumb": "Início",
+ "hub_crumb": "Soluções",
+ "cards": {
+  "home": {
+   "title": "Casa e uso pessoal",
+   "text": "Uma câmara pessoal em casa, no seu próprio ritmo. Modelos compactos para uma pessoa.",
+   "img": "oslo",
+   "models": "Oslo · Dubai"
+  },
+  "spa": {
+   "title": "Bem-estar e spa",
+   "text": "Inclua sessões em casal ou em grupo no menu do seu spa; planeje o número de câmaras conforme o seu espaço.",
+   "img": "milano",
+   "models": "Tokyo · Milano · Dubai"
+  },
+  "hotel": {
+   "title": "Hotéis",
+   "text": "Um espaço de experiência exclusivo para hóspedes, na suíte ou no spa do hotel.",
+   "img": "tokyo",
+   "models": "Oslo · Tokyo · Milano"
+  },
+  "gym": {
+   "title": "Academias e performance",
+   "text": "Câmaras para várias pessoas, de uso compartilhado em clubes, academias e instalações de equipes.",
+   "img": "tokyo-plus",
+   "models": "Tokyo Plus · Milano · Dubai"
+  },
+  "clinic": {
+   "title": "Clínicas e hospitais",
+   "text": "Planejamento de projetos para salas de tratamento individuais e compartilhadas.",
+   "img": "geneva",
+   "models": "Tokyo Plus · Geneva",
+   "href": "klinikler-icin-hiperbarik-oda.html"
+  }
+ },
+ "planner_eyebrow": "CABE NO MEU ESPAÇO?",
+ "planner_title": "Planeje a câmara no seu espaço",
+ "planner_text": "Escolha o ambiente e o modelo e informe as medidas da sala. O plano posiciona a câmara com a sua folga de acesso e mostra como ela se encaixa. Para várias câmaras, aumente a quantidade.",
+ "steps_eyebrow": "PROCESSO",
+ "steps_title": "Do primeiro contato à primeira sessão, um único interlocutor",
+ "steps": [
+  [
+   "Levantamento e plano",
+   "Avaliamos juntos as medidas do local de instalação, as fotos e o trajeto de acesso; à distância ou presencialmente."
+  ],
+  [
+   "Fabricação sob medida",
+   "Você define modelo, cor externa e estofamento interno no configurador, e nós detalhamos tudo juntos no pedido."
+  ],
+  [
+   "Instalação e colocação em operação",
+   "Instalamos a câmara, realizamos os testes e entregamos pronta para uso."
+  ],
+  [
+   "Treinamento e suporte",
+   "É oferecido treinamento de uso; com o CityConnect™ entram em ação o monitoramento remoto e a manutenção programada."
+  ]
+ ],
+ "cta_title": "Conte-nos sobre o seu espaço",
+ "cta_text": "Envie as medidas da sala, a finalidade de uso e o número esperado de usuários; vamos definir juntos o modelo e a disposição adequados.",
+ "cta_btn": "Solicitar Orçamento",
+ "cta_btn2": "Ir para o Configurador",
+ "models_eyebrow": "MODELOS PARA ESTE ESPAÇO",
+ "model_more": "Detalhes do modelo",
+ "faq_eyebrow": "PERGUNTAS FREQUENTES",
+ "pages": {
+  "hub": {
+   "title": "Câmaras Hiperbáricas: Casa, Spa, Hotel, Academia | HBOT Chamber Tech",
+   "desc": "Câmara hiperbárica conforme o seu espaço: casa, bem-estar e spa, hotel, academia e clínica. Veja no plano se a câmara cabe no seu ambiente.",
+   "eyebrow": "SOLUÇÕES",
+   "h1": "Uma câmara hiperbárica para cada espaço",
+   "lead": "Um cômodo da sua casa, um spa, uma suíte de hotel ou uma academia: conte-nos sobre o seu espaço e como pretende usá-lo, e planejaremos juntos o modelo e a disposição adequados.",
+   "grid_eyebrow": "ÁREAS DE USO",
+   "grid_title": "Onde você vai usar a sua câmara?"
+  },
+  "home": {
+   "title": "Câmara Hiperbárica para Casa | Uso Pessoal | HBOT Chamber Tech",
+   "desc": "Câmara hiperbárica individual para a sua casa: Oslo (deitado) e Dubai (sentado). Informe as medidas do cômodo e veja no plano se a câmara cabe.",
+   "eyebrow": "SOLUÇÕES / CASA E USO PESSOAL",
+   "h1": "Uma câmara hiperbárica pessoal para a sua casa",
+   "lead": "Sem mensalidade, agendamento ou deslocamento. Planeje a sua sessão no seu próprio ritmo, no silêncio da sua casa.",
+   "facts": [
+    [
+     "1,3–1,5 ATA",
+     "Pressão de trabalho"
+    ],
+    [
+     "<60 dB",
+     "Nível de ruído CitySilent™"
+    ],
+    [
+     "~1,3 m²",
+     "Área de piso do Dubai"
+    ],
+    [
+     "1 pessoa",
+     "Deitado ou sentado"
+    ]
+   ],
+   "intro_title": "O cômodo mais pessoal da casa",
+   "intro": [
+    "Uma câmara residencial faz da sessão parte da rotina diária: de manhã, antes de começar o dia, ou à noite, quando a casa fica em silêncio.",
+    "O Oslo é individual e totalmente horizontal; com a cama ortopédica de 200×80 cm, oferece uma posição confortável em sessões longas. O Dubai é o modelo compacto de uso sentado; com 120×110 cm de área de piso, cabe no canto de um cômodo."
+   ],
+   "features": [
+    [
+     "Adaptada ao seu espaço",
+     "Cor externa e estofamento interno são escolhidos no configurador; a câmara é preparada para a sua casa, não para uma instalação comercial."
+    ],
+    [
+     "Fácil de usar",
+     "Com o controle por tela sensível ao toque, iniciar, acompanhar e encerrar a sessão é simples."
+    ],
+    [
+     "Conectada e monitorável",
+     "O CityConnect™ é item de série: monitoramento remoto, alertas instantâneos e backup na nuvem."
+    ],
+    [
+     "Segura por engenharia",
+     "Estrutura de alumínio de grau aeronáutico, válvula de segurança dupla e fonte de energia reserva integrada."
+    ]
+   ],
+   "models": [
+    "oslo",
+    "dubai"
+   ],
+   "faq": [
+    [
+     "De quanto espaço preciso em casa?",
+     "O que define é a medida externa da câmara e a folga de acesso ao redor. O Dubai mede 120×110 cm e o Oslo, 240×110 cm por fora. No planejador acima, você pode informar as medidas do cômodo e ver a disposição aproximada; a disposição definitiva é confirmada na visita técnica."
+    ],
+    [
+     "A câmara passa pela minha porta?",
+     "O trajeto de acesso e a largura da porta são verificados na visita técnica. Compartilhar medidas, fotos e a planta do andar agiliza a avaliação."
+    ],
+    [
+     "Quanto ruído ela faz em funcionamento?",
+     "No Oslo e no Dubai, o nível de ruído é inferior a 60 dB (CitySilent™)."
+    ],
+    [
+     "O que acontece se faltar energia?",
+     "Todos os modelos vêm de série com fonte de energia reserva integrada para quedas de energia."
+    ],
+    [
+     "Qual modelo é o ideal para casa?",
+     "Se você prefere o uso deitado, o Oslo se destaca; se prefere uma área de piso menor e o uso sentado, o Dubai. Para uso de duas pessoas, o Tokyo pode ser considerado."
+    ]
+   ]
+  },
+  "spa": {
+   "title": "Câmara Hiperbárica para Spas e Centros de Bem-Estar | HBOT Chamber Tech",
+   "desc": "Câmaras hiperbáricas para uma, duas e quatro pessoas para spas e centros de bem-estar. Teste no plano quantas câmaras cabem no seu espaço.",
+   "eyebrow": "SOLUÇÕES / BEM-ESTAR E SPA",
+   "h1": "Inclua uma experiência hiperbárica no menu do seu spa",
+   "lead": "Da câmara individual à câmara premium para quatro pessoas: dimensione conforme o volume de sessões e o seu espaço.",
+   "facts": [
+    [
+     "1–4 pessoas",
+     "Capacidade por câmara"
+    ],
+    [
+     "1,3–1,5 ATA",
+     "Pressão de trabalho"
+    ],
+    [
+     "<60 dB",
+     "Operação silenciosa"
+    ],
+    [
+     "CityConnect™",
+     "Monitoramento remoto"
+    ]
+   ],
+   "intro_title": "Um novo ritual para os seus hóspedes",
+   "intro": [
+    "Em centros de bem-estar, a câmara se posiciona como uma experiência própria ao lado das áreas de massagem e descanso. As câmaras duplas (Tokyo) são ideais para casais e amigos; a de quatro lugares, Milano, para sessões em grupo.",
+    "Quantas câmaras são necessárias depende do número de sessões diárias e do seu espaço. No planejador, ao aumentar a quantidade de câmaras, você vê quantas cabem na mesma sala com a folga de acesso."
+   ],
+   "features": [
+    [
+     "Escalável",
+     "Comece com uma câmara e, conforme a demanda crescer, adicione novas câmaras no mesmo espaço ou em uma sala ao lado."
+    ],
+    [
+     "De acordo com a sua marca",
+     "Cor externa, estofamento interno e iluminação são escolhidos conforme a linguagem de design do seu spa."
+    ],
+    [
+     "Operação simples",
+     "Com o controle por toque e o CityConnect™, as sessões são acompanhadas e os alertas aparecem na hora."
+    ],
+    [
+     "Silenciosa e contínua",
+     "Nível de ruído <60 dB e fonte de energia reserva integrada de série."
+    ]
+   ],
+   "models": [
+    "tokyo",
+    "milano",
+    "dubai"
+   ],
+   "faq": [
+    [
+     "De quantas câmaras o meu spa precisa?",
+     "Informe a meta de sessões diárias, a duração de cada sessão e o seu horário de funcionamento; calculamos juntos o número de câmaras e a disposição. O planejador permite ver de antemão quantas câmaras cabem no seu espaço."
+    ],
+    [
+     "Uma câmara para várias pessoas ou várias câmaras individuais?",
+     "Se predominam sessões em grupo e em casal, Tokyo ou Milano; se predominam programas personalizados, várias unidades do Dubai são mais flexíveis. Uma instalação mista também é possível."
+    ],
+    [
+     "A câmara combina com o design do spa?",
+     "Cor externa e estofamento interno são escolhidos no configurador; pedidos especiais definimos juntos no pedido."
+    ]
+   ]
+  },
+  "hotel": {
+   "title": "Câmara Hiperbárica para Hotéis | Suíte Wellness e Spa | HBOT Chamber Tech",
+   "desc": "Câmara hiperbárica para suítes e spas de hotel. Veja no plano como ela se encaixa no seu ambiente e ofereça aos hóspedes uma experiência exclusiva.",
+   "eyebrow": "SOLUÇÕES / HOTÉIS",
+   "h1": "Uma experiência hiperbárica exclusiva para os hóspedes do seu hotel",
+   "lead": "Como parte de uma suíte wellness ou no spa do hotel, a câmara se torna um espaço que diferencia a experiência dos seus hóspedes.",
+   "facts": [
+    [
+     "1–4 pessoas",
+     "Capacidade por câmara"
+    ],
+    [
+     "<60 dB",
+     "Operação silenciosa"
+    ],
+    [
+     "Sob medida",
+     "Cor e estofamento"
+    ],
+    [
+     "CityConnect™",
+     "Monitoramento remoto"
+    ]
+   ],
+   "intro_title": "Na suíte ou no spa",
+   "intro": [
+    "Em suítes wellness, uma câmara individual ou dupla (Oslo, Tokyo) pode ser projetada como parte do quarto. Nos spas de hotel, câmaras para várias pessoas, como a Milano, permitem sessões em grupo.",
+    "No planejador, ao escolher o ambiente de quarto de hotel, você vê como a câmara se encaixa junto à cama e à área de estar."
+   ],
+   "features": [
+    [
+     "Integrada à arquitetura de interiores",
+     "Cor externa e estofamento interno são escolhidos conforme o conceito do seu hotel."
+    ],
+    [
+     "Uso pensado para o hóspede",
+     "A sessão é iniciada com facilidade pela tela sensível ao toque; a equipe acompanha à distância com o CityConnect™."
+    ],
+    [
+     "Operação silenciosa",
+     "Um nível de ruído <60 dB preserva a tranquilidade do quarto e do spa."
+    ],
+    [
+     "Serviço contínuo",
+     "A fonte de energia reserva integrada é de série; é oferecido um programa de manutenção programada."
+    ]
+   ],
+   "models": [
+    "oslo",
+    "tokyo",
+    "milano"
+   ],
+   "faq": [
+    [
+     "A câmara cabe em um quarto de hotel?",
+     "No planejador, você pode informar as medidas da sala e ver a disposição aproximada. A disposição definitiva, o trajeto de transporte e a passagem pelas portas são confirmados na visita técnica."
+    ],
+    [
+     "Qual modelo é o ideal para uma suíte?",
+     "Para uso individual deitado, o Oslo se destaca; para casais, o Tokyo. Na área do spa, a Milano pode ser considerada para sessões em grupo."
+    ],
+    [
+     "Como funcionam a manutenção e o serviço?",
+     "Instalação, colocação em operação, treinamento da equipe e escopo de manutenção são documentados no plano do projeto."
+    ]
+   ]
+  },
+  "gym": {
+   "title": "Câmara Hiperbárica para Academias e Clubes | HBOT Chamber Tech",
+   "desc": "Câmaras hiperbáricas individuais e para várias pessoas para academias, clubes e instalações de equipes. Teste no plano quantas cabem na sua sala.",
+   "eyebrow": "SOLUÇÕES / ACADEMIA E PERFORMANCE",
+   "h1": "Uma câmara hiperbárica para a sua academia e a sua equipe",
+   "lead": "Planeje o espaço de sessões para os seus alunos ou atletas conforme a disposição da sua academia.",
+   "facts": [
+    [
+     "1–4 pessoas",
+     "Capacidade por câmara"
+    ],
+    [
+     "1,3–1,5 ATA",
+     "Pressão de trabalho"
+    ],
+    [
+     "CityConnect™",
+     "Monitoramento remoto"
+    ],
+    [
+     "Energia reserva",
+     "De série"
+    ]
+   ],
+   "intro_title": "Planejada para uso intenso",
+   "intro": [
+    "Em clubes e academias, a câmara é planejada para ser usada por mais de uma pessoa ao mesmo tempo. Tokyo Plus e Milano são indicadas para sessões compartilhadas; o Dubai, para sessões personalizadas.",
+    "No planejador, escolha o ambiente de academia, aumente a quantidade de câmaras e veja quantas cabem com a folga de acesso ao lado das esteiras e da área de musculação."
+   ],
+   "features": [
+    [
+     "Capacidade compartilhada",
+     "Com câmaras para várias pessoas, vários usuários na mesma sessão."
+    ],
+    [
+     "Instalação escalável",
+     "Adicione novas câmaras conforme o número de alunos crescer; planeje a disposição desde o início."
+    ],
+    [
+     "Operação monitorável",
+     "Com o CityConnect™, sessões e alertas são acompanhados à distância."
+    ],
+    [
+     "Construção resistente",
+     "Estrutura de alumínio de grau aeronáutico e válvula de segurança dupla."
+    ]
+   ],
+   "models": [
+    "tokyo-plus",
+    "milano",
+    "dubai"
+   ],
+   "faq": [
+    [
+     "Quantas câmaras cabem na minha academia?",
+     "Você pode ver no planejador, informando as medidas da sala e aumentando a quantidade de câmaras. A disposição definitiva e a infraestrutura técnica são definidas na visita técnica."
+    ],
+    [
+     "Qual modelo é o ideal para as instalações de uma equipe?",
+     "Para vários atletas ao mesmo tempo, Tokyo Plus ou Milano se destacam; para programas individuais, o Dubai."
+    ],
+    [
+     "Por que os atletas estão recorrendo à câmara hiperbárica?",
+     "Você pode ler no nosso artigo, com as respectivas fontes: Por Que os Atletas Estão Recorrendo às Câmaras Hiperbáricas."
+    ]
+   ],
+   "faq_link": [
+    "sporcular-hiperbarik-oda.html",
+    2
+   ]
+  }
+ }
+}

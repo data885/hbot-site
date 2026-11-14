@@ -2036,6 +2036,13 @@ html.hbot-splash.hbot-splash-out .site-splash { animation: hbotSplashOut 600ms c
   .site-nav { gap: 22px; }
   .site-nav > a, .nav-dropdown-trigger { font-size: 14px; }
 }
+/* Yatay menü kalan alana yayılır: aralar sabit değil, en az 10px olmak üzere
+   boş alana göre açılır. Sabit aralıkla uzun etiketli diller (ru/en/de)
+   "Çözümler" eklenince dil seçiciyi ekranın dışına itiyordu. Hamburger
+   modundaki dil kuralları (gap:0, column) daha özgül olduğu için etkilenmez. */
+@media (min-width: 761px) {
+  .site-header .site-nav { flex: 0 1 1000px; min-width: 0; justify-content: space-between; column-gap: 10px; }
+}
 @media (max-width: 1320px) {
   .site-nav { gap: 17px; }
   .site-nav > a, .nav-dropdown-trigger { font-size: 13.5px; }
@@ -2050,6 +2057,9 @@ html.hbot-splash.hbot-splash-out .site-splash { animation: hbotSplashOut 600ms c
    Ölçüldü (13.5px kademesi, başlık kapsayıcısı 1480px; menünün kapsayıcıya
    taşmadan sığdığı en dar ekran genişliği):
      ru 1321 · en 1290 · de 1256 · tr 1224 · es 1205 · pt 1194 · ar 972
+   14.11.2026 "Çözümler" eklenince menü kalan alana yayılan yapıya geçti ve
+   dil seçici dahil taşmasız sığma yeniden ölçüldü: ru 1400 · en 1345 ·
+   de 1285 · tr/es/pt 1255 · ar 972 (aşağıdaki eşikler bunlar).
 
    Beş gruba toplandı; pt/es/tr aralarında 30px'ten az fark olduğu için birlikte
    ele alındı. Aynı blok dil sayısı kadar değil grup sayısı kadar tekrarlanıyor
@@ -2084,8 +2094,8 @@ html.hbot-splash.hbot-splash-out .site-splash { animation: hbotSplashOut 600ms c
   html[lang="ar"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
 }
 
-/* pt 1194 · es 1205 · tr 1224 */
-@media (min-width: 761px) and (max-width: 1223px) {
+/* pt · es · tr 1255 ("Çözümler" ile yeniden ölçüldü 14.11.2026) */
+@media (min-width: 761px) and (max-width: 1254px) {
   html[lang="pt"] .site-nav {
     position: absolute; top: 100%; inset-inline: 0;
     background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
@@ -2157,8 +2167,8 @@ html.hbot-splash.hbot-splash-out .site-splash { animation: hbotSplashOut 600ms c
   html[lang="tr"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
 }
 
-/* de 1256 */
-@media (min-width: 761px) and (max-width: 1255px) {
+/* de 1285 */
+@media (min-width: 761px) and (max-width: 1284px) {
   html[lang="de"] .site-nav {
     position: absolute; top: 100%; inset-inline: 0;
     background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
@@ -2184,8 +2194,8 @@ html.hbot-splash.hbot-splash-out .site-splash { animation: hbotSplashOut 600ms c
   html[lang="de"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
 }
 
-/* en 1290 */
-@media (min-width: 761px) and (max-width: 1289px) {
+/* en 1345 */
+@media (min-width: 761px) and (max-width: 1344px) {
   html[lang="en"] .site-nav {
     position: absolute; top: 100%; inset-inline: 0;
     background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
@@ -2211,8 +2221,8 @@ html.hbot-splash.hbot-splash-out .site-splash { animation: hbotSplashOut 600ms c
   html[lang="en"] .dropdown-link-icon { background: rgba(255, 255, 255, 0.08); color: var(--cyan-400); }
 }
 
-/* ru 1321 · tanımsız dil */
-@media (min-width: 761px) and (max-width: 1320px) {
+/* ru 1400 · tanımsız dil */
+@media (min-width: 761px) and (max-width: 1399px) {
   html:not([lang="ar"]):not([lang="pt"]):not([lang="es"]):not([lang="tr"]):not([lang="de"]):not([lang="en"]) .site-nav {
     position: absolute; top: 100%; inset-inline: 0;
     background: rgba(10, 15, 20, 0.98); backdrop-filter: blur(10px);
