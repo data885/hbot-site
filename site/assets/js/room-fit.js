@@ -1,5 +1,5 @@
 /* "Odama sığar mı?" — kabin yerleşim planlayıcısı (çözüm sayfaları).
-   Kullanım: <div data-room-fit data-scene="home|spa|gym|hotel"></div>
+   Kullanım: <div data-room-fit data-scene="home|spa|gym|hotel|clinic"></div>
    Kuşbakışı oda planı (SVG, birim cm): ortam seçilir, oda ölçüsü girilir,
    kabinler sürüklenip döndürülür, adet artırılarak ölçeklendirme denenir.
    Karar dürüst olsun diye yalnız DOĞRULANMIŞ dış ölçüsü olan modeller açık;
@@ -48,107 +48,124 @@
       { k: "nightstand", x: 0, y: 55, w: 50, d: 45 },
       { k: "nightstand", x: 0, y: 300, w: 50, d: 45 },
       { k: "armchair", x: 20, y: 350, w: 80, d: 80 }
+    ] },
+    clinic: { room: [900, 600], ceil: 300, furniture: [
+      { k: "nurse", x: 0, y: 0, w: 180, d: 70 },
+      { k: "cabinet", x: 720, y: 0, w: 180, d: 50 },
+      { k: "seats", x: 0, y: 540, w: 240, d: 60 }
     ] }
+  };
+
+  /* Ortam × model gerçekçi görseller (assets/img/solutions/{ortam}-{görsel}.webp).
+     Seçili model için görsel yoksa ortamın ilk görseli gösterilir; altyazı
+     görseldeki modeli söyler. */
+  var VIEW_IMG = { "solo-lounge": "oslo", solo: "dubai", duo: "tokyo", "duo-plus": "tokyo-plus", "quad-cube": "milano", nexus: "geneva" };
+  var RENDERS = {
+    home: ["solo-lounge", "solo"],
+    spa: ["duo", "quad-cube", "solo"],
+    gym: ["duo-plus", "quad-cube", "solo"],
+    hotel: ["solo-lounge", "duo"],
+    clinic: ["quad-cube", "nexus", "duo-plus"]
   };
 
   var T = {
     tr: {
-      scene: "Ortam", scenes: { home: "Ev / salon", spa: "Spa & wellness", gym: "Spor salonu", hotel: "Otel odası" },
+      scene: "Ortam", scenes: { home: "Ev / salon", spa: "Spa & wellness", gym: "Spor salonu", hotel: "Otel odası", clinic: "Klinik / hastane" },
       model: "Model", soon: "ölçü yakında", units: "Kabin adedi", roomW: "Oda genişliği", roomD: "Oda derinliği", ceil: "Tavan yüksekliği",
       rotate: "Seçili kabini döndür", reset: "Yerleşimi sıfırla", hint: "Kabini sürükleyerek odada konumlandırın.",
       fit: "Rahat sığıyor", fitNote: "Kabinlerin çevresinde {c} cm erişim payı kalıyor.",
       tight: "Sığıyor, ama dar", tightNote: "Kabin sığıyor; erişim payı bazı kenarlarda {c} cm'nin altına düşüyor. Kabini kaydırmayı ya da daha geniş bir alanı deneyin.",
       clash: "Mobilyayla çakışıyor", clashNote: "Kabini boş bir alana sürükleyin.",
       no: "Sığmıyor", noNote: "Kabin bu oda ölçülerine sığmıyor. Odayı büyütmeyi, kabini döndürmeyi ya da adedi azaltmayı deneyin.",
-      lowCeil: "Tavan, kabin yüksekliğinin ({h} m) altında.", bigNote: "Büyük gövdeli model: kapı/koridor geçişi ve zemin taşıma kapasitesi keşifte birlikte kontrol edilir.",
+      lowCeil: "Tavan, kabin yüksekliğinin ({h} m) altında.", bigNote: "Büyük gövdeli model: kapı/koridor geçişi ve zemin taşıma kapasitesi keşifte birlikte kontrol edilir.", viewCap: "Örnek görünüm: {m} · {s}", viewNote: "Temsilî görseldir (yapay zekâ ile hazırlandı); ölçek ve yerleşim için plana bakın.",
       roomArea: "Oda alanı", cabArea: "Kabin taban alanı", freeArea: "Kalan alan", people: "Aynı anda kullanıcı",
       access: "ERİŞİM", disclaimer: "Yaklaşık yerleşim: kabin çevresinde varsayılan {c} cm erişim payı ile. Kesin yerleşim, teslimat güzergâhı ve kapı geçişi keşifte teyit edilir.",
       ctaQuote: "Bu yerleşimle teklif iste", ctaConfig: "Konfigüratörde tasarla",
-      f: { sofa: "Kanepe", table: "Sehpa", tv: "TV ünitesi", massage: "Masaj masası", counter: "Tezgâh", lounger: "Şezlong", treadmill: "Koşu bandı", rack: "Ağırlık rafı", bench: "Bench", bed: "Yatak", nightstand: "Komodin", armchair: "Berjer" }
+      f: { sofa: "Kanepe", table: "Sehpa", tv: "TV ünitesi", massage: "Masaj masası", counter: "Tezgâh", lounger: "Şezlong", treadmill: "Koşu bandı", rack: "Ağırlık rafı", bench: "Bench", bed: "Yatak", nightstand: "Komodin", armchair: "Berjer", nurse: "Hemşire masası", cabinet: "Ekipman dolabı", seats: "Bekleme koltukları" }
     },
     en: {
-      scene: "Setting", scenes: { home: "Home / living room", spa: "Spa & wellness", gym: "Gym", hotel: "Hotel room" },
+      scene: "Setting", scenes: { home: "Home / living room", spa: "Spa & wellness", gym: "Gym", hotel: "Hotel room", clinic: "Clinic / hospital" },
       model: "Model", soon: "dimensions soon", units: "Number of chambers", roomW: "Room width", roomD: "Room depth", ceil: "Ceiling height",
       rotate: "Rotate selected chamber", reset: "Reset layout", hint: "Drag a chamber to position it in the room.",
       fit: "Fits comfortably", fitNote: "There is {c} cm of access space around the chambers.",
       tight: "Fits, but tight", tightNote: "The chamber fits, but the access space drops below {c} cm on some sides. Try moving it or a larger space.",
       clash: "Overlaps furniture", clashNote: "Drag the chamber to a free area.",
       no: "Does not fit", noNote: "The chamber does not fit these room dimensions. Try a larger room, rotating it or fewer chambers.",
-      lowCeil: "The ceiling is lower than the chamber height ({h} m).", bigNote: "Large-format model: door/corridor access and floor load capacity are checked together in the site survey.",
+      lowCeil: "The ceiling is lower than the chamber height ({h} m).", bigNote: "Large-format model: door/corridor access and floor load capacity are checked together in the site survey.", viewCap: "Example view: {m} · {s}", viewNote: "Illustrative image (AI-generated); see the plan for scale and layout.",
       roomArea: "Room area", cabArea: "Chamber footprint", freeArea: "Remaining area", people: "Users at once",
       access: "ACCESS", disclaimer: "Approximate layout with a default {c} cm access space around each chamber. Final placement, delivery route and door clearance are confirmed in a site survey.",
       ctaQuote: "Request a quote for this layout", ctaConfig: "Design it in the configurator",
-      f: { sofa: "Sofa", table: "Coffee table", tv: "TV unit", massage: "Massage table", counter: "Counter", lounger: "Lounger", treadmill: "Treadmill", rack: "Weight rack", bench: "Bench", bed: "Bed", nightstand: "Nightstand", armchair: "Armchair" }
+      f: { sofa: "Sofa", table: "Coffee table", tv: "TV unit", massage: "Massage table", counter: "Counter", lounger: "Lounger", treadmill: "Treadmill", rack: "Weight rack", bench: "Bench", bed: "Bed", nightstand: "Nightstand", armchair: "Armchair", nurse: "Nurse station", cabinet: "Equipment cabinet", seats: "Waiting seats" }
     },
     ru: {
-      scene: "Помещение", scenes: { home: "Дом / гостиная", spa: "Спа и велнес", gym: "Спортзал", hotel: "Номер отеля" },
+      scene: "Помещение", scenes: { home: "Дом / гостиная", spa: "Спа и велнес", gym: "Спортзал", hotel: "Номер отеля", clinic: "Клиника / больница" },
       model: "Модель", soon: "размеры скоро", units: "Количество камер", roomW: "Ширина помещения", roomD: "Глубина помещения", ceil: "Высота потолка",
       rotate: "Повернуть выбранную камеру", reset: "Сбросить расстановку", hint: "Перетащите камеру, чтобы расположить её в помещении.",
       fit: "Помещается свободно", fitNote: "Вокруг камер остаётся {c} см для доступа.",
       tight: "Помещается, но тесно", tightNote: "Камера помещается, но зона доступа с некоторых сторон меньше {c} см. Сдвиньте камеру или выберите помещение больше.",
       clash: "Пересекается с мебелью", clashNote: "Перетащите камеру на свободное место.",
       no: "Не помещается", noNote: "Камера не помещается в эти размеры. Увеличьте помещение, поверните камеру или уменьшите количество.",
-      lowCeil: "Потолок ниже высоты камеры ({h} м).", bigNote: "Крупногабаритная модель: проход через двери и коридоры и несущая способность пола проверяются при выезде на объект.",
+      lowCeil: "Потолок ниже высоты камеры ({h} м).", bigNote: "Крупногабаритная модель: проход через двери и коридоры и несущая способность пола проверяются при выезде на объект.", viewCap: "Пример: {m} · {s}", viewNote: "Иллюстративное изображение (создано с помощью ИИ); масштаб и расстановку смотрите на плане.",
       roomArea: "Площадь помещения", cabArea: "Площадь камер", freeArea: "Остаётся", people: "Пользователей одновременно",
       access: "ДОСТУП", disclaimer: "Приблизительная расстановка с зоной доступа {c} см вокруг камеры. Точное размещение, маршрут доставки и проход через двери подтверждаются при выезде на объект.",
       ctaQuote: "Запросить предложение по этой расстановке", ctaConfig: "Собрать в конфигураторе",
-      f: { sofa: "Диван", table: "Столик", tv: "ТВ-тумба", massage: "Массажный стол", counter: "Стойка", lounger: "Шезлонг", treadmill: "Беговая дорожка", rack: "Стойка для весов", bench: "Скамья", bed: "Кровать", nightstand: "Тумба", armchair: "Кресло" }
+      f: { sofa: "Диван", table: "Столик", tv: "ТВ-тумба", massage: "Массажный стол", counter: "Стойка", lounger: "Шезлонг", treadmill: "Беговая дорожка", rack: "Стойка для весов", bench: "Скамья", bed: "Кровать", nightstand: "Тумба", armchair: "Кресло", nurse: "Пост медсестры", cabinet: "Шкаф для оборудования", seats: "Кресла ожидания" }
     },
     ar: {
-      scene: "المكان", scenes: { home: "المنزل / غرفة المعيشة", spa: "سبا وعافية", gym: "صالة رياضية", hotel: "غرفة فندق" },
+      scene: "المكان", scenes: { home: "المنزل / غرفة المعيشة", spa: "سبا وعافية", gym: "صالة رياضية", hotel: "غرفة فندق", clinic: "عيادة / مستشفى" },
       model: "الطراز", soon: "الأبعاد قريبًا", units: "عدد الغرف", roomW: "عرض الغرفة", roomD: "عمق الغرفة", ceil: "ارتفاع السقف",
       rotate: "تدوير الغرفة المحددة", reset: "إعادة التوزيع", hint: "اسحب الغرفة لتحديد موضعها في المكان.",
       fit: "تتسع براحة", fitNote: "تبقى مسافة وصول {c} سم حول الغرف.",
       tight: "تتسع لكن بضيق", tightNote: "الغرفة تتسع، لكن مسافة الوصول أقل من {c} سم في بعض الجوانب. جرّب تحريكها أو مساحة أكبر.",
       clash: "تتداخل مع الأثاث", clashNote: "اسحب الغرفة إلى مساحة فارغة.",
       no: "لا تتسع", noNote: "الغرفة لا تتسع لهذه الأبعاد. جرّب مساحة أكبر أو تدويرها أو عددًا أقل.",
-      lowCeil: "السقف أقل من ارتفاع الغرفة ({h} م).", bigNote: "طراز كبير الحجم: يُفحص مرور الأبواب والممرات وقدرة الأرضية على التحمل معًا خلال معاينة الموقع.",
+      lowCeil: "السقف أقل من ارتفاع الغرفة ({h} م).", bigNote: "طراز كبير الحجم: يُفحص مرور الأبواب والممرات وقدرة الأرضية على التحمل معًا خلال معاينة الموقع.", viewCap: "مثال: {m} · {s}", viewNote: "صورة توضيحية (مُنشأة بالذكاء الاصطناعي)؛ راجع المخطط للمقياس والتوزيع.",
       roomArea: "مساحة المكان", cabArea: "مساحة قاعدة الغرف", freeArea: "المساحة المتبقية", people: "مستخدمون في وقت واحد",
       access: "وصول", disclaimer: "توزيع تقريبي مع مسافة وصول افتراضية {c} سم حول كل غرفة. يُؤكَّد الموضع النهائي ومسار التسليم وعرض الباب خلال معاينة الموقع.",
       ctaQuote: "اطلب عرض سعر لهذا التوزيع", ctaConfig: "صمّمها في أداة التهيئة",
-      f: { sofa: "أريكة", table: "طاولة", tv: "وحدة تلفاز", massage: "طاولة تدليك", counter: "منضدة", lounger: "كرسي استرخاء", treadmill: "جهاز مشي", rack: "رف أوزان", bench: "مقعد", bed: "سرير", nightstand: "منضدة جانبية", armchair: "كرسي بذراعين" }
+      f: { sofa: "أريكة", table: "طاولة", tv: "وحدة تلفاز", massage: "طاولة تدليك", counter: "منضدة", lounger: "كرسي استرخاء", treadmill: "جهاز مشي", rack: "رف أوزان", bench: "مقعد", bed: "سرير", nightstand: "منضدة جانبية", armchair: "كرسي بذراعين", nurse: "محطة التمريض", cabinet: "خزانة المعدات", seats: "مقاعد الانتظار" }
     },
     es: {
-      scene: "Espacio", scenes: { home: "Hogar / salón", spa: "Spa y wellness", gym: "Gimnasio", hotel: "Habitación de hotel" },
+      scene: "Espacio", scenes: { home: "Hogar / salón", spa: "Spa y wellness", gym: "Gimnasio", hotel: "Habitación de hotel", clinic: "Clínica / hospital" },
       model: "Modelo", soon: "medidas pronto", units: "Número de cámaras", roomW: "Ancho de la sala", roomD: "Fondo de la sala", ceil: "Altura del techo",
       rotate: "Girar la cámara seleccionada", reset: "Restablecer distribución", hint: "Arrastre la cámara para colocarla en la sala.",
       fit: "Cabe con holgura", fitNote: "Quedan {c} cm de acceso alrededor de las cámaras.",
       tight: "Cabe, pero justo", tightNote: "La cámara cabe, pero el espacio de acceso baja de {c} cm en algunos lados. Pruebe a moverla o un espacio mayor.",
       clash: "Choca con el mobiliario", clashNote: "Arrastre la cámara a una zona libre.",
       no: "No cabe", noNote: "La cámara no cabe en estas medidas. Pruebe una sala mayor, girarla o menos cámaras.",
-      lowCeil: "El techo es más bajo que la cámara ({h} m).", bigNote: "Modelo de gran formato: el paso por puertas y pasillos y la capacidad de carga del suelo se comprueban en la visita técnica.",
+      lowCeil: "El techo es más bajo que la cámara ({h} m).", bigNote: "Modelo de gran formato: el paso por puertas y pasillos y la capacidad de carga del suelo se comprueban en la visita técnica.", viewCap: "Vista de ejemplo: {m} · {s}", viewNote: "Imagen ilustrativa (generada con IA); consulte el plano para la escala y la distribución.",
       roomArea: "Superficie de la sala", cabArea: "Superficie de las cámaras", freeArea: "Superficie libre", people: "Usuarios a la vez",
       access: "ACCESO", disclaimer: "Distribución aproximada con {c} cm de acceso por defecto alrededor de cada cámara. La ubicación final, la ruta de entrega y el paso por puertas se confirman en una visita técnica.",
       ctaQuote: "Solicitar presupuesto para esta distribución", ctaConfig: "Diseñarla en el configurador",
-      f: { sofa: "Sofá", table: "Mesa baja", tv: "Mueble TV", massage: "Camilla de masaje", counter: "Mostrador", lounger: "Tumbona", treadmill: "Cinta de correr", rack: "Soporte de pesas", bench: "Banco", bed: "Cama", nightstand: "Mesita", armchair: "Butaca" }
+      f: { sofa: "Sofá", table: "Mesa baja", tv: "Mueble TV", massage: "Camilla de masaje", counter: "Mostrador", lounger: "Tumbona", treadmill: "Cinta de correr", rack: "Soporte de pesas", bench: "Banco", bed: "Cama", nightstand: "Mesita", armchair: "Butaca", nurse: "Puesto de enfermería", cabinet: "Armario de equipos", seats: "Asientos de espera" }
     },
     pt: {
-      scene: "Espaço", scenes: { home: "Casa / sala", spa: "Spa e wellness", gym: "Academia", hotel: "Quarto de hotel" },
+      scene: "Espaço", scenes: { home: "Casa / sala", spa: "Spa e wellness", gym: "Academia", hotel: "Quarto de hotel", clinic: "Clínica / hospital" },
       model: "Modelo", soon: "medidas em breve", units: "Número de câmaras", roomW: "Largura do ambiente", roomD: "Profundidade do ambiente", ceil: "Pé-direito",
       rotate: "Girar a câmara selecionada", reset: "Reiniciar layout", hint: "Arraste a câmara para posicioná-la no ambiente.",
       fit: "Cabe com folga", fitNote: "Sobram {c} cm de acesso ao redor das câmaras.",
       tight: "Cabe, mas apertado", tightNote: "A câmara cabe, mas o espaço de acesso fica abaixo de {c} cm em alguns lados. Tente movê-la ou um espaço maior.",
       clash: "Sobrepõe-se aos móveis", clashNote: "Arraste a câmara para uma área livre.",
       no: "Não cabe", noNote: "A câmara não cabe nestas medidas. Tente um ambiente maior, girá-la ou menos câmaras.",
-      lowCeil: "O pé-direito é menor que a altura da câmara ({h} m).", bigNote: "Modelo de grande porte: a passagem por portas e corredores e a capacidade de carga do piso são verificadas na visita técnica.",
+      lowCeil: "O pé-direito é menor que a altura da câmara ({h} m).", bigNote: "Modelo de grande porte: a passagem por portas e corredores e a capacidade de carga do piso são verificadas na visita técnica.", viewCap: "Vista de exemplo: {m} · {s}", viewNote: "Imagem ilustrativa (gerada por IA); veja o plano para escala e disposição.",
       roomArea: "Área do ambiente", cabArea: "Área das câmaras", freeArea: "Área livre", people: "Usuários ao mesmo tempo",
       access: "ACESSO", disclaimer: "Layout aproximado com {c} cm de acesso padrão ao redor de cada câmara. Posição final, rota de entrega e passagem por portas são confirmadas em uma visita técnica.",
       ctaQuote: "Pedir orçamento para este layout", ctaConfig: "Projetar no configurador",
-      f: { sofa: "Sofá", table: "Mesa de centro", tv: "Rack de TV", massage: "Maca de massagem", counter: "Balcão", lounger: "Espreguiçadeira", treadmill: "Esteira", rack: "Suporte de pesos", bench: "Banco", bed: "Cama", nightstand: "Criado-mudo", armchair: "Poltrona" }
+      f: { sofa: "Sofá", table: "Mesa de centro", tv: "Rack de TV", massage: "Maca de massagem", counter: "Balcão", lounger: "Espreguiçadeira", treadmill: "Esteira", rack: "Suporte de pesos", bench: "Banco", bed: "Cama", nightstand: "Criado-mudo", armchair: "Poltrona", nurse: "Posto de enfermagem", cabinet: "Armário de equipamentos", seats: "Assentos de espera" }
     },
     de: {
-      scene: "Umgebung", scenes: { home: "Zuhause / Wohnzimmer", spa: "Spa & Wellness", gym: "Fitnessstudio", hotel: "Hotelzimmer" },
+      scene: "Umgebung", scenes: { home: "Zuhause / Wohnzimmer", spa: "Spa & Wellness", gym: "Fitnessstudio", hotel: "Hotelzimmer", clinic: "Klinik / Krankenhaus" },
       model: "Modell", soon: "Maße folgen", units: "Anzahl Kammern", roomW: "Raumbreite", roomD: "Raumtiefe", ceil: "Deckenhöhe",
       rotate: "Ausgewählte Kammer drehen", reset: "Anordnung zurücksetzen", hint: "Ziehen Sie eine Kammer, um sie im Raum zu platzieren.",
       fit: "Passt bequem", fitNote: "Rund um die Kammern bleiben {c} cm Zugangsfläche.",
       tight: "Passt, aber eng", tightNote: "Die Kammer passt, doch die Zugangsfläche liegt an manchen Seiten unter {c} cm. Verschieben Sie sie oder wählen Sie mehr Fläche.",
       clash: "Überschneidet Möbel", clashNote: "Ziehen Sie die Kammer auf eine freie Fläche.",
       no: "Passt nicht", noNote: "Die Kammer passt nicht in diese Raummaße. Versuchen Sie einen größeren Raum, eine Drehung oder weniger Kammern.",
-      lowCeil: "Die Decke ist niedriger als die Kammer ({h} m).", bigNote: "Großformatiges Modell: Tür- und Flurdurchgang sowie die Bodentragfähigkeit werden bei der Vor-Ort-Begehung geprüft.",
+      lowCeil: "Die Decke ist niedriger als die Kammer ({h} m).", bigNote: "Großformatiges Modell: Tür- und Flurdurchgang sowie die Bodentragfähigkeit werden bei der Vor-Ort-Begehung geprüft.", viewCap: "Beispielansicht: {m} · {s}", viewNote: "Illustratives Bild (KI-generiert); Maßstab und Anordnung siehe Plan.",
       roomArea: "Raumfläche", cabArea: "Grundfläche Kammern", freeArea: "Freie Fläche", people: "Nutzer gleichzeitig",
       access: "ZUGANG", disclaimer: "Ungefähre Anordnung mit standardmäßig {c} cm Zugangsfläche um jede Kammer. Endgültige Position, Lieferweg und Türdurchgang werden bei einer Vor-Ort-Begehung bestätigt.",
       ctaQuote: "Angebot für diese Anordnung anfragen", ctaConfig: "Im Konfigurator gestalten",
-      f: { sofa: "Sofa", table: "Couchtisch", tv: "TV-Möbel", massage: "Massageliege", counter: "Theke", lounger: "Liege", treadmill: "Laufband", rack: "Hantelablage", bench: "Bank", bed: "Bett", nightstand: "Nachttisch", armchair: "Sessel" }
+      f: { sofa: "Sofa", table: "Couchtisch", tv: "TV-Möbel", massage: "Massageliege", counter: "Theke", lounger: "Liege", treadmill: "Laufband", rack: "Hantelablage", bench: "Bank", bed: "Bett", nightstand: "Nachttisch", armchair: "Sessel", nurse: "Pflegestützpunkt", cabinet: "Geräteschrank", seats: "Wartesitze" }
     }
   };
 
@@ -255,6 +272,31 @@
     var resetBtn = h("button", "rf-btn rf-btn--ghost", tools, t.reset);
     resetBtn.type = "button";
     resetBtn.addEventListener("click", function () { layout(true); });
+
+    var view = h("figure", "rf-view", stage);
+    var viewImg = h("img", null, view);
+    viewImg.alt = ""; viewImg.loading = "lazy"; viewImg.decoding = "async";
+    viewImg.width = 1280; viewImg.height = 731;
+    var viewCap = h("figcaption", null, view);
+    var viewSrc = "";
+    function updateView() {
+      var list = RENDERS[state.scene] || [];
+      var id = list.indexOf(state.model) >= 0 ? state.model : list[0];
+      if (!id) { view.hidden = true; return; }
+      view.hidden = false;
+      var src = "/assets/img/solutions/" + state.scene + "-" + VIEW_IMG[id] + ".webp?v=1";
+      var m = MODELS.filter(function (x) { return x.id === id; })[0];
+      var label = fmt(t.viewCap, { m: m.name, s: t.scenes[state.scene] });
+      viewCap.innerHTML = "";
+      h("strong", null, viewCap, label);
+      h("span", null, viewCap, " " + t.viewNote);
+      viewImg.alt = label;
+      if (src === viewSrc) return;
+      viewSrc = src;
+      view.classList.add("is-loading");
+      viewImg.onload = function () { view.classList.remove("is-loading"); };
+      viewImg.src = src;
+    }
 
     var out = h("div", "rf-result", root);
     var verdict = h("div", "rf-verdict", out);
@@ -435,6 +477,7 @@
       aConfig.href = "konfigurator.html?model=" + encodeURIComponent(m.id);
       aQuote.href = "iletisim.html?model=" + encodeURIComponent(m.id) + "&adet=" + state.cabs.length +
         "&oda=" + (W / 100) + "x" + (D / 100) + "#contact-form";
+      updateView();
     }
     function focusCab(i) { var g = svg.querySelector('[data-i="' + i + '"]'); if (g) g.focus({ preventScroll: true }); }
     function toCm(e) {

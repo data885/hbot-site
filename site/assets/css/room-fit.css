@@ -87,6 +87,18 @@ html[dir="rtl"] .rf-hint { margin: 0 0 0 auto; }
 .rf-btn:hover { border-color: rgba(255, 255, 255, 0.3); }
 .rf-btn--ghost { background: transparent; }
 
+/* Seçili ortamın gerçekçi görseli (plana ek; temsilî) */
+.rf-view { margin: 4px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.rf-view img {
+  display: block; width: 100%; height: auto; aspect-ratio: 1280 / 731; object-fit: cover;
+  border-radius: var(--radius-md, 14px); background: var(--rf-panel);
+  transition: opacity 260ms ease;
+}
+.rf-view.is-loading img { opacity: .35; }
+.rf-view figcaption { font-size: 12.5px; line-height: 1.5; color: var(--rf-muted); }
+.rf-view figcaption strong { color: var(--rf-text); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) { .rf-view img { transition: none; } }
+
 .rf-result { grid-area: result; display: flex; flex-direction: column; gap: 14px; }
 .rf-verdict { padding: 14px 16px; border-radius: var(--radius-md, 14px); background: var(--rf-panel); border-inline-start: 4px solid var(--rf-ok); }
 .rf-verdict strong { display: block; font-size: 18px; }

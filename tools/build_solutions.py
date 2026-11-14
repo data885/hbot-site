@@ -406,9 +406,9 @@ def build(lang, t):
         hdr = re.sub(r'href="(/(?:[a-z]{2}/)?)guvenlik-uygunluk\.html"(?=[^>]*data-lang=)', lambda mm: f'href="{mm.group(1)}{FILES[key]}"', header)
         doc = (head_open + pre.rstrip() + "\n" + meta + post.strip("\n") +
                f'\n  <script type="application/ld+json">\n  {crumbs}\n  </script>{ld_faq}\n'
-               '  <link rel="stylesheet" href="/assets/css/room-fit.css?v=1" />\n</head>\n'
+               '  <link rel="stylesheet" href="/assets/css/room-fit.css?v=2" />\n</head>\n'
                f'<body data-page="solutions">{hdr}<main>\n{page_header(key, page, t)}\n\n{body}\n</main>{footer}')
-        doc = doc.replace("</body>", '  <script src="/assets/js/room-fit.js?v=2"></script>\n</body>', 1)
+        doc = doc.replace("</body>", '  <script src="/assets/js/room-fit.js?v=3"></script>\n</body>', 1)
         (out_dir / FILES[key]).write_text(doc)
         print("yazıldı:", (out_dir / FILES[key]).relative_to(ROOT.parent))
 
