@@ -16,7 +16,7 @@
   var MODELS = [
     { id: "solo-lounge", name: "Oslo", cap: 1, w: 110, d: 240, h: 120 },
     { id: "solo", name: "Dubai", cap: 1, w: 110, d: 120, h: 180 },
-    { id: "duo", name: "Tokyo", cap: 2, w: 195, d: 300, h: 200, big: true },
+    { id: "duo", name: "Tokyo", cap: 2, w: 195, d: 220, h: 200, big: true },
     { id: "duo-plus", name: "Tokyo Plus", cap: 4, w: null },
     { id: "quad-cube", name: "Milano", cap: 4, w: 225, d: 440, h: 240, big: true },
     { id: "nexus", name: "Geneva", tag: "10+2", cap: 12, w: 222, d: 690, h: 235, big: true }
