@@ -22,14 +22,14 @@
   .showroom-frame { position: relative; overflow: hidden; min-height: 340px; border: 1px solid rgba(255,255,255,.1); border-radius: 22px; background: radial-gradient(circle at 50% 30%, rgba(201,164,92,.16), transparent 42%), linear-gradient(145deg, #1b252e, #080d12 70%); box-shadow: 0 28px 70px rgba(0,0,0,.32); }
   .showroom-frame::after { content: ""; position: absolute; inset: auto 7% 7%; height: 13%; border-radius: 50%; background: rgba(0,0,0,.38); filter: blur(22px); }
   .showroom-render { position: relative; z-index: 1; display: block; width: 100%; height: min(58vh, 570px); min-height: 340px; object-fit: contain; padding: 12px 4%; }
-  .showroom-label { position: absolute; z-index: 2; top: 18px; left: 18px; padding: 7px 11px; border: 1px solid rgba(201,164,92,.45); border-radius: 999px; background: rgba(6,11,16,.74); color: #e6c87e; font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+  .showroom-label { position: absolute; z-index: 2; top: 14px; left: 50%; transform: translateX(-50%); white-space: nowrap; padding: 7px 11px; border: 1px solid rgba(201,164,92,.45); border-radius: 999px; background: rgba(6,11,16,.74); color: #e6c87e; font-size: 11px; font-weight: 800; letter-spacing: .08em; }
   .ar-view-info { width: 100%; max-width: 620px; margin: 0 auto; text-align: center; padding: 20px 24px 40px; color: rgba(255,255,255,.85); }
   .ar-view-info p { text-align: center; }
   .ar-view-info h1 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
   .ar-view-info p { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.6; }
   .ar-view-badge { display: inline-block; margin-top: 14px; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; background: rgba(201,164,92,.14); border: 1px solid rgba(201,164,92,.4); color: #c9a45c; }
   .ar-fallback-note { margin-top: 12px; font-size: 13px; color: rgba(255,255,255,.58); line-height: 1.55; }
-  .showroom-frame model-viewer { position: relative; z-index: 1; display: block; width: 100%; height: min(58vh, 570px); min-height: 340px; background: transparent; --poster-color: transparent; }
+  .showroom-frame model-viewer { position: relative; z-index: 1; display: block; width: 100%; height: min(58vh, 570px); min-height: 340px; margin-top: 30px; background: transparent; --poster-color: transparent; --progress-bar-color: #29a9e8; }
   .ar-launch { display: flex; align-items: center; justify-content: center; width: min(100%, 420px); min-height: 54px; margin: 18px auto 0; padding: 14px 20px; border: 0; border-radius: 14px; background: linear-gradient(135deg, #0080d0, #29a9e8); color: #05070a; font: inherit; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 8px 24px rgba(0,128,208,.35); }
   .ar-launch:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
   .ar-device-hint { margin-top: 14px; font-size: 14px; font-weight: 700; color: #e6c87e; line-height: 1.5; }
@@ -45,7 +45,7 @@
 <div class="showroom-stage"><div class="showroom-frame">
   <span class="showroom-label" id="showroom-label">SEÇİLEN KONFİGÜRASYON</span>
   <img class="showroom-render" id="showroom-render" src="/assets/img/models/real/tokyo-real.webp?v=2" alt="HBOT Chamber Tech ürün renderı" />
-  <model-viewer id="ar-model" hidden camera-controls touch-action="pan-y" shadow-intensity="1" exposure="0.9" interaction-prompt="auto" ar ar-modes="quick-look scene-viewer" ar-scale="fixed">
+  <model-viewer id="ar-model" hidden camera-controls touch-action="pan-y" environment-image="neutral" tone-mapping="neutral" exposure="0.8" shadow-intensity="1.1" shadow-softness="0.9" field-of-view="28deg" auto-rotate auto-rotate-delay="1200" rotation-per-second="16deg" interaction-prompt="none" ar ar-modes="quick-look scene-viewer" ar-scale="fixed">
     <span slot="ar-button"></span>
   </model-viewer>
 </div></div>
@@ -59,7 +59,7 @@
   <p class="ar-fallback-note" id="ar-fallback-note">Doğrulanmış 3D ürün modeli hazırlandığında iPhone ve Android için AR açılışı burada etkinleşecek.</p>
 </div>
 <script src="/assets/js/translations.js?v=20261115-fit"></script>
-<script src="/assets/js/ar-view.js?v=5"></script>
+<script src="/assets/js/ar-view.js?v=6"></script>
 <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cf0cc32d03eb472dbf76d59a2f982ff9"}'></script>
 </body>

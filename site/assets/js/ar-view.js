@@ -14,17 +14,17 @@
   };
 
   var AR_MODELS = ["solo-lounge", "solo", "duo", "quad-cube", "nexus"];
-  var AR_VERSION = "20261116";
+  var AR_FILE = "-v3";   /* model güncellenince dosya adını değiştir (sorgu parametresi kullanma: iOS Quick Look uzantıya bakar, CDN de sorguyu yok sayar) */
   /* Kamera başlangıç açısı: Dubai ve Tokyo'da koltukların baktığı yan cam görünsün. */
-  var AR_ORBIT = { "solo-lounge": "-50deg 72deg auto", solo: "-68deg 78deg auto", duo: "-62deg 76deg auto", "quad-cube": "-28deg 78deg auto", nexus: "-40deg 76deg auto" };
+  var AR_ORBIT = { "solo-lounge": "-55deg 74deg 105%", solo: "-55deg 80deg 105%", duo: "-55deg 78deg 105%", "quad-cube": "-32deg 80deg 105%", nexus: "-42deg 78deg 105%" };
   var AR_COPY = {
-    tr: { label: "GERÇEK ÖLÇEKLİ 3D MODEL", badge: "3D / AR", subtitle: "Modeli parmağınızla döndürün. Odanızda gerçek ölçüde görmek için aşağıdaki düğmeye dokunun ve telefonu zemine doğrultun.", desktop: "Odanızda görmek için bu sayfayı iPhone, iPad veya Android telefonunuzda açın." },
-    en: { label: "TRUE-SCALE 3D MODEL", badge: "3D / AR", subtitle: "Rotate the model with your finger. To see it at true scale in your room, tap the button below and point your phone at the floor.", desktop: "To see it in your room, open this page on your iPhone, iPad or Android phone." },
-    ru: { label: "3D-МОДЕЛЬ В РЕАЛЬНОМ МАСШТАБЕ", badge: "3D / AR", subtitle: "Поворачивайте модель пальцем. Чтобы увидеть её в реальном масштабе у себя в помещении, нажмите кнопку ниже и наведите телефон на пол.", desktop: "Чтобы увидеть модель у себя в помещении, откройте эту страницу на iPhone, iPad или телефоне Android." },
-    ar: { label: "نموذج ثلاثي الأبعاد بالحجم الحقيقي", badge: "3D / AR", subtitle: "أدر النموذج بإصبعك. لرؤيته بالحجم الحقيقي في غرفتك، اضغط الزر أدناه ووجّه هاتفك نحو الأرض.", desktop: "لرؤيته في غرفتك، افتح هذه الصفحة على iPhone أو iPad أو هاتف Android." },
-    es: { label: "MODELO 3D A ESCALA REAL", badge: "3D / AR", subtitle: "Gire el modelo con el dedo. Para verlo a escala real en su espacio, pulse el botón de abajo y apunte el teléfono al suelo.", desktop: "Para verlo en su espacio, abra esta página en su iPhone, iPad o teléfono Android." },
-    pt: { label: "MODELO 3D EM ESCALA REAL", badge: "3D / AR", subtitle: "Gire o modelo com o dedo. Para vê-lo em escala real no seu espaço, toque no botão abaixo e aponte o telefone para o chão.", desktop: "Para vê-lo no seu espaço, abra esta página no seu iPhone, iPad ou telefone Android." },
-    de: { label: "3D-MODELL IN ORIGINALGRÖSSE", badge: "3D / AR", subtitle: "Drehen Sie das Modell mit dem Finger. Um es in Originalgröße in Ihrem Raum zu sehen, tippen Sie auf die Schaltfläche unten und richten Sie das Telefon auf den Boden.", desktop: "Um es in Ihrem Raum zu sehen, öffnen Sie diese Seite auf Ihrem iPhone, iPad oder Android-Telefon." }
+    tr: { label: "GERÇEK ÖLÇEKLİ 3D MODEL", badge: "3D / AR", subtitle: "Modeli parmağınızla döndürün. Odanızda gerçek ölçüde görmek için aşağıdaki düğmeye dokunun ve telefonu zemine doğrultun.", desktop: "Odanızda görmek için bu sayfayı iPhone, iPad veya Android telefonunuzda açın.", noAr: "Bu cihazda AR açılamadı. Kabini yukarıdaki 3D modelde döndürerek inceleyebilirsiniz." },
+    en: { label: "TRUE-SCALE 3D MODEL", badge: "3D / AR", subtitle: "Rotate the model with your finger. To see it at true scale in your room, tap the button below and point your phone at the floor.", desktop: "To see it in your room, open this page on your iPhone, iPad or Android phone.", noAr: "AR could not be opened on this device. You can still rotate the 3D model above." },
+    ru: { label: "3D-МОДЕЛЬ В РЕАЛЬНОМ МАСШТАБЕ", badge: "3D / AR", subtitle: "Поворачивайте модель пальцем. Чтобы увидеть её в реальном масштабе у себя в помещении, нажмите кнопку ниже и наведите телефон на пол.", desktop: "Чтобы увидеть модель у себя в помещении, откройте эту страницу на iPhone, iPad или телефоне Android.", noAr: "На этом устройстве не удалось открыть AR. Модель можно рассмотреть в 3D выше." },
+    ar: { label: "نموذج ثلاثي الأبعاد بالحجم الحقيقي", badge: "3D / AR", subtitle: "أدر النموذج بإصبعك. لرؤيته بالحجم الحقيقي في غرفتك، اضغط الزر أدناه ووجّه هاتفك نحو الأرض.", desktop: "لرؤيته في غرفتك، افتح هذه الصفحة على iPhone أو iPad أو هاتف Android.", noAr: "تعذّر فتح الواقع المعزز على هذا الجهاز. يمكنك تدوير النموذج ثلاثي الأبعاد أعلاه." },
+    es: { label: "MODELO 3D A ESCALA REAL", badge: "3D / AR", subtitle: "Gire el modelo con el dedo. Para verlo a escala real en su espacio, pulse el botón de abajo y apunte el teléfono al suelo.", desktop: "Para verlo en su espacio, abra esta página en su iPhone, iPad o teléfono Android.", noAr: "No se pudo abrir la RA en este dispositivo. Puede girar el modelo 3D de arriba." },
+    pt: { label: "MODELO 3D EM ESCALA REAL", badge: "3D / AR", subtitle: "Gire o modelo com o dedo. Para vê-lo em escala real no seu espaço, toque no botão abaixo e aponte o telefone para o chão.", desktop: "Para vê-lo no seu espaço, abra esta página no seu iPhone, iPad ou telefone Android.", noAr: "Não foi possível abrir a RA neste dispositivo. Você pode girar o modelo 3D acima." },
+    de: { label: "3D-MODELL IN ORIGINALGRÖSSE", badge: "3D / AR", subtitle: "Drehen Sie das Modell mit dem Finger. Um es in Originalgröße in Ihrem Raum zu sehen, tippen Sie auf die Schaltfläche unten und richten Sie das Telefon auf den Boden.", desktop: "Um es in Ihrem Raum zu sehen, öffnen Sie diese Seite auf Ihrem iPhone, iPad oder Android-Telefon.", noAr: "AR konnte auf diesem Gerät nicht geöffnet werden. Sie können das 3D-Modell oben drehen." }
   };
 
   function isIOS() { return /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); }
@@ -37,11 +37,13 @@
       var a = document.createElement("a");
       a.setAttribute("rel", "ar");
       a.appendChild(document.createElement("img"));
-      a.href = base + ".usdz?v=" + AR_VERSION + "#allowsContentScaling=0";
+      a.href = base + AR_FILE + ".usdz#allowsContentScaling=0";
+      a.style.display = "none";
+      document.body.appendChild(a);
       a.click();
       return;
     }
-    var file = encodeURIComponent(base + ".glb?v=" + AR_VERSION);
+    var file = encodeURIComponent(base + AR_FILE + ".glb");
     window.location.href = "intent://arvr.google.com/scene-viewer/1.0?file=" + file + "&mode=ar_preferred&resizable=false&title=" + encodeURIComponent("HBOT " + name) +
       "#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=" +
       encodeURIComponent(window.location.href) + ";end;";
@@ -55,8 +57,8 @@
     mv.setAttribute("poster", img.getAttribute("src"));
     mv.setAttribute("camera-orbit", AR_ORBIT[model] || "-35deg 75deg auto");
     mv.setAttribute("alt", MODEL_NAMES[model] + " — 3D");
-    mv.setAttribute("ios-src", src + ".usdz?v=" + AR_VERSION);
-    mv.setAttribute("src", src + ".glb?v=" + AR_VERSION);
+    mv.setAttribute("ios-src", src + AR_FILE + ".usdz");
+    mv.setAttribute("src", src + AR_FILE + ".glb");
     /* 3D görünüm yalnız kitaplık yüklenince fotoğrafın yerini alır; yüklenmezse fotoğraf kalır. */
     if (window.customElements && customElements.whenDefined) {
       customElements.whenDefined("model-viewer").then(function () { mv.hidden = false; img.hidden = true; });
@@ -65,9 +67,13 @@
     document.getElementById("showroom-badge").textContent = copy.badge;
     document.getElementById("showroom-subtitle").textContent = copy.subtitle;
     document.getElementById("ar-fallback-note").textContent = arText.disclaimer || "";
+    var showNoAr = function () { hint.textContent = copy.noAr; hint.hidden = false; };
+    mv.addEventListener("ar-status", function (e) { if (e.detail && e.detail.status === "failed") showNoAr(); });
     if (isIOS() || isAndroid()) {
       btn.textContent = arText.button || "3D / AR";
       btn.hidden = false;
+      /* Scene Viewer açılamazsa Chrome bu sayfaya şu işaretle döner. */
+      if (window.location.hash.indexOf("no-ar-fallback") !== -1) showNoAr();
       btn.addEventListener("click", function () {
         if (mv.activateAR && mv.canActivateAR) mv.activateAR(); else launchNative(model, MODEL_NAMES[model]);
       });
