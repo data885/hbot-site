@@ -1,32 +1,42 @@
 {
   "solo-lounge": {
-    "length_m": 2.4,
-    "diameter_m": 1.15,
-    "orientation": "horizontal",
-    "dimension_source": "real"
+    "name": "Oslo",
+    "width_m": 1.1,
+    "depth_m": 2.4,
+    "height_m": 1.2,
+    "dimension_source": "manufacturer",
+    "generator": "hbot-ar-pilot/build_all.py (Blender)"
   },
   "solo": {
-    "length_m": 1.8,
-    "diameter_m": 1.15,
-    "orientation": "vertical",
-    "dimension_source": "real"
+    "name": "Dubai",
+    "width_m": 1.2,
+    "depth_m": 1.1,
+    "height_m": 1.8,
+    "dimension_source": "manufacturer",
+    "generator": "hbot-ar-pilot/build_all.py (Blender)"
   },
   "duo": {
-    "length_m": 3.0,
-    "diameter_m": 1.3,
-    "orientation": "horizontal",
-    "dimension_source": "estimate"
+    "name": "Tokyo",
+    "width_m": 1.95,
+    "depth_m": 2.2,
+    "height_m": 2.0,
+    "dimension_source": "manufacturer",
+    "generator": "hbot-ar-pilot/build_all.py (Blender)"
   },
   "quad-cube": {
-    "length_m": 2.6,
-    "diameter_m": 1.8,
-    "orientation": "horizontal",
-    "dimension_source": "estimate"
+    "name": "Milano",
+    "width_m": 2.25,
+    "depth_m": 4.4,
+    "height_m": 2.4,
+    "dimension_source": "manufacturer",
+    "generator": "hbot-ar-pilot/build_all.py (Blender)"
   },
   "nexus": {
-    "length_m": 4.6,
-    "diameter_m": 2.0,
-    "orientation": "horizontal",
-    "dimension_source": "estimate"
+    "name": "Geneva",
+    "width_m": 2.22,
+    "depth_m": 6.9,
+    "height_m": 2.35,
+    "dimension_source": "manufacturer",
+    "generator": "hbot-ar-pilot/build_all.py (Blender)"
   }
 }

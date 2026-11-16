@@ -1966,10 +1966,9 @@
     return `${window.location.origin}${window.location.pathname}?${params.toString()}`;
   }
 
-  /* Doğrulanmış ürün 3D dosyaları teslim edilene dek QR / native AR açılışı
-     yerine, seçilen konfigürasyonun gerçek ürün renderını showroom modunda
-     gösteriyoruz. Böylece müşteriye basitleştirilmiş placeholder model
-     gösterilmez. */
+  /* Gerçek ölçekli 3D/AR modeli olan kabinlerde (AR_MODELS) düğme AR sayfasını
+     açar: telefonda doğrudan, masaüstünde QR ile. Modeli henüz olmayan kabinde
+     (Tokyo Plus) eski showroom önizlemesi ve "AR yakında" notu kalır. */
   const SHOWROOM_UI = {
     tr: { button: "Showroom'da Görüntüle", comingSoon: "AR deneyimi yakında", qrTitle: "Telefonunla Görüntüle", qrSubtitle: "Seçtiğin ürün renderını telefonunda açmak için QR kodu okut." },
     en: { button: "View in showroom", comingSoon: "AR experience coming soon", qrTitle: "View on your phone", qrSubtitle: "Scan the QR code to open your selected product render on your phone." },
@@ -1981,6 +1980,13 @@
   };
 
   function showroomUi() { return SHOWROOM_UI[currentPageLang()] || SHOWROOM_UI.tr; }
+  const AR_MODELS = ["solo-lounge", "solo", "duo", "quad-cube", "nexus"];
+  function hasArModel() { return AR_MODELS.indexOf(configState.model) !== -1; }
+  function arCopy() {
+    const d = (typeof TRANSLATIONS !== "undefined" && TRANSLATIONS[currentPageLang()]) || {};
+    const c = d.configurator || {};
+    return { ar: c.ar || {}, qr: c.qr || {} };
+  }
 
   function buildShowroomUrl() {
     const params = new URLSearchParams();
@@ -2006,8 +2012,9 @@
     const ui = showroomUi();
     const title = overlay.querySelector("h3");
     const subtitle = overlay.querySelector("p");
-    if (title) title.textContent = ui.qrTitle;
-    if (subtitle) subtitle.textContent = ui.qrSubtitle;
+    const qrCopy = hasArModel() ? arCopy().qr : {};
+    if (title) title.textContent = qrCopy.title || ui.qrTitle;
+    if (subtitle) subtitle.textContent = qrCopy.subtitle || ui.qrSubtitle;
     canvasWrap.innerHTML = "";
     new QRCode(canvasWrap, { text: url, width: 200, height: 200, colorDark: "#0a0f14", colorLight: "#ffffff" });
     overlay.hidden = false;
@@ -2128,7 +2135,10 @@
       </span></div>`;
 
     const showroom = showroomUi();
-    const showroomButton = `<button type="button" class="btn-ar" id="config-showroom-btn">${showroom.button}</button><span class="ar-coming-soon" role="status">${showroom.comingSoon}</span>`;
+    const arText = hasArModel() ? arCopy().ar : {};
+    const showroomButton = arText.button
+      ? `<button type="button" class="btn-ar" id="config-showroom-btn" title="${String(arText.tooltip || "").replace(/"/g, "&quot;")}">${arText.button}</button>`
+      : `<button type="button" class="btn-ar" id="config-showroom-btn">${showroom.button}</button><span class="ar-coming-soon" role="status">${showroom.comingSoon}</span>`;
 
     c.innerHTML = `
       ${showroomButton}

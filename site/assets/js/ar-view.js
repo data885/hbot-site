@@ -13,6 +13,70 @@
     de: { back: "← Zurück zum Konfigurator", label: "AUSGEWÄHLTE KONFIGURATION", badge: "SHOWROOM-VORSCHAU", subtitle: "Verifiziertes Produktrendering für Ihre ausgewählte Konfiguration.", note: "AR für iPhone und Android wird hier aktiviert, sobald das verifizierte 3D-Produktmodell bereitsteht." }
   };
 
+  var AR_MODELS = ["solo-lounge", "solo", "duo", "quad-cube", "nexus"];
+  var AR_VERSION = "20261116";
+  /* Kamera başlangıç açısı: Dubai ve Tokyo'da koltukların baktığı yan cam görünsün. */
+  var AR_ORBIT = { "solo-lounge": "-50deg 72deg auto", solo: "-68deg 78deg auto", duo: "-62deg 76deg auto", "quad-cube": "-28deg 78deg auto", nexus: "-40deg 76deg auto" };
+  var AR_COPY = {
+    tr: { label: "GERÇEK ÖLÇEKLİ 3D MODEL", badge: "3D / AR", subtitle: "Modeli parmağınızla döndürün. Odanızda gerçek ölçüde görmek için aşağıdaki düğmeye dokunun ve telefonu zemine doğrultun.", desktop: "Odanızda görmek için bu sayfayı iPhone, iPad veya Android telefonunuzda açın." },
+    en: { label: "TRUE-SCALE 3D MODEL", badge: "3D / AR", subtitle: "Rotate the model with your finger. To see it at true scale in your room, tap the button below and point your phone at the floor.", desktop: "To see it in your room, open this page on your iPhone, iPad or Android phone." },
+    ru: { label: "3D-МОДЕЛЬ В РЕАЛЬНОМ МАСШТАБЕ", badge: "3D / AR", subtitle: "Поворачивайте модель пальцем. Чтобы увидеть её в реальном масштабе у себя в помещении, нажмите кнопку ниже и наведите телефон на пол.", desktop: "Чтобы увидеть модель у себя в помещении, откройте эту страницу на iPhone, iPad или телефоне Android." },
+    ar: { label: "نموذج ثلاثي الأبعاد بالحجم الحقيقي", badge: "3D / AR", subtitle: "أدر النموذج بإصبعك. لرؤيته بالحجم الحقيقي في غرفتك، اضغط الزر أدناه ووجّه هاتفك نحو الأرض.", desktop: "لرؤيته في غرفتك، افتح هذه الصفحة على iPhone أو iPad أو هاتف Android." },
+    es: { label: "MODELO 3D A ESCALA REAL", badge: "3D / AR", subtitle: "Gire el modelo con el dedo. Para verlo a escala real en su espacio, pulse el botón de abajo y apunte el teléfono al suelo.", desktop: "Para verlo en su espacio, abra esta página en su iPhone, iPad o teléfono Android." },
+    pt: { label: "MODELO 3D EM ESCALA REAL", badge: "3D / AR", subtitle: "Gire o modelo com o dedo. Para vê-lo em escala real no seu espaço, toque no botão abaixo e aponte o telefone para o chão.", desktop: "Para vê-lo no seu espaço, abra esta página no seu iPhone, iPad ou telefone Android." },
+    de: { label: "3D-MODELL IN ORIGINALGRÖSSE", badge: "3D / AR", subtitle: "Drehen Sie das Modell mit dem Finger. Um es in Originalgröße in Ihrem Raum zu sehen, tippen Sie auf die Schaltfläche unten und richten Sie das Telefon auf den Boden.", desktop: "Um es in Ihrem Raum zu sehen, öffnen Sie diese Seite auf Ihrem iPhone, iPad oder Android-Telefon." }
+  };
+
+  function isIOS() { return /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); }
+  function isAndroid() { return /Android/i.test(navigator.userAgent); }
+
+  /* model-viewer yüklenmediyse (ağ/CSP) yerel açılış: iOS'ta AR Quick Look, Android'de Scene Viewer. */
+  function launchNative(model, name) {
+    var base = window.location.origin + "/assets/ar/" + model;
+    if (isIOS()) {
+      var a = document.createElement("a");
+      a.setAttribute("rel", "ar");
+      a.appendChild(document.createElement("img"));
+      a.href = base + ".usdz?v=" + AR_VERSION + "#allowsContentScaling=0";
+      a.click();
+      return;
+    }
+    var file = encodeURIComponent(base + ".glb?v=" + AR_VERSION);
+    window.location.href = "intent://arvr.google.com/scene-viewer/1.0?file=" + file + "&mode=ar_preferred&resizable=false&title=" + encodeURIComponent("HBOT " + name) +
+      "#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=" +
+      encodeURIComponent(window.location.href) + ";end;";
+  }
+
+  function setupAr(model, lang, dict) {
+    var copy = AR_COPY[lang], arText = dict && dict.configurator && dict.configurator.ar || {};
+    var mv = document.getElementById("ar-model"), img = document.getElementById("showroom-render");
+    var btn = document.getElementById("ar-launch"), hint = document.getElementById("ar-device-hint");
+    var src = "/assets/ar/" + model;
+    mv.setAttribute("poster", img.getAttribute("src"));
+    mv.setAttribute("camera-orbit", AR_ORBIT[model] || "-35deg 75deg auto");
+    mv.setAttribute("alt", MODEL_NAMES[model] + " — 3D");
+    mv.setAttribute("ios-src", src + ".usdz?v=" + AR_VERSION);
+    mv.setAttribute("src", src + ".glb?v=" + AR_VERSION);
+    /* 3D görünüm yalnız kitaplık yüklenince fotoğrafın yerini alır; yüklenmezse fotoğraf kalır. */
+    if (window.customElements && customElements.whenDefined) {
+      customElements.whenDefined("model-viewer").then(function () { mv.hidden = false; img.hidden = true; });
+    }
+    document.getElementById("showroom-label").textContent = copy.label;
+    document.getElementById("showroom-badge").textContent = copy.badge;
+    document.getElementById("showroom-subtitle").textContent = copy.subtitle;
+    document.getElementById("ar-fallback-note").textContent = arText.disclaimer || "";
+    if (isIOS() || isAndroid()) {
+      btn.textContent = arText.button || "3D / AR";
+      btn.hidden = false;
+      btn.addEventListener("click", function () {
+        if (mv.activateAR && mv.canActivateAR) mv.activateAR(); else launchNative(model, MODEL_NAMES[model]);
+      });
+    } else {
+      hint.textContent = copy.desktop;
+      hint.hidden = false;
+    }
+  }
+
   function param(name) { return new URLSearchParams(window.location.search).get(name); }
   function language() { var value = param("lang") || document.documentElement.lang; return SUPPORTED_LANGUAGES.indexOf(value) !== -1 ? value : "tr"; }
   function configuratorPath(lang) { return lang === "tr" ? "/konfigurator.html" : "/" + lang + "/konfigurator.html"; }
@@ -53,5 +117,6 @@
       if (selectedColor) values.push(selectedColor.name); if (selectedStyle) values.push(selectedStyle.name);
       selection.textContent = values.join(" · "); selection.hidden = !values.length;
     }
+    if (AR_MODELS.indexOf(model) !== -1) setupAr(model, lang, dict);
   });
 })();
