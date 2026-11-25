@@ -1,0 +1,15 @@
+# HBOT Chamber Tech
+
+> Designer and manufacturer of architectural hard-shell hyperbaric chambers (HBOT City Tech Series: Oslo, Dubai, Tokyo, Tokyo Plus, Milano, Geneva) featuring CityOS digital control, CitySilent acoustic engineering, 93-95% oxygen concentration, and 24/7 remote telemetry. Engineering roots since 2007. Wellness Series chambers are not medical devices.
+
+## Key Commercial Tools & Guides
+- English Hub: https://hbotchambertech.com/en/
+- Turkish Hub: https://hbotchambertech.com/
+- Commercial ROI Calculator (EN): https://hbotchambertech.com/en/hyperbaric-chamber-roi-calculator.html
+- Commercial ROI Calculator (TR): https://hbotchambertech.com/hbot-roi-hesaplayici.html
+- Hard-Shell vs Soft-Shell Guide (EN): https://hbotchambertech.com/en/hard-shell-vs-soft-shell-hyperbaric-chamber.html
+- Hard-Shell vs Soft-Shell Guide (TR): https://hbotchambertech.com/sert-kabin-vs-yumusak-kabin-hiperbarik.html
+- Installation & Footprint Guide (EN): https://hbotchambertech.com/en/commercial-hyperbaric-chamber-installation-guide.html
+- 3D / AR Model Configurator: https://hbotchambertech.com/en/konfigurator.html
+- Model Range: https://hbotchambertech.com/en/modeller.html
+- Become a Distributor: https://hbotchambertech.com/en/distributorluk.html
