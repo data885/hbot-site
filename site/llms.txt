@@ -13,3 +13,5 @@
 - 3D / AR Model Configurator: https://hbotchambertech.com/en/konfigurator.html
 - Model Range: https://hbotchambertech.com/en/modeller.html
 - Become a Distributor: https://hbotchambertech.com/en/distributorluk.html
+- Privacy policy (TR default, plus /en/ /ru/ /ar/ /es/ /pt/ /de/): https://hbotchambertech.com/gizlilik-politikasi.html
+- Terms of use (same language paths): https://hbotchambertech.com/kullanim-sartlari.html
