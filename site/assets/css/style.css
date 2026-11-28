@@ -1365,8 +1365,16 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 }
 
 /* ---------- WhatsApp floating button ---------- */
+.footer-social { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.footer-social a {
+  width: 36px; height: 36px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,.22); color: #fff;
+}
+.footer-social a:hover { color: var(--cyan-400); border-color: var(--cyan-400); }
+.footer-social svg { width: 16px; height: 16px; display: block; }
+
 .whatsapp-float-btn {
-  position: fixed; z-index: 200; bottom: 24px; right: 24px; width: 56px; height: 56px;
+  position: fixed; z-index: 460; bottom: 24px; right: 24px; width: 56px; height: 56px;
   background: #25d366; border-radius: 999px; display: flex; align-items: center; justify-content: center;
   color: var(--white); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -1443,8 +1451,17 @@ body[data-page="configurator"] .vip-card { display: none !important; }
 }
 
 /* v16: kok sayfalarda tarayici dili farkli oldugunda gosterilen kapatilabilir dil onerisi seridi */
+/* The suggestion bar sits under the WhatsApp button. When it is open, lift
+   the button so the two never occupy the same spot. */
+body:has(.lang-suggestion-bar.is-visible) .whatsapp-float-btn { bottom: 92px; }
+body:has(.lang-suggestion-bar.is-visible) .hbot-assistant-launcher { bottom: 92px; }
+@media (max-width: 640px) {
+  body:has(.lang-suggestion-bar.is-visible) .whatsapp-float-btn { bottom: 148px; }
+  body:has(.lang-suggestion-bar.is-visible) .hbot-assistant-launcher { bottom: 148px; }
+}
+
 .lang-suggestion-bar {
-  position: fixed; z-index: 300; inset-inline: 0; bottom: 0;
+  position: fixed; z-index: 280; inset-inline: 0; bottom: 0;
   display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
   background: var(--ink-950); color: rgba(255, 255, 255, 0.9); padding: 14px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.3);

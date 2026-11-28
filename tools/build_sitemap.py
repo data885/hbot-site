@@ -44,9 +44,16 @@ EXTRA_URLS = [
     ("https://hbotchambertech.com/en/hyperbaric-chamber-for-clinics.html", "2026-08-25", "weekly", "0.8"),
 ]
 
-# Sitemap'e girmeyen yardimci sayfalar: yasal metinler, hata sayfasi, ic araclar.
+# Legal pages and the catalog exist in every language and carry hreflang.
+HREFLANG_EXTRA = [
+    "gizlilik-politikasi.html",
+    "kullanim-sartlari.html",
+    "catalog.html",
+]
+
+# Sitemap'e girmeyen yardimci sayfalar: hata sayfasi, ic araclar.
 SITEMAP_EXCLUDE = {
-    "404.html", "gizlilik-politikasi.html", "kullanim-sartlari.html",
+    "404.html",
     "ar-view.html", "tint_preview.html",
 }
 
@@ -65,7 +72,7 @@ def discover_extra_pages():
         if not os.path.isdir(klasor):
             continue
         for ad in sorted(os.listdir(klasor)):
-            if not ad.endswith(".html") or ad in ROOT_PAGES or ad in SITEMAP_EXCLUDE:
+            if not ad.endswith(".html") or ad in ROOT_PAGES or ad in SITEMAP_EXCLUDE or ad in HREFLANG_EXTRA:
                 continue
             loc = BASE_URL + ("/" if lang == "tr" else f"/{lang}/") + ad
             if loc in elde:
@@ -96,6 +103,23 @@ def build_sitemap():
             )
             lines.append(f"    <lastmod>{LASTMOD}</lastmod>")
             lines.append(f"    <changefreq>{changefreq}</changefreq>")
+            lines.append(f"    <priority>{priority}</priority>")
+            lines.append("  </url>")
+    for filename in HREFLANG_EXTRA:
+        priority = "0.4" if filename != "catalog.html" else "0.6"
+        for lang in ALL_LANGS:
+            loc = resolve_url(lang, filename)
+            lines.append("  <url>")
+            lines.append(f"    <loc>{loc}</loc>")
+            for hl in ALL_LANGS:
+                lines.append(
+                    f'    <xhtml:link rel="alternate" hreflang="{hl}" href="{resolve_url(hl, filename)}" />'
+                )
+            lines.append(
+                f'    <xhtml:link rel="alternate" hreflang="x-default" href="{resolve_url("tr", filename)}" />'
+            )
+            lines.append("    <lastmod>2026-11-28</lastmod>")
+            lines.append("    <changefreq>yearly</changefreq>")
             lines.append(f"    <priority>{priority}</priority>")
             lines.append("  </url>")
     for loc, lastmod, changefreq, priority in list(EXTRA_URLS) + discover_extra_pages():

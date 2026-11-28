@@ -5,16 +5,16 @@ const TRANSLATIONS = {
       home: { title: "HBOT Chamber Tech | HBOT City Tech Serisi Hiperbarik Oksijen Odaları", desc: "IoT bağlantılı, yapay zeka destekli hiperbarik oksijen odaları. HBOT City Tech Serisi ile zirvede nefes alın." },
       technology: { title: "Teknoloji | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync ve CityGuard — HBOT City Tech Serisi'nin bağlı, akıllı teknoloji platformu." },
       models: { title: "Modeller | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Tokyo Plus, Milano ve Geneva — altı farklı hiperbarik oksijen odası modeli." },
-      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Yatay pozisyonda terapi için tasarlanmış tek kişilik hiperbarik oksijen odası." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Yatay pozisyonda seans için tasarlanmış tek kişilik hiperbarik oksijen odası." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Bireysel kullanım için kompakt, tam donanımlı hiperbarik oksijen odası." },
-      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "İki kişilik paylaşımlı hiperbarik oksijen terapisi kabini." },
+      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "İki kişilik paylaşımlı hiperbarik oksijen seansı kabini." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Kurumsal kullanım için 2-4 kişilik, yüksek basınçlı hiperbarik oksijen odası." },
       quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Dört kişilik, geniş iç hacimli küp tasarım hiperbarik oksijen odası." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Hastane sınıfı, altı ve üzeri kişilik büyük kapasiteli hiperbarik oksijen odası." },
-      hbotInfo: { title: "HBOT Nedir? | HBOT Chamber Tech", desc: "Hiperbarik oksijen terapisi (HBOT) nedir, ne için kullanılır ve hangi durumlarda uygulanır." },
+      hbotInfo: { title: "HBOT Nedir? | HBOT Chamber Tech", desc: "Hiperbarik oksijen seansı (HBOT) nedir, nerede kullanılır ve hangi amaçlarla tercih edilir." },
       configurator: {
         title: "Konfigüratör | HBOT Chamber Tech", desc: "Kendi HBOT City Tech kabininizi yapılandırın: model, basınç seviyesi ve ek özellikler seçerek anında fiyat tahmini alın." },
-      blog: { title: "Blog | HBOT Chamber Tech", desc: "Hiperbarik oksijen terapisi hakkında güncel araştırmalar, haberler ve gelişmeler." },
+      blog: { title: "Blog | HBOT Chamber Tech", desc: "Hiperbarik oksijen seansı hakkında güncel araştırmalar, haberler ve gelişmeler." },
       contact: { title: "İletişim | HBOT Chamber Tech", desc: "HBOT Chamber Tech ile iletişime geçin: adres, telefon, e-posta ve iletişim formu." },
       trustSafety: { title: "Güvenlik ve Uygunluk | HBOT Chamber Tech", desc: "Model ve hedef pazara göre ürün güvenliği, eğitim, bakım, kurulum ve uygunluk dokümanlarının şeffaf özeti." },
     },
@@ -44,7 +44,8 @@ const TRANSLATIONS = {
         rights: "Tüm hakları saklıdır.",
         privacy: "Gizlilik Politikası",
         terms: "Kullanım Şartları",
-        wellness_disclaimer: "Wellness serisi kabinler tıbbi cihaz değildir; hastalık teşhis, tedavi veya önleme amaçlı kullanılmaz. Klinik uygulamalar lisanslı sağlık kuruluşlarında hekim gözetiminde yürütülür.",
+        whatsapp: "WhatsApp",
+        wellness_disclaimer: "Wellness serisi kabinler tıbbi cihaz değildir; hastalık teşhisi, tıbbi müdahale veya önleme amaçlı kullanılmaz. Klinik uygulamalar lisanslı sağlık kuruluşlarında hekim gözetiminde yürütülür.",
         membership_note: "Almita Group iştirakidir."
       },
       cta_banner: {
@@ -111,14 +112,14 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "KİMLER KULLANIYOR?",
         title: "Dünyanın En İyileri Hiperbarik Oksijeni Seçiyor",
-        subtitle: "Toparlanma, performans ve uzun yaşam için hiperbarik oksijen terapisini tercih ettiği basında yer alan isimler, bu teknolojiye duyulan güvenin bir göstergesi. HBOT Chamber Tech olarak aynı teknolojiyi mühendislik hassasiyetiyle geliştiriyoruz.",
+        subtitle: "Toparlanma, performans ve uzun yaşam için hiperbarik oksijen seansıni tercih ettiği basında yer alan isimler, bu teknolojiye duyulan güvenin bir göstergesi. HBOT Chamber Tech olarak aynı teknolojiyi mühendislik hassasiyetiyle geliştiriyoruz.",
         source_label: "Kaynak",
         disclaimer: "Bu bölümdeki isimler, haber kaynaklarında HBOT kullandığı bildirilen kişilerdir; HBOT Chamber Tech marka elçisi veya müşterisi değildir.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Futbolcu", text: "Kas sakatlığının terapisi için evinde kendi hiperbarik cihazıyla HBOT yaptığı haberlerde yer aldı.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "Cristiano Ronaldo", role: "Futbolcu", text: "Kas sakatlığının seansı için evinde kendi hiperbarik cihazıyla HBOT yaptığı haberlerde yer aldı.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
           { name: "LeBron James", role: "Basketbolcu", text: "Netflix 'Starting 5' belgeselinde 60-90 dakikalık HBOT seansı yaparken görüntülendi.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
           { name: "Novak Djokovic", role: "Tenisçi", text: "Zirvede kalmak için HBOT kullandığı spor basınında aktarıldı.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
-          { name: "Justin Bieber", role: "Şarkıcı", text: "Hiperbarik kabinde uyuduğu ve terapisinin parçası yaptığı haberleştirildi.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
+          { name: "Justin Bieber", role: "Şarkıcı", text: "Hiperbarik kabinde uyuduğu ve seansının parçası yaptığı haberleştirildi.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
           { name: "Tiger Woods", role: "Golfçü", text: "2010'dan beri HBOT kullandığı ve evinde kabin bulundurduğu bildirildi.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
           { name: "Michael Phelps", role: "Yüzücü", text: "Hiperbarik kabinde uyuduğu haberleştirilen olimpiyat efsanesi.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
           { name: "Kendall Jenner", role: "Model", text: "Wellness odasında hiperbarik kabin bulundurduğu Vogue'da yer aldı.", source: "https://www.vogue.com/article/what-kendall-jenner-keeps-in-her-wellness-room" },
@@ -139,7 +140,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "KULLANIM ALANLARI",
         title: "HBOT Hangi Durumlarda Kullanılır?",
-        text: "Yara iyileşmesinden ani işitme kaybına, dekompresyon hastalığından karbon monoksit zehirlenmesine kadar çeşitli tıbbi durumlarda, hekim değerlendirmesi doğrultusunda destekleyici bir terapi olarak kullanılabilir.",
+        text: "Ani işitme kaybı üzerine klinik yayınlar, iç kulaktaki oksijen basıncını da tartışır. Bu sayfa o tartışmanın özetidir. Erken veya geç kullanım, kortikosteroidler ve sonuçlar hakkında karar lisanslı bir uzmana aittir. Burada bir sonuç vaat edilmez.",
         cta: "Tüm Kullanım Alanlarını Gör"
       },
       targetMarkets: {
@@ -205,7 +206,7 @@ const TRANSLATIONS = {
     },
     technology: {
       header: { eyebrow: "TEKNOLOJİ PLATFORMU", title: "HBOT City Tech Teknoloji Ekosistemi", subtitle: "Sıradan bir kontrol paneli değil — sürekli gelişen, bağlı ve akıllı bir sistem." },
-      intro: "Tüm HBOT City Tech modelleri; CityConnect™, CityOS™, CityAI™, CitySync™ ve CityGuard™ teknolojilerini standart olarak içerir. Bu beş platform birlikte çalışarak kabini basit bir terapi cihazından akıllı, bağlı ve öngörücü bir sisteme dönüştürür.",
+      intro: "Tüm HBOT City Tech modelleri; CityConnect™, CityOS™, CityAI™, CitySync™ ve CityGuard™ teknolojilerini standart olarak içerir. Bu beş platform birlikte çalışarak kabini basit bir seans cihazından akıllı, bağlı ve öngörücü bir sisteme dönüştürür.",
       pillars: {
         connect: {
           title: "CityConnect™",
@@ -324,8 +325,8 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo", tagline: "1 Kişi · Yatay Pozisyon", desc: "Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiş, tam donanımlı kabin." },
-      solo: { title: "Dubai", tagline: "1 Kişi · Oturma Pozisyonu", desc: "Bireysel hiperbarik oksijen terapisi için tasarlanmış kompakt, şık ve tam donanımlı kabin." },
+      soloLounge: { title: "Oslo", tagline: "1 Kişi · Yatay Pozisyon", desc: "Yatay pozisyonda seans ihtiyacı olan kullanıcılar için özel olarak geliştirilmiş, tam donanımlı kabin." },
+      solo: { title: "Dubai", tagline: "1 Kişi · Oturma Pozisyonu", desc: "Bireysel hiperbarik oksijen seansı için tasarlanmış kompakt, şık ve tam donanımlı kabin." },
       duo: { title: "Tokyo", tagline: "2 Kişi · Oturma Pozisyonu", desc: "Çift koltuklu, panoramik camlı kabin — eşler, partnerler veya hasta-refakatçi kullanımı için." },
       duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "Klinikler, hastaneler ve profesyonel tesisler için yapılandırılabilir çok kişilik kabin." },
       quadCube: { title: "Milano", tagline: "4 Kişi · Geniş Kabin", desc: "Geniş iç hacimli küp tasarımıyla dört kişilik premium kabin — kapitone deri iç mekân ve LED aydınlatma." },
@@ -343,8 +344,8 @@ const TRANSLATIONS = {
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       faq_title: "Oslo hakkında merak edilenler",
-      tagline: "Yatayda Mükemmellik. Uzanın, rahatlayın, iyileşin.",
-      overview_text: "Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için özel olarak geliştirilmiştir. Medikal ortopedik yatağı ve havacılık sınıfı alüminyum gövdesiyle, uzun seanslarda maksimum konfor sağlar.",
+      tagline: "Yatayda Mükemmellik. Uzanın, rahatlayın, nefes alın.",
+      overview_text: "Yatay pozisyonda seans ihtiyacı olan kullanıcılar için özel olarak geliştirilmiştir. Medikal ortopedik yatağı ve havacılık sınıfı alüminyum gövdesiyle, uzun seanslarda maksimum konfor sağlar.",
       specs: [
         { label: "Kapasite", value: "1 kişi (yatay pozisyon)" },
         { label: "Basınç Aralığı", value: "1.3 – 1.5 ATA" },
@@ -359,7 +360,7 @@ const TRANSLATIONS = {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
       faq_title: "Dubai hakkında merak edilenler",
       tagline: "Kişisel Sağlığınızın Zirvesi. Yalnızca siz ve oksijen.",
-      overview_text: "Bireysel hiperbarik oksijen terapisi için tasarlanmış kompakt, şık ve tam donanımlı kabin. Dokunmatik ekran kontrolüyle ev veya klinik kullanımı için idealdir.",
+      overview_text: "Bireysel hiperbarik oksijen seansı için tasarlanmış kompakt, şık ve tam donanımlı kabin. Dokunmatik ekran kontrolüyle ev veya klinik kullanımı için idealdir.",
       specs: [
         { label: "Kapasite", value: "1 kişi (oturma)" },
         { label: "Basınç Aralığı", value: "1.3 – 1.5 ATA" },
@@ -373,8 +374,8 @@ const TRANSLATIONS = {
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       faq_title: "Tokyo hakkında merak edilenler",
-      tagline: "Birlikte İyileşin. İki kişilik paylaşımlı terapi deneyimi.",
-      overview_text: "Çift koltuklu hiperbarik kabin, paylaşımlı terapi seansları sunar. Eşler, partnerler veya hasta-refakatçi kullanımı için tasarlanmıştır.",
+      tagline: "Birlikte Nefes Alın. İki kişilik paylaşımlı seans deneyimi.",
+      overview_text: "Çift koltuklu hiperbarik kabin, paylaşımlı seanslar sunar. Eşler, partnerler veya hasta-refakatçi kullanımı için tasarlanmıştır.",
       institutionalNote: "Kurumsal, 2–4 kişilik kullanım mı arıyorsunuz? <a href=\"model-tokyo-plus.html\">Tokyo Plus'a bakın →</a>",
       specs: [
         { label: "Kapasite", value: "2 kişi (oturma)" },
@@ -388,7 +389,7 @@ const TRANSLATIONS = {
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
       faq_title: "Tokyo Plus hakkında merak edilenler",
-      tagline: "Kurumsal kullanım için genişletilebilir, çok kişilik terapi kapasitesi.",
+      tagline: "Kurumsal kullanım için genişletilebilir, çok kişilik seans kapasitesi.",
       overview_text: "Tokyo'nun yüksek basınçlı, çok kişilik kurumsal versiyonu. 2 ila 4 kişi arasında kademeli koltuk kapasitesiyle klinik, hastane ve wellness merkezleri için tasarlanmıştır.",
       specs: [
         { label: "Kapasite", value: "2–4 kişi (kademeli)" },
@@ -403,7 +404,7 @@ const TRANSLATIONS = {
       breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
       faq_title: "Milano hakkında merak edilenler",
       tagline: "Geniş küp tasarımında dört kişilik premium deneyim.",
-      overview_text: "Küp formundaki geniş iç hacmiyle dört kişilik premium kabin. Kapitone deri iç mekânı, LED ambiyans aydınlatması ve bağımsız kontrol ünitesiyle klinik ve wellness merkezlerine konforlu çok kişilik terapi sunar.",
+      overview_text: "Küp formundaki geniş iç hacmiyle dört kişilik premium kabin. Kapitone deri iç mekânı, LED ambiyans aydınlatması ve bağımsız kontrol ünitesiyle klinik ve wellness merkezlerine konforlu çok kişilik seans sunar.",
       specs: [
         { label: "Kapasite", value: "4 kişi (oturma)" },
         { label: "Basınç Aralığı", value: "2.0 – 6.0 ATA" },
@@ -417,7 +418,7 @@ const TRANSLATIONS = {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
       faq_title: "Geneva hakkında merak edilenler",
       tagline: "Hastane sınıfı, büyük kapasiteli çözüm.",
-      overview_text: "Hastaneler ve sağlık kurumları için geliştirilen, hastane sınıfı, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun terapi merkezlerinin ihtiyacını karşılar.",
+      overview_text: "Hastaneler ve sağlık kurumları için geliştirilen, hastane sınıfı, büyük kapasiteli kabin. Modüler tasarımı ve gelişmiş izleme sistemleriyle en yoğun seans merkezlerinin ihtiyacını karşılar.",
       specs: [
         { label: "Kapasite", value: "6+ kişi (oturma)" },
         { label: "Basınç Aralığı", value: "3.0 – 6.0 ATA" },
@@ -428,17 +429,17 @@ const TRANSLATIONS = {
       ]
     },
     hbotInfo: {
-      header: { eyebrow: "BİLGİ MERKEZİ", title: "HBOT Nedir?", subtitle: "Hiperbarik oksijen terapisi hakkında bilmeniz gerekenler." },
-      whatIsHboc: { title: "Hiperbarik Oksijen Odası (HBOC) Nedir?", text: "Hiperbarik oksijen odaları, kişilerin normal atmosfer basıncından daha yüksek basınçta yüksek konsantrasyonlu oksijen solumasını sağlayan, özel olarak tasarlanmış basınçlı kabinlerdir. Bu kabinler, iyileşmeyi hızlandıran ve genel sağlığı destekleyen, tıbbi olarak tanınmış bir terapi olan Hiperbarik Oksijen Terapisi (HBOT) için kullanılır." },
-      whyNeeded: { title: "HBOC Ne İçin Kullanılır?", text: "HBOC kabinleri, kullanıcıların %93–95 konsantrasyonda oksijen soluduğu kontrollü, basınçlı bir ortam sağlayarak daha hızlı iyileşme ve gelişmiş hücresel yenilenme sunar. Bu kabinler; sağlık kuruluşlarına, wellness merkezlerine, spor kliniklerine ve bireysel kullanıcılara hizmet verir." },
+      header: { eyebrow: "BİLGİ MERKEZİ", title: "HBOT Nedir?", subtitle: "Hiperbarik oksijen seansı hakkında bilmeniz gerekenler." },
+      whatIsHboc: { title: "Hiperbarik Oksijen Odası (HBOC) Nedir?", text: "Hiperbarik oksijen odaları, kişilerin normal atmosfer basıncından daha yüksek basınçta yüksek konsantrasyonlu oksijen solumasını sağlayan, özel olarak tasarlanmış basınçlı kabinlerdir. Bu kabinler hiperbarik oksijen seansı (HBOT) için kullanılır. Wellness serisi tıbbi cihaz olarak sunulmaz ve belirli bir sonuç vaat edilmez." },
+      whyNeeded: { title: "HBOC Ne İçin Kullanılır?", text: "HBOC kabinleri, kullanıcıların %93–95 konsantrasyonda oksijen soluduğu kontrollü ve basınçlı bir ortam sunar. Bu kabinler; sağlık kuruluşlarına, wellness merkezlerine, spor kliniklerine ve bireysel kullanıcılara hizmet verir." },
       whatIsHbot: {
-        title: "Hiperbarik Oksijen Terapisi (HBOT) Nedir?",
-        text1: "HBOT; hastaların normal atmosfer basıncından daha yüksek seviyelerde, basınçlı bir kabin içinde saf oksijen soluduğu tıbbi bir terapidir. Bu süreç yara iyileşmesini hızlandırır, iltihabı azaltır ve doku yenilenmesini destekler.",
-        text2: "Hastalar bu kabinler içinde nefes alır, bu da akciğerlerin oksijeni daha verimli toplamasına ve emmesine yardımcı olur. HBOT ayrıca ani işitme ve görme kaybı, kemik enfeksiyonları ve diyabetik ayak ülserlerinin terapisinde de kullanılır. Terapi türüne bağlı olarak hastalar oturarak veya uzanarak terapi olabilir."
+        title: "Hiperbarik oksijen seansı (HBOT) Nedir?",
+        text1: "Klinik literatürde HBOT, basınçlı bir kabinde yükselen basınç altında oksijen solunan bir seans olarak anlatılır. Bu sayfa o anlatımı özetler. Wellness kabinleri tıbbi cihaz olarak sunulmaz ve belirli bir sonuç vaat etmez.",
+        text2: "Kişi kabin içinde nefes alır. Klinik yayınlar hiperbarik oksijen seansını bazı hastane uygulamalarının yanında da tartışır; bu bir ürün vaadi değildir. Seans biçimine göre oturarak veya uzanarak kullanılabilir."
       },
       indications: {
         title: "HBOT Hangi Durumlarda Kullanılır?",
-        subtitle: "Aşağıdaki liste, klinik hiperbarik oksijen tedavisinin literatürde tanımlanmış kullanım alanlarını bilgilendirme amacıyla özetler. Bu uygulamalar lisanslı sağlık kuruluşlarında, hekim değerlendirmesi ve gözetimi altında yürütülür. HBOT Chamber Tech ürünleri için herhangi bir tedavi iddiasında bulunulmamaktadır.",
+        subtitle: "Aşağıdaki liste, klinik literatürde hiperbarik oksijen seansı için anılan alanları yalnızca bilgilendirme amacıyla özetler. Bu uygulamalar lisanslı sağlık kuruluşlarında, hekim değerlendirmesi ve gözetimi altında yürütülür. HBOT Chamber Tech ürünleri için herhangi bir tıbbi sonuç iddiası yapılmamaktadır.",
         items: [
           { icon: "wound", label: "Yara İyileşmesi (Diyabetik & Diyabetik Olmayan)" },
           { icon: "eye", label: "Ani Görme Kaybı" },
@@ -503,7 +504,7 @@ const TRANSLATIONS = {
       ],
       "nexus": [
         { q: "Geneva kaç kişilik?", a: "Geneva, 6 kişiden başlayıp 6/8/10/12 kademeli olarak genişleyebilen, hastaneler için geliştirilmiş hastane sınıfı büyük kapasiteli bir kabindir." },
-        { q: "Geneva hangi tesisler için uygundur?", a: "Yoğun terapi hacmi olan hastaneler ve büyük sağlık merkezleri için tasarlanmıştır; modüler yapısı gelecekteki genişlemeye hazırdır." },
+        { q: "Geneva hangi tesisler için uygundur?", a: "Yoğun seans hacmi olan hastaneler ve büyük sağlık merkezleri için tasarlanmıştır; modüler yapısı gelecekteki genişlemeye hazırdır." },
         { q: "Geneva hangi basınç aralığında çalışır?", a: "3.0–6.0 ATA aralığında, %93–95 oksijen saflığıyla çalışır." },
         { q: "Geneva'nın güvenlik donanımı nedir?", a: "Acil durum valf sistemi standarttır; hastane sınıfı yapısı yoğun kullanıma göre mühendislik edilmiştir." },
         { q: "Geneva için nasıl teklif alabilirim?", a: "Kapasite ihtiyacınızı (6/8/10/12 kişi) belirterek bizimle iletişime geçin; kurumunuza özel teknik çizim ve teklif hazırlayalım." }
@@ -555,12 +556,12 @@ const TRANSLATIONS = {
         select_button: "Bunu Seç",
         close: "Kapat",
         items: [
-          { scenario: "Evde, tek başıma, yatarak terapi almak istiyorum", model: "Oslo", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Evde, tek başıma, yatarak seans almak istiyorum", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "Evde, tek başıma, oturarak kullanmak istiyorum", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Eşim/partnerimle birlikte, evde kullanacağız", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Klinik veya wellness merkezi, 2-4 kişilik kurumsal kullanım", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
           { scenario: "Kurumsal kullanım, geniş iç hacimli kabin istiyorum", model: "Milano", modelId: "quad-cube", usage: "institutional" },
-          { scenario: "Hastane veya klinikte, çok hastalı, yüksek basınçlı terapi", model: "Geneva", modelId: "nexus", usage: "institutional" }
+          { scenario: "Hastane veya klinikte, çok hastalı, yüksek basınçlı seans", model: "Geneva", modelId: "nexus", usage: "institutional" }
         ]
       },
       step1_title: "3. Model Seçin",
@@ -633,7 +634,7 @@ const TRANSLATIONS = {
         { id: "entertainment", name: "Eğlence & Multimedya Sistemi", desc: "Dahili ekran, ses sistemi ve içerik kütüphanesi." },
         { id: "finish", name: "Özel Renk & Kaplama", desc: "Kurumsal kimliğinize özel dış kaplama rengi seçimi." },
         { id: "warranty", name: "Genişletilmiş Garanti (+1 Yıl)", desc: "Standart 1 yıllık garantiye ek 1 yıl daha kapsamlı koruma." },
-        { id: "playstation", name: "Xbox Series X Oyun Konsolu", desc: "Uzun terapi seanslarında eğlence için kabin içi ekran ve ses sistemine entegre Xbox Series X konsolu." }
+        { id: "playstation", name: "Xbox Series X Oyun Konsolu", desc: "Uzun seanslarda eğlence için kabin içi ekran ve ses sistemine entegre Xbox Series X konsolu." }
       ],
       nexus_entertainment_note: "8″ ekran; fiyat koltuk başına verilir — {perSeat} × {seats} koltuk = {total}.",
       pressure_note: "Basınç aralığı seçilen modele göre değişir.",
@@ -695,7 +696,7 @@ const TRANSLATIONS = {
       }
     },
     blog: {
-      header: { eyebrow: "BLOG", title: "Araştırmalar & Haberler", subtitle: "Hiperbarik oksijen terapisi alanındaki güncel bilimsel gelişmeler ve haberler." },
+      header: { eyebrow: "BLOG", title: "Araştırmalar & Haberler", subtitle: "Hiperbarik oksijen seansı alanındaki güncel bilimsel gelişmeler ve haberler." },
       source_label: "Kaynak:",
       min_read: "dk okuma",
       read_more: "Yazının tamamı",
@@ -709,7 +710,7 @@ const TRANSLATIONS = {
           title: "Neden Kendim de Hiperbarik Oksijen Kullanıyorum",
           paragraphs: [
             "Almita Group çatısı altında altı farklı sektörü bir arada yürütüyoruz; yoğun bir tempo ve sürekli seyahat kaçınılmaz oluyor. HBOT Chamber Tech'i kurarken satışa başlamadan önce kendi kabinlerimizi düzenli olarak kullanmayı tercih ettim — bir ürünü, arkasında durmadan önce bizzat denemek gerektiğine inanıyorum.",
-            "Seanslar sonrasında kendimi daha dinç ve odaklanmış hissettiğimi söyleyebilirim; bu tamamen kişisel bir gözlem ve herkes için aynı sonucu vaat etmiyorum. Hiperbarik oksijen terapisi bir tıbbi terapi yerine geçmez; kullanım kararlarınızı mutlaka bir sağlık profesyoneliyle değerlendirin."
+            "Seanslar sonrasında kendimi daha dinç ve odaklanmış hissettiğimi söyleyebilirim; bu tamamen kişisel bir gözlem ve herkes için aynı sonucu vaat etmiyorum. Hiperbarik oksijen seansı bir tıbbi seans yerine geçmez; kullanım kararlarınızı mutlaka bir sağlık profesyoneliyle değerlendirin."
           ],
           source_name: "Almita Group – Kurucu Notu",
           source_url: "https://almitagroup.com",
@@ -722,7 +723,7 @@ const TRANSLATIONS = {
           icon: "antiaging",
           title: "HBOT ve Longevity: Yükselen Uzun Yaşam Trendi",
           paragraphs: [
-            "Bryan Johnson gibi teknoloji girişimcilerinin kişisel 'genç kalma' protokolleriyle ana akım gündeme taşınan longevity (uzun ve sağlıklı yaşam) akımı, hiperbarik oksijen terapisine olan ilgiyi de artırdı. Bu ilginin bilimsel dayanaklarından biri, 2020 yılında Aging dergisinde yayımlanan ve 64 yaş üzeri 35 sağlıklı yetişkinin 60 seanslık bir HBOT programına katıldığı klinik çalışma oldu.",
+            "Bryan Johnson gibi teknoloji girişimcilerinin kişisel 'genç kalma' protokolleriyle ana akım gündeme taşınan longevity (uzun ve sağlıklı yaşam) akımı, hiperbarik oksijen seansıne olan ilgiyi de artırdı. Bu ilginin bilimsel dayanaklarından biri, 2020 yılında Aging dergisinde yayımlanan ve 64 yaş üzeri 35 sağlıklı yetişkinin 60 seanslık bir HBOT programına katıldığı klinik çalışma oldu.",
             "Araştırmada, bağışıklık hücrelerinin telomer uzunluklarında %20'nin üzerinde — B hücrelerinde %37'ye varan — artış, yaşlanmış (senescent) bağışıklık hücrelerinin oranında ise %37'ye varan azalma gözlemlendi. Çalışmanın kontrol grubunun olmaması ve örneklem büyüklüğünün sınırlı olması nedeniyle sonuçlar 'umut verici ama ön bulgu' olarak değerlendiriliyor; araştırmacılar optimal protokollerin belirlenmesi için daha kapsamlı çalışmalara ihtiyaç olduğunu vurguluyor."
           ],
           source_name: "PMC – HBOT Increases Telomere Length and Decreases Immunosenescence (Aging, 2020)",
@@ -735,10 +736,10 @@ const TRANSLATIONS = {
           icon: "healthSync",
           title: "Elit Sporcular Neden Hiperbarik Oksijen Kullanıyor?",
           paragraphs: [
-            "Cristiano Ronaldo, LeBron James, Novak Djokovic ve Floyd Mayweather gibi dünyaca ünlü sporcular, basına yansıyan haberlerde toparlanma rutinlerinin bir parçası olarak hiperbarik kabin kullanımlarıyla anılıyor. Bu ilginin arkasında, spor hekimliği literatüründe HBOT'un ödem ve iltihabı azaltma, doku onarımını destekleme ve sporcunun antrenmana daha hızlı dönmesine katkı sağlama potansiyeline dair bulgular yatıyor.",
-            "Derlemelerde aktarılan çalışmalar arasında, Nagano Kış Olimpiyatları'nda 7 sporcunun 1.3 ATA'da kısa seanslarla daha hızlı toparlandığı gözlemi, profesyonel futbolcularda sakatlık nedeniyle kaybedilen günlerde %55 azalma bildiren erken bir klinik rapor ve ayak bileği burkulmalarında kontrol grubuna kıyasla yaklaşık %30 daha hızlı dönüş öneren bir üniversite çalışması bulunuyor. Yazarlar, mevcut kanıtların büyük ölçüde küçük örneklemli çalışmalara dayandığını ve kesin sonuçlar için randomize kontrollü araştırmalar gerektiğini özellikle not ediyor."
+            "Tenis, yüzme, basketbol ve golf gibi alanlarda bazı sporcular, toparlanma rutinlerine hiperbarik oksijen seansı ekliyor. Bu bir tercih anlatımıdır. Kas ağrısı, yorgunluk veya antrenmana dönüş süresi için bir sonuç vaat edilmez.",
+            "Spor hekimliği yayınları bu kullanımı tartışır. Daha geniş ve kontrollü çalışmaların gerektiği de aynı yayınlarda geçer. Kişisel deneyim değişir; burada garanti edilen bir sonuç yoktur."
           ],
-          source_name: "PMC – The Role of Hyperbaric Oxygen Therapy in Sports Medicine (derleme)",
+          source_name: "PMC – The Role of Hyperbaric Oxygen Sessions in Sports Medicine (derleme)",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
@@ -751,7 +752,7 @@ const TRANSLATIONS = {
             "Ev veya özel kullanım için hiperbarik kabin seçerken ilk soru kapasite: tek kişilik (monoplace) kabinler kompakt yerleşim sunarken, çok kişilik (multiplace) kabinler aile veya küçük grupların aynı anda kullanımına olanak tanır ve refakatçi eşliğinde kullanım kolaylığı sağlar. Uluslararası hiperbarik tıp otoritesi UHMS, basınçlı kabinlerin onaylı ve düzenli denetlenen ekipman olmasını, operatörlerin ise özel eğitim almış olmasını şart koşuyor.",
             "Basınç seviyesi ikinci kritik başlık: klinik protokoller genellikle 2.0-2.4 ATA aralığında uygulanırken, ev tipi sistemlerde 1.3-2.0 ATA aralığı yaygın; kullanım amacınıza uygun seviyeyi mutlaka bir sağlık profesyoneliyle değerlendirin. Üçüncü başlık ise güvenlik ve konfor: oksijen ortamında yangın güvenliği kuralları, acil durum tahliyesi, gürültü seviyesi, iç aydınlatma ve iletişim sistemi gibi detaylar günlük kullanım deneyimini doğrudan etkiler; satın alma öncesi bakım ve garanti koşullarını da yazılı olarak teyit edin."
           ],
-          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Therapy",
+          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Sessions",
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
@@ -761,10 +762,10 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "Kronik Yaralarda Hiperbarik Oksijenin Rolü Güçleniyor",
           paragraphs: [
-            "Cerrahi ve kronik yara bakımı alanındaki güncel derlemeler, hiperbarik oksijen terapisinin (HBOT) doku oksijenlenmesini artırarak iyileşme sürecini desteklediğini gösteriyor. Diyabetik ayak yaraları, venöz bacak ülserleri, yanıklar ve radyasyona bağlı doku hasarlarında HBOT'un yara kapanma oranlarını iyileştirdiği ve enfeksiyon riskini azalttığı bildiriliyor.",
-            "2025 yılında yayınlanan bir çalışma, negatif basınçlı yara terapisiyle (NPWT) birlikte uygulanan HBOT'un, tek başına NPWT'ye kıyasla iyileşme hızını belirgin şekilde artırdığını ortaya koydu. Rekonstrüktif cerrahide ise HBOT'un doku ve greft sağkalımını desteklediği, yeni damar oluşumunu teşvik ettiği aktarılıyor."
+            "Cerrahi ve kronik yara literatürü, hiperbarik oksijen seansını doku oksijenlenmesi tartışmalarının yanında anar. Bu sayfa o yayınların kısa bir özetidir. HBOT Chamber Tech, yara kapanması ya da enfeksiyon riski hakkında bir sonuç vaat etmez.",
+            "2025 tarihli bir çalışma, hiperbarik oksijen seansını negatif basınçlı yara desteğiyle birlikte ele alır. Karşılaştırma bir sonuç sözü değildir. Rekonstrüktif cerrahideki anlatımlar da klinik yayınlara aittir; ürün vaadi olarak sunulmaz."
           ],
-          source_name: "PMC – Hyperbaric Oxygen Therapy in Surgical Wound Healing and Tissue Salvage",
+          source_name: "PMC – Hyperbaric Oxygen Sessions in Surgical Wound Recovery and Tissue Salvage",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
@@ -774,7 +775,7 @@ const TRANSLATIONS = {
           icon: "burn",
           title: "Sporcular Neden Hiperbarik Odaya Yöneliyor?",
           paragraphs: [
-            "Tenis, yüzme, basketbol ve golf gibi farklı dallardan pek çok elit sporcu, toparlanma sürecinin bir parçası olarak hiperbarik oksijen terapisini tercih ediyor. Spor hekimliği alanındaki araştırmalar, HBOT'un iyileşmeyi hızlandırabildiğini, iltihabı azaltabildiğini ve sporcuların antrenmana daha kısa sürede dönebilmesine katkı sağlayabildiğini gösteriyor.",
+            "Spor hekimliği yayınları bu kullanımı tartışır. Daha geniş ve kontrollü çalışmaların gerektiği de aynı yayınlarda geçer. Kişisel deneyim değişir; burada garanti edilen bir sonuç yoktur.",
             "Bazı çalışmalarda HBOT uygulanan sporcularda kas ağrısı ve yorgunluğun daha düşük seviyelerde seyrettiği, toparlanma sürelerinin ise yaklaşık %30'a varan oranda kısaldığı bildirildi. Alan hâlâ daha büyük ve kontrollü klinik çalışmalara ihtiyaç duysa da, sonuçlar sporcu sağlığı için umut verici."
           ],
           source_name: "Turkish Journal of Sports Medicine",
@@ -785,10 +786,10 @@ const TRANSLATIONS = {
           date: "2024",
           tag: "Klinik Kanıt",
           icon: "wound",
-          title: "Diyabetik Ayak Ülserlerinde Meta-Analiz: Ampütasyon Riski Azalıyor",
+          title: "Diyabetik Ayak Ülserlerinde Meta-Analiz: Yayınlara Genel Bir Bakış",
           paragraphs: [
-            "768 katılımcıyı kapsayan 14 çalışmanın meta-analizi, hiperbarik oksijen terapisinin diyabetik ayak ülserlerinin tam iyileşmesinde ve majör ampütasyon riskinin azaltılmasında istatistiksel olarak anlamlı fayda sağladığını ortaya koydu.",
-            "2024 yılında yayınlanan güncel bir sistematik derleme de benzer sonuçlara ulaştı: incelenen çalışmaların büyük çoğunluğunda HBOT ile birlikte majör ampütasyon oranlarının azaldığı, yara iyileşme oranlarının arttığı ve ülser boyutu ile derinliğinin küçüldüğü gözlemlendi."
+            "Diyabetik ayak ülseri üzerine yayımlanmış çalışmalar, hiperbarik oksijen seanslarını klinik bakımın yanında ele alır. Bu not yalnızca o literatüre işaret eder; bir ülserin kapanacağı, ampütasyon riskinin değişeceği ya da kabinin tıbbi bakımın yerini tutacağı yönünde bir vaat değildir.",
+            "2024 tarihli bir derleme de aynı tartışmanın içindedir. Literatürde aktarılan rakamlar ortama, gözetime ve kişinin bakım planının tamamına göre değişir. HBOT Chamber Tech, hiçbir sağlık durumunu kabinlerinin giderdiği bir konu olarak sunmaz."
           ],
           source_name: "PMC – Efficacy of HBOT for Diabetic Foot Ulcer",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
@@ -800,8 +801,8 @@ const TRANSLATIONS = {
           icon: "ear",
           title: "Ani İşitme Kaybında Hiperbarik Oksijen: Erken Müdahale Önemli",
           paragraphs: [
-            "Ani sensörinöral işitme kaybı yaşayan hastalarda hiperbarik oksijen terapisi, iç kulaktaki oksijen basıncını artırarak mikrosirkülasyonu iyileştirmeyi ve iltihabı azaltmayı hedefliyor. Çalışmalar, terapiye erken başlanan hastalarda, özellikle kortikosteroid terapisiyle birlikte uygulandığında, daha olumlu sonuçlar alınabildiğini gösteriyor.",
-            "Araştırma sonuçları terapinin etkinliği konusunda tam bir fikir birliği sunmasa da, bazı çalışmalarda hastaların yarısından fazlasında işitmede iyileşme gözlemlendi. Uzmanlar, standartlaştırılmış basınç ve süre protokollerinin belirlenmesi için daha fazla klinik çalışmaya ihtiyaç olduğunu vurguluyor."
+            "Kişi kabin içinde nefes alır. Klinik yayınlar hiperbarik oksijen seansını bazı hastane uygulamalarının yanında da tartışır; bu bir ürün vaadi değildir. Seans biçimine göre oturarak veya uzanarak kullanılabilir.",
+            "Kişi kabin içinde nefes alır. Klinik yayınlar hiperbarik oksijen seansını bazı hastane uygulamalarının yanında da tartışır; bu bir ürün vaadi değildir. Seans biçimine göre oturarak veya uzanarak kullanılabilir."
           ],
           source_name: "JAMA Otolaryngology–Head & Neck Surgery",
           source_url: "https://jamanetwork.com/journals/jamaotolaryngology/fullarticle/2785483"
@@ -826,8 +827,8 @@ const TRANSLATIONS = {
           icon: "guard",
           title: "Çok Kişilik Kabinlerde Basınç Yönetimi: Klinik İşletim Protokolleri",
           paragraphs: [
-            "Çok kişilik (multiplace) hiperbarik kabinler, aynı anda birden fazla hastanın terapi edilebilmesi ve kabin içinde sağlık personelinin refakat edebilmesi sayesinde hastane ve klinik ortamlarının standart tercihi konumunda. Uluslararası hiperbarik tıp otoritesi UHMS'in yayımladığı işletim kılavuzları; basınç artış ve azaltış hızlarının hasta konforu ve kulak barotravması riskine göre ayarlanmasını, her seansın sertifikalı bir operatör gözetiminde yürütülmesini ve acil tahliye senaryolarının düzenli olarak tatbik edilmesini öneriyor.",
-            "Klinik pratikte basınç protokolü terapi endikasyonuna göre belirleniyor: yaygın protokoller 2.0–2.4 ATA aralığında uygulanırken, bazı özel endikasyonlarda daha yüksek basınçlar gerekebiliyor. Uzmanlar, hangi basınç seviyesinin uygun olduğunun mutlaka hiperbarik tıp uzmanı bir hekim tarafından değerlendirilmesi gerektiğini vurguluyor; kabin donanımının ise hedef basınç aralığını güvenle karşılayacak şekilde sertifikalandırılmış olması bekleniyor."
+            "Çok kişilik (multiplace) hiperbarik kabinler, aynı anda birden fazla hastanın seans edilebilmesi ve kabin içinde sağlık personelinin refakat edebilmesi sayesinde hastane ve klinik ortamlarının standart tercihi konumunda. Uluslararası hiperbarik tıp otoritesi UHMS'in yayımladığı işletim kılavuzları; basınç artış ve azaltış hızlarının hasta konforu ve kulak barotravması riskine göre ayarlanmasını, her seansın sertifikalı bir operatör gözetiminde yürütülmesini ve acil tahliye senaryolarının düzenli olarak tatbik edilmesini öneriyor.",
+            "Klinik pratikte basınç protokolü seans endikasyonuna göre belirleniyor: yaygın protokoller 2.0–2.4 ATA aralığında uygulanırken, bazı özel endikasyonlarda daha yüksek basınçlar gerekebiliyor. Uzmanlar, hangi basınç seviyesinin uygun olduğunun mutlaka hiperbarik tıp uzmanı bir hekim tarafından değerlendirilmesi gerektiğini vurguluyor; kabin donanımının ise hedef basınç aralığını güvenle karşılayacak şekilde sertifikalandırılmış olması bekleniyor."
           ],
           source_name: "UHMS – Undersea & Hyperbaric Medical Society",
           source_url: "https://www.uhms.org"
@@ -839,7 +840,7 @@ const TRANSLATIONS = {
           icon: "healthSync",
           title: "Spor Kulüplerinde Sezon Hazırlığı: Hiperbarik Destek Programları",
           paragraphs: [
-            "Profesyonel spor kulüplerinin performans ve sağlık ekipleri, yoğun maç ve antrenman dönemlerinde toparlanma sürecini desteklemek için giderek daha fazla hiperbarik oksijen uygulamalarına yöneliyor. Spor hekimliği literatüründe yayımlanan derlemeler, HBOT'un yumuşak doku yaralanmaları sonrası ödem ve iltihabın azaltılmasına katkı sağlayabileceğini ve sporcunun antrenmana dönüş süresini kısaltma potansiyeli taşıdığını aktarıyor.",
+            "Spor hekimliği yayınları bu kullanımı tartışır. Daha geniş ve kontrollü çalışmaların gerektiği de aynı yayınlarda geçer. Kişisel deneyim değişir; burada garanti edilen bir sonuç yoktur.",
             "Kulüp ortamında dikkat edilen başlıkların başında planlama geliyor: seansların antrenman ve maç takvimine entegre edilmesi, oyuncu bazlı yük takibiyle birlikte değerlendirilmesi ve uygulamanın kulüp hekimi gözetiminde yürütülmesi öneriliyor. Araştırmacılar, mevcut kanıtların önemli bölümünün küçük örneklemli çalışmalara dayandığını ve standart protokoller için daha geniş kontrollü çalışmalara ihtiyaç olduğunu da özellikle not ediyor."
           ],
           source_name: "Frontiers in Physiology – Sport and Exercise",
@@ -852,8 +853,8 @@ const TRANSLATIONS = {
           icon: "premium",
           title: "Lüks Otellerde Yeni Trend: Hiperbarik Wellness Suitleri",
           paragraphs: [
-            "Küresel wellness ekonomisine dair sektör raporları, sağlıklı yaşam turizminin en hızlı büyüyen segmentlerden biri olduğunu gösteriyor. Bu eğilimin bir yansıması olarak lüks otel ve resort'lar; spa ve fitness alanlarının ötesine geçerek hiperbarik oksijen kabini, kriyoterapi ve kırmızı ışık terapisi gibi ileri toparlanma teknolojilerini misafir deneyimine eklemeye başladı.",
-            "Sektör gözlemcileri, hiperbarik ünitelerin özellikle 'uzun yaşam' ve 'performans' temalı premium paketlerde öne çıktığını belirtiyor. Otel işletmeleri için kritik başlıklar ise güvenlik standartlarına uyum, eğitimli personel istihdamı ve kullanım öncesi sağlık değerlendirmesi süreçlerinin doğru kurgulanması olarak sıralanıyor; misafirlere yönelik uygulamaların tıbbi terapi değil, genel iyilik hali desteği kapsamında sunulması gerektiği vurgulanıyor."
+            "Küresel wellness ekonomisine dair sektör raporları, sağlıklı yaşam turizminin en hızlı büyüyen segmentlerden biri olduğunu gösteriyor. Bu eğilimin bir yansıması olarak lüks otel ve resort'lar; spa ve fitness alanlarının ötesine geçerek hiperbarik oksijen kabini, soğuk uygulama ve kırmızı ışık seansı gibi ileri toparlanma teknolojilerini misafir deneyimine eklemeye başladı.",
+            "Sektör gözlemcileri, hiperbarik ünitelerin özellikle 'uzun yaşam' ve 'performans' temalı premium paketlerde öne çıktığını belirtiyor. Otel işletmeleri için kritik başlıklar ise güvenlik standartlarına uyum, eğitimli personel istihdamı ve kullanım öncesi sağlık değerlendirmesi süreçlerinin doğru kurgulanması olarak sıralanıyor; misafirlere yönelik uygulamaların tıbbi seans değil, genel iyilik hali desteği kapsamında sunulması gerektiği vurgulanıyor."
           ],
           source_name: "Global Wellness Institute",
           source_url: "https://globalwellnessinstitute.org"
@@ -866,7 +867,7 @@ const TRANSLATIONS = {
           title: "3.0 ATA ve Üzeri Basınç: Tıbbi Sınıf Hiperbarik Güvenlik Standartları",
           paragraphs: [
             "3.0 ATA ve üzeri basınç seviyeleri, hiperbarik tıbbın yalnızca sıkı denetlenen klinik ortamlarda uyguladığı bir alan. Bu seviyelerde çalışan kabinlerin basınçlı kap mevzuatına uygun üretilmesi, yangın güvenliği açısından NFPA 99 gibi uluslararası standartların hiperbarik hükümlerini karşılaması ve düzenli periyodik denetimden geçmesi gerekiyor. Oksijen açısından zenginleşmiş ortamda yangın riski yönetimi, bu sınıftaki sistemlerin tasarımında en kritik başlık olarak öne çıkıyor.",
-            "Güvenlik zincirinin diğer halkaları ise insan faktörü: sertifikalı hiperbarik operatörü, seans öncesi hasta değerlendirmesi, acil durum tahliye planı ve tıbbi gözetim. Uzman kuruluşlar, yüksek basınç sınıfındaki terapilerin yalnızca bu altyapıya sahip sağlık kurumlarında uygulanmasını öneriyor; satın alma kararı veren kurumların üreticiden basınç sertifikaları, test raporları ve eğitim programlarını yazılı olarak talep etmesi tavsiye ediliyor."
+            "Güvenlik zincirinin diğer halkaları ise insan faktörü: sertifikalı hiperbarik operatörü, seans öncesi hasta değerlendirmesi, acil durum tahliye planı ve tıbbi gözetim. Uzman kuruluşlar, yüksek basınç sınıfındaki seansların yalnızca bu altyapıya sahip sağlık kurumlarında uygulanmasını öneriyor; satın alma kararı veren kurumların üreticiden basınç sertifikaları, test raporları ve eğitim programlarını yazılı olarak talep etmesi tavsiye ediliyor."
           ],
           source_name: "NFPA – National Fire Protection Association",
           source_url: "https://www.nfpa.org"
@@ -986,7 +987,7 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech Modelleri",
             items: [
-              { q: "Hangi HBOT City Tech modelleri bulunmaktadır?", a: "HBOT City Tech ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nOslo — Yatay pozisyonda terapi ihtiyacı olan kullanıcılar için geliştirilmiş, tek kullanıcılı sistemdir.\n\nDubai — Oturur pozisyonda, tek kullanıcı kapasiteli, kompakt hiperbarik sistemdir. Hem bireysel/ev hem de işletme kullanımı için tasarlanmıştır.\n\nTokyo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nTokyo Plus — Kurumsal kullanım için 2–4 kişilik, projeye göre yapılandırılabilen yüksek basınçlı sistemdir.\n\nMilano — Klinik, hastane ve profesyonel işletmeler için geliştirilen, 4 kullanıcı kapasiteli, küp formunda geniş hacimli hiperbarik sistemdir.\n\nGeneva — Hastane sınıfı, 6 kullanıcıdan başlayıp 12 kullanıcıya kadar genişleyebilen, büyük kapasiteli kurumsal sistemdir." },
+              { q: "Hangi HBOT City Tech modelleri bulunmaktadır?", a: "HBOT City Tech ürün ailesi, farklı kullanıcı kapasitelerine ve kullanım alanlarına göre geliştirilmektedir.\n\nOslo — Yatay pozisyonda seans ihtiyacı olan kullanıcılar için geliştirilmiş, tek kullanıcılı sistemdir.\n\nDubai — Oturur pozisyonda, tek kullanıcı kapasiteli, kompakt hiperbarik sistemdir. Hem bireysel/ev hem de işletme kullanımı için tasarlanmıştır.\n\nTokyo — Aynı seansta iki kullanıcının bulunabileceği geniş iç hacimli sistemdir.\n\nTokyo Plus — Kurumsal kullanım için 2–4 kişilik, projeye göre yapılandırılabilen yüksek basınçlı sistemdir.\n\nMilano — Klinik, hastane ve profesyonel işletmeler için geliştirilen, 4 kullanıcı kapasiteli, küp formunda geniş hacimli hiperbarik sistemdir.\n\nGeneva — Hastane sınıfı, 6 kullanıcıdan başlayıp 12 kullanıcıya kadar genişleyebilen, büyük kapasiteli kurumsal sistemdir." },
               { q: "Dubai kimler için uygundur?", a: "Dubai, hem bireysel/ev kullanımı hem de tek kullanıcılı çalışma düzeni isteyen işletmeler için geliştirilmiştir. Kompakt yapısı sayesinde evler, klinikler, spor merkezleri, wellness merkezleri ve oteller için değerlendirilebilir.\n\nKesin kullanım koşulları, ürünün sınıflandırmasına ve kurulum yapılacak ülkenin mevzuatına göre belirlenir." },
               { q: "Tokyo kaç kişiliktir?", a: "Tokyo, aynı seansta iki kullanıcının bulunabileceği şekilde tasarlanmıştır. Koltuk yapısı, iç donanım ve oturma düzeni sipariş edilen konfigürasyona göre değişebilir." },
               { q: "Çok kişilik HBOT City Tech modeli kaç kullanıcı kapasitelidir?", a: "Çok kullanıcılı HBOT City Tech modelleri 4 kişilik Milano ile başlar. Hastane sınıfı Geneva modelinde ise standart kapasite 6 kişidir ve opsiyonel olarak 12 kişiye kadar (2'şer koltuk artışlarla) genişletilebilir.\n\nKesin kapasite aşağıdaki unsurlara göre belirlenir:", list: ["Kabin ölçüsü", "Koltuk yerleşimi", "Kullanıcıların hareket alanı", "Oksijen sistemi kapasitesi", "İşletme protokolü", "Yerel güvenlik ve ruhsatlandırma şartları"], aAfter: "Her opsiyon, güvenlik değerlendirmesi ve teknik uygunluk sonrasında projeye eklenir." },
@@ -1042,10 +1043,10 @@ const TRANSLATIONS = {
           {
             title: "Tıbbi Kullanım ve Sağlık Beyanları",
             items: [
-              { q: "Hiperbarik sistem hangi hastalıkların terapisinde kullanılır?", a: "Hiperbarik oksijen uygulamasının kabul edilen tıbbi kullanım alanları ülkeye, düzenleyici kuruma, cihaz sınıfına ve klinik protokole göre değişebilir.\n\nTıbbi amaçlı uygulamalar yalnızca uygun şekilde sınıflandırılmış cihazlarla, yetkili sağlık kuruluşlarında, eğitimli sağlık personeli gözetiminde, hekim değerlendirmesi ve uygun protokol doğrultusunda gerçekleştirilmelidir.\n\nWeb sitemizde bulunan bilgiler herhangi bir hastalığın teşhis veya terapisi için kişisel tavsiye niteliğinde değildir." },
-              { q: "HBOT City Tech cihazları herhangi bir hastalığı terapi eder mi?", a: "Bir cihazın kullanım amacı ve yapılabilecek sağlık beyanları, ürünün resmi sınıflandırmasına ve sahip olduğu belgelere bağlıdır.\n\nHBOT City Tech sistemleri hakkında yalnızca teknik belgelerde ve uygunluk değerlendirmesinde belirtilen kullanım amacı kapsamında beyanda bulunulur. Herhangi bir hastalık için garanti edilmiş sonuç sunulmaz." },
-              { q: "Düşük basınçlı sistemlerle klinik HBOT aynı şey midir?", a: "Hayır. Her basınçlı oksijen uygulaması aynı teknik veya klinik sınıfta değildir. Aşağıdaki unsurlar uygulamanın niteliğini değiştirebilir:", list: ["Çalışma basıncı", "Solunan oksijen konsantrasyonu", "Oksijenin verilme yöntemi", "Seans süresi", "Cihazın sertifikasyonu", "Kullanım amacı", "Uygulama ortamı", "Sağlık personeli gözetimi"], aAfter: "Bir sistemin \"medikal hiperbarik oksijen terapisi cihazı\" olarak tanımlanabilmesi, ilgili pazardaki mevzuata ve ürünün belgelendirilmiş kullanım amacına bağlıdır." },
-              { q: "Sonuçlar garanti ediliyor mu?", a: "Kullanıcıların vereceği yanıt kişiden kişiye değişebilir. Sağlık, iyileşme, performans veya benzeri sonuçlar garanti edilemez.\n\nKullanım kararı yalnızca genel tanıtım bilgilerine veya kullanıcı yorumlarına dayanılarak verilmemelidir." }
+              { q: "Hiperbarik sistem hangi hastalıkların seansta kullanılır?", a: "Hiperbarik oksijen uygulamasının kabul edilen tıbbi kullanım alanları ülkeye, düzenleyici kuruma, cihaz sınıfına ve klinik protokole göre değişebilir.\n\nTıbbi amaçlı uygulamalar yalnızca uygun şekilde sınıflandırılmış cihazlarla, yetkili sağlık kuruluşlarında, eğitimli sağlık personeli gözetiminde, hekim değerlendirmesi ve uygun protokol doğrultusunda gerçekleştirilmelidir.\n\nWeb sitemizde bulunan bilgiler herhangi bir hastalığın teşhis veya seansı için kişisel tavsiye niteliğinde değildir." },
+              { q: "HBOT City Tech cihazları herhangi bir hastalığı seans eder mi?", a: "Bir cihazın kullanım amacı ve yapılabilecek sağlık beyanları, ürünün resmi sınıflandırmasına ve sahip olduğu belgelere bağlıdır.\n\nHBOT City Tech sistemleri hakkında yalnızca teknik belgelerde ve uygunluk değerlendirmesinde belirtilen kullanım amacı kapsamında beyanda bulunulur. Herhangi bir hastalık için garanti edilmiş sonuç sunulmaz." },
+              { q: "Düşük basınçlı sistemlerle klinik HBOT aynı şey midir?", a: "Hayır. Her basınçlı oksijen uygulaması aynı teknik veya klinik sınıfta değildir. Aşağıdaki unsurlar uygulamanın niteliğini değiştirebilir:", list: ["Çalışma basıncı", "Solunan oksijen konsantrasyonu", "Oksijenin verilme yöntemi", "Seans süresi", "Cihazın sertifikasyonu", "Kullanım amacı", "Uygulama ortamı", "Sağlık personeli gözetimi"], aAfter: "Bir sistemin \"medikal hiperbarik oksijen seansı cihazı\" olarak tanımlanabilmesi, ilgili pazardaki mevzuata ve ürünün belgelendirilmiş kullanım amacına bağlıdır." },
+              { q: "Sonuçlar garanti ediliyor mu?", a: "Kullanıcıların vereceği yanıt kişiden kişiye değişebilir. Sağlık, toparlanma, performans veya benzeri sonuçlar garanti edilemez.\n\nKullanım kararı yalnızca genel tanıtım bilgilerine veya kullanıcı yorumlarına dayanılarak verilmemelidir." }
             ]
           },
           {
@@ -1127,8 +1128,8 @@ const TRANSLATIONS = {
       duoPlus: { title: "Tokyo Plus | 2–4 Person Hyperbaric Chamber", desc: "A 2–4 person hyperbaric oxygen chamber for clinic, hospital and wellness projects, configurable for 2.0–3.0 ATA operation." },
       quadCube: { title: "Milano | 4-Person Hyperbaric Oxygen Chamber", desc: "A 4-person hyperbaric oxygen chamber with a spacious cube layout, 2.0–6.0 ATA operating range and independent controls." },
       nexus: { title: "Geneva | Multiplace Hyperbaric Chamber for Hospitals", desc: "A hospital-grade, 6+ person multiplace hyperbaric oxygen chamber with 3.0–6.0 ATA configuration and modular expansion readiness." },
-      hbotInfo: { title: "What Is HBOT? | HBOT Chamber Tech", desc: "What is hyperbaric oxygen therapy (HBOT), what is it used for, and in which conditions is it applied." },
-      blog: { title: "Blog | HBOT Chamber Tech", desc: "Recent research, news and developments on hyperbaric oxygen therapy." },
+      hbotInfo: { title: "What Is HBOT? | HBOT Chamber Tech", desc: "What a hyperbaric oxygen session (HBOT) is, where it is used, and why people choose it." },
+      blog: { title: "Blog | HBOT Chamber Tech", desc: "Recent research, news and developments on hyperbaric oxygen sessions." },
       configurator: {
         title: "Configurator | HBOT Chamber Tech", desc: "Configure your own HBOT City Tech chamber: choose a model, pressure level and add-ons to get an instant price estimate." },
       contact: { title: "Contact | HBOT Chamber Tech", desc: "Get in touch with HBOT Chamber Tech: address, phone, email and contact form." },
@@ -1160,7 +1161,8 @@ const TRANSLATIONS = {
         rights: "All rights reserved.",
         privacy: "Privacy Policy",
         terms: "Terms of Use",
-        wellness_disclaimer: "Wellness Series chambers are not medical devices and are not intended to diagnose, treat, cure or prevent any disease. Clinical applications are delivered in licensed healthcare facilities under physician supervision.",
+        whatsapp: "WhatsApp",
+        wellness_disclaimer: "Wellness Series chambers are not medical devices and are not intended for diagnosis, medical intervention, or disease prevention. Clinical applications are delivered in licensed healthcare facilities under physician supervision.",
         membership_note: "is a member of Almita Group."
       },
       cta_banner: {
@@ -1227,11 +1229,11 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "WHO USES IT?",
         title: "The World's Best Choose Hyperbaric Oxygen",
-        subtitle: "Names reported in the press for using hyperbaric oxygen therapy for recovery, performance and longevity reflect the trust placed in this technology. HBOT Chamber Tech engineers that same technology.",
+        subtitle: "Names reported in the press for using hyperbaric oxygen sessions for recovery, performance and longevity reflect the trust placed in this technology. HBOT Chamber Tech engineers that same technology.",
         source_label: "Source",
         disclaimer: "The individuals listed here have been reported by news sources to use HBOT; they are not brand ambassadors or customers of HBOT Chamber Tech.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Footballer", text: "Featured in reports for doing HBOT at home with his own hyperbaric device to treat a muscle injury.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "Cristiano Ronaldo", role: "Footballer", text: "Featured in reports for doing HBOT at home with his own hyperbaric device to support a muscle injury.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
           { name: "LeBron James", role: "Basketball player", text: "Filmed doing a 60-90 minute HBOT session in the Netflix series 'Starting 5'.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
           { name: "Novak Djokovic", role: "Tennis player", text: "Covered in sports media as using HBOT to stay at the top of his game.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
           { name: "Justin Bieber", role: "Singer", text: "Reported to sleep in a hyperbaric chamber as part of his health regimen.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
@@ -1255,7 +1257,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "USE CASES",
         title: "When Is HBOT Used?",
-        text: "Can be used as a supportive therapy for a range of medical conditions — from wound healing to sudden hearing loss, decompression sickness to carbon monoxide poisoning — subject to physician evaluation.",
+        text: "Clinical papers on sudden hearing loss also discuss oxygen pressure in the inner ear. This page only summarises that discussion. Decisions about timing, corticosteroids and expected course belong to a licensed specialist. Nothing here is a promised result.",
         cta: "See All Use Cases"
       },
       targetMarkets: {
@@ -1321,7 +1323,7 @@ const TRANSLATIONS = {
     },
     technology: {
       header: { eyebrow: "TECHNOLOGY PLATFORM", title: "The HBOT City Tech Technology Ecosystem", subtitle: "Not just a control panel — a continuously evolving, connected and intelligent system." },
-      intro: "Every HBOT City Tech model includes CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ as standard. Together, these five platforms turn the chamber from a simple treatment device into an intelligent, connected and predictive system.",
+      intro: "Every HBOT City Tech model includes CityConnect™, CityOS™, CityAI™, CitySync™ and CityGuard™ as standard. Together, these five platforms turn the chamber from a simple chamber into an intelligent, connected and predictive system.",
       pillars: {
         connect: {
           title: "CityConnect™",
@@ -1347,7 +1349,7 @@ const TRANSLATIONS = {
         },
         ai: {
           title: "CityAI™",
-          subtitle: "AI-Powered Treatment Optimization",
+          subtitle: "AI-supported session planning",
           desc: "Analyzes operational data to support authorized operators with visibility and reporting; it does not replace clinical judgment or the operator.",
           features: [
             "Operational-data visibility and summaries",
@@ -1440,8 +1442,8 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo", tagline: "1 Person · Lying Position", desc: "A fully equipped chamber developed specifically for users who need treatment in a lying position." },
-      solo: { title: "Dubai", tagline: "1 Person · Sitting Position", desc: "A compact, elegant, fully equipped chamber designed for individual hyperbaric oxygen therapy." },
+      soloLounge: { title: "Oslo", tagline: "1 Person · Lying Position", desc: "A fully equipped chamber developed specifically for users who need a session in a lying position." },
+      solo: { title: "Dubai", tagline: "1 Person · Sitting Position", desc: "A compact, elegant, fully equipped chamber designed for individual hyperbaric oxygen sessions." },
       duo: { title: "Tokyo", tagline: "2 People · Sitting Position", desc: "A dual-seat, panoramic-window chamber — for couples, partners, or patient-companion use." },
       duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "A configurable multi-user chamber for clinics, hospitals and professional facilities." },
       quadCube: { title: "Milano", tagline: "4 People · Spacious Cabin", desc: "A four-person premium cabin with a spacious cube-design interior — quilted leather upholstery and LED ambient lighting." },
@@ -1459,8 +1461,8 @@ const TRANSLATIONS = {
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       faq_title: "What people want to know about the Oslo",
-      tagline: "Excellence in a Lying Position. Lie back, relax, heal.",
-      overview_text: "Developed specifically for users who need treatment in a lying position. Its medical orthopedic bed and aviation-grade aluminum body provide maximum comfort during long sessions.",
+      tagline: "Excellence in a Lying Position. Lie back, relax, breathe.",
+      overview_text: "Developed specifically for users who need a session in a lying position. Its medical orthopedic bed and aviation-grade aluminum body provide maximum comfort during long sessions.",
       specs: [
         { label: "Capacity", value: "1 person (lying position)" },
         { label: "Pressure Range", value: "1.3 – 1.5 ATA" },
@@ -1475,7 +1477,7 @@ const TRANSLATIONS = {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
       faq_title: "What people want to know about the Dubai",
       tagline: "The Summit of Your Personal Health. Just you and oxygen.",
-      overview_text: "A compact, elegant, fully equipped chamber designed for individual hyperbaric oxygen therapy. With touchscreen control, it's ideal for home or clinic use.",
+      overview_text: "A compact, elegant, fully equipped chamber designed for individual hyperbaric oxygen sessions. With touchscreen control, it's ideal for home or clinic use.",
       specs: [
         { label: "Capacity", value: "1 person (sitting)" },
         { label: "Pressure Range", value: "1.3 – 1.5 ATA" },
@@ -1489,8 +1491,8 @@ const TRANSLATIONS = {
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       faq_title: "What people want to know about the Tokyo",
-      tagline: "Heal Together. A shared two-person treatment experience.",
-      overview_text: "A dual-seat hyperbaric chamber offering shared therapy sessions. Designed for couples, partners, or patient-companion use.",
+      tagline: "Breathe Together. A shared two-person session.",
+      overview_text: "A dual-seat hyperbaric chamber offering shared sessions. Designed for couples, partners, or patient-companion use.",
       institutionalNote: "Looking for a 2–4 person institutional setup? <a href=\"model-tokyo-plus.html\">See Tokyo Plus →</a>",
       specs: [
         { label: "Capacity", value: "2 people (sitting)" },
@@ -1504,7 +1506,7 @@ const TRANSLATIONS = {
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
       faq_title: "What people want to know about the Tokyo Plus",
-      tagline: "Expandable, multi-person therapy capacity for institutional use.",
+      tagline: "Expandable, multi-person sessions capacity for institutional use.",
       overview_text: "The high-pressure, multi-person institutional version of Tokyo. Designed for clinics, hospitals and wellness centers with tiered seating capacity from 2 to 4 people.",
       specs: [
         { label: "Capacity", value: "2–4 people (tiered)" },
@@ -1519,7 +1521,7 @@ const TRANSLATIONS = {
       breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
       faq_title: "What people want to know about the Milano",
       tagline: "A premium four-person experience in a spacious cube design.",
-      overview_text: "A four-person premium cabin with a spacious cube-form interior. With quilted leather upholstery, LED ambient lighting, and an independent control unit, it delivers comfortable multi-person therapy for clinics and wellness centers.",
+      overview_text: "A four-person premium cabin with a spacious cube-form interior. With quilted leather upholstery, LED ambient lighting, and an independent control unit, it delivers comfortable multi-person sessions for clinics and wellness centers.",
       specs: [
         { label: "Capacity", value: "4 people (sitting)" },
         { label: "Pressure Range", value: "2.0 – 6.0 ATA" },
@@ -1533,7 +1535,7 @@ const TRANSLATIONS = {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
       faq_title: "What people want to know about the Geneva",
       tagline: "A hospital-grade, large-capacity solution.",
-      overview_text: "A hospital-grade, large-capacity chamber developed for hospitals and medical institutions. Its modular design and advanced monitoring systems meet the needs of the busiest treatment centers.",
+      overview_text: "A hospital-grade, large-capacity chamber developed for hospitals and medical institutions. Its modular design and advanced monitoring systems meet the needs of the busiest busy centres.",
       specs: [
         { label: "Capacity", value: "6+ people (sitting)" },
         { label: "Pressure Range", value: "3.0 – 6.0 ATA" },
@@ -1544,19 +1546,19 @@ const TRANSLATIONS = {
       ]
     },
     hbotInfo: {
-      header: { eyebrow: "INFORMATION CENTER", title: "What Is HBOT?", subtitle: "What you need to know about hyperbaric oxygen therapy." },
-      whatIsHboc: { title: "What Is a Hyperbaric Oxygen Chamber (HBOC)?", text: "Hyperbaric Oxygen Chambers are specially designed, pressurized cabins that allow individuals to breathe high-concentration oxygen at higher-than-normal atmospheric pressure. These chambers are used for Hyperbaric Oxygen Therapy (HBOT), a medically recognized treatment that accelerates healing and promotes overall wellness." },
-      whyNeeded: { title: "What Is an HBOC Needed For?", text: "HBOC chambers provide a controlled, pressurized environment where users breathe oxygen at 93–95% concentration, enabling faster recovery and enhanced cellular regeneration. These chambers serve medical facilities, wellness centers, sports clinics, and private users worldwide." },
+      header: { eyebrow: "INFORMATION CENTER", title: "What Is HBOT?", subtitle: "What you need to know about a hyperbaric oxygen session." },
+      whatIsHboc: { title: "What Is a Hyperbaric Oxygen Chamber (HBOC)?", text: "Hyperbaric Oxygen Chambers are specially designed, pressurized cabins that allow individuals to breathe high-concentration oxygen at higher-than-normal atmospheric pressure. These chambers are used for a hyperbaric oxygen session (HBOT). The Wellness series is not offered as a medical device, and no result is promised." },
+      whyNeeded: { title: "What Is an HBOC Needed For?", text: "HBOC chambers provide a controlled, pressurized environment where users breathe oxygen at 93–95% concentration. The Wellness series is not offered as a medical device, and no result is promised. These chambers serve medical facilities, wellness centers, sports clinics, and private users worldwide." },
       whatIsHbot: {
-        title: "What Is Hyperbaric Oxygen Therapy (HBOT)?",
-        text1: "HBOT is a medical treatment where patients breathe pure oxygen inside a pressurized chamber at levels higher than normal atmospheric pressure. This process accelerates wound healing, reduces inflammation, and promotes tissue regeneration.",
-        text2: "Patients breathe inside these chambers, which helps the lungs collect and absorb oxygen more efficiently. HBOT is also used in treating patients experiencing sudden hearing and vision loss, bone infections, and diabetic foot ulcers. Depending on the treatment type, patients can either sit or lie down during the procedure."
+        title: "What Is a Hyperbaric Oxygen Session (HBOT)?",
+        text1: "In the clinical literature, HBOT describes a session in which a person breathes oxygen in a chamber above normal atmospheric pressure. This page summarises that description. Wellness chambers are not offered as medical devices, and no result is promised.",
+        text2: "A person breathes inside the chamber. Clinical papers also discuss hyperbaric oxygen sessions alongside some hospital uses; that discussion is not a product claim. Depending on the session format, a person may sit or lie down."
       },
       indications: {
         title: "In Which Situations Can HBOT Be Used?",
-        subtitle: "The list below summarises, for information only, the clinically recognised applications of hyperbaric oxygen therapy. These are delivered in licensed healthcare facilities under physician evaluation and supervision. No therapeutic claim is made for HBOT Chamber Tech products.",
+        subtitle: "The list below summarises, for information only, uses that the clinical literature mentions for hyperbaric oxygen sessions. These are delivered in licensed healthcare facilities under physician evaluation and supervision. No medical-outcome claim is made for HBOT Chamber Tech products.",
         items: [
-          { icon: "wound", label: "Wound Healing (Diabetic & Non-Diabetic)" },
+          { icon: "wound", label: "Wound Recovery (Diabetic & Non-Diabetic)" },
           { icon: "eye", label: "Sudden Loss of Vision" },
           { icon: "decompression", label: "Decompression Sickness" },
           { icon: "embolism", label: "Air or Gas Embolism" },
@@ -1570,7 +1572,7 @@ const TRANSLATIONS = {
           { icon: "smoke", label: "Acute Smoke Poisoning" }
         ]
       },
-      disclaimer: "This information is for general guidance only and does not constitute medical advice. Treatment decisions must always be evaluated by a healthcare professional."
+      disclaimer: "This information is for general guidance only and does not constitute medical advice. Decisions about use must always be evaluated by a healthcare professional."
     },
     arView: {
       back: "← Back to configurator",
@@ -1619,7 +1621,7 @@ const TRANSLATIONS = {
       ],
       "nexus": [
         { q: "How many people does the Geneva fit?", a: "The Geneva is a hospital-grade, large-capacity chamber that starts at 6 people and scales in tiers of 6/8/10/12." },
-        { q: "What facilities is the Geneva suited for?", a: "It's designed for hospitals and large health centres with high therapy volume; its modular structure is ready for future expansion." },
+        { q: "What facilities is the Geneva suited for?", a: "It's designed for hospitals and large health centres with high session volume; its modular structure is ready for future expansion." },
         { q: "What pressure range does the Geneva operate at?", a: "3.0–6.0 ATA, with 93–95% oxygen purity." },
         { q: "What safety equipment does the Geneva have?", a: "An emergency valve system comes standard; its hospital-grade construction is engineered for continuous, high-volume use." },
         { q: "How do I get a quote for the Geneva?", a: "Contact us with your capacity needs (6/8/10/12 people) and we'll prepare a technical drawing and quote tailored to your institution." }
@@ -1671,7 +1673,7 @@ const TRANSLATIONS = {
         select_button: "Choose This",
         close: "Close",
         items: [
-          { scenario: "At home, alone, I want lying-position treatment", model: "Oslo", modelId: "solo-lounge", usage: "home" },
+          { scenario: "At home, alone, I want a lying-position session", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "At home, alone, I want to sit during sessions", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "My partner and I will use it together, at home", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Clinic or wellness center, 2-4 person institutional use", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -1811,11 +1813,11 @@ const TRANSLATIONS = {
       }
     },
     blog: {
-      header: { eyebrow: "BLOG", title: "Research & News", subtitle: "Recent scientific developments and news in hyperbaric oxygen therapy." },
+      header: { eyebrow: "BLOG", title: "Research & News", subtitle: "Recent scientific developments and news in hyperbaric oxygen sessions." },
       source_label: "Source:",
       min_read: "min read",
       read_more: "Read the full article",
-      disclaimer: "These posts are summaries compiled from publicly available scientific publications and news sources; they do not constitute medical advice. Always consult a healthcare professional for treatment decisions.",
+      disclaimer: "These posts are summaries compiled from publicly available scientific publications and news sources; they do not constitute medical advice. Always discuss your own situation with a healthcare professional.",
       posts: [
         {
           slug: "hbot-kurucu-notu.html",
@@ -1825,7 +1827,7 @@ const TRANSLATIONS = {
           title: "Why I Use Hyperbaric Oxygen Myself",
           paragraphs: [
             "Under the Almita Group umbrella we run six different sectors side by side, and a demanding schedule with constant travel comes with the territory. Before we started manufacturing HBOT Chamber Tech chambers, I chose to use our own units regularly — I believe you should try a product yourself before standing behind it.",
-            "I can say that after sessions I generally feel more energized and focused; this is a personal observation, not a promise of the same result for everyone. Hyperbaric oxygen therapy is not a substitute for medical treatment; always discuss your own use with a healthcare professional."
+            "I can say that after sessions I generally feel more energized and focused; this is a personal observation, not a promise of the same result for everyone. A hyperbaric oxygen session is not a substitute for medical care; always discuss your own use with a healthcare professional."
           ],
           source_name: "Almita Group — Founder's Note",
           source_url: "https://almitagroup.com",
@@ -1838,7 +1840,7 @@ const TRANSLATIONS = {
           icon: "antiaging",
           title: "HBOT and Longevity: The Rising Healthy-Aging Trend",
           paragraphs: [
-            "The longevity movement — brought into the mainstream by tech entrepreneurs like Bryan Johnson and their personal 'age-reversal' protocols — has also boosted interest in hyperbaric oxygen therapy. One of its scientific anchors is a clinical study published in the journal Aging in 2020, in which 35 healthy adults aged 64 and over completed a 60-session HBOT program.",
+            "The longevity movement — brought into the mainstream by tech entrepreneurs like Bryan Johnson and their personal 'age-reversal' protocols — has also boosted interest in hyperbaric oxygen sessions. One of its scientific anchors is a clinical study published in the journal Aging in 2020, in which 35 healthy adults aged 64 and over completed a 60-session HBOT program.",
             "The study reported telomere lengthening of more than 20% in immune cells — up to 37% in B cells — along with a reduction of up to 37% in senescent immune cells. Because the trial had no control group and a limited sample size, the results are considered 'promising but preliminary'; the researchers stress that larger studies are needed to define optimal protocols."
           ],
           source_name: "PMC – HBOT Increases Telomere Length and Decreases Immunosenescence (Aging, 2020)",
@@ -1851,10 +1853,10 @@ const TRANSLATIONS = {
           icon: "healthSync",
           title: "Why Do Elite Athletes Use Hyperbaric Oxygen?",
           paragraphs: [
-            "World-famous athletes such as Cristiano Ronaldo, LeBron James, Novak Djokovic and Floyd Mayweather have been featured in press reports for using hyperbaric chambers as part of their recovery routines. Behind this interest are sports-medicine findings suggesting that HBOT may reduce edema and inflammation, support tissue repair and help athletes return to training sooner.",
-            "Studies cited in reviews include an observation from the Nagano Winter Olympics where 7 athletes recovered faster with short sessions at 1.3 ATA, an early clinical report of a 55% reduction in days lost to injury among professional soccer players, and a university study suggesting roughly 30% faster return after ankle sprains. The authors note that the evidence largely rests on small samples and that randomized controlled trials are needed for firm conclusions."
+            "Some athletes in tennis, swimming, basketball and golf add a hyperbaric oxygen session to a recovery routine. That is a description of a choice, not a promised result for soreness, fatigue or time back to training.",
+            "Sports-medicine papers discuss this use, and they also say the field still needs larger controlled studies. Personal experience varies. No result is guaranteed here."
           ],
-          source_name: "PMC – The Role of Hyperbaric Oxygen Therapy in Sports Medicine (review)",
+          source_name: "PMC – The Role of Hyperbaric Oxygen Sessions in Sports Medicine (review)",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
@@ -1864,10 +1866,10 @@ const TRANSLATIONS = {
           icon: "oneSeat",
           title: "Home Hyperbaric Chamber Buying Guide",
           paragraphs: [
-            "The first question when choosing a hyperbaric chamber for home or private use is capacity: monoplace chambers offer a compact footprint, while multiplace chambers allow family members or small groups to be treated at the same time and make attendant-assisted sessions easier. UHMS, the international authority in hyperbaric medicine, requires pressurized chambers to be approved and regularly inspected equipment, and operators to be specially trained.",
+            "The first question when choosing a hyperbaric chamber for home or private use is capacity: monoplace chambers offer a compact footprint, while multiplace chambers allow family members or small groups to share a session at the same time and make attendant-assisted sessions easier. UHMS, the international authority in hyperbaric medicine, requires pressurized chambers to be approved and regularly inspected equipment, and operators to be specially trained.",
             "Pressure level is the second key topic: clinical protocols are typically applied in the 2.0–2.4 ATA range, while 1.3–2.0 ATA is common in home systems — always review the level that fits your goals with a healthcare professional. The third topic is safety and comfort: fire-safety rules in oxygen environments, emergency decompression, noise level, interior lighting and communication systems directly shape the daily experience; confirm maintenance and warranty terms in writing before you buy."
           ],
-          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Therapy",
+          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Sessions",
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
@@ -1877,10 +1879,10 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "Hyperbaric Oxygen's Role in Chronic Wounds Keeps Growing",
           paragraphs: [
-            "Recent reviews in surgical and chronic wound care show that hyperbaric oxygen therapy (HBOT) supports the healing process by increasing tissue oxygenation. In diabetic foot wounds, venous leg ulcers, burns and radiation-induced tissue damage, HBOT has been reported to improve wound closure rates and reduce infection risk.",
-            "A study published in 2025 found that HBOT combined with negative pressure wound therapy (NPWT) significantly increased healing speed compared to NPWT alone. In reconstructive surgery, HBOT is reported to support tissue and graft survival and promote new blood vessel formation."
+            "Surgical and chronic-wound papers mention hyperbaric oxygen sessions alongside discussions of tissue oxygenation. This page is a short pointer to that literature. HBOT Chamber Tech promises nothing about wound closure or infection risk.",
+            "A 2025 paper discusses hyperbaric oxygen sessions together with negative-pressure wound support. The comparison is not a promise of results. Notes from reconstructive surgery belong to the clinical literature and are not offered as a product claim."
           ],
-          source_name: "PMC – Hyperbaric Oxygen Therapy in Surgical Wound Healing and Tissue Salvage",
+          source_name: "PMC – Hyperbaric Oxygen Sessions in Surgical Wound Recovery and Tissue Salvage",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
@@ -1890,8 +1892,8 @@ const TRANSLATIONS = {
           icon: "burn",
           title: "Why Athletes Are Turning to Hyperbaric Chambers",
           paragraphs: [
-            "Many elite athletes across tennis, swimming, basketball and golf are choosing hyperbaric oxygen therapy as part of their recovery routine. Research in sports medicine shows HBOT can speed up healing, reduce inflammation, and help athletes return to training sooner.",
-            "Some studies reported lower levels of muscle soreness and fatigue in athletes who received HBOT, with recovery times shortened by up to roughly 30%. While the field still needs larger, controlled clinical trials, the results are promising for athlete health."
+            "Sports-medicine papers discuss this use, and they also say the field still needs larger controlled studies. Personal experience varies. No result is guaranteed here.",
+            "Sports-medicine papers discuss this use, and they also say the field still needs larger controlled studies. Personal experience varies. No result is guaranteed here."
           ],
           source_name: "Turkish Journal of Sports Medicine",
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
@@ -1901,10 +1903,10 @@ const TRANSLATIONS = {
           date: "2024",
           tag: "Clinical Evidence",
           icon: "wound",
-          title: "Meta-Analysis on Diabetic Foot Ulcers: Lower Amputation Risk",
+          title: "Meta-Analysis on Diabetic Foot Ulcers: A Look at the Published Discussion",
           paragraphs: [
-            "A meta-analysis of 14 studies covering 768 participants found that hyperbaric oxygen therapy provided a statistically significant benefit in the complete healing of diabetic foot ulcers and in reducing the risk of major amputation.",
-            "A recent systematic review published in 2024 reached similar conclusions: the majority of studies reviewed observed lower rates of major amputation, higher wound healing rates, and reduced ulcer size and depth with HBOT."
+            "Published papers discuss hyperbaric oxygen sessions alongside clinical care for diabetic foot ulcers. This note only points to that literature. It is not a promise that an ulcer will close, that amputation risk will change, or that a chamber replaces medical care.",
+            "A 2024 review sits in the same discussion. Figures in the literature vary with the setting, supervision and the rest of a person's care. HBOT Chamber Tech does not present any condition as something its chambers resolve."
           ],
           source_name: "PMC – Efficacy of HBOT for Diabetic Foot Ulcer",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
@@ -1916,7 +1918,7 @@ const TRANSLATIONS = {
           icon: "ear",
           title: "Hyperbaric Oxygen for Sudden Hearing Loss: Early Intervention Matters",
           paragraphs: [
-            "In patients with sudden sensorineural hearing loss, hyperbaric oxygen therapy aims to improve microcirculation and reduce inflammation by increasing oxygen pressure in the inner ear. Studies show that patients who start treatment early, especially in combination with corticosteroid therapy, tend to see more favorable outcomes.",
+            "Research does not speak with one voice. Some papers describe a change in hearing; that description is not a promise. Pressure and duration belong in the specialist's plan.",
             "While research results do not offer complete consensus on effectiveness, some studies observed hearing improvement in more than half of patients. Experts emphasize the need for further clinical trials to establish standardized pressure and duration protocols."
           ],
           source_name: "JAMA Otolaryngology–Head & Neck Surgery",
@@ -1942,8 +1944,8 @@ const TRANSLATIONS = {
           icon: "guard",
           title: "Pressure Management in Multiplace Chambers: Clinical Operating Protocols",
           paragraphs: [
-            "Multiplace hyperbaric chambers are the standard choice for hospitals and clinics because they treat several patients at once and allow medical staff to accompany patients inside. Operating guidelines published by the UHMS, the international authority in hyperbaric medicine, recommend adjusting compression and decompression rates to patient comfort and ear barotrauma risk, running every session under the supervision of a certified operator, and drilling emergency evacuation scenarios on a regular basis.",
-            "In clinical practice, the pressure protocol is determined by the treatment indication: common protocols run in the 2.0–2.4 ATA range, while certain special indications may require higher pressures. Experts emphasize that the appropriate pressure level must always be assessed by a physician specialized in hyperbaric medicine, and that chamber hardware is expected to be certified to safely cover the target pressure range."
+            "Multiplace hyperbaric chambers are the standard choice for hospitals and clinics because they hold several people at once and allow medical staff to accompany patients inside. Operating guidelines published by the UHMS, the international authority in hyperbaric medicine, recommend adjusting compression and decompression rates to patient comfort and ear barotrauma risk, running every session under the supervision of a certified operator, and drilling emergency evacuation scenarios on a regular basis.",
+            "In clinical practice, the pressure protocol is determined by the intended use: common protocols run in the 2.0–2.4 ATA range, while certain special indications may require higher pressures. Experts emphasize that the appropriate pressure level must always be assessed by a physician specialized in hyperbaric medicine, and that chamber hardware is expected to be certified to safely cover the target pressure range."
           ],
           source_name: "UHMS – Undersea & Hyperbaric Medical Society",
           source_url: "https://www.uhms.org"
@@ -1955,7 +1957,7 @@ const TRANSLATIONS = {
           icon: "healthSync",
           title: "Pre-Season Preparation in Sports Clubs: Hyperbaric Support Programs",
           paragraphs: [
-            "Performance and medical teams at professional sports clubs are increasingly turning to hyperbaric oxygen applications to support recovery during congested match and training periods. Reviews in the sports medicine literature report that HBOT may help reduce edema and inflammation after soft-tissue injuries and carries the potential to shorten an athlete's return-to-training time.",
+            "Sports-medicine papers discuss this use, and they also say the field still needs larger controlled studies. Personal experience varies. No result is guaranteed here.",
             "In a club setting, planning tops the list of priorities: sessions should be integrated into the training and match calendar, evaluated together with player-specific load monitoring, and carried out under the supervision of the club physician. Researchers also note that much of the current evidence rests on small-sample studies and that larger controlled trials are needed to establish standard protocols."
           ],
           source_name: "Frontiers in Physiology – Sport and Exercise",
@@ -1968,8 +1970,8 @@ const TRANSLATIONS = {
           icon: "premium",
           title: "A New Trend in Luxury Hotels: Hyperbaric Wellness Suites",
           paragraphs: [
-            "Industry reports on the global wellness economy show wellness tourism to be one of its fastest-growing segments. Reflecting this trend, luxury hotels and resorts are moving beyond spa and fitness offerings, adding advanced recovery technologies such as hyperbaric oxygen chambers, cryotherapy and red-light therapy to the guest experience.",
-            "Sector observers note that hyperbaric units stand out especially in premium 'longevity' and 'performance' themed packages. For hotel operators, the critical topics are compliance with safety standards, employing trained staff, and properly structuring pre-use health screening; guest-facing applications should be offered as general wellbeing support, not medical treatment."
+            "Industry reports on the global wellness economy show wellness tourism to be one of its fastest-growing segments. Reflecting this trend, luxury hotels and resorts are moving beyond spa and fitness offerings, adding advanced recovery technologies such as hyperbaric oxygen chambers, cold application and red light to the guest experience.",
+            "Sector observers note that hyperbaric units stand out especially in premium 'longevity' and 'performance' themed packages. For hotel operators, the critical topics are compliance with safety standards, employing trained staff, and properly structuring pre-use health screening; guest-facing applications should be offered as general wellbeing support, not medical care."
           ],
           source_name: "Global Wellness Institute",
           source_url: "https://globalwellnessinstitute.org"
@@ -1982,7 +1984,7 @@ const TRANSLATIONS = {
           title: "3.0 ATA and Above: Medical-Grade Hyperbaric Safety Standards",
           paragraphs: [
             "Pressure levels of 3.0 ATA and above are an area hyperbaric medicine applies only in tightly regulated clinical environments. Chambers operating at these levels must be manufactured in compliance with pressure-vessel regulations, meet the hyperbaric provisions of international standards such as NFPA 99 for fire safety, and undergo regular periodic inspection. Managing fire risk in an oxygen-enriched atmosphere is the most critical design topic for this class of system.",
-            "The other links in the safety chain are human factors: a certified hyperbaric operator, pre-session patient assessment, an emergency evacuation plan, and medical oversight. Professional bodies recommend that treatments in the high-pressure class be delivered only in institutions with this infrastructure, and advise purchasing organizations to request pressure certificates, test reports, and training programs from the manufacturer in writing."
+            "The other links in the safety chain are human factors: a certified hyperbaric operator, pre-session patient assessment, an emergency evacuation plan, and medical oversight. Professional bodies recommend that sessions in the high-pressure class be delivered only in institutions with this infrastructure, and advise purchasing organizations to request pressure certificates, test reports, and training programs from the manufacturer in writing."
           ],
           source_name: "NFPA – National Fire Protection Association",
           source_url: "https://www.nfpa.org"
@@ -2071,7 +2073,7 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech Models",
             items: [
-              { q: "Which HBOT City Tech models are available?", a: "The HBOT City Tech product family is developed for different user capacities and use cases.\n\nOslo — A single-user system developed for users who need treatment in a lying position.\n\nDubai — A compact, single-user hyperbaric system used in a sitting position. Designed for both individual/home use and business use.\n\nTokyo — A system with a spacious interior that can accommodate two users in the same session.\n\nTokyo Plus — A configurable 2–4 person high-pressure system for institutional use.\n\nMilano — A 4-user, cube-shaped, large-volume hyperbaric system developed for clinics, hospitals and professional operators.\n\nGeneva — A hospital-grade, large-capacity institutional system starting at 6 users and expandable up to 12." },
+              { q: "Which HBOT City Tech models are available?", a: "The HBOT City Tech product family is developed for different user capacities and use cases.\n\nOslo — A single-user system developed for users who need a session in a lying position.\n\nDubai — A compact, single-user hyperbaric system used in a sitting position. Designed for both individual/home use and business use.\n\nTokyo — A system with a spacious interior that can accommodate two users in the same session.\n\nTokyo Plus — A configurable 2–4 person high-pressure system for institutional use.\n\nMilano — A 4-user, cube-shaped, large-volume hyperbaric system developed for clinics, hospitals and professional operators.\n\nGeneva — A hospital-grade, large-capacity institutional system starting at 6 users and expandable up to 12." },
               { q: "Who is Dubai suitable for?", a: "Dubai is developed for both individual/home use and operators seeking a single-user setup. Thanks to its compact structure, it can be considered for homes, clinics, sports centers, wellness centers and hotels.\n\nThe exact conditions of use are determined by the product's classification and the regulations of the country of installation." },
               { q: "How many people can Tokyo accommodate?", a: "Tokyo is designed to accommodate two users in the same session. The seating structure, interior fittings and seating layout may vary according to the ordered configuration." },
               { q: "What is the user capacity of the multi-person HBOT City Tech model?", a: "Multi-user HBOT City Tech models start with the 4-person Milano. For the hospital-grade Geneva, the standard capacity is 6 people, with an optional capacity of up to 12 people (in increments of 2 seats).\n\nThe exact capacity is determined by the following factors:", list: ["Chamber dimensions", "Seating layout", "Users' range of movement", "Oxygen system capacity", "Operating protocol", "Local safety and licensing requirements"], aAfter: "Each option is added to the project following a safety assessment and technical suitability review." },
@@ -2127,9 +2129,9 @@ const TRANSLATIONS = {
           {
             title: "Medical Use and Health Claims",
             items: [
-              { q: "What conditions is a hyperbaric system used to treat?", a: "The accepted medical uses of hyperbaric oxygen application may vary depending on the country, regulatory body, device classification and clinical protocol.\n\nMedically intended applications should only be carried out using appropriately classified devices, at authorized healthcare facilities, under the supervision of trained healthcare personnel, with physician assessment and an appropriate protocol.\n\nThe information on our website does not constitute personal advice for the diagnosis or treatment of any illness." },
-              { q: "Do HBOT City Tech devices treat any illness?", a: "A device's intended use and the health claims that can be made about it depend on the product's official classification and the documentation it holds.\n\nStatements about HBOT City Tech systems are made only within the intended use specified in the technical documents and conformity assessment. No guaranteed outcome is offered for any illness." },
-              { q: "Are low-pressure systems the same as clinical HBOT?", a: "No. Not every pressurized oxygen application belongs to the same technical or clinical class. The following factors can change the nature of the application:", list: ["Operating pressure", "Concentration of oxygen inhaled", "Method of oxygen delivery", "Session duration", "Device certification", "Intended use", "Application setting", "Supervision by healthcare personnel"], aAfter: "Whether a system can be defined as a \"medical hyperbaric oxygen therapy device\" depends on the regulations of the relevant market and the product's documented intended use." },
+              { q: "What conditions is a hyperbaric system used to support?", a: "The accepted medical uses of hyperbaric oxygen application may vary depending on the country, regulatory body, device classification and clinical protocol.\n\nMedically intended applications should only be carried out using appropriately classified devices, at authorized healthcare facilities, under the supervision of trained healthcare personnel, with physician assessment and an appropriate protocol.\n\nThe information on our website does not constitute personal advice for the diagnosis or session of any illness." },
+              { q: "Do HBOT City Tech devices support any illness?", a: "A device's intended use and the health claims that can be made about it depend on the product's official classification and the documentation it holds.\n\nStatements about HBOT City Tech systems are made only within the intended use specified in the technical documents and conformity assessment. No guaranteed outcome is offered for any illness." },
+              { q: "Are low-pressure systems the same as clinical HBOT?", a: "No. Not every pressurized oxygen application belongs to the same technical or clinical class. The following factors can change the nature of the application:", list: ["Operating pressure", "Concentration of oxygen inhaled", "Method of oxygen delivery", "Session duration", "Device certification", "Intended use", "Application setting", "Supervision by healthcare personnel"], aAfter: "Whether a system can be defined as a \"medical hyperbaric oxygen sessions device\" depends on the regulations of the relevant market and the product's documented intended use." },
               { q: "Are results guaranteed?", a: "The response of users can vary from person to person. Health, recovery, performance or similar outcomes cannot be guaranteed.\n\nUsage decisions should not be based solely on general promotional information or user testimonials." }
             ]
           },
@@ -2206,14 +2208,14 @@ const TRANSLATIONS = {
       home: { title: "HBOT Chamber Tech | Гипербарические кислородные камеры серии HBOT City Tech", desc: "Гипербарические кислородные камеры с IoT-подключением и поддержкой ИИ. Дышите на вершине с серией HBOT City Tech." },
       technology: { title: "Технологии | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync и CityGuard — подключённая интеллектуальная технологическая платформа серии HBOT City Tech." },
       models: { title: "Модели | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Tokyo Plus, Milano и Geneva — шесть моделей гипербарических кислородных камер." },
-      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Одноместная гипербарическая кислородная камера для лечения в положении лёжа." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Одноместная гипербарическая кислородная камера для применения в положении лёжа." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Компактная, полностью укомплектованная камера для индивидуального использования." },
-      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Двухместная камера для совместной гипербарической оксигенотерапии." },
+      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Двухместная камера для совместной гипербарического кислородного сеанса." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Гипербарическая камера повышенного давления на 2-4 человека для учреждений." },
       quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Четырёхместная гипербарическая кислородная камера с просторным кубическим дизайном." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Гипербарическая камера госпитального класса большой вместимости на 6 и более человек." },
-      hbotInfo: { title: "Что такое ГБО? | HBOT Chamber Tech", desc: "Что такое гипербарическая оксигенотерапия (ГБО), для чего она применяется и при каких состояниях." },
-      blog: { title: "Блог | HBOT Chamber Tech", desc: "Актуальные исследования, новости и разработки в области гипербарической оксигенотерапии." },
+      hbotInfo: { title: "Что такое ГБО? | HBOT Chamber Tech", desc: "Что такое гипербарический кислородный сеанс (ГБО), для чего она применяется и при каких состояниях." },
+      blog: { title: "Блог | HBOT Chamber Tech", desc: "Актуальные исследования, новости и разработки в области гипербарического кислородного сеанса." },
       configurator: {
         title: "Конфигуратор | HBOT Chamber Tech", desc: "Настройте собственную камеру HBOT City Tech: выберите модель, уровень давления и опции, чтобы мгновенно получить оценку стоимости." },
       contact: { title: "Контакты | HBOT Chamber Tech", desc: "Свяжитесь с HBOT Chamber Tech: адрес, телефон, эл. почта и форма обратной связи." },
@@ -2245,7 +2247,8 @@ const TRANSLATIONS = {
         rights: "Все права защищены.",
         privacy: "Политика конфиденциальности",
         terms: "Условия использования",
-        wellness_disclaimer: "Камеры серии Wellness не являются медицинскими изделиями и не предназначены для диагностики, лечения или профилактики заболеваний. Клиническое применение осуществляется в лицензированных медицинских учреждениях под наблюдением врача.",
+        whatsapp: "WhatsApp",
+        wellness_disclaimer: "Камеры серии Wellness не являются медицинскими изделиями и не предназначены для диагностики, медицинского вмешательства или профилактики заболеваний. Клиническое применение осуществляется в лицензированных медицинских учреждениях под наблюдением врача.",
         membership_note: "входит в состав Almita Group."
       },
       cta_banner: {
@@ -2312,11 +2315,11 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "КТО ИСПОЛЬЗУЕТ?",
         title: "Лучшие в мире выбирают гипербарический кислород",
-        subtitle: "Имена, о которых пресса сообщала в связи с использованием гипербарической оксигенотерапии для восстановления, результатов и долголетия, отражают доверие к этой технологии. Компания HBOT Chamber Tech разрабатывает ту же технологию.",
+        subtitle: "Имена, о которых пресса сообщала в связи с использованием гипербарического кислородного сеанса для восстановления, результатов и долголетия, отражают доверие к этой технологии. Компания HBOT Chamber Tech разрабатывает ту же технологию.",
         source_label: "Источник",
         disclaimer: "Перечисленные здесь лица, по сообщениям СМИ, используют ГБО; они не являются амбассадорами или клиентами HBOT Chamber Tech.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Футболист", text: "СМИ сообщали, что он делает ГБО дома на собственном гипербарическом аппарате для лечения мышечной травмы.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "Cristiano Ronaldo", role: "Футболист", text: "СМИ сообщали, что он делает ГБО дома на собственном гипербарическом аппарате для применения мышечной травмы.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
           { name: "LeBron James", role: "Баскетболист", text: "Снят за 60-90-минутным сеансом ГБО в сериале Netflix «Starting 5».", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
           { name: "Novak Djokovic", role: "Теннисист", text: "Спортивные СМИ писали, что он использует ГБО, чтобы оставаться на вершине.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
           { name: "Justin Bieber", role: "Певец", text: "Сообщалось, что он спит в гипербарической камере как часть своего режима здоровья.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
@@ -2340,7 +2343,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "ОБЛАСТИ ПРИМЕНЕНИЯ",
         title: "В каких случаях применяется ГБО?",
-        text: "Может применяться как вспомогательная терапия при ряде медицинских состояний — от заживления ран до внезапной потери слуха, от декомпрессионной болезни до отравления угарным газом — по решению врача.",
+        text: "Клинические работы о внезапной потере слуха обсуждают и давление кислорода во внутреннем ухе. Эта страница лишь кратко пересказывает это обсуждение. Решения о сроках, кортикостероидах и ожидаемом ходе принимает лицензированный специалист. Здесь нет обещания результата.",
         cta: "Смотреть все области применения"
       },
       targetMarkets: {
@@ -2432,7 +2435,7 @@ const TRANSLATIONS = {
         },
         ai: {
           title: "CityAI™",
-          subtitle: "Оптимизация лечения с помощью ИИ",
+          subtitle: "Оптимизация применения с помощью ИИ",
           desc: "Анализирует эксплуатационные данные, помогая уполномоченным операторам с наблюдением и отчётностью; не заменяет клиническое суждение или оператора.",
           features: [
             "Наблюдение и сводки по эксплуатационным данным",
@@ -2525,8 +2528,8 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo", tagline: "1 человек · Положение лёжа", desc: "Полностью укомплектованная камера, разработанная специально для пользователей, нуждающихся в лечении в положении лёжа." },
-      solo: { title: "Dubai", tagline: "1 человек · Положение сидя", desc: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарической оксигенотерапии." },
+      soloLounge: { title: "Oslo", tagline: "1 человек · Положение лёжа", desc: "Полностью укомплектованная камера, разработанная специально для пользователей, нуждающихся в применении в положении лёжа." },
+      solo: { title: "Dubai", tagline: "1 человек · Положение сидя", desc: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарического кислородного сеанса." },
       duo: { title: "Tokyo", tagline: "2 человека · Положение сидя", desc: "Двухместная камера с панорамным окном — для пар, партнёров или пациента с сопровождающим." },
       duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "Конфигурируемая многоместная камера для клиник, больниц и профессиональных объектов." },
       quadCube: { title: "Milano", tagline: "4 человека · Просторная кабина", desc: "Четырёхместная премиум-кабина с просторным кубическим интерьером — стёганая кожа и LED-подсветка." },
@@ -2545,7 +2548,7 @@ const TRANSLATIONS = {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       faq_title: "Часто задаваемые вопросы об Oslo",
       tagline: "Совершенство в положении лёжа. Прилягте, расслабьтесь, восстановитесь.",
-      overview_text: "Разработана специально для пользователей, нуждающихся в лечении в положении лёжа. Медицинское ортопедическое ложе и корпус из авиационного алюминия обеспечивают максимальный комфорт во время длительных сеансов.",
+      overview_text: "Разработана специально для пользователей, нуждающихся в применении в положении лёжа. Медицинское ортопедическое ложе и корпус из авиационного алюминия обеспечивают максимальный комфорт во время длительных сеансов.",
       specs: [
         { label: "Вместимость", value: "1 человек (положение лёжа)" },
         { label: "Диапазон давления", value: "1.3 – 1.5 ATA" },
@@ -2560,7 +2563,7 @@ const TRANSLATIONS = {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
       faq_title: "Часто задаваемые вопросы о Dubai",
       tagline: "Вершина вашего личного здоровья. Только вы и кислород.",
-      overview_text: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарической оксигенотерапии. С сенсорным управлением идеально подходит для домашнего или клинического использования.",
+      overview_text: "Компактная, элегантная, полностью укомплектованная камера для индивидуальной гипербарического кислородного сеанса. С сенсорным управлением идеально подходит для домашнего или клинического использования.",
       specs: [
         { label: "Вместимость", value: "1 человек (сидя)" },
         { label: "Диапазон давления", value: "1.3 – 1.5 ATA" },
@@ -2574,8 +2577,8 @@ const TRANSLATIONS = {
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       faq_title: "Часто задаваемые вопросы о Tokyo",
-      tagline: "Исцеляйтесь вместе. Совместный сеанс лечения для двоих.",
-      overview_text: "Двухместная гипербарическая камера для совместных сеансов терапии. Разработана для пар, партнёров или пациента с сопровождающим.",
+      tagline: "Исцеляйтесь вместе. Совместный сеанс применения для двоих.",
+      overview_text: "Двухместная гипербарическая камера для совместных сеансов сеанса. Разработана для пар, партнёров или пациента с сопровождающим.",
       institutionalNote: "Ищете вариант для учреждений на 2–4 человека? <a href=\"model-tokyo-plus.html\">Смотрите Tokyo Plus →</a>",
       specs: [
         { label: "Вместимость", value: "2 человека (сидя)" },
@@ -2604,7 +2607,7 @@ const TRANSLATIONS = {
       breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
       faq_title: "Часто задаваемые вопросы о Milano",
       tagline: "Премиальный четырёхместный опыт в просторном кубическом дизайне.",
-      overview_text: "Четырёхместная премиум-кабина с просторным кубическим интерьером. Стёганая кожаная обивка, LED-подсветка и независимый блок управления обеспечивают комфортную многоместную терапию для клиник и wellness-центров.",
+      overview_text: "Четырёхместная премиум-кабина с просторным кубическим интерьером. Стёганая кожаная обивка, LED-подсветка и независимый блок управления обеспечивают комфортную многоместную сеанс для клиник и wellness-центров.",
       specs: [
         { label: "Вместимость", value: "4 человека (сидя)" },
         { label: "Диапазон давления", value: "2.0 – 6.0 ATA" },
@@ -2629,17 +2632,17 @@ const TRANSLATIONS = {
       ]
     },
     hbotInfo: {
-      header: { eyebrow: "ИНФОРМАЦИОННЫЙ ЦЕНТР", title: "Что такое ГБО?", subtitle: "Что нужно знать о гипербарической оксигенотерапии." },
-      whatIsHboc: { title: "Что такое гипербарическая кислородная камера (ГБК)?", text: "Гипербарические кислородные камеры — это специально спроектированные герметичные кабины, позволяющие людям дышать кислородом высокой концентрации при давлении выше нормального атмосферного. Эти камеры используются для гипербарической оксигенотерапии (ГБО) — медицински признанного метода лечения, ускоряющего заживление и укрепляющего общее самочувствие." },
-      whyNeeded: { title: "Для чего нужна ГБК?", text: "Камеры ГБК создают контролируемую среду под давлением, в которой пользователи дышат кислородом концентрации 93–95%, что способствует более быстрому восстановлению и улучшенной регенерации клеток. Эти камеры используются в медицинских учреждениях, wellness-центрах, спортивных клиниках и частными пользователями по всему миру." },
+      header: { eyebrow: "ИНФОРМАЦИОННЫЙ ЦЕНТР", title: "Что такое ГБО?", subtitle: "Что нужно знать о сеансе гипербарического кислорода." },
+      whatIsHboc: { title: "Что такое гипербарическая кислородная камера (ГБК)?", text: "Гипербарические кислородные камеры — это специально спроектированные герметичные кабины, позволяющие людям дышать кислородом высокой концентрации при давлении выше нормального атмосферного. Эти камеры используются для сеанса гипербарического кислорода (ГБО). Серия Wellness не предлагается как медицинское изделие, и никакой результат не обещается." },
+      whyNeeded: { title: "Для чего нужна ГБК?", text: "Камеры ГБК создают контролируемую среду под давлением, в которой пользователи дышат кислородом концентрации 93–95%, Серия Wellness не предлагается как медицинское изделие, и никакой результат не обещается. Эти камеры используются в медицинских учреждениях, wellness-центрах, спортивных клиниках и частными пользователями по всему миру." },
       whatIsHbot: {
-        title: "Что такое гипербарическая оксигенотерапия (ГБО)?",
-        text1: "ГБО — это медицинское лечение, при котором пациенты дышат чистым кислородом внутри камеры под давлением, превышающим нормальное атмосферное. Этот процесс ускоряет заживление ран, уменьшает воспаление и способствует регенерации тканей.",
-        text2: "Пациенты дышат внутри этих камер, что помогает лёгким более эффективно собирать и усваивать кислород. ГБО также применяется при лечении внезапной потери слуха и зрения, костных инфекций и диабетических язв стопы. В зависимости от типа лечения пациенты могут сидеть или лежать во время процедуры."
+        title: "Что такое гипербарический кислородный сеанс (ГБО)?",
+        text1: "В клинической литературе ГБО описывают как сеанс, в котором человек дышит кислородом в камере при давлении выше обычного атмосферного. Эта страница кратко пересказывает это описание. Камеры серии Wellness не предлагаются как медицинские изделия, и никакой результат не обещается.",
+        text2: "Человек дышит внутри камеры. Клинические публикации также обсуждают сеанс гипербарического кислорода рядом с некоторыми больничными применениями; это не заявление о продукте. В зависимости от формата сеанса можно сидеть или лежать."
       },
       indications: {
         title: "В каких случаях применяется ГБО?",
-        subtitle: "Приведённый ниже перечень носит исключительно информационный характер и обобщает клинически признанные показания гипербарической оксигенотерапии. Они применяются в лицензированных медицинских учреждениях под наблюдением врача. В отношении продукции HBOT Chamber Tech никаких лечебных заявлений не делается.",
+        subtitle: "Приведённый ниже перечень носит исключительно информационный характер и обобщает клинически признанные показания гипербарического кислородного сеанса. Они применяются в лицензированных медицинских учреждениях под наблюдением врача. В отношении продукции HBOT Chamber Tech никаких лечебных заявлений не делается.",
         items: [
           { icon: "wound", label: "Заживление ран (диабетических и недиабетических)" },
           { icon: "eye", label: "Внезапная потеря зрения" },
@@ -2655,7 +2658,7 @@ const TRANSLATIONS = {
           { icon: "smoke", label: "Острое отравление дымом" }
         ]
       },
-      disclaimer: "Данная информация носит исключительно общий ознакомительный характер и не является медицинской рекомендацией. Решения о лечении должны приниматься только специалистом-медиком."
+      disclaimer: "Данная информация носит исключительно общий ознакомительный характер и не является медицинской рекомендацией. Решения о применении должны приниматься только специалистом-медиком."
     },
     arView: {
       back: "← Вернуться к конфигуратору",
@@ -2896,11 +2899,11 @@ const TRANSLATIONS = {
       }
     },
     blog: {
-      header: { eyebrow: "БЛОГ", title: "Исследования и новости", subtitle: "Актуальные научные разработки и новости в области гипербарической оксигенотерапии." },
+      header: { eyebrow: "БЛОГ", title: "Исследования и новости", subtitle: "Актуальные научные разработки и новости в области гипербарического кислородного сеанса." },
       source_label: "Источник:",
       min_read: "мин чтения",
       read_more: "Читать статью целиком",
-      disclaimer: "Эти материалы представляют собой краткие сведения, составленные на основе общедоступных научных публикаций и новостных источников; они не являются медицинской рекомендацией. Для принятия решений о лечении обязательно проконсультируйтесь со специалистом-медиком.",
+      disclaimer: "Эти материалы представляют собой краткие сведения, составленные на основе общедоступных научных публикаций и новостных источников; они не являются медицинской рекомендацией. Обязательно обсудите собственную ситуацию со специалистом-медиком.",
       posts: [
         {
           slug: "hbot-kurucu-notu.html",
@@ -2910,7 +2913,7 @@ const TRANSLATIONS = {
           title: "Почему я сам использую гипербарический кислород",
           paragraphs: [
             "В составе Almita Group мы одновременно развиваем шесть направлений, и плотный график с постоянными поездками — неизбежная часть этого пути. Ещё до того как мы начали производить камеры HBOT Chamber Tech, я решил регулярно пользоваться нашими собственными камерами — считаю, что прежде чем отстаивать продукт, стоит опробовать его на себе.",
-            "После сеансов я, как правило, чувствую себя бодрее и собраннее; это личное наблюдение, а не обещание такого же результата для всех. Гипербарическая оксигенация не заменяет медицинское лечение — решения об использовании всегда обсуждайте со специалистом-медиком."
+            "После сеансов я, как правило, чувствую себя бодрее и собраннее; это личное наблюдение, а не обещание такого же результата для всех. Гипербарическая оксигенация не заменяет медицинское применение — решения об использовании всегда обсуждайте со специалистом-медиком."
           ],
           source_name: "Almita Group — слово основателя",
           source_url: "https://almitagroup.com",
@@ -2923,7 +2926,7 @@ const TRANSLATIONS = {
           icon: "antiaging",
           title: "ГБО и долголетие: растущий тренд здорового старения",
           paragraphs: [
-            "Движение за долголетие, популяризированное технологическими предпринимателями вроде Брайана Джонсона и их личными протоколами «омоложения», повысило интерес и к гипербарической оксигенотерапии. Одним из научных ориентиров стало клиническое исследование 2020 года в журнале Aging, в котором 35 здоровых взрослых старше 64 лет прошли программу из 60 сеансов ГБО.",
+            "Движение за долголетие, популяризированное технологическими предпринимателями вроде Брайана Джонсона и их личными протоколами «омоложения», повысило интерес и к гипербарического кислородного сеанса. Одним из научных ориентиров стало клиническое исследование 2020 года в журнале Aging, в котором 35 здоровых взрослых старше 64 лет прошли программу из 60 сеансов ГБО.",
             "В исследовании зафиксировано удлинение теломер иммунных клеток более чем на 20% — до 37% в B-клетках — и снижение доли стареющих (сенесцентных) иммунных клеток до 37%. Поскольку в исследовании не было контрольной группы, а выборка была ограниченной, результаты оцениваются как «многообещающие, но предварительные»; авторы подчёркивают необходимость более масштабных работ для определения оптимальных протоколов."
           ],
           source_name: "PMC – ГБО увеличивает длину теломер и снижает иммунное старение (Aging, 2020)",
@@ -2939,7 +2942,7 @@ const TRANSLATIONS = {
             "Всемирно известные спортсмены — Криштиану Роналду, Леброн Джеймс, Новак Джокович и Флойд Мейвезер — не раз упоминались в прессе как пользователи гипербарических камер в рамках своих программ восстановления. За этим интересом стоят данные спортивной медицины о том, что ГБО может уменьшать отёки и воспаление, поддерживать восстановление тканей и помогать спортсменам быстрее возвращаться к тренировкам.",
             "Среди работ, приводимых в обзорах: наблюдение на зимней Олимпиаде в Нагано, где 7 спортсменов быстрее восстанавливались после коротких сеансов при 1,3 ATA; ранний клинический отчёт о сокращении на 55% дней, потерянных из-за травм, у профессиональных футболистов; и университетское исследование, указывающее примерно на 30% более быстрое возвращение после растяжения голеностопа. Авторы отмечают, что доказательная база пока опирается в основном на небольшие выборки и для твёрдых выводов необходимы рандомизированные контролируемые исследования."
           ],
-          source_name: "PMC – Роль гипербарической оксигенотерапии в спортивной медицине (обзор)",
+          source_name: "PMC – Роль гипербарического кислородного сеанса в спортивной медицине (обзор)",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
@@ -2952,7 +2955,7 @@ const TRANSLATIONS = {
             "Первый вопрос при выборе гипербарической камеры для дома — вместимость: одноместные (моноплац) камеры компактны, а многоместные (мультиплац) позволяют проводить сеансы одновременно для членов семьи или небольших групп и упрощают сопровождение. UHMS — международный авторитет в гипербарической медицине — требует, чтобы барокамеры были сертифицированным и регулярно проверяемым оборудованием, а операторы прошли специальную подготовку.",
             "Второй ключевой вопрос — давление: клинические протоколы обычно выполняются в диапазоне 2,0–2,4 ATA, тогда как в домашних системах распространён диапазон 1,3–2,0 ATA; подходящий уровень обязательно обсудите с врачом. Третий блок — безопасность и комфорт: правила пожарной безопасности в кислородной среде, аварийная декомпрессия, уровень шума, внутреннее освещение и система связи напрямую влияют на ежедневный опыт; условия обслуживания и гарантии зафиксируйте письменно до покупки."
           ],
-          source_name: "StatPearls (NCBI) – Гипербарическая оксигенотерапия",
+          source_name: "StatPearls (NCBI) – Гипербарический кислородный сеанс",
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
@@ -2960,12 +2963,12 @@ const TRANSLATIONS = {
           date: "2025",
           tag: "Исследование",
           icon: "wound",
-          title: "Роль гипербарического кислорода в лечении хронических ран продолжает расти",
+          title: "Работы по хирургии и хроническим ранам упоминают сеансы гипербарического кислорода рядом с обсуждением оксигенации тканей. Эта страница лишь кратко указывает на такую литературу. HBOT Chamber Tech ничего не обещает относительно закрытия раны или риска инфекции.",
           paragraphs: [
-            "Последние обзоры в области хирургии и лечения хронических ран показывают, что гипербарическая оксигенотерапия (ГБО) способствует процессу заживления за счёт повышения оксигенации тканей. При диабетических язвах стопы, венозных язвах голени, ожогах и лучевых повреждениях тканей ГБО, по имеющимся данным, улучшает показатели заживления ран и снижает риск инфицирования.",
-            "Исследование, опубликованное в 2025 году, показало, что ГБО в сочетании с терапией ран отрицательным давлением (NPWT) значительно повышает скорость заживления по сравнению с одной лишь NPWT. В реконструктивной хирургии ГБО, как сообщается, поддерживает выживаемость тканей и трансплантатов и стимулирует образование новых кровеносных сосудов."
+            "Работа 2025 года рассматривает сеансы гипербарического кислорода вместе с поддержкой ран отрицательным давлением. Сравнение не является обещанием результата. Заметки из реконструктивной хирургии остаются клинической литературой, а не заявлением о продукте.",
+            "Работа 2025 года рассматривает сеансы гипербарического кислорода вместе с поддержкой ран отрицательным давлением. Сравнение не является обещанием результата. Заметки из реконструктивной хирургии остаются клинической литературой, а не заявлением о продукте."
           ],
-          source_name: "PMC – Hyperbaric Oxygen Therapy in Surgical Wound Healing and Tissue Salvage",
+          source_name: "PMC – Hyperbaric Oxygen Sessions in Surgical Wound Recovery and Tissue Salvage",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
@@ -2975,7 +2978,7 @@ const TRANSLATIONS = {
           icon: "burn",
           title: "Почему спортсмены всё чаще выбирают гипербарическую камеру",
           paragraphs: [
-            "Многие элитные спортсмены в теннисе, плавании, баскетболе и гольфе выбирают гипербарическую оксигенотерапию как часть процесса восстановления. Исследования в области спортивной медицины показывают, что ГБО может ускорять заживление, снижать воспаление и помогать спортсменам быстрее возвращаться к тренировкам.",
+            "Некоторые спортсмены в теннисе, плавании, баскетболе и гольфе добавляют сеанс гипербарического кислорода к рутине восстановления. Это описание выбора, а не обещание результата по боли в мышцах, усталости или сроку возвращения к тренировкам.",
             "В некоторых исследованиях у спортсменов, прошедших ГБО, отмечался более низкий уровень мышечной боли и усталости, а время восстановления сокращалось примерно на 30%. Хотя область всё ещё нуждается в более крупных контролируемых клинических исследованиях, результаты обнадёживают в отношении здоровья спортсменов."
           ],
           source_name: "Turkish Journal of Sports Medicine",
@@ -2988,8 +2991,8 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "Метаанализ по диабетическим язвам стопы: снижение риска ампутации",
           paragraphs: [
-            "Метаанализ 14 исследований с участием 768 человек показал, что гипербарическая оксигенотерапия обеспечивает статистически значимую пользу в полном заживлении диабетических язв стопы и снижении риска большой ампутации.",
-            "Недавний систематический обзор, опубликованный в 2024 году, пришёл к аналогичным выводам: в большинстве рассмотренных исследований при применении ГБО наблюдалось снижение частоты больших ампутаций, повышение показателей заживления ран, а также уменьшение размера и глубины язв."
+            "Опубликованные работы рассматривают сеансы гипербарического кислорода рядом с клиническим ведением диабетических язв стопы. Эта заметка лишь указывает на такую литературу. Она не обещает закрытия язвы, изменения риска ампутации и не заменяет медицинскую помощь.",
+            "Обзор 2024 года относится к тому же обсуждению. Цифры в литературе зависят от условий, наблюдения и остального плана ведения. HBOT Chamber Tech не представляет ни одно состояние как то, что устраняют её камеры."
           ],
           source_name: "PMC – Efficacy of HBOT for Diabetic Foot Ulcer",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
@@ -3001,7 +3004,7 @@ const TRANSLATIONS = {
           icon: "ear",
           title: "Гипербарический кислород при внезапной потере слуха: важность раннего вмешательства",
           paragraphs: [
-            "У пациентов с внезапной сенсоневральной потерей слуха гипербарическая оксигенотерапия направлена на улучшение микроциркуляции и снижение воспаления за счёт повышения давления кислорода во внутреннем ухе. Исследования показывают, что у пациентов, начавших лечение рано, особенно в сочетании с кортикостероидной терапией, результаты, как правило, более благоприятны.",
+            "Человек дышит внутри камеры. Клинические публикации также обсуждают сеанс гипербарического кислорода рядом с некоторыми больничными применениями; это не заявление о продукте. В зависимости от формата сеанса можно сидеть или лежать.",
             "Хотя результаты исследований не дают полного единодушия относительно эффективности, в некоторых работах улучшение слуха наблюдалось более чем у половины пациентов. Эксперты подчёркивают необходимость дальнейших клинических исследований для установления стандартизированных протоколов давления и продолжительности."
           ],
           source_name: "JAMA Otolaryngology–Head & Neck Surgery",
@@ -3027,8 +3030,8 @@ const TRANSLATIONS = {
           icon: "guard",
           title: "Управление давлением в многоместных камерах: клинические протоколы эксплуатации",
           paragraphs: [
-            "Многоместные гипербарические камеры — стандартный выбор больниц и клиник: они позволяют одновременно лечить нескольких пациентов и допускают сопровождение медицинским персоналом внутри камеры. Руководства по эксплуатации, публикуемые UHMS — международным авторитетом в гипербарической медицине, — рекомендуют подбирать скорость повышения и снижения давления с учётом комфорта пациента и риска баротравмы уха, проводить каждый сеанс под наблюдением сертифицированного оператора и регулярно отрабатывать сценарии аварийной эвакуации.",
-            "В клинической практике протокол давления определяется показанием к лечению: распространённые протоколы выполняются в диапазоне 2.0–2.4 ATA, а отдельные специальные показания могут требовать более высокого давления. Эксперты подчёркивают, что подходящий уровень давления должен оценивать врач, специализирующийся в гипербарической медицине, а оборудование камеры должно быть сертифицировано на безопасную работу в целевом диапазоне давления."
+            "Многоместные гипербарические камеры — стандартный выбор больниц и клиник: они позволяют одновременно применять нескольких пациентов и допускают сопровождение медицинским персоналом внутри камеры. Руководства по эксплуатации, публикуемые UHMS — международным авторитетом в гипербарической медицине, — рекомендуют подбирать скорость повышения и снижения давления с учётом комфорта пациента и риска баротравмы уха, проводить каждый сеанс под наблюдением сертифицированного оператора и регулярно отрабатывать сценарии аварийной эвакуации.",
+            "В клинической практике протокол давления определяется показанием к применению: распространённые протоколы выполняются в диапазоне 2.0–2.4 ATA, а отдельные специальные показания могут требовать более высокого давления. Эксперты подчёркивают, что подходящий уровень давления должен оценивать врач, специализирующийся в гипербарической медицине, а оборудование камеры должно быть сертифицировано на безопасную работу в целевом диапазоне давления."
           ],
           source_name: "UHMS – Undersea & Hyperbaric Medical Society",
           source_url: "https://www.uhms.org"
@@ -3053,8 +3056,8 @@ const TRANSLATIONS = {
           icon: "premium",
           title: "Новый тренд в отелях класса люкс: гипербарические wellness-люксы",
           paragraphs: [
-            "Отраслевые отчёты о мировой wellness-экономике показывают, что оздоровительный туризм — один из самых быстрорастущих сегментов. В русле этой тенденции люксовые отели и курорты выходят за рамки спа и фитнеса, добавляя в гостевой опыт передовые технологии восстановления: гипербарические кислородные камеры, криотерапию и терапию красным светом.",
-            "Наблюдатели отрасли отмечают, что гипербарические установки особенно заметны в премиальных пакетах на темы «долголетия» и «производительности». Для операторов отелей критически важны соответствие стандартам безопасности, наличие обученного персонала и корректно выстроенный процесс оценки здоровья перед использованием; гостевые процедуры должны предлагаться как поддержка общего самочувствия, а не как медицинское лечение."
+            "Отраслевые отчёты о мировой wellness-экономике показывают, что оздоровительный туризм — один из самых быстрорастущих сегментов. В русле этой тенденции люксовые отели и курорты выходят за рамки спа и фитнеса, добавляя в гостевой опыт передовые технологии восстановления: гипербарические кислородные камеры, холодовую процедуру и сеанс красным светом.",
+            "Наблюдатели отрасли отмечают, что гипербарические установки особенно заметны в премиальных пакетах на темы «долголетия» и «производительности». Для операторов отелей критически важны соответствие стандартам безопасности, наличие обученного персонала и корректно выстроенный процесс оценки здоровья перед использованием; гостевые процедуры должны предлагаться как поддержка общего самочувствия, а не как медицинское применение."
           ],
           source_name: "Global Wellness Institute",
           source_url: "https://globalwellnessinstitute.org"
@@ -3067,7 +3070,7 @@ const TRANSLATIONS = {
           title: "3.0 ATA и выше: стандарты безопасности гипербарических систем медицинского класса",
           paragraphs: [
             "Уровни давления 3.0 ATA и выше — область, которую гипербарическая медицина применяет только в строго регулируемых клинических условиях. Камеры, работающие на таких уровнях, должны производиться в соответствии с нормами для сосудов под давлением, отвечать гипербарическим положениям международных стандартов пожарной безопасности, таких как NFPA 99, и проходить регулярную периодическую проверку. Управление риском возгорания в обогащённой кислородом среде — важнейшая проектная задача для систем этого класса.",
-            "Остальные звенья цепи безопасности — человеческий фактор: сертифицированный гипербарический оператор, предсеансовая оценка пациента, план аварийной эвакуации и медицинское наблюдение. Профессиональные организации рекомендуют проводить лечение высокого класса давления только в учреждениях с такой инфраструктурой и советуют заказчикам письменно запрашивать у производителя сертификаты давления, протоколы испытаний и программы обучения."
+            "Остальные звенья цепи безопасности — человеческий фактор: сертифицированный гипербарический оператор, предсеансовая оценка пациента, план аварийной эвакуации и медицинское наблюдение. Профессиональные организации рекомендуют проводить применение высокого класса давления только в учреждениях с такой инфраструктурой и советуют заказчикам письменно запрашивать у производителя сертификаты давления, протоколы испытаний и программы обучения."
           ],
           source_name: "NFPA – National Fire Protection Association",
           source_url: "https://www.nfpa.org"
@@ -3156,7 +3159,7 @@ const TRANSLATIONS = {
           {
             title: "Модели HBOT City Tech",
             items: [
-              { q: "Какие модели HBOT City Tech доступны?", a: "Линейка продуктов HBOT City Tech разрабатывается для разных пользовательских ёмкостей и сфер применения.\n\nOslo — система для одного пользователя, разработанная для тех, кому необходимо лечение в положении лёжа.\n\nDubai — компактная гипербарическая система для одного пользователя в положении сидя. Разработана как для индивидуального/домашнего использования, так и для бизнеса.\n\nTokyo — система с просторным внутренним пространством, рассчитанная на двух пользователей в одном сеансе.\n\nTokyo Plus — настраиваемая система повышенного давления на 2–4 человека для учреждений.\n\nMilano — гипербарическая система кубической формы большого объёма на 4 пользователей, разработанная для клиник, больниц и профессиональных операторов.\n\nGeneva — крупногабаритная система корпоративного уровня, аналогичная больничному оборудованию, вместимостью от 6 до 12 пользователей." },
+              { q: "Какие модели HBOT City Tech доступны?", a: "Линейка продуктов HBOT City Tech разрабатывается для разных пользовательских ёмкостей и сфер применения.\n\nOslo — система для одного пользователя, разработанная для тех, кому необходимо применение в положении лёжа.\n\nDubai — компактная гипербарическая система для одного пользователя в положении сидя. Разработана как для индивидуального/домашнего использования, так и для бизнеса.\n\nTokyo — система с просторным внутренним пространством, рассчитанная на двух пользователей в одном сеансе.\n\nTokyo Plus — настраиваемая система повышенного давления на 2–4 человека для учреждений.\n\nMilano — гипербарическая система кубической формы большого объёма на 4 пользователей, разработанная для клиник, больниц и профессиональных операторов.\n\nGeneva — крупногабаритная система корпоративного уровня, аналогичная больничному оборудованию, вместимостью от 6 до 12 пользователей." },
               { q: "Кому подходит Dubai?", a: "Dubai разработана как для индивидуального/домашнего использования, так и для операторов, которым требуется однопользовательская конфигурация. Благодаря компактной конструкции она может рассматриваться для дома, клиник, спортивных центров, wellness-центров и отелей.\n\nТочные условия использования определяются классификацией продукта и законодательством страны установки." },
               { q: "На сколько человек рассчитана Tokyo?", a: "Tokyo рассчитана на двух пользователей в одном сеансе. Конструкция сидений, внутреннее оснащение и компоновка мест могут различаться в зависимости от заказанной конфигурации." },
               { q: "Какова вместимость многопользовательской модели HBOT City Tech?", a: "Многопользовательские модели HBOT City Tech начинаются с 4-местной Milano. Для больничной модели Geneva стандартная вместимость составляет 6 человек, с возможностью расширения до 12 человек (с шагом по 2 места).\n\nТочная вместимость определяется следующими факторами:", list: ["Размеры камеры", "Компоновка сидений", "Диапазон движения пользователей", "Мощность кислородной системы", "Протокол эксплуатации", "Местные требования безопасности и лицензирования"], aAfter: "Каждая опция добавляется в проект после оценки безопасности и технической пригодности." },
@@ -3212,9 +3215,9 @@ const TRANSLATIONS = {
           {
             title: "Медицинское применение и заявления о здоровье",
             items: [
-              { q: "При каких заболеваниях применяется гипербарическая система?", a: "Признанные медицинские показания для гипербарической оксигенации могут различаться в зависимости от страны, регулирующего органа, классификации устройства и клинического протокола.\n\nПрименения медицинского назначения должны осуществляться только с использованием соответствующим образом классифицированных устройств, в уполномоченных медицинских учреждениях, под наблюдением обученного медицинского персонала, с оценкой врача и по соответствующему протоколу.\n\nИнформация на нашем сайте не является персональной рекомендацией для диагностики или лечения какого-либо заболевания." },
+              { q: "При каких заболеваниях применяется гипербарическая система?", a: "Признанные медицинские показания для гипербарической оксигенации могут различаться в зависимости от страны, регулирующего органа, классификации устройства и клинического протокола.\n\nПрименения медицинского назначения должны осуществляться только с использованием соответствующим образом классифицированных устройств, в уполномоченных медицинских учреждениях, под наблюдением обученного медицинского персонала, с оценкой врача и по соответствующему протоколу.\n\nИнформация на нашем сайте не является персональной рекомендацией для диагностики или применения какого-либо заболевания." },
               { q: "Лечат ли устройства HBOT City Tech какие-либо заболевания?", a: "Назначение устройства и заявления о здоровье, которые могут быть сделаны в его отношении, зависят от официальной классификации продукта и имеющейся у него документации.\n\nЗаявления о системах HBOT City Tech делаются только в рамках назначения, указанного в технической документации и оценке соответствия. Гарантированный результат при каком-либо заболевании не предлагается." },
-              { q: "Являются ли низкобарические системы тем же самым, что и клиническая ГБО?", a: "Нет. Не каждое применение кислорода под давлением относится к одному и тому же техническому или клиническому классу. Следующие факторы могут изменять характер применения:", list: ["Рабочее давление", "Концентрация вдыхаемого кислорода", "Способ подачи кислорода", "Продолжительность сеанса", "Сертификация устройства", "Назначение использования", "Условия применения", "Наблюдение медицинского персонала"], aAfter: "Возможность определения системы как «медицинского устройства для гипербарической оксигенотерапии» зависит от законодательства соответствующего рынка и документированного назначения продукта." },
+              { q: "Являются ли низкобарические системы тем же самым, что и клиническая ГБО?", a: "Нет. Не каждое применение кислорода под давлением относится к одному и тому же техническому или клиническому классу. Следующие факторы могут изменять характер применения:", list: ["Рабочее давление", "Концентрация вдыхаемого кислорода", "Способ подачи кислорода", "Продолжительность сеанса", "Сертификация устройства", "Назначение использования", "Условия применения", "Наблюдение медицинского персонала"], aAfter: "Возможность определения системы как «медицинского устройства для гипербарического кислородного сеанса» зависит от законодательства соответствующего рынка и документированного назначения продукта." },
               { q: "Гарантируются ли результаты?", a: "Реакция пользователей может различаться от человека к человеку. Здоровье, восстановление, производительность или подобные результаты не могут быть гарантированы.\n\nРешения об использовании не должны основываться исключительно на общей рекламной информации или отзывах пользователей." }
             ]
           },
@@ -3291,14 +3294,14 @@ const TRANSLATIONS = {
       home: { title: "HBOT Chamber Tech | غرف الأكسجين عالي الضغط من سلسلة HBOT City Tech", desc: "غرف أكسجين عالي الضغط متصلة بإنترنت الأشياء ومدعومة بالذكاء الاصطناعي. تنفّس في القمة مع سلسلة HBOT City Tech." },
       technology: { title: "التقنية | HBOT Chamber Tech", desc: "CityConnect و CityOS و CityAI و CitySync و CityGuard — منصة التقنية الذكية والمتصلة لسلسلة HBOT City Tech." },
       models: { title: "الموديلات | HBOT Chamber Tech", desc: "Oslo و Dubai و Tokyo و Tokyo Plus و Milano و Geneva — ستة موديلات لغرف الأكسجين عالي الضغط." },
-      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لشخص واحد مصممة للعلاج في وضعية الاستلقاء." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لشخص واحد مصممة للجلسة في وضعية الاستلقاء." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "غرفة مدمجة وكاملة التجهيز للاستخدام الفردي." },
-      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "غرفة علاج مشترك بالأكسجين عالي الضغط لشخصين." },
+      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "غرفة جلسة مشترك بالأكسجين عالي الضغط لشخصين." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لـ 2-4 أشخاص للاستخدام المؤسسي." },
       quadCube: { title: "Milano | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط لأربعة أشخاص بتصميم مكعّب واسع الداخل." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "غرفة أكسجين عالي الضغط بمستوى المستشفيات وسعة كبيرة لستة أشخاص أو أكثر." },
-      hbotInfo: { title: "ما هو العلاج بالأكسجين عالي الضغط؟ | HBOT Chamber Tech", desc: "ما هو العلاج بالأكسجين عالي الضغط (HBOT)، ولماذا يُستخدم، وفي أي الحالات يُطبّق." },
-      blog: { title: "المدونة | HBOT Chamber Tech", desc: "أحدث الأبحاث والأخبار والتطورات في مجال العلاج بالأكسجين عالي الضغط." },
+      hbotInfo: { title: "ما هي جلسة الأكسجين عالي الضغط؟ | HBOT Chamber Tech", desc: "ما هي جلسة الأكسجين عالي الضغط (HBOT)، ولماذا يُستخدم، وفي أي الحالات يُطبّق." },
+      blog: { title: "المدونة | HBOT Chamber Tech", desc: "أحدث الأبحاث والأخبار والتطورات في مجال جلسة الأكسجين عالي الضغط." },
       configurator: {
         title: "أداة التكوين | HBOT Chamber Tech", desc: "صمّم غرفة HBOT City Tech الخاصة بك: اختر الموديل ومستوى الضغط والإضافات للحصول على تقدير فوري للسعر." },
       contact: { title: "اتصل بنا | HBOT Chamber Tech", desc: "تواصل مع HBOT Chamber Tech: العنوان والهاتف والبريد الإلكتروني ونموذج التواصل." },
@@ -3330,7 +3333,8 @@ const TRANSLATIONS = {
         rights: "جميع الحقوق محفوظة.",
         privacy: "سياسة الخصوصية",
         terms: "شروط الاستخدام",
-        wellness_disclaimer: "غرف سلسلة Wellness ليست أجهزة طبية ولا تُستخدم لتشخيص أي مرض أو علاجه أو الوقاية منه. أما التطبيقات السريرية فتُقدَّم في منشآت صحية مرخّصة تحت إشراف طبي.",
+        whatsapp: "واتساب",
+        wellness_disclaimer: "غرف سلسلة Wellness ليست أجهزة طبية ولا تُستخدم لتشخيص أي مرض أو استخدامه أو الوقاية منه. أما التطبيقات السريرية فتُقدَّم في منشآت صحية مرخّصة تحت إشراف طبي.",
         membership_note: "عضو في Almita Group."
       },
       cta_banner: {
@@ -3397,18 +3401,18 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "من يستخدمها؟",
         title: "نخبة العالم يختارون الأكسجين عالي الضغط",
-        subtitle: "الأسماء التي ورد في الصحافة أنها تستخدم العلاج بالأكسجين عالي الضغط من أجل التعافي والأداء وطول العمر تعكس الثقة بهذه التقنية. تطوّر HBOT Chamber Tech التقنية ذاتها بأعلى معايير الهندسة.",
+        subtitle: "الأسماء التي ورد في الصحافة أنها تستخدم جلسة الأكسجين عالي الضغط من أجل التعافي والأداء وطول العمر تعكس الثقة بهذه التقنية. تطوّر HBOT Chamber Tech التقنية ذاتها بأعلى معايير الهندسة.",
         source_label: "المصدر",
-        disclaimer: "الأسماء المذكورة هنا ورد في مصادر إخبارية أنها تستخدم العلاج بالأكسجين عالي الضغط؛ وليسوا سفراء للعلامة التجارية أو عملاء HBOT Chamber Tech.",
+        disclaimer: "الأسماء المذكورة هنا ورد في مصادر إخبارية أنها تستخدم جلسة الأكسجين عالي الضغط؛ وليسوا سفراء للعلامة التجارية أو عملاء HBOT Chamber Tech.",
         items: [
-          { name: "Cristiano Ronaldo", role: "لاعب كرة قدم", text: "ورد في التقارير أنه يجري جلسات العلاج بالأكسجين عالي الضغط في منزله بجهازه الخاص لعلاج إصابة عضلية.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "Cristiano Ronaldo", role: "لاعب كرة قدم", text: "ورد في التقارير أنه يجري جلسات جلسة الأكسجين عالي الضغط في منزله بجهازه الخاص لجلسة إصابة عضلية.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
           { name: "LeBron James", role: "لاعب كرة سلة", text: "ظهر وهو يجري جلسة مدتها 60-90 دقيقة في مسلسل Netflix «Starting 5».", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
-          { name: "Novak Djokovic", role: "لاعب تنس", text: "ذكرت وسائل الإعلام الرياضية أنه يستخدم العلاج بالأكسجين عالي الضغط للبقاء في القمة.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
+          { name: "Novak Djokovic", role: "لاعب تنس", text: "يضيف بعض الرياضيين في التنس والسباحة وكرة السلة والغولف جلسة أكسجين عالي الضغط إلى روتين الاستشفاء. هذا وصف لاختيار، وليس وعداً بنتيجة بشأن ألم العضلات أو التعب أو زمن العودة إلى التدريب.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
           { name: "Justin Bieber", role: "مغنٍّ", text: "أفيد بأنه ينام في غرفة الضغط العالي كجزء من نظامه الصحي.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
-          { name: "Tiger Woods", role: "لاعب غولف", text: "أفيد بأنه يستخدم العلاج بالأكسجين عالي الضغط منذ عام 2010 ويحتفظ بغرفة في منزله.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
+          { name: "Tiger Woods", role: "لاعب غولف", text: "أفيد بأنه يستخدم جلسة الأكسجين عالي الضغط منذ عام 2010 ويحتفظ بغرفة في منزله.", source: "https://x.com/TigerWoods/status/1907051252585746470" },
           { name: "Michael Phelps", role: "سباح", text: "أسطورة الأولمبياد الذي ورد أنه ينام في غرفة الضغط العالي.", source: "https://www.espn.com/olympics/swimming/story/_/id/7556022/michael-phelps-using-hyperbaric-chamber-aid-recovery" },
           { name: "Kendall Jenner", role: "عارضة أزياء", text: "ذكرت Vogue أنها تحتفظ بغرفة ضغط عالٍ في غرفة العافية الخاصة بها.", source: "https://www.vogue.com/article/what-kendall-jenner-keeps-in-her-wellness-room" },
-          { name: "Tom Brady", role: "لاعب NFL", text: "ذكرت وسائل الإعلام الرياضية أنه يستخدم العلاج بالأكسجين عالي الضغط ضمن برنامج تعافيه.", source: "https://thesportsrush.com/nfl-news-troy-aikman-and-tom-brady-use-the-same-scientific-practice-for-their-recovery-enhancement/" }
+          { name: "Tom Brady", role: "لاعب NFL", text: "تناقش أوراق الطب الرياضي هذا الاستخدام، وتذكر أيضاً الحاجة إلى دراسات مضبوطة أوسع. التجربة الشخصية تختلف. لا تُضمن هنا أي نتيجة.", source: "https://thesportsrush.com/nfl-news-troy-aikman-and-tom-brady-use-the-same-scientific-practice-for-their-recovery-enhancement/" }
         ]
       },
       series: {
@@ -3424,8 +3428,8 @@ const TRANSLATIONS = {
       },
       indications_teaser: {
         eyebrow: "مجالات الاستخدام",
-        title: "متى يُستخدم العلاج بالأكسجين عالي الضغط؟",
-        text: "يمكن استخدامه كعلاج مساند في عدد من الحالات الطبية — من التئام الجروح إلى فقدان السمع المفاجئ، ومن داء الانخفاض إلى التسمم بأول أكسيد الكربون — بناءً على تقييم الطبيب.",
+        title: "متى يُستخدم جلسة الأكسجين عالي الضغط؟",
+        text: "تناقش الأوراق السريرية عن فقدان السمع المفاجئ أيضاً ضغط الأكسجين في الأذن الداخلية. هذه الصفحة تلخّص ذلك النقاش فحسب. قرارات التوقيت والكورتيكوستيرويد والمسار المتوقع تعود إلى مختص مرخّص. لا يوجد هنا وعد بنتيجة.",
         cta: "عرض جميع مجالات الاستخدام"
       },
       targetMarkets: {
@@ -3506,7 +3510,7 @@ const TRANSLATIONS = {
         },
         ai: {
           title: "CityAI™",
-          subtitle: "تحسين العلاج المدعوم بالذكاء الاصطناعي",
+          subtitle: "تحسين الجلسة المدعوم بالذكاء الاصطناعي",
           desc: "يحلل البيانات التشغيلية لدعم المشغل المعتمد بالرؤية والتقارير، ولا يحل محل الحكم السريري أو المشغل.",
           features: [
             "عرض البيانات التشغيلية وتلخيصها",
@@ -3599,8 +3603,8 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo", tagline: "شخص واحد · وضعية الاستلقاء", desc: "غرفة كاملة التجهيز طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء." },
-      solo: { title: "Dubai", tagline: "شخص واحد · وضعية الجلوس", desc: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للعلاج الفردي بالأكسجين عالي الضغط." },
+      soloLounge: { title: "Oslo", tagline: "شخص واحد · وضعية الاستلقاء", desc: "غرفة كاملة التجهيز طُوّرت خصيصاً للمستخدمين الذين يحتاجون للجلسة في وضعية الاستلقاء." },
+      solo: { title: "Dubai", tagline: "شخص واحد · وضعية الجلوس", desc: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للجلسة الفردي بالأكسجين عالي الضغط." },
       duo: { title: "Tokyo", tagline: "شخصان · وضعية الجلوس", desc: "غرفة بمقعدين ونافذة بانورامية — للأزواج أو الشركاء أو استخدام المريض مع مرافق." },
       duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "غرفة متعددة المستخدمين قابلة للتهيئة للعيادات والمستشفيات والمنشآت المهنية." },
       quadCube: { title: "Milano", tagline: "4 أشخاص · مقصورة واسعة", desc: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب — جلد مبطّن وإضاءة LED محيطية." },
@@ -3619,7 +3623,7 @@ const TRANSLATIONS = {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       faq_title: "أسئلة شائعة حول أوسلو",
       tagline: "التميّز في وضعية الاستلقاء. استلقِ، استرخِ، تعافَ.",
-      overview_text: "طُوّرت خصيصاً للمستخدمين الذين يحتاجون للعلاج في وضعية الاستلقاء. يوفر سريرها الطبي التقويمي وهيكلها من الألومنيوم بمعايير الطيران أقصى درجات الراحة خلال الجلسات الطويلة.",
+      overview_text: "طُوّرت خصيصاً للمستخدمين الذين يحتاجون للجلسة في وضعية الاستلقاء. يوفر سريرها الطبي التقويمي وهيكلها من الألومنيوم بمعايير الطيران أقصى درجات الراحة خلال الجلسات الطويلة.",
       specs: [
         { label: "السعة", value: "شخص واحد (وضعية الاستلقاء)" },
         { label: "نطاق الضغط", value: "1.3 – 1.5 ATA" },
@@ -3634,7 +3638,7 @@ const TRANSLATIONS = {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
       faq_title: "أسئلة شائعة حول دبي",
       tagline: "قمة صحتك الشخصية. أنت والأكسجين فقط.",
-      overview_text: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للعلاج الفردي بالأكسجين عالي الضغط. بفضل التحكم بشاشة اللمس، فهي مثالية للاستخدام المنزلي أو في العيادة.",
+      overview_text: "غرفة مدمجة وأنيقة وكاملة التجهيز مصممة للجلسة الفردي بالأكسجين عالي الضغط. بفضل التحكم بشاشة اللمس، فهي مثالية للاستخدام المنزلي أو في العيادة.",
       specs: [
         { label: "السعة", value: "شخص واحد (جلوس)" },
         { label: "نطاق الضغط", value: "1.3 – 1.5 ATA" },
@@ -3648,8 +3652,8 @@ const TRANSLATIONS = {
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       faq_title: "أسئلة شائعة حول طوكيو",
-      tagline: "تعافيا معاً. تجربة علاج مشتركة لشخصين.",
-      overview_text: "غرفة أكسجين عالي الضغط بمقعدين توفر جلسات علاج مشتركة. مصممة للأزواج أو الشركاء أو استخدام المريض مع مرافق.",
+      tagline: "تعافيا معاً. تجربة جلسة مشتركة لشخصين.",
+      overview_text: "غرفة أكسجين عالي الضغط بمقعدين توفر جلسات جلسة مشتركة. مصممة للأزواج أو الشركاء أو استخدام المريض مع مرافق.",
       institutionalNote: "تبحث عن إعداد مؤسسي لـ 2–4 أشخاص؟ <a href=\"model-tokyo-plus.html\">اطّلع على Tokyo Plus →</a>",
       specs: [
         { label: "السعة", value: "شخصان (جلوس)" },
@@ -3663,7 +3667,7 @@ const TRANSLATIONS = {
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
       faq_title: "أسئلة شائعة حول طوكيو بلس",
-      tagline: "سعة علاجية متعددة الأشخاص وقابلة للتوسع للاستخدام المؤسسي.",
+      tagline: "سعة تطبيقية متعددة الأشخاص وقابلة للتوسع للاستخدام المؤسسي.",
       overview_text: "النسخة المؤسسية عالية الضغط ومتعددة الأشخاص من Tokyo. صُمِّمت للعيادات والمستشفيات ومراكز العافية بسعة مقاعد متدرجة من 2 إلى 4 أشخاص.",
       specs: [
         { label: "السعة", value: "2–4 أشخاص (متدرجة)" },
@@ -3678,7 +3682,7 @@ const TRANSLATIONS = {
       breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
       faq_title: "أسئلة شائعة حول ميلانو",
       tagline: "تجربة فاخرة لأربعة أشخاص في تصميم مكعّب واسع.",
-      overview_text: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب. مع تنجيد جلدي مبطّن وإضاءة LED محيطية ووحدة تحكم مستقلة، تقدّم علاجاً مريحاً متعدد الأشخاص للعيادات ومراكز العافية.",
+      overview_text: "مقصورة فاخرة لأربعة أشخاص بداخلية واسعة بتصميم مكعّب. مع تنجيد جلدي مبطّن وإضاءة LED محيطية ووحدة تحكم مستقلة، تقدّم جلسة مريحاً متعدد الأشخاص للعيادات ومراكز العافية.",
       specs: [
         { label: "السعة", value: "4 أشخاص (جلوس)" },
         { label: "نطاق الضغط", value: "2.0 – 6.0 ATA" },
@@ -3692,7 +3696,7 @@ const TRANSLATIONS = {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
       faq_title: "أسئلة شائعة حول جنيف",
       tagline: "حل بمستوى المستشفيات وسعة كبيرة.",
-      overview_text: "غرفة بمستوى المستشفيات وسعة كبيرة للمؤسسات الطبية. يلبي تصميمها المعياري وأنظمة المراقبة المتقدمة احتياجات أكثر مراكز العلاج ازدحاماً.",
+      overview_text: "غرفة بمستوى المستشفيات وسعة كبيرة للمؤسسات الطبية. يلبي تصميمها المعياري وأنظمة المراقبة المتقدمة احتياجات أكثر مراكز الجلسة ازدحاماً.",
       specs: [
         { label: "السعة", value: "6+ أشخاص (جلوس)" },
         { label: "نطاق الضغط", value: "3.0 – 6.0 ATA" },
@@ -3703,17 +3707,17 @@ const TRANSLATIONS = {
       ]
     },
     hbotInfo: {
-      header: { eyebrow: "مركز المعلومات", title: "ما هو العلاج بالأكسجين عالي الضغط؟", subtitle: "ما تحتاج إلى معرفته عن العلاج بالأكسجين عالي الضغط." },
-      whatIsHboc: { title: "ما هي غرفة الأكسجين عالي الضغط (HBOC)؟", text: "غرف الأكسجين عالي الضغط هي كبائن مضغوطة مصممة خصيصاً تتيح للأفراد استنشاق أكسجين عالي التركيز بضغط أعلى من الضغط الجوي الطبيعي. تُستخدم هذه الغرف للعلاج بالأكسجين عالي الضغط (HBOT)، وهو علاج معترف به طبياً يسرّع الشفاء ويعزز الصحة العامة." },
-      whyNeeded: { title: "لماذا تُستخدم غرفة HBOC؟", text: "توفر غرف HBOC بيئة مضغوطة ومتحكم بها يستنشق فيها المستخدمون أكسجيناً بتركيز 93–95%، مما يتيح تعافياً أسرع وتجدداً خلوياً محسّناً. تخدم هذه الغرف المرافق الطبية ومراكز العافية والعيادات الرياضية والمستخدمين الأفراد حول العالم." },
+      header: { eyebrow: "مركز المعلومات", title: "ما هي جلسة الأكسجين عالي الضغط؟", subtitle: "ما تحتاج إلى معرفته عن جلسة الأكسجين عالي الضغط." },
+      whatIsHboc: { title: "ما هي غرفة الأكسجين عالي الضغط (HBOC)؟", text: "غرف الأكسجين عالي الضغط هي كبائن مضغوطة مصممة خصيصاً تتيح للأفراد استنشاق أكسجين عالي التركيز بضغط أعلى من الضغط الجوي الطبيعي. تُستخدم هذه الغرف لجلسة الأكسجين عالي الضغط (HBOT). سلسلة العافية لا تُقدَّم كجهاز طبي، ولا يُوعد بأي نتيجة." },
+      whyNeeded: { title: "لماذا تُستخدم غرفة HBOC؟", text: "توفر غرف HBOC بيئة مضغوطة ومتحكم بها يستنشق فيها المستخدمون أكسجيناً بتركيز 93–95%، سلسلة العافية لا تُقدَّم كجهاز طبي، ولا يُوعد بأي نتيجة. تخدم هذه الغرف المرافق الطبية ومراكز العافية والعيادات الرياضية والمستخدمين الأفراد حول العالم." },
       whatIsHbot: {
-        title: "ما هو العلاج بالأكسجين عالي الضغط (HBOT)؟",
-        text1: "HBOT هو علاج طبي يستنشق فيه المرضى الأكسجين النقي داخل غرفة مضغوطة بمستويات أعلى من الضغط الجوي الطبيعي. تسرّع هذه العملية التئام الجروح وتقلل الالتهاب وتعزز تجدد الأنسجة.",
-        text2: "يتنفس المرضى داخل هذه الغرف، مما يساعد الرئتين على جمع الأكسجين وامتصاصه بكفاءة أكبر. يُستخدم HBOT أيضاً في علاج فقدان السمع والبصر المفاجئ، والتهابات العظام، وقرح القدم السكرية. وحسب نوع العلاج، يمكن للمرضى الجلوس أو الاستلقاء أثناء الإجراء."
+        title: "ما هي جلسة الأكسجين عالي الضغط (HBOT)؟",
+        text1: "في الأدبيات السريرية تُوصف HBOT بأنها جلسة يتنفس فيها الشخص الأكسجين داخل غرفة بضغط أعلى من الضغط الجوي المعتاد. تلخّص هذه الصفحة ذلك الوصف. غرف سلسلة العافية لا تُقدَّم كأجهزة طبية، ولا يُوعد بأي نتيجة.",
+        text2: "يتنفس الشخص داخل الغرفة. تناقش المنشورات السريرية أيضاً جلسة الأكسجين عالي الضغط إلى جانب بعض الاستخدامات في المستشفى؛ وهذا ليس ادعاءً للمنتج. وبحسب شكل الجلسة يمكن الجلوس أو الاستلقاء."
       },
       indications: {
-        title: "في أي الحالات يُستخدم العلاج بالأكسجين عالي الضغط؟",
-        subtitle: "القائمة أدناه تلخّص لأغراض المعلومات فقط الاستخدامات المعتمدة سريريًا للعلاج بالأكسجين عالي الضغط، وهي تُقدَّم في منشآت صحية مرخّصة تحت تقييم الطبيب وإشرافه. ولا تُقدَّم أي ادعاءات علاجية بشأن منتجات HBOT Chamber Tech.",
+        title: "في أي الحالات يُستخدم جلسة الأكسجين عالي الضغط؟",
+        subtitle: "القائمة أدناه تلخّص لأغراض المعلومات فقط الاستخدامات المعتمدة سريريًا لجلسة الأكسجين عالي الضغط، وهي تُقدَّم في منشآت صحية مرخّصة تحت تقييم الطبيب وإشرافه. ولا تُقدَّم أي ادعاءات طبية بشأن منتجات HBOT Chamber Tech.",
         items: [
           { icon: "wound", label: "التئام الجروح (السكرية وغير السكرية)" },
           { icon: "eye", label: "فقدان البصر المفاجئ" },
@@ -3729,7 +3733,7 @@ const TRANSLATIONS = {
           { icon: "smoke", label: "التسمم الحاد بالدخان" }
         ]
       },
-      disclaimer: "هذه المعلومات لأغراض التوعية العامة فقط ولا تُغني عن الاستشارة الطبية. يجب أن يقيّم أخصائي رعاية صحية دائماً قرارات العلاج."
+      disclaimer: "هذه المعلومات لأغراض التوعية العامة فقط ولا تُغني عن الاستشارة الطبية. يجب أن يقيّم أخصائي رعاية صحية دائماً قرارات الاستخدام."
     },
     arView: {
       back: "← العودة إلى أداة التكوين",
@@ -3778,7 +3782,7 @@ const TRANSLATIONS = {
       ],
       "nexus": [
         { q: "كم شخصًا تتسع له جنيف (Geneva)؟", a: "جنيف غرفة كبيرة السعة بمعايير المستشفيات، تبدأ من 6 أشخاص وتتدرج بسعة 6/8/10/12." },
-        { q: "لأي منشآت تناسب جنيف؟", a: "صُممت للمستشفيات والمراكز الصحية الكبيرة ذات الحجم العلاجي المرتفع؛ وبنيتها المعيارية جاهزة للتوسع المستقبلي." },
+        { q: "لأي منشآت تناسب جنيف؟", a: "صُممت للمستشفيات والمراكز الصحية الكبيرة ذات الحجم التطبيقي المرتفع؛ وبنيتها المعيارية جاهزة للتوسع المستقبلي." },
         { q: "ما نطاق الضغط الذي تعمل به جنيف؟", a: "تعمل ضمن نطاق 3.0–6.0 ATA، بنقاء أكسجين 93–95%." },
         { q: "ما تجهيزات السلامة في جنيف؟", a: "يأتي نظام صمام الطوارئ كمعيار قياسي؛ وبنيتها بمعايير المستشفيات مصممة هندسيًا للاستخدام المستمر والمكثف." },
         { q: "كيف أحصل على عرض سعر لجنيف؟", a: "تواصل معنا وحدد احتياجك من السعة (6/8/10/12 شخصًا)، وسنُعد لك مخططًا فنيًا وعرض سعر مخصصًا لمنشأتك." }
@@ -3830,7 +3834,7 @@ const TRANSLATIONS = {
         select_button: "اختر هذا",
         close: "إغلاق",
         items: [
-          { scenario: "في المنزل، بمفردي، أريد العلاج في وضعية الاستلقاء", model: "Oslo", modelId: "solo-lounge", usage: "home" },
+          { scenario: "في المنزل، بمفردي، أريد الجلسة في وضعية الاستلقاء", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "في المنزل، بمفردي، أريد الجلوس أثناء الجلسات", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "سأستخدمها مع شريكي، في المنزل", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "عيادة أو مركز عافية، استخدام مؤسسي لـ 2-4 أشخاص", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -3970,11 +3974,11 @@ const TRANSLATIONS = {
       }
     },
     blog: {
-      header: { eyebrow: "المدونة", title: "الأبحاث والأخبار", subtitle: "أحدث التطورات العلمية والأخبار في مجال العلاج بالأكسجين عالي الضغط." },
+      header: { eyebrow: "المدونة", title: "الأبحاث والأخبار", subtitle: "أحدث التطورات العلمية والأخبار في مجال جلسة الأكسجين عالي الضغط." },
       source_label: "المصدر:",
       min_read: "دقائق قراءة",
       read_more: "اقرأ المقال كاملًا",
-      disclaimer: "هذه المقالات عبارة عن ملخصات مُجمَّعة من منشورات علمية ومصادر إخبارية متاحة للعموم؛ ولا تُعد بمثابة استشارة طبية. يُرجى دائماً استشارة أخصائي رعاية صحية لاتخاذ قرارات العلاج.",
+      disclaimer: "هذه المقالات عبارة عن ملخصات مُجمَّعة من منشورات علمية ومصادر إخبارية متاحة للعموم؛ ولا تُعد بمثابة استشارة طبية. يُرجى دائماً استشارة أخصائي رعاية صحية لاتخاذ قرارات الاستخدام.",
       posts: [
         {
           slug: "hbot-kurucu-notu.html",
@@ -3984,7 +3988,7 @@ const TRANSLATIONS = {
           title: "لماذا أستخدم الأكسجين عالي الضغط بنفسي",
           paragraphs: [
             "تحت مظلة Almita Group ندير ستة قطاعات مختلفة في آن واحد، وجدول زمني مكثف مع سفر مستمر أمر لا مفر منه. قبل أن نبدأ في تصنيع كبائن HBOT Chamber Tech، اخترت استخدام كبائننا بانتظام — أؤمن بأنه يجب تجربة المنتج بنفسك قبل أن تقف وراءه.",
-            "يمكنني القول إنني أشعر عادة بمزيد من النشاط والتركيز بعد الجلسات؛ هذه ملاحظة شخصية وليست وعدًا بنفس النتيجة للجميع. العلاج بالأكسجين عالي الضغط ليس بديلاً عن العلاج الطبي؛ استشر دائمًا أخصائي رعاية صحية بشأن استخدامك الخاص."
+            "يمكنني القول إنني أشعر عادة بمزيد من النشاط والتركيز بعد الجلسات؛ هذه ملاحظة شخصية وليست وعدًا بنفس النتيجة للجميع. جلسة الأكسجين عالي الضغط ليس بديلاً عن الرعاية الطبية؛ استشر دائمًا أخصائي رعاية صحية بشأن استخدامك الخاص."
           ],
           source_name: "Almita Group — كلمة المؤسس",
           source_url: "https://almitagroup.com",
@@ -3995,12 +3999,12 @@ const TRANSLATIONS = {
           date: "2024",
           tag: "طول العمر",
           icon: "antiaging",
-          title: "العلاج بالأكسجين عالي الضغط وطول العمر: اتجاه الشيخوخة الصحية المتنامي",
+          title: "جلسة الأكسجين عالي الضغط وطول العمر: اتجاه الشيخوخة الصحية المتنامي",
           paragraphs: [
-            "عزّزت حركة طول العمر — التي انتشرت على يد روّاد التكنولوجيا مثل براين جونسون وبروتوكولاتهم الشخصية لـ«عكس الشيخوخة» — الاهتمامَ بالعلاج بالأكسجين عالي الضغط أيضاً. ومن المراكز العلمية لهذا الاهتمام دراسة سريرية نُشرت عام 2020 في مجلة Aging شارك فيها 35 بالغاً سليماً فوق سن 64 عاماً في برنامج من 60 جلسة.",
+            "عزّزت حركة طول العمر — التي انتشرت على يد روّاد التكنولوجيا مثل براين جونسون وبروتوكولاتهم الشخصية لـ«عكس الشيخوخة» — الاهتمامَ بجلسة الأكسجين عالي الضغط أيضاً. ومن المراكز العلمية لهذا الاهتمام دراسة سريرية نُشرت عام 2020 في مجلة Aging شارك فيها 35 بالغاً سليماً فوق سن 64 عاماً في برنامج من 60 جلسة.",
             "أظهرت الدراسة زيادة في طول التيلوميرات في الخلايا المناعية بأكثر من 20% — تصل إلى 37% في الخلايا البائية — مع انخفاض يصل إلى 37% في نسبة الخلايا المناعية الهرمة. وبما أن الدراسة افتقرت إلى مجموعة ضابطة وكان حجم العينة محدوداً، تُعد النتائج «واعدة لكنها أولية»؛ ويؤكد الباحثون الحاجة إلى دراسات أوسع لتحديد البروتوكولات المثلى."
           ],
-          source_name: "PMC – العلاج بالأكسجين عالي الضغط يزيد طول التيلوميرات ويقلل شيخوخة المناعة (Aging, 2020)",
+          source_name: "PMC – جلسة الأكسجين عالي الضغط يزيد طول التيلوميرات ويقلل شيخوخة المناعة (Aging, 2020)",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7746357/"
         },
         {
@@ -4010,10 +4014,10 @@ const TRANSLATIONS = {
           icon: "healthSync",
           title: "لماذا يستخدم كبار الرياضيين الأكسجين عالي الضغط؟",
           paragraphs: [
-            "ذُكر رياضيون مشهورون عالمياً مثل كريستيانو رونالدو وليبرون جيمس ونوفاك دجوكوفيتش وفلويد مايويذر في تقارير صحفية لاستخدامهم الغرف الضاغطة ضمن روتين التعافي. وخلف هذا الاهتمام تقف نتائج في الطب الرياضي تشير إلى أن العلاج بالأكسجين عالي الضغط قد يقلل الوذمة والالتهاب ويدعم إصلاح الأنسجة ويساعد الرياضيين على العودة إلى التدريب أسرع.",
+            "تناقش أوراق الطب الرياضي هذا الاستخدام، وتذكر أيضاً الحاجة إلى دراسات مضبوطة أوسع. التجربة الشخصية تختلف. لا تُضمن هنا أي نتيجة.",
             "من الدراسات المشار إليها في المراجعات: ملاحظة من أولمبياد ناغانو الشتوي حيث تعافى 7 رياضيين أسرع بجلسات قصيرة عند 1.3 ATA، وتقرير سريري مبكر عن انخفاض بنسبة 55% في الأيام الضائعة بسبب الإصابات لدى لاعبي كرة قدم محترفين، ودراسة جامعية تشير إلى عودة أسرع بنحو 30% بعد التواءات الكاحل. ويلفت المؤلفون إلى أن الأدلة تعتمد غالباً على عينات صغيرة وأن التجارب العشوائية المحكمة ضرورية لاستخلاص نتائج قاطعة."
           ],
-          source_name: "PMC – دور العلاج بالأكسجين عالي الضغط في الطب الرياضي (مراجعة)",
+          source_name: "PMC – دور جلسة الأكسجين عالي الضغط في الطب الرياضي (مراجعة)",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
@@ -4026,7 +4030,7 @@ const TRANSLATIONS = {
             "السؤال الأول عند اختيار غرفة ضغط عالٍ للاستخدام المنزلي أو الخاص هو السعة: فالغرف الأحادية (monoplace) توفر حجماً مدمجاً، بينما تتيح الغرف المتعددة (multiplace) جلسات لأفراد العائلة أو المجموعات الصغيرة في الوقت نفسه وتسهّل الاستخدام بوجود مرافق. وتشترط الجمعية الدولية للطب تحت المائي وفائق الضغط (UHMS) أن تكون الغرف الضاغطة معدات معتمدة تخضع لفحوص دورية، وأن يكون المشغّلون مدربين تدريباً خاصاً.",
             "مستوى الضغط هو المحور الثاني: تُطبَّق البروتوكولات السريرية عادةً في نطاق 2.0–2.4 ATA، بينما يشيع نطاق 1.3–2.0 ATA في الأنظمة المنزلية؛ راجعوا المستوى المناسب لهدفكم مع مختص صحي. أما المحور الثالث فهو السلامة والراحة: قواعد الوقاية من الحرائق في بيئة الأكسجين، والتخفيف الطارئ للضغط، ومستوى الضجيج، والإضاءة الداخلية، ونظام الاتصال — كلها تؤثر مباشرة في التجربة اليومية؛ وأكّدوا شروط الصيانة والضمان خطياً قبل الشراء."
           ],
-          source_name: "StatPearls (NCBI) – العلاج بالأكسجين عالي الضغط",
+          source_name: "StatPearls (NCBI) – جلسة الأكسجين عالي الضغط",
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
@@ -4034,12 +4038,12 @@ const TRANSLATIONS = {
           date: "2025",
           tag: "بحث",
           icon: "wound",
-          title: "دور الأكسجين عالي الضغط في علاج الجروح المزمنة يتعزز",
+          title: "دور الأكسجين عالي الضغط في جلسة الجروح المزمنة يتعزز",
           paragraphs: [
-            "تُظهر المراجعات الحديثة في مجال الجراحة ورعاية الجروح المزمنة أن العلاج بالأكسجين عالي الضغط (HBOT) يدعم عملية الشفاء من خلال زيادة أكسجة الأنسجة. ويُشار إلى أنه في حالات جروح القدم السكرية والقرح الوريدية في الساق والحروق وتلف الأنسجة الناتج عن الإشعاع، يُحسّن العلاج بالأكسجين عالي الضغط معدلات التئام الجروح ويقلل من خطر العدوى.",
-            "أظهرت دراسة نُشرت عام 2025 أن العلاج بالأكسجين عالي الضغط إلى جانب العلاج بالضغط السلبي للجروح (NPWT) يزيد بشكل ملحوظ من سرعة الشفاء مقارنةً بـ NPWT وحده. وفي الجراحة الترميمية، يُذكر أن العلاج بالأكسجين عالي الضغط يدعم بقاء الأنسجة والطعوم ويحفّز تكوّن أوعية دموية جديدة."
+            "تُظهر المراجعات الحديثة في مجال الجراحة ورعاية الجروح المزمنة أن جلسة الأكسجين عالي الضغط (HBOT) يدعم عملية الشفاء من خلال زيادة أكسجة الأنسجة. ويُشار إلى أنه في حالات جروح القدم السكرية والقرح الوريدية في الساق والحروق وتلف الأنسجة الناتج عن الإشعاع، يُحسّن جلسة الأكسجين عالي الضغط معدلات التئام الجروح ويقلل من خطر العدوى.",
+            "تذكر أوراق الجراحة والجروح المزمنة جلسات الأكسجين عالي الضغط إلى جانب النقاش حول أكسجة الأنسجة. هذه الصفحة إشارة قصيرة إلى تلك الأدبيات. لا تعد HBOT Chamber Tech بأي نتيجة عن انغلاق الجرح أو خطر العدوى."
           ],
-          source_name: "PMC – Hyperbaric Oxygen Therapy in Surgical Wound Healing and Tissue Salvage",
+          source_name: "PMC – Hyperbaric Oxygen Sessions in Surgical Wound Recovery and Tissue Salvage",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
@@ -4049,8 +4053,8 @@ const TRANSLATIONS = {
           icon: "burn",
           title: "لماذا يتجه الرياضيون إلى الغرف عالية الضغط؟",
           paragraphs: [
-            "يختار كثير من الرياضيين النخبة في التنس والسباحة وكرة السلة والغولف العلاج بالأكسجين عالي الضغط كجزء من روتين التعافي. وتُظهر الأبحاث في مجال الطب الرياضي أن هذا العلاج قد يُسرّع الشفاء ويقلل الالتهاب ويساعد الرياضيين على العودة إلى التدريب في وقت أقصر.",
-            "أفادت بعض الدراسات بانخفاض مستويات ألم العضلات والإرهاق لدى الرياضيين الذين خضعوا لهذا العلاج، مع تقصير أوقات التعافي بنسبة تصل إلى نحو 30%. ورغم أن المجال لا يزال بحاجة إلى دراسات سريرية أكبر وأكثر ضبطاً، فإن النتائج مُبشّرة لصحة الرياضيين."
+            "تناقش أوراق الطب الرياضي هذا الاستخدام، وتذكر أيضاً الحاجة إلى دراسات مضبوطة أوسع. التجربة الشخصية تختلف. لا تُضمن هنا أي نتيجة.",
+            "تناقش أوراق الطب الرياضي هذا الاستخدام، وتذكر أيضاً الحاجة إلى دراسات مضبوطة أوسع. التجربة الشخصية تختلف. لا تُضمن هنا أي نتيجة."
           ],
           source_name: "Turkish Journal of Sports Medicine",
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
@@ -4062,8 +4066,8 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "تحليل تلوي لقرح القدم السكرية: انخفاض خطر البتر",
           paragraphs: [
-            "أظهر تحليل تلوي لـ 14 دراسة شملت 768 مشاركاً أن العلاج بالأكسجين عالي الضغط يوفر فائدة ذات دلالة إحصائية في الشفاء التام لقرح القدم السكرية وفي تقليل خطر البتر الكبير.",
-            "توصلت مراجعة منهجية حديثة نُشرت عام 2024 إلى نتائج مماثلة: لوحظ في غالبية الدراسات المُستعرَضة انخفاض في معدلات البتر الكبير وزيادة في معدلات التئام الجروح وتقلّص في حجم القرحة وعمقها مع العلاج بالأكسجين عالي الضغط."
+            "تناقش الأوراق المنشورة جلسات الأكسجين عالي الضغط إلى جانب الرعاية السريرية لقرح القدم السكرية. هذه الملاحظة تشير إلى تلك الأدبيات فحسب. ليست وعداً بانغلاق القرحة أو بتغيّر خطر البتر، ولا تغني الغرفة عن الرعاية الطبية.",
+            "تقع مراجعة عام 2024 في النقاش نفسه. الأرقام الواردة في الأدبيات تتغير بحسب المكان والإشراف وبقية خطة الرعاية. لا تعرض HBOT Chamber Tech أي حالة على أنها أمر تزيله غرفها."
           ],
           source_name: "PMC – Efficacy of HBOT for Diabetic Foot Ulcer",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
@@ -4075,7 +4079,7 @@ const TRANSLATIONS = {
           icon: "ear",
           title: "الأكسجين عالي الضغط لفقدان السمع المفاجئ: أهمية التدخل المبكر",
           paragraphs: [
-            "لدى المرضى المصابين بفقدان سمع حسي عصبي مفاجئ، يهدف العلاج بالأكسجين عالي الضغط إلى تحسين الدورة الدموية الدقيقة وتقليل الالتهاب من خلال زيادة ضغط الأكسجين في الأذن الداخلية. وتُظهر الدراسات أن المرضى الذين يبدأون العلاج مبكراً، خصوصاً بالتزامن مع العلاج بالكورتيكوستيرويد، يميلون إلى تحقيق نتائج أفضل.",
+            "لدى المرضى المصابين بفقدان سمع حسي عصبي مفاجئ، يهدف جلسة الأكسجين عالي الضغط إلى تحسين الدورة الدموية الدقيقة وتقليل الالتهاب من خلال زيادة ضغط الأكسجين في الأذن الداخلية. وتُظهر الدراسات أن المرضى الذين يبدأون الجلسة مبكراً، خصوصاً بالتزامن مع الكورتيكوستيرويد، يميلون إلى تحقيق نتائج أفضل.",
             "ورغم أن نتائج الأبحاث لا تُقدّم إجماعاً كاملاً حول الفعالية، فقد لاحظت بعض الدراسات تحسناً في السمع لدى أكثر من نصف المرضى. ويؤكد الخبراء على الحاجة إلى مزيد من الدراسات السريرية لوضع بروتوكولات موحّدة للضغط والمدة."
           ],
           source_name: "JAMA Otolaryngology–Head & Neck Surgery",
@@ -4101,8 +4105,8 @@ const TRANSLATIONS = {
           icon: "guard",
           title: "إدارة الضغط في الغرف متعددة الأشخاص: بروتوكولات التشغيل السريرية",
           paragraphs: [
-            "تُعد غرف الضغط العالي متعددة الأشخاص الخيار القياسي للمستشفيات والعيادات، لأنها تتيح علاج عدة مرضى في وقت واحد ومرافقة الطاقم الطبي داخل الغرفة. وتوصي أدلة التشغيل الصادرة عن UHMS، المرجع الدولي في طب الضغط العالي، بضبط معدلات زيادة الضغط وخفضه وفقاً لراحة المريض وخطر إصابة الأذن بالباروتروما، وإجراء كل جلسة تحت إشراف مشغّل معتمد، والتدرب على سيناريوهات الإخلاء الطارئ بانتظام.",
-            "في الممارسة السريرية يُحدَّد بروتوكول الضغط وفقاً لدواعي العلاج: تُطبَّق البروتوكولات الشائعة في نطاق 2.0–2.4 ATA، بينما قد تتطلب بعض الدواعي الخاصة ضغوطاً أعلى. ويؤكد الخبراء أن مستوى الضغط المناسب يجب أن يقيّمه دائماً طبيب متخصص في طب الضغط العالي، وأن يكون جهاز الغرفة معتمداً لتغطية النطاق المستهدف بأمان."
+            "تُعد غرف الضغط العالي متعددة الأشخاص الخيار القياسي للمستشفيات والعيادات، لأنها تتيح جلسة عدة مرضى في وقت واحد ومرافقة الطاقم الطبي داخل الغرفة. وتوصي أدلة التشغيل الصادرة عن UHMS، المرجع الدولي في طب الضغط العالي، بضبط معدلات زيادة الضغط وخفضه وفقاً لراحة المريض وخطر إصابة الأذن بالباروتروما، وإجراء كل جلسة تحت إشراف مشغّل معتمد، والتدرب على سيناريوهات الإخلاء الطارئ بانتظام.",
+            "في الممارسة السريرية يُحدَّد بروتوكول الضغط وفقاً لدواعي الجلسة: تُطبَّق البروتوكولات الشائعة في نطاق 2.0–2.4 ATA، بينما قد تتطلب بعض الدواعي الخاصة ضغوطاً أعلى. ويؤكد الخبراء أن مستوى الضغط المناسب يجب أن يقيّمه دائماً طبيب متخصص في طب الضغط العالي، وأن يكون جهاز الغرفة معتمداً لتغطية النطاق المستهدف بأمان."
           ],
           source_name: "UHMS – Undersea & Hyperbaric Medical Society",
           source_url: "https://www.uhms.org"
@@ -4114,7 +4118,7 @@ const TRANSLATIONS = {
           icon: "healthSync",
           title: "التحضير للموسم في الأندية الرياضية: برامج الدعم بالضغط العالي",
           paragraphs: [
-            "تتجه فرق الأداء والطواقم الطبية في الأندية الرياضية المحترفة بشكل متزايد إلى تطبيقات الأكسجين عالي الضغط لدعم التعافي خلال فترات المباريات والتدريبات المكثفة. وتشير المراجعات في أدبيات الطب الرياضي إلى أن العلاج بالأكسجين عالي الضغط قد يساعد في تقليل الوذمة والالتهاب بعد إصابات الأنسجة الرخوة، ويحمل إمكانية تقصير مدة عودة الرياضي إلى التدريب.",
+            "تناقش أوراق الطب الرياضي هذا الاستخدام، وتذكر أيضاً الحاجة إلى دراسات مضبوطة أوسع. التجربة الشخصية تختلف. لا تُضمن هنا أي نتيجة.",
             "وفي بيئة الأندية، يتصدر التخطيط قائمة الأولويات: يُنصح بدمج الجلسات في جدول التدريبات والمباريات، وتقييمها مع متابعة الأحمال الفردية للاعبين، وتنفيذها تحت إشراف طبيب النادي. ويلاحظ الباحثون أيضاً أن جزءاً كبيراً من الأدلة الحالية يستند إلى دراسات صغيرة العينات، وأن ثمة حاجة إلى تجارب مضبوطة أكبر لتحديد بروتوكولات قياسية."
           ],
           source_name: "Frontiers in Physiology – Sport and Exercise",
@@ -4127,8 +4131,8 @@ const TRANSLATIONS = {
           icon: "premium",
           title: "اتجاه جديد في الفنادق الفاخرة: أجنحة العافية بالضغط العالي",
           paragraphs: [
-            "تُظهر تقارير القطاع حول اقتصاد العافية العالمي أن سياحة العافية من أسرع القطاعات نمواً. وانعكاساً لهذا التوجه، تتجاوز الفنادق والمنتجعات الفاخرة عروض السبا واللياقة، لتضيف إلى تجربة الضيوف تقنيات تعافٍ متقدمة مثل غرف الأكسجين عالي الضغط والعلاج بالتبريد والعلاج بالضوء الأحمر.",
-            "ويلاحظ مراقبو القطاع أن وحدات الضغط العالي تبرز خاصة ضمن الباقات المميزة بطابع «طول العمر» و«الأداء». أما بالنسبة لمشغّلي الفنادق، فالنقاط الحرجة هي الامتثال لمعايير السلامة، وتوظيف طاقم مدرب، وبناء عملية تقييم صحي سليمة قبل الاستخدام؛ ويُشدَّد على أن تطبيقات الضيوف يجب أن تُقدَّم بوصفها دعماً عاماً للعافية وليس علاجاً طبياً."
+            "تُظهر تقارير القطاع حول اقتصاد العافية العالمي أن سياحة العافية من أسرع القطاعات نمواً. وانعكاساً لهذا التوجه، تتجاوز الفنادق والمنتجعات الفاخرة عروض السبا واللياقة، لتضيف إلى تجربة الضيوف تقنيات تعافٍ متقدمة مثل غرف الأكسجين عالي الضغط والتطبيق البارد والضوء الأحمر.",
+            "ويلاحظ مراقبو القطاع أن وحدات الضغط العالي تبرز خاصة ضمن الباقات المميزة بطابع «طول العمر» و«الأداء». أما بالنسبة لمشغّلي الفنادق، فالنقاط الحرجة هي الامتثال لمعايير السلامة، وتوظيف طاقم مدرب، وبناء عملية تقييم صحي سليمة قبل الاستخدام؛ ويُشدَّد على أن تطبيقات الضيوف يجب أن تُقدَّم بوصفها دعماً عاماً للعافية وليس استخداماً طبياً."
           ],
           source_name: "Global Wellness Institute",
           source_url: "https://globalwellnessinstitute.org"
@@ -4141,7 +4145,7 @@ const TRANSLATIONS = {
           title: "3.0 ATA فما فوق: معايير سلامة غرف الضغط العالي بالمستوى الطبي",
           paragraphs: [
             "تُعد مستويات الضغط 3.0 ATA فما فوق مجالاً لا يطبقه طب الضغط العالي إلا في بيئات سريرية خاضعة لتنظيم صارم. فيجب أن تُصنَّع الغرف العاملة عند هذه المستويات وفقاً للوائح أوعية الضغط، وأن تستوفي أحكام الضغط العالي في المعايير الدولية للسلامة من الحرائق مثل NFPA 99، وأن تخضع لفحص دوري منتظم. ويُعد إدارة خطر الحريق في بيئة غنية بالأكسجين أهم موضوع تصميمي في هذه الفئة من الأنظمة.",
-            "أما الحلقات الأخرى في سلسلة السلامة فهي العوامل البشرية: مشغّل معتمد للضغط العالي، وتقييم المريض قبل الجلسة، وخطة إخلاء طارئة، وإشراف طبي. وتوصي الهيئات المهنية بأن تُقدَّم علاجات فئة الضغط العالي فقط في مؤسسات تملك هذه البنية التحتية، وتنصح الجهات المشترية بمطالبة المصنّع كتابياً بشهادات الضغط وتقارير الاختبار وبرامج التدريب."
+            "أما الحلقات الأخرى في سلسلة السلامة فهي العوامل البشرية: مشغّل معتمد للضغط العالي، وتقييم المريض قبل الجلسة، وخطة إخلاء طارئة، وإشراف طبي. وتوصي الهيئات المهنية بأن تُقدَّم جلسات فئة الضغط العالي فقط في مؤسسات تملك هذه البنية التحتية، وتنصح الجهات المشترية بمطالبة المصنّع كتابياً بشهادات الضغط وتقارير الاختبار وبرامج التدريب."
           ],
           source_name: "NFPA – National Fire Protection Association",
           source_url: "https://www.nfpa.org"
@@ -4230,7 +4234,7 @@ const TRANSLATIONS = {
           {
             title: "موديلات HBOT City Tech",
             items: [
-              { q: "ما هي موديلات HBOT City Tech المتوفرة؟", a: "تُطوَّر عائلة منتجات HBOT City Tech لسعات مستخدمين مختلفة ومجالات استخدام متنوعة.\n\nOslo — نظام لمستخدم واحد، صُمِّم لمن يحتاج إلى العلاج في وضعية الاستلقاء.\n\nDubai — نظام انضغاطي مدمج لمستخدم واحد في وضعية الجلوس. صُمِّم للاستخدام الفردي/المنزلي وللاستخدام التجاري على حدٍّ سواء.\n\nTokyo — نظام ذو حجم داخلي واسع يستوعب مستخدمَين في نفس الجلسة.\n\nTokyo Plus — نظام ضغط عال قابل للتكوين لـ 2–4 أشخاص للاستخدام المؤسسي.\n\nMilano — نظام انضغاطي بتصميم مكعّب وحجم كبير لأربعة مستخدمين، طُوِّر للعيادات والمستشفيات والمشغّلين المحترفين.\n\nGeneva — نظام مؤسسي كبير بمستوى المستشفيات، يبدأ من 6 مستخدمين ويمكن توسيعه حتى 12 مستخدمًا." },
+              { q: "ما هي موديلات HBOT City Tech المتوفرة؟", a: "تُطوَّر عائلة منتجات HBOT City Tech لسعات مستخدمين مختلفة ومجالات استخدام متنوعة.\n\nOslo — نظام لمستخدم واحد، صُمِّم لمن يحتاج إلى الجلسة في وضعية الاستلقاء.\n\nDubai — نظام انضغاطي مدمج لمستخدم واحد في وضعية الجلوس. صُمِّم للاستخدام الفردي/المنزلي وللاستخدام التجاري على حدٍّ سواء.\n\nTokyo — نظام ذو حجم داخلي واسع يستوعب مستخدمَين في نفس الجلسة.\n\nTokyo Plus — نظام ضغط عال قابل للتكوين لـ 2–4 أشخاص للاستخدام المؤسسي.\n\nMilano — نظام انضغاطي بتصميم مكعّب وحجم كبير لأربعة مستخدمين، طُوِّر للعيادات والمستشفيات والمشغّلين المحترفين.\n\nGeneva — نظام مؤسسي كبير بمستوى المستشفيات، يبدأ من 6 مستخدمين ويمكن توسيعه حتى 12 مستخدمًا." },
               { q: "لمن تناسب Dubai؟", a: "طُوِّرت Dubai للاستخدام الفردي/المنزلي وللمشغّلين الذين يرغبون في نظام تشغيل لمستخدم واحد على حدٍّ سواء. بفضل بنيتها المدمجة، يمكن اعتبارها مناسبة للمنازل والعيادات ومراكز الرياضة ومراكز العافية والفنادق.\n\nتُحدَّد شروط الاستخدام الدقيقة حسب تصنيف المنتج ولوائح بلد التركيب." },
               { q: "كم عدد الأشخاص الذين تستوعبهم Tokyo؟", a: "صُمِّمت Tokyo لاستيعاب مستخدمَين في نفس الجلسة. قد يختلف هيكل المقاعد والتجهيزات الداخلية وترتيب الجلوس حسب التهيئة المطلوبة." },
               { q: "ما هي السعة الاستيعابية لموديل HBOT City Tech متعدد الأشخاص؟", a: "تبدأ موديلات HBOT City Tech متعددة المستخدمين بموديل Milano الذي يستوعب 4 أشخاص. أما موديل Geneva بمستوى المستشفيات، فسعته القياسية 6 أشخاص، مع إمكانية اختيارية للوصول إلى 12 شخصًا (بزيادات مقعدَين في كل مرة).\n\nتُحدَّد السعة الدقيقة وفقًا للعوامل التالية:", list: ["أبعاد الغرفة", "تخطيط المقاعد", "نطاق حركة المستخدمين", "سعة نظام الأكسجين", "بروتوكول التشغيل", "متطلبات السلامة والترخيص المحلية"], aAfter: "تُضاف كل خيار إلى المشروع بعد تقييم السلامة والملاءمة الفنية." },
@@ -4286,9 +4290,9 @@ const TRANSLATIONS = {
           {
             title: "الاستخدام الطبي والادعاءات الصحية",
             items: [
-              { q: "ما هي الأمراض التي يُستخدم لها النظام الانضغاطي؟", a: "قد تختلف الاستخدامات الطبية المقبولة للأكسجين الانضغاطي حسب البلد والجهة التنظيمية وتصنيف الجهاز والبروتوكول السريري.\n\nيجب أن تُجرى التطبيقات ذات الغرض الطبي فقط باستخدام أجهزة مصنَّفة بشكل مناسب، وفي مؤسسات صحية مرخَّصة، تحت إشراف كادر صحي مدرَّب، مع تقييم طبيب وبروتوكول مناسب.\n\nالمعلومات الموجودة على موقعنا الإلكتروني لا تشكّل نصيحة شخصية لتشخيص أو علاج أي مرض." },
+              { q: "ما هي الأمراض التي يُستخدم لها النظام الانضغاطي؟", a: "قد تختلف الاستخدامات الطبية المقبولة للأكسجين الانضغاطي حسب البلد والجهة التنظيمية وتصنيف الجهاز والبروتوكول السريري.\n\nيجب أن تُجرى التطبيقات ذات الغرض الطبي فقط باستخدام أجهزة مصنَّفة بشكل مناسب، وفي مؤسسات صحية مرخَّصة، تحت إشراف كادر صحي مدرَّب، مع تقييم طبيب وبروتوكول مناسب.\n\nالمعلومات الموجودة على موقعنا الإلكتروني لا تشكّل نصيحة شخصية لتشخيص أو جلسة أي مرض." },
               { q: "هل تعالج أجهزة HBOT City Tech أي مرض؟", a: "يعتمد الغرض من استخدام الجهاز والادعاءات الصحية التي يمكن الإدلاء بها بشأنه على التصنيف الرسمي للمنتج والوثائق التي يحملها.\n\nتُقدَّم البيانات بشأن أنظمة HBOT City Tech فقط ضمن نطاق الغرض من الاستخدام المحدد في المستندات الفنية وتقييم المطابقة. لا تُقدَّم نتيجة مضمونة لأي مرض." },
-              { q: "هل الأنظمة منخفضة الضغط هي نفسها العلاج السريري بالأكسجين الانضغاطي (HBOT)؟", a: "لا. ليست كل تطبيقات الأكسجين المضغوط من نفس الفئة الفنية أو السريرية. يمكن للعوامل التالية أن تغيّر طبيعة التطبيق:", list: ["ضغط التشغيل", "تركيز الأكسجين المستنشَق", "طريقة توصيل الأكسجين", "مدة الجلسة", "شهادة الجهاز", "الغرض من الاستخدام", "بيئة التطبيق", "إشراف الكادر الصحي"], aAfter: "تعتمد إمكانية تعريف نظام ما بأنه \"جهاز علاج طبي بالأكسجين الانضغاطي\" على لوائح السوق المعنية والغرض الموثّق لاستخدام المنتج." },
+              { q: "هل الأنظمة منخفضة الضغط هي نفسها الجلسة السريري بالأكسجين الانضغاطي (HBOT)؟", a: "لا. ليست كل تطبيقات الأكسجين المضغوط من نفس الفئة الفنية أو السريرية. يمكن للعوامل التالية أن تغيّر طبيعة التطبيق:", list: ["ضغط التشغيل", "تركيز الأكسجين المستنشَق", "طريقة توصيل الأكسجين", "مدة الجلسة", "شهادة الجهاز", "الغرض من الاستخدام", "بيئة التطبيق", "إشراف الكادر الصحي"], aAfter: "تعتمد إمكانية تعريف نظام ما بأنه \"جهاز استخدام طبي بالأكسجين الانضغاطي\" على لوائح السوق المعنية والغرض الموثّق لاستخدام المنتج." },
               { q: "هل النتائج مضمونة؟", a: "قد تختلف استجابة المستخدمين من شخص لآخر. لا يمكن ضمان نتائج صحية أو تعافٍ أو أداء أو ما شابه.\n\nيجب عدم اتخاذ قرارات الاستخدام بناءً فقط على المعلومات الترويجية العامة أو آراء المستخدمين." }
             ]
           },
@@ -4364,14 +4368,14 @@ const TRANSLATIONS = {
       home: { title: "HBOT Chamber Tech | Cámaras Hiperbáricas de Oxígeno HBOT City Tech Series", desc: "Cámaras hiperbáricas de oxígeno conectadas por IoT e impulsadas por IA. Respira en la cumbre con la HBOT City Tech Series." },
       technology: { title: "Tecnología | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync y CityGuard — la plataforma tecnológica conectada e inteligente de la HBOT City Tech Series." },
       models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Tokyo Plus, Milano y Geneva — seis modelos de cámaras hiperbáricas de oxígeno." },
-      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno individual diseñada para tratamiento en posición tumbada." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno individual diseñada para sesión en posición tumbada." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno compacta y totalmente equipada para uso individual." },
-      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Una cámara de oxigenoterapia hiperbárica compartida para dos personas." },
+      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Una cámara de sesión de oxígeno hiperbárico compartida para dos personas." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Una cámara hiperbárica de alta presión para 2-4 personas, para uso institucional." },
       quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno espaciosa para cuatro personas, de diseño cúbico." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Una cámara hiperbárica de oxígeno de nivel hospitalario y gran capacidad para seis o más personas." },
-      hbotInfo: { title: "¿Qué es la HBOT? | HBOT Chamber Tech", desc: "Qué es la oxigenoterapia hiperbárica (HBOT), para qué se utiliza y en qué afecciones se aplica." },
-      blog: { title: "Blog | HBOT Chamber Tech", desc: "Investigaciones, noticias y novedades recientes sobre la oxigenoterapia hiperbárica." },
+      hbotInfo: { title: "¿Qué es la HBOT? | HBOT Chamber Tech", desc: "Qué es la sesión de oxígeno hiperbárico (HBOT), para qué se utiliza y en qué afecciones se aplica." },
+      blog: { title: "Blog | HBOT Chamber Tech", desc: "Investigaciones, noticias y novedades recientes sobre la sesión de oxígeno hiperbárico." },
       configurator: {
         title: "Configurador | HBOT Chamber Tech", desc: "Configura tu propia cámara HBOT City Tech: elige un modelo, nivel de presión y complementos para obtener una estimación de precio instantánea." },
       contact: { title: "Contacto | HBOT Chamber Tech", desc: "Ponte en contacto con HBOT Chamber Tech: dirección, teléfono, correo electrónico y formulario de contacto." },
@@ -4403,7 +4407,8 @@ const TRANSLATIONS = {
         rights: "Todos los derechos reservados.",
         privacy: "Política de Privacidad",
         terms: "Términos de Uso",
-        wellness_disclaimer: "Las cámaras de la Serie Wellness no son productos sanitarios y no están destinadas a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Las aplicaciones clínicas se realizan en centros sanitarios autorizados bajo supervisión médica.",
+        whatsapp: "WhatsApp",
+        wellness_disclaimer: "Las cámaras de la Serie Wellness no son productos sanitarios y no están destinadas al diagnóstico, a la intervención médica ni a la prevención de enfermedades. Las aplicaciones clínicas se realizan en centros sanitarios autorizados bajo supervisión médica.",
         membership_note: "es miembro de Almita Group."
       },
       cta_banner: {
@@ -4470,11 +4475,11 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "¿QUIÉN LA USA?",
         title: "Los Mejores del Mundo Eligen el Oxígeno Hiperbárico",
-        subtitle: "Los nombres mencionados en la prensa por su uso de la oxigenoterapia hiperbárica para la recuperación, el rendimiento y la longevidad reflejan la confianza en esta tecnología. HBOT Chamber Tech desarrolla esa misma tecnología.",
+        subtitle: "Los nombres mencionados en la prensa por su uso de la sesión de oxígeno hiperbárico para la recuperación, el rendimiento y la longevidad reflejan la confianza en esta tecnología. HBOT Chamber Tech desarrolla esa misma tecnología.",
         source_label: "Fuente",
         disclaimer: "Las personas mencionadas aquí han sido señaladas por medios de comunicación como usuarias de HBOT; no son embajadores de marca ni clientes de HBOT Chamber Tech.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Futbolista", text: "Mencionado en reportajes por realizar sesiones de HBOT en casa con su propio dispositivo hiperbárico para tratar una lesión muscular.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "Cristiano Ronaldo", role: "Futbolista", text: "Mencionado en reportajes por realizar sesiones de HBOT en casa con su propio dispositivo hiperbárico para acompañar una lesión muscular.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
           { name: "LeBron James", role: "Jugador de baloncesto", text: "Grabado realizando una sesión de HBOT de 60-90 minutos en la serie de Netflix 'Starting 5'.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
           { name: "Novak Djokovic", role: "Tenista", text: "Mencionado en medios deportivos por usar HBOT para mantenerse en la cima de su juego.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
           { name: "Justin Bieber", role: "Cantante", text: "Se ha informado que duerme en una cámara hiperbárica como parte de su régimen de salud.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
@@ -4498,7 +4503,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "CASOS DE USO",
         title: "¿Cuándo se Utiliza la HBOT?",
-        text: "Puede utilizarse como terapia de apoyo en diversas afecciones médicas — desde la cicatrización de heridas hasta la pérdida súbita de audición, pasando por la enfermedad por descompresión y la intoxicación por monóxido de carbono — según evaluación médica.",
+        text: "Los trabajos clínicos sobre la pérdida súbita de audición también hablan de la presión de oxígeno en el oído interno. Esta página solo resume ese debate. Las decisiones sobre el momento, los corticosteroides y el curso esperado corresponden a un especialista colegiado. Aquí no hay un resultado prometido.",
         cta: "Ver Todos los Casos de Uso"
       },
       targetMarkets: {
@@ -4564,7 +4569,7 @@ const TRANSLATIONS = {
     },
     technology: {
       header: { eyebrow: "PLATAFORMA TECNOLÓGICA", title: "El Ecosistema Tecnológico HBOT City Tech", subtitle: "No es solo un panel de control — es un sistema conectado e inteligente en constante evolución." },
-      intro: "Cada modelo HBOT City Tech incluye de serie CityConnect™, CityOS™, CityAI™, CitySync™ y CityGuard™. Juntas, estas cinco plataformas transforman la cámara de un simple dispositivo de tratamiento en un sistema inteligente, conectado y predictivo.",
+      intro: "Cada modelo HBOT City Tech incluye de serie CityConnect™, CityOS™, CityAI™, CitySync™ y CityGuard™. Juntas, estas cinco plataformas transforman la cámara de un simple dispositivo de sesión en un sistema inteligente, conectado y predictivo.",
       pillars: {
         connect: {
           title: "CityConnect™",
@@ -4590,7 +4595,7 @@ const TRANSLATIONS = {
         },
         ai: {
           title: "CityAI™",
-          subtitle: "Optimización del Tratamiento Impulsada por IA",
+          subtitle: "Optimización del Sesión Impulsada por IA",
           desc: "Analiza los datos operativos para apoyar a los operadores autorizados con visibilidad e informes; no sustituye el criterio clínico ni al operador.",
           features: [
             "Visibilidad y resúmenes de datos operativos",
@@ -4683,8 +4688,8 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo", tagline: "1 Persona · Posición Tumbada", desc: "Una cámara totalmente equipada, desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada." },
-      solo: { title: "Dubai", tagline: "1 Persona · Posición Sentada", desc: "Una cámara compacta, elegante y totalmente equipada, diseñada para la oxigenoterapia hiperbárica individual." },
+      soloLounge: { title: "Oslo", tagline: "1 Persona · Posición Tumbada", desc: "Una cámara totalmente equipada, desarrollada específicamente para usuarios que necesitan sesión en posición tumbada." },
+      solo: { title: "Dubai", tagline: "1 Persona · Posición Sentada", desc: "Una cámara compacta, elegante y totalmente equipada, diseñada para la sesión de oxígeno hiperbárico individual." },
       duo: { title: "Tokyo", tagline: "2 Personas · Posición Sentada", desc: "Una cámara de doble asiento con ventana panorámica — para parejas, acompañantes o uso paciente-acompañante." },
       duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "Cámara multiusuario configurable para clínicas, hospitales e instalaciones profesionales." },
       quadCube: { title: "Milano", tagline: "4 Personas · Cabina Espaciosa", desc: "Una cabina premium para cuatro personas con un interior espacioso de diseño cúbico — tapicería de cuero acolchado e iluminación ambiental LED." },
@@ -4703,7 +4708,7 @@ const TRANSLATIONS = {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       faq_title: "Preguntas frecuentes sobre el Oslo",
       tagline: "Excelencia en Posición Tumbada. Recuéstate, relájate, sana.",
-      overview_text: "Desarrollada específicamente para usuarios que necesitan tratamiento en posición tumbada. Su camilla ortopédica médica y su carrocería de aluminio de grado aeronáutico ofrecen el máximo confort durante sesiones prolongadas.",
+      overview_text: "Desarrollada específicamente para usuarios que necesitan sesión en posición tumbada. Su camilla ortopédica médica y su carrocería de aluminio de grado aeronáutico ofrecen el máximo confort durante sesiones prolongadas.",
       specs: [
         { label: "Capacidad", value: "1 persona (posición tumbada)" },
         { label: "Rango de Presión", value: "1.3 – 1.5 ATA" },
@@ -4718,7 +4723,7 @@ const TRANSLATIONS = {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
       faq_title: "Preguntas frecuentes sobre el Dubai",
       tagline: "La Cumbre de Tu Salud Personal. Solo tú y el oxígeno.",
-      overview_text: "Una cámara compacta, elegante y totalmente equipada, diseñada para la oxigenoterapia hiperbárica individual. Con control por pantalla táctil, es ideal para uso doméstico o clínico.",
+      overview_text: "Una cámara compacta, elegante y totalmente equipada, diseñada para la sesión de oxígeno hiperbárico individual. Con control por pantalla táctil, es ideal para uso doméstico o clínico.",
       specs: [
         { label: "Capacidad", value: "1 persona (sentada)" },
         { label: "Rango de Presión", value: "1.3 – 1.5 ATA" },
@@ -4732,8 +4737,8 @@ const TRANSLATIONS = {
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       faq_title: "Preguntas frecuentes sobre el Tokyo",
-      tagline: "Sana en Compañía. Una experiencia de tratamiento compartida para dos personas.",
-      overview_text: "Una cámara hiperbárica de doble asiento que ofrece sesiones de terapia compartidas. Diseñada para parejas, acompañantes o uso paciente-acompañante.",
+      tagline: "Sana en Compañía. Una experiencia de sesión compartida para dos personas.",
+      overview_text: "Una cámara hiperbárica de doble asiento que ofrece sesiones compartidas compartidas. Diseñada para parejas, acompañantes o uso paciente-acompañante.",
       institutionalNote: "¿Busca una configuración institucional para 2–4 personas? <a href=\"model-tokyo-plus.html\">Vea Tokyo Plus →</a>",
       specs: [
         { label: "Capacidad", value: "2 personas (sentadas)" },
@@ -4747,7 +4752,7 @@ const TRANSLATIONS = {
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
       faq_title: "Preguntas frecuentes sobre el Tokyo Plus",
-      tagline: "Capacidad terapéutica multipersona y ampliable para uso institucional.",
+      tagline: "Capacidad clínica multipersona y ampliable para uso institucional.",
       overview_text: "La versión institucional de alta presión y multipersona de Tokyo. Diseñada para clínicas, hospitales y centros de bienestar, con capacidad de asientos escalonada de 2 a 4 personas.",
       specs: [
         { label: "Capacidad", value: "2–4 personas (escalonada)" },
@@ -4762,7 +4767,7 @@ const TRANSLATIONS = {
       breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
       faq_title: "Preguntas frecuentes sobre el Milano",
       tagline: "Una experiencia premium para cuatro personas en un diseño cúbico espacioso.",
-      overview_text: "Una cabina premium para cuatro personas con un interior espacioso de forma cúbica. Con tapicería de cuero acolchado, iluminación ambiental LED y una unidad de control independiente, ofrece una terapia multiusuario cómoda para clínicas y centros de bienestar.",
+      overview_text: "Una cabina premium para cuatro personas con un interior espacioso de forma cúbica. Con tapicería de cuero acolchado, iluminación ambiental LED y una unidad de control independiente, ofrece una sesión multiusuario cómoda para clínicas y centros de bienestar.",
       specs: [
         { label: "Capacidad", value: "4 personas (sentadas)" },
         { label: "Rango de Presión", value: "2.0 – 6.0 ATA" },
@@ -4776,7 +4781,7 @@ const TRANSLATIONS = {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
       faq_title: "Preguntas frecuentes sobre el Geneva",
       tagline: "Una solución de nivel hospitalario y gran capacidad.",
-      overview_text: "Una cámara de nivel hospitalario y gran capacidad para instituciones médicas. Su diseño modular y sus sistemas de monitorización avanzados cubren las necesidades de los centros de tratamiento con mayor actividad.",
+      overview_text: "Una cámara de nivel hospitalario y gran capacidad para instituciones médicas. Su diseño modular y sus sistemas de monitorización avanzados cubren las necesidades de los centros de sesión con mayor actividad.",
       specs: [
         { label: "Capacidad", value: "6+ personas (sentadas)" },
         { label: "Rango de Presión", value: "3.0 – 6.0 ATA" },
@@ -4787,17 +4792,17 @@ const TRANSLATIONS = {
       ]
     },
     hbotInfo: {
-      header: { eyebrow: "CENTRO DE INFORMACIÓN", title: "¿Qué es la HBOT?", subtitle: "Lo que necesitas saber sobre la oxigenoterapia hiperbárica." },
-      whatIsHboc: { title: "¿Qué es una Cámara Hiperbárica de Oxígeno (HBOC)?", text: "Las Cámaras Hiperbáricas de Oxígeno son cabinas presurizadas especialmente diseñadas que permiten a las personas respirar oxígeno de alta concentración a una presión atmosférica superior a la normal. Estas cámaras se utilizan para la Oxigenoterapia Hiperbárica (HBOT), un tratamiento médicamente reconocido que acelera la curación y favorece el bienestar general." },
-      whyNeeded: { title: "¿Para qué se Necesita una HBOC?", text: "Las cámaras HBOC ofrecen un entorno controlado y presurizado en el que los usuarios respiran oxígeno con una concentración del 93–95%, lo que permite una recuperación más rápida y una mejor regeneración celular. Estas cámaras dan servicio a centros médicos, centros de bienestar, clínicas deportivas y usuarios particulares en todo el mundo." },
+      header: { eyebrow: "CENTRO DE INFORMACIÓN", title: "¿Qué es la HBOT?", subtitle: "Lo que necesitas saber sobre la sesión de oxígeno hiperbárico." },
+      whatIsHboc: { title: "¿Qué es una Cámara Hiperbárica de Oxígeno (HBOC)?", text: "Las Cámaras Hiperbáricas de Oxígeno son cabinas presurizadas especialmente diseñadas que permiten a las personas respirar oxígeno de alta concentración a una presión atmosférica superior a la normal. Estas cabinas se utilizan para una sesión de oxígeno hiperbárico (HBOT). La serie Wellness no se ofrece como producto sanitario y no se promete ningún resultado." },
+      whyNeeded: { title: "¿Para qué se Necesita una HBOC?", text: "Las cámaras HBOC ofrecen un entorno controlado y presurizado en el que los usuarios respiran oxígeno con una concentración del 93–95%, La serie Wellness no se ofrece como producto sanitario y no se promete ningún resultado. Estas cámaras dan servicio a centros médicos, centros de bienestar, clínicas deportivas y usuarios particulares en todo el mundo." },
       whatIsHbot: {
-        title: "¿Qué es la Oxigenoterapia Hiperbárica (HBOT)?",
-        text1: "La HBOT es un tratamiento médico en el que los pacientes respiran oxígeno puro dentro de una cámara presurizada a niveles superiores a la presión atmosférica normal. Este proceso acelera la cicatrización de heridas, reduce la inflamación y favorece la regeneración de tejidos.",
-        text2: "Los pacientes respiran dentro de estas cámaras, lo que ayuda a los pulmones a captar y absorber oxígeno de forma más eficiente. La HBOT también se utiliza en el tratamiento de pacientes con pérdida súbita de audición y visión, infecciones óseas y úlceras del pie diabético. Según el tipo de tratamiento, los pacientes pueden estar sentados o tumbados durante el procedimiento."
+        title: "¿Qué es la Sesión de oxígeno hiperbárico Hiperbárica (HBOT)?",
+        text1: "En la literatura clínica, HBOT describe una sesión en la que una persona respira oxígeno en una cabina por encima de la presión atmosférica habitual. Esta página resume esa descripción. Las cabinas de la serie Wellness no se ofrecen como productos sanitarios y no se promete ningún resultado.",
+        text2: "La persona respira dentro de la cabina. Las publicaciones clínicas también hablan de la sesión de oxígeno hiperbárico junto a algunos usos hospitalarios; eso no es una afirmación del producto. Según el formato de la sesión, se puede estar sentado o tumbado."
       },
       indications: {
         title: "¿En Qué Situaciones se Puede Utilizar la HBOT?",
-        subtitle: "La siguiente lista resume, únicamente a título informativo, las aplicaciones clínicamente reconocidas de la oxigenoterapia hiperbárica. Se realizan en centros sanitarios autorizados, bajo evaluación y supervisión médica. No se formula ninguna afirmación terapéutica sobre los productos de HBOT Chamber Tech.",
+        subtitle: "La siguiente lista resume, únicamente a título informativo, las aplicaciones clínicamente reconocidas de la sesión de oxígeno hiperbárico. Se realizan en centros sanitarios autorizados, bajo evaluación y supervisión médica. No se formula ninguna afirmación clínica sobre los productos de HBOT Chamber Tech.",
         items: [
           { icon: "wound", label: "Cicatrización de Heridas (Diabéticas y No Diabéticas)" },
           { icon: "eye", label: "Pérdida Súbita de Visión" },
@@ -4813,7 +4818,7 @@ const TRANSLATIONS = {
           { icon: "smoke", label: "Intoxicación Aguda por Humo" }
         ]
       },
-      disclaimer: "Esta información tiene fines meramente orientativos y no constituye asesoramiento médico. Las decisiones de tratamiento siempre deben ser evaluadas por un profesional sanitario."
+      disclaimer: "Esta información tiene fines meramente orientativos y no constituye asesoramiento médico. Las decisiones de uso siempre deben ser evaluadas por un profesional sanitario."
     },
     arView: {
       back: "← Volver al configurador",
@@ -4862,7 +4867,7 @@ const TRANSLATIONS = {
       ],
       "nexus": [
         { q: "¿Para cuántas personas es el Geneva?", a: "El Geneva es una cámara de gran capacidad de grado hospitalario que empieza en 6 personas y escala en niveles de 6/8/10/12." },
-        { q: "¿Para qué instalaciones es adecuado el Geneva?", a: "Está diseñado para hospitales y grandes centros de salud con alto volumen terapéutico; su estructura modular está lista para futuras ampliaciones." },
+        { q: "¿Para qué instalaciones es adecuado el Geneva?", a: "Está diseñado para hospitales y grandes centros de salud con alto volumen clínico; su estructura modular está lista para futuras ampliaciones." },
         { q: "¿En qué rango de presión funciona el Geneva?", a: "Entre 3.0 y 6.0 ATA, con una pureza de oxígeno del 93–95%." },
         { q: "¿Qué equipamiento de seguridad tiene el Geneva?", a: "Incluye de serie un sistema de válvula de emergencia; su construcción de grado hospitalario está diseñada para un uso continuo y de alto volumen." },
         { q: "¿Cómo obtengo un presupuesto para el Geneva?", a: "Contáctanos indicando la capacidad que necesitas (6/8/10/12 personas) y prepararemos un plano técnico y un presupuesto a medida para tu institución." }
@@ -4914,7 +4919,7 @@ const TRANSLATIONS = {
         select_button: "Elegir Esta",
         close: "Cerrar",
         items: [
-          { scenario: "En casa, solo/a, quiero tratamiento en posición tumbada", model: "Oslo", modelId: "solo-lounge", usage: "home" },
+          { scenario: "En casa, solo/a, quiero sesión en posición tumbada", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "En casa, solo/a, quiero estar sentado/a durante las sesiones", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Mi pareja y yo lo usaremos juntos, en casa", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Clínica o centro de bienestar, uso institucional para 2-4 personas", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -5054,11 +5059,11 @@ const TRANSLATIONS = {
       }
     },
     blog: {
-      header: { eyebrow: "BLOG", title: "Investigación y Noticias", subtitle: "Novedades científicas y noticias recientes sobre la oxigenoterapia hiperbárica." },
+      header: { eyebrow: "BLOG", title: "Investigación y Noticias", subtitle: "Novedades científicas y noticias recientes sobre la sesión de oxígeno hiperbárico." },
       source_label: "Fuente:",
       min_read: "min de lectura",
       read_more: "Leer el artículo completo",
-      disclaimer: "Estas publicaciones son resúmenes elaborados a partir de publicaciones científicas y fuentes de noticias de acceso público; no constituyen asesoramiento médico. Consulta siempre a un profesional sanitario para decisiones de tratamiento.",
+      disclaimer: "Estas publicaciones son resúmenes elaborados a partir de publicaciones científicas y fuentes de noticias de acceso público; no constituyen asesoramiento médico. Consulta siempre a un profesional sanitario para decisiones de uso.",
       posts: [
         {
           slug: "hbot-kurucu-notu.html",
@@ -5068,7 +5073,7 @@ const TRANSLATIONS = {
           title: "Por Qué Uso Yo Mismo el Oxígeno Hiperbárico",
           paragraphs: [
             "Bajo el paraguas de Almita Group gestionamos seis sectores diferentes al mismo tiempo, y una agenda exigente con viajes constantes viene con el territorio. Antes de empezar a fabricar las cámaras de HBOT Chamber Tech, decidí usar regularmente nuestras propias unidades — creo que hay que probar un producto uno mismo antes de respaldarlo.",
-            "Puedo decir que, tras las sesiones, en general me siento con más energía y concentración; se trata de una observación personal, no de una promesa de que el resultado sea el mismo para todos. La oxigenoterapia hiperbárica no sustituye al tratamiento médico; consulta siempre tu propio uso con un profesional sanitario."
+            "Puedo decir que, tras las sesiones, en general me siento con más energía y concentración; se trata de una observación personal, no de una promesa de que el resultado sea el mismo para todos. La sesión de oxígeno hiperbárico no sustituye al atención médica; consulta siempre tu propio uso con un profesional sanitario."
           ],
           source_name: "Almita Group — Nota del Fundador",
           source_url: "https://almitagroup.com",
@@ -5081,7 +5086,7 @@ const TRANSLATIONS = {
           icon: "antiaging",
           title: "HBOT y Longevidad: La Creciente Tendencia del Envejecimiento Saludable",
           paragraphs: [
-            "El movimiento de la longevidad — llevado al gran público por emprendedores tecnológicos como Bryan Johnson y sus protocolos personales de 'reversión de la edad' — también ha impulsado el interés por la oxigenoterapia hiperbárica. Uno de sus anclajes científicos es un estudio clínico publicado en la revista Aging en 2020, en el que 35 adultos sanos de 64 años o más completaron un programa de HBOT de 60 sesiones.",
+            "El movimiento de la longevidad — llevado al gran público por emprendedores tecnológicos como Bryan Johnson y sus protocolos personales de 'reversión de la edad' — también ha impulsado el interés por la sesión de oxígeno hiperbárico. Uno de sus anclajes científicos es un estudio clínico publicado en la revista Aging en 2020, en el que 35 adultos sanos de 64 años o más completaron un programa de HBOT de 60 sesiones.",
             "El estudio reportó un alargamiento de los telómeros de más del 20% en células inmunitarias — hasta un 37% en células B — junto con una reducción de hasta el 37% en células inmunitarias senescentes. Dado que el ensayo no contó con grupo de control y tuvo un tamaño de muestra limitado, los resultados se consideran 'prometedores pero preliminares'; los investigadores subrayan que se necesitan estudios más amplios para definir los protocolos óptimos."
           ],
           source_name: "PMC – HBOT Increases Telomere Length and Decreases Immunosenescence (Aging, 2020)",
@@ -5094,10 +5099,10 @@ const TRANSLATIONS = {
           icon: "healthSync",
           title: "¿Por Qué los Atletas de Élite Usan Oxígeno Hiperbárico?",
           paragraphs: [
-            "Atletas de fama mundial como Cristiano Ronaldo, LeBron James, Novak Djokovic y Floyd Mayweather han aparecido en reportajes de prensa por usar cámaras hiperbáricas como parte de sus rutinas de recuperación. Detrás de este interés hay hallazgos de medicina deportiva que sugieren que la HBOT puede reducir el edema y la inflamación, favorecer la reparación de tejidos y ayudar a los atletas a volver antes al entrenamiento.",
-            "Entre los estudios citados en las revisiones se encuentra una observación de los Juegos Olímpicos de Invierno de Nagano, donde 7 atletas se recuperaron más rápido con sesiones breves a 1.3 ATA; un informe clínico temprano sobre una reducción del 55% en los días de baja por lesión entre futbolistas profesionales; y un estudio universitario que sugiere un retorno aproximadamente un 30% más rápido tras esguinces de tobillo. Los autores señalan que la evidencia se basa en gran medida en muestras pequeñas y que se necesitan ensayos controlados aleatorizados para llegar a conclusiones firmes."
+            "Algunos deportistas de tenis, natación, baloncesto y golf añaden una sesión de oxígeno hiperbárico a su rutina de recuperación. Es la descripción de una elección, no un resultado prometido sobre agujetas, fatiga o el tiempo de vuelta al entrenamiento.",
+            "Los trabajos de medicina deportiva hablan de este uso y también señalan que el campo sigue necesitando estudios controlados más amplios. La experiencia personal varía. Aquí no se garantiza ningún resultado."
           ],
-          source_name: "PMC – The Role of Hyperbaric Oxygen Therapy in Sports Medicine (review)",
+          source_name: "PMC – The Role of Hyperbaric Oxygen Sessions in Sports Medicine (review)",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
@@ -5107,10 +5112,10 @@ const TRANSLATIONS = {
           icon: "oneSeat",
           title: "Guía de Compra de Cámaras Hiperbáricas para el Hogar",
           paragraphs: [
-            "La primera pregunta al elegir una cámara hiperbárica para uso doméstico o privado es la capacidad: las cámaras monoplaza ofrecen un tamaño compacto, mientras que las multiplaza permiten tratar a la vez a familiares o a grupos pequeños y facilitan las sesiones asistidas por un acompañante. La UHMS, la autoridad internacional en medicina hiperbárica, exige que las cámaras presurizadas sean equipos homologados e inspeccionados periódicamente, y que los operadores reciban formación especializada.",
+            "La primera pregunta al elegir una cámara hiperbárica para uso doméstico o privado es la capacidad: las cámaras monoplaza ofrecen un tamaño compacto, mientras que las multiplaza permiten recibir a la vez a familiares o a grupos pequeños y facilitan las sesiones asistidas por un acompañante. La UHMS, la autoridad internacional en medicina hiperbárica, exige que las cámaras presurizadas sean equipos homologados e inspeccionados periódicamente, y que los operadores reciban formación especializada.",
             "El nivel de presión es el segundo tema clave: los protocolos clínicos suelen aplicarse en el rango de 2.0–2.4 ATA, mientras que 1.3–2.0 ATA es habitual en sistemas domésticos — revisa siempre con un profesional sanitario el nivel adecuado a tus objetivos. El tercer tema es la seguridad y el confort: las normas de seguridad contra incendios en entornos con oxígeno, la descompresión de emergencia, el nivel de ruido, la iluminación interior y los sistemas de comunicación condicionan directamente la experiencia diaria; confirma por escrito las condiciones de mantenimiento y garantía antes de comprar."
           ],
-          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Therapy",
+          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Sessions",
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
@@ -5120,10 +5125,10 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "El Papel del Oxígeno Hiperbárico en Heridas Crónicas Sigue Creciendo",
           paragraphs: [
-            "Revisiones recientes en cirugía y cuidado de heridas crónicas muestran que la oxigenoterapia hiperbárica (HBOT) favorece el proceso de curación al aumentar la oxigenación de los tejidos. En heridas de pie diabético, úlceras venosas de la pierna, quemaduras y daño tisular por radiación, se ha informado que la HBOT mejora las tasas de cierre de heridas y reduce el riesgo de infección.",
-            "Un estudio publicado en 2025 encontró que la HBOT combinada con terapia de heridas por presión negativa (NPWT) aumentó significativamente la velocidad de curación en comparación con la NPWT sola. En cirugía reconstructiva, se ha informado que la HBOT favorece la supervivencia de tejidos e injertos y promueve la formación de nuevos vasos sanguíneos."
+            "Los trabajos de cirugía y de heridas crónicas mencionan las sesiones de oxígeno hiperbárico junto a debates sobre la oxigenación de los tejidos. Esta página solo señala esa literatura. HBOT Chamber Tech no promete nada sobre el cierre de una herida ni sobre el riesgo de infección.",
+            "Un trabajo de 2025 habla de las sesiones de oxígeno hiperbárico junto al soporte de heridas por presión negativa. La comparación no es una promesa de resultados. Las notas de cirugía reconstructiva pertenecen a la literatura clínica y no se ofrecen como una afirmación del producto."
           ],
-          source_name: "PMC – Hyperbaric Oxygen Therapy in Surgical Wound Healing and Tissue Salvage",
+          source_name: "PMC – Hyperbaric Oxygen Sessions in Surgical Wound Recovery and Tissue Salvage",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
@@ -5133,8 +5138,8 @@ const TRANSLATIONS = {
           icon: "burn",
           title: "Por Qué los Atletas Recurren a las Cámaras Hiperbáricas",
           paragraphs: [
-            "Muchos atletas de élite del tenis, la natación, el baloncesto y el golf están eligiendo la oxigenoterapia hiperbárica como parte de su rutina de recuperación. La investigación en medicina deportiva muestra que la HBOT puede acelerar la curación, reducir la inflamación y ayudar a los atletas a volver antes al entrenamiento.",
-            "Algunos estudios reportaron niveles más bajos de dolor muscular y fatiga en atletas que recibieron HBOT, con tiempos de recuperación reducidos hasta en un 30% aproximadamente. Aunque el campo todavía necesita ensayos clínicos controlados de mayor tamaño, los resultados son prometedores para la salud de los atletas."
+            "Los trabajos de medicina deportiva hablan de este uso y también señalan que el campo sigue necesitando estudios controlados más amplios. La experiencia personal varía. Aquí no se garantiza ningún resultado.",
+            "Los trabajos de medicina deportiva hablan de este uso y también señalan que el campo sigue necesitando estudios controlados más amplios. La experiencia personal varía. Aquí no se garantiza ningún resultado."
           ],
           source_name: "Turkish Journal of Sports Medicine",
           source_url: "https://journalofsportsmedicine.org/full-text/746/eng"
@@ -5146,8 +5151,8 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "Metaanálisis sobre Úlceras del Pie Diabético: Menor Riesgo de Amputación",
           paragraphs: [
-            "Un metaanálisis de 14 estudios con 768 participantes encontró que la oxigenoterapia hiperbárica ofrecía un beneficio estadísticamente significativo en la curación completa de las úlceras del pie diabético y en la reducción del riesgo de amputación mayor.",
-            "Una revisión sistemática reciente publicada en 2024 llegó a conclusiones similares: la mayoría de los estudios revisados observaron tasas más bajas de amputación mayor, tasas más altas de cicatrización de heridas y una reducción del tamaño y la profundidad de las úlceras con la HBOT."
+            "Los trabajos publicados hablan de las sesiones de oxígeno hiperbárico junto a la atención clínica de las úlceras del pie diabético. Esta nota solo señala esa literatura. No promete que una úlcera se cierre, que cambie el riesgo de amputación, ni que una cabina sustituya la atención médica.",
+            "Una revisión de 2024 forma parte de la misma conversación. Las cifras de la literatura cambian según el entorno, la supervisión y el resto del plan de cada persona. HBOT Chamber Tech no presenta ninguna condición como algo que sus cabinas resuelvan."
           ],
           source_name: "PMC – Efficacy of HBOT for Diabetic Foot Ulcer",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
@@ -5159,7 +5164,7 @@ const TRANSLATIONS = {
           icon: "ear",
           title: "Oxígeno Hiperbárico para la Pérdida Súbita de Audición: la Intervención Temprana Importa",
           paragraphs: [
-            "En pacientes con pérdida auditiva neurosensorial súbita, la oxigenoterapia hiperbárica busca mejorar la microcirculación y reducir la inflamación al aumentar la presión de oxígeno en el oído interno. Los estudios muestran que los pacientes que inician el tratamiento de forma temprana, especialmente en combinación con corticoterapia, tienden a obtener resultados más favorables.",
+            "En pacientes con pérdida auditiva neurosensorial súbita, la sesión de oxígeno hiperbárico busca mejorar la microcirculación y reducir la inflamación al aumentar la presión de oxígeno en el oído interno. Los estudios muestran que los pacientes que inician el sesión de forma temprana, especialmente en combinación con corticosteroides, tienden a obtener resultados más favorables.",
             "Aunque los resultados de la investigación no ofrecen un consenso completo sobre la eficacia, algunos estudios observaron mejoría auditiva en más de la mitad de los pacientes. Los expertos subrayan la necesidad de más ensayos clínicos para establecer protocolos estandarizados de presión y duración."
           ],
           source_name: "JAMA Otolaryngology–Head & Neck Surgery",
@@ -5186,7 +5191,7 @@ const TRANSLATIONS = {
           title: "Gestión de la Presión en Cámaras Multiplaza: Protocolos Operativos Clínicos",
           paragraphs: [
             "Las cámaras hiperbáricas multiplaza son la opción estándar en hospitales y clínicas porque tratan a varios pacientes a la vez y permiten que el personal médico acompañe a los pacientes en el interior. Las directrices operativas publicadas por la UHMS, la autoridad internacional en medicina hiperbárica, recomiendan ajustar las velocidades de compresión y descompresión al confort del paciente y al riesgo de barotrauma en el oído, realizar cada sesión bajo la supervisión de un operador certificado y practicar con regularidad los escenarios de evacuación de emergencia.",
-            "En la práctica clínica, el protocolo de presión se determina según la indicación de tratamiento: los protocolos habituales se aplican en el rango de 2.0–2.4 ATA, mientras que ciertas indicaciones especiales pueden requerir presiones más altas. Los expertos subrayan que el nivel de presión adecuado siempre debe ser evaluado por un médico especializado en medicina hiperbárica, y que se espera que el equipo de la cámara esté certificado para cubrir con seguridad el rango de presión objetivo."
+            "En la práctica clínica, el protocolo de presión se determina según la indicación de sesión: los protocolos habituales se aplican en el rango de 2.0–2.4 ATA, mientras que ciertas indicaciones especiales pueden requerir presiones más altas. Los expertos subrayan que el nivel de presión adecuado siempre debe ser evaluado por un médico especializado en medicina hiperbárica, y que se espera que el equipo de la cámara esté certificado para cubrir con seguridad el rango de presión objetivo."
           ],
           source_name: "UHMS – Undersea & Hyperbaric Medical Society",
           source_url: "https://www.uhms.org"
@@ -5198,7 +5203,7 @@ const TRANSLATIONS = {
           icon: "healthSync",
           title: "Preparación de Pretemporada en Clubes Deportivos: Programas de Apoyo Hiperbárico",
           paragraphs: [
-            "Los equipos de rendimiento y médicos de clubes deportivos profesionales recurren cada vez más a las aplicaciones de oxígeno hiperbárico para apoyar la recuperación durante periodos de partidos y entrenamientos muy cargados. Las revisiones en la literatura de medicina deportiva reportan que la HBOT puede ayudar a reducir el edema y la inflamación tras lesiones de tejidos blandos, y tiene el potencial de acortar el tiempo de retorno al entrenamiento de un atleta.",
+            "Los trabajos de medicina deportiva hablan de este uso y también señalan que el campo sigue necesitando estudios controlados más amplios. La experiencia personal varía. Aquí no se garantiza ningún resultado.",
             "En un entorno de club, la planificación encabeza la lista de prioridades: las sesiones deben integrarse en el calendario de entrenamientos y partidos, evaluarse junto con el control de carga específico de cada jugador, y llevarse a cabo bajo la supervisión del médico del club. Los investigadores también señalan que gran parte de la evidencia actual se basa en estudios con muestras pequeñas y que se necesitan ensayos controlados más amplios para establecer protocolos estándar."
           ],
           source_name: "Frontiers in Physiology – Sport and Exercise",
@@ -5211,8 +5216,8 @@ const TRANSLATIONS = {
           icon: "premium",
           title: "Una Nueva Tendencia en Hoteles de Lujo: Suites de Bienestar Hiperbárico",
           paragraphs: [
-            "Los informes del sector sobre la economía global del bienestar muestran que el turismo de bienestar es uno de sus segmentos de más rápido crecimiento. Reflejando esta tendencia, los hoteles y resorts de lujo van más allá de las ofertas de spa y fitness, añadiendo a la experiencia del huésped tecnologías de recuperación avanzadas como cámaras hiperbáricas de oxígeno, crioterapia y terapia de luz roja.",
-            "Los observadores del sector señalan que las unidades hiperbáricas destacan especialmente en paquetes premium centrados en la 'longevidad' y el 'rendimiento'. Para los operadores hoteleros, los temas críticos son el cumplimiento de los estándares de seguridad, la contratación de personal formado y la correcta estructuración del cribado de salud previo al uso; las aplicaciones dirigidas a los huéspedes deben ofrecerse como apoyo al bienestar general, no como tratamiento médico."
+            "Los informes del sector sobre la economía global del bienestar muestran que el turismo de bienestar es uno de sus segmentos de más rápido crecimiento. Reflejando esta tendencia, los hoteles y resorts de lujo van más allá de las ofertas de spa y fitness, añadiendo a la experiencia del huésped tecnologías de recuperación avanzadas como cámaras hiperbáricas de oxígeno, aplicación de frío y luz roja.",
+            "Los observadores del sector señalan que las unidades hiperbáricas destacan especialmente en paquetes premium centrados en la 'longevidad' y el 'rendimiento'. Para los operadores hoteleros, los temas críticos son el cumplimiento de los estándares de seguridad, la contratación de personal formado y la correcta estructuración del cribado de salud previo al uso; las aplicaciones dirigidas a los huéspedes deben ofrecerse como apoyo al bienestar general, no como atención médica."
           ],
           source_name: "Global Wellness Institute",
           source_url: "https://globalwellnessinstitute.org"
@@ -5225,7 +5230,7 @@ const TRANSLATIONS = {
           title: "3.0 ATA y Superior: Estándares de Seguridad Hiperbárica de Nivel Médico",
           paragraphs: [
             "Los niveles de presión de 3.0 ATA y superiores son un ámbito que la medicina hiperbárica aplica únicamente en entornos clínicos estrictamente regulados. Las cámaras que operan a estos niveles deben fabricarse conforme a la normativa de recipientes a presión, cumplir las disposiciones hiperbáricas de normas internacionales como la NFPA 99 en materia de seguridad contra incendios, y someterse a inspecciones periódicas regulares. Gestionar el riesgo de incendio en una atmósfera enriquecida con oxígeno es el tema de diseño más crítico para esta clase de sistemas.",
-            "Los otros eslabones de la cadena de seguridad son los factores humanos: un operador hiperbárico certificado, la evaluación del paciente antes de la sesión, un plan de evacuación de emergencia y la supervisión médica. Los organismos profesionales recomiendan que los tratamientos de la clase de alta presión se realicen únicamente en instituciones con esta infraestructura, y aconsejan a las organizaciones compradoras solicitar por escrito al fabricante los certificados de presión, los informes de prueba y los programas de formación."
+            "Los otros eslabones de la cadena de seguridad son los factores humanos: un operador hiperbárico certificado, la evaluación del paciente antes de la sesión, un plan de evacuación de emergencia y la supervisión médica. Los organismos profesionales recomiendan que los sesiones de la clase de alta presión se realicen únicamente en instituciones con esta infraestructura, y aconsejan a las organizaciones compradoras solicitar por escrito al fabricante los certificados de presión, los informes de prueba y los programas de formación."
           ],
           source_name: "NFPA – National Fire Protection Association",
           source_url: "https://www.nfpa.org"
@@ -5314,7 +5319,7 @@ const TRANSLATIONS = {
           {
             title: "Modelos HBOT City Tech",
             items: [
-              { q: "¿Qué modelos HBOT City Tech están disponibles?", a: "La familia de productos HBOT City Tech se desarrolla para diferentes capacidades de usuarios y casos de uso.\n\nOslo — Un sistema para un solo usuario desarrollado para quienes necesitan tratamiento en posición tumbada.\n\nDubai — Un sistema hiperbárico compacto para un solo usuario, utilizado en posición sentada. Diseñado tanto para uso individual/doméstico como para uso profesional.\n\nTokyo — Un sistema con un interior espacioso que puede acoger a dos usuarios en la misma sesión.\n\nTokyo Plus — Un sistema configurable de alta presión para 2–4 personas y uso institucional.\n\nMilano — Un sistema hiperbárico de gran volumen y forma cúbica para 4 usuarios, desarrollado para clínicas, hospitales y operadores profesionales.\n\nGeneva — Un sistema institucional de nivel hospitalario y gran capacidad, desde 6 usuarios y ampliable hasta 12." },
+              { q: "¿Qué modelos HBOT City Tech están disponibles?", a: "La familia de productos HBOT City Tech se desarrolla para diferentes capacidades de usuarios y casos de uso.\n\nOslo — Un sistema para un solo usuario desarrollado para quienes necesitan sesión en posición tumbada.\n\nDubai — Un sistema hiperbárico compacto para un solo usuario, utilizado en posición sentada. Diseñado tanto para uso individual/doméstico como para uso profesional.\n\nTokyo — Un sistema con un interior espacioso que puede acoger a dos usuarios en la misma sesión.\n\nTokyo Plus — Un sistema configurable de alta presión para 2–4 personas y uso institucional.\n\nMilano — Un sistema hiperbárico de gran volumen y forma cúbica para 4 usuarios, desarrollado para clínicas, hospitales y operadores profesionales.\n\nGeneva — Un sistema institucional de nivel hospitalario y gran capacidad, desde 6 usuarios y ampliable hasta 12." },
               { q: "¿Para quién es adecuado el Dubai?", a: "El Dubai está desarrollado tanto para uso individual/doméstico como para operadores que buscan una configuración de un solo usuario. Gracias a su estructura compacta, puede considerarse para hogares, clínicas, centros deportivos, centros de bienestar y hoteles.\n\nLas condiciones exactas de uso vienen determinadas por la clasificación del producto y la normativa del país de instalación." },
               { q: "¿A cuántas personas puede acoger el Tokyo?", a: "El Tokyo está diseñado para acoger a dos usuarios en la misma sesión. La estructura de los asientos, el equipamiento interior y la disposición de los asientos pueden variar según la configuración solicitada." },
               { q: "¿Cuál es la capacidad de usuarios del modelo HBOT City Tech multipersona?", a: "Los modelos HBOT City Tech multiusuario comienzan con el Milano de 4 personas. Para el Geneva de nivel hospitalario, la capacidad estándar es de 6 personas, con una capacidad opcional de hasta 12 personas (en incrementos de 2 asientos).\n\nLa capacidad exacta viene determinada por los siguientes factores:", list: ["Dimensiones de la cámara", "Disposición de los asientos", "Margen de movimiento de los usuarios", "Capacidad del sistema de oxígeno", "Protocolo operativo", "Requisitos locales de seguridad y licencias"], aAfter: "Cada opción se incorpora al proyecto tras una evaluación de seguridad y un análisis de idoneidad técnica." },
@@ -5370,9 +5375,9 @@ const TRANSLATIONS = {
           {
             title: "Uso Médico y Declaraciones de Salud",
             items: [
-              { q: "¿Para qué afecciones se utiliza un sistema hiperbárico?", a: "Los usos médicos aceptados de la aplicación de oxígeno hiperbárico pueden variar según el país, el organismo regulador, la clasificación del dispositivo y el protocolo clínico.\n\nLas aplicaciones de finalidad médica solo deben realizarse con dispositivos clasificados adecuadamente, en centros sanitarios autorizados, bajo la supervisión de personal sanitario formado, con evaluación médica y un protocolo apropiado.\n\nLa información de nuestro sitio web no constituye un consejo personalizado para el diagnóstico o el tratamiento de ninguna enfermedad." },
+              { q: "¿Para qué afecciones se utiliza un sistema hiperbárico?", a: "Los usos médicos aceptados de la aplicación de oxígeno hiperbárico pueden variar según el país, el organismo regulador, la clasificación del dispositivo y el protocolo clínico.\n\nLas aplicaciones de finalidad médica solo deben realizarse con dispositivos clasificados adecuadamente, en centros sanitarios autorizados, bajo la supervisión de personal sanitario formado, con evaluación médica y un protocolo apropiado.\n\nLa información de nuestro sitio web no constituye un consejo personalizado para el diagnóstico o el sesión de ninguna enfermedad." },
               { q: "¿Los dispositivos HBOT City Tech curan alguna enfermedad?", a: "El uso previsto de un dispositivo y las declaraciones de salud que pueden hacerse sobre él dependen de la clasificación oficial del producto y de la documentación que posea.\n\nLas afirmaciones sobre los sistemas HBOT City Tech se realizan únicamente dentro del uso previsto especificado en los documentos técnicos y en la evaluación de conformidad. No se ofrece ningún resultado garantizado para ninguna enfermedad." },
-              { q: "¿Son los sistemas de baja presión lo mismo que la HBOT clínica?", a: "No. No toda aplicación de oxígeno presurizado pertenece a la misma clase técnica o clínica. Los siguientes factores pueden cambiar la naturaleza de la aplicación:", list: ["Presión de funcionamiento", "Concentración de oxígeno inhalado", "Método de suministro de oxígeno", "Duración de la sesión", "Certificación del dispositivo", "Uso previsto", "Entorno de aplicación", "Supervisión por parte de personal sanitario"], aAfter: "Que un sistema pueda definirse como \"dispositivo médico de oxigenoterapia hiperbárica\" depende de la normativa del mercado correspondiente y del uso previsto documentado del producto." },
+              { q: "¿Son los sistemas de baja presión lo mismo que la HBOT clínica?", a: "No. No toda aplicación de oxígeno presurizado pertenece a la misma clase técnica o clínica. Los siguientes factores pueden cambiar la naturaleza de la aplicación:", list: ["Presión de funcionamiento", "Concentración de oxígeno inhalado", "Método de suministro de oxígeno", "Duración de la sesión", "Certificación del dispositivo", "Uso previsto", "Entorno de aplicación", "Supervisión por parte de personal sanitario"], aAfter: "Que un sistema pueda definirse como \"dispositivo médico de sesión de oxígeno hiperbárico\" depende de la normativa del mercado correspondiente y del uso previsto documentado del producto." },
               { q: "¿Se garantizan los resultados?", a: "La respuesta de los usuarios puede variar de una persona a otra. No pueden garantizarse resultados de salud, recuperación, rendimiento o similares.\n\nLas decisiones de uso no deben basarse únicamente en información promocional general o en testimonios de usuarios." }
             ]
           },
@@ -5448,14 +5453,14 @@ const TRANSLATIONS = {
       home: { title: "HBOT Chamber Tech | Câmaras de Oxigênio Hiperbárico Série HBOT City Tech", desc: "Câmaras de oxigênio hiperbárico conectadas por IoT e com tecnologia de IA. Respire no topo com a Série HBOT City Tech." },
       technology: { title: "Tecnologia | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync e CityGuard — a plataforma tecnológica conectada e inteligente da Série HBOT City Tech." },
       models: { title: "Modelos | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Tokyo Plus, Milano e Geneva — seis modelos de câmaras de oxigênio hiperbárico." },
-      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico individual projetada para tratamento na posição deitada." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico individual projetada para sessão na posição deitada." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico compacta e totalmente equipada para uso individual." },
-      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Uma câmara de oxigenoterapia hiperbárica compartilhada para duas pessoas." },
+      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Uma câmara de sessão de oxigénio hiperbárico compartilhada para duas pessoas." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Uma câmara hiperbárica de alta pressão para 2-4 pessoas, para uso institucional." },
       quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico espaçosa em design cubo para quatro pessoas." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Uma câmara de oxigênio hiperbárico de grande capacidade e nível hospitalar para seis ou mais pessoas." },
-      hbotInfo: { title: "O Que É a OHB? | HBOT Chamber Tech", desc: "O que é a oxigenoterapia hiperbárica (OHB), para que serve e em quais condições é aplicada." },
-      blog: { title: "Blog | HBOT Chamber Tech", desc: "Pesquisas, notícias e novidades recentes sobre a oxigenoterapia hiperbárica." },
+      hbotInfo: { title: "O Que É a OHB? | HBOT Chamber Tech", desc: "O que é a sessão de oxigénio hiperbárico (OHB), para que serve e em quais condições é aplicada." },
+      blog: { title: "Blog | HBOT Chamber Tech", desc: "Pesquisas, notícias e novidades recentes sobre a sessão de oxigénio hiperbárico." },
       configurator: {
         title: "Configurador | HBOT Chamber Tech", desc: "Configure sua própria câmara HBOT City Tech: escolha um modelo, nível de pressão e opcionais para obter uma estimativa de preço instantânea." },
       contact: { title: "Contato | HBOT Chamber Tech", desc: "Entre em contato com a HBOT Chamber Tech: endereço, telefone, e-mail e formulário de contato." },
@@ -5487,7 +5492,8 @@ const TRANSLATIONS = {
         rights: "Todos os direitos reservados.",
         privacy: "Política de Privacidade",
         terms: "Termos de Uso",
-        wellness_disclaimer: "As câmaras da Série Wellness não são dispositivos médicos e não se destinam a diagnosticar, tratar, curar ou prevenir qualquer doença. As aplicações clínicas são realizadas em unidades de saúde licenciadas sob supervisão médica.",
+        whatsapp: "WhatsApp",
+        wellness_disclaimer: "As câmaras da Série Wellness não são dispositivos médicos e não se destinam ao diagnóstico, à intervenção médica nem à prevenção de doenças. As aplicações clínicas são realizadas em unidades de saúde licenciadas sob supervisão médica.",
         membership_note: "é membro do Almita Group."
       },
       cta_banner: {
@@ -5554,11 +5560,11 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "QUEM USA?",
         title: "Os Melhores do Mundo Escolhem o Oxigênio Hiperbárico",
-        subtitle: "Os nomes citados pela imprensa pelo uso da oxigenoterapia hiperbárica para recuperação, desempenho e longevidade refletem a confiança nessa tecnologia. A HBOT Chamber Tech desenvolve essa mesma tecnologia.",
+        subtitle: "Os nomes citados pela imprensa pelo uso da sessão de oxigénio hiperbárico para recuperação, desempenho e longevidade refletem a confiança nessa tecnologia. A HBOT Chamber Tech desenvolve essa mesma tecnologia.",
         source_label: "Fonte",
         disclaimer: "As pessoas listadas aqui foram citadas por fontes jornalísticas como usuárias de OHB; elas não são embaixadoras de marca nem clientes da HBOT Chamber Tech.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Jogador de futebol", text: "Citado em reportagens por fazer sessões de OHB em casa com seu próprio equipamento hiperbárico para tratar uma lesão muscular.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "Cristiano Ronaldo", role: "Jogador de futebol", text: "Citado em reportagens por fazer sessões de OHB em casa com seu próprio equipamento hiperbárico para acompanhar uma lesão muscular.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
           { name: "LeBron James", role: "Jogador de basquete", text: "Filmado fazendo uma sessão de OHB de 60 a 90 minutos na série da Netflix 'Starting 5'.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
           { name: "Novak Djokovic", role: "Tenista", text: "Citado pela mídia esportiva por usar OHB para se manter no auge do seu jogo.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
           { name: "Justin Bieber", role: "Cantor", text: "Relatado dormir em uma câmara hiperbárica como parte de sua rotina de saúde.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
@@ -5582,7 +5588,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "CASOS DE USO",
         title: "Quando a OHB É Utilizada?",
-        text: "Pode ser utilizada como terapia de suporte em diversas condições médicas — da cicatrização de feridas à perda súbita de audição, do mal de descompressão à intoxicação por monóxido de carbono — conforme avaliação médica.",
+        text: "Os trabalhos clínicos sobre a perda súbita de audição também falam da pressão de oxigénio no ouvido interno. Esta página apenas resume esse debate. As decisões sobre o momento, os corticosteroides e o curso esperado cabem a um especialista habilitado. Não há aqui um resultado prometido.",
         cta: "Ver Todos os Casos de Uso"
       },
       targetMarkets: {
@@ -5648,7 +5654,7 @@ const TRANSLATIONS = {
     },
     technology: {
       header: { eyebrow: "PLATAFORMA TECNOLÓGICA", title: "O Ecossistema Tecnológico HBOT City Tech", subtitle: "Não é apenas um painel de controle — é um sistema conectado, inteligente e em constante evolução." },
-      intro: "Cada modelo HBOT City Tech inclui de série o CityConnect™, CityOS™, CityAI™, CitySync™ e CityGuard™. Juntas, essas cinco plataformas transformam a câmara de um simples dispositivo de tratamento em um sistema inteligente, conectado e preditivo.",
+      intro: "Cada modelo HBOT City Tech inclui de série o CityConnect™, CityOS™, CityAI™, CitySync™ e CityGuard™. Juntas, essas cinco plataformas transformam a câmara de um simples dispositivo de sessão em um sistema inteligente, conectado e preditivo.",
       pillars: {
         connect: {
           title: "CityConnect™",
@@ -5674,7 +5680,7 @@ const TRANSLATIONS = {
         },
         ai: {
           title: "CityAI™",
-          subtitle: "Otimização de Tratamento Potencializada por IA",
+          subtitle: "Otimização de Sessão Potencializada por IA",
           desc: "Analisa dados operacionais para apoiar operadores autorizados com visibilidade e relatórios; não substitui o julgamento clínico nem o operador.",
           features: [
             "Visibilidade e resumos de dados operacionais",
@@ -5767,8 +5773,8 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo", tagline: "1 Pessoa · Posição Deitada", desc: "Uma câmara totalmente equipada, desenvolvida especificamente para usuários que precisam de tratamento na posição deitada." },
-      solo: { title: "Dubai", tagline: "1 Pessoa · Posição Sentada", desc: "Uma câmara compacta, elegante e totalmente equipada, projetada para oxigenoterapia hiperbárica individual." },
+      soloLounge: { title: "Oslo", tagline: "1 Pessoa · Posição Deitada", desc: "Uma câmara totalmente equipada, desenvolvida especificamente para usuários que precisam de sessão na posição deitada." },
+      solo: { title: "Dubai", tagline: "1 Pessoa · Posição Sentada", desc: "Uma câmara compacta, elegante e totalmente equipada, projetada para sessão de oxigénio hiperbárico individual." },
       duo: { title: "Tokyo", tagline: "2 Pessoas · Posição Sentada", desc: "Uma câmara com dois assentos e janela panorâmica — para casais, parceiros ou uso paciente-acompanhante." },
       duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "Câmara multiusuário configurável para clínicas, hospitais e instalações profissionais." },
       quadCube: { title: "Milano", tagline: "4 Pessoas · Cabine Espaçosa", desc: "Uma cabine premium para quatro pessoas com interior espaçoso em design cubo — estofamento em couro acolchoado e iluminação ambiente em LED." },
@@ -5786,8 +5792,8 @@ const TRANSLATIONS = {
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       faq_title: "Perguntas frequentes sobre o Oslo",
-      tagline: "Excelência na Posição Deitada. Deite-se, relaxe, cure-se.",
-      overview_text: "Desenvolvida especificamente para usuários que precisam de tratamento na posição deitada. Sua maca ortopédica médica e estrutura em alumínio de nível aeronáutico proporcionam o máximo conforto durante sessões longas.",
+      tagline: "Excelência na Posição Deitada. Deite-se, relaxe, respire.",
+      overview_text: "Desenvolvida especificamente para usuários que precisam de sessão na posição deitada. Sua maca ortopédica médica e estrutura em alumínio de nível aeronáutico proporcionam o máximo conforto durante sessões longas.",
       specs: [
         { label: "Capacidade", value: "1 pessoa (posição deitada)" },
         { label: "Faixa de Pressão", value: "1.3 – 1.5 ATA" },
@@ -5802,7 +5808,7 @@ const TRANSLATIONS = {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
       faq_title: "Perguntas frequentes sobre o Dubai",
       tagline: "O Ápice da Sua Saúde Pessoal. Só você e o oxigênio.",
-      overview_text: "Uma câmara compacta, elegante e totalmente equipada, projetada para oxigenoterapia hiperbárica individual. Com controle por tela touchscreen, é ideal para uso doméstico ou clínico.",
+      overview_text: "Uma câmara compacta, elegante e totalmente equipada, projetada para sessão de oxigénio hiperbárico individual. Com controle por tela touchscreen, é ideal para uso doméstico ou clínico.",
       specs: [
         { label: "Capacidade", value: "1 pessoa (sentado)" },
         { label: "Faixa de Pressão", value: "1.3 – 1.5 ATA" },
@@ -5816,8 +5822,8 @@ const TRANSLATIONS = {
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       faq_title: "Perguntas frequentes sobre o Tokyo",
-      tagline: "Cure-se em Dupla. Uma experiência de tratamento compartilhada para duas pessoas.",
-      overview_text: "Uma câmara hiperbárica com dois assentos que oferece sessões de terapia compartilhadas. Projetada para casais, parceiros ou uso paciente-acompanhante.",
+      tagline: "Respire em Dupla. Uma experiência de sessão compartilhada para duas pessoas.",
+      overview_text: "Uma câmara hiperbárica com dois assentos que oferece sessões partilhadas compartilhadas. Projetada para casais, parceiros ou uso paciente-acompanhante.",
       institutionalNote: "Procura uma configuração institucional para 2–4 pessoas? <a href=\"model-tokyo-plus.html\">Veja o Tokyo Plus →</a>",
       specs: [
         { label: "Capacidade", value: "2 pessoas (sentado)" },
@@ -5831,7 +5837,7 @@ const TRANSLATIONS = {
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
       faq_title: "Perguntas frequentes sobre o Tokyo Plus",
-      tagline: "Capacidade terapêutica multipessoa e expansível para uso institucional.",
+      tagline: "Capacidade clínica multipessoa e expansível para uso institucional.",
       overview_text: "A versão institucional de alta pressão e multipessoa do Tokyo. Projetada para clínicas, hospitais e centros de bem-estar, com capacidade de assentos escalonada de 2 a 4 pessoas.",
       specs: [
         { label: "Capacidade", value: "2–4 pessoas (escalonada)" },
@@ -5846,7 +5852,7 @@ const TRANSLATIONS = {
       breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
       faq_title: "Perguntas frequentes sobre o Milano",
       tagline: "Uma experiência premium para quatro pessoas em design cubo espaçoso.",
-      overview_text: "Uma cabine premium para quatro pessoas com interior espaçoso em formato cubo. Com estofamento em couro acolchoado, iluminação ambiente em LED e unidade de controle independente, proporciona terapia multipessoal confortável para clínicas e centros de bem-estar.",
+      overview_text: "Uma cabine premium para quatro pessoas com interior espaçoso em formato cubo. Com estofamento em couro acolchoado, iluminação ambiente em LED e unidade de controle independente, proporciona sessão multipessoal confortável para clínicas e centros de bem-estar.",
       specs: [
         { label: "Capacidade", value: "4 pessoas (sentado)" },
         { label: "Faixa de Pressão", value: "2.0 – 6.0 ATA" },
@@ -5860,7 +5866,7 @@ const TRANSLATIONS = {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
       faq_title: "Perguntas frequentes sobre o Geneva",
       tagline: "Uma solução de nível hospitalar e grande capacidade.",
-      overview_text: "Uma câmara de nível hospitalar e grande capacidade para instituições médicas. Seu design modular e sistemas avançados de monitoramento atendem às necessidades dos centros de tratamento mais movimentados.",
+      overview_text: "Uma câmara de nível hospitalar e grande capacidade para instituições médicas. Seu design modular e sistemas avançados de monitoramento atendem às necessidades dos centros de sessão mais movimentados.",
       specs: [
         { label: "Capacidade", value: "6+ pessoas (sentado)" },
         { label: "Faixa de Pressão", value: "3.0 – 6.0 ATA" },
@@ -5871,19 +5877,19 @@ const TRANSLATIONS = {
       ]
     },
     hbotInfo: {
-      header: { eyebrow: "CENTRAL DE INFORMAÇÕES", title: "O Que É a OHB?", subtitle: "O que você precisa saber sobre a oxigenoterapia hiperbárica." },
-      whatIsHboc: { title: "O Que É Uma Câmara de Oxigênio Hiperbárico (COH)?", text: "As Câmaras de Oxigênio Hiperbárico são cabines pressurizadas, especialmente projetadas, que permitem que as pessoas respirem oxigénio de alta concentração sob pressão atmosférica mais alta que a normal. Essas câmaras são usadas para a Oxigenoterapia Hiperbárica (OHB), um tratamento medicamente reconhecido que acelera a cicatrização e promove o bem-estar geral." },
-      whyNeeded: { title: "Para Que Serve uma COH?", text: "As câmaras COH oferecem um ambiente controlado e pressurizado onde os utilizadores respiram oxigénio com concentração de 93–95%, permitindo uma recuperação mais rápida e uma regeneração celular aprimorada. Essas câmaras atendem instituições médicas, centros de bem-estar, clínicas esportivas e usuários particulares em todo o mundo." },
+      header: { eyebrow: "CENTRAL DE INFORMAÇÕES", title: "O Que É a OHB?", subtitle: "O que você precisa saber sobre a sessão de oxigénio hiperbárico." },
+      whatIsHboc: { title: "O Que É Uma Câmara de Oxigênio Hiperbárico (COH)?", text: "As Câmaras de Oxigênio Hiperbárico são cabines pressurizadas, especialmente projetadas, que permitem que as pessoas respirem oxigénio de alta concentração sob pressão atmosférica mais alta que a normal. Estas cabines são usadas para uma sessão de oxigénio hiperbárico (OHB). A série Wellness não é apresentada como dispositivo médico e nenhum resultado é prometido." },
+      whyNeeded: { title: "Para Que Serve uma COH?", text: "As câmaras COH oferecem um ambiente controlado e pressurizado onde os utilizadores respiram oxigénio com concentração de 93–95%, A série Wellness não é apresentada como dispositivo médico e nenhum resultado é prometido. Essas câmaras atendem instituições médicas, centros de bem-estar, clínicas esportivas e usuários particulares em todo o mundo." },
       whatIsHbot: {
-        title: "O Que É a Oxigenoterapia Hiperbárica (OHB)?",
-        text1: "A OHB é um tratamento médico no qual os pacientes respiram oxigênio puro dentro de uma câmara pressurizada, em níveis mais altos que a pressão atmosférica normal. Esse processo acelera a cicatrização de feridas, reduz a inflamação e promove a regeneração dos tecidos.",
-        text2: "Os pacientes respiram dentro dessas câmaras, o que ajuda os pulmões a captar e absorver oxigênio com mais eficiência. A OHB também é usada no tratamento de pacientes com perda súbita de audição e visão, infecções ósseas e úlceras de pé diabético. Dependendo do tipo de tratamento, os pacientes podem se sentar ou deitar durante o procedimento."
+        title: "O Que É a Sessão de oxigénio hiperbárico Hiperbárica (OHB)?",
+        text1: "Na literatura clínica, a OHB descreve uma sessão em que uma pessoa respira oxigénio numa cabine acima da pressão atmosférica habitual. Esta página resume essa descrição. As cabines da série Wellness não são apresentadas como dispositivos médicos e nenhum resultado é prometido.",
+        text2: "A pessoa respira dentro da cabine. As publicações clínicas também falam da sessão de oxigénio hiperbárico ao lado de alguns usos hospitalares; isso não é uma afirmação do produto. Conforme o formato da sessão, pode sentar-se ou deitar-se."
       },
       indications: {
         title: "Em Quais Situações a OHB Pode Ser Usada?",
-        subtitle: "A lista abaixo resume, apenas a título informativo, as aplicações clinicamente reconhecidas da oxigenoterapia hiperbárica. São realizadas em unidades de saúde licenciadas, sob avaliação e supervisão médica. Não é feita qualquer alegação terapêutica sobre os produtos da HBOT Chamber Tech.",
+        subtitle: "A lista abaixo resume, apenas a título informativo, as aplicações clinicamente reconhecidas da sessão de oxigénio hiperbárico. São realizadas em unidades de saúde licenciadas, sob avaliação e supervisão médica. Não é feita qualquer alegação clínica sobre os produtos da HBOT Chamber Tech.",
         items: [
-          { icon: "wound", label: "Cicatrização de Feridas (Diabéticas e Não Diabéticas)" },
+          { icon: "wound", label: "Recuperação de Feridas (Diabéticas e Não Diabéticas)" },
           { icon: "eye", label: "Perda Súbita de Visão" },
           { icon: "decompression", label: "Mal de Descompressão" },
           { icon: "embolism", label: "Embolia Gasosa ou por Ar" },
@@ -5897,7 +5903,7 @@ const TRANSLATIONS = {
           { icon: "smoke", label: "Intoxicação Aguda por Fumaça" }
         ]
       },
-      disclaimer: "Esta informação tem caráter meramente orientativo e não constitui aconselhamento médico. As decisões de tratamento devem sempre ser avaliadas por um profissional de saúde."
+      disclaimer: "Esta informação tem caráter meramente orientativo e não constitui aconselhamento médico. As decisões de utilização devem sempre ser avaliadas por um profissional de saúde."
     },
     arView: {
       back: "← Voltar ao configurador",
@@ -5946,7 +5952,7 @@ const TRANSLATIONS = {
       ],
       "nexus": [
         { q: "Para quantas pessoas é o Geneva?", a: "O Geneva é uma câmara de grande capacidade e grau hospitalar, que começa em 6 pessoas e escala em níveis de 6/8/10/12." },
-        { q: "Para quais instalações o Geneva é adequado?", a: "Foi projetado para hospitais e grandes centros de saúde com alto volume terapêutico; sua estrutura modular está pronta para expansão futura." },
+        { q: "Para quais instalações o Geneva é adequado?", a: "Foi projetado para hospitais e grandes centros de saúde com alto volume clínico; sua estrutura modular está pronta para expansão futura." },
         { q: "Em qual faixa de pressão o Geneva opera?", a: "Entre 3,0 e 6,0 ATA, com pureza de oxigênio de 93–95%." },
         { q: "Que equipamento de segurança o Geneva possui?", a: "Um sistema de válvula de emergência vem de série; sua construção de grau hospitalar é projetada para uso contínuo e de alto volume." },
         { q: "Como faço para obter um orçamento para o Geneva?", a: "Entre em contato informando a capacidade necessária (6/8/10/12 pessoas) e prepararemos um desenho técnico e um orçamento sob medida para sua instituição." }
@@ -5998,7 +6004,7 @@ const TRANSLATIONS = {
         select_button: "Escolher Esta",
         close: "Fechar",
         items: [
-          { scenario: "Em casa, sozinho, quero tratamento na posição deitada", model: "Oslo", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Em casa, sozinho, quero sessão na posição deitada", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "Em casa, sozinho, quero ficar sentado durante as sessões", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Eu e meu(minha) parceiro(a) vamos usar juntos, em casa", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Clínica ou centro de bem-estar, uso institucional para 2 a 4 pessoas", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -6138,11 +6144,11 @@ const TRANSLATIONS = {
       }
     },
     blog: {
-      header: { eyebrow: "BLOG", title: "Pesquisas e Notícias", subtitle: "Desenvolvimentos científicos e notícias recentes sobre a oxigenoterapia hiperbárica." },
+      header: { eyebrow: "BLOG", title: "Pesquisas e Notícias", subtitle: "Desenvolvimentos científicos e notícias recentes sobre a sessão de oxigénio hiperbárico." },
       source_label: "Fonte:",
       min_read: "min de leitura",
       read_more: "Ler o artigo completo",
-      disclaimer: "Estas publicações são resumos elaborados a partir de publicações científicas e fontes jornalísticas disponíveis publicamente; não constituem aconselhamento médico. Consulte sempre um profissional de saúde para decisões de tratamento.",
+      disclaimer: "Estas publicações são resumos elaborados a partir de publicações científicas e fontes jornalísticas disponíveis publicamente; não constituem aconselhamento médico. Fale sempre com um profissional de saúde sobre a sua própria situação.",
       posts: [
         {
           slug: "hbot-kurucu-notu.html",
@@ -6152,7 +6158,7 @@ const TRANSLATIONS = {
           title: "Por Que Eu Mesmo Uso Oxigênio Hiperbárico",
           paragraphs: [
             "Sob o guarda-chuva do Almita Group, conduzimos seis setores diferentes lado a lado, e uma agenda exigente com viagens constantes faz parte da rotina. Antes de começarmos a fabricar as câmaras da HBOT Chamber Tech, optei por usar regularmente nossas próprias unidades — acredito que você deve experimentar um produto antes de defendê-lo.",
-            "Posso dizer que, após as sessões, costumo me sentir mais energizado e concentrado; isso é uma observação pessoal, não uma promessa do mesmo resultado para todos. A oxigenoterapia hiperbárica não substitui o tratamento médico; converse sempre sobre o seu uso com um profissional de saúde."
+            "Posso dizer que, após as sessões, costumo me sentir mais energizado e concentrado; isso é uma observação pessoal, não uma promessa do mesmo resultado para todos. A sessão de oxigénio hiperbárico não substitui o acompanhamento médico; converse sempre sobre o seu uso com um profissional de saúde."
           ],
           source_name: "Almita Group — Nota do Fundador",
           source_url: "https://almitagroup.com",
@@ -6165,7 +6171,7 @@ const TRANSLATIONS = {
           icon: "antiaging",
           title: "OHB e Longevidade: A Ascensão da Tendência de Envelhecimento Saudável",
           paragraphs: [
-            "O movimento da longevidade — popularizado por empreendedores de tecnologia como Bryan Johnson e seus protocolos pessoais de 'reversão da idade' — também impulsionou o interesse pela oxigenoterapia hiperbárica. Uma de suas âncoras científicas é um estudo clínico publicado na revista Aging em 2020, no qual 35 adultos saudáveis com 64 anos ou mais completaram um programa de OHB com 60 sessões.",
+            "O movimento da longevidade — popularizado por empreendedores de tecnologia como Bryan Johnson e seus protocolos pessoais de 'reversão da idade' — também impulsionou o interesse pela sessão de oxigénio hiperbárico. Uma de suas âncoras científicas é um estudo clínico publicado na revista Aging em 2020, no qual 35 adultos saudáveis com 64 anos ou mais completaram um programa de OHB com 60 sessões.",
             "O estudo relatou um alongamento dos telômeros superior a 20% nas células imunológicas — chegando a 37% nas células B — junto com uma redução de até 37% nas células imunológicas senescentes. Como o ensaio não teve grupo de controle e teve uma amostra limitada, os resultados são considerados 'promissores, porém preliminares'; os pesquisadores destacam que estudos maiores são necessários para definir os protocolos ideais."
           ],
           source_name: "PMC – A OHB Aumenta o Comprimento dos Telômeros e Reduz a Imunossenescência (Aging, 2020)",
@@ -6181,7 +6187,7 @@ const TRANSLATIONS = {
             "Atletas mundialmente famosos como Cristiano Ronaldo, LeBron James, Novak Djokovic e Floyd Mayweather foram destacados pela imprensa por usar câmaras hiperbáricas como parte de suas rotinas de recuperação. Por trás desse interesse estão descobertas da medicina esportiva que sugerem que a OHB pode reduzir edemas e inflamações, apoiar a reparação de tecidos e ajudar os atletas a retornar aos treinos mais cedo.",
             "Estudos citados em revisões incluem uma observação nos Jogos Olímpicos de Inverno de Nagano, em que 7 atletas se recuperaram mais rapidamente com sessões curtas a 1.3 ATA, um relatório clínico inicial de uma redução de 55% nos dias perdidos por lesão entre jogadores de futebol profissional, e um estudo universitário sugerindo um retorno cerca de 30% mais rápido após entorses de tornozelo. Os autores observam que as evidências se baseiam majoritariamente em amostras pequenas e que ensaios clínicos randomizados e controlados são necessários para conclusões definitivas."
           ],
-          source_name: "PMC – O Papel da Terapia de Oxigênio Hiperbárico na Medicina Esportiva (revisão)",
+          source_name: "PMC – O Papel da Sessão de oxigénio hiperbárico na Medicina Esportiva (revisão)",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
@@ -6194,7 +6200,7 @@ const TRANSLATIONS = {
             "A primeira questão ao escolher uma câmara hiperbárica para uso doméstico ou particular é a capacidade: as câmaras monoplace oferecem uma pegada compacta, enquanto as câmaras multiplace permitem que familiares ou pequenos grupos sejam tratados ao mesmo tempo e facilitam sessões com acompanhante. A UHMS, autoridade internacional em medicina hiperbárica, exige que as câmaras pressurizadas sejam equipamentos aprovados e inspecionados regularmente, e que os operadores recebam treinamento especializado.",
             "O nível de pressão é o segundo tema-chave: os protocolos clínicos costumam ser aplicados na faixa de 2.0–2.4 ATA, enquanto 1.3–2.0 ATA é comum em sistemas domésticos — sempre revise o nível adequado aos seus objetivos com um profissional de saúde. O terceiro tema é segurança e conforto: as normas de segurança contra incêndio em ambientes com oxigênio, a descompressão de emergência, o nível de ruído, a iluminação interna e os sistemas de comunicação moldam diretamente a experiência diária; confirme por escrito os termos de manutenção e garantia antes de comprar."
           ],
-          source_name: "StatPearls (NCBI) – Terapia de Oxigênio Hiperbárico",
+          source_name: "StatPearls (NCBI) – Sessão de oxigénio hiperbárico",
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
@@ -6204,10 +6210,10 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "O Papel do Oxigênio Hiperbárico em Feridas Crônicas Continua Crescendo",
           paragraphs: [
-            "Revisões recentes na área de cuidados cirúrgicos e de feridas crônicas mostram que a oxigenoterapia hiperbárica (OHB) apoia o processo de cicatrização ao aumentar a oxigenação dos tecidos. Em feridas de pé diabético, úlceras venosas de perna, queimaduras e danos teciduais induzidos por radiação, a OHB tem sido relatada como capaz de melhorar as taxas de fechamento de feridas e reduzir o risco de infecção.",
-            "Um estudo publicado em 2025 constatou que a OHB combinada com a terapia de feridas por pressão negativa (TFPN) aumentou significativamente a velocidade de cicatrização em comparação com a TFPN isolada. Em cirurgia reconstrutiva, a OHB é relatada como um apoio à sobrevivência de tecidos e enxertos, além de promover a formação de novos vasos sanguíneos."
+            "Revisões recentes na área de cuidados cirúrgicos e de feridas crônicas mostram que a sessão de oxigénio hiperbárico (OHB) apoia o processo de recuperação ao aumentar a oxigenação dos tecidos. Em feridas de pé diabético, úlceras venosas de perna, queimaduras e danos teciduais induzidos por radiação, a OHB tem sido relatada como capaz de melhorar as taxas de fechamento de feridas e reduzir o risco de infecção.",
+            "Um estudo publicado em 2025 constatou que a OHB combinada com a suporte de feridas por pressão negativa (TFPN) aumentou significativamente a velocidade de recuperação em comparação com a TFPN isolada. Em cirurgia reconstrutiva, a OHB é relatada como um apoio à sobrevivência de tecidos e enxertos, além de promover a formação de novos vasos sanguíneos."
           ],
-          source_name: "PMC – Terapia de Oxigênio Hiperbárico na Cicatrização de Feridas Cirúrgicas e Preservação de Tecidos",
+          source_name: "PMC – Sessão de oxigénio hiperbárico na Recuperação de Feridas Cirúrgicas e Preservação de Tecidos",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
@@ -6217,7 +6223,7 @@ const TRANSLATIONS = {
           icon: "burn",
           title: "Por Que os Atletas Estão Recorrendo às Câmaras Hiperbáricas",
           paragraphs: [
-            "Muitos atletas de elite do tênis, natação, basquete e golfe estão escolhendo a oxigenoterapia hiperbárica como parte de sua rotina de recuperação. Pesquisas em medicina esportiva mostram que a OHB pode acelerar a cicatrização, reduzir a inflamação e ajudar os atletas a retornar aos treinos mais cedo.",
+            "Alguns atletas de ténis, natação, basquetebol e golfe acrescentam uma sessão de oxigénio hiperbárico à rotina de recuperação. É a descrição de uma escolha, não um resultado prometido sobre dor muscular, fadiga ou o tempo de regresso ao treino.",
             "Alguns estudos relataram níveis mais baixos de dor muscular e fadiga em atletas que receberam OHB, com tempos de recuperação reduzidos em cerca de 30%. Embora a área ainda precise de ensaios clínicos maiores e controlados, os resultados são promissores para a saúde dos atletas."
           ],
           source_name: "Turkish Journal of Sports Medicine",
@@ -6230,8 +6236,8 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "Meta-Análise sobre Úlceras de Pé Diabético: Menor Risco de Amputação",
           paragraphs: [
-            "Uma meta-análise de 14 estudos, abrangendo 768 participantes, constatou que a oxigenoterapia hiperbárica proporcionou um benefício estatisticamente significativo na cicatrização completa de úlceras de pé diabético e na redução do risco de amputação maior.",
-            "Uma revisão sistemática recente, publicada em 2024, chegou a conclusões semelhantes: a maioria dos estudos revisados observou taxas mais baixas de amputação maior, taxas mais altas de cicatrização de feridas e redução do tamanho e da profundidade das úlceras com a OHB."
+            "Os trabalhos publicados discutem as sessões de oxigénio hiperbárico ao lado do acompanhamento clínico das úlceras do pé diabético. Esta nota apenas aponta para essa literatura. Não promete que uma úlcera feche, que o risco de amputação mude, nem que uma cabine substitua o acompanhamento médico.",
+            "Uma revisão de 2024 faz parte da mesma conversa. Os números na literatura variam conforme o contexto, a supervisão e o resto do plano de cada pessoa. A HBOT Chamber Tech não apresenta nenhuma condição como algo que as suas cabines resolvam."
           ],
           source_name: "PMC – Eficácia da OHB para Úlceras de Pé Diabético",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
@@ -6243,7 +6249,7 @@ const TRANSLATIONS = {
           icon: "ear",
           title: "Oxigênio Hiperbárico para Perda Súbita de Audição: A Intervenção Precoce Importa",
           paragraphs: [
-            "Em pacientes com perda auditiva neurossensorial súbita, a oxigenoterapia hiperbárica busca melhorar a microcirculação e reduzir a inflamação ao aumentar a pressão de oxigênio no ouvido interno. Estudos mostram que pacientes que iniciam o tratamento precocemente, especialmente em combinação com corticoterapia, tendem a apresentar resultados mais favoráveis.",
+            "Em pacientes com perda auditiva neurossensorial súbita, a sessão de oxigénio hiperbárico busca melhorar a microcirculação e reduzir a inflamação ao aumentar a pressão de oxigênio no ouvido interno. Estudos mostram que pacientes que iniciam o sessão precocemente, especialmente em combinação com corticosteroides, tendem a apresentar resultados mais favoráveis.",
             "Embora os resultados das pesquisas não ofereçam consenso total sobre a eficácia, alguns estudos observaram melhora da audição em mais da metade dos pacientes. Especialistas destacam a necessidade de mais ensaios clínicos para estabelecer protocolos padronizados de pressão e duração."
           ],
           source_name: "JAMA Otolaryngology–Head & Neck Surgery",
@@ -6270,7 +6276,7 @@ const TRANSLATIONS = {
           title: "Gestão de Pressão em Câmaras Multiplace: Protocolos Operacionais Clínicos",
           paragraphs: [
             "As câmaras hiperbáricas multiplace são a escolha padrão para hospitais e clínicas, pois tratam vários pacientes ao mesmo tempo e permitem que a equipe médica acompanhe os pacientes no interior da câmara. As diretrizes operacionais publicadas pela UHMS, autoridade internacional em medicina hiperbárica, recomendam ajustar as taxas de compressão e descompressão ao conforto do paciente e ao risco de barotrauma auricular, realizar cada sessão sob supervisão de um operador certificado e treinar cenários de evacuação de emergência regularmente.",
-            "Na prática clínica, o protocolo de pressão é determinado pela indicação de tratamento: os protocolos comuns operam na faixa de 2.0–2.4 ATA, enquanto certas indicações especiais podem exigir pressões mais altas. Especialistas destacam que o nível de pressão adequado deve sempre ser avaliado por um médico especializado em medicina hiperbárica, e que os equipamentos da câmara devem ser certificados para cobrir com segurança a faixa de pressão desejada."
+            "Na prática clínica, o protocolo de pressão é determinado pela indicação de sessão: os protocolos comuns operam na faixa de 2.0–2.4 ATA, enquanto certas indicações especiais podem exigir pressões mais altas. Especialistas destacam que o nível de pressão adequado deve sempre ser avaliado por um médico especializado em medicina hiperbárica, e que os equipamentos da câmara devem ser certificados para cobrir com segurança a faixa de pressão desejada."
           ],
           source_name: "UHMS – Undersea & Hyperbaric Medical Society",
           source_url: "https://www.uhms.org"
@@ -6295,8 +6301,8 @@ const TRANSLATIONS = {
           icon: "premium",
           title: "Uma Nova Tendência em Hotéis de Luxo: Suítes de Bem-Estar Hiperbárico",
           paragraphs: [
-            "Relatórios do setor sobre a economia global do bem-estar mostram que o turismo de bem-estar é um de seus segmentos de crescimento mais rápido. Refletindo essa tendência, hotéis e resorts de luxo estão indo além das ofertas de spa e fitness, adicionando tecnologias avançadas de recuperação, como câmaras de oxigênio hiperbárico, crioterapia e terapia de luz vermelha, à experiência dos hóspedes.",
-            "Observadores do setor apontam que as unidades hiperbáricas se destacam especialmente em pacotes premium com temática de 'longevidade' e 'performance'. Para os operadores hoteleiros, os temas críticos são a conformidade com normas de segurança, a contratação de equipe treinada e a estruturação adequada da triagem de saúde prévia ao uso; as aplicações voltadas aos hóspedes devem ser oferecidas como suporte ao bem-estar geral, não como tratamento médico."
+            "Relatórios do setor sobre a economia global do bem-estar mostram que o turismo de bem-estar é um de seus segmentos de crescimento mais rápido. Refletindo essa tendência, hotéis e resorts de luxo estão indo além das ofertas de spa e fitness, adicionando tecnologias avançadas de recuperação, como câmaras de oxigênio hiperbárico, aplicação de frio e luz vermelha, à experiência dos hóspedes.",
+            "Observadores do setor apontam que as unidades hiperbáricas se destacam especialmente em pacotes premium com temática de 'longevidade' e 'performance'. Para os operadores hoteleiros, os temas críticos são a conformidade com normas de segurança, a contratação de equipe treinada e a estruturação adequada da triagem de saúde prévia ao uso; as aplicações voltadas aos hóspedes devem ser oferecidas como suporte ao bem-estar geral, não como acompanhamento médico."
           ],
           source_name: "Global Wellness Institute",
           source_url: "https://globalwellnessinstitute.org"
@@ -6309,7 +6315,7 @@ const TRANSLATIONS = {
           title: "3.0 ATA e Acima: Padrões de Segurança Hiperbárica de Nível Médico",
           paragraphs: [
             "Níveis de pressão de 3.0 ATA e acima são uma área que a medicina hiperbárica aplica apenas em ambientes clínicos rigorosamente regulamentados. As câmaras que operam nesses níveis devem ser fabricadas em conformidade com as regulamentações de vasos de pressão, atender às disposições hiperbáricas de normas internacionais como a NFPA 99 para segurança contra incêndio, e passar por inspeções periódicas regulares. Gerenciar o risco de incêndio em uma atmosfera enriquecida com oxigênio é o tema de projeto mais crítico para essa classe de sistema.",
-            "Os outros elos da cadeia de segurança são fatores humanos: um operador hiperbárico certificado, avaliação do paciente antes da sessão, um plano de evacuação de emergência e supervisão médica. Órgãos profissionais recomendam que os tratamentos na classe de alta pressão sejam realizados somente em instituições com essa infraestrutura, e aconselham que as organizações compradoras solicitem por escrito ao fabricante certificados de pressão, relatórios de teste e programas de treinamento."
+            "Os outros elos da cadeia de segurança são fatores humanos: um operador hiperbárico certificado, avaliação do paciente antes da sessão, um plano de evacuação de emergência e supervisão médica. Órgãos profissionais recomendam que os sessões na classe de alta pressão sejam realizados somente em instituições com essa infraestrutura, e aconselham que as organizações compradoras solicitem por escrito ao fabricante certificados de pressão, relatórios de teste e programas de treinamento."
           ],
           source_name: "NFPA – National Fire Protection Association",
           source_url: "https://www.nfpa.org"
@@ -6398,7 +6404,7 @@ const TRANSLATIONS = {
           {
             title: "Modelos HBOT City Tech",
             items: [
-              { q: "Quais modelos HBOT City Tech estão disponíveis?", a: "A família de produtos HBOT City Tech é desenvolvida para diferentes capacidades de usuários e casos de uso.\n\nOslo — Um sistema individual desenvolvido para usuários que precisam de tratamento na posição deitada.\n\nDubai — Um sistema hiperbárico individual e compacto, usado na posição sentada. Projetado tanto para uso individual/doméstico quanto para uso comercial.\n\nTokyo — Um sistema com interior espaçoso que pode acomodar dois usuários na mesma sessão.\n\nTokyo Plus — Um sistema configurável de alta pressão para 2–4 pessoas e uso institucional.\n\nMilano — Um sistema hiperbárico de grande volume, em formato cubo, para 4 usuários, desenvolvido para clínicas, hospitais e operadores profissionais.\n\nGeneva — Um sistema institucional de grande capacidade e nível hospitalar, com capacidade inicial de 6 usuários, expansível até 12." },
+              { q: "Quais modelos HBOT City Tech estão disponíveis?", a: "A família de produtos HBOT City Tech é desenvolvida para diferentes capacidades de usuários e casos de uso.\n\nOslo — Um sistema individual desenvolvido para usuários que precisam de sessão na posição deitada.\n\nDubai — Um sistema hiperbárico individual e compacto, usado na posição sentada. Projetado tanto para uso individual/doméstico quanto para uso comercial.\n\nTokyo — Um sistema com interior espaçoso que pode acomodar dois usuários na mesma sessão.\n\nTokyo Plus — Um sistema configurável de alta pressão para 2–4 pessoas e uso institucional.\n\nMilano — Um sistema hiperbárico de grande volume, em formato cubo, para 4 usuários, desenvolvido para clínicas, hospitais e operadores profissionais.\n\nGeneva — Um sistema institucional de grande capacidade e nível hospitalar, com capacidade inicial de 6 usuários, expansível até 12." },
               { q: "Para quem o Dubai é indicado?", a: "O Dubai é desenvolvido tanto para uso individual/doméstico quanto para operadores que buscam uma configuração individual. Graças à sua estrutura compacta, pode ser considerado para residências, clínicas, centros esportivos, centros de bem-estar e hotéis.\n\nAs condições exatas de uso são determinadas pela classificação do produto e pelas regulamentações do país de instalação." },
               { q: "Quantas pessoas o Tokyo pode acomodar?", a: "O Tokyo foi projetado para acomodar dois usuários na mesma sessão. A estrutura dos assentos, os acabamentos internos e a disposição dos assentos podem variar conforme a configuração pedida." },
               { q: "Qual é a capacidade de usuários do modelo HBOT City Tech multipessoal?", a: "Os modelos HBOT City Tech multiusuário começam com o Milano, para 4 pessoas. Para o Geneva, de nível hospitalar, a capacidade padrão é de 6 pessoas, com capacidade opcional de até 12 pessoas (em incrementos de 2 assentos).\n\nA capacidade exata é determinada pelos seguintes fatores:", list: ["Dimensões da câmara", "Disposição dos assentos", "Amplitude de movimento dos usuários", "Capacidade do sistema de oxigênio", "Protocolo operacional", "Requisitos locais de segurança e licenciamento"], aAfter: "Cada opção é incorporada ao projeto após uma avaliação de segurança e uma análise de adequação técnica." },
@@ -6454,9 +6460,9 @@ const TRANSLATIONS = {
           {
             title: "Uso Médico e Alegações de Saúde",
             items: [
-              { q: "Quais condições um sistema hiperbárico é usado para tratar?", a: "Os usos médicos reconhecidos da aplicação de oxigênio hiperbárico podem variar conforme o país, o órgão regulador, a classificação do equipamento e o protocolo clínico.\n\nAs aplicações de finalidade médica devem ser realizadas apenas com equipamentos devidamente classificados, em instalações de saúde autorizadas, sob supervisão de pessoal de saúde treinado, com avaliação médica e protocolo adequado.\n\nAs informações em nosso site não constituem aconselhamento pessoal para o diagnóstico ou tratamento de qualquer doença." },
+              { q: "Quais condições um sistema hiperbárico é usado para acompanhar?", a: "Os usos médicos reconhecidos da aplicação de oxigênio hiperbárico podem variar conforme o país, o órgão regulador, a classificação do equipamento e o protocolo clínico.\n\nAs aplicações de finalidade médica devem ser realizadas apenas com equipamentos devidamente classificados, em instalações de saúde autorizadas, sob supervisão de pessoal de saúde treinado, com avaliação médica e protocolo adequado.\n\nAs informações em nosso site não constituem aconselhamento pessoal para o diagnóstico ou sessão de qualquer doença." },
               { q: "Os equipamentos HBOT City Tech tratam alguma doença?", a: "O uso pretendido de um equipamento e as alegações de saúde que podem ser feitas a seu respeito dependem da classificação oficial do produto e da documentação que ele possui.\n\nAs declarações sobre os sistemas HBOT City Tech são feitas apenas dentro do uso pretendido especificado nos documentos técnicos e na avaliação de conformidade. Nenhum resultado garantido é oferecido para qualquer doença." },
-              { q: "Sistemas de baixa pressão são o mesmo que a OHB clínica?", a: "Não. Nem toda aplicação de oxigênio pressurizado pertence à mesma classe técnica ou clínica. Os seguintes fatores podem alterar a natureza da aplicação:", list: ["Pressão de operação", "Concentração de oxigênio inalado", "Método de fornecimento de oxigênio", "Duração da sessão", "Certificação do equipamento", "Uso pretendido", "Ambiente de aplicação", "Supervisão por pessoal de saúde"], aAfter: "Se um sistema pode ser definido como um \"dispositivo médico de terapia de oxigênio hiperbárico\" depende das regulamentações do mercado em questão e do uso pretendido documentado do produto." },
+              { q: "Sistemas de baixa pressão são o mesmo que a OHB clínica?", a: "Não. Nem toda aplicação de oxigênio pressurizado pertence à mesma classe técnica ou clínica. Os seguintes fatores podem alterar a natureza da aplicação:", list: ["Pressão de operação", "Concentração de oxigênio inalado", "Método de fornecimento de oxigênio", "Duração da sessão", "Certificação do equipamento", "Uso pretendido", "Ambiente de aplicação", "Supervisão por pessoal de saúde"], aAfter: "Se um sistema pode ser definido como um \"dispositivo médico de sessão de oxigénio hiperbárico\" depende das regulamentações do mercado em questão e do uso pretendido documentado do produto." },
               { q: "Os resultados são garantidos?", a: "A resposta dos usuários pode variar de pessoa para pessoa. Resultados de saúde, recuperação, performance ou similares não podem ser garantidos.\n\nAs decisões de uso não devem se basear exclusivamente em informações promocionais gerais ou depoimentos de usuários." }
             ]
           },
@@ -6532,14 +6538,14 @@ const TRANSLATIONS = {
       home: { title: "HBOT Chamber Tech | HBOT City Tech Series Hyperbare Sauerstoffkammern", desc: "IoT-vernetzte, KI-gestützte hyperbare Sauerstoffkammern. Atmen Sie auf dem Gipfel mit der HBOT City Tech Series." },
       technology: { title: "Technologie | HBOT Chamber Tech", desc: "CityConnect, CityOS, CityAI, CitySync und CityGuard — die vernetzte, intelligente Technologieplattform der HBOT City Tech Series." },
       models: { title: "Modelle | HBOT Chamber Tech", desc: "Oslo, Dubai, Tokyo, Tokyo Plus, Milano und Geneva — sechs Modelle hyperbarer Sauerstoffkammern." },
-      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer für eine Person, konzipiert für die Behandlung in liegender Position." },
+      soloLounge: { title: "Oslo | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer für eine Person, konzipiert für die Sitzung in liegender Position." },
       solo: { title: "Dubai | HBOT Chamber Tech", desc: "Eine kompakte, voll ausgestattete hyperbare Sauerstoffkammer für die individuelle Nutzung." },
-      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Eine gemeinsam genutzte hyperbare Sauerstofftherapie-Kammer für zwei Personen." },
+      duo: { title: "Tokyo | HBOT Chamber Tech", desc: "Eine gemeinsam genutzte hyperbare Sauerstoffanwendung-Kammer für zwei Personen." },
       duoPlus: { title: "Tokyo Plus | HBOT Chamber Tech", desc: "Eine druckstarke Kammer für 2-4 Personen für den institutionellen Einsatz." },
       quadCube: { title: "Milano | HBOT Chamber Tech", desc: "Eine geräumige hyperbare Sauerstoffkammer im Cube-Design für vier Personen." },
       nexus: { title: "Geneva | HBOT Chamber Tech", desc: "Eine hyperbare Sauerstoffkammer in Krankenhausqualität mit großer Kapazität für sechs oder mehr Personen." },
-      hbotInfo: { title: "Was ist HBOT? | HBOT Chamber Tech", desc: "Was ist die hyperbare Sauerstofftherapie (HBOT), wofür wird sie eingesetzt und bei welchen Indikationen kommt sie zur Anwendung." },
-      blog: { title: "Blog | HBOT Chamber Tech", desc: "Aktuelle Forschung, Neuigkeiten und Entwicklungen rund um die hyperbare Sauerstofftherapie." },
+      hbotInfo: { title: "Was ist HBOT? | HBOT Chamber Tech", desc: "Was ist die hyperbare Sauerstoffanwendung (HBOT), wofür wird sie eingesetzt und bei welchen Indikationen kommt sie zur Anwendung." },
+      blog: { title: "Blog | HBOT Chamber Tech", desc: "Aktuelle Forschung, Neuigkeiten und Entwicklungen rund um die hyperbare Sauerstoffanwendung." },
       configurator: {
         title: "Konfigurator | HBOT Chamber Tech", desc: "Konfigurieren Sie Ihre eigene HBOT City Tech-Kammer: Wählen Sie Modell, Druckstufe und Zusatzausstattung für eine sofortige Preisschätzung." },
       contact: { title: "Kontakt | HBOT Chamber Tech", desc: "Kontaktieren Sie HBOT Chamber Tech: Adresse, Telefon, E-Mail und Kontaktformular." },
@@ -6571,7 +6577,8 @@ const TRANSLATIONS = {
         rights: "Alle Rechte vorbehalten.",
         privacy: "Datenschutzerklärung",
         terms: "Nutzungsbedingungen",
-        wellness_disclaimer: "Kammern der Wellness-Serie sind keine Medizinprodukte und nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder zu verhüten. Klinische Anwendungen erfolgen in lizenzierten Gesundheitseinrichtungen unter ärztlicher Aufsicht.",
+        whatsapp: "WhatsApp",
+        wellness_disclaimer: "Kammern der Wellness-Serie sind keine Medizinprodukte und nicht dazu bestimmt, Krankheiten zu diagnostizieren, medizinisch zu versorgen oder ihnen vorzubeugen. Klinische Anwendungen erfolgen in lizenzierten Gesundheitseinrichtungen unter ärztlicher Aufsicht.",
         membership_note: "ist ein Mitglied der Almita Group."
       },
       cta_banner: {
@@ -6638,11 +6645,11 @@ const TRANSLATIONS = {
       celebs: {
         eyebrow: "WER NUTZT ES?",
         title: "Die Besten der Welt setzen auf hyperbaren Sauerstoff",
-        subtitle: "Namen, über die in der Presse im Zusammenhang mit hyperbarer Sauerstofftherapie für Erholung, Leistung und Langlebigkeit berichtet wurde, spiegeln das Vertrauen in diese Technologie wider. HBOT Chamber Tech entwickelt genau diese Technologie.",
+        subtitle: "Namen, über die in der Presse im Zusammenhang mit hyperbarer Sauerstoffanwendung für Erholung, Leistung und Langlebigkeit berichtet wurde, spiegeln das Vertrauen in diese Technologie wider. HBOT Chamber Tech entwickelt genau diese Technologie.",
         source_label: "Quelle",
         disclaimer: "Über die hier aufgeführten Personen wurde in Presseberichten berichtet, dass sie HBOT nutzen; sie sind keine Markenbotschafter oder Kunden von HBOT Chamber Tech.",
         items: [
-          { name: "Cristiano Ronaldo", role: "Fußballspieler", text: "In Berichten wurde erwähnt, dass er zu Hause mit einem eigenen hyperbaren Gerät eine HBOT-Behandlung zur Therapie einer Muskelverletzung durchführt.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
+          { name: "Cristiano Ronaldo", role: "Fußballspieler", text: "In Berichten wurde erwähnt, dass er zu Hause mit einem eigenen hyperbaren Gerät eine HBOT-Sitzung zur Anwendung einer Muskelverletzung durchführt.", source: "https://www.thesun.co.uk/sport/17203745/cristiano-ronaldo-exclusive-hi-tech-oxygen-chamber/" },
           { name: "LeBron James", role: "Basketballspieler", text: "In der Netflix-Serie 'Starting 5' wurde er bei einer 60- bis 90-minütigen HBOT-Sitzung gefilmt.", source: "https://medium.com/@chloepaltrow/hbot-helps-lebron-james-earn-victory-for-cavs-at-the-eastern-conference-finals-1285ba769396" },
           { name: "Novak Djokovic", role: "Tennisspieler", text: "In Sportmedien wurde berichtet, dass er HBOT nutzt, um auf seinem Topniveau zu bleiben.", source: "https://honestsport.substack.com/p/exclusive-novak-djokovics-lasting" },
           { name: "Justin Bieber", role: "Sänger", text: "Berichten zufolge schläft er im Rahmen seines Gesundheitsregimes in einer hyperbaren Kammer.", source: "https://www.dailymail.com/tvshowbiz/article-7965575/Justin-Bieber-sleeps-hyperbaric-chamber-relies-IV-infusions-years-drug-use.html" },
@@ -6666,7 +6673,7 @@ const TRANSLATIONS = {
       indications_teaser: {
         eyebrow: "ANWENDUNGSFÄLLE",
         title: "Wann wird HBOT eingesetzt?",
-        text: "Kann als unterstützende Therapie bei verschiedenen medizinischen Indikationen eingesetzt werden — von der Wundheilung bis zum plötzlichen Hörverlust, von der Dekompressionskrankheit bis zur Kohlenmonoxidvergiftung — nach ärztlicher Beurteilung.",
+        text: "Klinische Arbeiten zum plötzlichen Hörverlust besprechen auch den Sauerstoffdruck im Innenohr. Diese Seite fasst diese Diskussion nur zusammen. Entscheidungen zu Zeitpunkt, Kortikosteroiden und erwartetem Verlauf gehören zu einer zugelassenen Fachperson. Ein Ergebnis wird hier nicht versprochen.",
         cta: "Alle Anwendungsfälle ansehen"
       },
       targetMarkets: {
@@ -6732,7 +6739,7 @@ const TRANSLATIONS = {
     },
     technology: {
       header: { eyebrow: "TECHNOLOGIEPLATTFORM", title: "Das HBOT City Tech-Technologie-Ökosystem", subtitle: "Nicht nur ein Bedienfeld — ein sich ständig weiterentwickelndes, vernetztes und intelligentes System." },
-      intro: "Jedes HBOT City Tech-Modell umfasst serienmäßig CityConnect™, CityOS™, CityAI™, CitySync™ und CityGuard™. Gemeinsam verwandeln diese fünf Plattformen die Kammer von einem einfachen Behandlungsgerät in ein intelligentes, vernetztes und vorausschauendes System.",
+      intro: "Jedes HBOT City Tech-Modell umfasst serienmäßig CityConnect™, CityOS™, CityAI™, CitySync™ und CityGuard™. Gemeinsam verwandeln diese fünf Plattformen die Kammer von einem einfachen Gerät in ein intelligentes, vernetztes und vorausschauendes System.",
       pillars: {
         connect: {
           title: "CityConnect™",
@@ -6758,7 +6765,7 @@ const TRANSLATIONS = {
         },
         ai: {
           title: "CityAI™",
-          subtitle: "KI-gestützte Behandlungsoptimierung",
+          subtitle: "KI-gestützte Sitzungsplanung",
           desc: "Analysiert Betriebsdaten, um autorisierte Bediener mit Transparenz und Berichten zu unterstützen; ersetzt weder die klinische Beurteilung noch den Bediener.",
           features: [
             "Transparenz und Zusammenfassungen von Betriebsdaten",
@@ -6851,8 +6858,8 @@ const TRANSLATIONS = {
       }
     },
     modelShort: {
-      soloLounge: { title: "Oslo", tagline: "1 Person · Liegende Position", desc: "Eine voll ausgestattete Kammer, die speziell für Nutzer entwickelt wurde, die eine Behandlung in liegender Position benötigen." },
-      solo: { title: "Dubai", tagline: "1 Person · Sitzende Position", desc: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstofftherapie." },
+      soloLounge: { title: "Oslo", tagline: "1 Person · Liegende Position", desc: "Eine voll ausgestattete Kammer, die speziell für Nutzer entwickelt wurde, die eine Sitzung in liegender Position benötigen." },
+      solo: { title: "Dubai", tagline: "1 Person · Sitzende Position", desc: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstoffanwendung." },
       duo: { title: "Tokyo", tagline: "2 Personen · Sitzende Position", desc: "Eine Zweiplatz-Kammer mit Panoramafenster — für Paare, Partner oder die Nutzung mit Begleitperson." },
       duoPlus: { title: "Tokyo Plus", tagline: "2–4 People · Institutional", desc: "Eine konfigurierbare Mehrpersonenkammer für Kliniken, Krankenhäuser und professionelle Einrichtungen." },
       quadCube: { title: "Milano", tagline: "4 Personen · Geräumige Kabine", desc: "Eine Premium-Kabine für vier Personen mit geräumigem Cube-Design-Innenraum — gesteppte Lederpolsterung und LED-Ambientebeleuchtung." },
@@ -6870,8 +6877,8 @@ const TRANSLATIONS = {
     modelSoloLounge: {
       breadcrumb: "Oslo", eyebrow: "OSLO", title: "Oslo",
       faq_title: "Häufige Fragen zum Oslo",
-      tagline: "Exzellenz in liegender Position. Zurücklehnen, entspannen, heilen.",
-      overview_text: "Speziell entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen. Das medizinisch-orthopädische Bett und der Korpus aus Flugzeugaluminium sorgen für maximalen Komfort bei langen Sitzungen.",
+      tagline: "Exzellenz in liegender Position. Zurücklehnen, entspannen, durchatmen.",
+      overview_text: "Speziell entwickelt für Nutzer, die eine Sitzung in liegender Position benötigen. Das medizinisch-orthopädische Bett und der Korpus aus Flugzeugaluminium sorgen für maximalen Komfort bei langen Sitzungen.",
       specs: [
         { label: "Kapazität", value: "1 Person (liegende Position)" },
         { label: "Druckbereich", value: "1.3 – 1.5 ATA" },
@@ -6886,7 +6893,7 @@ const TRANSLATIONS = {
       breadcrumb: "Dubai", eyebrow: "DUBAI", title: "Dubai",
       faq_title: "Häufige Fragen zum Dubai",
       tagline: "Der Gipfel Ihrer persönlichen Gesundheit. Nur Sie und Sauerstoff.",
-      overview_text: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstofftherapie. Mit Touchscreen-Steuerung ideal für den Einsatz zu Hause oder in der Klinik.",
+      overview_text: "Eine kompakte, elegante, voll ausgestattete Kammer für die individuelle hyperbare Sauerstoffanwendung. Mit Touchscreen-Steuerung ideal für den Einsatz zu Hause oder in der Klinik.",
       specs: [
         { label: "Kapazität", value: "1 Person (sitzend)" },
         { label: "Druckbereich", value: "1.3 – 1.5 ATA" },
@@ -6900,8 +6907,8 @@ const TRANSLATIONS = {
     modelDuo: {
       breadcrumb: "Tokyo", eyebrow: "TOKYO", title: "Tokyo",
       faq_title: "Häufige Fragen zum Tokyo",
-      tagline: "Gemeinsam heilen. Eine gemeinsame Behandlungserfahrung für zwei Personen.",
-      overview_text: "Eine Zweiplatz-Kammer für gemeinsame Therapiesitzungen. Konzipiert für Paare, Partner oder die Nutzung mit Begleitperson.",
+      tagline: "Gemeinsam durchatmen. Eine gemeinsame gemeinsame Sitzung für zwei Personen.",
+      overview_text: "Eine Zweiplatz-Kammer für gemeinsame Sitzungen. Konzipiert für Paare, Partner oder die Nutzung mit Begleitperson.",
       institutionalNote: "Suchen Sie eine institutionelle Lösung für 2–4 Personen? <a href=\"model-tokyo-plus.html\">Tokyo Plus ansehen →</a>",
       specs: [
         { label: "Kapazität", value: "2 Personen (sitzend)" },
@@ -6915,7 +6922,7 @@ const TRANSLATIONS = {
     modelDuoPlus: {
       breadcrumb: "Tokyo Plus", eyebrow: "TOKYO PLUS", title: "Tokyo Plus",
       faq_title: "Häufige Fragen zum Tokyo Plus",
-      tagline: "Erweiterbare Mehrpersonen-Therapiekapazität für den institutionellen Einsatz.",
+      tagline: "Erweiterbare Mehrpersonen-Kapazität für den institutionellen Einsatz.",
       overview_text: "Die druckstarke Mehrpersonen-Institutionsversion von Tokyo. Entwickelt für Kliniken, Krankenhäuser und Wellnesszentren mit gestaffelter Sitzkapazität von 2 bis 4 Personen.",
       specs: [
         { label: "Kapazität", value: "2–4 Personen (gestaffelt)" },
@@ -6930,7 +6937,7 @@ const TRANSLATIONS = {
       breadcrumb: "Milano", eyebrow: "MILANO", title: "Milano",
       faq_title: "Häufige Fragen zum Milano",
       tagline: "Ein Premium-Erlebnis für vier Personen in geräumigem Cube-Design.",
-      overview_text: "Eine Premium-Kabine für vier Personen mit geräumigem, würfelförmigem Innenraum. Mit gesteppter Lederpolsterung, LED-Ambientebeleuchtung und unabhängiger Steuereinheit bietet sie komfortable Mehrpersonentherapie für Kliniken und Wellnesszentren.",
+      overview_text: "Eine Premium-Kabine für vier Personen mit geräumigem, würfelförmigem Innenraum. Mit gesteppter Lederpolsterung, LED-Ambientebeleuchtung und unabhängiger Steuereinheit bietet sie komfortable Mehrpersonenanwendung für Kliniken und Wellnesszentren.",
       specs: [
         { label: "Kapazität", value: "4 Personen (sitzend)" },
         { label: "Druckbereich", value: "2.0 – 6.0 ATA" },
@@ -6944,7 +6951,7 @@ const TRANSLATIONS = {
       breadcrumb: "Geneva", eyebrow: "GENEVA", title: "Geneva",
       faq_title: "Häufige Fragen zum Geneva",
       tagline: "Eine großvolumige Lösung in Krankenhausqualität.",
-      overview_text: "Eine großvolumige Kammer in Krankenhausqualität für medizinische Einrichtungen. Ihr modulares Design und fortschrittliche Überwachungssysteme erfüllen die Anforderungen der am stärksten frequentierten Behandlungszentren.",
+      overview_text: "Eine großvolumige Kammer in Krankenhausqualität für medizinische Einrichtungen. Ihr modulares Design und fortschrittliche Überwachungssysteme erfüllen die Anforderungen der am stärksten frequentierten Einrichtungen.",
       specs: [
         { label: "Kapazität", value: "6+ Personen (sitzend)" },
         { label: "Druckbereich", value: "3.0 – 6.0 ATA" },
@@ -6955,19 +6962,19 @@ const TRANSLATIONS = {
       ]
     },
     hbotInfo: {
-      header: { eyebrow: "INFORMATIONSZENTRUM", title: "Was ist HBOT?", subtitle: "Was Sie über die hyperbare Sauerstofftherapie wissen sollten." },
-      whatIsHboc: { title: "Was ist eine hyperbare Sauerstoffkammer (HBOC)?", text: "Hyperbare Sauerstoffkammern sind speziell konzipierte, druckbeaufschlagte Kabinen, in denen Personen hochkonzentrierten Sauerstoff bei höherem als normalem atmosphärischem Druck einatmen können. Diese Kammern werden für die hyperbare Sauerstofftherapie (HBOT) eingesetzt, eine medizinisch anerkannte Behandlung, die die Heilung beschleunigt und das allgemeine Wohlbefinden fördert." },
-      whyNeeded: { title: "Wofür wird eine HBOC benötigt?", text: "HBOC-Kammern bieten eine kontrollierte, druckbeaufschlagte Umgebung, in der Nutzer Sauerstoff mit 93–95 % Konzentration einatmen, was eine schnellere Erholung und eine verbesserte zelluläre Regeneration ermöglicht. Diese Kammern kommen weltweit in medizinischen Einrichtungen, Wellnesszentren, Sportkliniken und bei privaten Nutzern zum Einsatz." },
+      header: { eyebrow: "INFORMATIONSZENTRUM", title: "Was ist HBOT?", subtitle: "Was Sie über die hyperbare Sauerstoffanwendung wissen sollten." },
+      whatIsHboc: { title: "Was ist eine hyperbare Sauerstoffkammer (HBOC)?", text: "Hyperbare Sauerstoffkammern sind speziell konzipierte, druckbeaufschlagte Kabinen, in denen Personen hochkonzentrierten Sauerstoff bei höherem als normalem atmosphärischem Druck einatmen können. Diese Kammern werden für eine hyperbare Sauerstoffanwendung (HBOT) genutzt. Die Wellness-Serie wird nicht als Medizinprodukt angeboten, und es wird kein Ergebnis versprochen." },
+      whyNeeded: { title: "Wofür wird eine HBOC benötigt?", text: "HBOC-Kammern bieten eine kontrollierte, druckbeaufschlagte Umgebung, in der Nutzer Sauerstoff mit 93–95 % Konzentration einatmen, Die Wellness-Serie wird nicht als Medizinprodukt angeboten, und es wird kein Ergebnis versprochen. Diese Kammern kommen weltweit in medizinischen Einrichtungen, Wellnesszentren, Sportkliniken und bei privaten Nutzern zum Einsatz." },
       whatIsHbot: {
-        title: "Was ist die hyperbare Sauerstofftherapie (HBOT)?",
-        text1: "HBOT ist eine medizinische Behandlung, bei der Patienten in einer druckbeaufschlagten Kammer reinen Sauerstoff bei höherem als normalem atmosphärischem Druck einatmen. Dieser Prozess beschleunigt die Wundheilung, reduziert Entzündungen und fördert die Geweberegeneration.",
-        text2: "Patienten atmen innerhalb dieser Kammern, was der Lunge hilft, Sauerstoff effizienter aufzunehmen und zu binden. HBOT wird auch bei Patienten mit plötzlichem Hör- und Sehverlust, Knocheninfektionen und diabetischen Fußgeschwüren eingesetzt. Je nach Behandlungsart können Patienten während des Verfahrens sitzen oder liegen."
+        title: "Was ist die hyperbare Sauerstoffanwendung (HBOT)?",
+        text1: "In der klinischen Literatur beschreibt HBOT eine Sitzung, in der eine Person in einer Kammer oberhalb des normalen Luftdrucks Sauerstoff atmet. Diese Seite fasst diese Beschreibung zusammen. Wellness-Kammern werden nicht als Medizinprodukte angeboten, und es wird kein Ergebnis versprochen.",
+        text2: "Eine Person atmet in der Kammer. Klinische Veröffentlichungen besprechen die hyperbare Sauerstoffanwendung auch neben einigen Krankenhausanwendungen; das ist keine Produktaussage. Je nach Sitzungsform kann man sitzen oder liegen."
       },
       indications: {
         title: "In welchen Situationen kann HBOT eingesetzt werden?",
-        subtitle: "Die folgende Liste fasst ausschließlich zu Informationszwecken die klinisch anerkannten Anwendungen der hyperbaren Sauerstofftherapie zusammen. Sie erfolgen in lizenzierten Gesundheitseinrichtungen unter ärztlicher Beurteilung und Aufsicht. Für Produkte von HBOT Chamber Tech werden keine therapeutischen Aussagen getroffen.",
+        subtitle: "Die folgende Liste fasst ausschließlich zu Informationszwecken die klinisch anerkannten Anwendungen der hyperbaren Sauerstoffanwendung zusammen. Sie erfolgen in lizenzierten Gesundheitseinrichtungen unter ärztlicher Beurteilung und Aufsicht. Für Produkte von HBOT Chamber Tech werden keine medizinischen Aussagen getroffen.",
         items: [
-          { icon: "wound", label: "Wundheilung (diabetisch und nicht-diabetisch)" },
+          { icon: "wound", label: "Gewebeerholung (diabetisch und nicht-diabetisch)" },
           { icon: "eye", label: "Plötzlicher Sehverlust" },
           { icon: "decompression", label: "Dekompressionskrankheit" },
           { icon: "embolism", label: "Luft- oder Gasembolie" },
@@ -6981,7 +6988,7 @@ const TRANSLATIONS = {
           { icon: "smoke", label: "Akute Rauchgasvergiftung" }
         ]
       },
-      disclaimer: "Diese Informationen dienen ausschließlich der allgemeinen Orientierung und stellen keine medizinische Beratung dar. Behandlungsentscheidungen müssen stets von einer medizinischen Fachkraft beurteilt werden."
+      disclaimer: "Diese Informationen dienen ausschließlich der allgemeinen Orientierung und stellen keine medizinische Beratung dar. Entscheidungen zur Nutzung müssen stets von einer medizinischen Fachkraft beurteilt werden."
     },
     arView: {
       back: "← Zurück zum Konfigurator",
@@ -7030,7 +7037,7 @@ const TRANSLATIONS = {
       ],
       "nexus": [
         { q: "Für wie viele Personen ist der Geneva ausgelegt?", a: "Der Geneva ist eine großvolumige Kammer im Krankenhausstandard, die bei 6 Personen beginnt und in Stufen von 6/8/10/12 skaliert." },
-        { q: "Für welche Einrichtungen eignet sich der Geneva?", a: "Er ist für Krankenhäuser und große Gesundheitszentren mit hohem Therapievolumen konzipiert; die modulare Struktur ist für künftige Erweiterungen vorbereitet." },
+        { q: "Für welche Einrichtungen eignet sich der Geneva?", a: "Er ist für Krankenhäuser und große Gesundheitszentren mit hohem Sitzungsvolumen konzipiert; die modulare Struktur ist für künftige Erweiterungen vorbereitet." },
         { q: "In welchem Druckbereich arbeitet der Geneva?", a: "Zwischen 3,0 und 6,0 ATA, bei 93–95 % Sauerstoffreinheit." },
         { q: "Welche Sicherheitsausstattung hat der Geneva?", a: "Ein Notfall-Ventilsystem gehört zur Standardausstattung; die Konstruktion im Krankenhausstandard ist für den durchgehenden Intensivbetrieb ausgelegt." },
         { q: "Wie erhalte ich ein Angebot für den Geneva?", a: "Kontaktieren Sie uns mit Ihrem Kapazitätsbedarf (6/8/10/12 Personen) — wir erstellen eine technische Zeichnung und ein maßgeschneidertes Angebot für Ihre Einrichtung." }
@@ -7082,7 +7089,7 @@ const TRANSLATIONS = {
         select_button: "Das wähle ich",
         close: "Schließen",
         items: [
-          { scenario: "Zu Hause, allein, ich möchte eine Behandlung in liegender Position", model: "Oslo", modelId: "solo-lounge", usage: "home" },
+          { scenario: "Zu Hause, allein, ich möchte eine Sitzung in liegender Position", model: "Oslo", modelId: "solo-lounge", usage: "home" },
           { scenario: "Zu Hause, allein, ich möchte während der Sitzungen sitzen", model: "Dubai", modelId: "solo", usage: "home" },
           { scenario: "Mein Partner und ich werden es gemeinsam zu Hause nutzen", model: "Tokyo", modelId: "duo", usage: "home" },
           { scenario: "Klinik oder Wellnesszentrum, institutionelle Nutzung für 2–4 Personen", model: "Tokyo Plus", modelId: "duo-plus", usage: "institutional" },
@@ -7222,11 +7229,11 @@ const TRANSLATIONS = {
       }
     },
     blog: {
-      header: { eyebrow: "BLOG", title: "Forschung & Neuigkeiten", subtitle: "Aktuelle wissenschaftliche Entwicklungen und Neuigkeiten zur hyperbaren Sauerstofftherapie." },
+      header: { eyebrow: "BLOG", title: "Forschung & Neuigkeiten", subtitle: "Aktuelle wissenschaftliche Entwicklungen und Neuigkeiten zur hyperbaren Sauerstoffanwendung." },
       source_label: "Quelle:",
       min_read: "Min. Lesezeit",
       read_more: "Ganzen Artikel lesen",
-      disclaimer: "Diese Beiträge sind Zusammenfassungen aus öffentlich zugänglichen wissenschaftlichen Publikationen und Nachrichtenquellen; sie stellen keine medizinische Beratung dar. Konsultieren Sie für Behandlungsentscheidungen stets eine medizinische Fachkraft.",
+      disclaimer: "Diese Beiträge sind Zusammenfassungen aus öffentlich zugänglichen wissenschaftlichen Publikationen und Nachrichtenquellen; sie stellen keine medizinische Beratung dar. Konsultieren Sie für Entscheidungen zur Nutzung stets eine medizinische Fachkraft.",
       posts: [
         {
           slug: "hbot-kurucu-notu.html",
@@ -7236,7 +7243,7 @@ const TRANSLATIONS = {
           title: "Warum ich selbst hyperbaren Sauerstoff nutze",
           paragraphs: [
             "Unter dem Dach der Almita Group betreiben wir sechs verschiedene Branchen parallel, und ein anspruchsvoller Terminkalender mit ständigen Reisen gehört dazu. Bevor wir mit der Fertigung der HBOT Chamber Tech Kammern begannen, entschied ich mich, unsere eigenen Geräte regelmäßig zu nutzen — ich bin der Meinung, dass man ein Produkt selbst ausprobieren sollte, bevor man dafür einsteht.",
-            "Ich kann sagen, dass ich mich nach den Sitzungen im Allgemeinen energiegeladener und fokussierter fühle; dies ist eine persönliche Beobachtung, kein Versprechen auf dasselbe Ergebnis für jeden. Die hyperbare Sauerstofftherapie ersetzt keine medizinische Behandlung; besprechen Sie Ihre eigene Anwendung stets mit einer medizinischen Fachkraft."
+            "Ich kann sagen, dass ich mich nach den Sitzungen im Allgemeinen energiegeladener und fokussierter fühle; dies ist eine persönliche Beobachtung, kein Versprechen auf dasselbe Ergebnis für jeden. Die hyperbare Sauerstoffanwendung ersetzt keine medizinische Sitzung; besprechen Sie Ihre eigene Anwendung stets mit einer medizinischen Fachkraft."
           ],
           source_name: "Almita Group — Founder's Note",
           source_url: "https://almitagroup.com",
@@ -7249,7 +7256,7 @@ const TRANSLATIONS = {
           icon: "antiaging",
           title: "HBOT und Langlebigkeit: Der wachsende Trend zu gesundem Altern",
           paragraphs: [
-            "Die Longevity-Bewegung — durch Technologie-Unternehmer wie Bryan Johnson und ihre persönlichen 'Alterungsumkehr'-Protokolle in den Mainstream gebracht — hat auch das Interesse an der hyperbaren Sauerstofftherapie verstärkt. Einer ihrer wissenschaftlichen Ankerpunkte ist eine klinische Studie, die 2020 in der Fachzeitschrift Aging veröffentlicht wurde und in der 35 gesunde Erwachsene ab 64 Jahren ein 60-sitziges HBOT-Programm absolvierten.",
+            "Die Longevity-Bewegung — durch Technologie-Unternehmer wie Bryan Johnson und ihre persönlichen 'Alterungsumkehr'-Protokolle in den Mainstream gebracht — hat auch das Interesse an der hyperbaren Sauerstoffanwendung verstärkt. Einer ihrer wissenschaftlichen Ankerpunkte ist eine klinische Studie, die 2020 in der Fachzeitschrift Aging veröffentlicht wurde und in der 35 gesunde Erwachsene ab 64 Jahren ein 60-sitziges HBOT-Programm absolvierten.",
             "Die Studie berichtete von einer Telomerverlängerung von über 20 % in Immunzellen — bis zu 37 % in B-Zellen — sowie einer Reduktion seneszenter Immunzellen um bis zu 37 %. Da die Studie weder eine Kontrollgruppe noch eine große Stichprobe hatte, gelten die Ergebnisse als 'vielversprechend, aber vorläufig'; die Forscher betonen, dass größere Studien erforderlich sind, um optimale Protokolle zu definieren."
           ],
           source_name: "PMC – HBOT Increases Telomere Length and Decreases Immunosenescence (Aging, 2020)",
@@ -7265,7 +7272,7 @@ const TRANSLATIONS = {
             "Weltberühmte Athleten wie Cristiano Ronaldo, LeBron James, Novak Djokovic und Floyd Mayweather wurden in Presseberichten erwähnt, weil sie hyperbare Kammern im Rahmen ihrer Erholungsroutine nutzen. Hinter diesem Interesse stehen sportmedizinische Erkenntnisse, die darauf hindeuten, dass HBOT Ödeme und Entzündungen reduzieren, die Gewebereparatur unterstützen und Athleten helfen kann, schneller ins Training zurückzukehren.",
             "Zu den in Übersichtsarbeiten zitierten Studien zählen eine Beobachtung von den Olympischen Winterspielen in Nagano, bei der sich 7 Athleten durch kurze Sitzungen bei 1.3 ATA schneller erholten, ein früher klinischer Bericht über eine Reduktion der verletzungsbedingten Ausfalltage um 55 % bei Profifußballern sowie eine Universitätsstudie, die auf eine rund 30 % schnellere Rückkehr nach Knöchelverstauchungen hindeutet. Die Autoren weisen darauf hin, dass die Evidenz größtenteils auf kleinen Stichproben beruht und randomisierte kontrollierte Studien für belastbare Schlussfolgerungen erforderlich sind."
           ],
-          source_name: "PMC – The Role of Hyperbaric Oxygen Therapy in Sports Medicine (review)",
+          source_name: "PMC – The Role of Hyperbaric Oxygen Sessions in Sports Medicine (review)",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382683/"
         },
         {
@@ -7275,10 +7282,10 @@ const TRANSLATIONS = {
           icon: "oneSeat",
           title: "Kaufratgeber für hyperbare Heimkammern",
           paragraphs: [
-            "Die erste Frage bei der Wahl einer hyperbaren Kammer für den privaten oder häuslichen Gebrauch ist die Kapazität: Einzelkammern (monoplace) bieten einen kompakten Platzbedarf, während Mehrpersonenkammern (multiplace) es ermöglichen, Familienmitglieder oder kleine Gruppen gleichzeitig zu behandeln, und Sitzungen mit Begleitperson erleichtern. Die UHMS, die internationale Fachautorität für hyperbare Medizin, verlangt, dass Druckkammern zugelassene und regelmäßig geprüfte Geräte sind und dass Bedienpersonal speziell geschult ist.",
+            "Die erste Frage bei der Wahl einer hyperbaren Kammer für den privaten oder häuslichen Gebrauch ist die Kapazität: Einzelkammern (monoplace) bieten einen kompakten Platzbedarf, während Mehrpersonenkammern (multiplace) es ermöglichen, Familienmitglieder oder kleine Gruppen gleichzeitig zu begleiten, und Sitzungen mit Begleitperson erleichtern. Die UHMS, die internationale Fachautorität für hyperbare Medizin, verlangt, dass Druckkammern zugelassene und regelmäßig geprüfte Geräte sind und dass Bedienpersonal speziell geschult ist.",
             "Die Druckstufe ist das zweite zentrale Thema: Klinische Protokolle werden in der Regel im Bereich von 2.0–2.4 ATA angewendet, während bei Heimsystemen 1.3–2.0 ATA üblich sind — besprechen Sie stets mit einer medizinischen Fachkraft, welche Stufe zu Ihren Zielen passt. Das dritte Thema ist Sicherheit und Komfort: Brandschutzregeln in sauerstoffangereicherten Umgebungen, Notfalldekompression, Geräuschpegel, Innenbeleuchtung und Kommunikationssysteme prägen unmittelbar das tägliche Erlebnis; bestätigen Sie Wartungs- und Garantiebedingungen vor dem Kauf schriftlich."
           ],
-          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Therapy",
+          source_name: "StatPearls (NCBI) – Hyperbaric Oxygen Sessions",
           source_url: "https://www.ncbi.nlm.nih.gov/books/NBK459172/"
         },
         {
@@ -7288,10 +7295,10 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "Die Rolle von hyperbarem Sauerstoff bei chronischen Wunden wächst weiter",
           paragraphs: [
-            "Aktuelle Übersichtsarbeiten aus der Chirurgie und der Versorgung chronischer Wunden zeigen, dass die hyperbare Sauerstofftherapie (HBOT) den Heilungsprozess unterstützt, indem sie die Gewebesauerstoffversorgung erhöht. Bei diabetischen Fußwunden, venösen Beinulzera, Verbrennungen und strahlenbedingten Gewebeschäden wurde berichtet, dass HBOT die Wundverschlussraten verbessert und das Infektionsrisiko senkt.",
-            "Eine 2025 veröffentlichte Studie ergab, dass HBOT in Kombination mit der Unterdrucktherapie (NPWT) die Heilungsgeschwindigkeit im Vergleich zu NPWT allein deutlich erhöhte. In der rekonstruktiven Chirurgie wird berichtet, dass HBOT das Überleben von Gewebe und Transplantaten unterstützt und die Bildung neuer Blutgefäße fördert."
+            "Aktuelle Übersichtsarbeiten aus der Chirurgie und der Versorgung chronischer Wunden zeigen, dass die hyperbare Sauerstoffanwendung (HBOT) den Erholungsverlauf unterstützt, indem sie die Gewebesauerstoffversorgung erhöht. Bei diabetischen Fußwunden, venösen Beinulzera, Verbrennungen und strahlenbedingten Gewebeschäden wurde berichtet, dass HBOT die Wundverschlussraten verbessert und das Infektionsrisiko senkt.",
+            "Arbeiten zu Chirurgie und chronischen Wunden erwähnen Sitzungen mit hyperbarem Sauerstoff neben der Diskussion über die Sauerstoffversorgung des Gewebes. Diese Seite verweist nur kurz darauf. HBOT Chamber Tech verspricht nichts zum Wundverschluss oder zum Infektionsrisiko."
           ],
-          source_name: "PMC – Hyperbaric Oxygen Therapy in Surgical Wound Healing and Tissue Salvage",
+          source_name: "PMC – Hyperbaric Oxygen Sessions in Surgical Wound Recovery and Tissue Salvage",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109970/"
         },
         {
@@ -7301,7 +7308,7 @@ const TRANSLATIONS = {
           icon: "burn",
           title: "Warum Athleten zu hyperbaren Kammern greifen",
           paragraphs: [
-            "Viele Spitzensportler aus Tennis, Schwimmen, Basketball und Golf entscheiden sich für die hyperbare Sauerstofftherapie als Teil ihrer Erholungsroutine. Sportmedizinische Forschung zeigt, dass HBOT die Heilung beschleunigen, Entzündungen reduzieren und Athleten helfen kann, schneller ins Training zurückzukehren.",
+            "Einige Sportlerinnen und Sportler in Tennis, Schwimmen, Basketball und Golf ergänzen ihre Erholungsroutine um eine Sitzung mit hyperbarem Sauerstoff. Das beschreibt eine Wahl und verspricht nichts zu Muskelkater, Müdigkeit oder der Zeit bis zum Training.",
             "Einige Studien berichteten von geringerem Muskelkater und geringerer Erschöpfung bei Athleten, die HBOT erhielten, wobei sich die Erholungszeiten um bis zu rund 30 % verkürzten. Obwohl das Feld noch größere, kontrollierte klinische Studien benötigt, sind die Ergebnisse für die Gesundheit von Athleten vielversprechend."
           ],
           source_name: "Turkish Journal of Sports Medicine",
@@ -7314,8 +7321,8 @@ const TRANSLATIONS = {
           icon: "wound",
           title: "Metaanalyse zu diabetischen Fußgeschwüren: geringeres Amputationsrisiko",
           paragraphs: [
-            "Eine Metaanalyse von 14 Studien mit 768 Teilnehmern ergab, dass die hyperbare Sauerstofftherapie einen statistisch signifikanten Nutzen bei der vollständigen Abheilung diabetischer Fußgeschwüre und bei der Reduktion des Risikos einer größeren Amputation bot.",
-            "Eine 2024 veröffentlichte aktuelle systematische Übersichtsarbeit kam zu ähnlichen Schlussfolgerungen: Die Mehrheit der untersuchten Studien beobachtete unter HBOT niedrigere Raten größerer Amputationen, höhere Wundheilungsraten sowie eine Verringerung von Ulkusgröße und -tiefe."
+            "Veröffentlichte Arbeiten besprechen Sitzungen mit hyperbarem Sauerstoff neben der klinischen Versorgung diabetischer Fußulzera. Dieser Hinweis verweist nur auf diese Literatur. Er verspricht weder, dass ein Ulkus schließt, noch dass sich ein Amputationsrisiko verändert, und er ersetzt keine medizinische Versorgung.",
+            "Eine Übersicht von 2024 gehört in dasselbe Gespräch. Die Zahlen in der Literatur hängen von Umfeld, Aufsicht und dem übrigen Plan ab. HBOT Chamber Tech stellt keinen Zustand als etwas dar, das die Kammern beheben."
           ],
           source_name: "PMC – Efficacy of HBOT for Diabetic Foot Ulcer",
           source_url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7838311/"
@@ -7325,9 +7332,9 @@ const TRANSLATIONS = {
           date: "2024",
           tag: "Klinische Evidenz",
           icon: "ear",
-          title: "Hyperbarer Sauerstoff bei plötzlichem Hörverlust: Früher Behandlungsbeginn zählt",
+          title: "Die Forschung spricht nicht mit einer Stimme. Manche Arbeiten beschreiben eine Veränderung des Hörens; diese Beschreibung ist kein Versprechen. Druck und Dauer bleiben im Plan der Fachperson.",
           paragraphs: [
-            "Bei Patienten mit plötzlichem sensorineuralem Hörverlust zielt die hyperbare Sauerstofftherapie darauf ab, die Mikrozirkulation zu verbessern und Entzündungen zu reduzieren, indem der Sauerstoffdruck im Innenohr erhöht wird. Studien zeigen, dass Patienten, die die Behandlung frühzeitig beginnen, insbesondere in Kombination mit einer Kortikosteroidtherapie, tendenziell günstigere Ergebnisse erzielen.",
+            "Die Forschung spricht nicht mit einer Stimme. Manche Arbeiten beschreiben eine Veränderung des Hörens; diese Beschreibung ist kein Versprechen. Druck und Dauer bleiben im Plan der Fachperson.",
             "Obwohl die Forschungsergebnisse keinen vollständigen Konsens über die Wirksamkeit bieten, beobachteten einige Studien bei mehr als der Hälfte der Patienten eine Verbesserung des Hörvermögens. Experten betonen die Notwendigkeit weiterer klinischer Studien, um standardisierte Druck- und Dauerprotokolle festzulegen."
           ],
           source_name: "JAMA Otolaryngology–Head & Neck Surgery",
@@ -7353,8 +7360,8 @@ const TRANSLATIONS = {
           icon: "guard",
           title: "Druckmanagement in Mehrpersonenkammern: Klinische Betriebsprotokolle",
           paragraphs: [
-            "Mehrpersonen-Hyperbarkammern sind die Standardwahl für Krankenhäuser und Kliniken, da sie mehrere Patienten gleichzeitig behandeln und es medizinischem Personal ermöglichen, Patienten in die Kammer zu begleiten. Von der UHMS, der internationalen Fachautorität für hyperbare Medizin, veröffentlichte Betriebsrichtlinien empfehlen, die Kompressions- und Dekompressionsraten an den Komfort des Patienten und das Risiko eines Ohrbarotraumas anzupassen, jede Sitzung unter Aufsicht eines zertifizierten Bedieners durchzuführen und Notfall-Evakuierungsszenarien regelmäßig zu üben.",
-            "In der klinischen Praxis wird das Druckprotokoll durch die Behandlungsindikation bestimmt: Übliche Protokolle laufen im Bereich von 2.0–2.4 ATA, während bestimmte spezielle Indikationen höhere Druckwerte erfordern können. Experten betonen, dass die geeignete Druckstufe stets von einem auf hyperbare Medizin spezialisierten Arzt beurteilt werden muss und dass die Kammerhardware zertifiziert sein sollte, um den Zieldruckbereich sicher abzudecken."
+            "Mehrpersonen-Hyperbarkammern sind die Standardwahl für Krankenhäuser und Kliniken, da sie mehrere Patienten gleichzeitig begleiten und es medizinischem Personal ermöglichen, Patienten in die Kammer zu begleiten. Von der UHMS, der internationalen Fachautorität für hyperbare Medizin, veröffentlichte Betriebsrichtlinien empfehlen, die Kompressions- und Dekompressionsraten an den Komfort des Patienten und das Risiko eines Ohrbarotraumas anzupassen, jede Sitzung unter Aufsicht eines zertifizierten Bedieners durchzuführen und Notfall-Evakuierungsszenarien regelmäßig zu üben.",
+            "In der klinischen Praxis wird das Druckprotokoll durch die Anwendungszweck bestimmt: Übliche Protokolle laufen im Bereich von 2.0–2.4 ATA, während bestimmte spezielle Indikationen höhere Druckwerte erfordern können. Experten betonen, dass die geeignete Druckstufe stets von einem auf hyperbare Medizin spezialisierten Arzt beurteilt werden muss und dass die Kammerhardware zertifiziert sein sollte, um den Zieldruckbereich sicher abzudecken."
           ],
           source_name: "UHMS – Undersea & Hyperbaric Medical Society",
           source_url: "https://www.uhms.org"
@@ -7379,8 +7386,8 @@ const TRANSLATIONS = {
           icon: "premium",
           title: "Ein neuer Trend in Luxushotels: Hyperbare Wellness-Suiten",
           paragraphs: [
-            "Branchenberichte zur globalen Wellness-Wirtschaft zeigen, dass Wellness-Tourismus eines der am schnellsten wachsenden Segmente ist. Diesem Trend folgend gehen Luxushotels und Resorts über Spa- und Fitnessangebote hinaus und ergänzen das Gästeerlebnis um fortschrittliche Erholungstechnologien wie hyperbare Sauerstoffkammern, Kryotherapie und Rotlichttherapie.",
-            "Branchenbeobachter weisen darauf hin, dass hyperbare Einheiten sich besonders in Premium-Paketen mit den Themen 'Longevity' und 'Performance' hervorheben. Für Hotelbetreiber sind die entscheidenden Themen die Einhaltung von Sicherheitsstandards, der Einsatz geschulten Personals und eine korrekte Gestaltung der Gesundheitsprüfung vor der Nutzung; gästeseitige Anwendungen sollten als allgemeine Wohlbefindensunterstützung angeboten werden, nicht als medizinische Behandlung."
+            "Branchenberichte zur globalen Wellness-Wirtschaft zeigen, dass Wellness-Tourismus eines der am schnellsten wachsenden Segmente ist. Diesem Trend folgend gehen Luxushotels und Resorts über Spa- und Fitnessangebote hinaus und ergänzen das Gästeerlebnis um fortschrittliche Erholungstechnologien wie hyperbare Sauerstoffkammern, Kryoanwendung und Rotlichtanwendung.",
+            "Branchenbeobachter weisen darauf hin, dass hyperbare Einheiten sich besonders in Premium-Paketen mit den Themen 'Longevity' und 'Performance' hervorheben. Für Hotelbetreiber sind die entscheidenden Themen die Einhaltung von Sicherheitsstandards, der Einsatz geschulten Personals und eine korrekte Gestaltung der Gesundheitsprüfung vor der Nutzung; gästeseitige Anwendungen sollten als allgemeine Wohlbefindensunterstützung angeboten werden, nicht als medizinische Sitzung."
           ],
           source_name: "Global Wellness Institute",
           source_url: "https://globalwellnessinstitute.org"
@@ -7393,7 +7400,7 @@ const TRANSLATIONS = {
           title: "3.0 ATA und darüber: Medizinische Sicherheitsstandards für Hyperbarie",
           paragraphs: [
             "Druckstufen von 3.0 ATA und darüber sind ein Bereich, den die hyperbare Medizin nur in streng regulierten klinischen Umgebungen anwendet. Kammern, die auf diesen Stufen betrieben werden, müssen in Übereinstimmung mit den Vorschriften für Druckbehälter gefertigt werden, die hyperbaren Bestimmungen internationaler Normen wie NFPA 99 für Brandschutz erfüllen und regelmäßigen wiederkehrenden Prüfungen unterzogen werden. Das Management des Brandrisikos in einer sauerstoffangereicherten Atmosphäre ist das kritischste Konstruktionsthema für diese Geräteklasse.",
-            "Die weiteren Glieder der Sicherheitskette sind menschliche Faktoren: ein zertifizierter Hyperbarie-Bediener, eine Patientenbeurteilung vor der Sitzung, ein Notfall-Evakuierungsplan und medizinische Aufsicht. Fachgremien empfehlen, dass Behandlungen der Hochdruckklasse nur in Einrichtungen mit dieser Infrastruktur durchgeführt werden, und raten beschaffenden Organisationen, Druckzertifikate, Prüfberichte und Schulungsprogramme schriftlich vom Hersteller anzufordern."
+            "Die weiteren Glieder der Sicherheitskette sind menschliche Faktoren: ein zertifizierter Hyperbarie-Bediener, eine Patientenbeurteilung vor der Sitzung, ein Notfall-Evakuierungsplan und medizinische Aufsicht. Fachgremien empfehlen, dass Sitzungen der Hochdruckklasse nur in Einrichtungen mit dieser Infrastruktur durchgeführt werden, und raten beschaffenden Organisationen, Druckzertifikate, Prüfberichte und Schulungsprogramme schriftlich vom Hersteller anzufordern."
           ],
           source_name: "NFPA – National Fire Protection Association",
           source_url: "https://www.nfpa.org"
@@ -7482,7 +7489,7 @@ const TRANSLATIONS = {
           {
             title: "HBOT City Tech-Modelle",
             items: [
-              { q: "Welche HBOT City Tech-Modelle sind verfügbar?", a: "Die HBOT City Tech-Produktfamilie wurde für unterschiedliche Nutzerkapazitäten und Einsatzzwecke entwickelt.\n\nOslo — Ein Einzelnutzersystem, entwickelt für Nutzer, die eine Behandlung in liegender Position benötigen.\n\nDubai — Ein kompaktes Einzelnutzer-Hyperbarsystem für die Anwendung in sitzender Position. Konzipiert sowohl für den individuellen/häuslichen als auch für den gewerblichen Einsatz.\n\nTokyo — Ein System mit geräumigem Innenraum, das zwei Nutzer in derselben Sitzung aufnehmen kann.\n\nTokyo Plus — Ein konfigurierbares Hochdrucksystem für 2–4 Personen im institutionellen Einsatz.\n\nMilano — Ein würfelförmiges, großvolumiges Hyperbarsystem für 4 Nutzer, entwickelt für Kliniken, Krankenhäuser und professionelle Betreiber.\n\nGeneva — Ein institutionelles System in Krankenhausqualität mit großer Kapazität, beginnend bei 6 Nutzern und erweiterbar bis zu 12." },
+              { q: "Welche HBOT City Tech-Modelle sind verfügbar?", a: "Die HBOT City Tech-Produktfamilie wurde für unterschiedliche Nutzerkapazitäten und Einsatzzwecke entwickelt.\n\nOslo — Ein Einzelnutzersystem, entwickelt für Nutzer, die eine Sitzung in liegender Position benötigen.\n\nDubai — Ein kompaktes Einzelnutzer-Hyperbarsystem für die Anwendung in sitzender Position. Konzipiert sowohl für den individuellen/häuslichen als auch für den gewerblichen Einsatz.\n\nTokyo — Ein System mit geräumigem Innenraum, das zwei Nutzer in derselben Sitzung aufnehmen kann.\n\nTokyo Plus — Ein konfigurierbares Hochdrucksystem für 2–4 Personen im institutionellen Einsatz.\n\nMilano — Ein würfelförmiges, großvolumiges Hyperbarsystem für 4 Nutzer, entwickelt für Kliniken, Krankenhäuser und professionelle Betreiber.\n\nGeneva — Ein institutionelles System in Krankenhausqualität mit großer Kapazität, beginnend bei 6 Nutzern und erweiterbar bis zu 12." },
               { q: "Für wen eignet sich Dubai?", a: "Dubai wurde sowohl für den individuellen/häuslichen Einsatz als auch für Betreiber entwickelt, die eine Einzelnutzer-Lösung suchen. Dank seiner kompakten Struktur eignet es sich für den Einsatz in Privathaushalten, Kliniken, Sportzentren, Wellnesszentren und Hotels.\n\nDie genauen Nutzungsbedingungen richten sich nach der Klassifizierung des Produkts und den Vorschriften des Installationslandes." },
               { q: "Wie viele Personen fasst der Tokyo?", a: "Der Tokyo ist so konzipiert, dass er zwei Nutzer in derselben Sitzung aufnehmen kann. Die Sitzstruktur, die Innenausstattung und die Sitzanordnung können je nach bestellter Konfiguration variieren." },
               { q: "Wie hoch ist die Nutzerkapazität des Mehrpersonen-HBOT City Tech-Modells?", a: "Die Mehrpersonen-HBOT City Tech-Modelle beginnen mit dem 4-Personen-Modell Milano. Beim Geneva in Krankenhausqualität beträgt die Standardkapazität 6 Personen, mit einer optionalen Kapazität von bis zu 12 Personen (in Schritten von 2 Sitzplätzen).\n\nDie genaue Kapazität wird durch folgende Faktoren bestimmt:", list: ["Kammerabmessungen", "Sitzanordnung", "Bewegungsspielraum der Nutzer", "Kapazität des Sauerstoffsystems", "Betriebsprotokoll", "Lokale Sicherheits- und Zulassungsanforderungen"], aAfter: "Jede Option wird nach einer Sicherheitsbewertung und Prüfung der technischen Eignung in das Projekt aufgenommen." },
@@ -7538,9 +7545,9 @@ const TRANSLATIONS = {
           {
             title: "Medizinische Nutzung und Gesundheitsaussagen",
             items: [
-              { q: "Zur Behandlung welcher Erkrankungen wird ein Hyperbarsystem eingesetzt?", a: "Die anerkannten medizinischen Anwendungen der hyperbaren Sauerstoffanwendung können je nach Land, Aufsichtsbehörde, Geräteklassifizierung und klinischem Protokoll variieren.\n\nMedizinisch bestimmte Anwendungen sollten nur mit entsprechend klassifizierten Geräten, in zugelassenen medizinischen Einrichtungen, unter Aufsicht geschulten medizinischen Fachpersonals, mit ärztlicher Beurteilung und nach einem geeigneten Protokoll durchgeführt werden.\n\nDie Informationen auf unserer Website stellen keine persönliche Beratung zur Diagnose oder Behandlung einer Erkrankung dar." },
+              { q: "Zur Sitzung welcher Erkrankungen wird ein Hyperbarsystem eingesetzt?", a: "Die anerkannten medizinischen Anwendungen der hyperbaren Sauerstoffanwendung können je nach Land, Aufsichtsbehörde, Geräteklassifizierung und klinischem Protokoll variieren.\n\nMedizinisch bestimmte Anwendungen sollten nur mit entsprechend klassifizierten Geräten, in zugelassenen medizinischen Einrichtungen, unter Aufsicht geschulten medizinischen Fachpersonals, mit ärztlicher Beurteilung und nach einem geeigneten Protokoll durchgeführt werden.\n\nDie Informationen auf unserer Website stellen keine persönliche Beratung zur Diagnose oder Sitzung einer Erkrankung dar." },
               { q: "Behandeln HBOT City Tech-Geräte irgendeine Krankheit?", a: "Der Verwendungszweck eines Geräts und die dazu zulässigen Gesundheitsaussagen richten sich nach der offiziellen Klassifizierung des Produkts und der vorliegenden Dokumentation.\n\nAussagen zu HBOT City Tech-Systemen erfolgen ausschließlich im Rahmen des in den technischen Dokumenten und der Konformitätsbewertung festgelegten Verwendungszwecks. Für keine Erkrankung wird ein garantiertes Ergebnis angeboten." },
-              { q: "Sind Niedrigdrucksysteme mit klinischem HBOT gleichzusetzen?", a: "Nein. Nicht jede druckbeaufschlagte Sauerstoffanwendung gehört derselben technischen oder klinischen Klasse an. Folgende Faktoren können die Art der Anwendung verändern:", list: ["Betriebsdruck", "Konzentration des eingeatmeten Sauerstoffs", "Methode der Sauerstoffzufuhr", "Sitzungsdauer", "Gerätezertifizierung", "Verwendungszweck", "Anwendungsumgebung", "Aufsicht durch medizinisches Fachpersonal"], aAfter: "Ob ein System als \"medizinisches Gerät zur hyperbaren Sauerstofftherapie\" definiert werden kann, hängt von den Vorschriften des jeweiligen Marktes und dem dokumentierten Verwendungszweck des Produkts ab." },
+              { q: "Sind Niedrigdrucksysteme mit klinischem HBOT gleichzusetzen?", a: "Nein. Nicht jede druckbeaufschlagte Sauerstoffanwendung gehört derselben technischen oder klinischen Klasse an. Folgende Faktoren können die Art der Anwendung verändern:", list: ["Betriebsdruck", "Konzentration des eingeatmeten Sauerstoffs", "Methode der Sauerstoffzufuhr", "Sitzungsdauer", "Gerätezertifizierung", "Verwendungszweck", "Anwendungsumgebung", "Aufsicht durch medizinisches Fachpersonal"], aAfter: "Ob ein System als \"medizinisches Gerät zur hyperbaren Sauerstoffanwendung\" definiert werden kann, hängt von den Vorschriften des jeweiligen Marktes und dem dokumentierten Verwendungszweck des Produkts ab." },
               { q: "Werden Ergebnisse garantiert?", a: "Die Reaktion der Nutzer kann von Person zu Person unterschiedlich ausfallen. Gesundheits-, Erholungs-, Leistungs- oder ähnliche Ergebnisse können nicht garantiert werden.\n\nNutzungsentscheidungen sollten nicht allein auf allgemeinen Werbeinformationen oder Erfahrungsberichten von Nutzern basieren." }
             ]
           },
